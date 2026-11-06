@@ -1,6 +1,6 @@
 {
   "plantilla": "grafico",
-  "id": "pendiente-grafico-panama-chile",
+  "id": "2026-11-06-grafico-panama-chile",
   "titulo": "Panamá estaba bajo Chile en 1990. Hoy le saca un 20 %",
   "descripcion": "¿Cuándo pasó Panamá a Chile y a Uruguay en ingreso por persona?\n\nTres líneas del Banco Mundial, ajustadas por precios, de 1990 a 2024. Panamá cruzó en 2012 y la distancia sigue creciendo.\nSu ingreso nacional queda cerca de su PIB: lo que se produce, se queda.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
@@ -11,7 +11,7 @@
     "#uruguay"
   ],
   "props": {
-    "id": "pendiente-grafico-panama-chile",
+    "id": "2026-11-06-grafico-panama-chile",
     "gancho": {
       "texto": "En 1990, un panameño producía menos que un chileno y que un uruguayo.",
       "rotulo": "PANAMÁ, ÚLTIMO EN 1990",

@@ -48,7 +48,7 @@ const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
 
 /**
  * Contenedor de cualquier gráfico del canal: título (la pregunta o el hallazgo) + subtítulo con el indicador y la
- * unidad + leyenda (≥ 2 series en líneas/ranking) + cuerpo + "Fuente: …" abajo, SIEMPRE. Funciona en 16:9 y 9:16
+ * unidad + leyenda (≥ 2 series en líneas) + cuerpo + "Fuente: …" abajo, SIEMPRE. Funciona en 16:9 y 9:16
  * (recibe ancho/alto y el modo, que fija la escala tipográfica). Entra con un deslizamiento corto la primera vez.
  */
 export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato, enfasisPais, anotacionesFrame, maxMarcasX }) => {
@@ -57,7 +57,8 @@ export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho,
   const ps = paisesDe(g, serie);
   const entrada = inmediato ? 1 : salida3(frame / (0.45 * fps));
   const subtitulo = [g.datos.etiqueta ?? serie?.etiqueta, g.datos.unidad ?? serie?.unidad].filter(Boolean).join(' · ');
-  const conLeyenda = (g.tipo === 'lineas' || g.tipo === 'ranking') && ps.length >= 2;
+  // Solo líneas: en el ranking cada fila lleva su nombre y la leyenda (hasta 8 países) se encimaba con las barras en la miniatura.
+  const conLeyenda = g.tipo === 'lineas' && ps.length >= 2;
   const colores = coloresDe(g, ps);
   const altoTitulo = sinTitulo ? 0 : T.titulo * (modo === 'short' ? 2.5 : 1.25) + (subtitulo ? T.subtitulo * 1.5 : 0) + (antetitulo ? T.subtitulo * 1.6 : 0);
   const altoLeyenda = conLeyenda ? T.subtitulo * 1.9 : 0;

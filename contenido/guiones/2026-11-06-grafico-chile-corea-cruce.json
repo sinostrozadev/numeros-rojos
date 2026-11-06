@@ -1,6 +1,6 @@
 {
   "plantilla": "grafico",
-  "id": "pendiente-grafico-chile-corea-cruce",
+  "id": "2026-11-06-grafico-chile-corea-cruce",
   "titulo": "Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta",
   "descripcion": "¿En qué año Corea del Sur pasó a Chile en ingreso por persona?\n\nUn solo gráfico del Banco Mundial: 1960–2024, dólares constantes de 2015. El cruce no fue en una recta, fue en una curva.\nLa historia completa, con exportaciones, ahorro y educación, está en el video largo del canal.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=CL-KR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
@@ -10,7 +10,7 @@
     "#coreadelsur"
   ],
   "props": {
-    "id": "pendiente-grafico-chile-corea-cruce",
+    "id": "2026-11-06-grafico-chile-corea-cruce",
     "gancho": {
       "texto": "Esta línea dorada es Chile. En 1960 producía por persona el triple que Corea del Sur.",
       "rotulo": "CHILE 3 · COREA 1",

@@ -1,4 +1,4 @@
-# Lo único que necesita Santiago (En Números Rojos) — actualizado 2026-11-06 02:40
+# Lo único que necesita Santiago (En Números Rojos) — actualizado 2026-11-06 09:10
 
 Nada de esto cuesta dinero. Claude deja cada pantalla lista en el piloto (http://localhost:8777/ver) y te pide solo el clic.
 
@@ -29,7 +29,7 @@ y luego `wsl --shutdown` desde PowerShell. Ahora son 3 canales renderizando en l
 **(e) AdSense vinculada** — Studio → **Earn** → paso de AdSense → usar la **misma cuenta AdSense** de tus otros canales (sirve
 para todos). Hazlo con tiempo: la verificación puede pedir un PIN por correo postal y tardar semanas.
 
-## 5. Solo si Studio lo pide
-**(f) Verificación por teléfono** para miniaturas personalizadas y videos > 15 min. La verificación de funciones avanzadas es
+## 5. ⚠ NECESARIO: Studio lo pidió el 2026-11-06
+**(f) Verificación por teléfono** — **Studio bloquea las miniaturas personalizadas de este canal** ("To add custom thumbnails, verify your phone number"): es por canal, no por cuenta. Ruta: en el piloto, Studio del canal → cualquier video → Thumbnail → Upload file → "Verify" (SMS a tu número). Hasta entonces los 3 largos programados van con el fotograma automático; las miniaturas listas están en `salida/bandeja/<id>-mini.png` y se suben con un clic en Studio después (o las sube Claude). Texto original: para miniaturas personalizadas y videos > 15 min. La verificación de funciones avanzadas es
 por cuenta (ya la hiciste para Bolita Lab/Línea Punteada), así que probablemente no haga falta; si Studio la pide en este canal,
 es un SMS a tu número.

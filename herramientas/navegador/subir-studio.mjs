@@ -59,7 +59,19 @@ const textoPagina = async () => { const t = await llamar('/texto'); return typeo
 const asegurarCanal = async () => {
   await esperar(2500);
   for (let i = 0; i < 2; i++) {
-    if (!/Select a channel/i.test(await textoPagina())) break;
+    const tx = await textoPagina();
+    // "Oops, you don't have permission": la sesión del piloto está en OTRO canal de la cuenta (otro canal usó Studio antes).
+    // Studio ofrece "Switch account" → youtube.com/account lista todos los canales → se elige el nuestro y vuelve a la URL pedida.
+    if (/don.t have permission to view this page/i.test(tx)) {
+      console.log(`… Studio está en otro canal de la cuenta → "Switch account" → "${NOMBRE}"`);
+      await llamar(`/clicktexto?texto=${q('Switch account')}&exacto=1`);
+      await esperar(4000);
+      const r = await llamar(`/clicktexto?texto=${q(NOMBRE)}&exacto=1`);
+      if (r && r.error) fallo('no pude elegir el canal "' + NOMBRE + '" en el selector: ' + r.error);
+      await esperar(6000);
+      continue;
+    }
+    if (!/Select a channel/i.test(tx)) break;
     console.log(`… YouTube pide elegir canal → "${NOMBRE}"`);
     const r = await llamar(`/clicktexto?texto=${q(NOMBRE)}&exacto=1`);
     if (r && r.error) fallo('no pude elegir el canal "' + NOMBRE + '": ' + r.error);
@@ -70,7 +82,7 @@ const asegurarCanal = async () => {
   try {
     e = await hasta(async () => {
       const v = await estado();
-      return v && typeof v === 'object' && !/signin_prompt/.test(v.u) && (v.u.includes(CANAL) || v.n.includes(NOMBRE)) ? v : null;
+      return v && typeof v === 'object' && !/signin_prompt/.test(v.u) && v.n.includes(NOMBRE) && (v.u.includes(CANAL) || !/studio\.youtube\.com\/channel\//.test(v.u)) ? v : null;
     }, 30000, 1500, 'verificación de canal');
   } catch { e = await estado(); fallo('no estoy en el canal "' + NOMBRE + '" / ' + CANAL + ': ' + JSON.stringify(e).slice(0, 300)); }
   console.log('✓ canal verificado:', (e.u || '').slice(0, 80));
@@ -126,9 +138,18 @@ await esperar(2000);
 
 // 2. Título y descripción
 await llamar(`/escribir?sel=${q('#title-textarea #textbox')}&texto=${q(meta.titulo)}`);
-await llamar(`/escribir?sel=${q('#description-textarea #textbox')}&texto=${q(meta.descripcion)}`);
+// La descripción a veces queda fuera de la vista del diálogo y /escribir responde "not visible": se enfoca por /eval y se tipea.
+const rDesc = await llamar(`/escribir?sel=${q('#description-textarea #textbox')}&texto=${q(meta.descripcion)}`);
+if (rDesc && rDesc.error) {
+  console.log('… descripción: /escribir falló (' + String(rDesc.error).slice(0, 80) + '); enfocando por /eval + /tipear');
+  await evalJs(`(()=>{const e=document.querySelector('#description-textarea #textbox');e.scrollIntoView({block:'center'});e.focus();e.click();return true})()`);
+  await esperar(500);
+  await llamar(`/tipear?t=${q(meta.descripcion)}`);
+}
 await esperar(1000);
-const [t, dsc] = await evalJs(`[document.querySelector('#title-textarea #textbox').innerText.trim(), document.querySelector('#description-textarea #textbox').innerText.trim()]`);
+const leido = await evalJs(`[document.querySelector('#title-textarea #textbox').innerText.trim(), document.querySelector('#description-textarea #textbox').innerText.trim()]`);
+if (!Array.isArray(leido)) fallo('no pude leer título/descripción del diálogo: ' + JSON.stringify(leido).slice(0, 200));
+const [t, dsc] = leido;
 if (t !== meta.titulo.trim()) fallo('título no coincide: ' + t);
 if (!dsc.startsWith(meta.descripcion.slice(0, 40))) fallo('descripción no coincide');
 
