@@ -26,7 +26,7 @@ export const Tarjeta: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo
       }}>
         {cifra && <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: ajustar(cifra, w - 120, T.contador * 0.7, 0.58), color: acento, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{cifra}</div>}
         {texto && <div style={{ fontFamily: TIPO.texto, fontWeight: 800, fontSize: T.titulo * 0.8, color: PALETA.tinta, lineHeight: 1.2 }}>{texto}</div>}
-        {(g.datos.etiqueta ?? serie?.etiqueta) && <div style={{ fontFamily: TIPO.texto, fontWeight: 500, fontSize: T.subtitulo, color: PALETA.tintaSuave }}>{g.datos.etiqueta ?? serie?.etiqueta}</div>}
+        {(g.datos.etiqueta ?? serie?.etiqueta) && !texto.toLowerCase().includes(String(g.datos.etiqueta ?? serie?.etiqueta).toLowerCase()) && <div style={{ fontFamily: TIPO.texto, fontWeight: 500, fontSize: T.subtitulo, color: PALETA.tintaSuave }}>{g.datos.etiqueta ?? serie?.etiqueta}</div>}
       </div>
     </div>
   );

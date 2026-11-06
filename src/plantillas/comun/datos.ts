@@ -89,7 +89,12 @@ export const Grafico = z.object({
   /** Qué resaltar: un país (color de acento), un año (línea vertical) o un punto concreto. */
   destacar: z.object({ pais: Iso3.optional(), anio: z.number().int().optional(), texto: z.string().max(40).optional() }).optional(),
   /** Anotaciones con fecha ("1973: golpe", "1997: crisis asiática") que aparecen cuando la voz llega ahí. */
-  anotaciones: z.array(z.object({ anio: z.number().int(), texto: z.string().min(1).max(40) })).max(6).optional(),
+  anotaciones: z.array(z.object({
+    anio: z.number().int(),
+    texto: z.string().min(1).max(40),
+    /** Palabra EXACTA de la voz con la que aparece esta anotación (si falta, cuando la línea/el tiempo llega a `anio`). */
+    dice: z.string().optional(),
+  })).max(6).optional(),
   formato: z.object({
     decimales: z.number().int().min(0).max(2).optional(),
     prefijo: z.string().max(6).optional(),

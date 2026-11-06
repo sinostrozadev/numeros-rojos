@@ -70,8 +70,12 @@ export const planGrafico = (g: GuionGrafico, tiempos: Tiempos, datos?: DatosResu
   const iGiro = g.escenas.findIndex((e) => e.tipo === 'giro');
   const mismo = (x?: Grafico) => !x || JSON.stringify(x) === JSON.stringify(g.grafico);
   let ultimaConstruccion = 0;
-  g.escenas.forEach((e, k) => { if ((iGiro < 0 || k < iGiro) && (e.tipo === 'dato' || e.tipo === 'planteamiento') && mismo(e.grafico)) ultimaConstruccion = k + 1; });
-  if (ultimaConstruccion === 0) ultimaConstruccion = Math.min(1, n);
+  // Solo escenas seguidas desde el gancho que siguen mostrando el gráfico principal (si una lo reemplaza, se corta ahí).
+  for (let k = 0; k < n; k++) {
+    const e = g.escenas[k];
+    if (!mismo(e.grafico) || (iGiro >= 0 && k >= iGiro)) break;
+    if (e.tipo === 'dato' || e.tipo === 'planteamiento') ultimaConstruccion = k + 1;
+  }
   const clavesPrincipal = clavesDeGrafico(g.grafico, L.slice(0, ultimaConstruccion + 1), fps, datos);
   const eventos: Evento[] = [{ t: 0, tipo: 'golpe', fuerza: 0.9 }];
   const c0 = clavesPrincipal[0], cn = clavesPrincipal[clavesPrincipal.length - 1];

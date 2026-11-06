@@ -32,7 +32,7 @@ export const Comparacion: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, 
   const columna = (p: typeof a, v: number, avance: number, color: string) => (
     <div style={{ width: col, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', height: alto * 0.96, gap: 14 }}>
       <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: fsCifra, color, lineHeight: 1, fontVariantNumeric: 'tabular-nums', opacity: avance > 0 ? 1 : 0.2 }}>
-        {formatear(cifraContando(v, avance), { ...opc, compacto: max >= 1e7 })}
+        {avance > 0 ? formatear(cifraContando(v, avance), { ...opc, compacto: max >= 1e7 }) : '—'}
       </div>
       <div style={{ width: col * 0.5, height: altoBarra, display: 'flex', alignItems: 'flex-end' }}>
         <div style={{ width: '100%', height: altoBarra * (Math.abs(v) / max) * salida3(avance), background: color, borderRadius: '10px 10px 3px 3px' }} />

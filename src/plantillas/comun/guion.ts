@@ -14,7 +14,7 @@
  * Tono: evidencia, no catastrofismo. Prohibido en títulos y remates: "colapso", "destruir", "el fin", "se acerca".
  */
 import { z } from 'zod';
-import { Cifra, Grafico } from './datos';
+import { Cifra, Grafico, Iso3 } from './datos';
 
 export const PLANTILLAS_CANAL = ['tesis', 'grafico'] as const;
 export type PlantillaCanal = (typeof PLANTILLAS_CANAL)[number];
@@ -68,9 +68,13 @@ export const Escena = z.object({
   fuenteEnVoz: z.boolean().optional(),
   /** Segundos de silencio al final de la escena (respiro visual). En `respiro` por defecto 3,5. */
   respiroSeg: z.number().min(0).max(6).optional(),
+  /** Qué país se enciende en esta escena (p. ej. en el `giro` el que da la sorpresa). Si falta, el de `grafico.destacar.pais`. */
+  enfasis: z.object({ pais: Iso3 }).optional(),
+  /** Solo en el Short: la escena `dato` sigue mostrando el gráfico principal (`props.grafico`) sin copiarlo entero. */
+  usaGraficoPrincipal: z.boolean().optional(),
 }).superRefine((e, ctx) => {
   if (e.tipo !== 'respiro' && e.texto.trim().length < 1) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `escena ${e.tipo} sin texto` });
-  if (e.tipo === 'dato' && !e.grafico) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'escena dato sin gráfico' });
+  if (e.tipo === 'dato' && !e.grafico && !e.usaGraficoPrincipal) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'escena dato sin gráfico (o sin usaGraficoPrincipal en el Short)' });
 });
 export type Escena = z.infer<typeof Escena>;
 

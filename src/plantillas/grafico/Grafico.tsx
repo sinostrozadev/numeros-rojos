@@ -79,7 +79,7 @@ export const Grafico: React.FC<PropsGrafico> = (props) => {
       </div>
       {!enRemate && (
         <div style={{ position: 'absolute', left: S.lados, top: ZONA_GRAFICO.rotulo.y, maxWidth: W - S.lados * 2 }}>
-          <RotuloCaja key={rotulo.texto} texto={rotulo.texto} visible={vis} fontSize={rotulo.desde === 0 ? 84 : 72} rojo={rotulo.giro} />
+          <RotuloCaja key={rotulo.texto} texto={rotulo.texto} visible={vis} fontSize={Math.min(rotulo.desde === 0 ? 84 : 72, (W - S.lados * 2 - 40) / Math.max(4, rotulo.texto.length * 0.66))} rojo={rotulo.giro} />
         </div>
       )}
       <MarcaDeAgua top={S.arriba - 2} right={S.lados} escala={0.85} />
