@@ -1,0 +1,1719 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-argentina-rica",
+  "titulo": "Argentina era más rica que Alemania. ¿Qué pasó después?",
+  "descripcion": "¿Cómo pasó Argentina de producir más por persona que Alemania en 1895 a quedar última entre esos mismos ocho países?\n\nRecorremos 130 años de datos del Proyecto Maddison y del Banco Mundial en cuatro quiebres: el empate perdido con Australia, los sesenta años en que creció más lento que Europa, la inflación de los ochenta y el vaivén desde 2001.\nLa tesis: Argentina no se empobreció en un año. Se quedó atrás crisis tras crisis, mientras otros crecían sin retroceder tanto.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.DEFL.KD.ZG, DT.DOD.DECT.GN.ZS, NY.GDP.PCAP.KD.ZG (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#argentina",
+    "#inflacion",
+    "#historiaeconomica",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-argentina-rica",
+    "cabecera": "ARGENTINA · 1895–2025",
+    "gancho": {
+      "texto": "En 1895, un argentino producía más que un alemán y más del doble que un español; hoy es el español quien produce casi el doble. ¿En qué momento se dio vuelta la cuenta?",
+      "rotulo": "MÁS RICA QUE ALEMANIA",
+      "grafico": {
+        "tipo": "barras",
+        "titulo": "1895: ingreso por persona",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "USA",
+            "GBR",
+            "AUS",
+            "ARG",
+            "DEU",
+            "FRA",
+            "CAN",
+            "ESP"
+          ],
+          "desde": 1895,
+          "hasta": 1895,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "ARG"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        }
+      },
+      "cifras": [
+        {
+          "texto": "más del doble que un español",
+          "valor": 2.08,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "USA",
+                "GBR",
+                "AUS",
+                "ARG",
+                "DEU",
+                "FRA",
+                "CAN",
+                "ESP"
+              ],
+              "desde": 1895,
+              "hasta": 1895,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ARG",
+            "paisB": "ESP",
+            "anio": 1895
+          }
+        },
+        {
+          "texto": "casi el doble",
+          "valor": 1.9,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "USA",
+                "GBR",
+                "AUS",
+                "ARG",
+                "DEU",
+                "FRA",
+                "CAN",
+                "ESP"
+              ],
+              "desde": 1895,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ESP",
+            "paisB": "ARG",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "promesa": "En cuatro quiebres y con los datos en pantalla, vas a ver en qué años se fue la ventaja argentina, y por qué la respuesta no cabe en un solo año.",
+    "indice": [
+      "Entre los más ricos",
+      "Crecer y quedar atrás",
+      "La inflación",
+      "El vaivén"
+    ],
+    "estructura": "linea-de-tiempo",
+    "capitulos": [
+      {
+        "titulo": "1895: Argentina entre los países más ricos",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Buenos Aires, fines del siglo diecinueve. Llegan barcos llenos de inmigrantes y se van barcos llenos de trigo, lana y carne congelada. La pampa produce comida para una Europa que se está llenando de fábricas y de obreros que tienen que comer."
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Proyecto Maddison, de la Universidad de Groningen, reconstruye cuánto producía cada país hacia atrás, hasta el siglo diecinueve. Según esa base, en 1895 un argentino producía una cuarta parte más que un alemán y un 30 % más que un francés.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1895: Argentina frente a Europa",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "USA",
+                  "GBR",
+                  "AUS",
+                  "ARG",
+                  "DEU",
+                  "FRA",
+                  "CAN",
+                  "ESP"
+                ],
+                "desde": 1895,
+                "hasta": 1895,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1895"
+            },
+            "cifras": [
+              {
+                "texto": "una cuarta parte más",
+                "valor": 1.25,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "USA",
+                      "GBR",
+                      "AUS",
+                      "ARG",
+                      "DEU",
+                      "FRA",
+                      "CAN",
+                      "ESP"
+                    ],
+                    "desde": 1895,
+                    "hasta": 1895,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "ARG",
+                  "paisB": "DEU",
+                  "anio": 1895
+                }
+              },
+              {
+                "texto": "un 30 % más",
+                "valor": 1.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "USA",
+                      "GBR",
+                      "AUS",
+                      "ARG",
+                      "DEU",
+                      "FRA",
+                      "CAN",
+                      "ESP"
+                    ],
+                    "desde": 1895,
+                    "hasta": 1895,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "ARG",
+                  "paisB": "FRA",
+                  "anio": 1895
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1895",
+              "dice": "1895"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ese lugar no era casualidad. Entre 1870 y 1913, el ingreso por persona argentino se multiplicó por más de dos y media. El de Estados Unidos, por dos. El británico, por menos de una y media. Pocas economías de la época corrían tan rápido, y casi todo ese crecimiento salía del campo y de los ferrocarriles que lo unían con los puertos.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "La carrera de 1870 a 1913",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "USA",
+                  "GBR"
+                ],
+                "desde": 1870,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1870"
+            },
+            "cifras": [
+              {
+                "texto": "por más de dos y media",
+                "valor": 159,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "USA",
+                      "GBR"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 1870,
+                  "anioB": 1913
+                }
+              },
+              {
+                "texto": "por dos",
+                "valor": 110,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "USA",
+                      "GBR"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "USA",
+                  "anio": 1870,
+                  "anioB": 1913
+                }
+              },
+              {
+                "texto": "por menos de una y media",
+                "valor": 41,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "USA",
+                      "GBR"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "GBR",
+                  "anio": 1870,
+                  "anioB": 1913
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Entre estos ocho países, Argentina quedaba cuarta. Detrás de Estados Unidos, del Reino Unido y de Australia. Y delante de Canadá, que producía por persona un 30 % menos que Argentina.",
+            "grafico": {
+              "tipo": "ranking",
+              "titulo": "Ocho países en 1895",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "USA",
+                  "GBR",
+                  "AUS",
+                  "ARG",
+                  "DEU",
+                  "FRA",
+                  "CAN",
+                  "ESP"
+                ],
+                "desde": 1895,
+                "hasta": 1895,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "cuarta."
+            },
+            "cifras": [
+              {
+                "texto": "quedaba cuarta",
+                "valor": 4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "USA",
+                      "GBR",
+                      "AUS",
+                      "ARG",
+                      "DEU",
+                      "FRA",
+                      "CAN",
+                      "ESP"
+                    ],
+                    "desde": 1895,
+                    "hasta": 1895,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "ranking",
+                  "pais": "ARG",
+                  "anio": 1895
+                }
+              },
+              {
+                "texto": "un 30 % menos",
+                "valor": 0.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "USA",
+                      "GBR",
+                      "AUS",
+                      "ARG",
+                      "DEU",
+                      "FRA",
+                      "CAN",
+                      "ESP"
+                    ],
+                    "desde": 1895,
+                    "hasta": 1895,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CAN",
+                  "paisB": "ARG",
+                  "anio": 1895
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "4.ª DE 8",
+              "dice": "cuarta."
+            }
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero mira a Australia, que vendía lo mismo que Argentina a la misma Europa. En 1895, con Australia en el fondo de su propia crisis bancaria, estaban prácticamente empatadas. En 1913, solo dieciocho años después, Australia ya le sacaba más de un tercio. La primera grieta apareció cuando a Argentina todavía le iba bien, y por eso casi nadie la vio. Australia salió de su crisis corriendo: entre 1895 y 1913 su ingreso por persona creció casi la mitad. El argentino, algo más de un 10 %. Los datos no dicen por qué. Dicen que la distancia se abrió justo cuando Argentina parecía tenerlo todo.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Argentina y Australia, 1870–1913",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "AUS"
+                ],
+                "desde": 1870,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1895,
+                  "texto": "Empate"
+                },
+                {
+                  "anio": 1913,
+                  "texto": "Australia +36 %"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Australia,"
+            },
+            "cifras": [
+              {
+                "texto": "prácticamente empatadas",
+                "valor": 1.0,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "AUS"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "AUS",
+                  "paisB": "ARG",
+                  "anio": 1895
+                }
+              },
+              {
+                "texto": "más de un tercio",
+                "valor": 1.36,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "AUS"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "AUS",
+                  "paisB": "ARG",
+                  "anio": 1913
+                }
+              },
+              {
+                "texto": "creció casi la mitad",
+                "valor": 48,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "AUS"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "AUS",
+                  "anio": 1895,
+                  "anioB": 1913
+                }
+              },
+              {
+                "texto": "algo más de un 10 %",
+                "valor": 12,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "AUS"
+                    ],
+                    "desde": 1870,
+                    "hasta": 1913,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 1895,
+                  "anioB": 1913
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "LA PRIMERA GRIETA",
+              "dice": "grieta"
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "Crecer y quedarse atrás: 1913 a 1974",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Aquí está el malentendido más común. Se piensa que Argentina se empobreció de golpe, en algún año maldito. Los datos dicen otra cosa: durante sesenta años, siguió creciendo."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Proyecto Maddison, entre 1913 y 1974 el ingreso por persona argentino más que se duplicó. Hubo caídas fuertes, como la de la Gran Depresión, cuando bajó casi un 20 % en apenas tres años. Pero la línea, mirada de lejos, sube. Lo que sí cambió fue el modelo. Después de 1930, con el comercio mundial cerrado por la crisis y luego por la guerra, Argentina, como casi toda la región, se volcó a fabricar para su propio mercado, protegida por aranceles altos. Dejó de ser solo el granero de Europa. Pero sus fábricas producían, sobre todo, para adentro.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Argentina, 1870–2022",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1870,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1974
+              },
+              "anotaciones": [
+                {
+                  "anio": 1930,
+                  "texto": "Gran Depresión"
+                },
+                {
+                  "anio": 1974,
+                  "texto": "Máximo de la época"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "duplicó."
+            },
+            "cifras": [
+              {
+                "texto": "más que se duplicó",
+                "valor": 120,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1870,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 1913,
+                  "anioB": 1974
+                }
+              },
+              {
+                "texto": "casi un 20 %",
+                "valor": -19.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1870,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 1929,
+                  "anioB": 1932
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "El problema es contra quién se mide. En esos mismos sesenta años, España multiplicó su ingreso por persona por cuatro. Italia, algo más. No es que Argentina fuera para atrás. Es que los demás iban más rápido. Crecer un poco más lento cada año parece un detalle. Sostenido durante sesenta años, es la diferencia entre duplicar y cuadruplicar.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Argentina, España, Italia y Japón",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "ESP",
+                  "ITA",
+                  "JPN"
+                ],
+                "desde": 1913,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "España"
+            },
+            "cifras": [
+              {
+                "texto": "por cuatro",
+                "valor": 300,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "ESP",
+                      "ITA",
+                      "JPN"
+                    ],
+                    "desde": 1913,
+                    "hasta": 1990,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ESP",
+                  "anio": 1913,
+                  "anioB": 1974
+                }
+              },
+              {
+                "texto": "algo más",
+                "valor": 334,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "ESP",
+                      "ITA",
+                      "JPN"
+                    ],
+                    "desde": 1913,
+                    "hasta": 1990,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ITA",
+                  "anio": 1913,
+                  "anioB": 1974
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "LOS DEMÁS, MÁS RÁPIDO",
+              "dice": "rápido."
+            }
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y llegan dos cruces que en 1895 habrían sonado a chiste. En 1966, Japón supera a Argentina en ingreso por persona. Diez años después, en 1976, la supera España, el país que en 1895 tenía menos de la mitad.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Quién pasa a Argentina",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "ESP",
+                  "ITA",
+                  "JPN"
+                ],
+                "desde": 1913,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1966,
+                  "texto": "Japón pasa"
+                },
+                {
+                  "anio": 1976,
+                  "texto": "España pasa"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1966,"
+            },
+            "cifras": [
+              {
+                "texto": "En 1966, Japón supera",
+                "valor": 1.03,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "ESP",
+                      "ITA",
+                      "JPN"
+                    ],
+                    "desde": 1913,
+                    "hasta": 1990,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "JPN",
+                  "paisB": "ARG",
+                  "anio": 1966
+                }
+              },
+              {
+                "texto": "en 1976, la supera España",
+                "valor": 1.03,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "ESP",
+                      "ITA",
+                      "JPN"
+                    ],
+                    "desde": 1913,
+                    "hasta": 1990,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "ESP",
+                  "paisB": "ARG",
+                  "anio": 1976
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1976",
+              "dice": "1976,"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Hasta acá, Argentina crecía más lento que otros. Lo que viene es distinto. Es la etapa en que el ingreso por persona no solo se frena: en dieciséis años termina más abajo de donde empezó."
+          }
+        ]
+      },
+      {
+        "titulo": "1975 a 1990: la década de la inflación",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Para entender esa caída hay que mirar otro número: cuánto suben los precios de un año a otro. Una inflación alta no es solo que todo cueste más. Es que nadie sabe cuánto va a costar nada. Las empresas dejan de planificar, los sueldos llegan tarde a la carrera y el ahorro escapa a otra moneda."
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Banco Mundial mide la inflación de toda la economía con el deflactor del PIB. En la Argentina de los años sesenta rondaba el 25 % anual. Alta, pero conocida. En 1975 saltó a casi 200 %. Y al año siguiente, a más de 400.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Inflación en Argentina (% anual)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1975
+              },
+              "anotaciones": [
+                {
+                  "anio": 1975,
+                  "texto": "Casi 200 %"
+                },
+                {
+                  "anio": 1989,
+                  "texto": "Hiperinflación"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "deflactor"
+            },
+            "cifras": [
+              {
+                "texto": "rondaba el 25 %",
+                "valor": 25,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 1967,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "ARG"
+                }
+              },
+              {
+                "texto": "casi 200 %",
+                "valor": 198,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1975
+                }
+              },
+              {
+                "texto": "más de 400",
+                "valor": 438,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1976
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "DE 25 % A 400 %",
+              "dice": "400."
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 1989 llegó a unos 3.000 %. Eso es una hiperinflación: precios que cambian de una semana a otra, sueldos que se gastan el mismo día que se cobran, ahorro que nadie quiere tener en pesos.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Inflación, 1984–1991 (% anual)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1984,
+                "hasta": 1991,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1989
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "1989"
+            },
+            "cifras": [
+              {
+                "texto": "unos 3.000 %",
+                "valor": 3000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "maximo",
+                  "pais": "ARG"
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "3.000 %",
+              "dice": "3.000"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "A la inflación se sumó la deuda. Cuando en 1982 México anunció que no podía pagar su deuda, los bancos le cerraron el crédito a toda América Latina casi de un día para otro. La deuda externa argentina pasó de algo más de un tercio de su ingreso nacional en 1980 a más de la mitad en 1982. Fue la década perdida de la región, y Argentina la vivió con precios desbocados.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Deuda externa, 1970–1990 (% del ingreso nacional)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "DT.DOD.DECT.GN.ZS",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1970,
+                "hasta": 1990,
+                "etiqueta": "Deuda externa (% del ingreso nacional bruto)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1982
+              },
+              "anotaciones": [
+                {
+                  "anio": 1982,
+                  "texto": "Crisis de la deuda"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "deuda."
+            },
+            "cifras": [
+              {
+                "texto": "algo más de un tercio",
+                "valor": 36,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "DT.DOD.DECT.GN.ZS",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1970,
+                    "hasta": 2024,
+                    "etiqueta": "Deuda externa (% del ingreso nacional bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1980
+                }
+              },
+              {
+                "texto": "más de la mitad",
+                "valor": 55,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "DT.DOD.DECT.GN.ZS",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1970,
+                    "hasta": 2024,
+                    "etiqueta": "Deuda externa (% del ingreso nacional bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1982
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mientras tanto, el ingreso por persona retrocedía. Entre 1974 y 1990 cayó casi un 23 %. Para un país que en 1895 estaba entre los cuatro más ricos de esta lista, son dieciséis años perdidos.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona, 1970–1990",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1970,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1974,
+                  "texto": "Máximo"
+                },
+                {
+                  "anio": 1990,
+                  "texto": "−23 %"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "retrocedía."
+            },
+            "cifras": [
+              {
+                "texto": "casi un 23 %",
+                "valor": -22.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1870,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 1974,
+                  "anioB": 1990
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y entonces, el freno más brusco. En 1991, una ley ata el peso al dólar, uno a uno. En dos años, la inflación pasa de miles por ciento a menos de cero: en 1993, la inflación de toda la economía marcó incluso un número negativo. Hubo planes antes que la bajaron por un tiempo. Ninguno la sostuvo. El uno a uno la sostuvo diez años.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación 1985–2000",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1985,
+                "hasta": 2000,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1991
+              },
+              "anotaciones": [
+                {
+                  "anio": 1991,
+                  "texto": "Uno a uno"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "1991,"
+            },
+            "cifras": [
+              {
+                "texto": "menos de cero",
+                "valor": -3.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1993
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "UNO A UNO",
+              "dice": "uno."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "El uno a uno, la convertibilidad, funcionó una década. Pero un peso atado al dólar necesita dólares para sostenerse. Lo que pasó cuando dejaron de llegar todavía se ve en los datos."
+          }
+        ]
+      },
+      {
+        "titulo": "2001 a hoy: el vaivén argentino",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "A fines de los noventa, los dólares que sostenían el uno a uno llegaban cada vez más como préstamos. Y los préstamos, tarde o temprano, se cobran. En diciembre de 2001 el gobierno limitó cuánto podía sacar cada persona de su cuenta en el banco, lo que se llamó el corralito. Semanas después, el uno a uno se terminó."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Banco Mundial, en 2002 la deuda externa argentina llegó a una vez y media su ingreso nacional de un año. Una parte de ese salto viene de la devaluación, que achicó el ingreso medido en dólares. Ese mismo año, el ingreso por persona cayó casi un 12 %.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Deuda externa (% del ingreso nacional)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "DT.DOD.DECT.GN.ZS",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1970,
+                "hasta": 2024,
+                "etiqueta": "Deuda externa (% del ingreso nacional bruto)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 2002
+              },
+              "anotaciones": [
+                {
+                  "anio": 1989,
+                  "texto": "Hiperinflación"
+                },
+                {
+                  "anio": 2002,
+                  "texto": "Salida del uno a uno"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "deuda"
+            },
+            "cifras": [
+              {
+                "texto": "una vez y media",
+                "valor": 160,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "DT.DOD.DECT.GN.ZS",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1970,
+                    "hasta": 2024,
+                    "etiqueta": "Deuda externa (% del ingreso nacional bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2002
+                }
+              },
+              {
+                "texto": "casi un 12 %",
+                "valor": -11.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2002
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "160 % DEL INGRESO",
+              "dice": "deuda"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Después vino el rebote: cinco años seguidos con el ingreso por persona creciendo cerca de un 8 % anual. Una parte era recuperar lo perdido en 2002. Otra vino de afuera, con la soja y los granos a precios altos. Y otra vez, el freno. En el Proyecto Maddison, el ingreso por persona argentino toca su máximo histórico en 2011. En 2022 seguía casi un 9 % por debajo.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Crecimiento del ingreso por persona (% anual)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 2000,
+                "hasta": 2025,
+                "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "rebote:"
+            },
+            "cifras": [
+              {
+                "texto": "cerca de un 8 %",
+                "valor": 7.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 2003,
+                    "hasta": 2007,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "ARG"
+                }
+              },
+              {
+                "texto": "casi un 9 %",
+                "valor": -8.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1870,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 2011,
+                  "anioB": 2022
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "La inflación volvió también. En 2024, el deflactor superó el 200 %. En 2025 bajó a cerca de 40 %, el nivel más bajo desde 2017. Esta línea ya bajó así antes y volvió a subir. El dato que falta es el de los próximos años.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación 2010–2025",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 2025
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "2024,"
+            },
+            "cifras": [
+              {
+                "texto": "superó el 200 %",
+                "valor": 208,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "cerca de 40 %",
+                "valor": 39,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "el nivel más bajo desde 2017",
+                "valor": 39.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "minimo",
+                  "pais": "ARG"
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y el giro más incómodo está al lado. En 1960, un argentino producía un 30 % más que un chileno. En 1995, Chile lo alcanzó. Desde entonces, salvo un par de años, Chile va adelante.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Argentina y Chile, 1950–2022",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "CHL"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1995
+              },
+              "anotaciones": [
+                {
+                  "anio": 1995,
+                  "texto": "Chile alcanza"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1995,"
+            },
+            "cifras": [
+              {
+                "texto": "un 30 % más",
+                "valor": 1.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "CHL"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "ARG",
+                  "paisB": "CHL",
+                  "anio": 1960
+                }
+              },
+              {
+                "texto": "En 1995, Chile lo alcanzó",
+                "valor": 1.05,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG",
+                      "CHL"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "ARG",
+                  "anio": 1995
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "CHILE ALCANZA",
+              "dice": "alcanzó."
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué dice esto para quien vive en cualquier país de la región? Que en estos datos la riqueza no se ve como un estado permanente. Argentina no perdió su lugar en una sola crisis. Lo perdió en varias, y cada una borró parte de lo ganado en los años buenos. Lo que la separa de los países que la pasaron no es solo cuánto creció cuando le iba bien, sino cuánto retrocedió cuando le iba mal. Por eso, cuando un país anuncia un año de crecimiento récord, el dato que más dice no es ese récord. Es cuánto de lo ganado queda en pie cuando el ciclo se da vuelta."
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Queda un número para cerrar la cuenta. Es la posición de Argentina en aquella lista de ocho países del principio."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira es un ocho. De los ocho países con los que la comparamos en 1895, Argentina era la cuarta. En 2022 es la octava: la última. Y España, que tenía menos de la mitad, en 2022 producía casi el doble por persona. Ninguno de esos siete países tuvo una historia sin crisis. Lo que no tuvieron fue una crisis grande cada diez años durante medio siglo.",
+      "grafico": {
+        "tipo": "ranking",
+        "titulo": "Los mismos ocho países, 1895 y 2022",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "USA",
+            "GBR",
+            "AUS",
+            "ARG",
+            "DEU",
+            "FRA",
+            "CAN",
+            "ESP"
+          ],
+          "desde": 1895,
+          "hasta": 2022,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "ARG"
+        },
+        "anotaciones": [
+          {
+            "anio": 1895,
+            "texto": "Argentina 4.ª"
+          },
+          {
+            "anio": 2022,
+            "texto": "Argentina 8.ª"
+          }
+        ],
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "octava:"
+      },
+      "cifras": [
+        {
+          "texto": "es la octava",
+          "valor": 8,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "USA",
+                "GBR",
+                "AUS",
+                "ARG",
+                "DEU",
+                "FRA",
+                "CAN",
+                "ESP"
+              ],
+              "desde": 1895,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "ranking",
+            "pais": "ARG",
+            "anio": 2022
+          }
+        },
+        {
+          "texto": "era la cuarta",
+          "valor": 4,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "USA",
+                "GBR",
+                "AUS",
+                "ARG",
+                "DEU",
+                "FRA",
+                "CAN",
+                "ESP"
+              ],
+              "desde": 1895,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "ranking",
+            "pais": "ARG",
+            "anio": 1895
+          }
+        },
+        {
+          "texto": "menos de la mitad",
+          "valor": 0.48,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "USA",
+                "GBR",
+                "AUS",
+                "ARG",
+                "DEU",
+                "FRA",
+                "CAN",
+                "ESP"
+              ],
+              "desde": 1895,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ESP",
+            "paisB": "ARG",
+            "anio": 1895
+          }
+        }
+      ]
+    },
+    "remate": "Argentina no se quedó atrás en un año malo. Se quedó atrás en muchos años malos.",
+    "siguiente": "En 2015, la economía de Irlanda creció cerca de un 25 % en un solo año. ¿Cómo crece así un país sin que su gente lo note? Eso viene ahora.",
+    "miniatura": {
+      "texto": "DE 4.ª A 8.ª",
+      "grafico": {
+        "tipo": "ranking",
+        "titulo": "1895 vs 2022",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "USA",
+            "GBR",
+            "AUS",
+            "ARG",
+            "DEU",
+            "FRA",
+            "CAN",
+            "ESP"
+          ],
+          "desde": 1895,
+          "hasta": 2022,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "ARG"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, deflactor del PIB, % anual (NY.GDP.DEFL.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=AR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Deuda externa acumulada, % del INB (DT.DOD.DECT.GN.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/DT.DOD.DECT.GN.ZS?locations=AR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Crecimiento del PIB per cápita, % anual (NY.GDP.PCAP.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=AR"
+      }
+    ]
+  }
+}

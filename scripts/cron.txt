@@ -1,0 +1,26 @@
+# En Números Rojos — líneas para `crontab -e` (las instala Santiago: es un consentimiento suyo).
+# NO uses `crontab scripts/cron.txt`: pisaría el crontab entero (ahí viven Bolita Lab y Línea Punteada).
+# Reemplaza UC8uOwislkGbnnfoqsJ_FgAw por el id del canal @enumerosrojos (Studio → Configuración → Canal → Configuración avanzada).
+#
+# Horas ocupadas por los otros canales (todas usan el lock de render /tmp/bolita-render.lock con flock -w 1800):
+#   Bolita Lab      03:30 diario · 04:30 dom compilar · 05:00 lun revisar · 08:00 estado
+#   Línea Punteada  04:45 diario · 05:30 sáb compilar · 08:15 estado
+# Por qué 00:30 y no 01:15: una noche típica es 1 Short (~20 min) + 1 largo (~2 h, hasta 240 min de tope) ≈ 2 h 20 min.
+# Desde 01:15 terminaría ~03:35 y Bolita Lab (03:30) esperaría el lock; si pasa de 30 min, su render se salta ese día.
+# Desde 00:30 queda ~1 h de colchón antes de las 03:30. Si un largo se alarga (> 150 min), pasarlo a render por tramos
+# (skill videos-largos §5) en vez de mover más la hora. El diario espera RAM ≥ 1500 MB antes de cada render.
+SHELL=/bin/bash
+PATH=/home/santiago/.nvm/versions/node/v22.14.0/bin:/home/santiago/.local/bin:/usr/local/bin:/usr/bin:/bin
+HOME=/home/santiago
+
+# Diario 00:30: huérfanos → Shorts hasta 3 'listo' → largos hasta 2 'listo' (cada guion pasa por verificar-cifras;
+# si una cifra no cuadra, el guion queda en 'error' y NO se renderiza) → guiones nuevos si el backlog baja de 8 →
+# subida por API (si está auditada) o PARA-SUBIR-A-MANO.md.
+30 0 * * * cd /home/santiago/projects/yt/numeros-rojos && NR_CANAL_ID=UC8uOwislkGbnnfoqsJ_FgAw node_modules/.bin/tsx scripts/diario.mts >> salida/logs/cron.log 2>&1
+
+# Estado + métricas diarias 08:30 (capturas de Studio y metricas.json en salida/metricas/AAAA-MM-DD/; ver salida/logs/estado.log).
+# Después de Bolita Lab (08:00) y Línea Punteada (08:15): el piloto 8777 es uno solo y las capturas tardan ~3 min.
+30 8 * * * cd /home/santiago/projects/yt/numeros-rojos && NR_CANAL_ID=UC8uOwislkGbnnfoqsJ_FgAw node_modules/.bin/tsx scripts/estado.mts > salida/logs/estado.log 2>&1
+
+# Datos abiertos: refresco semanal de la caché (domingos 23:30; el Banco Mundial y OWID actualizan pocas veces al año).
+30 23 * * 0 cd /home/santiago/projects/yt/numeros-rojos && node_modules/.bin/tsx scripts/datos.mts refrescar >> salida/logs/cron.log 2>&1

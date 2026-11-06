@@ -1,0 +1,1595 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-chile-corea",
+  "titulo": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
+  "descripcion": "¿Por qué Corea del Sur, tres veces más pobre que Chile en 1960, hoy produce dos veces y media más por persona?\n\nSeguimos 64 años de datos del Banco Mundial y del Proyecto Maddison para separar lo que de verdad cambió de lo que se repite.\nChile era más rico y más exportador en 1960. Corea apostó por fabricar y por guardar para construir; Chile cambió de materia prima.\nEl dato que más sorprende: en matrícula universitaria Chile ya alcanzó a Corea. En investigación y desarrollo, gasta doce veces menos.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MMTL.ZS.UN, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, SE.TER.ENRR, IP.PAT.RESD, GB.XPD.RSDV.GD.ZS, TX.VAL.FOOD.ZS.UN, SP.POP.TOTL (CC BY 4.0) https://data.worldbank.org\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#chile",
+    "#coreadelsur",
+    "#desarrollo",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-chile-corea",
+    "cabecera": "CHILE VS COREA DEL SUR · 1960–2024",
+    "gancho": {
+      "texto": "En 1960, cada chileno producía el triple que cada coreano; hoy, cada coreano produce dos veces y media lo que un chileno. Las dos líneas se cruzaron hace más de cuarenta años, y la distancia no se ha cerrado. ¿Qué hizo Corea del Sur que Chile no hizo?",
+      "rotulo": "CHILE ERA 3 VECES MÁS RICO",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "1960: Chile contra Corea del Sur",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD",
+          "paises": [
+            "CHL",
+            "KOR"
+          ],
+          "desde": 1960,
+          "hasta": 1960,
+          "etiqueta": "PIB por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "CHL"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        }
+      },
+      "cifras": [
+        {
+          "texto": "el triple",
+          "valor": 3,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "KOR",
+            "anio": 1960
+          }
+        },
+        {
+          "texto": "dos veces y media",
+          "valor": 2.5,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "CHL",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber qué separó a los dos países, en cuatro capítulos, con gráficos y fuentes, y por qué la explicación que más se repite se queda corta.",
+    "indice": [
+      "Chile iba adelante",
+      "Qué vendía cada uno",
+      "Lo que se guardaba",
+      "Universidad y patentes"
+    ],
+    "estructura": "comparacion",
+    "capitulos": [
+      {
+        "titulo": "1960: Chile iba adelante",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Volvamos a 1960. Corea del Sur lleva siete años de armisticio después de una guerra que arrasó el país y selló la frontera con el Norte. No tiene petróleo, ni cobre, y la mayor parte de su territorio son montañas. Chile tiene minas, puertos, un Estado que funciona y universidades con más de un siglo de historia. Si alguien hubiera tenido que apostar, la apuesta obvia era Chile."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira la línea dorada: es Chile. Según el Banco Mundial, en 1960 cada chileno producía unos 3.200 dólares al año, medidos en dólares de 2015 para que la inflación no engañe. Cada coreano, unos 1.000. Tres a uno.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona, 1960–1975",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 1975,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "dorada"
+            },
+            "cifras": [
+              {
+                "texto": "unos 3.200 dólares",
+                "valor": 3200,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1960
+                }
+              },
+              {
+                "texto": "unos 1.000",
+                "valor": 1000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 1960
+                }
+              },
+              {
+                "texto": "Tres a uno",
+                "valor": 3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "KOR",
+                  "anio": 1960
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "3 A 1",
+              "dice": "Tres"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Y no era la foto de un mal año. El Proyecto Maddison, de la Universidad de Groningen, reconstruye el ingreso de cada país hacia atrás. En 1913, el chileno promedio ya producía unas cuatro veces lo que el coreano. La ventaja tenía medio siglo.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1913: la distancia ya existía",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1913,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1913,"
+            },
+            "cifras": [
+              {
+                "texto": "unas cuatro veces",
+                "valor": 4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1913,
+                    "hasta": 1960,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "KOR",
+                  "anio": 1913
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ahora, el dato que complica la explicación de siempre. Se repite que Corea ganó porque se abrió al mundo. Pero en 1960 las exportaciones pesaban en la economía chilena casi cinco veces más que en la coreana. El que más dependía de venderle al mundo era Chile. Corea, en cambio, vivía en buena parte de la ayuda extranjera y de lo que producía para sí misma. Así que la pregunta no es si exportar. Es qué.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Exportaciones en 1960 (% del PIB)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 1960,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "exportaciones"
+            },
+            "cifras": [
+              {
+                "texto": "casi cinco veces",
+                "valor": 4.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "KOR",
+                  "anio": 1960
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "EL EXPORTADOR ERA CHILE",
+              "dice": "dependía"
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "Qué le vendía cada país al mundo",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Si Chile era más rico y más abierto, la diferencia tiene que estar en otra parte. Empecemos por lo más concreto: qué le vendía cada país al resto del mundo."
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 1962, casi nueve de cada diez dólares que Chile ganaba exportando bienes venían de minerales y metales. Sobre todo, cobre. Son datos del Banco Mundial, construidos con las estadísticas de comercio de Naciones Unidas.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Minerales y metales en las exportaciones",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MMTL.ZS.UN",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1962,
+                "hasta": 2024,
+                "etiqueta": "Minerales y metales (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1962,
+                  "texto": "9 de cada 10 dólares"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "minerales"
+            },
+            "cifras": [
+              {
+                "texto": "casi nueve de cada diez",
+                "valor": 88,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MMTL.ZS.UN",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Minerales y metales (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1962
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "COBRE",
+              "dice": "cobre."
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Corea partía de un lugar parecido. En 1962, menos de una quinta parte de lo que exportaba eran manufacturas: el resto era pescado, minerales, seda cruda. Dieciocho años después, en 1980, las manufacturas ya eran nueve de cada diez dólares. Primero textiles y zapatos. Después barcos y acero.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Manufacturas en las exportaciones",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 1962,
+                "hasta": 2024,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "KOR"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1962,
+                  "texto": "Menos de 1 de cada 5"
+                },
+                {
+                  "anio": 1980,
+                  "texto": "9 de cada 10"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "manufacturas:"
+            },
+            "cifras": [
+              {
+                "texto": "menos de una quinta parte",
+                "valor": 18,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 1962
+                }
+              },
+              {
+                "texto": "nueve de cada diez dólares",
+                "valor": 90,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 1980
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "¿Cómo se pasa del pescado a los barcos en una generación? Corea fijó metas de exportación por industria, y el crédito barato iba a las empresas que las cumplían. Así crecieron conglomerados familiares como Samsung, Hyundai o LG. En 1960, las exportaciones eran menos del 3 % de la economía coreana. En 1980 ya eran más de una cuarta parte. El modelo tuvo costos, deuda alta y mucha concentración, y los pagó más adelante.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Exportaciones de Corea (% del PIB)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "KOR"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1960,
+                  "texto": "Menos del 3 %"
+                },
+                {
+                  "anio": 1980,
+                  "texto": "Más de 1/4"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "metas"
+            },
+            "cifras": [
+              {
+                "texto": "menos del 3 %",
+                "valor": 2.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 1960
+                }
+              },
+              {
+                "texto": "más de una cuarta parte",
+                "valor": 27.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 1980
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "METAS DE EXPORTACIÓN",
+              "dice": "metas"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "La foto de hoy cuenta lo mismo. En 2024, unos 87 de cada 100 dólares que Corea exporta en bienes son manufacturas. En Chile, uno de cada ocho.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2024: cuánto de lo exportado es fabricado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              }
+            },
+            "cifras": [
+              {
+                "texto": "unos 87 de cada 100",
+                "valor": 87,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "uno de cada ocho",
+                "valor": 12.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y aquí, un matiz: Chile sí cambió. La parte de los minerales bajó de casi nueve de cada diez dólares a algo más de la mitad. Pero ese espacio no lo llenaron fábricas. Lo llenaron la fruta, el salmón, la celulosa y el vino. Los alimentos pasaron de menos de un 7 % de lo exportado en 1962 a casi una cuarta parte en 2024. Es un cambio enorme, y le dio trabajo a regiones enteras. Pero sigue siendo vender lo que da la tierra o el mar. Chile cambió de materia prima. Corea cambió de oficio.",
+            "cifras": [
+              {
+                "texto": "algo más de la mitad",
+                "valor": 56,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MMTL.ZS.UN",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Minerales y metales (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "menos de un 7 %",
+                "valor": 6.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.FOOD.ZS.UN",
+                    "paises": [
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1962
+                }
+              },
+              {
+                "texto": "casi una cuarta parte",
+                "valor": 23.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.FOOD.ZS.UN",
+                    "paises": [
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "OTRA MATERIA PRIMA",
+              "dice": "oficio."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Pero fabricar barcos tiene un problema: la fábrica hay que pagarla antes de vender el primero. Y eso nos lleva a un número que no sale en las noticias."
+          }
+        ]
+      },
+      {
+        "titulo": "La plata que se guarda para construir",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y en esta comparación pesa más que cualquier discurso."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Los economistas lo llaman formación bruta de capital: máquinas, edificios, caminos, puertos. Según el Banco Mundial, entre 1970 y 1990 Corea destinó a eso, en promedio, casi un tercio de su economía. Chile, menos de una quinta parte.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Inversión en máquinas, edificios e infraestructura",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.GDI.TOTL.ZS",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "Formación bruta de capital (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "KOR"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1979,
+                  "texto": "Corea: casi 38 %"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "formación"
+            },
+            "cifras": [
+              {
+                "texto": "casi un tercio",
+                "valor": 32,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1970,
+                    "hasta": 1990,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "KOR"
+                }
+              },
+              {
+                "texto": "menos de una quinta parte",
+                "valor": 18,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1970,
+                    "hasta": 1990,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "CHL"
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1/3 CONTRA 1/5",
+              "dice": "tercio"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Piensa en dos familias. Una gasta casi todo lo que gana. La otra, durante veinte años, aparta un tercio para herramientas y para agrandar el taller. Al principio vive peor. Después, la distancia se vuelve enorme. Con esa diferencia, las dos líneas del ingreso se acercan año tras año, y en 1982 se cruzan.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona, 1960–2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "KOR",
+                "anio": 1982,
+                "texto": "1982: se cruzan"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1982,
+                  "texto": "Corea pasa a Chile"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "líneas"
+            },
+            "cifras": [
+              {
+                "texto": "en 1982 se cruzan",
+                "valor": 1.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 1982
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1982",
+              "dice": "1982"
+            }
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero mira bien el cruce. No fue solo que Corea subiera: ese mismo año Chile se desplomó. Entre 1981 y 1983, el ingreso por persona chileno se encogió casi una quinta parte, en una crisis de deuda y de bancos. Corea no adelantó en la recta. Adelantó en la curva donde Chile frenó.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "La crisis de 1982 en Chile",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1975,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1982
+              },
+              "anotaciones": [
+                {
+                  "anio": 1982,
+                  "texto": "Crisis de la deuda"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "cruce."
+            },
+            "cifras": [
+              {
+                "texto": "casi una quinta parte",
+                "valor": -19,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1981,
+                  "anioB": 1983
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Hoy la distancia sigue ahí, aunque se mide distinto según la vara. Si se corrige por lo que cuestan las cosas en cada país, el coreano promedio produce casi el doble que el chileno. Es menos que dos veces y media, pero sigue siendo casi el doble.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona ajustado por precios",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "corrige"
+            },
+            "cifras": [
+              {
+                "texto": "casi el doble",
+                "valor": 1.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Corea también tuvo su golpe. En 1998, con la crisis asiática, la deuda de los conglomerados le pasó la cuenta y su ingreso por persona bajó más de un 5 %. La diferencia es lo que vino después: en 1999 ya estaba por encima del nivel de 1997. Caer no la sacó del camino. Caer poco y volver rápido fue parte del camino.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Corea en la crisis asiática",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "KOR"
+                ],
+                "desde": 1990,
+                "hasta": 2005,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "KOR",
+                "anio": 1998
+              },
+              "anotaciones": [
+                {
+                  "anio": 1998,
+                  "texto": "Crisis asiática"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1998,"
+            },
+            "cifras": [
+              {
+                "texto": "más de un 5 %",
+                "valor": -5.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "KOR",
+                  "anio": 1997,
+                  "anioB": 1998
+                }
+              },
+              {
+                "texto": "por encima del nivel de 1997",
+                "valor": 4.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "KOR",
+                  "anio": 1997,
+                  "anioB": 1999
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Si la historia fuera solo de fábricas y ahorro, quedaría una pieza suelta. Porque hay un tercer factor, el más citado de todos, y ahí los datos de hoy cuentan algo que pocos esperan."
+          }
+        ]
+      },
+      {
+        "titulo": "Universidad y patentes: dónde se separan",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Cuando se habla del salto coreano, casi siempre aparece la educación. Corea universalizó primero la escuela básica, después la secundaria, y empujó fuerte la formación técnica. La pregunta es qué muestran los datos de universidad, que son los que el Banco Mundial tiene completos para los dos países."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Banco Mundial, en el año 2000 la matrícula universitaria coreana, medida como tasa bruta, era el doble de la chilena: unos 75 contra unos 35. Esa tasa compara a todos los que estudian en la universidad con la población en edad de hacerlo, por eso puede pasar de cien.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Matrícula universitaria (tasa bruta)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SE.TER.ENRR",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Matrícula terciaria (% bruto)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 2000,
+                  "texto": "Corea, el doble"
+                }
+              ],
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "matrícula"
+            },
+            "cifras": [
+              {
+                "texto": "era el doble de la chilena",
+                "valor": 2.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 2000
+                }
+              },
+              {
+                "texto": "unos 75",
+                "valor": 75,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 2000
+                }
+              },
+              {
+                "texto": "unos 35",
+                "valor": 35,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2000
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "EL DOBLE EN 2000",
+              "dice": "doble"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y ahora, la sorpresa. Veinticuatro años después, la matrícula universitaria de Chile es prácticamente igual a la de Corea. Las dos pasan de cien. Chile cerró en una generación una brecha que parecía enorme. En matrícula, Chile alcanzó a Corea. En ingreso, no.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Matrícula universitaria, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SE.TER.ENRR",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Matrícula terciaria (% bruto)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "matrícula"
+            },
+            "cifras": [
+              {
+                "texto": "prácticamente igual",
+                "valor": 1.0,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "KOR",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "pasan de cien",
+                "valor": 110,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MISMA MATRÍCULA",
+              "dice": "igual"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "La diferencia aparece en lo que sale de esas aulas. En 1980, los residentes de Corea pidieron unas 1.200 patentes; los de Chile, unas 140. En 2024, los de Corea pidieron casi 196.000. Los de Chile, unas 390. Corea tiene más del doble de habitantes, pero la distancia en patentes es de cientos de veces.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Patentes pedidas por residentes",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "IP.PAT.RESD",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 1980,
+                "hasta": 2024,
+                "etiqueta": "Solicitudes de patentes de residentes",
+                "unidad": "solicitudes"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1980,
+                  "texto": "Corea: unas 1.200"
+                },
+                {
+                  "anio": 2024,
+                  "texto": "Corea: casi 196.000"
+                }
+              ],
+              "formato": {
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "patentes;"
+            },
+            "cifras": [
+              {
+                "texto": "unas 1.200 patentes",
+                "valor": 1240,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 1980
+                }
+              },
+              {
+                "texto": "unas 140",
+                "valor": 140,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1980
+                }
+              },
+              {
+                "texto": "casi 196.000",
+                "valor": 195800,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unas 390",
+                "valor": 390,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "más del doble de habitantes",
+                "valor": 2.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Población",
+                    "unidad": "personas"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 2024
+                },
+                "tolerancia": 0.1
+              },
+              {
+                "texto": "cientos de veces",
+                "valor": 502,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para alguien que vive en Santiago, Lima o Bogotá? Que en estos datos el ingreso no siguió a lo que el país tenía bajo tierra, ni solo a cuánta gente mandaba a la universidad. Siguió a lo que su economía aprendió a fabricar y a cuánto guardó para lograrlo. No es una receta: Corea también tuvo una guerra, ayuda extranjera y gobiernos militares. Pero deja una pregunta útil para leer cualquier noticia de crecimiento: qué produce el país, y no solo qué extrae. Y una segunda pregunta, menos cómoda: cuánto de lo que produce se queda trabajando para el año siguiente."
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Falta una pieza. Hay un indicador que separa a los dos países justo donde la matrícula los junta, y rara vez entra en esta comparación."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "Y queda el número que nadie mira. Corea dedica casi un 5 % de su economía a investigación y desarrollo. Chile, doce veces menos: no llega a medio punto. Según el Banco Mundial, hace quince años esa brecha era más chica. No se está cerrando: se está abriendo. Una universidad forma personas. La investigación convierte lo que esas personas saben en productos que otros quieren pagar.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "Investigación y desarrollo, 2022 (% del PIB)",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "GB.XPD.RSDV.GD.ZS",
+          "paises": [
+            "KOR",
+            "CHL"
+          ],
+          "desde": 2022,
+          "hasta": 2022,
+          "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+          "unidad": "%"
+        },
+        "destacar": {
+          "pais": "CHL"
+        },
+        "formato": {
+          "sufijo": " %",
+          "decimales": 2
+        },
+        "dice": "investigación"
+      },
+      "cifras": [
+        {
+          "texto": "casi un 5 %",
+          "valor": 4.85,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2022,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "valor",
+            "pais": "KOR",
+            "anio": 2022
+          }
+        },
+        {
+          "texto": "doce veces menos",
+          "valor": 12,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2022,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "CHL",
+            "anio": 2022
+          }
+        },
+        {
+          "texto": "hace quince años esa brecha era más chica",
+          "valor": 8.9,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2022,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "CHL",
+            "anio": 2007
+          }
+        }
+      ]
+    },
+    "remate": "Chile exportó lo que le dio la naturaleza. Corea exportó lo que aprendió a hacer.",
+    "siguiente": "En 1895, un argentino producía más que un alemán y que un francés. ¿Cómo se pierde una ventaja así? Eso viene en el próximo video.",
+    "miniatura": {
+      "texto": "3 VECES MÁS RICO",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "Chile vs Corea",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD",
+          "paises": [
+            "CHL",
+            "KOR"
+          ],
+          "desde": 1960,
+          "hasta": 2024,
+          "etiqueta": "PIB por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "CHL"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-KR"
+      },
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de minerales y metales, % de las exportaciones de mercancías (TX.VAL.MMTL.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MMTL.ZS.UN?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de manufacturas, % de las exportaciones de mercancías (TX.VAL.MANF.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MANF.ZS.UN?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de alimentos, % de las exportaciones de mercancías (TX.VAL.FOOD.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.FOOD.ZS.UN?locations=CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Formación bruta de capital, % del PIB (NE.GDI.TOTL.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Solicitudes de patentes de residentes (IP.PAT.RESD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/IP.PAT.RESD?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Población total (SP.POP.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Matrícula terciaria, % bruto (SE.TER.ENRR), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SE.TER.ENRR?locations=CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Gasto en investigación y desarrollo, % del PIB (GB.XPD.RSDV.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=CL-KR"
+      }
+    ]
+  }
+}

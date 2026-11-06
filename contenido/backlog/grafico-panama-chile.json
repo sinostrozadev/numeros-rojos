@@ -1,0 +1,246 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-panama-chile",
+  "titulo": "Panamá estaba bajo Chile en 1990. Hoy le saca un 20 %",
+  "descripcion": "¿Cuándo pasó Panamá a Chile y a Uruguay en ingreso por persona?\n\nTres líneas del Banco Mundial, ajustadas por precios, de 1990 a 2024. Panamá cruzó en 2012 y la distancia sigue creciendo.\nY a diferencia de Irlanda, su ingreso nacional queda cerca de su PIB.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#panama",
+    "#chile",
+    "#uruguay"
+  ],
+  "props": {
+    "id": "pendiente-grafico-panama-chile",
+    "gancho": {
+      "texto": "En 1990, un panameño producía menos que un chileno y que un uruguayo.",
+      "rotulo": "PANAMÁ, ÚLTIMO EN 1990",
+      "cifras": [
+        {
+          "texto": "menos que un chileno",
+          "valor": 0.94,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CHL",
+                "URY"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "PAN",
+            "paisB": "CHL",
+            "anio": 1990
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Panamá, Chile y Uruguay, 1990–2024",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "PAN",
+          "CHL",
+          "URY"
+        ],
+        "desde": 1990,
+        "hasta": 2024,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "PAN"
+      },
+      "anotaciones": [
+        {
+          "anio": 2012,
+          "texto": "Panamá pasa a Chile"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Según el Banco Mundial, con dólares que corrigen por precios, la línea dorada de Panamá sube más empinada que las otras dos durante treinta años.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Panamá, Chile y Uruguay, 1990–2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "CHL",
+              "URY"
+            ],
+            "desde": 1990,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "dorada"
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "En 2012 pasa a Chile. En 2015, a Uruguay. La pandemia lo golpea fuerte en 2020, pero al año siguiente vuelve a quedar arriba de los dos.",
+        "cifras": [
+          {
+            "texto": "En 2012 pasa a Chile",
+            "valor": 1.01,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "CHL",
+              "anio": 2012
+            }
+          },
+          {
+            "texto": "En 2015, a Uruguay",
+            "valor": 1.03,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "URY",
+              "anio": 2015
+            }
+          },
+          {
+            "texto": "vuelve a quedar arriba de los dos",
+            "valor": 1.05,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "URY",
+              "anio": 2021
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "2012",
+          "dice": "2012"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2024, un panameño produce un 20 % más que un chileno. El Canal, la banca y la logística explican buena parte. Y a diferencia de Irlanda, casi todo eso se queda en el país.",
+        "grafico": {
+          "tipo": "barras",
+          "titulo": "2024: ingreso por persona",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "URY",
+              "CHL"
+            ],
+            "desde": 2024,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          }
+        },
+        "cifras": [
+          {
+            "texto": "un 20 % más",
+            "valor": 1.2,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "CHL",
+              "anio": 2024
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "Chile vende lo que saca de la tierra. Panamá cobra por lo que pasa por su canal.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY"
+      }
+    ]
+  }
+}

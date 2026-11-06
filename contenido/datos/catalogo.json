@@ -1,0 +1,933 @@
+{
+  "comentario": "Catálogo de indicadores con licencia comercial verificada (CC BY 4.0) que conoce En Números Rojos. Lo lee generar-guiones para elegir datos. Cada entrada se comprueba con `npx tsx scripts/datos.mts verificar-catalogo` (GET real: WDI con 1 país; OWID metadata + licencia del proveedor original). Las que no devuelven datos o no son CC BY se quitan solas.",
+  "indicadores": [
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.PCAP.PP.KD",
+      "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+      "unidad": "US$ PPA",
+      "descripcion": "Producción por persona ajustada por poder de compra y por inflación (dólares internacionales constantes de 2021).",
+      "paraQue": "¿Quién es más rico de verdad y cómo cambió? La comparación estándar entre países a lo largo del tiempo (1990→).",
+      "anios": "1990–2025 (CHL, 36 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.PCAP.PP.CD",
+      "etiqueta": "PIB per cápita (PPA, US$ corrientes)",
+      "unidad": "US$ PPA",
+      "descripcion": "Producción por persona ajustada por poder de compra, en dólares internacionales de cada año.",
+      "paraQue": "Comparar niveles de vida en un año concreto sin el efecto de los tipos de cambio.",
+      "anios": "1990–2025 (CHL, 36 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.PCAP.CD",
+      "etiqueta": "PIB per cápita (US$ corrientes)",
+      "unidad": "US$",
+      "descripcion": "Producción por persona convertida a dólares al tipo de cambio de mercado de cada año.",
+      "paraQue": "¿Cuántos dólares produce cada habitante? Útil para comparar poder de compra externo (viajes, importaciones).",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.PCAP.KD",
+      "etiqueta": "PIB per cápita (US$ de 2015)",
+      "unidad": "US$ 2015",
+      "descripcion": "Producción por persona en dólares constantes de 2015 (sin ajuste por poder de compra); serie larga desde 1960.",
+      "paraQue": "Evolución de largo plazo desde 1960 de un país: ¿cuántas veces se multiplicó su ingreso?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.MKTP.CD",
+      "etiqueta": "PIB (US$ corrientes)",
+      "unidad": "US$",
+      "descripcion": "Tamaño total de la economía en dólares corrientes.",
+      "paraQue": "¿Qué economía es más grande? Rankings de tamaño, 'X equivale a tantos países juntos'.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.MKTP.KD.ZG",
+      "etiqueta": "Crecimiento del PIB",
+      "unidad": "% anual",
+      "descripcion": "Variación real anual del PIB.",
+      "paraQue": "¿Cuándo creció y cuándo cayó? Crisis, décadas perdidas, milagros.",
+      "anios": "1961–2025 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.PCAP.KD.ZG",
+      "etiqueta": "Crecimiento del PIB per cápita",
+      "unidad": "% anual",
+      "descripcion": "Variación real anual del PIB por persona.",
+      "paraQue": "¿Mejoró el ingreso por persona o solo creció la población?",
+      "anios": "1961–2025 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FP.CPI.TOTL.ZG",
+      "etiqueta": "Inflación (precios al consumidor)",
+      "unidad": "% anual",
+      "descripcion": "Variación anual del índice de precios al consumidor.",
+      "paraQue": "¿Cuánto subieron los precios? Hiperinflaciones, estabilización, comparar con vecinos.",
+      "anios": "1971–2025 (CHL, 55 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.DEFL.KD.ZG",
+      "etiqueta": "Inflación (deflactor del PIB)",
+      "unidad": "% anual",
+      "descripcion": "Variación anual del nivel general de precios de la economía.",
+      "paraQue": "Inflación con serie más larga cuando falta el IPC.",
+      "anios": "1961–2025 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GC.DOD.TOTL.GD.ZS",
+      "etiqueta": "Deuda del gobierno central",
+      "unidad": "% del PIB",
+      "descripcion": "Deuda bruta del gobierno central como porcentaje del PIB. OJO: cobertura irregular (Chile solo 1995–2000 en WDI); comprobar el país antes de usarlo.",
+      "paraQue": "¿Cuánto debe el Estado comparado con lo que produce el país?",
+      "anios": "1995–2000 (CHL, 6 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SL.UEM.TOTL.ZS",
+      "etiqueta": "Desempleo",
+      "unidad": "% de la fuerza laboral",
+      "descripcion": "Desempleo total (estimación modelada de la OIT).",
+      "paraQue": "¿Cuánta gente busca trabajo y no lo encuentra? Comparable entre países.",
+      "anios": "1991–2025 (CHL, 35 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SL.UEM.1524.ZS",
+      "etiqueta": "Desempleo juvenil (15–24)",
+      "unidad": "%",
+      "descripcion": "Desempleo de jóvenes de 15 a 24 años (estimación modelada de la OIT).",
+      "paraQue": "¿Qué tan difícil es el primer empleo?",
+      "anios": "1991–2025 (CHL, 35 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NE.EXP.GNFS.ZS",
+      "etiqueta": "Exportaciones",
+      "unidad": "% del PIB",
+      "descripcion": "Exportaciones de bienes y servicios como porcentaje del PIB.",
+      "paraQue": "¿Cuánto vive el país de venderle al mundo?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NE.IMP.GNFS.ZS",
+      "etiqueta": "Importaciones",
+      "unidad": "% del PIB",
+      "descripcion": "Importaciones de bienes y servicios como porcentaje del PIB.",
+      "paraQue": "¿Cuánto depende el país de comprar afuera?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NE.TRD.GNFS.ZS",
+      "etiqueta": "Comercio exterior",
+      "unidad": "% del PIB",
+      "descripcion": "Exportaciones más importaciones como porcentaje del PIB (apertura comercial).",
+      "paraQue": "¿Qué tan abierta es la economía? Proteccionismo vs apertura.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "BX.TRF.PWKR.DT.GD.ZS",
+      "etiqueta": "Remesas recibidas",
+      "unidad": "% del PIB",
+      "descripcion": "Remesas personales recibidas como porcentaje del PIB.",
+      "paraQue": "¿Cuánto de la economía lo mandan los que emigraron? (Centroamérica, Haití).",
+      "anios": "1983–2025 (CHL, 30 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "BX.TRF.PWKR.CD.DT",
+      "etiqueta": "Remesas recibidas (US$)",
+      "unidad": "US$",
+      "descripcion": "Remesas personales recibidas, en dólares corrientes.",
+      "paraQue": "¿Cuántos dólares entran por remesas? México, Guatemala.",
+      "anios": "1983–2025 (CHL, 30 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SI.POV.GINI",
+      "etiqueta": "Índice de Gini",
+      "unidad": "0–100",
+      "descripcion": "Desigualdad del ingreso o consumo (0 = igualdad total, 100 = uno se lleva todo).",
+      "paraQue": "¿Qué tan desigual es el país y cambió con el tiempo?",
+      "anios": "1987–2024 (CHL, 17 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SI.POV.DDAY",
+      "etiqueta": "Pobreza extrema (US$ 3/día, PPA 2021)",
+      "unidad": "% de la población",
+      "descripcion": "Población que vive con menos de 3 dólares diarios (línea internacional, PPA 2021).",
+      "paraQue": "¿Cuánta gente vive en pobreza extrema y cuánto bajó?",
+      "anios": "1987–2024 (CHL, 17 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SI.POV.UMIC",
+      "etiqueta": "Pobreza (US$ 8,30/día, PPA 2021)",
+      "unidad": "% de la población",
+      "descripcion": "Población bajo la línea de pobreza de países de ingreso medio alto.",
+      "paraQue": "Pobreza con una línea más realista para América Latina.",
+      "anios": "1987–2024 (CHL, 17 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SI.POV.NAHC",
+      "etiqueta": "Pobreza (línea nacional)",
+      "unidad": "% de la población",
+      "descripcion": "Población bajo la línea de pobreza definida por cada país.",
+      "paraQue": "La cifra oficial de pobreza de cada país (no comparable entre países).",
+      "anios": "1987–2022 (CHL, 16 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SI.DST.10TH.10",
+      "etiqueta": "Ingreso del 10 % más rico",
+      "unidad": "% del ingreso",
+      "descripcion": "Parte del ingreso o consumo que concentra el 10 % más rico.",
+      "paraQue": "¿Cuánto se lleva el decil más rico?",
+      "anios": "1987–2024 (CHL, 17 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SI.DST.FRST.10",
+      "etiqueta": "Ingreso del 10 % más pobre",
+      "unidad": "% del ingreso",
+      "descripcion": "Parte del ingreso o consumo del 10 % más pobre.",
+      "paraQue": "Comparar con el 10 % más rico: 'el decil de arriba gana X veces el de abajo'.",
+      "anios": "1987–2024 (CHL, 17 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.DYN.LE00.IN",
+      "etiqueta": "Esperanza de vida al nacer",
+      "unidad": "años",
+      "descripcion": "Años que viviría un recién nacido con la mortalidad actual.",
+      "paraQue": "¿Se vive mejor? El contrapeso humano de las cifras de ingreso.",
+      "anios": "1960–2024 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.POP.TOTL",
+      "etiqueta": "Población",
+      "unidad": "personas",
+      "descripcion": "Población total residente.",
+      "paraQue": "Tamaño del país; base para pasar totales a 'por persona'.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.POP.GROW",
+      "etiqueta": "Crecimiento de la población",
+      "unidad": "% anual",
+      "descripcion": "Variación anual de la población.",
+      "paraQue": "¿Crece la economía más rápido que la población?",
+      "anios": "1961–2025 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.DYN.TFRT.IN",
+      "etiqueta": "Hijos por mujer",
+      "unidad": "hijos",
+      "descripcion": "Tasa global de fecundidad.",
+      "paraQue": "Envejecimiento, pensiones del futuro, bono demográfico.",
+      "anios": "1960–2024 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.POP.65UP.TO.ZS",
+      "etiqueta": "Población de 65 años o más",
+      "unidad": "% de la población",
+      "descripcion": "Parte de la población con 65 años o más.",
+      "paraQue": "¿Quién va a pagar las pensiones? Envejecimiento comparado.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.URB.TOTL.IN.ZS",
+      "etiqueta": "Población urbana",
+      "unidad": "% de la población",
+      "descripcion": "Parte de la población que vive en zonas urbanas.",
+      "paraQue": "Urbanización y cambio de estructura productiva.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SM.POP.NETM",
+      "etiqueta": "Migración neta",
+      "unidad": "personas",
+      "descripcion": "Inmigrantes menos emigrantes en el año.",
+      "paraQue": "¿El país recibe o expulsa gente? (Venezuela, Chile, Argentina).",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SP.DYN.IMRT.IN",
+      "etiqueta": "Mortalidad infantil",
+      "unidad": "por 1.000 nacidos vivos",
+      "descripcion": "Muertes antes del primer año por cada 1.000 nacidos vivos.",
+      "paraQue": "Desarrollo humano real más allá del PIB.",
+      "anios": "1960–2024 (CHL, 65 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "BX.KLT.DINV.WD.GD.ZS",
+      "etiqueta": "Inversión extranjera directa (entradas)",
+      "unidad": "% del PIB",
+      "descripcion": "Entradas netas de inversión extranjera directa como porcentaje del PIB.",
+      "paraQue": "¿Confían los inversionistas de afuera? Booms y fugas.",
+      "anios": "1970–2025 (CHL, 56 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NE.GDI.TOTL.ZS",
+      "etiqueta": "Inversión (formación bruta de capital)",
+      "unidad": "% del PIB",
+      "descripcion": "Inversión en capital (maquinaria, infraestructura, construcción, inventarios).",
+      "paraQue": "¿Cuánto invierte el país en su futuro? Corea vs América Latina.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NE.GDI.FTOT.ZS",
+      "etiqueta": "Inversión fija",
+      "unidad": "% del PIB",
+      "descripcion": "Formación bruta de capital fijo como porcentaje del PIB.",
+      "paraQue": "Inversión sin inventarios: la que construye capacidad productiva.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GNS.ICTR.ZS",
+      "etiqueta": "Ahorro bruto",
+      "unidad": "% del PIB",
+      "descripcion": "Ahorro nacional bruto como porcentaje del PIB.",
+      "paraQue": "¿Ahorra el país lo suficiente para invertir sin endeudarse afuera?",
+      "anios": "1975–2025 (CHL, 51 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SE.XPD.TOTL.GD.ZS",
+      "etiqueta": "Gasto público en educación",
+      "unidad": "% del PIB",
+      "descripcion": "Gasto del gobierno en educación como porcentaje del PIB.",
+      "paraQue": "¿Cuánto pone el Estado en educación? Comparar con resultados.",
+      "anios": "1974–2022 (CHL, 36 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SH.XPD.CHEX.GD.ZS",
+      "etiqueta": "Gasto total en salud",
+      "unidad": "% del PIB",
+      "descripcion": "Gasto corriente en salud (público y privado) como porcentaje del PIB.",
+      "paraQue": "¿Cuánto gasta el país en salud y quién paga?",
+      "anios": "2000–2024 (CHL, 25 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SH.XPD.CHEX.PC.CD",
+      "etiqueta": "Gasto en salud por persona",
+      "unidad": "US$",
+      "descripcion": "Gasto corriente en salud por habitante, en dólares corrientes.",
+      "paraQue": "Comparar cuánto se gasta en salud por cada persona.",
+      "anios": "2000–2024 (CHL, 25 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SH.XPD.OOPC.CH.ZS",
+      "etiqueta": "Gasto de bolsillo en salud",
+      "unidad": "% del gasto en salud",
+      "descripcion": "Parte del gasto en salud que pagan directamente los hogares.",
+      "paraQue": "¿Cuánto de la salud sale del bolsillo de la gente?",
+      "anios": "2000–2024 (CHL, 25 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "PA.NUS.FCRF",
+      "etiqueta": "Tipo de cambio oficial",
+      "unidad": "moneda local por US$",
+      "descripcion": "Tipo de cambio oficial, promedio del año.",
+      "paraQue": "Devaluaciones: ¿cuántos pesos costaba un dólar?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FI.RES.TOTL.CD",
+      "etiqueta": "Reservas internacionales",
+      "unidad": "US$",
+      "descripcion": "Reservas totales incluido el oro, en dólares corrientes.",
+      "paraQue": "¿Cuánto colchón en dólares tiene el país ante una crisis?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FI.RES.TOTL.MO",
+      "etiqueta": "Reservas en meses de importaciones",
+      "unidad": "meses",
+      "descripcion": "Reservas totales expresadas en meses de importaciones.",
+      "paraQue": "¿Cuántos meses podría importar el país solo con sus reservas?",
+      "anios": "1975–2025 (CHL, 51 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GC.TAX.TOTL.GD.ZS",
+      "etiqueta": "Recaudación tributaria",
+      "unidad": "% del PIB",
+      "descripcion": "Impuestos recaudados por el gobierno central como porcentaje del PIB.",
+      "paraQue": "¿Cuánto cobra el Estado en impuestos comparado con otros?",
+      "anios": "1972–2024 (CHL, 53 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GC.REV.XGRT.GD.ZS",
+      "etiqueta": "Ingresos del gobierno",
+      "unidad": "% del PIB",
+      "descripcion": "Ingresos del gobierno central (sin donaciones) como porcentaje del PIB.",
+      "paraQue": "Tamaño del Estado por el lado de los ingresos.",
+      "anios": "1972–2024 (CHL, 53 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GC.XPN.TOTL.GD.ZS",
+      "etiqueta": "Gasto del gobierno",
+      "unidad": "% del PIB",
+      "descripcion": "Gasto del gobierno central como porcentaje del PIB.",
+      "paraQue": "Tamaño del Estado por el lado del gasto.",
+      "anios": "1972–2023 (CHL, 52 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GC.NLD.TOTL.GD.ZS",
+      "etiqueta": "Superávit o déficit fiscal",
+      "unidad": "% del PIB",
+      "descripcion": "Préstamo neto (+) o endeudamiento neto (−) del gobierno central.",
+      "paraQue": "¿El Estado gasta más de lo que recauda? Años de déficit.",
+      "anios": "1972–2024 (CHL, 53 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GC.XPN.INTP.RV.ZS",
+      "etiqueta": "Pago de intereses de la deuda",
+      "unidad": "% de los ingresos",
+      "descripcion": "Intereses pagados como porcentaje de los ingresos del gobierno.",
+      "paraQue": "¿Cuánto de lo que recauda el Estado se va en intereses?",
+      "anios": "1974–2024 (CHL, 51 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "BN.CAB.XOKA.GD.ZS",
+      "etiqueta": "Cuenta corriente",
+      "unidad": "% del PIB",
+      "descripcion": "Saldo de la cuenta corriente de la balanza de pagos.",
+      "paraQue": "¿El país gasta más de lo que gana con el mundo?",
+      "anios": "1975–2025 (CHL, 51 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "DT.DOD.DECT.GN.ZS",
+      "etiqueta": "Deuda externa",
+      "unidad": "% del INB",
+      "descripcion": "Deuda externa total (pública y privada) como porcentaje del ingreso nacional bruto.",
+      "paraQue": "¿Cuánto le debe el país al resto del mundo? Crisis de deuda.",
+      "anios": "1970–2024 (MEX, 55 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FR.INR.LEND",
+      "etiqueta": "Tasa de interés de préstamos",
+      "unidad": "%",
+      "descripcion": "Tasa de interés activa de los bancos.",
+      "paraQue": "¿Qué tan caro es pedir prestado?",
+      "anios": "1985–2018 (CHL, 34 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FR.INR.RINR",
+      "etiqueta": "Tasa de interés real",
+      "unidad": "%",
+      "descripcion": "Tasa de préstamos ajustada por inflación (deflactor del PIB).",
+      "paraQue": "¿Pierde o gana plata el que ahorra / el que presta?",
+      "anios": "1985–2018 (CHL, 34 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FS.AST.PRVT.GD.ZS",
+      "etiqueta": "Crédito al sector privado",
+      "unidad": "% del PIB",
+      "descripcion": "Crédito interno otorgado al sector privado.",
+      "paraQue": "Profundidad financiera: ¿consiguen crédito empresas y familias?",
+      "anios": "2001–2025 (CHL, 25 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "CM.MKT.LCAP.GD.ZS",
+      "etiqueta": "Capitalización bursátil",
+      "unidad": "% del PIB",
+      "descripcion": "Valor de mercado de las empresas listadas en bolsa.",
+      "paraQue": "¿Qué tan grande es la bolsa local frente a la economía?",
+      "anios": "1991–2025 (CHL, 35 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NV.IND.MANF.ZS",
+      "etiqueta": "Manufactura",
+      "unidad": "% del PIB",
+      "descripcion": "Valor agregado de la industria manufacturera.",
+      "paraQue": "Desindustrialización: ¿el país fabrica menos que antes?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NV.AGR.TOTL.ZS",
+      "etiqueta": "Agricultura, silvicultura y pesca",
+      "unidad": "% del PIB",
+      "descripcion": "Valor agregado del sector agropecuario.",
+      "paraQue": "Peso del campo en la economía.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NV.SRV.TOTL.ZS",
+      "etiqueta": "Servicios",
+      "unidad": "% del PIB",
+      "descripcion": "Valor agregado de los servicios.",
+      "paraQue": "Economía de servicios vs industrial.",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.TOTL.RT.ZS",
+      "etiqueta": "Rentas de recursos naturales",
+      "unidad": "% del PIB",
+      "descripcion": "Rentas del petróleo, gas, carbón, minerales y bosques.",
+      "paraQue": "¿Cuánto depende el país de lo que saca de la tierra? (Venezuela, Chile, Bolivia).",
+      "anios": "1970–2021 (CHL, 52 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.MINR.RT.ZS",
+      "etiqueta": "Rentas mineras",
+      "unidad": "% del PIB",
+      "descripcion": "Rentas de minerales (cobre, litio, oro…).",
+      "paraQue": "El peso del cobre/litio en la economía.",
+      "anios": "1970–2021 (CHL, 52 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GDP.PETR.RT.ZS",
+      "etiqueta": "Rentas del petróleo",
+      "unidad": "% del PIB",
+      "descripcion": "Rentas del petróleo como porcentaje del PIB.",
+      "paraQue": "Dependencia petrolera (Venezuela, Ecuador, México).",
+      "anios": "1970–2021 (CHL, 52 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "TX.VAL.TECH.MF.ZS",
+      "etiqueta": "Exportaciones de alta tecnología",
+      "unidad": "% de exportaciones manufactureras",
+      "descripcion": "Parte de las exportaciones de manufacturas que son de alta tecnología.",
+      "paraQue": "¿Qué vende el país: cobre o chips?",
+      "anios": "2007–2024 (CHL, 18 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "GB.XPD.RSDV.GD.ZS",
+      "etiqueta": "Gasto en investigación y desarrollo",
+      "unidad": "% del PIB",
+      "descripcion": "Gasto en I+D como porcentaje del PIB.",
+      "paraQue": "¿Cuánto apuesta el país a la innovación? Corea vs América Latina.",
+      "anios": "2007–2022 (CHL, 16 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "IP.PAT.RESD",
+      "etiqueta": "Solicitudes de patentes (residentes)",
+      "unidad": "solicitudes",
+      "descripcion": "Solicitudes de patentes presentadas por residentes del país.",
+      "paraQue": "Innovación propia medida en patentes.",
+      "anios": "1980–2024 (CHL, 45 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SL.TLF.CACT.FE.ZS",
+      "etiqueta": "Participación laboral femenina",
+      "unidad": "% de mujeres 15+",
+      "descripcion": "Mujeres de 15 años o más que trabajan o buscan trabajo.",
+      "paraQue": "¿Cuántas mujeres están en el mercado laboral?",
+      "anios": "1990–2025 (CHL, 36 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SL.EMP.VULN.ZS",
+      "etiqueta": "Empleo vulnerable",
+      "unidad": "% del empleo",
+      "descripcion": "Trabajadores por cuenta propia y familiares no remunerados.",
+      "paraQue": "Aproximación a la informalidad laboral.",
+      "anios": "1991–2025 (CHL, 35 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SL.GDP.PCAP.EM.KD",
+      "etiqueta": "PIB por persona ocupada",
+      "unidad": "US$ PPA",
+      "descripcion": "Productividad laboral: PIB por trabajador (PPA constante).",
+      "paraQue": "¿Cuánto produce cada trabajador? La raíz de los sueldos.",
+      "anios": "1991–2025 (CHL, 35 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "SE.TER.ENRR",
+      "etiqueta": "Matrícula en educación superior",
+      "unidad": "% bruto",
+      "descripcion": "Tasa bruta de matrícula terciaria.",
+      "paraQue": "¿Cuántos jóvenes llegan a la universidad?",
+      "anios": "2000–2024 (CHL, 24 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "IT.NET.USER.ZS",
+      "etiqueta": "Uso de internet",
+      "unidad": "% de la población",
+      "descripcion": "Personas que usan internet.",
+      "paraQue": "Adopción digital comparada.",
+      "anios": "1990–2024 (CHL, 34 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "EG.USE.PCAP.KG.OE",
+      "etiqueta": "Consumo de energía por persona",
+      "unidad": "kg equiv. de petróleo",
+      "descripcion": "Uso de energía primaria por habitante.",
+      "paraQue": "Energía y desarrollo.",
+      "anios": "1990–2024 (CHL, 35 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GNP.PCAP.CD",
+      "etiqueta": "Ingreso nacional bruto per cápita (Atlas)",
+      "unidad": "US$",
+      "descripcion": "INB por persona, método Atlas: es el que usa el Banco Mundial para clasificar países por ingreso.",
+      "paraQue": "¿Es un país 'de ingreso alto'? La clasificación oficial del Banco Mundial.",
+      "anios": "1962–2025 (CHL, 64 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "gdp-per-capita-maddison-project-database",
+      "etiqueta": "PIB per cápita (Maddison, US$ de 2011)",
+      "unidad": "US$ 2011",
+      "descripcion": "PIB per cápita de muy largo plazo (desde 1820 o antes), Maddison Project Database 2023.",
+      "paraQue": "Historia de 100–200 años: '¿Argentina era más rica que Francia en 1900?'",
+      "anios": "1-2022",
+      "proveedor": "Bolt and van Zanden – Maddison Project Database 2023",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "gdp-per-capita-penn-world-table",
+      "etiqueta": "PIB per cápita (Penn World Table)",
+      "unidad": "US$ PPA 2021",
+      "descripcion": "PIB per cápita PPA desde 1950, Penn World Table.",
+      "paraQue": "Serie desde 1950 cuando el Banco Mundial empieza en 1990 (PPA).",
+      "anios": "1950-2023",
+      "proveedor": "Feenstra et al. – Penn World Table (2025)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "labor-productivity-per-hour-pennworldtable",
+      "etiqueta": "Productividad por hora trabajada",
+      "unidad": "US$ PPA por hora",
+      "descripcion": "PIB por hora trabajada, Penn World Table.",
+      "paraQue": "¿Se trabaja mucho y se produce poco? Productividad comparada.",
+      "anios": "1950-2023",
+      "proveedor": "Feenstra et al. – Penn World Table (2025)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "share-of-population-in-extreme-poverty",
+      "etiqueta": "Pobreza extrema (US$ 3/día)",
+      "unidad": "% de la población",
+      "descripcion": "Población bajo la línea internacional de pobreza extrema (Banco Mundial PIP).",
+      "paraQue": "Caída de la pobreza extrema por país y en el mundo.",
+      "anios": "1963-2026",
+      "proveedor": "World Bank Poverty and Inequality Platform (2026)",
+      "licenciaOrigen": "CC0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "unemployment-rate",
+      "etiqueta": "Desempleo (OIT)",
+      "unidad": "%",
+      "descripcion": "Tasa de desempleo modelada por la OIT.",
+      "paraQue": "Desempleo comparable desde 1991.",
+      "anios": "1991-2025",
+      "proveedor": "ILO Modelled Estimates, via World Bank (2026)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "co-emissions-per-capita",
+      "etiqueta": "Emisiones de CO₂ por persona",
+      "unidad": "t por persona",
+      "descripcion": "Emisiones de CO₂ fósil por habitante (Global Carbon Budget).",
+      "paraQue": "Desarrollo y energía: ¿quién contamina más por persona?",
+      "anios": "1750-2024",
+      "proveedor": "Global Carbon Budget (2025); Population based on various sources (2024)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "population",
+      "etiqueta": "Población (serie histórica)",
+      "unidad": "personas",
+      "descripcion": "Población de muy largo plazo (HYDE, Gapminder, ONU).",
+      "paraQue": "Población antes de 1960.",
+      "anios": "-10000-2023",
+      "proveedor": "HYDE (2023); Gapminder (2022); UN WPP (2024)",
+      "licenciaOrigen": "CC BY 4.0 · CC BY 3.0 IGO",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "human-development-index",
+      "etiqueta": "Índice de Desarrollo Humano",
+      "unidad": "0–1",
+      "descripcion": "IDH del PNUD (salud, educación e ingreso).",
+      "paraQue": "¿Desarrollo más allá del PIB?",
+      "anios": "1990-2023",
+      "proveedor": "UNDP, Human Development Report (2025)",
+      "licenciaOrigen": "CC BY 3.0 IGO",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "trade-as-share-of-gdp",
+      "etiqueta": "Comercio exterior (% del PIB)",
+      "unidad": "%",
+      "descripcion": "Exportaciones más importaciones como porcentaje del PIB.",
+      "paraQue": "Apertura comercial de largo plazo.",
+      "anios": "1960-2025",
+      "proveedor": "National statistical organizations and central banks, OECD national accounts, and World Bank staff estimates (2026)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "gini-coefficient-wid",
+      "etiqueta": "Gini antes de impuestos (WID)",
+      "unidad": "0–1",
+      "descripcion": "Desigualdad del ingreso antes de impuestos (World Inequality Database).",
+      "paraQue": "Desigualdad de largo plazo y comparable.",
+      "anios": "1820-2024",
+      "proveedor": "World Inequality Database (WID.world) (2026)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "tax-revenues-as-a-share-of-gdp-unu-wider",
+      "etiqueta": "Recaudación (incl. cotizaciones)",
+      "unidad": "% del PIB",
+      "descripcion": "Impuestos incluidas las cotizaciones sociales (UNU-WIDER).",
+      "paraQue": "Carga tributaria total comparada.",
+      "anios": "1980-2023",
+      "proveedor": "UNU-WIDER Government Revenue Dataset (2025)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "literacy",
+      "etiqueta": "Alfabetización adulta",
+      "unidad": "%",
+      "descripcion": "Tasa de alfabetización de adultos (UNESCO).",
+      "paraQue": "Educación básica comparada.",
+      "anios": "1970-2024",
+      "proveedor": "UNESCO Institute for Statistics (2026)",
+      "licenciaOrigen": "CC BY 3.0 IGO",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "gdp-per-capita-worldbank",
+      "etiqueta": "PIB per cápita (PPA, Banco Mundial vía OWID)",
+      "unidad": "US$ PPA 2021",
+      "descripcion": "PIB per cápita PPA constante, misma serie del Banco Mundial servida por OWID (incluye agregados regionales de OWID).",
+      "paraQue": "Respaldo del WDI NY.GDP.PCAP.PP.KD con regiones OWID.",
+      "anios": "1990-2025",
+      "proveedor": "Eurostat, OECD, IMF, and World Bank (2026)",
+      "licenciaOrigen": "CC BY 4.0",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "share-of-population-urban",
+      "etiqueta": "Población urbana",
+      "unidad": "%",
+      "descripcion": "Parte de la población que vive en ciudades.",
+      "paraQue": "Urbanización comparada.",
+      "anios": "1950-2025",
+      "proveedor": "United Nations Department of Economic and Social Affairs, Population Division (2025)",
+      "licenciaOrigen": "CC BY 3.0 IGO",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "owid",
+      "indicador": "population-growth-rates",
+      "etiqueta": "Crecimiento de la población",
+      "unidad": "%",
+      "descripcion": "Tasa anual de crecimiento de la población (ONU).",
+      "paraQue": "Bono demográfico y envejecimiento.",
+      "anios": "1950-2023",
+      "proveedor": "UN, World Population Prospects (2024)",
+      "licenciaOrigen": "CC BY 3.0 IGO",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "TX.VAL.MMTL.ZS.UN",
+      "etiqueta": "Exportaciones de minerales y metales",
+      "unidad": "% de exportaciones de bienes",
+      "descripcion": "Minerales y metales como parte de las exportaciones de bienes.",
+      "paraQue": "¿Cuánto de lo que vende el país es cobre, hierro o litio?",
+      "anios": "1962–2025 (CHL, 62 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "TX.VAL.MANF.ZS.UN",
+      "etiqueta": "Exportaciones de manufacturas",
+      "unidad": "% de exportaciones de bienes",
+      "descripcion": "Manufacturas como parte de las exportaciones de bienes.",
+      "paraQue": "¿Vende productos fabricados o materias primas?",
+      "anios": "1962–2025 (CHL, 62 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NE.CON.PRVT.PC.KD",
+      "etiqueta": "Consumo de los hogares por persona",
+      "unidad": "US$ de 2015",
+      "descripcion": "Gasto de consumo final de los hogares por habitante, dólares constantes de 2015.",
+      "paraQue": "Cuando el PIB engaña (Irlanda): ¿cuánto consumen de verdad las familias?",
+      "anios": "1960–2025 (CHL, 66 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "NY.GNP.PCAP.PP.CD",
+      "etiqueta": "Ingreso nacional bruto per cápita (PPA)",
+      "unidad": "US$ PPA",
+      "descripcion": "INB por persona ajustado por poder de compra: descuenta las utilidades que se van al extranjero.",
+      "paraQue": "PIB vs INB: ¿cuánto del ingreso se queda en el país?",
+      "anios": "1990–2025 (CHL, 36 años)",
+      "verificado": "2026-11-05"
+    },
+    {
+      "fuente": "wdi",
+      "indicador": "FP.CPI.TOTL",
+      "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+      "unidad": "índice",
+      "descripcion": "Nivel de precios al consumidor, base 2010.",
+      "paraQue": "Inflación acumulada entre dos años ('lo que costaba 100 hoy cuesta…').",
+      "anios": "1970–2025 (CHL, 56 años)",
+      "verificado": "2026-11-05"
+    }
+  ],
+  "verificadoEn": "2026-11-05",
+  "descartados": [
+    "2026-11-05 owid annual-working-hours-per-worker: licencia del proveedor no es CC BY: CC BY 4.0 · © 2005 Huberman and Minns",
+    "2026-11-05 owid life-expectancy: licencia del proveedor no es CC BY: CC BY 4.0 · CC BY 3.0 IGO · CC0 1.0 Universal · JSTOR terms",
+    "2026-11-05 owid mean-years-of-schooling-long-run: licencia del proveedor no es CC BY: 2021 by Robert J. Barro and Jong-Wha Lee.",
+    "2026-11-05 owid child-mortality: licencia del proveedor no es CC BY: Copyright © UNICEF · CC BY 4.0 · CC BY 4.0# License (same as origin.license, for backwards compatibility)",
+    "2026-11-05 owid military-spending-as-a-share-of-gdp-sipri: licencia del proveedor no es CC BY: SIPRI Terms and Conditions"
+  ]
+}

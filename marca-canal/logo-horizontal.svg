@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="640" height="120">
+  <rect width="640" height="120" fill="#111418"/>
+  <g transform="translate(10,10) scale(1)">
+    <path d="M18 84 H84" stroke="#3A4350" stroke-width="4" stroke-linecap="round"/>
+    <path d="M18 64 L36 46 L50 54 L62 26" fill="none" stroke="#2ECC71" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M62 26 L80 70" fill="none" stroke="#FF4D4D" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="80" cy="70" r="8.5" fill="#FF4D4D"/>
+  </g>
+  <text x="122" y="64" font-family="'Bricolage Grotesque','Arial Black',sans-serif" font-weight="800" font-size="52" fill="#FFFFFF" letter-spacing="-1">En Números <tspan fill="#FF4D4D">Rojos</tspan></text>
+  <text x="124" y="96" font-family="Inter,Arial,sans-serif" font-weight="500" font-size="19" fill="#AEB7C2">La economía, con la cuenta en pantalla.</text>
+</svg>

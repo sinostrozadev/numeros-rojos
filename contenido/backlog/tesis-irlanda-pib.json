@@ -1,0 +1,1337 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-irlanda-pib",
+  "titulo": "Irlanda creció un 25 % en un año. Su gente, un 2 %",
+  "descripcion": "¿Cómo creció la economía de Irlanda un 25 % en 2015 si el consumo de su gente subió apenas un 2 %?\n\nHacemos la autopsia de un número: el PIB irlandés. Seguimos la inversión extranjera, las patentes y las exportaciones registradas en Dublín, y comparamos lo que se produce en Irlanda con lo que se queda en Irlanda.\nDespués aplicamos la misma lupa a Chile y Panamá: en América Latina la brecha entre PIB e ingreso existe, pero es mucho más chica.\nEl dato final: un irlandés consume prácticamente lo mismo que un alemán.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.PP.CD, NY.GNP.PCAP.PP.CD, BX.KLT.DINV.WD.GD.ZS, NE.EXP.GNFS.ZS, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org\n- Comisión Europea, IP/16/2923 https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923\n- CSO Irlanda, Modified GNI https://www.cso.ie/en/interactivezone/statisticsexplained/nationalaccountsexplained/modifiedgni/\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#irlanda",
+    "#pib",
+    "#latinoamerica",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-irlanda-pib",
+    "cabecera": "IRLANDA · PIB CONTRA INGRESO · 2015–2025",
+    "gancho": {
+      "texto": "En 2015, la economía de Irlanda creció un 25 %. En un solo año. Ese mismo año, lo que gastaba cada irlandés en su vida diaria subió un 2 %. ¿Dónde quedó todo lo demás?",
+      "rotulo": "+25 % EN UN AÑO",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2015: la economía contra el bolsillo",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.MKTP.KD.ZG",
+          "paises": [
+            "IRL",
+            "DEU",
+            "CHL"
+          ],
+          "desde": 2015,
+          "hasta": 2015,
+          "etiqueta": "Crecimiento del PIB en 2015 (% real)",
+          "unidad": "%"
+        },
+        "destacar": {
+          "pais": "IRL"
+        },
+        "formato": {
+          "sufijo": " %",
+          "decimales": 1
+        }
+      },
+      "cifras": [
+        {
+          "texto": "un 25 %",
+          "valor": 25,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.MKTP.KD.ZG",
+              "paises": [
+                "IRL",
+                "DEU",
+                "CHL"
+              ],
+              "desde": 2000,
+              "hasta": 2025,
+              "etiqueta": "Crecimiento del PIB (% anual, real)",
+              "unidad": "%"
+            },
+            "operacion": "valor",
+            "pais": "IRL",
+            "anio": 2015
+          }
+        },
+        {
+          "texto": "subió un 2 %",
+          "valor": 2.2,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "IRL",
+                "DEU"
+              ],
+              "desde": 2000,
+              "hasta": 2024,
+              "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "variacion",
+            "pais": "IRL",
+            "anio": 2014,
+            "anioB": 2015
+          },
+          "tolerancia": 0.15
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber cómo un país puede crecer en el papel sin crecer en el bolsillo, y qué tres números mirar para que no te pase lo mismo al leer una noticia.",
+    "indice": [
+      "El salto de 2015",
+      "Quién llegó y por qué",
+      "PIB contra ingreso",
+      "El bolsillo"
+    ],
+    "estructura": "autopsia",
+    "capitulos": [
+      {
+        "titulo": "El salto de 2015 en el PIB de Irlanda",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Para que una economía crezca un 25 %, lo normal es esperar una década. Hacen falta fábricas nuevas, más trabajadores, más horas, más inversión. Irlanda lo hizo en doce meses, y sin que sus calles cambiaran. No hubo un descubrimiento de petróleo, ni una ola de inmigrantes, ni una fiebre de construcción. El economista Paul Krugman le puso nombre a lo que pasó: economía de duendes."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Banco Mundial, en 2015 el PIB irlandés creció un 25 %, ya descontada la inflación. Ese mismo año, Alemania creció menos de un 2 %. Chile, algo más de un 2 %.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Crecimiento del PIB en 2015 (%)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.MKTP.KD.ZG",
+                "paises": [
+                  "IRL",
+                  "DEU",
+                  "CHL"
+                ],
+                "desde": 2015,
+                "hasta": 2015,
+                "etiqueta": "Crecimiento del PIB en 2015 (% real)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "2015"
+            },
+            "cifras": [
+              {
+                "texto": "creció un 25 %",
+                "valor": 25,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.MKTP.KD.ZG",
+                    "paises": [
+                      "IRL",
+                      "DEU",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB (% anual, real)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2015
+                }
+              },
+              {
+                "texto": "menos de un 2 %",
+                "valor": 1.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.MKTP.KD.ZG",
+                    "paises": [
+                      "IRL",
+                      "DEU",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB (% anual, real)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "DEU",
+                  "anio": 2015
+                }
+              },
+              {
+                "texto": "algo más de un 2 %",
+                "valor": 2.15,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.MKTP.KD.ZG",
+                    "paises": [
+                      "IRL",
+                      "DEU",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB (% anual, real)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2015
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "+25 %",
+              "dice": "25"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Con ese salto, la línea del PIB por persona de Irlanda se despega de las demás. En un solo año pasó de unos 52.600 a unos 71.500 dólares por habitante, medidos a precios de cada año. En 2024, medido en dólares que corrigen por precios, era casi el doble que el de Alemania. En el papel, el irlandés promedio produce como dos alemanes.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "PIB por persona, Irlanda y Alemania",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "IRL",
+                "anio": 2015
+              },
+              "anotaciones": [
+                {
+                  "anio": 2015,
+                  "texto": "El salto"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "despega"
+            },
+            "cifras": [
+              {
+                "texto": "unos 52.600",
+                "valor": 52600,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2014
+                }
+              },
+              {
+                "texto": "unos 71.500",
+                "valor": 71500,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2015
+                }
+              },
+              {
+                "texto": "casi el doble",
+                "valor": 1.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "IRL",
+                  "paisB": "DEU",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "¿DOS ALEMANES?",
+              "dice": "alemanes."
+            }
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ahora mira la misma línea año por año. En 2021, más de un 16 %. En 2023, una caída de más de un 2 %. En 2025, otra vez más de un 12 %. Un país no gana y pierde fábricas a ese ritmo. Lo que sube y baja así no son fábricas. Son cuentas de empresas. Basta con que unas pocas compañías muy grandes cambien dónde anotan sus ganancias para que el crecimiento de todo un país se dispare o caiga en el papel.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Crecimiento del PIB de Irlanda (% anual)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.MKTP.KD.ZG",
+                "paises": [
+                  "IRL"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Crecimiento del PIB (% anual, real)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 2015,
+                  "texto": "+25 %"
+                },
+                {
+                  "anio": 2023,
+                  "texto": "Caída"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "año"
+            },
+            "cifras": [
+              {
+                "texto": "más de un 16 %",
+                "valor": 16.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.MKTP.KD.ZG",
+                    "paises": [
+                      "IRL",
+                      "DEU",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB (% anual, real)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2021
+                }
+              },
+              {
+                "texto": "más de un 2 %",
+                "valor": -2.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.MKTP.KD.ZG",
+                    "paises": [
+                      "IRL",
+                      "DEU",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB (% anual, real)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2023
+                }
+              },
+              {
+                "texto": "más de un 12 %",
+                "valor": 12.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.MKTP.KD.ZG",
+                    "paises": [
+                      "IRL",
+                      "DEU",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB (% anual, real)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2025
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "CUENTAS DE EMPRESAS",
+              "dice": "empresas."
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "Quién llegó a Irlanda y por qué",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Si no fueron fábricas nuevas, ¿qué llegó a Irlanda en 2015? La pista está en un indicador que el Banco Mundial publica para todos los países: la inversión extranjera directa, el dinero que empresas de afuera meten en el país."
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 2015, la inversión extranjera que entró a Irlanda equivalió a unos tres cuartos de todo su PIB. En Chile, un país que recibe bastante inversión para su tamaño, ese año fue algo más del 7 %.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Inversión extranjera que entra (% del PIB)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                "paises": [
+                  "IRL",
+                  "CHL"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Inversión extranjera directa, entrada neta (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "IRL",
+                "anio": 2015
+              },
+              "anotaciones": [
+                {
+                  "anio": 2015,
+                  "texto": "Tres cuartos del PIB"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "inversión"
+            },
+            "cifras": [
+              {
+                "texto": "unos tres cuartos",
+                "valor": 75,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                    "paises": [
+                      "IRL",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Inversión extranjera directa, entrada neta (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2015
+                }
+              },
+              {
+                "texto": "algo más del 7 %",
+                "valor": 7.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                    "paises": [
+                      "IRL",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Inversión extranjera directa, entrada neta (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2015
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "3/4 DEL PIB",
+              "dice": "cuartos"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "¿Por qué Irlanda? Cobra a las empresas un impuesto bajo, habla inglés y está dentro de la Unión Europea. Por eso muchas tecnológicas y farmacéuticas de Estados Unidos tienen ahí su sede europea. Y en 2015 varias trasladaron a la isla algo que no ocupa espacio pero vale fortunas: sus patentes. En 2014, las exportaciones irlandesas ya superaban todo su PIB. En 2015 saltaron a cerca de 127 % de su PIB.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Exportaciones de Irlanda (% del PIB)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "IRL"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "IRL",
+                "anio": 2015
+              },
+              "anotaciones": [
+                {
+                  "anio": 2015,
+                  "texto": "Llegan las patentes"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "patentes."
+            },
+            "cifras": [
+              {
+                "texto": "ya superaban todo su PIB",
+                "valor": 115,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2014
+                }
+              },
+              {
+                "texto": "cerca de 127 % de su PIB",
+                "valor": 127,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2015
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "PATENTES",
+              "dice": "patentes."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Con las patentes llegan las ventas. Las exportaciones de Irlanda equivalen hoy a casi una vez y media su PIB. En Alemania, una potencia exportadora, son unas cuatro de cada diez. Parte de lo que Irlanda exporta se fabrica en otros países, por encargo, pero se registra como irlandés porque la patente está en Dublín.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Exportaciones en 2024 (% del PIB)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "exportaciones"
+            },
+            "cifras": [
+              {
+                "texto": "casi una vez y media",
+                "valor": 144,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unas cuatro de cada diez",
+                "valor": 41,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "DEU",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "La factura llegó desde Bruselas. En 2016, la Comisión Europea concluyó que Irlanda le había dado a Apple beneficios tributarios ilegales por hasta 13.000 millones de euros. Irlanda no quería ese dinero: apeló junto con Apple. En 2020, un tribunal europeo les dio la razón. En 2024, el tribunal más alto de la Unión revirtió ese fallo y confirmó la decisión. Un país peleó en tribunales para no cobrar un impuesto.",
+            "grafico": {
+              "tipo": "tarjeta",
+              "titulo": "Comisión Europea, 2016",
+              "datos": {
+                "fuente": "manual",
+                "indicador": "ayuda-estatal-apple-2016",
+                "paises": [
+                  "IRL"
+                ],
+                "valores": {
+                  "IRL": [
+                    [
+                      2016,
+                      13
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Comisión Europea, decisión de ayuda estatal SA.38373 (2016)",
+                "fuenteUrl": "https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923",
+                "etiqueta": "Beneficios tributarios ilegales a Apple, hasta",
+                "unidad": "mil millones €"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "formato": {
+                "prefijo": "€ ",
+                "sufijo": " mil M",
+                "decimales": 0
+              },
+              "dice": "13.000"
+            },
+            "cifras": [
+              {
+                "texto": "13.000 millones de euros",
+                "valor": 13,
+                "calculo": {
+                  "datos": {
+                    "fuente": "manual",
+                    "indicador": "ayuda-estatal-apple-2016",
+                    "paises": [
+                      "IRL"
+                    ],
+                    "valores": {
+                      "IRL": [
+                        [
+                          2016,
+                          13
+                        ]
+                      ]
+                    },
+                    "fuenteTexto": "Comisión Europea, decisión de ayuda estatal SA.38373 (2016)",
+                    "fuenteUrl": "https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923",
+                    "etiqueta": "Beneficios tributarios ilegales a Apple, hasta",
+                    "unidad": "mil millones €"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2016
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "13.000 MILLONES €",
+              "dice": "Apple"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Si buena parte de esa riqueza es de empresas extranjeras, la pregunta obvia es cuánto se queda de verdad en Irlanda. Hay un indicador que lo responde, y la diferencia es enorme."
+          }
+        ]
+      },
+      {
+        "titulo": "PIB contra ingreso nacional",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "El PIB mide lo que se produce dentro de un país. No dice de quién es. Para eso existe otro número, el ingreso nacional bruto: parte del PIB, le resta las ganancias que se van a dueños extranjeros y le suma las que llegan de afuera."
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Banco Mundial pone el PIB por persona de Irlanda de 2024 en torno a los 141.000 dólares, corregidos por precios. Su ingreso nacional por persona, unos 106.000. Mira cómo la línea del PIB pega el salto en 2015. El ingreso nacional ya estaba por debajo antes, pero desde ese año la brecha se abre de golpe y no se vuelve a cerrar.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Irlanda: lo que se produce y lo que queda",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "IRL"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "IRL",
+                "anio": 2015
+              },
+              "anotaciones": [
+                {
+                  "anio": 2015,
+                  "texto": "El salto"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "salto"
+            },
+            "cifras": [
+              {
+                "texto": "los 141.000 dólares",
+                "valor": 141000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 106.000",
+                "valor": 106000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GNP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "INB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "IRL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "141.000 VS 106.000",
+              "dice": "106.000."
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Medida con el ingreso, Irlanda sigue siendo un país rico. Pero ya no produce como dos alemanes. Con el ingreso nacional, el irlandés promedio queda un 38 % por encima del alemán, lejos del doble que mostraba el PIB.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Ingreso nacional por persona, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GNP.PCAP.PP.CD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Ingreso nacional bruto por persona (PPA, US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "ingreso,"
+            },
+            "cifras": [
+              {
+                "texto": "un 38 % por encima",
+                "valor": 1.38,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GNP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Ingreso nacional bruto por persona (PPA, US$ internacionales corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "IRL",
+                  "paisB": "DEU",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ni siquiera el ingreso nacional le alcanzó a la propia Irlanda. En 2017, su oficina de estadística empezó a publicar un indicador hecho a medida, el ingreso nacional modificado, que también resta la depreciación de esas patentes y las ganancias de empresas que solo cambiaron su domicilio a Dublín. Un país que necesita inventar su propia medida para saber cuánto creció ya dice mucho."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Piensa en una patente como en un edificio invisible. Una empresa la pone a nombre de su filial en Dublín, y desde ese día las ganancias que produce en cualquier parte del mundo pasan por Irlanda. Entran al PIB irlandés como si se hubieran producido ahí. Y después salen, como ganancias de dueños extranjeros. El PIB las suma cuando entran. El ingreso nacional las descuenta cuando salen. Por eso, mientras el PIB irlandés se duplicaba frente al alemán, el ingreso nacional seguía otra línea, mucho más tranquila.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso nacional por persona, Irlanda y Alemania",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GNP.PCAP.PP.CD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Ingreso nacional bruto por persona (PPA, US$ internacionales corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "edificio"
+            },
+            "cifras": [
+              {
+                "texto": "se duplicaba frente al alemán",
+                "valor": 1.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "IRL",
+                  "paisB": "DEU",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Un indicador hecho a medida es una pista fuerte. Pero hay una forma más simple de ver cuánto mejor viven los irlandeses, y no necesita ninguna teoría."
+          }
+        ]
+      },
+      {
+        "titulo": "El bolsillo irlandés y el latinoamericano",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Si un irlandés tuviera de verdad el doble de ingreso que un alemán, se notaría en lo que consume: comida, casa, transporte, vacaciones. Ese gasto también se mide, y no depende de dónde esté registrada una patente. Es, probablemente, la cifra más honesta de todo este caso, y la que menos aparece en los titulares."
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Banco Mundial publica el consumo de los hogares por persona. Entre 2014 y 2024, el PIB por persona de Irlanda, ya sin inflación, creció más de un 80 %. El consumo de cada irlandés, medido igual, creció algo más de un 20 %. En el gráfico está solo el consumo: es la línea que siguió caminando mientras el PIB se iba al cielo.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Consumo de los hogares por persona",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "IRL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "consumo"
+            },
+            "cifras": [
+              {
+                "texto": "creció más de un 80 %",
+                "valor": 81,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "IRL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "IRL",
+                  "anio": 2014,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "algo más de un 20 %",
+                "valor": 21,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "IRL",
+                      "DEU"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "IRL",
+                  "anio": 2014,
+                  "anioB": 2024
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Esto no es solo un caso irlandés. En América Latina, el ingreso nacional también queda bajo el PIB, porque parte de las ganancias de la minería, la energía o la banca son de dueños extranjeros. En Chile, en 2024, el PIB por persona rondaba los 36.000 dólares y el ingreso nacional, unos 34.400. En Panamá, unos 41.400 contra unos 39.200.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "PIB por persona en América Latina, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY",
+                  "PER",
+                  "MEX",
+                  "COL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Chile,"
+            },
+            "cifras": [
+              {
+                "texto": "los 36.000 dólares",
+                "valor": 36000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "PAN",
+                      "CHL",
+                      "URY",
+                      "PER",
+                      "MEX",
+                      "COL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 34.400",
+                "valor": 34400,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GNP.PCAP.PP.CD",
+                    "paises": [
+                      "PAN",
+                      "CHL",
+                      "URY",
+                      "PER",
+                      "MEX",
+                      "COL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "INB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 41.400",
+                "valor": 41400,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "PAN",
+                      "CHL",
+                      "URY",
+                      "PER",
+                      "MEX",
+                      "COL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 39.200",
+                "valor": 39200,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GNP.PCAP.PP.CD",
+                    "paises": [
+                      "PAN",
+                      "CHL",
+                      "URY",
+                      "PER",
+                      "MEX",
+                      "COL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "INB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "La diferencia es de tamaño. En Chile o en Panamá, la distancia entre las dos cifras es chica. En Irlanda, es una tajada enorme. Lo que en América Latina es un ajuste, en Irlanda es otra economía montada encima de la real."
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para alguien en la región? Que cuando un gobierno, un ranking o un titular dice que un país creció mucho, vale la pena preguntar quién se quedó con ese crecimiento. El PIB cuenta lo que pasa dentro de las fronteras. El ingreso nacional cuenta lo que queda. Y el consumo cuenta lo que llega a la mesa. Son tres números distintos, y casi siempre se publica solo el primero. En la región esto importa más de lo que parece: buena parte de la minería, la energía y las telecomunicaciones tienen dueños de afuera. Cuando el cobre o el litio suben de precio, el PIB lo anota primero. Lo que queda en el país depende de esa otra línea."
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Falta el número que resume todo el caso, y es el más simple de todos."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira es este: en 2024, un irlandés promedio consumía prácticamente lo mismo que un alemán. Unos 24.000 dólares al año cada uno, en dólares de 2015, y sin descontar que vivir en Irlanda es más caro. Según el PIB, cada irlandés cuenta como dos alemanes. Según lo que gasta, como uno. Y eso no es una mala noticia para Irlanda: es un país rico de verdad. Solo que su riqueza real se parece mucho más a la de Alemania que a la que anuncia su PIB.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "Consumo por persona, 2024",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NE.CON.PRVT.PC.KD",
+          "paises": [
+            "IRL",
+            "DEU"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "IRL"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "consumía"
+      },
+      "cifras": [
+        {
+          "texto": "prácticamente lo mismo",
+          "valor": 1.0,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "IRL",
+                "DEU"
+              ],
+              "desde": 2000,
+              "hasta": 2024,
+              "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "IRL",
+            "paisB": "DEU",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "Unos 24.000 dólares",
+          "valor": 24000,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "IRL",
+                "DEU"
+              ],
+              "desde": 2000,
+              "hasta": 2024,
+              "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "valor",
+            "pais": "IRL",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "como dos alemanes",
+          "valor": 1.9,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.CD",
+              "paises": [
+                "IRL",
+                "DEU"
+              ],
+              "desde": 2000,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "IRL",
+            "paisB": "DEU",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "remate": "En el PIB, un irlandés cuenta como dos alemanes. En el supermercado, como uno.",
+    "siguiente": "Panamá ya produce por persona más que Chile y que Uruguay. ¿Crecimiento de verdad o algo parecido a Irlanda? Lo vemos en el próximo.",
+    "miniatura": {
+      "texto": "+25 % EN UN AÑO",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "PIB vs consumo",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.PP.CD",
+          "paises": [
+            "IRL",
+            "DEU"
+          ],
+          "desde": 2000,
+          "hasta": 2024,
+          "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "IRL"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Crecimiento del PIB, % anual (NY.GDP.MKTP.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=IE-DE-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales corrientes (NY.GDP.PCAP.PP.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?locations=IE-DE-CL-PA"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: INB per cápita, PPA, US$ internacionales corrientes (NY.GNP.PCAP.PP.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD?locations=IE-DE-CL-PA"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inversión extranjera directa, entrada neta, % del PIB (BX.KLT.DINV.WD.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS?locations=IE-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=IE-DE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Consumo final de los hogares per cápita, US$ constantes de 2015 (NE.CON.PRVT.PC.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=IE-DE"
+      },
+      {
+        "texto": "Comisión Europea, comunicado IP/16/2923: ayuda estatal de Irlanda a Apple (2016)",
+        "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923"
+      },
+      {
+        "texto": "Central Statistics Office de Irlanda: Modified GNI (GNI*)",
+        "url": "https://www.cso.ie/en/interactivezone/statisticsexplained/nationalaccountsexplained/modifiedgni/"
+      }
+    ]
+  }
+}

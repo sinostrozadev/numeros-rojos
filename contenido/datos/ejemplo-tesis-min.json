@@ -1,0 +1,441 @@
+{
+  "plantilla": "tesis",
+  "id": "ejemplo-tesis-min",
+  "titulo": "Chile era 6 veces más rico que Corea. ¿Qué pasó?",
+  "descripcion": "¿Por qué Corea del Sur pasó a Chile si en 1950 era seis veces más pobre?\n\nFIXTURE de pruebas (texto de relleno, cifras reales): lo usan verificar-cifras, preparar-tesis y generar-guiones.\n\nFuentes: Banco Mundial (WDI) y Our World in Data (Maddison 2023), CC BY 4.0.\nVoz sintetizada. No es asesoría financiera.",
+  "hashtags": [
+    "#economia",
+    "#chile",
+    "#corea"
+  ],
+  "props": {
+    "id": "ejemplo-tesis-min",
+    "cabecera": "CHILE VS COREA DEL SUR · 1950–2024",
+    "gancho": {
+      "texto": "Hoy un coreano produce unos 55.000 dólares al año y un chileno unos 30.000. En 1950 era al revés. ¿Qué pasó en el medio?",
+      "rotulo": "CHILE VS COREA",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "PIB por persona, 2024",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.PP.KD",
+          "paises": [
+            "KOR",
+            "CHL"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "CHL"
+        }
+      },
+      "cifras": [
+        {
+          "texto": "unos 55.000 dólares",
+          "valor": 55000,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "valor",
+            "pais": "KOR",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "unos 30.000",
+          "valor": 30000,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "valor",
+            "pais": "CHL",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber qué números separaron a los dos países y cuál es el dato que casi nadie mira.",
+    "indice": [
+      "Chile más rico",
+      "La apuesta coreana",
+      "El número escondido"
+    ],
+    "estructura": "comparacion",
+    "capitulos": [
+      {
+        "titulo": "Cuando Chile era el rico",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Empecemos por una creencia común: que Corea siempre fue un país rico. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Proyecto Maddison, en 1950 un chileno producía unos 5.900 dólares al año, casi seis veces más que un coreano.",
+            "fuenteEnVoz": true,
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Chile y Corea desde 1950",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "unidad": "US$ 2011"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1953,
+                  "texto": "Fin de la guerra de Corea"
+                }
+              ]
+            },
+            "cifras": [
+              {
+                "texto": "unos 5.900 dólares",
+                "valor": 5900,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "unidad": "US$ 2011"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1950
+                }
+              },
+              {
+                "texto": "casi seis veces más",
+                "valor": 5.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "unidad": "US$ 2011"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "KOR",
+                  "anio": 1950
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y sin embargo la línea coreana empieza a subir más rápido que cualquier otra de la región. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          }
+        ]
+      },
+      {
+        "titulo": "La apuesta coreana por invertir",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "¿De dónde salió ese salto? La respuesta corta está en cuánto del ingreso se guarda para el futuro. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Los datos del Banco Mundial muestran que en 2023 Corea destinó un 32 % de su PIB a inversión y Chile un 23 %.",
+            "fuenteEnVoz": true,
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Inversión como parte del PIB, 2023",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.GDI.TOTL.ZS",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 2023,
+                "hasta": 2023,
+                "unidad": "% del PIB"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              }
+            },
+            "cifras": [
+              {
+                "texto": "un 32 %",
+                "valor": 32,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 2023,
+                    "hasta": 2023,
+                    "unidad": "% del PIB"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 2023
+                }
+              },
+              {
+                "texto": "un 23 %",
+                "valor": 23,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 2023,
+                    "hasta": 2023,
+                    "unidad": "% del PIB"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2023
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero invertir más no alcanza para explicar toda la distancia. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Hay un número que lo explica mejor, y casi nadie lo mira."
+          }
+        ]
+      },
+      {
+        "titulo": "Lo que significa para nosotros",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Volvamos al presente y miremos las dos líneas completas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Banco Mundial, en 2023 Corea producía por persona 1,8 veces lo de Chile, aunque Chile creció un 170 % desde 1990.",
+            "fuenteEnVoz": true,
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Treinta años de distancia",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              }
+            },
+            "cifras": [
+              {
+                "texto": "1,8 veces",
+                "valor": 1.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 2023
+                }
+              },
+              {
+                "texto": "un 170 %",
+                "valor": 170,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB per cápita (PPA, US$ de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1990,
+                  "anioB": 2023
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Chile no se quedó quieto: creció mucho. Lo que pasa es que Corea creció todavía más. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Y ahora viene el dato que cambia la lectura de todo lo anterior."
+          },
+          {
+            "tipo": "significado",
+            "texto": "Para quien vive en América Latina, esto dice que la diferencia no es de suerte sino de décadas sostenidas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas. Este párrafo es relleno del ejemplo mínimo y ocupa el lugar de la explicación completa que escribe el generador de guiones con frases cortas."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira: Corea gasta en investigación unas doce veces lo que gasta Chile, como parte de su economía.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "Investigación y desarrollo, 2022",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "GB.XPD.RSDV.GD.ZS",
+          "paises": [
+            "KOR",
+            "CHL"
+          ],
+          "desde": 2022,
+          "hasta": 2022,
+          "unidad": "% del PIB"
+        },
+        "formato": {
+          "sufijo": " %",
+          "decimales": 2
+        }
+      },
+      "cifras": [
+        {
+          "texto": "unas doce veces",
+          "valor": 12,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2022,
+              "hasta": 2022,
+              "unidad": "% del PIB"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "CHL",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "remate": "Chile partió adelante y llegó atrás; Corea partió atrás y llegó adelante.",
+    "siguiente": "¿Y si el problema de América Latina no es cuánto crece sino cuánto dura creciendo?",
+    "miniatura": {
+      "texto": "6 VECES MÁS RICO",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "Chile y Corea",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "CHL",
+            "KOR"
+          ],
+          "desde": 1950,
+          "hasta": 2022,
+          "unidad": "US$ 2011"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, WDI: PIB per cápita PPA (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD"
+      },
+      {
+        "texto": "Banco Mundial, WDI: Formación bruta de capital (NE.GDI.TOTL.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS"
+      },
+      {
+        "texto": "Banco Mundial, WDI: Gasto en I+D (GB.XPD.RSDV.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS"
+      },
+      {
+        "texto": "Our World in Data, Maddison Project Database 2023, CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      }
+    ]
+  }
+}

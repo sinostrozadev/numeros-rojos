@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <!-- Isotipo de En Números Rojos: una línea de datos que sube en verde y cae en rojo, sobre grafito. -->
+  <rect x="0" y="0" width="100" height="100" rx="22" fill="#111418"/>
+  <path d="M18 84 H84" stroke="#3A4350" stroke-width="4" stroke-linecap="round"/>
+  <path d="M18 64 L36 46 L50 54 L62 26" fill="none" stroke="#2ECC71" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 26 L80 70" fill="none" stroke="#FF4D4D" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="80" cy="70" r="8.5" fill="#FF4D4D"/>
+</svg>

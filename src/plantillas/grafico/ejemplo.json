@@ -1,0 +1,302 @@
+{
+  "plantilla": "grafico",
+  "id": "grafico-chile-corea-60",
+  "titulo": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
+  "descripcion": "¿Cómo pasó Corea del Sur de producir un tercio que Chile a más del doble?\nUn gráfico con datos del Banco Mundial, de 1960 a 2023.\nFuente: Banco Mundial, WDI (NY.GDP.PCAP.KD), CC BY 4.0.\nVoz sintetizada. No es asesoría financiera.",
+  "hashtags": [
+    "#economia",
+    "#chile",
+    "#corea",
+    "#Shorts"
+  ],
+  "props": {
+    "id": "grafico-chile-corea-60",
+    "gancho": {
+      "texto": "En 1960, Chile producía por persona el triple que Corea del Sur. Hoy Corea produce más del doble que Chile.",
+      "rotulo": "CHILE VS COREA",
+      "cifras": [
+        {
+          "texto": "el triple",
+          "valor": 3.1,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2023,
+              "etiqueta": "PIB por persona",
+              "unidad": "US$ de 2015"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "KOR",
+            "anio": 1960
+          },
+          "tolerancia": 0.1
+        },
+        {
+          "texto": "más del doble",
+          "valor": 2.5,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2023,
+              "etiqueta": "PIB por persona",
+              "unidad": "US$ de 2015"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "CHL",
+            "anio": 2023
+          },
+          "tolerancia": 0.15
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "¿Quién produce más por persona?",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.KD",
+        "paises": [
+          "CHL",
+          "KOR"
+        ],
+        "desde": 1960,
+        "hasta": 2023,
+        "etiqueta": "PIB por persona",
+        "unidad": "US$ de 2015"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "anotaciones": [
+        {
+          "anio": 1982,
+          "texto": "crisis de la deuda"
+        },
+        {
+          "anio": 1998,
+          "texto": "crisis asiática"
+        }
+      ],
+      "dice": "1960,"
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Según el Banco Mundial, en 1960 el PIB por persona de Chile rondaba los 3.200 dólares. El de Corea apenas llegaba a mil, menos que muchos países africanos.",
+        "fuenteEnVoz": true,
+        "cifras": [
+          {
+            "texto": "los 3.200 dólares",
+            "valor": 3200,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "PIB por persona",
+                "unidad": "US$ de 2015"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 1960
+            }
+          },
+          {
+            "texto": "apenas llegaba a mil",
+            "valor": 1000,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "PIB por persona",
+                "unidad": "US$ de 2015"
+              },
+              "operacion": "valor",
+              "pais": "KOR",
+              "anio": 1960
+            },
+            "tolerancia": 0.1
+          }
+        ],
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "¿Quién produce más por persona?",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "CHL",
+              "KOR"
+            ],
+            "desde": 1960,
+            "hasta": 2023,
+            "etiqueta": "PIB por persona",
+            "unidad": "US$ de 2015"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "anotaciones": [
+            {
+              "anio": 1982,
+              "texto": "crisis de la deuda"
+            },
+            {
+              "anio": 1998,
+              "texto": "crisis asiática"
+            }
+          ],
+          "dice": "1960,"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Corea alcanzó a Chile en 1982, en plena crisis de la deuda, y nunca más miró atrás. En 2023 superaba los 36.000 dólares por persona.",
+        "cifras": [
+          {
+            "texto": "los 36.000 dólares",
+            "valor": 36000,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "PIB por persona",
+                "unidad": "US$ de 2015"
+              },
+              "operacion": "valor",
+              "pais": "KOR",
+              "anio": 2023
+            }
+          }
+        ],
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "¿Quién produce más por persona?",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "CHL",
+              "KOR"
+            ],
+            "desde": 1960,
+            "hasta": 2023,
+            "etiqueta": "PIB por persona",
+            "unidad": "US$ de 2015"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "anotaciones": [
+            {
+              "anio": 1982,
+              "texto": "crisis de la deuda"
+            },
+            {
+              "anio": 1998,
+              "texto": "crisis asiática"
+            }
+          ],
+          "dice": "1960,"
+        }
+      },
+      {
+        "tipo": "giro",
+        "texto": "Y acá está el giro: Chile no se estancó. Multiplicó su ingreso por cuatro. Corea, en el mismo tiempo, lo multiplicó por treinta y cinco.",
+        "rotulo": {
+          "texto": "×35",
+          "dice": "treinta"
+        },
+        "cifras": [
+          {
+            "texto": "por cuatro",
+            "valor": 4.4,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "PIB por persona",
+                "unidad": "US$ de 2015"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "CHL",
+              "anio": 2023,
+              "anioB": 1960
+            },
+            "tolerancia": 0.15
+          },
+          {
+            "texto": "por treinta y cinco",
+            "valor": 35,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "PIB por persona",
+                "unidad": "US$ de 2015"
+              },
+              "operacion": "razon",
+              "pais": "KOR",
+              "paisB": "KOR",
+              "anio": 2023,
+              "anioB": 1960
+            },
+            "tolerancia": 0.1
+          }
+        ]
+      }
+    ],
+    "remate": "Chile corrió rápido. Corea corrió sin parar.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, WDI: PIB per cápita (US$ constantes de 2015), NY.GDP.PCAP.KD",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD"
+      }
+    ],
+    "enlaceLargo": "tesis-chile-corea"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-chile-corea-cruce",
+  "titulo": "Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta",
+  "descripcion": "¿En qué año Corea del Sur pasó a Chile en ingreso por persona?\n\nUn solo gráfico del Banco Mundial: 1960–2024, dólares constantes de 2015. El cruce no fue en una recta, fue en una curva.\nLa historia completa, con exportaciones, ahorro y educación, está en el video largo del canal.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=CL-KR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#chile",
+    "#coreadelsur"
+  ],
+  "props": {
+    "id": "pendiente-grafico-chile-corea-cruce",
+    "gancho": {
+      "texto": "Esta línea dorada es Chile. En 1960 producía por persona el triple que Corea del Sur.",
+      "rotulo": "CHILE 3 · COREA 1",
+      "cifras": [
+        {
+          "texto": "el triple",
+          "valor": 3,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "KOR",
+            "anio": 1960
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Ingreso por persona, 1960–2024",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.KD",
+        "paises": [
+          "CHL",
+          "KOR"
+        ],
+        "desde": 1960,
+        "hasta": 2024,
+        "etiqueta": "PIB por persona (US$ constantes de 2015)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "anotaciones": [
+        {
+          "anio": 1982,
+          "texto": "Se cruzan"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Según el Banco Mundial, la línea coreana sube más rápido casi todos los años. Pero el cruce no llega en una recta.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Ingreso por persona, 1960–2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "CHL",
+              "KOR"
+            ],
+            "desde": 1960,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "KOR"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "coreana"
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Llega en 1982. Ese año Chile cae: entre 1981 y 1983 su ingreso por persona se encoge casi una quinta parte. Corea pasa justo en la curva.",
+        "cifras": [
+          {
+            "texto": "casi una quinta parte",
+            "valor": -19,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 1981,
+              "anioB": 1983
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "1982",
+          "dice": "1982."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Desde ahí, no vuelve a mirar atrás. Hoy el coreano promedio produce dos veces y media lo de un chileno.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2024: Corea contra Chile",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "KOR",
+              "CHL"
+            ],
+            "desde": 2024,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          }
+        },
+        "cifras": [
+          {
+            "texto": "dos veces y media",
+            "valor": 2.5,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "KOR",
+              "paisB": "CHL",
+              "anio": 2024
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "Corea no ganó la carrera en la recta. La ganó en la curva donde Chile frenó.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=CL-KR"
+      }
+    ],
+    "enlaceLargo": "pendiente-tesis-chile-corea"
+  }
+}

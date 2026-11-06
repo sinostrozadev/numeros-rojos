@@ -1,0 +1,194 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-argentina-espana",
+  "titulo": "España tenía la mitad que Argentina. Hoy tiene el doble",
+  "descripcion": "¿Cuándo pasó España a Argentina en ingreso por persona?\n\nUn gráfico del Proyecto Maddison, de 1895 a 2022: el cruce llegó en 1976 y no se volvió a dar vuelta.\nEn el video largo recorremos los cuatro quiebres de la economía argentina.\n\nFuente: Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#argentina",
+    "#espana"
+  ],
+  "props": {
+    "id": "pendiente-grafico-argentina-espana",
+    "gancho": {
+      "texto": "En 1895, un argentino producía más del doble que un español.",
+      "rotulo": "ARGENTINA ×2",
+      "cifras": [
+        {
+          "texto": "más del doble",
+          "valor": 2.08,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "ARG",
+                "ESP"
+              ],
+              "desde": 1895,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ARG",
+            "paisB": "ESP",
+            "anio": 1895
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Argentina y España, 1895–2022",
+      "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+          "ARG",
+          "ESP"
+        ],
+        "desde": 1895,
+        "hasta": 2022,
+        "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "ARG"
+      },
+      "anotaciones": [
+        {
+          "anio": 1976,
+          "texto": "España pasa"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Proyecto Maddison, que reconstruye el ingreso de cada país hacia atrás. Durante ochenta años, la línea dorada de Argentina va arriba, a veces muy arriba.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Argentina y España, 1895–2022",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "ARG",
+              "ESP"
+            ],
+            "desde": 1895,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "ARG"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "dorada"
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "En 1976, España la alcanza. Y ya no la suelta.",
+        "cifras": [
+          {
+            "texto": "En 1976, España la alcanza",
+            "valor": 1.03,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "ESP"
+                ],
+                "desde": 1895,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "ESP",
+              "paisB": "ARG",
+              "anio": 1976
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "1976",
+          "dice": "1976,"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2022, un español produce casi el doble que un argentino. Argentina no dejó de crecer: creció a saltos, con una crisis grande cada tanto que borraba parte de lo ganado.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2022: España contra Argentina",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "ESP",
+              "ARG"
+            ],
+            "desde": 2022,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "ARG"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          }
+        },
+        "cifras": [
+          {
+            "texto": "casi el doble",
+            "valor": 1.9,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "ESP"
+                ],
+                "desde": 1895,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "ESP",
+              "paisB": "ARG",
+              "anio": 2022
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "España creció sin retroceder tanto. Argentina creció retrocediendo cada tanto.",
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      }
+    ],
+    "enlaceLargo": "pendiente-tesis-argentina-rica"
+  }
+}
