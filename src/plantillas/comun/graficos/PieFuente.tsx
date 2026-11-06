@@ -10,6 +10,6 @@ export const PieFuente: React.FC<{ texto: string; fontSize: number; fixture?: bo
     fontFamily: TIPO.texto, fontWeight: 500, fontSize, color: fixture ? PALETA.rojo : PALETA.tintaSuave, opacity: fixture ? 1 : 0.85,
     display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', textAlign: alinear, letterSpacing: 0.2, lineHeight: 1.25,
   }}>
-    {fixture ? '⚠ DATOS DE PRUEBA (FIXTURE) — NO PUBLICAR · ' : ''}Fuente: {texto.replace(/^Fuente:\s*/i, '')}{licencia && !fixture ? ` · ${licencia}` : ''}
+    {fixture ? '⚠ DATOS DE PRUEBA (FIXTURE) — NO PUBLICAR · ' : ''}Fuente: {texto.replace(/^Fuente:\s*/i, '')}{licencia && !fixture && !texto.includes(licencia.split(' (')[0]) ? ` · ${licencia}` : ''}
   </div>
 );

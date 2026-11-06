@@ -76,7 +76,7 @@ export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, p
   const altoEtiq = T.etiqueta * (series.length <= 3 ? 2.15 : 1.25);
   const pos = [...cabezas].sort((a, b) => a.y - b.y).map((c) => ({ ...c, ly: c.y }));
   for (let k = 1; k < pos.length; k++) if (pos[k].ly - pos[k - 1].ly < altoEtiq) pos[k].ly = pos[k - 1].ly + altoEtiq;
-  const exceso = pos.length ? pos[pos.length - 1].ly - (y1 - altoEtiq * 0.3) : 0;
+  const exceso = pos.length ? pos[pos.length - 1].ly - (y1 - T.etiqueta * (mostrarValor(pos[pos.length - 1].p.iso) ? 1.15 : 0.5)) : 0;
   if (exceso > 0) for (let k = pos.length - 1; k >= 0; k--) { pos[k].ly -= exceso; if (k > 0 && pos[k].ly - pos[k - 1].ly >= altoEtiq) break; }
   for (let k = pos.length - 2; k >= 0; k--) if (pos[k + 1].ly - pos[k].ly < altoEtiq) pos[k].ly = pos[k + 1].ly - altoEtiq;
 

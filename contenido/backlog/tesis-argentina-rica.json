@@ -219,7 +219,7 @@
           },
           {
             "tipo": "dato",
-            "texto": "Ese lugar no era casualidad. Entre 1870 y 1913, el ingreso por persona argentino se multiplicó por más de dos y media. El de Estados Unidos, por dos. El británico, por menos de una y media. Pocas economías de la época corrían tan rápido, y casi todo ese crecimiento salía del campo y de los ferrocarriles que lo unían con los puertos.",
+            "texto": "Ese lugar no era casualidad. Entre 1870 y 1913, el ingreso por persona argentino se multiplicó por más de dos y media. El de Estados Unidos, por dos. El británico, por menos de una y media. Pocas economías de la época corrían tan rápido, y ese crecimiento salía sobre todo del campo y de los ferrocarriles que lo unían con los puertos.",
             "grafico": {
               "tipo": "lineas",
               "titulo": "La carrera de 1870 a 1913",
@@ -419,7 +419,7 @@
           },
           {
             "tipo": "giro",
-            "texto": "Pero mira a Australia, que vendía lo mismo que Argentina a la misma Europa. En 1895, con Australia en el fondo de su propia crisis bancaria, estaban prácticamente empatadas. En 1913, solo dieciocho años después, Australia ya le sacaba más de un tercio. La primera grieta apareció cuando a Argentina todavía le iba bien, y por eso casi nadie la vio. Australia salió de su crisis corriendo: entre 1895 y 1913 su ingreso por persona creció casi la mitad. El argentino, algo más de un 10 %. Los datos no dicen por qué. Dicen que la distancia se abrió justo cuando Argentina parecía tenerlo todo.",
+            "texto": "Pero mira a Australia, que vendía lo mismo que Argentina a la misma Europa. En 1895, con Australia en el fondo de su propia crisis bancaria, estaban prácticamente empatadas. En 1913, solo dieciocho años después, Australia ya le sacaba más de un tercio. La primera grieta apareció cuando a Argentina todavía le iba bien, y por eso cuesta verla. Australia salió de su crisis corriendo: entre 1895 y 1913 su ingreso por persona creció casi la mitad. El argentino, algo más de un 10 %. Los datos no dicen por qué. Dicen que la distancia se abrió justo cuando Argentina parecía tenerlo todo.",
             "grafico": {
               "tipo": "lineas",
               "titulo": "Argentina y Australia, 1870–1913",
@@ -556,11 +556,11 @@
         "escenas": [
           {
             "tipo": "planteamiento",
-            "texto": "Aquí está el malentendido más común. Se piensa que Argentina se empobreció de golpe, en algún año maldito. Los datos dicen otra cosa: durante sesenta años, siguió creciendo."
+            "texto": "Aquí hay un malentendido frecuente. Se piensa que Argentina se empobreció de golpe, en algún año maldito. Los datos dicen otra cosa: durante sesenta años, siguió creciendo."
           },
           {
             "tipo": "dato",
-            "texto": "Según el Proyecto Maddison, entre 1913 y 1974 el ingreso por persona argentino más que se duplicó. Hubo caídas fuertes, como la de la Gran Depresión, cuando bajó casi un 20 % en apenas tres años. Pero la línea, mirada de lejos, sube. Lo que sí cambió fue el modelo. Después de 1930, con el comercio mundial cerrado por la crisis y luego por la guerra, Argentina, como casi toda la región, se volcó a fabricar para su propio mercado, protegida por aranceles altos. Dejó de ser solo el granero de Europa. Pero sus fábricas producían, sobre todo, para adentro.",
+            "texto": "Según el Proyecto Maddison, entre 1913 y 1974 el ingreso por persona argentino más que se duplicó. Hubo caídas fuertes, como la de la Gran Depresión, cuando bajó casi un 20 % en apenas tres años. Pero la línea, mirada de lejos, sube. Lo que sí cambió fue el modelo. Después de 1930, con el comercio mundial encogido por la crisis y luego por la guerra, Argentina, como casi toda la región, se volcó a fabricar para su propio mercado, protegida por aranceles altos. Dejó de ser solo el granero de Europa. Pero sus fábricas producían, sobre todo, para adentro.",
             "grafico": {
               "tipo": "lineas",
               "titulo": "Argentina, 1870–2022",
@@ -939,7 +939,7 @@
           },
           {
             "tipo": "dato",
-            "texto": "En 1989 llegó a unos 3.000 %. Eso es una hiperinflación: precios que cambian de una semana a otra, sueldos que se gastan el mismo día que se cobran, ahorro que nadie quiere tener en pesos.",
+            "texto": "En 1989 llegó a unos 3.000 %. Eso es una hiperinflación: los precios cambian de una semana a otra y el sueldo se gasta el mismo día que se cobra.",
             "grafico": {
               "tipo": "barras",
               "titulo": "Inflación, 1984–1991 (% anual)",
@@ -992,7 +992,7 @@
           },
           {
             "tipo": "dato",
-            "texto": "A la inflación se sumó la deuda. Cuando en 1982 México anunció que no podía pagar su deuda, los bancos le cerraron el crédito a toda América Latina casi de un día para otro. La deuda externa argentina pasó de algo más de un tercio de su ingreso nacional en 1980 a más de la mitad en 1982. Fue la década perdida de la región, y Argentina la vivió con precios desbocados.",
+            "texto": "Y la inflación no venía sola. Cuando en 1982 México anunció que no podía pagar su deuda, los bancos le cerraron el crédito a toda América Latina casi de un día para otro. La deuda externa argentina pasó de algo más de un tercio de su ingreso nacional en 1980 a más de la mitad en 1982. Fue la década perdida de la región, y Argentina la vivió con precios desbocados.",
             "grafico": {
               "tipo": "lineas",
               "titulo": "Deuda externa, 1970–1990 (% del ingreso nacional)",
@@ -1021,7 +1021,7 @@
                 "sufijo": " %",
                 "decimales": 0
               },
-              "dice": "deuda."
+              "dice": "deuda"
             },
             "cifras": [
               {
@@ -1129,7 +1129,7 @@
           },
           {
             "tipo": "giro",
-            "texto": "Y entonces, el freno más brusco. En 1991, una ley ata el peso al dólar, uno a uno. En dos años, la inflación pasa de miles por ciento a menos de cero: en 1993, la inflación de toda la economía marcó incluso un número negativo. Hubo planes antes que la bajaron por un tiempo. Ninguno la sostuvo. El uno a uno la sostuvo diez años.",
+            "texto": "Y entonces, el freno más brusco. En 1991, una ley ata la moneda al dólar, uno a uno. Dos años después, en 1993, el deflactor del Banco Mundial marcó incluso un número negativo. Hubo planes antes que la bajaron por un tiempo. Ninguno la sostuvo. El uno a uno la sostuvo diez años.",
             "grafico": {
               "tipo": "lineas",
               "titulo": "Inflación 1985–2000",
@@ -1163,7 +1163,7 @@
             },
             "cifras": [
               {
-                "texto": "menos de cero",
+                "texto": "un número negativo",
                 "valor": -3.6,
                 "calculo": {
                   "datos": {
@@ -1203,7 +1203,7 @@
           },
           {
             "tipo": "dato",
-            "texto": "Según el Banco Mundial, en 2002 la deuda externa argentina llegó a una vez y media su ingreso nacional de un año. Una parte de ese salto viene de la devaluación, que achicó el ingreso medido en dólares. Ese mismo año, el ingreso por persona cayó casi un 12 %.",
+            "texto": "Según el Banco Mundial, en 2002 la deuda externa argentina pasó de una vez y media su ingreso nacional de un año. Una parte de ese salto viene de la devaluación, que achicó el ingreso medido en dólares. Ese mismo año, el ingreso por persona cayó casi un 12 %.",
             "grafico": {
               "tipo": "area",
               "titulo": "Deuda externa (% del ingreso nacional)",
@@ -1240,7 +1240,7 @@
             },
             "cifras": [
               {
-                "texto": "una vez y media",
+                "texto": "pasó de una vez y media",
                 "valor": 160,
                 "calculo": {
                   "datos": {
@@ -1329,6 +1329,25 @@
                     "unidad": "%"
                   },
                   "operacion": "promedio",
+                  "pais": "ARG"
+                }
+              },
+              {
+                "texto": "su máximo histórico en 2011",
+                "valor": 20003,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 1870,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "maximo",
                   "pais": "ARG"
                 }
               },

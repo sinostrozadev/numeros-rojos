@@ -91,7 +91,9 @@ const audio = generarSonido(guion.id, plan.duracionSeg, plan.eventos, plan.capit
 // ---------------------------------------------------------------- props y plan
 const dir = path.join(RAIZ, 'salida/trabajo');
 fs.mkdirSync(dir, { recursive: true });
-const props = { ...guion, datos, tiempos, audio, duracionFrames: plan.duracionFrames };
+// capitulosTiempos: lo lee scripts/diario.mts para los timestamps de la descripción.
+const capitulosTiempos = plan.capitulos.map((c) => ({ titulo: c.titulo, inicio: +c.seg.toFixed(2), inicioSeg: +c.seg.toFixed(2) }));
+const props = { ...guion, datos, tiempos, audio, duracionFrames: plan.duracionFrames, capitulosTiempos, midrollsSeg: plan.midrolls.map((s) => +s.toFixed(2)) };
 fs.writeFileSync(path.join(dir, `${guion.id}.props.json`), JSON.stringify(props) + '\n');
 const resumen = {
   id: guion.id, plantilla: 'tesis', fixture, duracionSeg: +plan.duracionSeg.toFixed(2), duracionFrames: plan.duracionFrames, fps: plan.fps,

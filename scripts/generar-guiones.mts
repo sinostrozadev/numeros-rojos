@@ -1,121 +1,151 @@
 /**
- * Genera guiones nuevos para el backlog usando `claude -p` (Claude Code con la suscripción de Santiago;
- * nunca la API de Anthropic).
+ * Genera guiones nuevos de En Números Rojos para el backlog con `claude -p` (suscripción Max de Santiago; nunca la API de
+ * Anthropic).
  *
- *   npx tsx scripts/generar-guiones.mts [--plantilla frontera|lugar|ruta] [--n 5] [--modelo X]
- *                                        [--schema <archivo>] [--dry-run] [--mostrar-prompt]
+ *   npx tsx scripts/generar-guiones.mts [--plantilla tesis|grafico] [--n 1] [--tema "…"] [--estructura comparacion|…]
+ *                                        [--derivar-de <id-largo>] [--modelo X] [--dry-run] [--mostrar-prompt]
+ *   npx tsx scripts/generar-guiones.mts --actualizar-ejemplos [tesis-<slug>,grafico-<slug>]
  *
- * System prompt = docs/GUION.md (la fórmula y el estilo del canal, lo escribe Fable; si falta, se usa un
- * resumen mínimo y se avisa). Mensaje = el schema zod COMPARTIDO (src/plantillas/comun/guion.ts) + el de
- * la plantilla (src/plantillas/<p>/guion.ts) tal cual, la forma del envoltorio, 2 guiones de ejemplo, los
- * títulos ya usados y las reglas duras. Se pide SOLO un array JSON; se parsea con tolerancia, se valida con
- * el schema zod real (Guion<P> y Envoltorio<P>: fórmula, 300–480 palabras, índices del mapa) y cada guion
- * queda en contenido/backlog/<plantilla>-<slug>.json con id `pendiente-<plantilla>-<slug>` (el diario lo
- * renombra a `<fecha>-<plantilla>-<slug>` al promoverlo). Si faltan guiones válidos, se reintenta una vez
- * contándole a Claude por qué se descartaron.
+ * System prompt = docs/GUION.md (tal cual). Mensaje = el contrato común TAL CUAL (src/plantillas/comun/guion.ts +
+ * src/plantillas/comun/datos.ts) + el catálogo de indicadores (contenido/datos/catalogo.json, la fuente de verdad de qué
+ * datos se pueden usar) + títulos ya usados + 1 ejemplo del backlog que no esté ya dentro de GUION.md + la regla de
+ * rotación de estructuras (ninguna > 40 % de los largos). Se pide SOLO un array JSON; se parsea con tolerancia, se valida con
+ * EnvoltorioTesis / EnvoltorioGrafico (src/plantillas/comun/guion.ts) + chequeos propios (dice/cifras literales, lista negra,
+ * título ≤ 60) y, si existe, con scripts/verificar-cifras.mts. Si algo falla, se reintenta UNA vez contándole a Claude por qué.
+ * Cada guion queda en contenido/backlog/<plantilla>-<slug>.json con id `pendiente-<plantilla>-<slug>`.
+ *
+ *   --derivar-de <id>      saca Shorts (`grafico`) de un largo existente: mismos hechos y datasets, texto 100 % nuevo,
+ *                          `enlaceLargo` = <id>. Implica --plantilla grafico; --n por defecto 2.
+ *   --actualizar-ejemplos  reescribe el bloque de ejemplos de docs/GUION.md §12 con los guiones indicados del backlog
+ *                          (por defecto tesis-chile-corea,grafico-irlanda-consumo).
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
-import { pathToFileURL } from 'node:url';
-import { z } from 'zod';
+import type { z } from 'zod';
 import {
-  DIR_BACKLOG, RAIZ, PLANTILLAS, GuionSchema, asegurarDirectorios, capitalizar, cargarCalendario,
-  correr, escribirJson, leerBacklog, leerBandeja, leerGuiones, slugificar, type Guion, type Plantilla,
-} from './lib/operacion.mjs';
+  ESTRUCTURAS, EnvoltorioGrafico, EnvoltorioTesis, PLANTILLAS_CANAL, type PlantillaCanal,
+} from '../src/plantillas/comun/guion';
+import { DIR_BACKLOG, DIR_GUIONES, RAIZ, asegurarDirectorios, correr, escribirJson, leerBandeja, slugificar } from './lib/operacion.mjs';
 
-const { values: opc } = parseArgs({
+const { values: opc, positionals } = parseArgs({
   args: process.argv.slice(2),
   options: {
     plantilla: { type: 'string' },
-    n: { type: 'string', default: '5' },
+    n: { type: 'string' },
+    tema: { type: 'string' },
+    estructura: { type: 'string' },
+    'derivar-de': { type: 'string' },
     modelo: { type: 'string' },
-    schema: { type: 'string' },
     'dry-run': { type: 'boolean', default: false },
     'mostrar-prompt': { type: 'boolean', default: false },
+    'actualizar-ejemplos': { type: 'boolean', default: false },
   },
+  allowPositionals: true,
 });
 
 const rel = (p: string) => path.relative(RAIZ, p);
-
-// ---------------------------------------------------------------- schema
-/** Texto del schema zod de la plantilla, leído tal cual del código fuente. */
-export const textoSchema = (plantilla: Plantilla): { ruta: string; texto: string } | null => {
-  const ruta = path.join(RAIZ, 'src', 'plantillas', plantilla, 'guion.ts');
-  if (!fs.existsSync(ruta)) return null;
-  const propio = fs.readFileSync(ruta, 'utf8');
-  if (!new RegExp(`Guion${capitalizar(plantilla)}`).test(propio)) return null;
-  // El contrato común (gancho, escenas, remate, fuentes, reglas de la fórmula) va primero.
-  const comun = fs.readFileSync(path.join(RAIZ, 'src', 'plantillas', 'comun', 'guion.ts'), 'utf8');
-  return { ruta, texto: `// ===== src/plantillas/comun/guion.ts =====\n${comun}\n\n// ===== src/plantillas/${plantilla}/guion.ts =====\n${propio}` };
-};
-
-interface Validadores { props: z.ZodTypeAny | null; envoltorio: z.ZodTypeAny | null }
-
-/**
- * Importa (con tsx) el schema zod REAL de src/plantillas/<p>/guion.ts: `Guion<P>` valida los props y,
- * si la plantilla lo exporta, `Envoltorio<P>` valida el guion completo. Nunca lanza.
- */
-const cargarValidadores = async (plantilla: Plantilla, ruta: string): Promise<Validadores> => {
-  const esZod = (x: unknown): x is z.ZodTypeAny => !!x && typeof (x as z.ZodTypeAny).safeParse === 'function';
-  try {
-    const mod = (await import(pathToFileURL(ruta).href)) as Record<string, unknown>;
-    const props = mod[`Guion${capitalizar(plantilla)}`];
-    const envoltorio = mod[`Envoltorio${capitalizar(plantilla)}`];
-    return { props: esZod(props) ? props : null, envoltorio: esZod(envoltorio) ? envoltorio : null };
-  } catch (e) {
-    console.error(`  (no pude importar el schema para validar props: ${(e as Error).message.split('\n')[0]})`);
-    return { props: null, envoltorio: null };
-  }
-};
-
-const problemas = (r: z.SafeParseReturnType<unknown, unknown>) =>
-  r.success ? '' : r.error.issues.slice(0, 5).map((i) => `${i.path.join('.') || '(raíz)'}: ${i.message}`).join('; ');
-
-// ---------------------------------------------------------------- prompt
 const ARCHIVO_GUION = path.join(RAIZ, 'docs', 'GUION.md');
+const ARCHIVO_CATALOGO = path.join(RAIZ, 'contenido', 'datos', 'catalogo.json');
+const MAX_TITULO = 60;
+const TOPE_ESTRUCTURA = 0.4;
 
-/** Respaldo si docs/GUION.md aún no existe (lo escribe Fable): la fórmula en una línea por paso. */
-const GUION_MINIMO = `Eres el guionista de "Línea Punteada" (@lineapunteada), Shorts de geografía narrada en español de 2–3 minutos:
-una historia completa sobre un mapa, contada desde el sur del mundo. Fórmula obligatoria: gancho visual imperativo
-("Mira la frontera entre…") + lo raro + la pregunta → mito ("Dicen que…") → "La verdad es más rara." → mapa de ruta
-("Todo se explica con dos cosas: X e Y.") → actos con la fuente nombrada en la voz ("según…") → "Y aquí está el giro: …"
-→ hoy → remate simétrico de dos mitades espejo. Solo hechos verificables con fuente; cifras redondeadas en la voz.`;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Crudo = { plantilla?: string; id?: string; titulo?: string; descripcion?: string; hashtags?: string[]; props?: Record<string, any> };
+
+// ---------------------------------------------------------------- lectura del repo
+/** Guiones en crudo (no se usa leerBacklog de operacion: su GuionSchema es el de la fábrica madre). */
+const leerCrudos = (dir: string): Array<Crudo & { ruta: string }> =>
+  fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().flatMap((f) => {
+      const ruta = path.join(dir, f);
+      try { return [{ ...(JSON.parse(fs.readFileSync(ruta, 'utf8')) as Crudo), ruta }]; } catch { return []; }
+    })
+    : [];
+
+const todos = () => [...leerCrudos(DIR_GUIONES), ...leerCrudos(DIR_BACKLOG)];
 
 const leerGuionMd = (): string => {
-  if (fs.existsSync(ARCHIVO_GUION)) return fs.readFileSync(ARCHIVO_GUION, 'utf8');
-  console.error('  ⚠ falta docs/GUION.md: uso el resumen mínimo de la fórmula como system prompt.');
-  return GUION_MINIMO;
+  if (!fs.existsSync(ARCHIVO_GUION)) throw new Error('falta docs/GUION.md (es el system prompt del generador)');
+  return fs.readFileSync(ARCHIVO_GUION, 'utf8');
 };
 
+/** Contrato común tal cual: el modelo ve exactamente lo que se le exige. */
+const textoSchema = () => ['guion.ts', 'datos.ts'].map((f) => {
+  const ruta = path.join(RAIZ, 'src', 'plantillas', 'comun', f);
+  return `// ===== src/plantillas/comun/${f} =====\n${fs.readFileSync(ruta, 'utf8')}`;
+}).join('\n\n');
+
+/** Catálogo compacto (una línea por indicador). Si no existe, se avisa: solo valen los indicadores de GUION.md §8. */
+export const textoCatalogo = (): string => {
+  if (!fs.existsSync(ARCHIVO_CATALOGO)) {
+    console.error('  ⚠ falta contenido/datos/catalogo.json: el prompt solo trae los indicadores de GUION.md §8.');
+    return '(catálogo no disponible: usa solo los indicadores listados en GUION.md §8)';
+  }
+  const c = JSON.parse(fs.readFileSync(ARCHIVO_CATALOGO, 'utf8')) as { indicadores?: Array<Record<string, string>> };
+  return (c.indicadores ?? []).map((i) =>
+    `- ${i.fuente} · ${i.indicador} · ${i.etiqueta} [${i.unidad ?? ''}] · años ${i.anios ?? '?'} · ${i.paraQue ?? i.descripcion ?? ''}`).join('\n');
+};
+
+// ---------------------------------------------------------------- rotación de estructuras
+const conteoEstructuras = () => {
+  const largos = todos().filter((g) => g.plantilla === 'tesis');
+  const n = Object.fromEntries(ESTRUCTURAS.map((e) => [e, 0])) as Record<string, number>;
+  for (const g of largos) if (g.props && g.props.estructura in n) n[g.props.estructura]++;
+  return { total: largos.length, n };
+};
+
+/** Estructuras usables sin pasar del 40 % (contando los nuevos), de la menos usada a la más. */
+const estructurasPermitidas = (cuantos = 1): string[] => {
+  const { total, n } = conteoEstructuras();
+  const ok = ESTRUCTURAS.filter((e) => total + cuantos < 3 || (n[e] + cuantos) / (total + cuantos) <= TOPE_ESTRUCTURA);
+  return (ok.length ? [...ok] : [...ESTRUCTURAS]).sort((a, b) => n[a] - n[b]);
+};
+
+const textoRotacion = (cuantos: number) => {
+  const { total, n } = conteoEstructuras();
+  return `Largos existentes: ${total} (${ESTRUCTURAS.map((e) => `${e} ${n[e]}`).join(', ')}). Ninguna estructura puede superar el ` +
+    `${TOPE_ESTRUCTURA * 100} % de los largos. Permitidas ahora, de la menos usada a la más: ${estructurasPermitidas(cuantos).join(', ')}. ` +
+    'Si generas varios, varía la estructura entre ellos.';
+};
+
+// ---------------------------------------------------------------- prompt
+const formaEnvoltorio = (p: PlantillaCanal) =>
+  `{ "plantilla": "${p}", "id": "pendiente-${p}-<slug>", "titulo": "≤ ${MAX_TITULO} caracteres", "descripcion": "línea 1 = la pregunta…", ` +
+  `"hashtags": [${p === 'grafico' ? '"#shorts", ' : ''}"#economia", …], "props": { "id": <igual al id>, …según el schema… } }`;
+
 const REGLAS = `REGLAS DURAS (si no se cumplen, el guion se descarta):
-- Valida contra el schema: 5–9 escenas, ≥ 1 "mito", exactamente 1 "giro" que empieza por "Y aquí está el giro", la última es "hoy",
-  ≥ 1 escena con fuenteEnVoz: true (y la fuente dicha en el texto), 300–480 palabras habladas (gancho + escenas + remate).
-- rotulo.dice es una palabra EXACTA del texto de esa escena. Rótulos de 1–3 palabras.
-- Título ≤ 70 caracteres con contradicción explícita, casi siempre "¿Por qué…?". Nada de rankings ("Los 10…") ni "Descubren…".
-- Mapa: coordenadas [lon, lat] reales y verificables; índices de escena 0-based (-1 = gancho); ninguna escena inexistente.
-  A escala de ciudad (zoom ≥ 10) las líneas van con "puntos"; "fronteraEntre" solo a escala regional.
-- imagen.buscar EN INGLÉS como los títulos de Wikimedia Commons; nunca personas vivas en primer plano ni logos.
-- Temas sensibles (disputas activas): solo hechos con fuente, las dos versiones, cero opinión.
-- descripcion SIN hashtags; hashtags 4–8 en minúsculas, siempre "#shorts". Nada "para niños".
-- No repitas temas ni títulos de la lista de usados, ni los temas de Ñerd (Arizona, capital de Canadá, Chile largo y angosto, Hispaniola, Mongolia).`;
+- Valida contra EnvoltorioTesis / EnvoltorioGrafico del schema de arriba (palabras, escenas, giro, reenganches, fuentes, cifras).
+- SOLO datos del catálogo (fuente + indicador exactos), ISO3 reales y años dentro del rango del catálogo. Nada de FMI, Numbeo,
+  OCDE, Banco Central de Chile ni slugs de OWID fuera del catálogo. "manual" solo con URL de organismo oficial.
+- Cada número que dice la voz va en cifras[] de SU escena con "texto" copiado LITERAL del texto y un "calculo" que reproduzca el
+  número con los datos reales (variacion en %, ver GUION.md §8). No inventes valores: si no sabes el dato exacto de un año, no lo
+  afirmes con número. El revisor numérico recalcula todo contra la API con tolerancia 5 %.
+- "dice" y "rotulo.dice": palabra literal del texto de esa escena. Un gráfico = un indicador. Toda escena "dato" lleva grafico.
+- Título ≤ ${MAX_TITULO} caracteres, sin palabras prohibidas, sin "Los 10…", no repetido ni parafraseado de la lista de usados.
+- Sin consejo financiero, sin catastrofismo, sin opinión política, sin "experto", sin la lista negra de GUION.md §6.
+- No incluyas campos que calcula el pipeline (datos resueltos, tiempos, duraciones).`;
 
-const construirPrompt = (plantilla: Plantilla, n: number, schema: string, rutaSchema: string, ejemplos: Guion[], usados: string[]) => `Genera ${n} guion(es) NUEVOS para la plantilla "${plantilla}" de Línea Punteada.
-
-=== SCHEMA ZOD (${rutaSchema} + contrato común, tal cual) ===
-Los "props" de cada guion deben validar contra Guion${capitalizar(plantilla)}; el envoltorio contra Envoltorio${capitalizar(plantilla)}:
+const construirPrompt = (p: PlantillaCanal, n: number, extra: string, ejemplos: Crudo[], usados: string[]) => `Genera ${n} guion(es) NUEVOS de la plantilla "${p}" para En Números Rojos.
+${extra}
+=== CONTRATO (schema zod común, tal cual; props → Guion${p === 'tesis' ? 'Tesis' : 'Grafico'}, guion completo → Envoltorio${p === 'tesis' ? 'Tesis' : 'Grafico'}) ===
 \`\`\`ts
-${schema}
+${textoSchema()}
 \`\`\`
 
 === FORMA DEL GUION (envoltorio) ===
-{ "plantilla": "${plantilla}", "id": "pendiente-${plantilla}-<slug>", "titulo": "...", "descripcion": "...", "hashtags": ["#shorts", ...], "props": { ...según el schema... } }
-props.id lleva el mismo valor que el id del envoltorio. No incluyas campos que calcula el pipeline (duracionFrames, tiempos, imagenes, fondoMapa, creditos).
+${formaEnvoltorio(p)}
 
-=== EJEMPLOS DE GUIONES EXISTENTES (${ejemplos.length}) ===
-${ejemplos.length ? ejemplos.map((g) => JSON.stringify(g, null, 2)).join('\n\n') : '(aún no hay ejemplos: guíate por el schema)'}
+=== CATÁLOGO DE INDICADORES PERMITIDOS (contenido/datos/catalogo.json; fuente · indicador · etiqueta [unidad] · años · para qué) ===
+${textoCatalogo()}
 
-=== TÍTULOS YA USADOS (no repetir ni parafrasear) ===
+=== ROTACIÓN DE ESTRUCTURAS ===
+${p === 'tesis' ? textoRotacion(n) : 'No aplica al Short (pero no repitas el país protagonista del último Short del backlog).'}
+
+=== EJEMPLOS DEL BACKLOG (${ejemplos.length}; además de los de GUION.md §12) ===
+${ejemplos.length ? ejemplos.map((g) => JSON.stringify(g, null, 1)).join('\n\n') : '(los de GUION.md §12 bastan)'}
+
+=== TÍTULOS YA USADOS (no repetir ni parafrasear; sus temas están tomados salvo que se pida derivar) ===
 ${usados.length ? usados.map((t) => `- ${t}`).join('\n') : '(ninguno)'}
 
 ${REGLAS}
@@ -124,121 +154,173 @@ RESPONDE SOLO con un array JSON válido de ${n} objeto(s) con la forma del envol
 
 // ---------------------------------------------------------------- claude
 const llamarClaude = async (prompt: string): Promise<string> => {
-  // docs/GUION.md va como system prompt (reemplaza el de Claude Code: aquí solo se escriben guiones).
   const args = ['-p', '--output-format', 'text', '--system-prompt', leerGuionMd()];
   if (opc.modelo) args.push('--model', opc.modelo);
-  // El prompt va por stdin (puede ser largo); el argumento corto le dice qué hacer con él.
   args.push('Sigue las instrucciones del texto que recibes por stdin y responde exactamente lo que piden.');
-  const r = await correr('claude', args, { silencioso: true, entrada: prompt, env: { CLAUDECODE: '' }, timeoutMs: 10 * 60_000 });
+  const r = await correr('claude', args, { silencioso: true, entrada: prompt, env: { CLAUDECODE: '' }, timeoutMs: 20 * 60_000 });
   if (r.codigo !== 0) throw new Error(`claude -p terminó con código ${r.codigo}: ${r.salida.slice(-500)}`);
+  if (r.salida.length < 400 && /hit your .*limit/i.test(r.salida)) throw new Error(`cupo de la suscripción agotado: ${r.salida.trim()}`);
   return r.salida;
 };
 
-/** Extrae el primer array JSON de un texto (tolera texto alrededor y cercos de código). */
+/** Primer array JSON de un texto (tolera texto alrededor, cercos de código y comas colgantes). */
 export const extraerArray = (texto: string): unknown[] => {
   const sinCercos = texto.replace(/```(?:json)?/g, '');
   const ini = sinCercos.indexOf('[');
   const fin = sinCercos.lastIndexOf(']');
   if (ini < 0 || fin <= ini) throw new Error(`La respuesta no contiene un array JSON:\n${texto.slice(0, 400)}`);
   const candidato = sinCercos.slice(ini, fin + 1);
-  try {
-    let v: unknown;
-    try {
-      v = JSON.parse(candidato);
-    } catch {
-      // Tolerancia: comas colgantes antes de ] o } (error típico de los LLM).
-      v = JSON.parse(candidato.replace(/,\s*([\]}])/g, '$1'));
-    }
-    if (!Array.isArray(v)) throw new Error('no es array');
-    return v;
-  } catch (e) {
-    throw new Error(`No pude parsear el JSON (${(e as Error).message}):\n${candidato.slice(0, 400)}`);
+  let v: unknown;
+  try { v = JSON.parse(candidato); } catch { v = JSON.parse(candidato.replace(/,\s*([\]}])/g, '$1')); }
+  if (!Array.isArray(v)) throw new Error('la respuesta no es un array');
+  return v;
+};
+
+// ---------------------------------------------------------------- validación
+const NEGRA = /\b(sin embargo|además|es importante destacar|cabe (mencionar|destacar)|increíble|fascinante|curiosamente|sorprendentemente|sabías que|sin duda|en este video|hoy vamos a ver|como ya sabes|en conclusión|en resumen|sin más preludios|experto)\b/i;
+
+const problemasZod = (r: z.SafeParseReturnType<unknown, unknown>) =>
+  r.success ? [] : r.error.issues.slice(0, 8).map((i) => `${i.path.join('.') || '(raíz)'}: ${i.message}`);
+
+/** Chequeos que el schema no hace: literalidad de dice/cifras, lista negra, título ≤ 60. */
+const chequeosPropios = (g: Crudo): string[] => {
+  const mal: string[] = [];
+  const p = g.props ?? {};
+  if ((g.titulo ?? '').length > MAX_TITULO) mal.push(`título de ${(g.titulo ?? '').length} caracteres (> ${MAX_TITULO})`);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const escenas: any[] = g.plantilla === 'tesis' ? (p.capitulos ?? []).flatMap((c: any) => c.escenas ?? []) : (p.escenas ?? []);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const bloques: Array<{ texto: string; cifras?: any[]; dices: string[] }> = [
+    { texto: p.gancho?.texto ?? '', cifras: p.gancho?.cifras, dices: [] },
+    ...escenas.map((e) => ({ texto: e.texto ?? '', cifras: e.cifras, dices: [e.grafico?.dice, e.rotulo?.dice].filter(Boolean) })),
+  ];
+  if (p.numeroQueNadieMira) bloques.push({ texto: p.numeroQueNadieMira.texto ?? '', cifras: p.numeroQueNadieMira.cifras, dices: [p.numeroQueNadieMira.grafico?.dice].filter(Boolean) });
+  for (const b of bloques) {
+    for (const d of b.dices) if (!b.texto.includes(d)) mal.push(`dice "${d}" no está literal en "${b.texto.slice(0, 50)}…"`);
+    for (const c of b.cifras ?? []) if (!b.texto.includes(c.texto)) mal.push(`cifra "${c.texto}" no está literal en "${b.texto.slice(0, 50)}…"`);
+    if (NEGRA.test(b.texto)) mal.push(`lista negra en "${b.texto.slice(0, 60)}…"`);
   }
+  return mal.slice(0, 8);
+};
+
+/** Corre el revisor numérico (scripts/verificar-cifras.mts). Devuelve los problemas, o [] si pasa o no existe. */
+const verificarCifras = async (ruta: string): Promise<string[]> => {
+  const script = path.join(RAIZ, 'scripts', 'verificar-cifras.mts');
+  if (!fs.existsSync(script)) return [];
+  const r = await correr('npx', ['tsx', script, ruta], { silencioso: true, timeoutMs: 10 * 60_000 });
+  if (r.codigo === 0) return [];
+  const lineas = r.salida.split('\n').filter((l) => /✗/.test(l)).map((l) => l.trim()).slice(0, 8);
+  return lineas.length ? lineas : [r.salida.trim().split('\n').slice(-3).join(' ')];
+};
+
+// ---------------------------------------------------------------- ejemplos en GUION.md
+const actualizarEjemplos = (nombres: string[]) => {
+  const md = leerGuionMd();
+  const ini = '<!-- EJEMPLOS:INICIO';
+  const fin = '<!-- EJEMPLOS:FIN -->';
+  const a = md.indexOf(ini);
+  const b = md.indexOf(fin);
+  if (a < 0 || b < a) throw new Error('docs/GUION.md no tiene los marcadores EJEMPLOS:INICIO / EJEMPLOS:FIN');
+  const cabecera = md.slice(a, md.indexOf('-->', a) + 3);
+  const bloques = nombres.map((nom) => {
+    const ruta = path.join(DIR_BACKLOG, nom.endsWith('.json') ? nom : `${nom}.json`);
+    const g = JSON.parse(fs.readFileSync(ruta, 'utf8')) as Crudo;
+    return `### Ejemplo \`${g.plantilla}\` — ${g.id} (${rel(ruta)})\n\n\`\`\`json\n${JSON.stringify(g, null, 1)}\n\`\`\``;
+  });
+  fs.writeFileSync(ARCHIVO_GUION, `${md.slice(0, a)}${cabecera}\n\n${bloques.join('\n\n')}\n\n${md.slice(b)}`);
+  console.log(`✓ docs/GUION.md §12 actualizado con: ${nombres.join(', ')}`);
 };
 
 // ---------------------------------------------------------------- main
-const elegirPlantilla = (): Plantilla => {
-  if (opc.plantilla) {
-    if (!(PLANTILLAS as readonly string[]).includes(opc.plantilla)) throw new Error(`Plantilla desconocida: ${opc.plantilla} (usa ${PLANTILLAS.join('|')})`);
-    return opc.plantilla as Plantilla;
-  }
-  const backlog = leerBacklog();
-  const conSchema = cargarCalendario().rotacion.filter((p) => textoSchema(p) !== null);
-  if (conSchema.length === 0) throw new Error('Ninguna plantilla tiene schema zod todavía (src/plantillas/<p>/). Usa --plantilla X --schema <archivo> para probar.');
-  return conSchema.map((p) => ({ p, n: backlog.filter((g) => g.plantilla === p).length })).sort((a, b) => a.n - b.n)[0].p;
-};
-
 const main = async () => {
   asegurarDirectorios();
-  const n = Math.max(1, parseInt(opc.n ?? '5', 10) || 5);
-  const plantilla = elegirPlantilla();
+  if (opc['actualizar-ejemplos']) return actualizarEjemplos((positionals[0] ?? 'tesis-chile-corea,grafico-irlanda-consumo').split(','));
 
-  let schema = opc.schema ? { ruta: path.resolve(opc.schema), texto: fs.readFileSync(path.resolve(opc.schema), 'utf8') } : textoSchema(plantilla);
-  if (!schema) {
-    throw new Error(`La plantilla "${plantilla}" aún no tiene schema zod (Guion${capitalizar(plantilla)}) en src/plantillas/${plantilla}/. Espera a que exista o pasa --schema <archivo>.`);
+  const derivar = opc['derivar-de'];
+  const plantilla = (derivar ? 'grafico' : opc.plantilla ?? 'tesis') as PlantillaCanal;
+  if (!(PLANTILLAS_CANAL as readonly string[]).includes(plantilla)) throw new Error(`plantilla desconocida: ${plantilla} (usa ${PLANTILLAS_CANAL.join('|')})`);
+  const n = Math.max(1, parseInt(opc.n ?? (derivar ? '2' : '1'), 10) || 1);
+  if (opc.estructura && !(ESTRUCTURAS as readonly string[]).includes(opc.estructura)) throw new Error(`estructura desconocida: ${opc.estructura} (usa ${ESTRUCTURAS.join('|')})`);
+  if (opc.estructura && plantilla !== 'tesis') throw new Error('--estructura solo aplica a --plantilla tesis');
+  if (opc.estructura && !estructurasPermitidas(n).includes(opc.estructura)) console.error(`  ⚠ ${opc.estructura} pasaría del 40 % de los largos; se pide igual porque lo forzaste.`);
+
+  const existentes = todos();
+  const usados = [...new Set([...existentes.map((g) => g.titulo ?? ''), ...leerBandeja(true).map((e) => e.titulo)].filter(Boolean))];
+  const md = leerGuionMd();
+  const limpiar = ({ ruta: _r, ...g }: Crudo & { ruta: string }): Crudo => g;
+
+  let extra = '';
+  let ejemplos: Crudo[] = [];
+  if (derivar) {
+    const largo = existentes.find((g) => g.id === derivar);
+    if (!largo || largo.plantilla !== 'tesis') throw new Error(`no encuentro el largo ${derivar} en contenido/backlog ni contenido/guiones`);
+    const ya = existentes.filter((g) => g.props?.enlaceLargo === derivar).map((g) => `- ${g.titulo}`);
+    extra = `\nMODO DERIVAR: saca ${n} Short(s) del largo de abajo. Reutiliza sus HECHOS, DatoRef y fuentes (sin datasets nuevos), pero ` +
+      'escribe TODO el texto de nuevo (otra apertura, otro orden, ninguna frase copiada). Cada Short toma UNA cifra/gráfico distinto ' +
+      `del largo. "enlaceLargo": "${derivar}". La descripción remite al video largo.\n` +
+      (ya.length ? `Shorts que ya salieron de este largo (elige otras cifras):\n${ya.join('\n')}\n` : '') +
+      `\n=== LARGO DE ORIGEN ===\n${JSON.stringify(limpiar(largo), null, 1)}\n`;
+  } else {
+    if (opc.tema) extra += `\nTEMA PEDIDO: ${opc.tema}. Comprueba que el título sea verdadero con los datos del catálogo antes de escribirlo.\n`;
+    if (opc.estructura) extra += `\nESTRUCTURA OBLIGATORIA: ${opc.estructura}.\n`;
+    ejemplos = existentes.filter((g) => g.plantilla === plantilla && g.id && !md.includes(`"id": "${g.id}"`)).slice(0, 1).map(limpiar);
   }
 
-  const existentes = [...leerGuiones(), ...leerBacklog()];
-  // Ejemplos: preferir los guiones curados (contenido/guiones), que ya renderizaron, y luego el backlog.
-  const ejemplos = [...leerGuiones(), ...leerBacklog()].filter((g) => g.plantilla === plantilla).slice(0, 2).map(({ ruta: _r, ...g }) => g);
-  const usados = [...new Set([...existentes.map((g) => g.titulo), ...leerBandeja(true).map((e) => e.titulo)])];
-
-  const prompt = construirPrompt(plantilla, n, schema.texto, rel(schema.ruta), ejemplos, usados);
+  const prompt = construirPrompt(plantilla, n, extra, ejemplos, usados);
   if (opc['mostrar-prompt']) console.log(prompt);
-  console.log(`Generando ${n} guion(es) de "${plantilla}" con claude -p (${opc.modelo ?? 'modelo por defecto'}; prompt ${prompt.length} chars, ${ejemplos.length} ejemplos, ${usados.length} títulos usados)…`);
+  console.log(`Generando ${n} guion(es) "${plantilla}"${derivar ? ` derivados de ${derivar}` : ''} con claude -p (${opc.modelo ?? 'modelo por defecto'}; ` +
+    `prompt ${prompt.length} chars + system ${md.length}; ${ejemplos.length} ejemplo(s); ${usados.length} títulos usados)…`);
   if (opc['dry-run']) return console.log('[dry-run] no se llama a claude.');
 
-  const validadores = opc.schema ? { props: null, envoltorio: null } : await cargarValidadores(plantilla, schema.ruta);
-  if (!validadores.props) console.error('  ⚠ sin schema importable: solo se valida la forma del envoltorio.');
-
-  let escritos = 0;
+  const Envoltorio = plantilla === 'tesis' ? EnvoltorioTesis : EnvoltorioGrafico;
   const yaUsados = new Set(usados.map((t) => t.toLowerCase()));
   const rechazos: string[] = [];
-  // Hasta 2 intentos: el segundo pide solo los que faltan y le cuenta a Claude qué falló.
+  let escritos = 0;
   for (let intento = 1; intento <= 2 && escritos < n; intento++) {
     const faltan = n - escritos;
-    const texto = intento === 1 ? prompt : construirPrompt(plantilla, faltan, schema.texto, rel(schema.ruta), ejemplos, [...yaUsados]) +
-      `\n\nEn el intento anterior se descartaron guiones por: ${rechazos.slice(-6).join(' || ')}. Corrígelo.`;
+    const texto = intento === 1 ? prompt : construirPrompt(plantilla, faltan, extra, ejemplos, [...yaUsados]) +
+      `\n\nEN EL INTENTO ANTERIOR SE DESCARTARON GUIONES POR:\n${rechazos.slice(-10).map((r) => `- ${r}`).join('\n')}\nCorrígelo.`;
     let crudos: unknown[];
     try {
       crudos = extraerArray(await llamarClaude(texto));
     } catch (e) {
-      console.error(`  ✗ intento ${intento}: ${(e as Error).message.split('\n')[0]}`);
-      rechazos.push((e as Error).message.split('\n')[0]);
+      const m = (e as Error).message.split('\n')[0];
+      console.error(`  ✗ intento ${intento}: ${m}`);
+      rechazos.push(m);
+      if (/cupo/.test(m)) break;
       continue;
     }
-    for (const crudo of crudos.slice(0, faltan)) {
-      const r = GuionSchema.safeParse({ ...(crudo as object), plantilla });
-      if (!r.success) { rechazos.push(`envoltorio: ${problemas(r)}`); console.error(`  ✗ descartado: ${problemas(r)}`); continue; }
-      const g = r.data;
-      g.titulo = g.titulo.trim();
-      if (g.titulo.length > 70) { rechazos.push(`título de ${g.titulo.length} caracteres (>70): "${g.titulo}"`); console.error(`  ✗ título de ${g.titulo.length} chars (>70): "${g.titulo}"`); continue; }
+    for (const crudo of crudos.slice(0, faltan) as Crudo[]) {
+      const g: Crudo = { ...crudo, plantilla };
+      g.titulo = (g.titulo ?? '').trim();
       if (yaUsados.has(g.titulo.toLowerCase())) { rechazos.push(`título repetido: ${g.titulo}`); console.error(`  ✗ título repetido: ${g.titulo}`); continue; }
-      g.hashtags = [...new Set(g.hashtags.map((h) => '#' + h.replace(/^#+/, '').replace(/\s+/g, '').toLowerCase()))].filter((h) => h.length > 1);
-      if (!g.hashtags.includes('#shorts')) g.hashtags.unshift('#shorts');
-
-      const slug = slugificar(g.titulo);
+      const tags = [...new Set((g.hashtags ?? []).map((h) => '#' + h.replace(/^#+/, '').replace(/\s+/g, '').toLowerCase()))].filter((h) => h.length > 1 && h !== '#shorts');
+      g.hashtags = (plantilla === 'grafico' ? ['#shorts', ...tags] : tags).slice(0, 6);
+      const slug = slugificar(g.titulo || 'sin-titulo');
       let nombre = `${plantilla}-${slug}`;
       for (let k = 2; fs.existsSync(path.join(DIR_BACKLOG, `${nombre}.json`)); k++) nombre = `${plantilla}-${slug}-${k}`;
       g.id = `pendiente-${nombre}`;
-      g.props = { ...g.props, id: g.id };
+      g.props = { ...(g.props ?? {}), id: g.id };
+      if (derivar) g.props.enlaceLargo = derivar;
 
-      if (validadores.props) {
-        const v = validadores.props.safeParse(g.props);
-        if (!v.success) { rechazos.push(`props: ${problemas(v)}`); console.error(`  ✗ props inválidos ("${g.titulo}"): ${problemas(v)}`); continue; }
-      }
-      if (validadores.envoltorio) {
-        const v = validadores.envoltorio.safeParse(g);
-        if (!v.success) { rechazos.push(`guion: ${problemas(v)}`); console.error(`  ✗ guion inválido ("${g.titulo}"): ${problemas(v)}`); continue; }
-      }
+      const mal = [...problemasZod(Envoltorio.safeParse(g)), ...chequeosPropios(g)];
+      if (mal.length) { rechazos.push(`"${g.titulo}": ${mal.join('; ')}`); console.error(`  ✗ "${g.titulo}": ${mal.join('; ')}`); continue; }
+
       const destino = path.join(DIR_BACKLOG, `${nombre}.json`);
       escribirJson(destino, g);
+      const cifrasMal = await verificarCifras(destino);
+      if (cifrasMal.length) {
+        fs.rmSync(destino);
+        rechazos.push(`"${g.titulo}": cifras o datos que no pasan verificar-cifras: ${cifrasMal.join('; ')}`);
+        console.error(`  ✗ "${g.titulo}": verificar-cifras falló: ${cifrasMal.join('; ')}`);
+        continue;
+      }
       yaUsados.add(g.titulo.toLowerCase());
       escritos++;
-      console.log(`  ✓ ${rel(destino)}  — ${g.titulo} (${g.titulo.length} chars)`);
+      console.log(`  ✓ ${rel(destino)} — ${g.titulo} (${g.titulo.length} c${plantilla === 'tesis' ? `, ${g.props.estructura}` : ''})`);
     }
   }
-  console.log(`${escritos}/${n} guion(es) escritos en ${rel(DIR_BACKLOG)}.`);
+  console.log(`${escritos}/${n} guion(es) escritos en ${rel(DIR_BACKLOG)}. Falta el revisor independiente (guiones-de-video §6) antes de promoverlos.`);
   if (escritos === 0) process.exitCode = 1;
 };
 

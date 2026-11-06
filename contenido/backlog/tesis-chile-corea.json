@@ -626,7 +626,7 @@
           },
           {
             "tipo": "giro",
-            "texto": "Y aquí, un matiz: Chile sí cambió. La parte de los minerales bajó de casi nueve de cada diez dólares a algo más de la mitad. Pero ese espacio no lo llenaron fábricas. Lo llenaron la fruta, el salmón, la celulosa y el vino. Los alimentos pasaron de menos de un 7 % de lo exportado en 1962 a casi una cuarta parte en 2024. Es un cambio enorme, y le dio trabajo a regiones enteras. Pero sigue siendo vender lo que da la tierra o el mar. Chile cambió de materia prima. Corea cambió de oficio.",
+            "texto": "Y aquí, un matiz: Chile sí cambió. La parte de los minerales bajó de casi nueve de cada diez dólares a algo más de la mitad. Pero ese espacio no lo llenaron fábricas. Lo llenaron la celulosa y, sobre todo, la comida: fruta, salmón, vino. Los alimentos pasaron de menos de un 7 % de lo exportado en 1962 a casi una cuarta parte en 2024. Es un cambio de fondo, y le dio trabajo a regiones enteras. Pero sigue siendo vender lo que da la tierra o el mar. Chile cambió de materia prima. Corea cambió de oficio.",
             "cifras": [
               {
                 "texto": "algo más de la mitad",
@@ -706,7 +706,7 @@
         "escenas": [
           {
             "tipo": "planteamiento",
-            "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y en esta comparación pesa más que cualquier discurso."
+            "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y aquí es donde los dos países más se separan."
           },
           {
             "tipo": "dato",
@@ -1168,7 +1168,7 @@
           },
           {
             "tipo": "giro",
-            "texto": "Y ahora, la sorpresa. Veinticuatro años después, la matrícula universitaria de Chile es prácticamente igual a la de Corea. Las dos pasan de cien. Chile cerró en una generación una brecha que parecía enorme. En matrícula, Chile alcanzó a Corea. En ingreso, no.",
+            "texto": "Y ahora, la sorpresa. Veinticuatro años después, la matrícula universitaria de Chile es prácticamente igual a la de Corea. Las dos pasan de cien. Chile cerró en una generación una brecha de dos a uno. En matrícula, Chile alcanzó a Corea. En ingreso, no.",
             "grafico": {
               "tipo": "barras",
               "titulo": "Matrícula universitaria, 2024",
@@ -1193,6 +1193,28 @@
               "dice": "matrícula"
             },
             "cifras": [
+              {
+                "texto": "dos a uno",
+                "valor": 2.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "CHL",
+                  "anio": 2000
+                }
+              },
               {
                 "texto": "prácticamente igual",
                 "valor": 1.0,
@@ -1424,7 +1446,7 @@
       }
     ],
     "numeroQueNadieMira": {
-      "texto": "Y queda el número que nadie mira. Corea dedica casi un 5 % de su economía a investigación y desarrollo. Chile, doce veces menos: no llega a medio punto. Según el Banco Mundial, hace quince años esa brecha era más chica. No se está cerrando: se está abriendo. Una universidad forma personas. La investigación convierte lo que esas personas saben en productos que otros quieren pagar.",
+      "texto": "Y queda el número que nadie mira. Corea dedica casi un 5 % de su economía a investigación y desarrollo. Chile, doce veces menos: no llega a medio punto. Según el Banco Mundial, en 2007 esa brecha era de nueve veces; en 2022, de doce. No se está cerrando: se está abriendo. Una universidad forma personas. La investigación convierte lo que esas personas saben en productos que otros quieren pagar.",
       "grafico": {
         "tipo": "comparacion",
         "titulo": "Investigación y desarrollo, 2022 (% del PIB)",
@@ -1494,7 +1516,7 @@
           }
         },
         {
-          "texto": "hace quince años esa brecha era más chica",
+          "texto": "de nueve veces",
           "valor": 8.9,
           "calculo": {
             "datos": {
