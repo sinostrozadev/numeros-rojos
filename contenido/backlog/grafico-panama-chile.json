@@ -2,7 +2,7 @@
   "plantilla": "grafico",
   "id": "pendiente-grafico-panama-chile",
   "titulo": "Panamá estaba bajo Chile en 1990. Hoy le saca un 20 %",
-  "descripcion": "¿Cuándo pasó Panamá a Chile y a Uruguay en ingreso por persona?\n\nTres líneas del Banco Mundial, ajustadas por precios, de 1990 a 2024. Panamá cruzó en 2012 y la distancia sigue creciendo.\nY a diferencia de Irlanda, su ingreso nacional queda cerca de su PIB.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "descripcion": "¿Cuándo pasó Panamá a Chile y a Uruguay en ingreso por persona?\n\nTres líneas del Banco Mundial, ajustadas por precios, de 1990 a 2024. Panamá cruzó en 2012 y la distancia sigue creciendo.\nSu ingreso nacional queda cerca de su PIB: lo que se produce, se queda.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
     "#shorts",
     "#economia",
@@ -183,7 +183,7 @@
       },
       {
         "tipo": "dato",
-        "texto": "En 2024, un panameño produce un 20 % más que un chileno. El Canal, la banca y la logística explican buena parte. Y a diferencia de Irlanda, casi todo eso se queda en el país.",
+        "texto": "En 2024, un panameño produce un 20 % más que un chileno. El Canal, la banca y la logística explican buena parte. Y casi todo eso se queda en el país.",
         "grafico": {
           "tipo": "barras",
           "titulo": "2024: ingreso por persona",

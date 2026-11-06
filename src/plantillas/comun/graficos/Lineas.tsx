@@ -13,7 +13,7 @@ import { anchoTexto, clamp01, type PropsCuerpo } from './tipos';
  * las anotaciones aparecen cuando la línea llega a su año. El destacado va en dorado y encima de todo; en el giro
  * (`enfasis`) su valor se enciende en rojo con un pulso.
  */
-export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, ps, ancho, alto, modo, progreso, frame, fps, enfasis, area = false }) => {
+export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, ps, ancho, alto, modo, progreso, frame, fps, enfasis, enfasisPais, anotacionesFrame, area = false }) => {
   const T = TIPO_GRAFICO[modo];
   const series = area ? ps.slice(0, 1).map((p) => (destacadoDe(g) ? ps.find((q) => q.iso === destacadoDe(g)) ?? p : p)) : ps;
   const rango = rangoAnios(series, g);
@@ -42,7 +42,7 @@ export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, p
   const nombres = series.map((p) => p.pais);
   const anchoEtiq = Math.min(ancho * (modo === 'short' ? 0.27 : 0.2), Math.max(...nombres.map((n) => anchoTexto(n, T.etiqueta, 0.58))) + 40);
   const anchoY = Math.max(...marcas.map((m) => anchoTexto(formatear(m, { ...opc, compacto: true }), T.eje, 0.6))) + 22;
-  const anots = (g.anotaciones ?? []).filter((a) => a.anio >= a0 && a.anio <= a1).sort((a, b) => a.anio - b.anio);
+  const anots = (g.anotaciones ?? []).map((a, k) => ({ ...a, fDice: anotacionesFrame?.[k] })).filter((a) => a.anio >= a0 && a.anio <= a1).sort((a, b) => a.anio - b.anio);
   const altoAnot = anots.length ? T.anotacion * 1.55 + 8 : 0;
   const x0 = anchoY, x1 = ancho - anchoEtiq;
   const yTop = 6;
@@ -66,7 +66,8 @@ export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, p
   const idClip = `clip-${g.datos.indicador}-${g.titulo.length}-${modo}`.replace(/[^a-zA-Z0-9-]/g, '');
 
   // Cabezas: punto + etiqueta directa, separadas verticalmente para que nunca se encimen.
-  const mostrarValor = (iso: string) => series.length <= 3 || iso === dest;
+  const encendido = enfasisPais && series.some((p) => p.iso === enfasisPais) ? enfasisPais : dest ?? (series.length === 1 ? series[0].iso : null);
+  const mostrarValor = (iso: string) => series.length <= 3 || iso === dest || iso === encendido;
   const cabezas = series.flatMap((p) => {
     const v = valorInterpolado(p, Math.min(anioCabeza, p.puntos[p.puntos.length - 1].anio));
     if (v === null || progreso <= 0) return [];
@@ -99,7 +100,7 @@ export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, p
         <line x1={X(anioDest)} x2={X(anioDest)} y1={y0} y2={y1} stroke={PALETA.dorado} strokeOpacity={0.7} strokeWidth={2.5} />
       )}
       {anots.map((a, k) => {
-        const vis = clamp01((anioCabeza - a.anio) / Math.max(0.5, (a1 - a0) * 0.025));
+        const vis = a.fDice !== undefined ? clamp01((frame - a.fDice) / (0.3 * fps)) : clamp01((anioCabeza - a.anio) / Math.max(0.5, (a1 - a0) * 0.025));
         return <Anotacion key={`${a.anio}-${k}`} x={X(a.anio)} yTop={yTop} yBase={y1} anio={a.anio} texto={a.texto} fontSize={T.anotacion} visible={vis} fila={filas[k]} xMax={ancho - 4} />;
       })}
       <g clipPath={`url(#${idClip})`}>
@@ -113,7 +114,7 @@ export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, p
       </g>
       {pos.map(({ p, v, x, y, ly }) => {
         const esDest = p.iso === dest || series.length === 1;
-        const rojo = esDest && enfasis > 0;
+        const rojo = p.iso === encendido && enfasis > 0;
         const r = (modo === 'short' ? 10 : 8) + (esDest ? 2 : 0);
         const valor = formatear(v, { ...opc, compacto: Math.abs(v) >= 1e6 });
         const lx = x + r + 14;

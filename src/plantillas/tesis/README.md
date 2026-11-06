@@ -25,10 +25,16 @@ un video con FIXTURE** (`<id>.plan.json` → `fixture: true`).
   gráfico) → promesa con índice de pictogramas → por capítulo: tarjeta 1 s (número + título) → escenas → "el
   número que nadie mira" → remate gigante → pantalla final 20 s (la pregunta siguiente + suscripción a la
   izquierda, hueco 840×472 del video siguiente a la derecha, aviso al pie) → cierre 1,2 s.
-- Gráfico por escena: el propio; si no trae, el último del capítulo; si aún no hubo, el próximo "en espera"
-  (solo ejes). Persiste entre escenas sin reiniciarse. `respiro`: gráfico solo 3,5 s con zoom lento. `giro`:
-  el destacado se enciende en rojo y el subtítulo pasa a rojo. `reenganche`: texto grande sobre el gráfico
-  apagado + fundido a negro de 0,7 s = punto del mid-roll.
+- **Regla: NUNCA hay un frame sin contenido visual** (ni pantalla negra ni ejes vacíos esperando a la voz):
+  - Escena con gráfico propio y `dice` tardío: hasta 0,4 s antes de `dice` se ve el ÚLTIMO gráfico mostrado
+    atenuado + el título del gráfico nuevo como tarjeta; luego transición y el nuevo se construye. Sin `dice`, se
+    construye desde el inicio de la escena.
+  - Escena sin gráfico propio (planteamiento, giro, reenganche, significado): "tarjeta de cita" = último gráfico
+    atenuado (0,45) con paneo/zoom lentísimo + la frase que dice la voz grande al centro (display 66–72 px, máx.
+    2 líneas, palabra que suena en dorado; rojo en el giro). Si aún no hubo gráfico: tarjeta del capítulo fija.
+  - `respiro`: el último gráfico solo, sin voz, con zoom lento. Tarjeta de capítulo: sobre el gráfico anterior apagado.
+  - `escena.enfasis.pais` decide qué país se enciende en rojo en el giro (si falta, `destacar.pais`);
+    `anotacion.dice` hace entrar la anotación cuando la voz dice esa palabra.
 - Construcción con la voz (`comun/construccion.ts`): la línea llega a cada AÑO cuando la voz lo dice; el contador
   cuenta cuando dice la cifra; barras/ranking/mapa crecen desde `dice` hasta el fin de la frase.
 - Arriba: cabecera (izq.), marca de agua (der.), barra de capítulos con pictogramas. Abajo: subtítulos 2–4

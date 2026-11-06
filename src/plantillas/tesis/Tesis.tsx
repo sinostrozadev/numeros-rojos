@@ -15,7 +15,8 @@ import { Subtitulos } from '../comun/Subtitulos';
 import { Cabecera, RotuloCaja } from '../comun/Cabecera';
 import { Remate } from '../comun/Remate';
 import { BarraCapitulos, IndiceLista } from '../comun/Indice';
-import { estimarTiemposTesis, graficosTesis, planTesis, type BloqueTesis, type PlanTesis } from './plan';
+import { estimarTiemposTesis, graficosTesis, planTesis, type BloqueTesis, type PlanTesis, type Vista } from './plan';
+import { Cita } from '../comun/Cita';
 
 export { graficosTesis };
 
@@ -60,19 +61,80 @@ export const calcularMetadataTesis: CalculateMetadataFunction<PropsTesis> = asyn
   return { durationInFrames: plan.duracionFrames, props: { ...props, tiempos, datos, duracionFrames: plan.duracionFrames } };
 };
 
-/** Gráfico de un bloque con su avance (desde las claves de la voz) y el énfasis del giro. */
-const GraficoDeBloque: React.FC<{ b: BloqueTesis; frame: number; datos?: DatosResueltos; antetitulo?: string; velo?: number }> = ({ b, frame, datos, antetitulo, velo = 0 }) => {
-  if (!b.grafico) return null;
-  const local = frame - (b.graficoDesde ?? b.desde);
-  const progreso = avanceEn(b.claves ?? [], frame);
-  const enfasis = b.enfasisDesde !== undefined ? interpolate(frame, [b.enfasisDesde, b.enfasisDesde + 8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
-  // Micro-movimiento: deriva y zoom muy lentos para que nada quede estático > 8 s.
+/**
+ * Un gráfico en pantalla con su avance (desde las claves de la voz), su énfasis y un micro-movimiento (deriva y
+ * zoom lentos: nada estático > 8 s). `atenuado` = opacidad (0,45 cuando es el gráfico anterior de fondo).
+ */
+const VistaGrafico: React.FC<{
+  v: Vista; frame: number; datos?: DatosResueltos; atenuado?: number; antetitulo?: string;
+  enfasisDesde?: number; enfasisPais?: string; zoomDesde?: number; zoomHasta?: number;
+}> = ({ v, frame, datos, atenuado = 1, antetitulo, enfasisDesde, enfasisPais, zoomDesde, zoomHasta }) => {
+  const local = frame - v.graficoDesde;
+  const progreso = avanceEn(v.claves, frame);
+  const enfasis = enfasisDesde !== undefined ? interpolate(frame, [enfasisDesde, enfasisDesde + 8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
   const t = frame / FORMATO_LARGO.fps;
-  const escala = 1 + 0.008 * Math.sin(t / 5) + (b.tipoEscena === 'respiro' ? interpolate(frame, [b.desde, b.hasta], [0, 0.025]) : 0);
+  const fondo = atenuado < 1;
+  const zoom = zoomDesde !== undefined && zoomHasta !== undefined ? interpolate(frame, [zoomDesde, zoomHasta], [0, fondo ? 0.05 : 0.025], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
+  const escala = 1 + 0.008 * Math.sin(t / 5) + zoom;
   const Z = ZONA_TESIS.grafico;
+  const anotacionesFrame = v.anotFrames?.map((x) => (x === undefined ? undefined : x - v.graficoDesde));
   return (
-    <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, transform: `scale(${escala}) translateX(${3 * Math.sin(t / 7)}px)`, transformOrigin: '50% 55%', opacity: 1 - velo }}>
-      <GraficoAnimado g={b.grafico} datos={datos} ancho={Z.ancho} alto={Z.alto} modo="largo" progreso={progreso} frame={local} fps={FORMATO_LARGO.fps} enfasis={enfasis} antetitulo={antetitulo} />
+    <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, transform: `scale(${escala}) translateX(${3 * Math.sin(t / 7) + (fondo ? -12 * Math.sin(t / 11) : 0)}px)`, transformOrigin: '50% 55%', opacity: atenuado }}>
+      <GraficoAnimado g={v.grafico} datos={datos} ancho={Z.ancho} alto={Z.alto} modo="largo" progreso={progreso} frame={local} fps={FORMATO_LARGO.fps} enfasis={enfasis}
+        enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} antetitulo={antetitulo} />
+    </div>
+  );
+};
+
+const vistaDe = (b: BloqueTesis): Vista | undefined => (b.grafico ? { grafico: b.grafico, graficoId: b.graficoId!, graficoDesde: b.graficoDesde!, claves: b.claves!, anotFrames: b.anotFrames } : undefined);
+
+/** Título del gráfico que viene, como tarjeta, mientras la voz llega a `dice` (sobre el gráfico anterior atenuado). */
+const TituloEntrante: React.FC<{ titulo: string; subtitulo?: string; frame: number; hasta: number }> = ({ titulo, subtitulo, frame, hasta }) => {
+  const fps = FORMATO_LARGO.fps;
+  const e = spring({ frame, fps, config: { damping: 16, stiffness: 150 } });
+  const sale = interpolate(frame, [hasta - 2, hasta + Math.round(0.4 * fps)], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  return (
+    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: Math.min(1, e * 1.4) * (1 - sale) }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, transform: `translateY(${(1 - e) * 30 - sale * 40}px) scale(${1 + 0.015 * (frame / fps)})`, maxWidth: 1500 }}>
+        <div style={{ width: 90, height: 8, borderRadius: 4, background: PALETA.dorado }} />
+        <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 76, lineHeight: 1.08, color: PALETA.tinta, textAlign: 'center', letterSpacing: -1.5, textShadow: '0 6px 26px rgba(0,0,0,0.75)' }}>{titulo}</div>
+        {subtitulo && <div style={{ fontFamily: TIPO.texto, fontWeight: 600, fontSize: 30, color: PALETA.tintaSuave, textAlign: 'center' }}>{subtitulo}</div>}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/**
+ * Gráfico de un bloque (gancho, escena con gráfico, número): si hay espera de `dice`, primero el gráfico anterior
+ * atenuado + el título del nuevo; a 0,4 s de la palabra, transición y el nuevo empieza a construirse.
+ */
+const GraficoConEspera: React.FC<{ b: BloqueTesis; frame: number; datos?: DatosResueltos; antetitulo?: string }> = ({ b, frame, datos, antetitulo }) => {
+  const v = vistaDe(b);
+  if (!v) return null;
+  const fps = FORMATO_LARGO.fps;
+  const espera = b.esperaHasta !== undefined && frame < b.esperaHasta + Math.round(0.4 * fps);
+  const salidaPrevio = b.esperaHasta !== undefined ? interpolate(frame, [b.esperaHasta, b.esperaHasta + Math.round(0.4 * fps)], [0.45, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
+  const sub = [b.grafico!.datos.etiqueta, b.grafico!.datos.unidad].filter(Boolean).join(' · ');
+  return (
+    <>
+      {espera && b.previo && salidaPrevio > 0 && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={salidaPrevio} zoomDesde={b.desde} zoomHasta={b.esperaHasta} />}
+      {espera && <TituloEntrante titulo={b.grafico!.titulo} subtitulo={sub} frame={frame - b.desde} hasta={b.esperaHasta! - b.desde} />}
+      {frame >= v.graficoDesde && (
+        <VistaGrafico v={v} frame={frame} datos={datos} antetitulo={antetitulo} enfasisDesde={b.enfasisDesde} enfasisPais={b.enfasisPais}
+          zoomDesde={b.tipoEscena === 'respiro' ? b.desde : undefined} zoomHasta={b.tipoEscena === 'respiro' ? b.hasta : undefined} />
+      )}
+    </>
+  );
+};
+
+/** Tarjeta de capítulo fija (sin gráfico previo): número + título con la rejilla de fondo, mientras habla la voz. */
+const CapituloFijo: React.FC<{ n: number; titulo: string; frame: number }> = ({ n, titulo, frame }) => {
+  const fps = FORMATO_LARGO.fps;
+  const e = spring({ frame, fps, config: { damping: 18, stiffness: 120 } });
+  return (
+    <div style={{ position: 'absolute', left: 170, top: 300, display: 'flex', alignItems: 'center', gap: 50, opacity: 0.35 + 0.65 * e, transform: `scale(${1 + 0.01 * (frame / fps) / 3})`, transformOrigin: 'left center' }}>
+      <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 240, color: PALETA.dorado, lineHeight: 0.9, opacity: 0.9 }}>{String(n).padStart(2, '0')}</div>
+      <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 80, color: PALETA.tinta, lineHeight: 1.04, maxWidth: 1150, letterSpacing: -1.5 }}>{titulo}</div>
     </div>
   );
 };
@@ -155,16 +217,16 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
   const capActual = enCapitulos ? b.capitulo! : -1;
   const bloquesCap = enCapitulos ? plan.bloques.filter((x) => x.capitulo === capActual) : [];
   const avanceCap = bloquesCap.length ? interpolate(frame, [bloquesCap[0].desde, bloquesCap[bloquesCap.length - 1].hasta], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
-  const subtitulos = linea && linea.palabras.length && !['remate', 'final', 'titulo'].includes(b.tipo) && b.tipoEscena !== 'reenganche';
+  const cita = !!b.cita;
+  const subtitulos = linea && linea.palabras.length && !['remate', 'final', 'titulo'].includes(b.tipo) && !(cita && b.previo);
   const reenganche = b.tipoEscena === 'reenganche';
   const fundido = reenganche ? interpolate(frame, [b.hasta - Math.round(0.7 * fps), b.hasta - 2], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
-  // Bloque de gráfico de referencia (la tarjeta de capítulo muestra el gráfico que viene, apagado).
-  const siguienteEscena = b.tipo === 'capitulo' ? plan.bloques.find((x) => x.capitulo === b.capitulo && x.tipo === 'escena') : undefined;
+  const giroActivo = b.tipoEscena === 'giro' && b.enfasisDesde !== undefined && frame >= b.enfasisDesde;
   return (
     <AbsoluteFill style={{ background: PALETA.fondo, overflow: 'hidden' }}>
       <FondoRejilla frame={frame} fps={fps} ancho={W} alto={H} />
       {b.tipo === 'titulo' && <TarjetaTitulo g={props} frame={local} frames={b.hasta - b.desde} />}
-      {b.tipo === 'gancho' && (b.grafico ? <GraficoDeBloque b={b} frame={frame} datos={datos} /> : (
+      {b.tipo === 'gancho' && (b.grafico ? <GraficoConEspera b={b} frame={frame} datos={datos} /> : (
         <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 170, color: PALETA.dorado, textTransform: 'uppercase', letterSpacing: -3, transform: `scale(${1 + local / fps * 0.01})` }}>{props.gancho.rotulo}</div>
         </AbsoluteFill>
@@ -174,18 +236,18 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
           <IndiceLista items={props.indice} frame={frame} desde={plan.indiceDesde} fontSize={62} ancho={1400} />
         </div>
       )}
-      {b.tipo === 'capitulo' && siguienteEscena && <GraficoDeBloque b={{ ...siguienteEscena, graficoDesde: b.desde, claves: [] }} frame={frame} datos={datos} velo={0.6} />}
+      {b.tipo === 'capitulo' && b.previo && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={0.3} />}
       {b.tipo === 'capitulo' && <TarjetaCapitulo n={(b.capitulo ?? 0) + 1} titulo={props.capitulos[b.capitulo ?? 0].titulo} frame={local} frames={b.hasta - b.desde} />}
-      {b.tipo === 'escena' && <GraficoDeBloque b={b} frame={frame} datos={datos} velo={reenganche ? 0.75 : 0} />}
-      {reenganche && linea && (
-        <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', padding: '0 200px' }}>
-          <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 76, lineHeight: 1.1, color: PALETA.tinta, textAlign: 'center', letterSpacing: -1,
-            opacity: interpolate(local, [0, 10], [0, 1], { extrapolateRight: 'clamp' }), transform: `scale(${1 + 0.02 * (local / fps) / 4})` }}>
-            {linea.texto}
-          </div>
-        </AbsoluteFill>
+      {b.tipo === 'escena' && !cita && <GraficoConEspera b={b} frame={frame} datos={datos} />}
+      {cita && b.previo && (
+        <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={0.45} zoomDesde={b.desde} zoomHasta={b.hasta} enfasisDesde={b.enfasisDesde} enfasisPais={b.enfasisPais} />
       )}
-      {(b.tipo === 'numero' || b.tipo === 'remate') && <GraficoDeBloque b={b} frame={frame} datos={datos} antetitulo="El número que nadie mira" velo={0} />}
+      {cita && !b.previo && <CapituloFijo n={(b.capitulo ?? 0) + 1} titulo={props.capitulos[b.capitulo ?? 0].titulo} frame={local} />}
+      {cita && b.previo && linea && linea.palabras.length > 0 && (
+        <Cita linea={linea} frameLocal={frame - Math.round(linea.inicio * fps)} fps={fps} ancho={1560} fontSize={reenganche ? 72 : 66} centroY={560}
+          acento={giroActivo ? PALETA.rojo : PALETA.dorado} />
+      )}
+      {(b.tipo === 'numero' || b.tipo === 'remate') && <GraficoConEspera b={b} frame={frame} datos={datos} antetitulo="El número que nadie mira" />}
       {b.tipo === 'remate' && <Remate texto={props.remate} frame={local} segundaEn={plan.remateSegundaEn} ancho={W - S.lados * 2} izquierda={S.lados} centroY={H / 2} fsMax={112} />}
       {b.tipo === 'final' && <PantallaFinal g={props} frame={local} />}
 
@@ -203,7 +265,7 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
       )}
       {subtitulos && linea && (
         <Subtitulos linea={linea} frameLocal={frame - Math.round(linea.inicio * fps)} centroY={ZONA_TESIS.subtitulos.centroY} fontSize={T.subtitulos} ancho={W - 320}
-          acento={b.tipoEscena === 'giro' && b.enfasisDesde !== undefined && frame >= b.enfasisDesde ? PALETA.rojo : PALETA.dorado} />
+          acento={giroActivo ? PALETA.rojo : PALETA.dorado} />
       )}
       {fundido > 0 && <AbsoluteFill style={{ background: `rgba(5,6,8,${fundido})` }} />}
 

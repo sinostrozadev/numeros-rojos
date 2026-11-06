@@ -11,8 +11,9 @@ type Fila = { iso: string; pais: string; valor: number };
 /** Una barra horizontal con nombre a la izquierda y valor al final (el valor cuenta mientras la barra crece). */
 const BarraH: React.FC<{
   y: number; alto: number; xNombre: number; x0: number; largo: number; fila: Fila; color: string; destacado: boolean;
-  T: (typeof TIPO_GRAFICO)[keyof typeof TIPO_GRAFICO]; valorVisible: number; opc: ReturnType<typeof opcionesDe>; rojo: number; rango?: number;
-}> = ({ y, alto, xNombre, x0, largo, fila, color, destacado, T, valorVisible, opc, rojo, rango }) => {
+  T: (typeof TIPO_GRAFICO)[keyof typeof TIPO_GRAFICO]; valorVisible: number; opc: ReturnType<typeof opcionesDe>; rojo: number; rango?: number; encendido?: boolean;
+}> = ({ y, alto, xNombre, x0, largo, fila, color, destacado, T, valorVisible, opc, rojo: rojo0, rango, encendido }) => {
+  const rojo = encendido ? rojo0 : 0;
   const valor = formatear(valorVisible, { ...opc, compacto: Math.abs(valorVisible) >= 1e6 });
   const fs = Math.min(T.etiqueta, alto * 0.62);
   const w = Math.max(0, largo);
@@ -25,9 +26,9 @@ const BarraH: React.FC<{
       <text x={xNombre} y={y + alto * 0.5 + fs * 0.35} fontSize={fs} textAnchor="end" fill={destacado ? PALETA.tinta : PALETA.tintaSuave}
         style={{ fontFamily: TIPO.texto, fontWeight: destacado ? 800 : 600 }}>{fila.pais}</text>
       <rect x={x0} y={y + alto * 0.14} width={w} height={alto * 0.72} rx={Math.min(8, alto * 0.12)} fill={color}
-        stroke={rojo > 0 && destacado ? PALETA.rojo : 'none'} strokeWidth={rojo > 0 ? 5 * rojo : 0} />
+        stroke={rojo > 0 ? PALETA.rojo : 'none'} strokeWidth={rojo > 0 ? 5 * rojo : 0} />
       {w > 2 && (
-        <text x={x0 + w + 14} y={y + alto * 0.5 + fs * 0.36} fontSize={fs} fill={rojo > 0 && destacado ? PALETA.rojo : destacado ? PALETA.dorado : PALETA.tinta}
+        <text x={x0 + w + 14} y={y + alto * 0.5 + fs * 0.36} fontSize={fs} fill={rojo > 0 ? PALETA.rojo : destacado ? PALETA.dorado : PALETA.tinta}
           style={{ fontFamily: TIPO.texto, fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>{valor}</text>
       )}
     </g>
@@ -104,7 +105,7 @@ const Columnas: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, prog
   );
 };
 
-const BarrasPaises: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, progreso, enfasis }) => {
+const BarrasPaises: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, progreso, enfasis, enfasisPais }) => {
   const T = TIPO_GRAFICO[modo];
   const anio = anioReferencia(g, ps);
   const filas: Fila[] = anio === null ? [] : ps.flatMap((p) => { const v = valorEn(p, anio); return v === null ? [] : [{ iso: p.iso, pais: p.pais, valor: v }]; })
@@ -129,7 +130,7 @@ const BarrasPaises: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, 
         return (
           <g key={f.iso} transform={v < 0 ? `translate(${-largo},0)` : undefined}>
             <BarraH y={y0 + i * altoFila} alto={altoFila} xNombre={xNombre} x0={cero} largo={largo} fila={f} color={colorBarra(g, f.iso)} destacado={f.iso === dest}
-              T={T} valorVisible={v} opc={opc} rojo={enfasis} />
+              T={T} valorVisible={v} opc={opc} rojo={enfasis} encendido={f.iso === (enfasisPais ?? dest)} />
           </g>
         );
       })}
@@ -152,7 +153,7 @@ export const cortesRanking = (g: PropsCuerpo['g'], ps: SeriePais[]): number[] =>
  * Ranking: barras que se REORDENAN entre 2–4 cortes de año (bar chart race corto). Los primeros 15 % del avance
  * las barras crecen; luego valores y posiciones se interpolan corte a corte. Año grande abajo a la derecha.
  */
-export const Ranking: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, progreso, enfasis }) => {
+export const Ranking: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, progreso, enfasis, enfasisPais }) => {
   const T = TIPO_GRAFICO[modo];
   const cortes = cortesRanking(g, ps);
   if (cortes.length < 1 || !ps.length) return <SinDatos ancho={ancho} alto={alto} fontSize={T.etiqueta} />;
@@ -194,7 +195,7 @@ export const Ranking: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo
       {[...filas].sort((a, b) => (a.iso === dest ? 1 : 0) - (b.iso === dest ? 1 : 0)).map((fi) => (
         <BarraH key={fi.iso} y={y0 + fi.pos * altoFila} alto={altoFila} xNombre={xNombre} x0={x0} largo={Math.max(0, fi.valor) * kx}
           fila={fi} color={dest ? (fi.iso === dest ? PALETA.dorado : colores[fi.iso]) : colores[fi.iso]} destacado={fi.iso === dest}
-          T={T} valorVisible={fi.valor} opc={opc} rojo={enfasis} rango={Math.round(fi.pos) + 1} />
+          T={T} valorVisible={fi.valor} opc={opc} rojo={enfasis} encendido={fi.iso === (enfasisPais ?? dest)} rango={Math.round(fi.pos) + 1} />
       ))}
     </svg>
   );

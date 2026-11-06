@@ -16,7 +16,8 @@ flock -w 1800 /tmp/bolita-render.lock npx remotion render src/index.ts Grafico s
 - Frame 0: rótulo del gancho en caja dorada + título del gráfico + ejes, ENTEROS (sin animación de entrada).
 - El gráfico principal se construye desde `dice` hasta la última escena `dato` antes del giro (la línea llega a
   cada año cuando la voz lo dice). Una escena con un gráfico DISTINTO lo reemplaza durante esa escena. Las
-  escenas `dato` que repiten el gráfico del Short siguen construyéndolo.
+  escenas `dato` con `usaGraficoPrincipal: true` (o que repiten el gráfico) siguen construyéndolo. `escena.enfasis.pais`
+  elige el país que se enciende en rojo en el giro; `anotacion.dice` hace entrar la anotación con esa palabra.
 - Los rótulos de escena reemplazan al del gancho en la misma caja (rojo en el giro). Subtítulos a y≈1505.
 - Zona segura: todo entre y 220 y 1580, lados 60, y 40 px extra libres a la derecha por la columna de botones.
 - Remate gigante con velo, cierre de marca 1,2 s. Nada estático > 2 s (rejilla + deriva del gráfico).

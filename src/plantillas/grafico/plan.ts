@@ -9,7 +9,7 @@
 import type { GuionGrafico } from '../comun/guion';
 import type { DatosResueltos, Grafico } from '../comun/datos';
 import { PAUSA, buscarPalabra, depurarEventos, estimarTiempos, primeraCifra, type Clave, type Evento, type LineaVoz, type Tiempos } from '../comun/plan';
-import { clavesDeGrafico } from '../comun/construccion';
+import { clavesDeGrafico, framesAnotaciones } from '../comun/construccion';
 import { mitadesRemate } from '../comun/remate-texto';
 import { FORMATO_SHORT, RITMO } from '../../marca/tokens';
 
@@ -48,7 +48,10 @@ export type BloqueGrafico = {
   graficoId: string;
   graficoDesde: number;
   claves: Clave[];
+  /** Frames ABSOLUTOS de las anotaciones con `dice`. */
+  anotFrames?: (number | undefined)[];
   enfasisDesde?: number;
+  enfasisPais?: string;
   rotulo?: { texto: string; desde: number };
 };
 
@@ -68,12 +71,13 @@ export const planGrafico = (g: GuionGrafico, tiempos: Tiempos, datos?: DatosResu
   const n = g.escenas.length;
   // Construcción del gráfico principal: del gancho hasta la última escena `dato`/`planteamiento` antes del giro.
   const iGiro = g.escenas.findIndex((e) => e.tipo === 'giro');
-  const mismo = (x?: Grafico) => !x || JSON.stringify(x) === JSON.stringify(g.grafico);
+  const mismoGraf = (x?: Grafico) => !x || JSON.stringify(x) === JSON.stringify(g.grafico);
+  const mismo = (e: GuionGrafico['escenas'][number]) => !!e.usaGraficoPrincipal || mismoGraf(e.grafico);
   let ultimaConstruccion = 0;
   // Solo escenas seguidas desde el gancho que siguen mostrando el gráfico principal (si una lo reemplaza, se corta ahí).
   for (let k = 0; k < n; k++) {
     const e = g.escenas[k];
-    if (!mismo(e.grafico) || (iGiro >= 0 && k >= iGiro)) break;
+    if (!mismo(e) || (iGiro >= 0 && k >= iGiro)) break;
     if (e.tipo === 'dato' || e.tipo === 'planteamiento') ultimaConstruccion = k + 1;
   }
   const clavesPrincipal = clavesDeGrafico(g.grafico, L.slice(0, ultimaConstruccion + 1), fps, datos);
@@ -83,16 +87,16 @@ export const planGrafico = (g: GuionGrafico, tiempos: Tiempos, datos?: DatosResu
   if (['lineas', 'area', 'barras', 'ranking'].includes(g.grafico.tipo)) eventos.push({ t: c0.f / fps, tipo: 'trazo', fuerza: 0.6, dur: (cn.f - c0.f) / fps });
 
   const bloques: BloqueGrafico[] = [];
-  const principal = { grafico: g.grafico, graficoId: 'principal', graficoDesde: 0, claves: clavesPrincipal };
+  const principal = { grafico: g.grafico, graficoId: 'principal', graficoDesde: 0, claves: clavesPrincipal, anotFrames: framesAnotaciones(g.grafico, L, fps) };
   bloques.push({ tipo: 'gancho', desde: 0, hasta: desdeVisual(1), linea: 0, ...principal });
   g.escenas.forEach((e, k) => {
     const i = k + 1;
     const linea = L[i];
     const desde = desdeVisual(i), hasta = desdeVisual(i + 1);
-    const propio = !mismo(e.grafico);
+    const propio = !mismo(e);
     const b: BloqueGrafico = propio
-      ? { tipo: 'escena', desde, hasta, linea: i, escena: k, tipoEscena: e.tipo, grafico: e.grafico!, graficoId: `e${k}`, graficoDesde: desde, claves: clavesDeGrafico(e.grafico!, [linea], fps, datos) }
-      : { tipo: 'escena', desde, hasta, linea: i, escena: k, tipoEscena: e.tipo, ...principal };
+      ? { tipo: 'escena', desde, hasta, linea: i, escena: k, tipoEscena: e.tipo, grafico: e.grafico!, graficoId: `e${k}`, graficoDesde: desde, claves: clavesDeGrafico(e.grafico!, [linea], fps, datos), anotFrames: framesAnotaciones(e.grafico!, [linea], fps), enfasisPais: e.enfasis?.pais }
+      : { tipo: 'escena', desde, hasta, linea: i, escena: k, tipoEscena: e.tipo, ...principal, enfasisPais: e.enfasis?.pais };
     if (propio) { eventos.push({ t: desde / fps, tipo: 'whoosh', fuerza: 0.7 }); eventos.push({ t: b.claves[0].f / fps, tipo: 'tic', fuerza: 0.6 }); }
     if (e.rotulo) {
       const pi = e.rotulo.dice ? buscarPalabra(linea.palabras, e.rotulo.dice) : -1;
@@ -114,7 +118,7 @@ export const planGrafico = (g: GuionGrafico, tiempos: Tiempos, datos?: DatosResu
   const [primeraMitad] = mitadesRemate(g.remate);
   const nPrimera = primeraMitad.split(/\s+/).filter(Boolean).length;
   const remateSegundaEn = lr.palabras[nPrimera] ? f(lr.antes + lr.palabras[nPrimera].inicio) : f(lr.antes + lr.duracionHablada * 0.5);
-  bloques.push({ tipo: 'remate', desde: desdeVisual(iRem), hasta: cierreDesde, linea: iRem, grafico: ultimo.grafico, graficoId: ultimo.graficoId, graficoDesde: ultimo.graficoDesde, claves: ultimo.claves });
+  bloques.push({ tipo: 'remate', desde: desdeVisual(iRem), hasta: cierreDesde, linea: iRem, grafico: ultimo.grafico, graficoId: ultimo.graficoId, graficoDesde: ultimo.graficoDesde, claves: ultimo.claves, anotFrames: ultimo.anotFrames });
   eventos.push({ t: Math.max(0, lr.inicio - 0.8), tipo: 'riser', fuerza: 0.9 });
   eventos.push({ t: lr.inicio, tipo: 'golpe', fuerza: 1 });
   eventos.push({ t: (desdeVisual(iRem) + remateSegundaEn) / fps, tipo: 'pop', fuerza: 0.6 });

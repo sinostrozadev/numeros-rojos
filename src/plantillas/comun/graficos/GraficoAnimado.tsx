@@ -28,6 +28,9 @@ export type PropsGraficoAnimado = {
   antetitulo?: string;
   /** Sin animación de entrada (el gancho del Short: el título se ve ENTERO en el frame 0). */
   inmediato?: boolean;
+  enfasisPais?: string;
+  /** Frames LOCALES de las anotaciones con `dice`. */
+  anotacionesFrame?: (number | undefined)[];
 };
 
 const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
@@ -46,7 +49,7 @@ const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
  * unidad + leyenda (≥ 2 series en líneas/ranking) + cuerpo + "Fuente: …" abajo, SIEMPRE. Funciona en 16:9 y 9:16
  * (recibe ancho/alto y el modo, que fija la escala tipográfica). Entra con un deslizamiento corto la primera vez.
  */
-export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato }) => {
+export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato, enfasisPais, anotacionesFrame }) => {
   const T = TIPO_GRAFICO[modo];
   const serie = serieDe(g, datos);
   const ps = paisesDe(g, serie);
@@ -79,7 +82,7 @@ export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho,
         </div>
       )}
       <div style={{ height: altoCuerpo, position: 'relative' }}>
-        <Cuerpo g={g} serie={serie} ps={ps} ancho={ancho} alto={altoCuerpo} modo={modo} progreso={clamp01(progreso)} frame={frame} fps={fps} enfasis={enfasis} />
+        <Cuerpo g={g} serie={serie} ps={ps} ancho={ancho} alto={altoCuerpo} modo={modo} progreso={clamp01(progreso)} frame={frame} fps={fps} enfasis={enfasis} enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} />
       </div>
       <div style={{ height: altoPie, display: 'flex', alignItems: 'flex-end' }}>
         <PieFuente texto={fuente} fontSize={T.fuente} fixture={esFixture(serie)} licencia={serie?.licencia} />

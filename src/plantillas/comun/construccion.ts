@@ -60,3 +60,24 @@ export const clavesDeGrafico = (g: Grafico, lineas: LineaTiempo[], fps: number, 
   if (ultimaClave.v < 1) claves.push({ f: Math.max(ultimaClave.f + f(0.6), f(finDibujo)), v: 1 });
   return claves;
 };
+
+/** Frame absoluto en que la voz dice `g.dice` (en alguna de las líneas), o null si no hay `dice` o no se encuentra. */
+export const frameDice = (g: Grafico, lineas: LineaTiempo[], fps: number): number | null => {
+  if (!g.dice) return null;
+  for (const l of lineas) {
+    const i = buscarPalabra(l.palabras, g.dice);
+    if (i >= 0) return Math.round((l.inicio + l.palabras[i].inicio) * fps);
+  }
+  return null;
+};
+
+/** Frame absoluto de cada anotación con `dice` (la voz dice esa palabra); undefined si se guía por el año. */
+export const framesAnotaciones = (g: Grafico, lineas: LineaTiempo[], fps: number): (number | undefined)[] =>
+  (g.anotaciones ?? []).map((a) => {
+    if (!a.dice) return undefined;
+    for (const l of lineas) {
+      const i = buscarPalabra(l.palabras, a.dice);
+      if (i >= 0) return Math.round((l.inicio + l.palabras[i].inicio) * fps);
+    }
+    return undefined;
+  });

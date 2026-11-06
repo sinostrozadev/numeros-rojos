@@ -1,44 +1,40 @@
 # En Números Rojos — Plan semanal (rodante)
 
-> Actualizado **2026-11-05 23:45** (America/Santiago) por Claude (agente de documentación). Método: skill global `plan-semanal`.
+> Actualizado **2026-11-06 03:15** (America/Santiago) por Claude (agente de documentación). Método: skill global `plan-semanal`.
 > Regla: siempre hay plan de la semana en curso **y** de la siguiente. Cuando a la semana en curso le quedan < 3 ranuras futuras
 > con guion, o termina, se hace el ritual de cierre y se arma la que viene. **Manda el bloque JSON del final** (lo leen
 > `estado.mts` y el panel de Santiago); la tabla es su vista legible.
 
 Calendario (`contenido/calendario.json`): **largo `tesis` lun/mié/vie 19:00** + **Short `grafico` diario 13:00** (tope 1/día hasta el
 YPP). Lanzamiento: primer Short sáb 11-07, primer largo **dom 11-08 19:00 (excepción fuera de ranura)**, ranura normal desde el lun 11-09.
-Los días anteriores al lanzamiento (11-02 → 11-06) no tienen ranuras: el canal no existe todavía.
+Canal creado (id `UC8uOwislkGbnnfoqsJ_FgAw`, COPPA hecho). Los días anteriores al lanzamiento (11-02 → 11-06) no tienen ranuras.
 
-**Estado al cierre de hoy: 0 de 13 ranuras con guion** (backlog vacío; los agentes de guion trabajan en paralelo). Ids que el plan
-espera: `pendiente-tesis-chile-corea`, `pendiente-tesis-argentina`, `pendiente-tesis-uruguay` (el tercero) y los 4 Shorts del backlog
-`pendiente-grafico-1` … `pendiente-grafico-4`. Cuando lleguen, cada ranura pasa a `guion` con su ruta en `guion`. ⚠ Con 0 ranuras
-con guion, `estado.mts` debe avisar: es esperado esta noche, no el jueves 11-12 (meta: ≥ 50 % de la semana siguiente con guion).
+**Estado (2026-11-06 03:15): 7 de 13 ranuras con guion** (7 del backlog validados por el revisor numérico: 3 largos + 4 Shorts, en `contenido/backlog/`). Sin guion: IPC Chile mar 11-10 (se genera el vie 11-06 con el dato del INE), casa jue 11-12, INDEC vie 11-13 (esperar dato del 11-12), largo nuevo vie 11-13 19:00 (Uruguay o Panamá: encargar a `generar-guiones`), Shorts sáb 11-14 y dom 11-15.
 
 ## Semana en curso: lun 2026-11-02 → dom 2026-11-08 (parcial, desde el lanzamiento)
 
-| Día | Hora | Plantilla | Tema (provisional) | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
+| Día | Hora | Plantilla | Tema | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
 |---|---|---|---|---|---|---|---|---|
-| sáb 11-07 | 13:00 | `grafico` 9:16 | En 1960 Corea del Sur era más pobre que Chile | serie · _El país que fue rico_ | — | sin guion (idea) · ⚠ sin guion: espera contenido/backlog/grafico-*.json (id pendiente-grafico-1, Short derivado de chile-corea); canal sin crear: falta COPPA + NR_CANAL_ID + token (SANTIAGO.md §1) | Data Is Beautiful narrado (un gráfico que sorprende) | lanzamiento; Short derivado del primer largo (H5) |
-| dom 11-08 | 13:00 | `grafico` 9:16 | Uruguay y Argentina eran igual de ricos en 1900: la línea se separa | evergreen · _El país que fue rico_ | — | sin guion (idea) · ⚠ sin guion: espera pendiente-grafico-2 (Maddison 2023 vía OWID) | Data Is Beautiful narrado (un gráfico que sorprende) | H1 (comparación entre 2 países); prepara el largo de Argentina del lunes |
-| dom 11-08 | 19:00 | **largo** 16:9 `tesis` | ¿Por qué Corea del Sur era más pobre que Chile en 1960 y hoy no? | serie · _El país que fue rico_ | — | sin guion (idea) · ⚠ sin guion: espera contenido/backlog/tesis-chile-corea.json (id pendiente-tesis-chile-corea); revisor numérico obligatorio; render nocturno 16:9 sin probar | Los Ecomonos (largo 9–12 min, una pregunta) | primer largo (excepción: domingo); H1 comparación + H2 LatAm; contradicción medible con WDI |
+| sáb 11-07 | 13:00 | `grafico` 9:16 | Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta | serie · _El país que fue rico_ | — | **con guion** · `contenido/backlog/grafico-chile-corea-cruce.json` | Data Is Beautiful narrado (un gráfico que sorprende) | lanzamiento; teaser del largo Chile-Corea del domingo (H5) |
+| dom 11-08 | 13:00 | `grafico` 9:16 | Panamá estaba bajo Chile en 1990. Hoy le saca un 20 % | evergreen | — | **con guion** · `contenido/backlog/grafico-panama-chile.json` | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir (audiencia PA/CO); Short suelto antes del largo |
+| dom 11-08 | 19:00 | **largo** 16:9 `tesis` | Chile era 3 veces más rico que Corea. ¿Qué pasó? | serie · _El país que fue rico_ | — | **con guion** · `contenido/backlog/tesis-chile-corea.json` | Los Ecomonos (largo 9–12 min, una pregunta) | primer largo (excepción: domingo); H1 comparación + H2 LatAm; contradicción medible con WDI |
 
 ## Semana siguiente: lun 2026-11-09 → dom 2026-11-15
 
-| Día | Hora | Plantilla | Tema (provisional) | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
+| Día | Hora | Plantilla | Tema | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
 |---|---|---|---|---|---|---|---|---|
-| lun 11-09 | 13:00 | `grafico` 9:16 | Argentina fue de los países más ricos del mundo: el gráfico de 120 años | serie · _El país que fue rico_ | — | sin guion (idea) · ⚠ sin guion: espera pendiente-grafico-3 | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
-| lun 11-09 | 19:00 | **largo** 16:9 `tesis` | Argentina: el país que fue rico y dejó de serlo, en 5 gráficos | serie · _El país que fue rico_ | — | sin guion (idea) · ⚠ sin guion: espera contenido/backlog/tesis-argentina.json (id pendiente-tesis-argentina) | Los Ecomonos (largo 9–12 min, una pregunta) | primera ranura normal (lunes); H2 LatAm; Maddison CC BY |
-| mar 11-10 | 13:00 | `grafico` 9:16 | Lo que valían $1.000 chilenos en 2010 y lo que valen hoy | contingente · _Cuánto rinde tu sueldo_ | INE Chile publica el IPC de octubre de 2026 (08:00) ([2026-11-06](https://www.ine.gob.cl/docs/default-source/prensa-y-comunicacion/calendario/calendario-de-publicaciones.pdf)) | sin guion (idea) · ⚠ sin guion: dato del INE incrustado a mano con URL oficial; verificar la cifra el 2026-11-06 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 4 días (IPC); audiencia CL; abre la serie del sueldo |
-| mié 11-11 | 13:00 | `grafico` 9:16 | Uruguay cobra más caro que cualquier vecino: el índice de precios en un gráfico | serie · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: espera pendiente-grafico-4 | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
-| mié 11-11 | 19:00 | **largo** 16:9 `tesis` | ¿Por qué Uruguay es el país más caro de Sudamérica? | evergreen · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: espera contenido/backlog/tesis-uruguay.json (id pendiente-tesis-uruguay, el tercer largo); estructura distinta a los 2 anteriores | Los Ecomonos (largo 9–12 min, una pregunta) | H2 LatAm; audiencia UY/AR que llega con Argentina; nivel de precios PPA del Banco Mundial (WDI) |
+| lun 11-09 | 13:00 | `grafico` 9:16 | España tenía la mitad que Argentina. Hoy tiene el doble | serie · _El país que fue rico_ | — | **con guion** · `contenido/backlog/grafico-argentina-espana.json` | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
+| lun 11-09 | 19:00 | **largo** 16:9 `tesis` | Argentina era más rica que Alemania. ¿Qué pasó después? | serie · _El país que fue rico_ | — | **con guion** · `contenido/backlog/tesis-argentina-rica.json` | Los Ecomonos (largo 9–12 min, una pregunta) | primera ranura normal (lunes); H2 LatAm; Maddison CC BY |
+| mar 11-10 | 13:00 | `grafico` 9:16 | Lo que valían $1.000 chilenos en 2010 y lo que valen hoy | contingente · _Cuánto rinde tu sueldo_ | INE Chile publica el IPC de octubre de 2026 (08:00) ([2026-11-06](https://www.ine.gob.cl/docs/default-source/prensa-y-comunicacion/calendario/calendario-de-publicaciones.pdf)) | sin guion (idea) · ⚠ sin guion: se genera el vie 11-06 con el dato del INE (URL oficial); verificar la cifra el 2026-11-06 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 4 días (IPC); audiencia CL; abre la serie del sueldo |
+| mié 11-11 | 13:00 | `grafico` 9:16 | Irlanda produce el doble que Alemania. Gasta lo mismo | serie · _El indicador que nadie mira_ | — | **con guion** · `contenido/backlog/grafico-irlanda-consumo.json` | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
+| mié 11-11 | 19:00 | **largo** 16:9 `tesis` | Irlanda creció un 25 % en un año. Su gente, un 2 % | evergreen · _El indicador que nadie mira_ | — | **con guion** · `contenido/backlog/tesis-irlanda-pib.json` | Los Ecomonos (largo 9–12 min, una pregunta) | H2: primer tema global (contraste con LatAm); PIB vs INB en WDI; reemplaza al de Uruguay |
 | jue 11-12 | 13:00 | `grafico` 9:16 | El número que nadie mira: cuántos años de sueldo cuesta una casa | evergreen · _El indicador que nadie mira_ | — | sin guion (idea) · ⚠ sin guion: falta elegir dataset con licencia (no Numbeo; OCDE no verificada) | Data Is Beautiful narrado (un gráfico que sorprende) | abre la serie del indicador; variedad de tipo de gráfico (contador) |
-| vie 11-13 | 13:00 | `grafico` 9:16 | La inflación de octubre de Argentina en un gráfico de 30 años | contingente · _El país que fue rico_ | INDEC publica el IPC nacional de octubre de 2026 ([2026-11-12](https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf)) | sin guion (idea) · ⚠ esperar el dato (INDEC 2026-11-12, 16:00 ART); render la madrugada del 13; si no está a las 06:00 entra el reemplazo 1 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 1 día; audiencia AR ya captada por el largo del lunes; enlaza a ese largo |
-| vie 11-13 | 19:00 | **largo** 16:9 `tesis` | ¿Por qué Irlanda parece más rica que Alemania? El truco del PIB | evergreen · _El indicador que nadie mira_ | — | sin guion (idea) · ⚠ sin guion: encargar a generar-guiones (cuarto largo, ninguno en backlog) | Los Ecomonos (largo 9–12 min, una pregunta) | H2: primer tema global (contraste con LatAm); 4.ª estructura; PIB vs INB en WDI |
-| sáb 11-14 | 13:00 | `grafico` 9:16 | Irlanda: el país cuyo PIB salta 25 % en un año | serie · _El indicador que nadie mira_ | — | sin guion (idea) · ⚠ sin guion | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo del viernes (H5) |
-| dom 11-15 | 13:00 | `grafico` 9:16 | Panamá creció más que toda Latinoamérica en 20 años | evergreen | — | sin guion (idea) · ⚠ sin guion | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir (audiencia PA/CO); prepara un largo futuro |
+| vie 11-13 | 13:00 | `grafico` 9:16 | La inflación de octubre de Argentina en un gráfico de 30 años | contingente · _El país que fue rico_ | INDEC publica el IPC nacional de octubre de 2026 ([2026-11-12](https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf)) | sin guion (idea) · ⚠ sin guion: esperar el dato (INDEC 2026-11-12, 16:00 ART); render la madrugada del 13; si no está a las 06:00 entra el reemplazo 1 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 1 día; audiencia AR ya captada por el largo del lunes; enlaza a ese largo |
+| vie 11-13 | 19:00 | **largo** 16:9 `tesis` | ¿Por qué Uruguay es el país más caro de Sudamérica? | evergreen · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: encargar a generar-guiones (largo nuevo; Uruguay o Panamá) | Los Ecomonos (largo 9–12 min, una pregunta) | H2 LatAm; audiencia UY/AR que llega con Argentina; nivel de precios PPA (WDI); alternativa: Panamá |
+| sáb 11-14 | 13:00 | `grafico` 9:16 | Uruguay cobra más caro que cualquier vecino: el índice de precios en un gráfico | serie · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: depende del largo de Uruguay | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo del viernes (H5) |
+| dom 11-15 | 13:00 | `grafico` 9:16 | ¿Por qué Bolivia se quedó sin dólares? Las reservas en un gráfico | evergreen | — | sin guion (idea) · ⚠ sin guion: reservas del Banco Central de Bolivia con URL | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir; sale de la cola de reemplazos |
 
-Proporción: 2 contingentes de 10 ranuras (20 %); 3 largos con 3 estructuras distintas (2 LatAm, 1 global → H2); 4 Shorts derivados
-de su largo (H5). Hay una sola plantilla por formato, así que la regla de variedad se mide por estructura argumental y tipo de gráfico.
+Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argentina, Irlanda, + 1 nuevo por generar); 4 Shorts derivados de su largo (H5: Chile-Corea, Argentina, Irlanda, Uruguay) + Panamá suelto. Una sola plantilla por formato: la variedad se mide por estructura argumental y tipo de gráfico.
 
 ## Contingencias revisadas (2026-11-05, WebSearch + calendarios oficiales)
 
@@ -54,9 +50,7 @@ de su largo (H5). Hay una sola plantilla por formato, así que la regla de varie
 | EE. UU.: IPC de octubre | 2026-11-10 | calendario económico (buscador) | **No entra**: no es LatAm; sin ángulo propio |
 
 ## Cola de reemplazos (si una ranura se cae)
-1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 2. `grafico` · ¿Por qué Bolivia se
-quedó sin dólares? (reservas, Banco Central de Bolivia con URL) · 3. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil
-(WDI) · 4. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h).
+1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
 
 ## Plan (JSON)
 
@@ -65,7 +59,7 @@ quedó sin dólares? (reservas, Banco Central de Bolivia con URL) · 3. `grafico
   "version": 1,
   "canal": "numeros-rojos",
   "zona": "America/Santiago",
-  "actualizado": "2026-11-05T23:45:00-03:00",
+  "actualizado": "2026-11-06T03:15:00-03:00",
   "semanas": [
     {
       "inicio": "2026-11-02",
@@ -84,80 +78,80 @@ quedó sin dólares? (reservas, Banco Central de Bolivia con URL) · 3. `grafico
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "En 1960 Corea del Sur era más pobre que Chile",
+      "tema": "Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta",
       "tipo": "serie",
       "serie": "El país que fue rico",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-chile-corea-cruce.json",
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
-      "porQue": "lanzamiento; Short derivado del primer largo (H5)",
-      "bloqueo": "sin guion: espera contenido/backlog/grafico-*.json (id pendiente-grafico-1, Short derivado de chile-corea); canal sin crear: falta COPPA + NR_CANAL_ID + token (SANTIAGO.md §1)"
+      "porQue": "lanzamiento; teaser del largo Chile-Corea del domingo (H5)",
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-08",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Uruguay y Argentina eran igual de ricos en 1900: la línea se separa",
+      "tema": "Panamá estaba bajo Chile en 1990. Hoy le saca un 20 %",
       "tipo": "evergreen",
-      "serie": "El país que fue rico",
+      "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-panama-chile.json",
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
-      "porQue": "H1 (comparación entre 2 países); prepara el largo de Argentina del lunes",
-      "bloqueo": "sin guion: espera pendiente-grafico-2 (Maddison 2023 vía OWID)"
+      "porQue": "H2 LatAm; país sin cubrir (audiencia PA/CO); Short suelto antes del largo",
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-08",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "¿Por qué Corea del Sur era más pobre que Chile en 1960 y hoy no?",
+      "tema": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
       "tipo": "serie",
       "serie": "El país que fue rico",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/tesis-chile-corea.json",
       "videoId": null,
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
       "porQue": "primer largo (excepción: domingo); H1 comparación + H2 LatAm; contradicción medible con WDI",
-      "bloqueo": "sin guion: espera contenido/backlog/tesis-chile-corea.json (id pendiente-tesis-chile-corea); revisor numérico obligatorio; render nocturno 16:9 sin probar"
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-09",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Argentina fue de los países más ricos del mundo: el gráfico de 120 años",
+      "tema": "España tenía la mitad que Argentina. Hoy tiene el doble",
       "tipo": "serie",
       "serie": "El país que fue rico",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-argentina-espana.json",
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "Short derivado del largo de las 19:00 (H5)",
-      "bloqueo": "sin guion: espera pendiente-grafico-3"
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-09",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "Argentina: el país que fue rico y dejó de serlo, en 5 gráficos",
+      "tema": "Argentina era más rica que Alemania. ¿Qué pasó después?",
       "tipo": "serie",
       "serie": "El país que fue rico",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/tesis-argentina-rica.json",
       "videoId": null,
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
       "porQue": "primera ranura normal (lunes); H2 LatAm; Maddison CC BY",
-      "bloqueo": "sin guion: espera contenido/backlog/tesis-argentina.json (id pendiente-tesis-argentina)"
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-10",
@@ -177,39 +171,39 @@ quedó sin dólares? (reservas, Banco Central de Bolivia con URL) · 3. `grafico
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "contingencia de 4 días (IPC); audiencia CL; abre la serie del sueldo",
-      "bloqueo": "sin guion: dato del INE incrustado a mano con URL oficial; verificar la cifra el 2026-11-06"
+      "bloqueo": "sin guion: se genera el vie 11-06 con el dato del INE (URL oficial); verificar la cifra el 2026-11-06"
     },
     {
       "fecha": "2026-11-11",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Uruguay cobra más caro que cualquier vecino: el índice de precios en un gráfico",
+      "tema": "Irlanda produce el doble que Alemania. Gasta lo mismo",
       "tipo": "serie",
-      "serie": "Cuánto rinde tu sueldo",
+      "serie": "El indicador que nadie mira",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-irlanda-consumo.json",
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "Short derivado del largo de las 19:00 (H5)",
-      "bloqueo": "sin guion: espera pendiente-grafico-4"
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-11",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "¿Por qué Uruguay es el país más caro de Sudamérica?",
+      "tema": "Irlanda creció un 25 % en un año. Su gente, un 2 %",
       "tipo": "evergreen",
-      "serie": "Cuánto rinde tu sueldo",
+      "serie": "El indicador que nadie mira",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/tesis-irlanda-pib.json",
       "videoId": null,
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
-      "porQue": "H2 LatAm; audiencia UY/AR que llega con Argentina; nivel de precios PPA del Banco Mundial (WDI)",
-      "bloqueo": "sin guion: espera contenido/backlog/tesis-uruguay.json (id pendiente-tesis-uruguay, el tercer largo); estructura distinta a los 2 anteriores"
+      "porQue": "H2: primer tema global (contraste con LatAm); PIB vs INB en WDI; reemplaza al de Uruguay",
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-12",
@@ -245,46 +239,46 @@ quedó sin dólares? (reservas, Banco Central de Bolivia con URL) · 3. `grafico
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "contingencia de 1 día; audiencia AR ya captada por el largo del lunes; enlaza a ese largo",
-      "bloqueo": "esperar el dato (INDEC 2026-11-12, 16:00 ART); render la madrugada del 13; si no está a las 06:00 entra el reemplazo 1"
+      "bloqueo": "sin guion: esperar el dato (INDEC 2026-11-12, 16:00 ART); render la madrugada del 13; si no está a las 06:00 entra el reemplazo 1"
     },
     {
       "fecha": "2026-11-13",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "¿Por qué Irlanda parece más rica que Alemania? El truco del PIB",
+      "tema": "¿Por qué Uruguay es el país más caro de Sudamérica?",
       "tipo": "evergreen",
-      "serie": "El indicador que nadie mira",
+      "serie": "Cuánto rinde tu sueldo",
       "contingencia": null,
       "estado": "idea",
       "guion": null,
       "videoId": null,
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
-      "porQue": "H2: primer tema global (contraste con LatAm); 4.ª estructura; PIB vs INB en WDI",
-      "bloqueo": "sin guion: encargar a generar-guiones (cuarto largo, ninguno en backlog)"
+      "porQue": "H2 LatAm; audiencia UY/AR que llega con Argentina; nivel de precios PPA (WDI); alternativa: Panamá",
+      "bloqueo": "sin guion: encargar a generar-guiones (largo nuevo; Uruguay o Panamá)"
     },
     {
       "fecha": "2026-11-14",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Irlanda: el país cuyo PIB salta 25 % en un año",
+      "tema": "Uruguay cobra más caro que cualquier vecino: el índice de precios en un gráfico",
       "tipo": "serie",
-      "serie": "El indicador que nadie mira",
+      "serie": "Cuánto rinde tu sueldo",
       "contingencia": null,
       "estado": "idea",
       "guion": null,
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "Short derivado del largo del viernes (H5)",
-      "bloqueo": "sin guion"
+      "bloqueo": "sin guion: depende del largo de Uruguay"
     },
     {
       "fecha": "2026-11-15",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Panamá creció más que toda Latinoamérica en 20 años",
+      "tema": "¿Por qué Bolivia se quedó sin dólares? Las reservas en un gráfico",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
@@ -292,8 +286,8 @@ quedó sin dólares? (reservas, Banco Central de Bolivia con URL) · 3. `grafico
       "guion": null,
       "videoId": null,
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
-      "porQue": "H2 LatAm; país sin cubrir (audiencia PA/CO); prepara un largo futuro",
-      "bloqueo": "sin guion"
+      "porQue": "H2 LatAm; país sin cubrir; sale de la cola de reemplazos",
+      "bloqueo": "sin guion: reservas del Banco Central de Bolivia con URL"
     }
   ]
 }

@@ -39,7 +39,7 @@ const ENCUADRE: Record<RegionMapa, (iso: string | undefined) => boolean> = {
  * colorean de menor a mayor con `progreso`; el destacado lleva borde dorado y etiqueta con su valor; el resto de
  * las etiquetas se ponen solo si no chocan. Leyenda de cubetas abajo a la izquierda.
  */
-export const Mapa: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, progreso, frame, fps, enfasis }) => {
+export const Mapa: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, progreso, frame, fps, enfasis, enfasisPais }) => {
   const T = TIPO_GRAFICO[modo];
   const anio = anioReferencia(g, ps);
   const region = regionDe(g.datos.paises);
@@ -64,7 +64,7 @@ export const Mapa: React.FC<PropsCuerpo> = ({ g, serie, ps, ancho, alto, modo, p
     return salida3((progreso - (k / Math.max(1, orden.length)) * 0.75) / 0.25);
   };
   const porIso = Object.fromEntries(valores.map((x) => [x.iso, x]));
-  const dest = destacadoDe(g);
+  const dest = enfasis > 0 && enfasisPais ? enfasisPais : destacadoDe(g);
   const aparicion = clamp01(frame / (0.5 * fps));
   // Etiquetas: destacado primero, luego de mayor a menor; se omite la que choca con una ya puesta.
   const puestas: { x0: number; y0: number; x1: number; y1: number }[] = [];

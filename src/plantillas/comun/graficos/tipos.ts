@@ -17,6 +17,10 @@ export type PropsCuerpo = {
   fps: number;
   /** Énfasis del giro 0→1: el dato clave se resalta en rojo/dorado. */
   enfasis: number;
+  /** País que se enciende en el énfasis (escena.enfasis.pais); si falta, el destacado. */
+  enfasisPais?: string;
+  /** Frame LOCAL (desde que apareció el gráfico) en que entra cada anotación con `dice`; undefined = por año. */
+  anotacionesFrame?: (number | undefined)[];
 };
 
 /** Ancho aproximado de un texto (Inter 700 ≈ 0,56 em por carácter; Bricolage 800 ≈ 0,6). */

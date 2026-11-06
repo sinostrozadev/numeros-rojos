@@ -11,8 +11,8 @@
  */
 import type { GuionTesis } from '../comun/guion';
 import type { DatosResueltos, Grafico } from '../comun/datos';
-import { PAUSA, buscarPalabra, depurarEventos, primeraCifra, type Clave, type Evento, type LineaVoz, type Tiempos, estimarTiempos } from '../comun/plan';
-import { clavesDeGrafico } from '../comun/construccion';
+import { PAUSA, buscarPalabra, type LineaTiempo, depurarEventos, primeraCifra, type Clave, type Evento, type LineaVoz, type Tiempos, estimarTiempos } from '../comun/plan';
+import { clavesDeGrafico, frameDice, framesAnotaciones } from '../comun/construccion';
 import { mitadesRemate } from '../comun/remate-texto';
 import { FORMATO_LARGO, RITMO } from '../../marca/tokens';
 
@@ -75,18 +75,30 @@ export type BloqueTesis = {
   tipoEscena?: GuionTesis['capitulos'][number]['escenas'][number]['tipo'];
   /** Índice en tiempos.lineas de la voz de este bloque. */
   linea?: number;
-  /** Gráfico visible (propio o heredado del capítulo) y su identidad para que no se reinicie entre escenas. */
+  /** Gráfico de este bloque (propio, o el último en un `respiro`), su identidad, frame de aparición y claves. */
   grafico?: Grafico;
   graficoId?: string;
-  /** Frame en que ese gráfico apareció (entrada de ejes) y claves de su construcción (frames absolutos). */
   graficoDesde?: number;
   claves?: Clave[];
+  /** Frames ABSOLUTOS de las anotaciones con `dice`. */
+  anotFrames?: (number | undefined)[];
+  /** Último gráfico mostrado: se ve ATENUADO en la tarjeta de capítulo, en la espera de `dice` y en el modo cita. */
+  previo?: Vista;
+  /** Antes de este frame el gráfico nuevo aún no se construye: se ve `previo` atenuado + el título del gráfico nuevo. */
+  esperaHasta?: number;
+  /** Escena sin gráfico propio: la frase grande al centro sobre `previo` atenuado (o la tarjeta del capítulo si no hay). */
+  cita?: boolean;
+  /** País que se enciende en el énfasis (escena.enfasis.pais). */
+  enfasisPais?: string;
   /** Frame desde el que se enciende el énfasis del giro. */
   enfasisDesde?: number;
   rotulo?: { texto: string; desde: number };
   /** true si este bloque termina en un punto de mid-roll. */
   midroll?: boolean;
 };
+
+/** Un gráfico tal como se ve: lo que necesita la composición para dibujarlo en cualquier frame. */
+export type Vista = { grafico: Grafico; graficoId: string; graficoDesde: number; claves: Clave[]; anotFrames?: (number | undefined)[] };
 
 export type PlanTesis = {
   fps: number;
@@ -110,16 +122,28 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
   const L = tiempos.lineas;
   const desdeVisual = (i: number) => f(L[i].inicio - L[i].antes);
   const bloques: BloqueTesis[] = [];
+  /**
+   * Vista de un gráfico que entra en `desde`: si la voz dice `dice` más tarde, el gráfico aparece 0,4 s antes de
+   * esa palabra (hasta ahí se ve el anterior atenuado + el título del nuevo); si no hay `dice`, desde el inicio.
+   */
+  const vistaNueva = (g: Grafico, id: string, lineas: LineaTiempo[], desde: number): { vista: Vista; esperaHasta?: number } => {
+    const claves = clavesDeGrafico(g, lineas, fps, datos);
+    const fd = frameDice(g, lineas, fps);
+    const espera = fd !== null && fd - desde > f(0.8) ? fd - f(0.4) : undefined;
+    return { vista: { grafico: g, graficoId: id, graficoDesde: espera ?? desde, claves, anotFrames: framesAnotaciones(g, lineas, fps) }, esperaHasta: espera };
+  };
+  let ultimo: Vista | undefined;
   const eventos: Evento[] = [{ t: 0, tipo: 'golpe', fuerza: 0.9 }];
 
   // Título + gancho
   const fTitulo = f(T_TITULO);
   bloques.push({ tipo: 'titulo', desde: 0, hasta: fTitulo, capitulo: null });
   const ganchoGraf = g.gancho.grafico;
-  bloques.push({
-    tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0,
-    ...(ganchoGraf ? { grafico: ganchoGraf, graficoId: 'gancho', graficoDesde: fTitulo, claves: clavesDeGrafico(ganchoGraf, [L[0]], fps, datos) } : {}),
-  });
+  if (ganchoGraf) {
+    const { vista, esperaHasta } = vistaNueva(ganchoGraf, 'gancho', [L[0]], fTitulo);
+    bloques.push({ tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0, ...vista, esperaHasta });
+    ultimo = vista;
+  } else bloques.push({ tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0 });
   eventos.push({ t: T_TITULO - 0.1, tipo: 'whoosh', fuerza: 0.8 });
 
   // Promesa + índice
@@ -135,42 +159,29 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
   let li = 2;
   g.capitulos.forEach((cap, ci) => {
     const primera = li;
-    // Gráfico de cada escena: el propio, o el último del capítulo, o (si aún no hay) el próximo en espera.
-    const propios = cap.escenas.map((e) => e.grafico ?? null);
-    const slot = cap.escenas.map((_, k) => {
-      if (propios[k]) return k;
-      for (let j = k - 1; j >= 0; j--) if (propios[j]) return j;
-      for (let j = k + 1; j < propios.length; j++) if (propios[j]) return j;
-      return -1;
-    });
-    const desdeSlot: Record<number, number> = {};
-    const clavesSlot: Record<number, Clave[]> = {};
-    cap.escenas.forEach((e, k) => {
-      if (e.grafico) clavesSlot[k] = clavesDeGrafico(e.grafico, [L[primera + k]], fps, datos);
-    });
     const inicioCap = desdeVisual(primera);
     capitulos.push({ titulo: cap.titulo, seg: inicioCap / fps, frame: inicioCap });
-    bloques.push({ tipo: 'capitulo', desde: inicioCap, hasta: inicioCap + f(T_CAPITULO), capitulo: ci });
+    bloques.push({ tipo: 'capitulo', desde: inicioCap, hasta: inicioCap + f(T_CAPITULO), capitulo: ci, previo: ultimo });
     eventos.push({ t: inicioCap / fps, tipo: 'whoosh', fuerza: 1 });
     cap.escenas.forEach((e, k) => {
       const i = primera + k;
       const desde = k === 0 ? inicioCap + f(T_CAPITULO) : desdeVisual(i);
       const hasta = desdeVisual(i + 1);
-      const s = slot[k];
-      if (s >= 0 && desdeSlot[s] === undefined) desdeSlot[s] = desde;
       const linea = L[i];
-      const b: BloqueTesis = { tipo: 'escena', desde, hasta, capitulo: ci, escena: k, tipoEscena: e.tipo, linea: i };
-      if (s >= 0) {
-        b.grafico = propios[s]!;
-        b.graficoId = `c${ci}e${s}`;
-        b.graficoDesde = desdeSlot[s];
-        b.claves = clavesSlot[s];
-      }
+      const b: BloqueTesis = { tipo: 'escena', desde, hasta, capitulo: ci, escena: k, tipoEscena: e.tipo, linea: i, enfasisPais: e.enfasis?.pais };
       if (e.grafico) {
-        const c0 = clavesSlot[k][0];
+        const { vista, esperaHasta } = vistaNueva(e.grafico, `c${ci}e${k}`, [linea], desde);
+        Object.assign(b, vista, { esperaHasta, previo: esperaHasta !== undefined ? ultimo : undefined });
+        ultimo = vista;
+        const c0 = vista.claves[0], cn = vista.claves[vista.claves.length - 1];
+        if (esperaHasta !== undefined) eventos.push({ t: esperaHasta / fps, tipo: 'whoosh', fuerza: 0.5 });
         eventos.push({ t: c0.f / fps, tipo: 'tic', fuerza: 0.7 });
-        const cn = clavesSlot[k][clavesSlot[k].length - 1];
         if (['lineas', 'area', 'barras', 'ranking'].includes(e.grafico.tipo)) eventos.push({ t: c0.f / fps, tipo: 'trazo', fuerza: 0.6, dur: (cn.f - c0.f) / fps });
+      } else if (e.tipo === 'respiro' && ultimo) {
+        Object.assign(b, ultimo);
+      } else {
+        b.cita = true;
+        b.previo = ultimo;
       }
       if (e.rotulo) {
         const pi = e.rotulo.dice ? buscarPalabra(linea.palabras, e.rotulo.dice) : -1;
@@ -180,7 +191,7 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
       if (e.tipo === 'giro') {
         const pi = e.rotulo?.dice ? buscarPalabra(linea.palabras, e.rotulo.dice) : primeraCifra(linea.palabras);
         const t = pi >= 0 ? linea.inicio + linea.palabras[pi].inicio : linea.inicio + linea.duracionHablada * 0.4;
-        b.enfasisDesde = enfasisGiro(f(t), b.claves, hasta - f(1.5));
+        b.enfasisDesde = enfasisGiro(f(t), e.grafico ? b.claves : undefined, hasta - f(1.5));
         eventos.push({ t: b.enfasisDesde / fps, tipo: 'golpe', fuerza: 0.75 });
       }
       if (e.tipo === 'reenganche') {
@@ -196,9 +207,10 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
   // Número que nadie mira
   const iNum = li;
   const nq = g.numeroQueNadieMira;
-  const clavesNum = clavesDeGrafico(nq.grafico, [L[iNum]], fps, datos);
+  const num = vistaNueva(nq.grafico, 'numero', [L[iNum]], desdeVisual(iNum));
+  const clavesNum = num.vista.claves;
   capitulos.push({ titulo: 'El número que nadie mira', seg: desdeVisual(iNum) / fps, frame: desdeVisual(iNum) });
-  bloques.push({ tipo: 'numero', desde: desdeVisual(iNum), hasta: desdeVisual(iNum + 1), capitulo: null, linea: iNum, grafico: nq.grafico, graficoId: 'numero', graficoDesde: desdeVisual(iNum), claves: clavesNum });
+  bloques.push({ tipo: 'numero', desde: desdeVisual(iNum), hasta: desdeVisual(iNum + 1), capitulo: null, linea: iNum, ...num.vista, esperaHasta: num.esperaHasta, previo: num.esperaHasta !== undefined ? ultimo : undefined });
   eventos.push({ t: Math.max(0, L[iNum].inicio - 0.9), tipo: 'riser', fuerza: 0.8 });
   eventos.push({ t: clavesNum[0].f / fps, tipo: 'golpe', fuerza: 0.7 });
 
@@ -208,7 +220,7 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
   const [primeraMitad] = mitadesRemate(g.remate);
   const nPrimera = primeraMitad.split(/\s+/).filter(Boolean).length;
   const remateSegundaEn = lr.palabras[nPrimera] ? f(lr.antes + lr.palabras[nPrimera].inicio) : f(lr.antes + lr.duracionHablada * 0.5);
-  bloques.push({ tipo: 'remate', desde: desdeVisual(iRem), hasta: desdeVisual(iRem + 1), capitulo: null, linea: iRem, grafico: nq.grafico, graficoId: 'numero', graficoDesde: desdeVisual(iNum), claves: clavesNum });
+  bloques.push({ tipo: 'remate', desde: desdeVisual(iRem), hasta: desdeVisual(iRem + 1), capitulo: null, linea: iRem, ...num.vista });
   eventos.push({ t: Math.max(0, lr.inicio - 0.9), tipo: 'riser', fuerza: 1 });
   eventos.push({ t: lr.inicio, tipo: 'golpe', fuerza: 1 });
   eventos.push({ t: (desdeVisual(iRem) + remateSegundaEn) / fps, tipo: 'pop', fuerza: 0.7 });

@@ -75,7 +75,8 @@ export const Grafico: React.FC<PropsGrafico> = (props) => {
       <FondoRejilla frame={frame} fps={fps} ancho={W} alto={H} paso={72} />
       <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, transform: deriva, transformOrigin: '50% 50%' }}>
         <GraficoAnimado key={b.graficoId} g={b.grafico} datos={datos} ancho={Z.ancho} alto={Z.alto} modo="short" progreso={progreso}
-          frame={principal ? frame + fps : frame - b.graficoDesde} fps={fps} enfasis={enfasis} inmediato={principal} />
+          frame={principal ? frame + fps : frame - b.graficoDesde} fps={fps} enfasis={enfasis} inmediato={principal} enfasisPais={b.enfasisPais}
+          anotacionesFrame={b.anotFrames?.map((x) => (x === undefined ? undefined : principal ? x + fps : x - b.graficoDesde))} />
       </div>
       {!enRemate && (
         <div style={{ position: 'absolute', left: S.lados, top: ZONA_GRAFICO.rotulo.y, maxWidth: W - S.lados * 2 }}>
