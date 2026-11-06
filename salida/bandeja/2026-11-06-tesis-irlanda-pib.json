@@ -1,0 +1,23 @@
+{
+  "id": "2026-11-06-tesis-irlanda-pib",
+  "plantilla": "tesis",
+  "titulo": "Irlanda creció un 25 % en un año. Su gente, un 2 %",
+  "descripcion": "¿Cómo creció la economía de Irlanda un 25 % en 2015 si el consumo de su gente subió apenas un 2 %?\n\nCapítulos:\n0:00 Introducción\n0:25 El salto de 2015 en el PIB de Irlanda\n2:12 Quién llegó a Irlanda y por qué\n4:16 PIB contra ingreso nacional\n6:22 El bolsillo irlandés y el latinoamericano\n8:41 El número que nadie mira\n\nHacemos la autopsia de un número: el PIB irlandés. Seguimos la inversión extranjera, las patentes y las exportaciones registradas en Dublín, y comparamos lo que se produce en Irlanda con lo que se queda en Irlanda.\nDespués aplicamos la misma lupa a Chile y Panamá: en América Latina la brecha entre PIB e ingreso existe, pero es mucho más chica.\nEl dato final: un irlandés consume prácticamente lo mismo que un alemán.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.PP.CD, NY.GNP.PCAP.PP.CD, BX.KLT.DINV.WD.GD.ZS, NE.EXP.GNFS.ZS, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org\n- Comisión Europea, IP/16/2923 https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923\n- CSO Irlanda, Modified GNI https://www.cso.ie/en/interactivezone/statisticsexplained/nationalaccountsexplained/modifiedgni/\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#irlanda",
+    "#pib",
+    "#latinoamerica",
+    "#datos"
+  ],
+  "duracionSeg": 585.6,
+  "estado": "subido",
+  "tipo": "largo",
+  "miniatura": "salida/bandeja/2026-11-06-tesis-irlanda-pib-mini.png",
+  "publicarEn": "2026-11-11T19:00:00-03:00",
+  "videoId": "2mGAJicF93o",
+  "url": "https://www.youtube.com/watch?v=2mGAJicF93o",
+  "programado": "2026-11-11 19:00",
+  "subidoEn": "2026-11-06T12:04:50.693Z",
+  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "2026-11-06-tesis-chile-corea",
+  "plantilla": "tesis",
+  "titulo": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
+  "descripcion": "¿Por qué Corea del Sur, tres veces más pobre que Chile en 1960, hoy produce dos veces y media más por persona?\n\nCapítulos:\n0:00 Introducción\n0:28 1960: Chile iba adelante\n2:04 Qué le vendía cada país al mundo\n4:26 La plata que se guarda para construir\n6:45 Universidad y patentes: dónde se separan\n9:00 El número que nadie mira\n\nSeguimos 64 años de datos del Banco Mundial y del Proyecto Maddison para separar lo que de verdad cambió de lo que se repite.\nChile era más rico y más exportador en 1960. Corea apostó por fabricar y por guardar para construir; Chile cambió de materia prima.\nEl dato que más sorprende: en matrícula universitaria Chile ya alcanzó a Corea. En investigación y desarrollo, gasta doce veces menos.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MMTL.ZS.UN, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, SE.TER.ENRR, IP.PAT.RESD, GB.XPD.RSDV.GD.ZS, TX.VAL.FOOD.ZS.UN, SP.POP.TOTL (CC BY 4.0) https://data.worldbank.org\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#chile",
+    "#coreadelsur",
+    "#desarrollo",
+    "#datos"
+  ],
+  "duracionSeg": 598.4,
+  "estado": "subido",
+  "tipo": "largo",
+  "publicarEn": "2026-11-08T19:00:00-03:00",
+  "videoId": "vQT5ObEGz5U",
+  "url": "https://www.youtube.com/watch?v=vQT5ObEGz5U",
+  "programado": "2026-11-08 19:00",
+  "subidoEn": "2026-11-06T11:52:22.727Z",
+  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio"
+}
