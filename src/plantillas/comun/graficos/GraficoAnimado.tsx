@@ -18,6 +18,8 @@ export type PropsGraficoAnimado = {
   ancho: number;
   alto: number;
   modo: ModoGrafico;
+  /** Tope de marcas del eje X (ver PropsCuerpo). */
+  maxMarcasX?: number;
   progreso: number;
   frame: number;
   fps: number;
@@ -49,7 +51,7 @@ const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
  * unidad + leyenda (≥ 2 series en líneas/ranking) + cuerpo + "Fuente: …" abajo, SIEMPRE. Funciona en 16:9 y 9:16
  * (recibe ancho/alto y el modo, que fija la escala tipográfica). Entra con un deslizamiento corto la primera vez.
  */
-export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato, enfasisPais, anotacionesFrame }) => {
+export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato, enfasisPais, anotacionesFrame, maxMarcasX }) => {
   const T = TIPO_GRAFICO[modo];
   const serie = serieDe(g, datos);
   const ps = paisesDe(g, serie);
@@ -82,7 +84,7 @@ export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho,
         </div>
       )}
       <div style={{ height: altoCuerpo, position: 'relative' }}>
-        <Cuerpo g={g} serie={serie} ps={ps} ancho={ancho} alto={altoCuerpo} modo={modo} progreso={clamp01(progreso)} frame={frame} fps={fps} enfasis={enfasis} enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} />
+        <Cuerpo g={g} serie={serie} ps={ps} ancho={ancho} alto={altoCuerpo} modo={modo} progreso={clamp01(progreso)} frame={frame} fps={fps} enfasis={enfasis} enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} maxMarcasX={maxMarcasX} />
       </div>
       <div style={{ height: altoPie, display: 'flex', alignItems: 'flex-end' }}>
         <PieFuente texto={fuente} fontSize={T.fuente} fixture={esFixture(serie)} licencia={serie?.licencia} />

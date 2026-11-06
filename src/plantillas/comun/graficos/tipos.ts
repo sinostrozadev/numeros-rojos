@@ -17,6 +17,8 @@ export type PropsCuerpo = {
   fps: number;
   /** Énfasis del giro 0→1: el dato clave se resalta en rojo/dorado. */
   enfasis: number;
+  /** Tope de marcas en el eje X (años); si falta, 4 en short y 8 en largo. La miniatura usa 4 en un ancho chico. */
+  maxMarcasX?: number;
   /** País que se enciende en el énfasis (escena.enfasis.pais); si falta, el destacado. */
   enfasisPais?: string;
   /** Frame LOCAL (desde que apareció el gráfico) en que entra cada anotación con `dice`; undefined = por año. */

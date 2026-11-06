@@ -13,7 +13,7 @@ import { anchoTexto, clamp01, type PropsCuerpo } from './tipos';
  * las anotaciones aparecen cuando la línea llega a su año. El destacado va en dorado y encima de todo; en el giro
  * (`enfasis`) su valor se enciende en rojo con un pulso.
  */
-export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, ps, ancho, alto, modo, progreso, frame, fps, enfasis, enfasisPais, anotacionesFrame, area = false }) => {
+export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, ps, ancho, alto, modo, progreso, frame, fps, enfasis, enfasisPais, anotacionesFrame, maxMarcasX, area = false }) => {
   const T = TIPO_GRAFICO[modo];
   const series = area ? ps.slice(0, 1).map((p) => (destacadoDe(g) ? ps.find((q) => q.iso === destacadoDe(g)) ?? p : p)) : ps;
   const rango = rangoAnios(series, g);
@@ -53,7 +53,7 @@ export const Lineas: React.FC<PropsCuerpo & { area?: boolean }> = ({ g, serie, p
     return y1 - ((v - d0) / (d1 - d0)) * (y1 - y0);
   };
   const marcasY: MarcaEje[] = marcas.map((v) => ({ v, pos: Y(v), texto: formatear(v, { ...opc, compacto: true }) }));
-  const pa = pasoAnios(a0, a1, modo === 'short' ? 4 : 8);
+  const pa = pasoAnios(a0, a1, maxMarcasX ?? (modo === 'short' ? 4 : 8));
   const marcasX: MarcaEje[] = [];
   for (let a = Math.ceil(a0 / pa) * pa; a <= a1; a += pa) marcasX.push({ v: a, pos: X(a), texto: String(a) });
   const aparicion = clamp01(frame / (0.5 * fps));

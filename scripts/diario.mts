@@ -171,7 +171,13 @@ const verificarCifras = async (g: Guion & { ruta: string }, log: Log): Promise<s
 };
 
 const tieneComposicion = (nombre: string) => {
-  try { return new RegExp(`id=["'{\`]*${nombre}["'}\`]`).test(fs.readFileSync(path.join(RAIZ, 'src', 'Root.tsx'), 'utf8')); } catch { return false; }
+  // Las plantillas registran sus <Composition> en src/plantillas/<nombre>/index.tsx, no en Root.tsx: se busca en todo src/.
+  try {
+    const re = new RegExp(`id=["'{\`]*${nombre}["'}\`]`);
+    const archivos = [path.join(RAIZ, 'src', 'Root.tsx'), ...fs.readdirSync(path.join(RAIZ, 'src', 'plantillas'), { withFileTypes: true })
+      .filter((d) => d.isDirectory()).map((d) => path.join(RAIZ, 'src', 'plantillas', d.name, 'index.tsx'))];
+    return archivos.some((a) => fs.existsSync(a) && re.test(fs.readFileSync(a, 'utf8')));
+  } catch { return false; }
 };
 
 const ts = (seg: number) => {
@@ -303,7 +309,7 @@ const renderizarUno = async (g: Guion & { ruta: string }, log: Log): Promise<boo
 
 /** Miniatura 1280×720 del largo: composición `Miniatura` (si existe) con los mismos props, frame 0. */
 const generarMiniatura = async (g: Guion, props: string, log: Log): Promise<string | undefined> => {
-  if (!tieneComposicion('Miniatura')) { log('  ⚠ no hay composición Miniatura en src/Root.tsx: el largo va sin miniatura propia'); return undefined; }
+  if (!tieneComposicion('Miniatura')) { log('  ⚠ no hay composición Miniatura en src/ (Root.tsx ni plantillas/*/index.tsx): el largo va sin miniatura propia'); return undefined; }
   const destino = path.join(DIR_BANDEJA, `${g.id}-mini.png`);
   log(`  🖼 miniatura → ${rel(destino)}`);
   const r = await correr('flock', ['-w', '1800', LOCK_RENDER, REMOTION, 'still', 'src/index.ts', 'Miniatura', destino, '--frame=0', `--props=${props}`, '--log=error', '--timeout=180000'], { log, timeoutMs: TIEMPO_STILL });
