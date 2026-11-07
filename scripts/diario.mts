@@ -225,6 +225,18 @@ const descripcionConCapitulos = (descripcion: string, caps: Array<{ inicio: numb
   return [partes[0], bloque, ...partes.slice(1)].join('\n\n');
 };
 
+/**
+ * Agrega los créditos de fotos/ilustraciones (de salida/trabajo/<id>.plan.json, los escribe preparar-tesis) como
+ * párrafo propio justo ANTES de "Fuentes:" (o al final si no hay fuentes). Idempotente.
+ */
+const descripcionConCreditos = (descripcion: string, creditos: string | undefined) => {
+  if (!creditos?.trim() || descripcion.includes(creditos.split('\n')[0])) return descripcion;
+  const partes = descripcion.split(/\n\s*\n/);
+  const i = partes.findIndex((p) => /^\s*Fuentes?\s*:/i.test(p));
+  if (i < 0) return `${descripcion.trimEnd()}\n\n${creditos.trim()}`;
+  return [...partes.slice(0, i), creditos.trim(), ...partes.slice(i)].join('\n\n');
+};
+
 const renderizarUno = async (g: Guion & { ruta: string }, log: Log): Promise<boolean> => {
   const tipo = tipoDe(g.plantilla);
   const salidaMp4 = path.join(DIR_BANDEJA, `${g.id}.mp4`);
@@ -283,6 +295,11 @@ const renderizarUno = async (g: Guion & { ruta: string }, log: Log): Promise<boo
           if (caps.length) { descripcion = descripcionConCapitulos(descripcion, caps); log(`  ✓ ${caps.length} capítulos en la descripción`); }
           else log('  ⚠ sin tiempos de capítulos en los props (props.capitulosTiempos o props.tiempos.lineas): la descripción va sin capítulos');
         } catch (e) { log(`  ⚠ capítulos: ${(e as Error).message}`); }
+        try {
+          const rutaPlan = path.join(DIR_TRABAJO, `${g.id}.plan.json`);
+          const creditos = fs.existsSync(rutaPlan) ? (JSON.parse(fs.readFileSync(rutaPlan, 'utf8')) as { creditos?: string }).creditos : undefined;
+          if (creditos) { descripcion = descripcionConCreditos(descripcion, creditos); log('  ✓ créditos de fotos/ilustraciones en la descripción'); }
+        } catch (e) { log(`  ⚠ créditos: ${(e as Error).message}`); }
         miniatura = await generarMiniatura(g, props, log);
         if (duracionSeg && duracionSeg < 8 * 60) log(`  ⚠ el largo dura ${formatoDuracion(duracionSeg)} (< 8:00): no admite mid-rolls`);
       }

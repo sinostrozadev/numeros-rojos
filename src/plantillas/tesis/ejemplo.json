@@ -100,7 +100,17 @@
         "escenas": [
           {
             "tipo": "planteamiento",
-            "texto": "Volvamos a 1960. Corea del Sur lleva siete años de paz después de una guerra que la dejó partida en dos. No tiene petróleo, ni cobre, y casi todo su territorio son montañas. Chile tiene minas, puertos, un Estado que funciona y universidades con más de un siglo de historia. Si alguien hubiera tenido que apostar, la apuesta obvia era Chile."
+            "texto": "Volvamos a 1960. Corea del Sur lleva siete años de paz después de una guerra que la dejó partida en dos. No tiene petróleo, ni cobre, y casi todo su territorio son montañas. Chile tiene minas, puertos, un Estado que funciona y universidades con más de un siglo de historia. Si alguien hubiera tenido que apostar, la apuesta obvia era Chile.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Seoul 1961",
+              "alternativas": [
+                "Korea 1960s",
+                "Seoul 1960s"
+              ],
+              "pie": "Seúl, 1961: un orfanato tras la guerra",
+              "encuadre": "ken-burns"
+            }
           },
           {
             "tipo": "dato",
@@ -322,7 +332,17 @@
         "escenas": [
           {
             "tipo": "planteamiento",
-            "texto": "Si Chile era más rico y más abierto, la diferencia tiene que estar en otra parte. Empecemos por lo más concreto: qué le vendía cada país al resto del mundo."
+            "texto": "Si Chile era más rico y más abierto, la diferencia tiene que estar en otra parte. Empecemos por lo más concreto: qué le vendía cada país al resto del mundo.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Chuquicamata mine",
+              "alternativas": [
+                "Chuquicamata copper mine Chile",
+                "Chile copper mine open pit"
+              ],
+              "pie": "Chuquicamata: el cobre de Chile",
+              "encuadre": "ken-burns"
+            }
           },
           {
             "tipo": "dato",
@@ -384,7 +404,23 @@
               "texto": "COBRE",
               "dice": "cobre."
             },
-            "fuenteEnVoz": true
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "CHL",
+                "KOR"
+              ],
+              "flechas": [
+                {
+                  "desde": "CHL",
+                  "hasta": "KOR",
+                  "texto": "cobre"
+                }
+              ],
+              "acercar": true
+            },
+            "disposicion": "dividido"
           },
           {
             "tipo": "dato",
@@ -666,7 +702,33 @@
         "escenas": [
           {
             "tipo": "planteamiento",
-            "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y en esta comparación pesa más que cualquier discurso."
+            "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y en esta comparación pesa más que cualquier discurso.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Se paga antes de producir",
+              "items": [
+                {
+                  "icono": "contenedor",
+                  "texto": "Un astillero",
+                  "dice": "astillero"
+                },
+                {
+                  "icono": "fabrica",
+                  "texto": "Una acería",
+                  "dice": "acería"
+                },
+                {
+                  "icono": "chip",
+                  "texto": "Una planta de chips",
+                  "dice": "chips"
+                }
+              ]
+            },
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "¿Y quién pone la plata?",
+              "dice": "plata"
+            }
           },
           {
             "tipo": "dato",
@@ -811,7 +873,13 @@
             "rotulo": {
               "texto": "1982",
               "dice": "1982"
-            }
+            },
+            "visual": {
+              "tipo": "ilustracion",
+              "prompt": "Ilustración plana vectorial sobre fondo grafito #111418: dos casas pequeñas lado a lado; en la de la izquierda una familia gasta (bolsas de compras); en la de la derecha una familia guarda monedas en un frasco junto a un taller con herramientas. Colores dorado, verde y azul, sin texto.",
+              "pie": "Dos familias, el mismo sueldo"
+            },
+            "disposicion": "dividido"
           },
           {
             "tipo": "giro",
@@ -1310,6 +1378,11 @@
             ],
             "rotulo": {
               "texto": "MISMA MATRÍCULA",
+              "dice": "igual"
+            },
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¡Empate en títulos!",
               "dice": "igual"
             }
           },

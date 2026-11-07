@@ -23,6 +23,13 @@ Contrato compartido: `src/plantillas/comun/guion.ts` (schema zod = validador + t
   incrustados a mano con URL de organismo oficial (INE, bancos centrales, CEPAL, SEC). **Prohibido:** FMI (uso comercial exige
   permiso), Numbeo, OCDE y Banco Central de Chile hasta verificar sus términos, cualquier dato "de memoria".
 - **Fuente en pantalla siempre:** cada gráfico lleva abajo "Fuente: …" en pequeño; la voz nombra la fuente ≥ 1 vez por capítulo.
+- **Visuales v2 (fotos, mapas, iconos, ilustraciones, mascota; `src/plantillas/comun/visual.ts`):** los DATOS siempre van en
+  gráfico. **Fotos:** solo de Wikimedia Commons con licencia Public domain, CC0, CC BY o CC BY-SA (nunca NC/ND/desconocida, nunca
+  con `Restrictions` de marca o derechos de imagen), las elige `scripts/lib/imagenes.mts`; crédito en pantalla mientras se ve
+  (autor · licencia) y en la descripción ("Fotos (Wikimedia Commons): título — autor (licencia), url"), que agrega `diario.mts`.
+  **Nada realista generado por IA:** las ilustraciones son planas/vectoriales, llevan pie "Ilustración" y la descripción lo
+  declara; nunca una persona, lugar o hecho "fotográfico" inventado. **Mapas:** Natural Earth (world-atlas, dominio público),
+  pie en pantalla. **Mascota:** comenta (bocadillo corto), no explica ni da información financiera; ≤ 1 de cada 3 escenas.
 - **Sin consejo financiero, sin presentador:** la voz describe lo que muestran los datos; nunca "invierte", "compra", "deberías".
   No hay personaje ni "experto" (YouTube no monetiza personajes IA que dan información financiera). Aviso fijo
   (`MARCA.aviso`) en la pantalla final y en la descripción.

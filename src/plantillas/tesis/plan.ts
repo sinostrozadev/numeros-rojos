@@ -8,6 +8,11 @@
  * Estructura: tarjeta de título (0,9 s) → gancho (+ gráfico) → promesa con índice → por capítulo [tarjeta de
  * capítulo 1 s → escenas] → "el número que nadie mira" → remate → siguiente + pantalla final 20 s → cierre 1,2 s.
  * Mid-roll = fin de cada `reenganche` (justo antes de la tarjeta del capítulo siguiente o del número final).
+ *
+ * Visuales v2 (2026-11-07): cada escena puede traer `visual` (foto/mapa/iconos/ilustración), `disposicion` y
+ * `mascota`. El plan resuelve sus frames (`dice` contra las palabras de la voz) y qué fondo queda detrás de una
+ * cita o una espera (el último gráfico o el último visual). Una foto/ilustración sin resolver en `g.visuales`
+ * cuenta como si no existiera: la escena cae al comportamiento v1 (nunca un frame vacío).
  */
 import type { GuionTesis } from '../comun/guion';
 import type { DatosResueltos, Grafico } from '../comun/datos';
@@ -15,6 +20,7 @@ import { PAUSA, buscarPalabra, type LineaTiempo, depurarEventos, primeraCifra, t
 import { clavesDeGrafico, frameDice, framesAnotaciones } from '../comun/construccion';
 import { mitadesRemate } from '../comun/remate-texto';
 import { FORMATO_LARGO, RITMO } from '../../marca/tokens';
+import { claveDeVisual, type Mascota, type Visual, type VisualesResueltos } from '../comun/visual';
 
 export const FPS_TESIS = FORMATO_LARGO.fps;
 /** Tarjeta de título en el frame 0 (cabecera + rótulo del gancho). */
@@ -95,7 +101,24 @@ export type BloqueTesis = {
   rotulo?: { texto: string; desde: number };
   /** true si este bloque termina en un punto de mid-roll. */
   midroll?: boolean;
+  /** Visual propio de la escena (v2) con sus frames. */
+  visual?: VistaVisual;
+  /** Cómo conviven visual y gráfico: `dividido` (visual izq. + gráfico der.) o `completo` (uno a la vez). */
+  disposicion?: 'completo' | 'dividido';
+  /** `completo` con visual Y gráfico: frame en que el gráfico reemplaza al visual. */
+  cambioAGrafico?: number;
+  /** Lo último mostrado fue un visual (no un gráfico): se ve atenuado en citas, esperas, respiros y tarjetas de capítulo. */
+  previoVisual?: VistaVisual;
+  /** Mascota de la escena y el frame en que entra. */
+  mascota?: { m: Mascota; desde: number };
 };
+
+/** Un visual tal como se ve: tipo, clave en props.visuales y frames ABSOLUTOS [desde, hasta) (+ entrada de cada ítem en `iconos`). */
+export type VistaVisual = { v: Visual; clave: string; desde: number; hasta: number; itemsFrame?: number[] };
+
+/** ¿El visual se puede dibujar? Fotos e ilustraciones solo si preparar-tesis las resolvió; mapas e iconos siempre. */
+export const visualDisponible = (v: Visual, clave: string, visuales?: VisualesResueltos) =>
+  v.tipo === 'foto' ? !!visuales?.[clave]?.foto : v.tipo === 'ilustracion' ? !!visuales?.[clave]?.ilustracion : true;
 
 /** Un gráfico tal como se ve: lo que necesita la composición para dibujarlo en cualquier frame. */
 export type Vista = { grafico: Grafico; graficoId: string; graficoDesde: number; claves: Clave[]; anotFrames?: (number | undefined)[] };
@@ -117,8 +140,14 @@ export type PlanTesis = {
   remateSegundaEn: number;
 };
 
-export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResueltos, fps = FPS_TESIS): PlanTesis => {
+export const planTesis = (g: GuionTesis & { visuales?: VisualesResueltos }, tiempos: Tiempos, datos?: DatosResueltos, fps = FPS_TESIS): PlanTesis => {
   const f = (s: number) => Math.round(s * fps);
+  /** Frame absoluto en que la voz dice `dice` en la línea (0,1 s antes), o null. */
+  const frameDePalabra = (linea: LineaTiempo, dice?: string) => {
+    if (!dice) return null;
+    const pi = buscarPalabra(linea.palabras, dice);
+    return pi >= 0 ? f(linea.inicio + linea.palabras[pi].inicio - 0.1) : null;
+  };
   const L = tiempos.lineas;
   const desdeVisual = (i: number) => f(L[i].inicio - L[i].antes);
   const bloques: BloqueTesis[] = [];
@@ -133,6 +162,9 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
     return { vista: { grafico: g, graficoId: id, graficoDesde: espera ?? desde, claves, anotFrames: framesAnotaciones(g, lineas, fps) }, esperaHasta: espera };
   };
   let ultimo: Vista | undefined;
+  /** Último visual mostrado y si lo último en pantalla fue un visual (true) o un gráfico (false). */
+  let ultimoVisual: VistaVisual | undefined;
+  let ultimoFueVisual = false;
   const eventos: Evento[] = [{ t: 0, tipo: 'golpe', fuerza: 0.9 }];
 
   // Título + gancho
@@ -161,7 +193,7 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
     const primera = li;
     const inicioCap = desdeVisual(primera);
     capitulos.push({ titulo: cap.titulo, seg: inicioCap / fps, frame: inicioCap });
-    bloques.push({ tipo: 'capitulo', desde: inicioCap, hasta: inicioCap + f(T_CAPITULO), capitulo: ci, previo: ultimo });
+    bloques.push({ tipo: 'capitulo', desde: inicioCap, hasta: inicioCap + f(T_CAPITULO), capitulo: ci, previo: ultimo, previoVisual: ultimoFueVisual ? ultimoVisual : undefined });
     eventos.push({ t: inicioCap / fps, tipo: 'whoosh', fuerza: 1 });
     cap.escenas.forEach((e, k) => {
       const i = primera + k;
@@ -169,19 +201,69 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
       const hasta = desdeVisual(i + 1);
       const linea = L[i];
       const b: BloqueTesis = { tipo: 'escena', desde, hasta, capitulo: ci, escena: k, tipoEscena: e.tipo, linea: i, enfasisPais: e.enfasis?.pais };
+      // Visual v2 de la escena (si se puede dibujar).
+      const clave = claveDeVisual(ci, k);
+      let vv: VistaVisual | undefined;
+      if (e.visual && visualDisponible(e.visual, clave, g.visuales)) {
+        const disposicion = e.grafico ? e.disposicion ?? 'dividido' : 'completo';
+        // En `dividido` el visual entra con la escena (su `dice` se ignora: el panel izquierdo no queda vacío).
+        const fd = disposicion === 'dividido' ? null : frameDePalabra(linea, e.visual.dice);
+        const vDesde = fd !== null ? Math.min(Math.max(desde, fd), hasta - f(1)) : desde;
+        vv = { v: e.visual, clave, desde: vDesde, hasta };
+        if (e.visual.tipo === 'iconos') {
+          const n = e.visual.items.length;
+          const finVoz = Math.max(vDesde + f(1), f(linea.inicio + linea.duracionHablada));
+          const tramo = (finVoz - vDesde) * 0.8;
+          let piDesde = 0;
+          vv.itemsFrame = e.visual.items.map((it, j) => {
+            const pi = it.dice ? buscarPalabra(linea.palabras, it.dice, piDesde) : -1;
+            if (pi >= 0) { piDesde = pi + 1; return Math.max(vDesde, f(linea.inicio + linea.palabras[pi].inicio - 0.1)); }
+            return Math.round(vDesde + f(0.35) + (tramo * j) / n);
+          });
+          vv.itemsFrame.forEach((fr) => eventos.push({ t: fr / fps, tipo: 'pop', fuerza: 0.45 }));
+        }
+        eventos.push({ t: vDesde / fps, tipo: 'whoosh', fuerza: 0.45 });
+        b.visual = vv;
+        b.disposicion = disposicion;
+        // Antes de que entre (dice tardío) se ve lo anterior atenuado.
+        if (vDesde > desde) { if (ultimoFueVisual) b.previoVisual = ultimoVisual; else b.previo = ultimo; }
+      }
+      if (e.mascota) {
+        const fm = frameDePalabra(linea, e.mascota.dice);
+        b.mascota = { m: e.mascota, desde: fm !== null ? Math.min(Math.max(desde, fm), hasta - f(1.2)) : desde + f(0.2) };
+        eventos.push({ t: b.mascota.desde / fps, tipo: 'pop', fuerza: 0.5 });
+      }
       if (e.grafico) {
-        const { vista, esperaHasta } = vistaNueva(e.grafico, `c${ci}e${k}`, [linea], desde);
+        let { vista, esperaHasta } = vistaNueva(e.grafico, `c${ci}e${k}`, [linea], desde);
+        // `completo` con visual y sin `dice` tardío en el gráfico: el gráfico entra pasado el 45 % de la escena.
+        if (vv && b.disposicion === 'completo' && vista.graficoDesde <= vv.desde + f(1)) {
+          ({ vista, esperaHasta } = vistaNueva(e.grafico, `c${ci}e${k}`, [linea], Math.round(vv.desde + 0.45 * (hasta - vv.desde))));
+        }
         Object.assign(b, vista, { esperaHasta, previo: esperaHasta !== undefined ? ultimo : undefined });
+        if (esperaHasta !== undefined && ultimoFueVisual) b.previoVisual = ultimoVisual;
+        if (vv && b.disposicion === 'completo') {
+          // Uno a la vez: el visual primero; el gráfico entra en su `dice` (o pasado el 45 % de la escena).
+          b.cambioAGrafico = vista.graficoDesde;
+          vv.hasta = b.cambioAGrafico;
+        }
         ultimo = vista;
+        ultimoFueVisual = false;
+        if (vv) ultimoVisual = vv;
         const c0 = vista.claves[0], cn = vista.claves[vista.claves.length - 1];
         if (esperaHasta !== undefined) eventos.push({ t: esperaHasta / fps, tipo: 'whoosh', fuerza: 0.5 });
         eventos.push({ t: c0.f / fps, tipo: 'tic', fuerza: 0.7 });
         if (['lineas', 'area', 'barras', 'ranking'].includes(e.grafico.tipo)) eventos.push({ t: c0.f / fps, tipo: 'trazo', fuerza: 0.6, dur: (cn.f - c0.f) / fps });
+      } else if (vv) {
+        ultimoVisual = vv;
+        ultimoFueVisual = true;
+      } else if (e.tipo === 'respiro' && ultimoFueVisual && ultimoVisual) {
+        b.previoVisual = ultimoVisual;
       } else if (e.tipo === 'respiro' && ultimo) {
         Object.assign(b, ultimo);
       } else {
         b.cita = true;
         b.previo = ultimo;
+        if (ultimoFueVisual) b.previoVisual = ultimoVisual;
       }
       if (e.rotulo) {
         const pi = e.rotulo.dice ? buscarPalabra(linea.palabras, e.rotulo.dice) : -1;
@@ -210,7 +292,8 @@ export const planTesis = (g: GuionTesis, tiempos: Tiempos, datos?: DatosResuelto
   const num = vistaNueva(nq.grafico, 'numero', [L[iNum]], desdeVisual(iNum));
   const clavesNum = num.vista.claves;
   capitulos.push({ titulo: 'El número que nadie mira', seg: desdeVisual(iNum) / fps, frame: desdeVisual(iNum) });
-  bloques.push({ tipo: 'numero', desde: desdeVisual(iNum), hasta: desdeVisual(iNum + 1), capitulo: null, linea: iNum, ...num.vista, esperaHasta: num.esperaHasta, previo: num.esperaHasta !== undefined ? ultimo : undefined });
+  bloques.push({ tipo: 'numero', desde: desdeVisual(iNum), hasta: desdeVisual(iNum + 1), capitulo: null, linea: iNum, ...num.vista, esperaHasta: num.esperaHasta, previo: num.esperaHasta !== undefined ? ultimo : undefined,
+    previoVisual: num.esperaHasta !== undefined && ultimoFueVisual ? ultimoVisual : undefined });
   eventos.push({ t: Math.max(0, L[iNum].inicio - 0.9), tipo: 'riser', fuerza: 0.8 });
   eventos.push({ t: clavesNum[0].f / fps, tipo: 'golpe', fuerza: 0.7 });
 

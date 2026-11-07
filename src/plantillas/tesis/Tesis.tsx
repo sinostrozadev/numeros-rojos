@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, type CalculateMetadataFunction } from 'remotion';
+import { AbsoluteFill, Audio, Sequence, getStaticFiles, interpolate, spring, staticFile, useCurrentFrame, type CalculateMetadataFunction } from 'remotion';
 import { FORMATO_LARGO, MARCA, PALETA, TIPO, TIPO_GRAFICO, fondoAlfa } from '../../marca/tokens';
 import { cargarFuentes } from '../../marca/fuentes';
 import { Cierre } from '../../marca/Cierre';
@@ -17,6 +17,13 @@ import { Remate } from '../comun/Remate';
 import { BarraCapitulos, IndiceLista } from '../comun/Indice';
 import { estimarTiemposTesis, graficosTesis, planTesis, type BloqueTesis, type PlanTesis, type Vista } from './plan';
 import { Cita } from '../comun/Cita';
+import { POSES_MASCOTA, type VisualesResueltos } from '../comun/visual';
+import type { VistaVisual } from './plan';
+import { Foto } from '../comun/visuales/Foto';
+import { Ilustracion } from '../comun/visuales/Ilustracion';
+import { Mapa } from '../comun/visuales/Mapa';
+import { Iconos } from '../comun/visuales/Iconos';
+import { MASCOTA_ZONA, MascotaEnPantalla } from '../comun/visuales/Mascota';
 
 export { graficosTesis };
 
@@ -27,6 +34,10 @@ export type PropsTesis = GuionTesis & {
   duracionFrames?: number;
   /** Ruta relativa a public/ de la cama + SFX (preparar-tesis la escribe). */
   audio?: string;
+  /** v2: fotos e ilustraciones resueltas por preparar-tesis (clave = claveDeVisual). Sin ellas, esas escenas caen al gráfico previo. */
+  visuales?: VisualesResueltos;
+  /** v2: poses de la mascota con imagen en public/mascota/<pose>.png (preparar-tesis lo escribe; si falta, se mira public/). */
+  mascotaPoses?: string[];
 };
 
 const W = FORMATO_LARGO.ancho, H = FORMATO_LARGO.alto, S = FORMATO_LARGO.seguro;
@@ -38,6 +49,24 @@ export const ZONA_TESIS = {
   grafico: { x: S.lados, y: 150, ancho: W - S.lados * 2, alto: 770 },
   subtitulos: { centroY: 985 },
 } as const;
+
+type Rect = { x: number; y: number; ancho: number; alto: number };
+/** Disposición `dividido`: visual a la izquierda (≈ 46 % de la zona) y gráfico a la derecha. */
+const ANCHO_VISUAL_DIVIDIDO = 800, SEPARACION_DIVIDIDO = 50;
+/** Con mascota, lo que toca el borde izquierdo termina sobre ella (no se tapa la fuente ni el eje). */
+const acortarPorMascota = (r: Rect): Rect => ({ ...r, alto: Math.min(r.alto, MASCOTA_ZONA.y - 18 - r.y) });
+/** Zonas de visual y gráfico de un bloque según su disposición y si hay mascota. */
+const zonasDe = (b: BloqueTesis): { visual: Rect; grafico: Rect } => {
+  const Z: Rect = ZONA_TESIS.grafico;
+  const conMascota = !!b.mascota;
+  if (b.visual && b.disposicion === 'dividido') {
+    const izq: Rect = { x: Z.x, y: Z.y, ancho: ANCHO_VISUAL_DIVIDIDO, alto: Z.alto };
+    const der: Rect = { x: Z.x + ANCHO_VISUAL_DIVIDIDO + SEPARACION_DIVIDIDO, y: Z.y, ancho: Z.ancho - ANCHO_VISUAL_DIVIDIDO - SEPARACION_DIVIDIDO, alto: Z.alto };
+    return { visual: conMascota ? acortarPorMascota(izq) : izq, grafico: der };
+  }
+  const r = conMascota ? acortarPorMascota(Z) : Z;
+  return { visual: r, grafico: r };
+};
 
 /** Miniatura: mismas props, 1 frame. */
 export const calcularMetadataMiniatura: CalculateMetadataFunction<PropsTesis> = async ({ props }) => ({
@@ -67,8 +96,8 @@ export const calcularMetadataTesis: CalculateMetadataFunction<PropsTesis> = asyn
  */
 const VistaGrafico: React.FC<{
   v: Vista; frame: number; datos?: DatosResueltos; atenuado?: number; antetitulo?: string;
-  enfasisDesde?: number; enfasisPais?: string; zoomDesde?: number; zoomHasta?: number;
-}> = ({ v, frame, datos, atenuado = 1, antetitulo, enfasisDesde, enfasisPais, zoomDesde, zoomHasta }) => {
+  enfasisDesde?: number; enfasisPais?: string; zoomDesde?: number; zoomHasta?: number; zona?: Rect;
+}> = ({ v, frame, datos, atenuado = 1, antetitulo, enfasisDesde, enfasisPais, zoomDesde, zoomHasta, zona }) => {
   const local = frame - v.graficoDesde;
   const progreso = avanceEn(v.claves, frame);
   const enfasis = enfasisDesde !== undefined ? interpolate(frame, [enfasisDesde, enfasisDesde + 8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
@@ -76,28 +105,55 @@ const VistaGrafico: React.FC<{
   const fondo = atenuado < 1;
   const zoom = zoomDesde !== undefined && zoomHasta !== undefined ? interpolate(frame, [zoomDesde, zoomHasta], [0, fondo ? 0.05 : 0.025], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
   const escala = 1 + 0.008 * Math.sin(t / 5) + zoom;
-  const Z = ZONA_TESIS.grafico;
+  const Z = zona ?? ZONA_TESIS.grafico;
   const anotacionesFrame = v.anotFrames?.map((x) => (x === undefined ? undefined : x - v.graficoDesde));
   return (
     <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, transform: `scale(${escala}) translateX(${3 * Math.sin(t / 7) + (fondo ? -12 * Math.sin(t / 11) : 0)}px)`, transformOrigin: '50% 55%', opacity: atenuado }}>
       <GraficoAnimado g={v.grafico} datos={datos} ancho={Z.ancho} alto={Z.alto} modo="largo" progreso={progreso} frame={local} fps={FORMATO_LARGO.fps} enfasis={enfasis}
-        enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} antetitulo={antetitulo} />
+        enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} antetitulo={antetitulo} maxMarcasX={Z.ancho < 900 ? 4 : undefined} />
     </div>
   );
 };
 
 const vistaDe = (b: BloqueTesis): Vista | undefined => (b.grafico ? { grafico: b.grafico, graficoId: b.graficoId!, graficoDesde: b.graficoDesde!, claves: b.claves!, anotFrames: b.anotFrames } : undefined);
 
-/** Título del gráfico que viene, como tarjeta, mientras la voz llega a `dice` (sobre el gráfico anterior atenuado). */
-const TituloEntrante: React.FC<{ titulo: string; subtitulo?: string; frame: number; hasta: number }> = ({ titulo, subtitulo, frame, hasta }) => {
+/**
+ * Un visual v2 (foto, mapa, iconos, ilustración) en su zona. `atenuado` < 1 = fondo de una cita, una espera o una
+ * tarjeta de capítulo (con deriva lenta, como el gráfico previo). El ken-burns y la cámara corren desde `vv.desde`.
+ */
+const VistaVisualEn: React.FC<{ vv: VistaVisual; frame: number; visuales?: VisualesResueltos; zona?: Rect; atenuado?: number }> = ({ vv, frame, visuales, zona, atenuado = 1 }) => {
   const fps = FORMATO_LARGO.fps;
+  const Z = zona ?? ZONA_TESIS.grafico;
+  const local = frame - vv.desde;
+  const frames = Math.max(1, vv.hasta - vv.desde);
+  const fondo = atenuado < 1;
+  const t = frame / fps;
+  // De fondo: el ken-burns queda donde terminó y se suma una deriva lentísima (nada estático > 8 s).
+  const deriva = fondo ? `scale(${1.01 + 0.01 * Math.sin(t / 6)}) translateX(${-10 * Math.sin(t / 11)}px)` : undefined;
+  const variante = Number(vv.clave.replace(/\D/g, '')) || 0;
+  const v = vv.v;
+  let cuerpo: React.ReactNode = null;
+  if (v.tipo === 'foto') cuerpo = <Foto visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} encuadre={v.encuadre} variante={variante} />;
+  else if (v.tipo === 'ilustracion') cuerpo = <Ilustracion visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} variante={variante} />;
+  else if (v.tipo === 'mapa') cuerpo = <Mapa v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} />;
+  else if (v.tipo === 'iconos') cuerpo = <Iconos v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} itemsFrame={(vv.itemsFrame ?? []).map((x) => x - vv.desde)} />;
+  return (
+    <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, opacity: atenuado, transform: deriva, transformOrigin: '50% 55%' }}>{cuerpo}</div>
+  );
+};
+
+/** Título del gráfico que viene, como tarjeta, mientras la voz llega a `dice` (sobre el gráfico anterior atenuado). */
+const TituloEntrante: React.FC<{ titulo: string; subtitulo?: string; frame: number; hasta: number; zona?: Rect }> = ({ titulo, subtitulo, frame, hasta, zona }) => {
+  const fps = FORMATO_LARGO.fps;
+  const angosto = !!zona && zona.ancho < 1200;
   const e = spring({ frame, fps, config: { damping: 16, stiffness: 150 } });
   const sale = interpolate(frame, [hasta - 2, hasta + Math.round(0.4 * fps)], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   return (
-    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: Math.min(1, e * 1.4) * (1 - sale) }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, transform: `translateY(${(1 - e) * 30 - sale * 40}px) scale(${1 + 0.015 * (frame / fps)})`, maxWidth: 1500 }}>
+    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: Math.min(1, e * 1.4) * (1 - sale),
+      ...(zona ? { left: zona.x, top: zona.y, width: zona.ancho, height: zona.alto } : {}) }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, transform: `translateY(${(1 - e) * 30 - sale * 40}px) scale(${1 + 0.015 * (frame / fps)})`, maxWidth: zona ? zona.ancho - 40 : 1500 }}>
         <div style={{ width: 90, height: 8, borderRadius: 4, background: PALETA.dorado }} />
-        <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 76, lineHeight: 1.08, color: PALETA.tinta, textAlign: 'center', letterSpacing: -1.5, textShadow: '0 6px 26px rgba(0,0,0,0.75)' }}>{titulo}</div>
+        <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: angosto ? 56 : 76, lineHeight: 1.08, color: PALETA.tinta, textAlign: 'center', letterSpacing: -1.5, textShadow: '0 6px 26px rgba(0,0,0,0.75)' }}>{titulo}</div>
         {subtitulo && <div style={{ fontFamily: TIPO.texto, fontWeight: 600, fontSize: 30, color: PALETA.tintaSuave, textAlign: 'center' }}>{subtitulo}</div>}
       </div>
     </AbsoluteFill>
@@ -108,7 +164,7 @@ const TituloEntrante: React.FC<{ titulo: string; subtitulo?: string; frame: numb
  * Gráfico de un bloque (gancho, escena con gráfico, número): si hay espera de `dice`, primero el gráfico anterior
  * atenuado + el título del nuevo; a 0,4 s de la palabra, transición y el nuevo empieza a construirse.
  */
-const GraficoConEspera: React.FC<{ b: BloqueTesis; frame: number; datos?: DatosResueltos; antetitulo?: string }> = ({ b, frame, datos, antetitulo }) => {
+const GraficoConEspera: React.FC<{ b: BloqueTesis; frame: number; datos?: DatosResueltos; antetitulo?: string; zona?: Rect; visuales?: VisualesResueltos }> = ({ b, frame, datos, antetitulo, zona, visuales }) => {
   const v = vistaDe(b);
   if (!v) return null;
   const fps = FORMATO_LARGO.fps;
@@ -117,14 +173,65 @@ const GraficoConEspera: React.FC<{ b: BloqueTesis; frame: number; datos?: DatosR
   const sub = [b.grafico!.datos.etiqueta, b.grafico!.datos.unidad].filter(Boolean).join(' · ');
   return (
     <>
-      {espera && b.previo && salidaPrevio > 0 && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={salidaPrevio} zoomDesde={b.desde} zoomHasta={b.esperaHasta} />}
-      {espera && <TituloEntrante titulo={b.grafico!.titulo} subtitulo={sub} frame={frame - b.desde} hasta={b.esperaHasta! - b.desde} />}
+      {espera && !b.visual && salidaPrevio > 0 && (b.previoVisual
+        ? <VistaVisualEn vv={b.previoVisual} frame={frame} visuales={visuales} atenuado={salidaPrevio} />
+        : b.previo && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={salidaPrevio} zoomDesde={b.desde} zoomHasta={b.esperaHasta} />)}
+      {espera && <TituloEntrante titulo={b.grafico!.titulo} subtitulo={sub} frame={frame - b.desde} hasta={b.esperaHasta! - b.desde} zona={zona} />}
       {frame >= v.graficoDesde && (
-        <VistaGrafico v={v} frame={frame} datos={datos} antetitulo={antetitulo} enfasisDesde={b.enfasisDesde} enfasisPais={b.enfasisPais}
+        <VistaGrafico v={v} frame={frame} datos={datos} antetitulo={antetitulo} enfasisDesde={b.enfasisDesde} enfasisPais={b.enfasisPais} zona={zona}
           zoomDesde={b.tipoEscena === 'respiro' ? b.desde : undefined} zoomHasta={b.tipoEscena === 'respiro' ? b.hasta : undefined} />
       )}
     </>
   );
+};
+
+/**
+ * Contenido de una escena (no cita) con los visuales v2:
+ *  - sin visual: el gráfico (con su espera) o, en un respiro tras un visual, ese visual solo;
+ *  - `completo`: lo anterior atenuado hasta que la voz dice `visual.dice`; luego el visual; si además hay gráfico,
+ *    el gráfico lo reemplaza en `cambioAGrafico` (fundido de 0,4 s);
+ *  - `dividido`: visual a la izquierda y gráfico a la derecha desde el inicio.
+ */
+const ContenidoEscena: React.FC<{ b: BloqueTesis; frame: number; datos?: DatosResueltos; visuales?: VisualesResueltos }> = ({ b, frame, datos, visuales }) => {
+  const fps = FORMATO_LARGO.fps;
+  const zonas = zonasDe(b);
+  const zonaGrafico = b.mascota || b.disposicion === 'dividido' ? zonas.grafico : undefined;
+  if (!b.visual) {
+    if (b.grafico) return <GraficoConEspera b={b} frame={frame} datos={datos} zona={zonaGrafico} visuales={visuales} />;
+    if (b.previoVisual) return <VistaVisualEn vv={b.previoVisual} frame={frame} visuales={visuales} atenuado={0.92} />;
+    return null;
+  }
+  const vv = b.visual;
+  if (b.disposicion === 'dividido') {
+    return (
+      <>
+        <VistaVisualEn vv={vv} frame={frame} visuales={visuales} zona={zonas.visual} />
+        {b.grafico && <GraficoConEspera b={b} frame={frame} datos={datos} zona={zonas.grafico} visuales={visuales} />}
+      </>
+    );
+  }
+  const fin = Math.round(0.4 * fps);
+  const opPrevio = interpolate(frame, [vv.desde, vv.desde + fin], [0.45, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const cambio = b.cambioAGrafico;
+  const opVisual = cambio !== undefined ? interpolate(frame, [cambio, cambio + fin], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 1;
+  return (
+    <>
+      {opPrevio > 0 && (b.previoVisual
+        ? <VistaVisualEn vv={b.previoVisual} frame={frame} visuales={visuales} atenuado={opPrevio} />
+        : b.previo && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={opPrevio} />)}
+      {frame >= vv.desde && opVisual > 0 && <VistaVisualEn vv={vv} frame={frame} visuales={visuales} zona={zonas.visual} atenuado={opVisual < 1 ? opVisual : 1} />}
+      {b.grafico && cambio !== undefined && frame >= cambio && <GraficoConEspera b={b} frame={frame} datos={datos} zona={zonaGrafico} visuales={visuales} />}
+    </>
+  );
+};
+
+/** Poses de la mascota con imagen propia: las que dice preparar-tesis o, en Studio, las que hay en public/mascota/. */
+const posesConImagen = (props: PropsTesis): string[] => {
+  if (props.mascotaPoses) return props.mascotaPoses;
+  try {
+    const archivos = new Set(getStaticFiles().map((f) => f.name.replace(/^\/+/, '')));
+    return POSES_MASCOTA.filter((p) => archivos.has(`mascota/${p}.png`));
+  } catch { return []; }
 };
 
 /** Tarjeta de capítulo fija (sin gráfico previo): número + título con la rejilla de fondo, mientras habla la voz. */
@@ -218,7 +325,9 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
   const bloquesCap = enCapitulos ? plan.bloques.filter((x) => x.capitulo === capActual) : [];
   const avanceCap = bloquesCap.length ? interpolate(frame, [bloquesCap[0].desde, bloquesCap[bloquesCap.length - 1].hasta], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
   const cita = !!b.cita;
-  const subtitulos = linea && linea.palabras.length && !['remate', 'final', 'titulo'].includes(b.tipo) && !(cita && b.previo);
+  const fondoCita = cita && !!(b.previo || b.previoVisual);
+  const subtitulos = linea && linea.palabras.length && !['remate', 'final', 'titulo'].includes(b.tipo) && !fondoCita;
+  const poses = React.useMemo(() => posesConImagen(props), [props]);
   const reenganche = b.tipoEscena === 'reenganche';
   const fundido = reenganche ? interpolate(frame, [b.hasta - Math.round(0.7 * fps), b.hasta - 2], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
   const giroActivo = b.tipoEscena === 'giro' && b.enfasisDesde !== undefined && frame >= b.enfasisDesde;
@@ -236,14 +345,17 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
           <IndiceLista items={props.indice} frame={frame} desde={plan.indiceDesde} fontSize={62} ancho={1400} />
         </div>
       )}
-      {b.tipo === 'capitulo' && b.previo && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={0.3} />}
+      {b.tipo === 'capitulo' && (b.previoVisual
+        ? <VistaVisualEn vv={b.previoVisual} frame={frame} visuales={props.visuales} atenuado={0.3} />
+        : b.previo && <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={0.3} />)}
       {b.tipo === 'capitulo' && <TarjetaCapitulo n={(b.capitulo ?? 0) + 1} titulo={props.capitulos[b.capitulo ?? 0].titulo} frame={local} frames={b.hasta - b.desde} />}
-      {b.tipo === 'escena' && !cita && <GraficoConEspera b={b} frame={frame} datos={datos} />}
-      {cita && b.previo && (
+      {b.tipo === 'escena' && !cita && <ContenidoEscena b={b} frame={frame} datos={datos} visuales={props.visuales} />}
+      {cita && b.previoVisual && <VistaVisualEn vv={b.previoVisual} frame={frame} visuales={props.visuales} atenuado={0.45} />}
+      {cita && !b.previoVisual && b.previo && (
         <VistaGrafico v={b.previo} frame={frame} datos={datos} atenuado={0.45} zoomDesde={b.desde} zoomHasta={b.hasta} enfasisDesde={b.enfasisDesde} enfasisPais={b.enfasisPais} />
       )}
-      {cita && !b.previo && <CapituloFijo n={(b.capitulo ?? 0) + 1} titulo={props.capitulos[b.capitulo ?? 0].titulo} frame={local} />}
-      {cita && b.previo && linea && linea.palabras.length > 0 && (
+      {cita && !fondoCita && <CapituloFijo n={(b.capitulo ?? 0) + 1} titulo={props.capitulos[b.capitulo ?? 0].titulo} frame={local} />}
+      {fondoCita && linea && linea.palabras.length > 0 && (
         <Cita linea={linea} frameLocal={frame - Math.round(linea.inicio * fps)} fps={fps} ancho={1560} fontSize={reenganche ? 72 : 66} centroY={560}
           acento={giroActivo ? PALETA.rojo : PALETA.dorado} />
       )}
@@ -267,6 +379,7 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
         <Subtitulos linea={linea} frameLocal={frame - Math.round(linea.inicio * fps)} centroY={ZONA_TESIS.subtitulos.centroY} fontSize={T.subtitulos} ancho={W - 320}
           acento={giroActivo ? PALETA.rojo : PALETA.dorado} />
       )}
+      {b.mascota && <MascotaEnPantalla m={b.mascota.m} frame={frame} desde={b.mascota.desde} hasta={b.hasta} fps={fps} posesDisponibles={poses} />}
       {fundido > 0 && <AbsoluteFill style={{ background: `rgba(5,6,8,${fundido})` }} />}
 
       {tiempos.voz !== 'estimada' && tiempos.lineas.filter((l) => l.archivo).map((l) => (
