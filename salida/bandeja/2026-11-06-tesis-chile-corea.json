@@ -11,12 +11,14 @@
     "#datos"
   ],
   "duracionSeg": 598.4,
-  "estado": "subido",
+  "estado": "reemplazado",
   "tipo": "largo",
   "publicarEn": "2026-11-08T19:00:00-03:00",
   "videoId": "vQT5ObEGz5U",
   "url": "https://www.youtube.com/watch?v=vQT5ObEGz5U",
   "programado": "2026-11-08 19:00",
   "subidoEn": "2026-11-06T11:52:22.727Z",
-  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio"
+  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio",
+  "reemplazadoPor": "2026-11-07-tesis-chile-corea-v2",
+  "nota": "v1 puesta en privado en Studio el 2026-11-07 (título con \"(versión anterior)\"); la v2 eTq0TBuEWIs ocupa la ranura dom 11-08 19:00"
 }
