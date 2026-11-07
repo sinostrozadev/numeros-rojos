@@ -170,6 +170,120 @@ Cuidado: sin una serie de salarios con licencia, **no se afirma "tu sueldo perdi
 - **Nada estático > 8 s**: si una escena dura más de 25 s sin gráfico nuevo, ponle `rotulo` o divídela.
 - `miniatura.texto`: 3–5 palabras grandes **distintas del título** ("3 VECES MÁS RICO", "DE 4.ª A 8.ª"), con el gráfico que la ilustra.
 
+## 7b. Dirección visual v2: fotos, mapas, iconos, ilustraciones y la mascota (desde 2026-11-07)
+
+Orden de Santiago al ver los primeros largos: "hablan de diferentes partes del mundo y cuentan historias: métanle fotos,
+mapas e iconitos; cuando haya que mostrar datos, gráficos; preparen los guiones sabiendo qué herramientas vamos a usar".
+El gráfico sigue siendo el rey de los **datos**; todo lo demás que dice la voz (un lugar, una época, un objeto, una lista, una
+idea abstracta) ahora tiene su recurso. Contrato: `src/plantillas/comun/visual.ts` (campos `visual`, `disposicion` y `mascota`
+de cada `Escena`). Se escribe en la **misma segunda pasada** que los gráficos (§7), sobre el texto ya cerrado.
+
+**La paleta y cuándo va cada recurso:**
+| Recurso (`visual.tipo`) | Cuándo | Nunca |
+|---|---|---|
+| **gráfico** (`grafico`, §7) | SIEMPRE que la voz dice una cifra con dataset. Toda escena `dato` lleva gráfico (el schema lo exige) | — |
+| **`foto`** de Wikimedia Commons | Historia, lugares, objetos, instituciones, personas públicas **fallecidas**: el puerto, la mina, la avenida, el edificio del banco central, la universidad | Para mostrar un dato. Gente común identificable, políticos vivos, carteles con consignas, logos de marcas, infografías o gráficos (una foto que parezca dato confunde) |
+| **`mapa`** (Natural Earth) | Cuando la voz nombra 2+ países, una región o una ruta; `flechas` para flujos (comercio, inversión, deuda: `desde` → `hasta`, `texto` ≤ 24) | Para un solo país que ya está en el gráfico; para calles o ciudades sin país |
+| **`iconos`** | Enumeraciones de **2–6** cosas concretas que la voz nombra en fila ("fruta, salmón, vino"; "impuesto bajo, inglés, la Unión Europea"). Un ítem por cosa, cada uno con su `dice` | Para listas que no se dicen; más de 6; ítems abstractos de relleno |
+| **`ilustracion`** plana (GPT) | Conceptos sin foto posible: "dos familias, una ahorra", "un edificio invisible", "otra economía montada encima". **Máximo 2 por largo** | Nada realista (personas o lugares que parezcan foto); nada con texto o números dentro |
+| **`mascota`** | Comenta la **sorpresa o el giro** con una pose y un bocadillo ≤ 40 ("¿El exportador era Chile?"). Va en `giro`, en el dato que más sorprende o en el que duele | Explicar, dar cifras nuevas o opinar. Más de 1 de cada 3 escenas por capítulo (el schema lo bloquea). En `significado` |
+
+Poses de la mascota: `saluda` (rara vez, al abrir), `senala` (mira esto), `piensa` (el matiz), `sorpresa` (el giro), `tapa-ojos`
+(el dato que duele: hiperinflación, caída), `celebra` (una buena noticia de datos: "Chile alcanzó a Corea").
+
+**Disposición:** `dividido` = visual a la izquierda y gráfico a la derecha (escena `dato` o `giro` con gráfico que además nombra un
+lugar u objeto). `completo` = uno solo a pantalla completa (planteamiento, giro sin gráfico, significado). `dividido` exige visual
+**y** gráfico en la misma escena (lo valida el schema). Si se omite, la plantilla decide (`dividido` si hay los dos).
+
+**Reglas de redacción (las revisa el generador):**
+- **La voz mira el visual, no lo describe.** "Mira este puerto en 1910", "Mira el mapa", "Así se ve el edificio" — y sigue con
+  la idea. Nada de "en la imagen vemos un barco blanco con dos chimeneas".
+- **`dice`** (del visual, de cada ítem de `iconos` y de la mascota) = palabra **literal** del texto de esa escena, con su
+  puntuación ("cobre.", "fruta,", "Bruselas."). Es el instante exacto en que aparece. Elige la palabra que nombra la cosa.
+- **`busqueda`** de la foto: **en inglés, concreta y con época o lugar** como estaría en el título de un archivo de Commons
+  ("Seoul 1953 panorama", "Buenos Aires port 1900", "Hyundai Heavy Industries Ulsan shipyard", "Grafton Street Dublin").
+  Commons busca palabras del título y la descripción: 2–5 palabras, nombres propios, un año; sin adjetivos ("beautiful",
+  "old"), sin frases. Si el lugar es hispano, el nombre en español también sirve ("Banco de la Nacion Argentina headquarters").
+- **`alternativas`**: **2** búsquedas distintas por foto (otra palabra, otro año u otro lugar equivalente), por si la primera no
+  da una foto con licencia. `preparar-tesis` prueba en orden y toma la primera jpg/png ≥ 1.200 px con licencia PD, CC0, CC BY o
+  CC BY-SA (NC/ND y marcas quedan fuera); el generador comprueba contra la API de Commons que al menos una devuelva foto.
+- **`pie`** (≤ 70): **qué es + lugar + año** ("Puerto de Buenos Aires, hacia 1910", "Mina Chuquicamata, Chile (2016)"). Si la foto
+  es de otra época que la voz, el pie lo dice (la voz habla de 1960 y la foto es de 1953: "Seúl en 1953, el año del armisticio").
+  El crédito (autor y licencia) lo pone el pipeline; no lo escribas.
+- **`prompt`** de la ilustración: en español, 1–3 frases concretas: qué objetos, cómo están dispuestos, "estilo plano vectorial
+  sobre fondo #111418", colores de la marca (dorado, verde billete, gris claro), y siempre "sin texto, sin números, sin logos".
+- **Mapa**: ISO3 reales en `destacar` (el primero va en dorado = el protagonista), `flechas` solo entre países de `destacar` o con
+  destino evidente (GBR para "Europa" en 1900), `etiquetas` con [lon, lat] reales (Santiago [-70.67, -33.45]). `zoom` 1 = mundo,
+  3 = continente; si dudas, omite `centro`/`zoom` y se calculan.
+- Los iconos: emoji de Noto (🚢 🏭 🍇 💶 📜) o pictograma propio (`guerra tren rio tratado dinero tribunal hielo isla barco
+  montana carretera bandera`; si dudas, emoji). `texto` ≤ 28, `titulo` ≤ 40. Un `valor` solo si la cifra está declarada en `cifras[]`.
+
+**Ritmo en un largo de 9–12 min:**
+- **6–9 escenas con visual** (el schema exige ≥ 5 y ≥ 2 tipos; apunta a 3–4 tipos), **3–5 fotos**, 1–3 mapas, 1–3 iconos,
+  0–2 ilustraciones; **2–4 mascotas** en el video.
+- Cada capítulo tiene al menos un visual; el `planteamiento` sin gráfico casi siempre lleva uno (foto de época o mapa).
+- **Nunca dos fotos seguidas sin gráfico en medio**: dentro de un `dato` la foto va `dividido` con su gráfico; entre dos escenas
+  con foto `completo` tiene que haber una escena con gráfico.
+- `numeroQueNadieMira`, `gancho` y `remate` no llevan visual (son del gráfico y del texto).
+- El visual no reemplaza al `rotulo`: el rótulo sigue siendo la idea; el visual, el mundo del que se habla.
+
+**Ejemplo de capítulo v2 completo** (`contenido/backlog/tesis-chile-corea-v2.json`, capítulo 3; validado y con cifras verificadas):
+iconos en el planteamiento, ilustración en la analogía, mascota en el giro, gráficos en todos los datos.
+
+```json
+{
+ "titulo": "La plata que se guarda para construir",
+ "escenas": [
+ {
+  "tipo": "planteamiento",
+  "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y aquí es donde los dos países más se separan.",
+  "visual": {"tipo":"iconos","titulo":"Se paga antes de producir","items":[{"icono":"🚢","texto":"Astillero","dice":"astillero,"},{"icono":"🏭","texto":"Acería","dice":"acería"},{"icono":"💾","texto":"Planta de chips","dice":"chips"}]},
+  "disposicion": "completo"
+ },
+ {
+  "tipo": "dato",
+  "texto": "Los economistas lo llaman formación bruta de capital: máquinas, edificios, caminos, puertos. Según el Banco Mundial, entre 1970 y 1990 Corea destinó a eso, en promedio, casi un tercio de su economía. Chile, menos de una quinta parte.",
+  "grafico": {"tipo":"area","titulo":"Inversión en máquinas, edificios e infraestructura","datos":{"fuente":"wdi","indicador":"NE.GDI.TOTL.ZS","paises":["KOR","CHL"],"desde":1960,"hasta":2024,"etiqueta":"Formación bruta de capital (% del PIB)","unidad":"%"},"destacar":{"pais":"KOR"},"anotaciones":[{"anio":1979,"texto":"Corea: casi 38 %"}],"formato":{"sufijo":" %","decimales":0},"dice":"formación"},
+  "cifras": [{"texto":"casi un tercio","valor":32,"calculo":{"datos":{"fuente":"wdi","indicador":"NE.GDI.TOTL.ZS","paises":["KOR","CHL"],"desde":1970,"hasta":1990,"etiqueta":"Formación bruta de capital (% del PIB)","unidad":"%"},"operacion":"promedio","pais":"KOR"}},{"texto":"menos de una quinta parte","valor":18,"calculo":{"datos":{"fuente":"wdi","indicador":"NE.GDI.TOTL.ZS","paises":["KOR","CHL"],"desde":1970,"hasta":1990,"etiqueta":"Formación bruta de capital (% del PIB)","unidad":"%"},"operacion":"promedio","pais":"CHL"}}],
+  "rotulo": {"texto":"1/3 CONTRA 1/5","dice":"tercio"},
+  "fuenteEnVoz": true
+ },
+ {
+  "tipo": "dato",
+  "texto": "Piensa en dos familias. Una gasta casi todo lo que gana. La otra, durante veinte años, aparta un tercio para herramientas y para agrandar el taller. Al principio vive peor. Después, la distancia se vuelve enorme. Con esa diferencia, las dos líneas del ingreso se acercan año tras año, y en 1982 se cruzan.",
+  "grafico": {"tipo":"lineas","titulo":"Ingreso por persona, 1960–2024","datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["CHL","KOR"],"desde":1960,"hasta":2024,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"destacar":{"pais":"KOR","anio":1982,"texto":"1982: se cruzan"},"anotaciones":[{"anio":1982,"texto":"Corea pasa a Chile"}],"formato":{"prefijo":"US$ ","decimales":0},"dice":"líneas"},
+  "cifras": [{"texto":"en 1982 se cruzan","valor":1.1,"calculo":{"datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["CHL","KOR"],"desde":1960,"hasta":2024,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"operacion":"razon","pais":"KOR","paisB":"CHL","anio":1982}}],
+  "rotulo": {"texto":"1982","dice":"1982"},
+  "visual": {"tipo":"ilustracion","prompt":"Dos casas vecinas vistas de frente, estilo plano vectorial sobre fondo #111418. En la casa de la izquierda una familia gasta todo lo que gana: bolsas de compras y un televisor nuevo. En la casa de la derecha otra familia guarda monedas doradas en un frasco y agranda un pequeño taller con herramientas y una máquina. Colores verde billete, dorado y gris claro. Sin texto, sin números, sin logos.","pie":"Ilustración","dice":"familias."},
+  "disposicion": "dividido"
+ },
+ {
+  "tipo": "giro",
+  "texto": "Pero mira bien el cruce. No fue solo que Corea subiera: ese mismo año Chile se desplomó. Entre 1981 y 1983, el ingreso por persona chileno se encogió casi una quinta parte, en una crisis de deuda y de bancos. Corea no adelantó en la recta. Adelantó en la curva donde Chile frenó.",
+  "grafico": {"tipo":"lineas","titulo":"La crisis de 1982 en Chile","datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["CHL","KOR"],"desde":1975,"hasta":1990,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"destacar":{"pais":"CHL","anio":1982},"anotaciones":[{"anio":1982,"texto":"Crisis de la deuda"}],"formato":{"prefijo":"US$ ","decimales":0},"dice":"cruce."},
+  "cifras": [{"texto":"casi una quinta parte","valor":-19,"calculo":{"datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["CHL","KOR"],"desde":1960,"hasta":2024,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"operacion":"variacion","pais":"CHL","anio":1981,"anioB":1983}}],
+  "mascota": {"pose":"sorpresa","bocadillo":"¡Chile frenó en la curva!","dice":"desplomó."}
+ },
+ {
+  "tipo": "dato",
+  "texto": "Hoy la distancia sigue ahí, aunque se mide distinto según la vara. Si se corrige por lo que cuestan las cosas en cada país, el coreano promedio produce casi el doble que el chileno. Es menos que dos veces y media, pero sigue siendo casi el doble.",
+  "grafico": {"tipo":"lineas","titulo":"Ingreso por persona ajustado por precios","datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.PP.KD","paises":["KOR","CHL"],"desde":1990,"hasta":2024,"etiqueta":"PIB por persona (PPA, US$ internacionales de 2021)","unidad":"US$"},"destacar":{"pais":"CHL"},"formato":{"prefijo":"US$ ","decimales":0},"dice":"corrige"},
+  "cifras": [{"texto":"casi el doble","valor":1.8,"calculo":{"datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.PP.KD","paises":["KOR","CHL"],"desde":1990,"hasta":2024,"etiqueta":"PIB por persona (PPA, US$ internacionales de 2021)","unidad":"US$"},"operacion":"razon","pais":"KOR","paisB":"CHL","anio":2024}}]
+ },
+ {
+  "tipo": "dato",
+  "texto": "Corea también tuvo su golpe. En 1998, con la crisis asiática, la deuda de los conglomerados le pasó la cuenta y su ingreso por persona bajó más de un 5 %. La diferencia es lo que vino después: en 1999 ya estaba por encima del nivel de 1997. Caer no la sacó del camino. Caer poco y volver rápido fue parte del camino.",
+  "grafico": {"tipo":"lineas","titulo":"Corea en la crisis asiática","datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["KOR"],"desde":1990,"hasta":2005,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"destacar":{"pais":"KOR","anio":1998},"anotaciones":[{"anio":1998,"texto":"Crisis asiática"}],"formato":{"prefijo":"US$ ","decimales":0},"dice":"1998,"},
+  "cifras": [{"texto":"más de un 5 %","valor":-5.6,"calculo":{"datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["CHL","KOR"],"desde":1960,"hasta":2024,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"operacion":"variacion","pais":"KOR","anio":1997,"anioB":1998}},{"texto":"por encima del nivel de 1997","valor":4.6,"calculo":{"datos":{"fuente":"wdi","indicador":"NY.GDP.PCAP.KD","paises":["CHL","KOR"],"desde":1960,"hasta":2024,"etiqueta":"PIB por persona (US$ constantes de 2015)","unidad":"US$"},"operacion":"variacion","pais":"KOR","anio":1997,"anioB":1999}}]
+ },
+ {
+  "tipo": "reenganche",
+  "texto": "Si la historia fuera solo de fábricas y ahorro, quedaría una pieza suelta. Porque hay un tercer factor, el más citado de todos, y ahí los datos de hoy cuentan algo que pocos esperan."
+ }
+ ]
+}
+```
+
 ## 8. Cómo declarar `cifras[]` (lo que el revisor numérico recalcula)
 
 `{ texto, valor, calculo: { datos: DatoRef, operacion, pais?, paisB?, anio?, anioB? }, tolerancia? }`
@@ -251,22 +365,25 @@ infantil de UNICEF, gasto militar del SIPRI. Un slug de OWID es CC BY solo si el
 - [ ] Remate simétrico sin pedir nada; `siguiente` con gancho; título ≤ 60 sin prohibidas y no repetido.
 - [ ] Descripción: pregunta + líneas propias + fuentes + "Voz sintetizada" + "No es asesoría financiera".
 - [ ] Shorts derivados: `enlaceLargo` + texto 100 % nuevo. Rotación: la estructura no supera el 40 % del backlog.
+- [ ] Visuales v2 (§7b): 6–9 escenas con visual de ≥ 3 tipos, 2–4 mascotas (≤ 1 de cada 3 escenas, nunca explicando), ≤ 2
+      ilustraciones, fotos con `busqueda` en inglés + 2 `alternativas` + `pie` con lugar y año, `dice` literal, ninguna foto
+      que parezca dato, ningún par de fotos seguidas sin gráfico en medio.
 - [ ] Revisor independiente (`guiones-de-video` §6) con todos los cortes (Verdad = 5) y promedio ≥ 4,3.
 
 ## 12. Ejemplos completos (son el molde; NO copiar sus temas, títulos ni frases)
 
-Los dos guiones de abajo están en `contenido/backlog/` y pasaron validación, verificación de cifras y revisor. Úsalos para ver
+Los dos guiones de abajo pasaron validación, verificación de cifras y revisor. Úsalos para ver
 el nivel de detalle (escenas, cifras, gráficos), no como plantilla de texto. Sus temas (Chile/Corea, Argentina, Irlanda, Panamá)
 ya están tomados.
 
 <!-- EJEMPLOS:INICIO (los regenera el agente de guiones desde contenido/backlog; no editar a mano) -->
 
-### Ejemplo `tesis` — pendiente-tesis-chile-corea (contenido/backlog/tesis-chile-corea.json)
+### Ejemplo `tesis` — tesis-chile-corea-v2 (contenido/backlog/tesis-chile-corea-v2.json)
 
 ```json
 {
  "plantilla": "tesis",
- "id": "pendiente-tesis-chile-corea",
+ "id": "tesis-chile-corea-v2",
  "titulo": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
  "descripcion": "¿Por qué Corea del Sur, tres veces más pobre que Chile en 1960, hoy produce dos veces y media más por persona?\n\nSeguimos 64 años de datos del Banco Mundial y del Proyecto Maddison para separar lo que de verdad cambió de lo que se repite.\nChile era más rico y más exportador en 1960. Corea apostó por fabricar y por guardar para construir; Chile cambió de materia prima.\nEl dato que más sorprende: en matrícula universitaria Chile ya alcanzó a Corea. En investigación y desarrollo, gasta doce veces menos.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MMTL.ZS.UN, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, SE.TER.ENRR, IP.PAT.RESD, GB.XPD.RSDV.GD.ZS, TX.VAL.FOOD.ZS.UN, SP.POP.TOTL (CC BY 4.0) https://data.worldbank.org\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
  "hashtags": [
@@ -277,7 +394,7 @@ ya están tomados.
   "#datos"
  ],
  "props": {
-  "id": "pendiente-tesis-chile-corea",
+  "id": "tesis-chile-corea-v2",
   "cabecera": "CHILE VS COREA DEL SUR · 1960–2024",
   "gancho": {
    "texto": "En 1960, cada chileno producía el triple que cada coreano; hoy, cada coreano produce dos veces y media lo que un chileno. Las dos líneas se cruzaron hace más de cuarenta años, y la distancia no se ha cerrado. ¿Qué hizo Corea del Sur que Chile no hizo?",
@@ -366,7 +483,18 @@ ya están tomados.
     "escenas": [
      {
       "tipo": "planteamiento",
-      "texto": "Volvamos a 1960. Corea del Sur lleva siete años de armisticio después de una guerra que arrasó el país y selló la frontera con el Norte. No tiene petróleo, ni cobre, y la mayor parte de su territorio son montañas. Chile tiene minas, puertos, un Estado que funciona y universidades con más de un siglo de historia. Si alguien hubiera tenido que apostar, la apuesta obvia era Chile."
+      "texto": "Volvamos a 1960. Corea del Sur lleva siete años de armisticio después de una guerra que arrasó el país y selló la frontera con el Norte. No tiene petróleo, ni cobre, y la mayor parte de su territorio son montañas. Chile tiene minas, puertos, un Estado que funciona y universidades con más de un siglo de historia. Si alguien hubiera tenido que apostar, la apuesta obvia era Chile.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Seoul 1953 panorama",
+       "alternativas": [
+        "Seoul 1952",
+        "Seoul 1950s"
+       ],
+       "pie": "Seúl en 1953, el año del armisticio",
+       "dice": "armisticio",
+       "encuadre": "ken-burns"
+      }
      },
      {
       "tipo": "dato",
@@ -579,6 +707,11 @@ ya están tomados.
       "rotulo": {
        "texto": "EL EXPORTADOR ERA CHILE",
        "dice": "dependía"
+      },
+      "mascota": {
+       "pose": "sorpresa",
+       "bocadillo": "¿El exportador era Chile?",
+       "dice": "Chile."
       }
      }
     ]
@@ -588,7 +721,17 @@ ya están tomados.
     "escenas": [
      {
       "tipo": "planteamiento",
-      "texto": "Si Chile era más rico y más abierto, la diferencia tiene que estar en otra parte. Empecemos por lo más concreto: qué le vendía cada país al resto del mundo."
+      "texto": "Si Chile era más rico y más abierto, la diferencia tiene que estar en otra parte. Mira el mapa y empecemos por lo más concreto: qué le vendía cada país al resto del mundo.",
+      "visual": {
+       "tipo": "mapa",
+       "destacar": [
+        "CHL",
+        "KOR"
+       ],
+       "zoom": 1,
+       "acercar": false,
+       "dice": "vendía"
+      }
      },
      {
       "tipo": "dato",
@@ -650,7 +793,19 @@ ya están tomados.
        "texto": "COBRE",
        "dice": "cobre."
       },
-      "fuenteEnVoz": true
+      "fuenteEnVoz": true,
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Chuquicamata copper mine",
+       "alternativas": [
+        "Mina La Escondida Chile",
+        "El Teniente mine Chile"
+       ],
+       "pie": "Mina Chuquicamata, Calama, Chile (2016)",
+       "dice": "cobre.",
+       "encuadre": "ken-burns"
+      },
+      "disposicion": "dividido"
      },
      {
       "tipo": "dato",
@@ -817,7 +972,19 @@ ya están tomados.
       "rotulo": {
        "texto": "METAS DE EXPORTACIÓN",
        "dice": "metas"
-      }
+      },
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Hyundai Heavy Industries Ulsan shipyard",
+       "alternativas": [
+        "Ulsan shipyard",
+        "Hyundai ship engine under construction"
+       ],
+       "pie": "Astillero de Hyundai en Ulsan, Corea (2023)",
+       "dice": "Hyundai",
+       "encuadre": "ken-burns"
+      },
+      "disposicion": "dividido"
      },
      {
       "tipo": "dato",
@@ -959,6 +1126,38 @@ ya están tomados.
       "rotulo": {
        "texto": "OTRA MATERIA PRIMA",
        "dice": "oficio."
+      },
+      "visual": {
+       "tipo": "iconos",
+       "titulo": "Lo que llenó el espacio",
+       "items": [
+        {
+         "icono": "🌲",
+         "texto": "Celulosa",
+         "dice": "celulosa"
+        },
+        {
+         "icono": "🍇",
+         "texto": "Fruta",
+         "dice": "fruta,"
+        },
+        {
+         "icono": "🐟",
+         "texto": "Salmón",
+         "dice": "salmón,"
+        },
+        {
+         "icono": "🍷",
+         "texto": "Vino",
+         "dice": "vino."
+        }
+       ]
+      },
+      "disposicion": "completo",
+      "mascota": {
+       "pose": "piensa",
+       "bocadillo": "Otra materia prima…",
+       "dice": "oficio."
       }
      },
      {
@@ -972,7 +1171,29 @@ ya están tomados.
     "escenas": [
      {
       "tipo": "planteamiento",
-      "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y aquí es donde los dos países más se separan."
+      "texto": "Un astillero, una acería o una planta de chips cuestan una fortuna años antes de producir algo. Alguien tiene que poner esa plata. La pregunta es qué parte de lo que produce un país se queda construyendo el futuro, en vez de gastarse hoy. Ese porcentaje se mide desde hace décadas, y aquí es donde los dos países más se separan.",
+      "visual": {
+       "tipo": "iconos",
+       "titulo": "Se paga antes de producir",
+       "items": [
+        {
+         "icono": "🚢",
+         "texto": "Astillero",
+         "dice": "astillero,"
+        },
+        {
+         "icono": "🏭",
+         "texto": "Acería",
+         "dice": "acería"
+        },
+        {
+         "icono": "💾",
+         "texto": "Planta de chips",
+         "dice": "chips"
+        }
+       ]
+      },
+      "disposicion": "completo"
      },
      {
       "tipo": "dato",
@@ -1117,7 +1338,14 @@ ya están tomados.
       "rotulo": {
        "texto": "1982",
        "dice": "1982"
-      }
+      },
+      "visual": {
+       "tipo": "ilustracion",
+       "prompt": "Dos casas vecinas vistas de frente, estilo plano vectorial sobre fondo #111418. En la casa de la izquierda una familia gasta todo lo que gana: bolsas de compras y un televisor nuevo. En la casa de la derecha otra familia guarda monedas doradas en un frasco y agranda un pequeño taller con herramientas y una máquina. Colores verde billete, dorado y gris claro. Sin texto, sin números, sin logos.",
+       "pie": "Ilustración",
+       "dice": "familias."
+      },
+      "disposicion": "dividido"
      },
      {
       "tipo": "giro",
@@ -1176,7 +1404,12 @@ ya están tomados.
          "anioB": 1983
         }
        }
-      ]
+      ],
+      "mascota": {
+       "pose": "sorpresa",
+       "bocadillo": "¡Chile frenó en la curva!",
+       "dice": "desplomó."
+      }
      },
      {
       "tipo": "dato",
@@ -1321,7 +1554,19 @@ ya están tomados.
     "escenas": [
      {
       "tipo": "planteamiento",
-      "texto": "Cuando se habla del salto coreano, casi siempre aparece la educación. Corea universalizó primero la escuela básica, después la secundaria, y empujó fuerte la formación técnica. La pregunta es qué muestran los datos de universidad, que son los que el Banco Mundial tiene completos para los dos países."
+      "texto": "Cuando se habla del salto coreano, casi siempre aparece la educación. Corea universalizó primero la escuela básica, después la secundaria, y empujó fuerte la formación técnica. La pregunta es qué muestran los datos de universidad, que son los que el Banco Mundial tiene completos para los dos países.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Korea University main hall Seoul",
+       "alternativas": [
+        "Yonsei University Underwood Hall",
+        "Seoul National University campus"
+       ],
+       "pie": "Universidad de Corea, Seúl",
+       "dice": "universidad,",
+       "encuadre": "ken-burns"
+      },
+      "disposicion": "completo"
      },
      {
       "tipo": "dato",
@@ -1528,6 +1773,11 @@ ya están tomados.
       "rotulo": {
        "texto": "MISMA MATRÍCULA",
        "dice": "igual"
+      },
+      "mascota": {
+       "pose": "celebra",
+       "bocadillo": "¡Empate en matrícula!",
+       "dice": "alcanzó"
       }
      },
      {
@@ -1702,7 +1952,46 @@ ya están tomados.
      },
      {
       "tipo": "significado",
-      "texto": "¿Qué quiere decir esto para alguien que vive en Santiago, Lima o Bogotá? Que en estos datos el ingreso no siguió a lo que el país tenía bajo tierra, ni solo a cuánta gente mandaba a la universidad. Siguió a lo que su economía aprendió a fabricar y a cuánto guardó para lograrlo. No es una receta: Corea también tuvo una guerra, ayuda extranjera y gobiernos militares. Pero deja una pregunta útil para leer cualquier noticia de crecimiento: qué produce el país, y no solo qué extrae. Y una segunda pregunta, menos cómoda: cuánto de lo que produce se queda trabajando para el año siguiente."
+      "texto": "¿Qué quiere decir esto para alguien que vive en Santiago, Lima o Bogotá? Que en estos datos el ingreso no siguió a lo que el país tenía bajo tierra, ni solo a cuánta gente mandaba a la universidad. Siguió a lo que su economía aprendió a fabricar y a cuánto guardó para lograrlo. No es una receta: Corea también tuvo una guerra, ayuda extranjera y gobiernos militares. Pero deja una pregunta útil para leer cualquier noticia de crecimiento: qué produce el país, y no solo qué extrae. Y una segunda pregunta, menos cómoda: cuánto de lo que produce se queda trabajando para el año siguiente.",
+      "visual": {
+       "tipo": "mapa",
+       "destacar": [
+        "CHL",
+        "PER",
+        "COL"
+       ],
+       "centro": [
+        -72,
+        -14
+       ],
+       "zoom": 3,
+       "acercar": true,
+       "etiquetas": [
+        {
+         "texto": "Santiago",
+         "en": [
+          -70.67,
+          -33.45
+         ]
+        },
+        {
+         "texto": "Lima",
+         "en": [
+          -77.04,
+          -12.05
+         ]
+        },
+        {
+         "texto": "Bogotá",
+         "en": [
+          -74.07,
+          4.71
+         ]
+        }
+       ],
+       "dice": "Santiago,"
+      },
+      "disposicion": "completo"
      },
      {
       "tipo": "reenganche",
@@ -2117,3 +2406,6 @@ Cada cambio se fecha aquí y en `docs/DECISIONES.md`. Lo que vale para cualquier
   educación de Chile/Corea se reescribió con matrícula (`SE.TER.ENRR`) y patentes (`IP.PAT.RESD`). Mirar el catálogo antes.
 - 2026-11-05 · La verificación contra la API desmintió dos ideas del banco: "Corea gana el triple que Chile" (es 2,5× en US$
   constantes y 1,8× en PPA) y "Panamá, el más rico de Latinoamérica" (Guyana lo supera). **Verificar el título antes de escribir.**
+- 2026-11-07 · Dirección visual v2 (§7b): fotos de Commons, mapas, iconos, ilustraciones y mascota, por orden de Santiago. Los tres
+  primeros largos se re-dirigieron a mano (`contenido/backlog/tesis-*-v2.json`). Lección de Commons: la búsqueda es literal; "Chuquicamata
+  1960" no da nada y "Seoul 1960" devuelve primero un GRÁFICO de población (por eso: nombre propio + año, y probar la búsqueda).

@@ -1,0 +1,2103 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-uruguay-produce-46-mas-que-chile",
+  "notaVerificacion": "SIN VERIFICAR EN ESTA SESIÓN: no hubo permiso para consultar la API ni para correr verificar-cifras, el conteo de palabras ni la búsqueda en Commons. Hay que correrlos antes de aprobar. Origen de las cifras: caché local contenido/datos (consultada 2026-11-05) y docs/IDEAS-INICIALES.md. Los valores de NY.GDP.PCAP.CD de CHL, ARG y PER no se leyeron directamente: se dedujeron de NY.GDP.PCAP.PP.CD y de las razones 2,17, 2,18 y 2,10 de esas notas. Afirmación SIN dato revisado: en el capítulo 3, el salto del tipo de cambio en 2002 y que después sube más lento que la inflación salen de conocimiento general, porque PA.NUS.FCRF no está en caché; comprobarlo con la serie. El título no dice 'el más caro de Sudamérica' porque no pude comprobarlo para toda la región: la comparación se limita a seis países y faltan BRA, PRY, ECU, GUY, SUR y VEN en dólares corrientes. El vínculo de los precios con el tamaño del mercado y con las exportaciones es una hipótesis, y el guion lo presenta así. No se usó recaudación (GC.TAX.TOTL.GD.ZS) porque no hubo acceso a esos datos.",
+  "titulo": "Uruguay produce 46 % más que Chile. Con precios, empatan",
+  "descripcion": "¿Por qué un uruguayo produce casi una vez y media lo que un chileno en dólares, y prácticamente lo mismo cuando se corrige por precios?\n\nComparamos seis países de Sudamérica con dos cuentas del Banco Mundial: el PIB por persona en dólares corrientes y el PIB por persona a precios comparables (PPA).\nLa tesis: Uruguay es a la vez el primero de estos seis y el que menos gana al corregir por precios, y su inflación de décadas ayuda a leer ese resultado.\nEl dato que más sorprende: en ingreso nacional por persona a precios comparables, Chile y Uruguay quedan a 20 dólares de distancia.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.CD, NY.GDP.PCAP.PP.CD, NY.GNP.PCAP.PP.CD, NY.GDP.PCAP.KD, NY.GDP.PCAP.KD.ZG, NY.GDP.DEFL.KD.ZG, PA.NUS.FCRF, TX.VAL.MANF.ZS.UN, SI.POV.GINI, SP.POP.TOTL (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#uruguay",
+    "#chile",
+    "#precios",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-uruguay-produce-46-mas-que-chile",
+    "cabecera": "URUGUAY Y CHILE · CUÁNTO RINDE UN DÓLAR",
+    "gancho": {
+      "texto": "En 2024, un uruguayo produce casi una vez y media lo que un chileno en dólares; corregido por precios, produce prácticamente lo mismo. Son las mismas personas y el mismo año. ¿Dónde se pierde esa ventaja?",
+      "rotulo": "DÓLARES 1,5 · PRECIOS 1",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2024: PIB por persona en dólares",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.CD",
+          "paises": [
+            "URY",
+            "CHL"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "PIB por persona (US$ corrientes)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "URY"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        }
+      },
+      "cifras": [
+        {
+          "texto": "casi una vez y media",
+          "valor": 1.46,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.CD",
+              "paises": [
+                "URY",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ corrientes)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "URY",
+            "paisB": "CHL",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "prácticamente lo mismo",
+          "valor": 1.01,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.CD",
+              "paises": [
+                "URY",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+              "unidad": "US$ PPA"
+            },
+            "operacion": "razon",
+            "pais": "URY",
+            "paisB": "CHL",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber qué mide cada cuenta, cuánto cambia la foto de seis países de la región y por qué un país puede ser rico y caro a la vez.",
+    "indice": [
+      "Cómo se mide",
+      "Seis países",
+      "Por qué Uruguay",
+      "Lo que no mide"
+    ],
+    "estructura": "cuanto-rinde",
+    "capitulos": [
+      {
+        "titulo": "Cómo se mide lo que rinde un dólar",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Piensa en un almuerzo, un pasaje de bus y un corte de pelo. Cambias un dólar a moneda local y sales a la calle. En un país te alcanza para más que en otro. Esa diferencia no aparece cuando comparamos economías solo en dólares. Para verla hacen falta dos cuentas, y las dos se publican todos los años.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que paga un dólar",
+              "items": [
+                {
+                  "icono": "🍽️",
+                  "texto": "Almuerzo",
+                  "dice": "almuerzo,"
+                },
+                {
+                  "icono": "🚌",
+                  "texto": "Pasaje de bus",
+                  "dice": "pasaje"
+                },
+                {
+                  "icono": "💈",
+                  "texto": "Corte de pelo",
+                  "dice": "pelo."
+                }
+              ]
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Banco Mundial publica la primera cuenta: lo que produce cada persona en un año, pasado a dólares al tipo de cambio de mercado. En 2024, un uruguayo produce unos 24.300 dólares. Un chileno, unos 16.600. Entre estos seis países de Sudamérica, Uruguay queda primero.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2024: lo que produce cada persona, en dólares",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.CD",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "ARG",
+                  "PER",
+                  "COL",
+                  "BOL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "uruguayo"
+            },
+            "cifras": [
+              {
+                "texto": "unos 24.300 dólares",
+                "valor": 24300,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 16.600",
+                "valor": 16600,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "queda primero",
+                "valor": 1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "ranking",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "24.300 CONTRA 16.600",
+              "dice": "16.600."
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "La segunda cuenta corrige por lo que cuestan las cosas en cada país. Se llama paridad de poder adquisitivo, o PPA. Es como valorar una canasta parecida con los mismos precios en todas partes. Con esa vara, en 2024 un uruguayo produce unos 36.600 dólares. Un chileno, unos 36.100. Ya son casi iguales.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2024: lo mismo, corregido por precios",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "ARG",
+                  "PER",
+                  "COL",
+                  "BOL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "corrige"
+            },
+            "cifras": [
+              {
+                "texto": "unos 36.600 dólares",
+                "valor": 36600,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 36.100",
+                "valor": 36100,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "casi iguales",
+                "valor": 1.01,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "ilustracion",
+              "prompt": "Dos canastas iguales con pan, leche y fruta sobre una balanza equilibrada, estilo plano vectorial sobre fondo #111418. Colores dorado, verde billete y gris claro. Sin texto, sin números, sin logos.",
+              "pie": "Ilustración",
+              "dice": "canasta"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Esta cercanía tampoco es nueva, aunque ha ido cambiando de lado. Con la misma vara del Banco Mundial, en 2012 Chile iba un 10 % adelante. En 2022 era Uruguay el que iba un 7 % adelante. Las dos líneas se cruzan y vuelven a juntarse. Con los dólares de mercado, en cambio, la foto de 2024 es otra.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Corregido por precios: dos líneas que se cruzan",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "URY",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "líneas"
+            },
+            "cifras": [
+              {
+                "texto": "un 10 % adelante",
+                "valor": 1.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "URY",
+                  "anio": 2012
+                }
+              },
+              {
+                "texto": "un 7 % adelante",
+                "valor": 1.07,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "CHL",
+                  "anio": 2022
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Aquí está la lectura. En dólares, la ventaja uruguaya sobre Chile es de unos 7.700 por persona. Con precios comparables, es de unos 530. La producción no cambió entre una cuenta y otra. Cambió el precio con que se valora. Uruguay pierde casi toda su ventaja al corregir, y ese es el primer indicio de que allí las cosas cuestan más.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Con precios comparables, casi empatados",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "URY",
+                  "CHL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "comparables,"
+            },
+            "cifras": [
+              {
+                "texto": "unos 7.700",
+                "valor": 7700,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "diferencia",
+                  "pais": "URY",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 530",
+                "valor": 526,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "diferencia",
+                  "pais": "URY",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "DE 7.700 A 530",
+              "dice": "530."
+            },
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¿Y la ventaja?",
+              "dice": "pierde"
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "Seis países de Sudamérica, dos cuentas",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Mira el mapa: Uruguay, Chile, Argentina, Perú, Colombia y Bolivia. Son seis economías muy distintas, medidas con las mismas dos varas. Faltan otros países de la región, y lo que sigue no habla de ellos. La pregunta es cuánto se mueve cada uno al pasar de una cuenta a la otra.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "URY",
+                "CHL",
+                "ARG",
+                "PER",
+                "COL",
+                "BOL"
+              ],
+              "zoom": 3,
+              "acercar": true,
+              "dice": "mapa:"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Empecemos por los dólares de mercado, con datos del Banco Mundial. Argentina queda en unos 14.000. Perú, en unos 8.500. Colombia, en unos 8.000. Bolivia, en unos 4.400. Entre Uruguay y Bolivia hay más de cinco a uno.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "En dólares de mercado, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.CD",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "ARG",
+                  "PER",
+                  "COL",
+                  "BOL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "BOL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Argentina"
+            },
+            "cifras": [
+              {
+                "texto": "unos 14.000",
+                "valor": 14000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 8.500",
+                "valor": 8500,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 8.000",
+                "valor": 8000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "COL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 4.400",
+                "valor": 4400,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "BOL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "más de cinco a uno",
+                "valor": 5.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "BOL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "5 A 1",
+              "dice": "cinco"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ahora, la misma gente con precios comparables. Bolivia pasa a unos 12.900. Colombia, a unos 22.400. Perú, a unos 17.900. Argentina, a unos 30.500. Y aquella distancia de cinco a uno entre Uruguay y Bolivia baja a menos de tres a uno. Mira cuánto se estira cada barra. La de Uruguay es la que menos se estira en proporción.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Corregido por precios, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "ARG",
+                  "PER",
+                  "COL",
+                  "BOL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "BOL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Bolivia"
+            },
+            "cifras": [
+              {
+                "texto": "unos 12.900",
+                "valor": 12900,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "BOL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 22.400",
+                "valor": 22400,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "COL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 17.900",
+                "valor": 17900,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 30.500",
+                "valor": 30500,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "de cinco a uno",
+                "valor": 5.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "BOL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "menos de tres a uno",
+                "valor": 2.84,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "BOL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MENOS DE 3 A 1",
+              "dice": "tres"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Del otro lado del Río de la Plata, el contraste también aparece. En dólares, un uruguayo produce casi tres cuartos más que un argentino. Con precios comparables, un 20 % más. Ojo con esta foto: en 2024, la inflación argentina medida por el deflactor superó el 200 %. Un año así mueve mucho cualquier cuenta en dólares.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Uruguay y Argentina, en dólares, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.CD",
+                "paises": [
+                  "URY",
+                  "ARG"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "dólares,"
+            },
+            "cifras": [
+              {
+                "texto": "casi tres cuartos más",
+                "valor": 1.74,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "URY",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "ARG",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "un 20 % más",
+                "valor": 1.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "ARG",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "superó el 200 %",
+                "valor": 207.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y aquí, un matiz. Se podría pensar que el más rico siempre es el más caro, y punto. Mira Chile y Argentina. En dólares, Chile produce un 19 % más que Argentina. Con precios comparables, un 18 %. Al corregir, casi no cambia. Entre Uruguay y Chile, en cambio, la ventaja casi desaparece. Ser más rico no alcanza para explicar lo de Uruguay.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Chile y Argentina, corregido por precios",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "comparables,"
+            },
+            "cifras": [
+              {
+                "texto": "un 19 %",
+                "valor": 1.19,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.CD",
+                    "paises": [
+                      "CHL",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "ARG",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "un 18 %",
+                "valor": 1.18,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "CHL",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "ARG",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "RICO NO BASTA",
+              "dice": "rico"
+            },
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "Falta una pieza…",
+              "dice": "alcanza"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Queda la pregunta de fondo. Si Uruguay no es caro solo por ser más rico, hay otra pieza en la cuenta. Y empieza a verse en una línea que viene de muy atrás."
+          }
+        ]
+      },
+      {
+        "titulo": "Por qué los precios de Uruguay pesan en dólares",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Mira esta rambla de Montevideo. Uruguay es un país pequeño, con unos 3,4 millones de habitantes. Chile tiene casi seis veces esa población, y Argentina, más de trece. Un mercado chico reparte sus costos entre menos clientes. Eso puede encarecer algunas cosas, aunque estos datos no alcanzan para medir cuánto.",
+            "cifras": [
+              {
+                "texto": "unos 3,4 millones",
+                "valor": 3400000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Población",
+                    "unidad": "personas"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "casi seis veces",
+                "valor": 5.84,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Población",
+                    "unidad": "personas"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "URY",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "más de trece",
+                "valor": 13.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Población",
+                    "unidad": "personas"
+                  },
+                  "operacion": "razon",
+                  "pais": "ARG",
+                  "paisB": "URY",
+                  "anio": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Rambla de Montevideo",
+              "alternativas": [
+                "Montevideo Rambla Uruguay",
+                "Montevideo skyline"
+              ],
+              "pie": "Rambla de Montevideo, Uruguay",
+              "dice": "rambla",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "La pieza que sí se puede medir es la inflación. El Banco Mundial la calcula para toda la economía con el deflactor del PIB, que no es lo mismo que los precios al consumidor. En 1990, el deflactor uruguayo marcó más de un 100 %. En 2005 cayó a menos de un 1 %. En 2024 fue un poco más de un 4 %.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Inflación en Uruguay (% anual)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "URY"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "URY",
+                "anio": 1990
+              },
+              "anotaciones": [
+                {
+                  "anio": 1990,
+                  "texto": "Más de 100 %"
+                },
+                {
+                  "anio": 2005,
+                  "texto": "Menos de 1 %"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "deflactor"
+            },
+            "cifras": [
+              {
+                "texto": "más de un 100 %",
+                "valor": 106.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "URY"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 1990
+                }
+              },
+              {
+                "texto": "menos de un 1 %",
+                "valor": 0.68,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "URY"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2005
+                }
+              },
+              {
+                "texto": "un poco más de un 4 %",
+                "valor": 4.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "URY"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Lo que pesa es la comparación con los vecinos. Entre 2011 y 2021, ese deflactor promedió en Uruguay cerca de un 9 % anual. En Chile, algo más de un 4 %. En Perú, cerca de un 3,5 %. Son once años seguidos, y esa distancia se va sumando.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación 2011–2021: tres países",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "PER"
+                ],
+                "desde": 2011,
+                "hasta": 2021,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "promedió"
+            },
+            "cifras": [
+              {
+                "texto": "cerca de un 9 %",
+                "valor": 9.07,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "PER"
+                    ],
+                    "desde": 2011,
+                    "hasta": 2021,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "URY"
+                }
+              },
+              {
+                "texto": "algo más de un 4 %",
+                "valor": 4.25,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "PER"
+                    ],
+                    "desde": 2011,
+                    "hasta": 2021,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "CHL"
+                }
+              },
+              {
+                "texto": "cerca de un 3,5 %",
+                "valor": 3.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "PER"
+                    ],
+                    "desde": 2011,
+                    "hasta": 2021,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "PER"
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "9 % CONTRA 4 %",
+              "dice": "Chile,"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Con todo, la inflación sola no encarece un país en dólares. Si los precios suben y la moneda cae al mismo ritmo, en dólares todo queda igual. Mira esta línea: cuántos pesos uruguayos cuesta un dólar. El gran salto está en 2002, cuando el ingreso por persona cayó casi un 8 %. Después, la línea sube mucho más lento que la inflación de esos años.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Pesos uruguayos por dólar",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "PA.NUS.FCRF",
+                "paises": [
+                  "URY"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Tipo de cambio oficial (pesos uruguayos por US$)",
+                "unidad": "pesos"
+              },
+              "destacar": {
+                "pais": "URY",
+                "anio": 2002
+              },
+              "anotaciones": [
+                {
+                  "anio": 2002,
+                  "texto": "Crisis bancaria"
+                }
+              ],
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "pesos"
+            },
+            "cifras": [
+              {
+                "texto": "casi un 8 %",
+                "valor": -7.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "URY"
+                    ],
+                    "desde": 1999,
+                    "hasta": 2004,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2002
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "LA MONEDA CAE MENOS",
+              "dice": "lento"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Hay otra corriente posible, y sale del campo: carne, soja, lácteos. Menos de una quinta parte de lo que Uruguay exporta en bienes son manufacturas. Cuando esos productos entran en años buenos, llegan más dólares, y una moneda tiende a valer más. Es una hipótesis razonable, no una prueba. Estos datos muestran qué se exporta, no cuánto mueve el peso.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Manufacturas en las exportaciones, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "ARG",
+                  "PER",
+                  "COL",
+                  "BOL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "manufacturas."
+            },
+            "cifras": [
+              {
+                "texto": "Menos de una quinta parte",
+                "valor": 18.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "PER",
+                      "COL",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Ganado Uruguay",
+              "alternativas": [
+                "Hereford cattle Uruguay",
+                "Uruguay cattle ranch"
+              ],
+              "pie": "Ganado en el campo uruguayo (2020)",
+              "dice": "campo:",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ahora, el dato que complica la historia. En 2004, medido en dólares de 2015, un uruguayo y un argentino producían prácticamente igual. En 2024, el uruguayo produce casi una vez y media lo que el argentino. O sea, precios altos y crecimiento conviven en la misma línea de tiempo. Separar cuánto pesa cada uno es lo que estos datos no permiten.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Uruguay y Argentina, 2000–2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "URY",
+                  "ARG"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "URY",
+                "anio": 2004
+              },
+              "anotaciones": [
+                {
+                  "anio": 2004,
+                  "texto": "Empate"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "2004,"
+            },
+            "cifras": [
+              {
+                "texto": "prácticamente igual",
+                "valor": 1.01,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "URY",
+                      "ARG"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "ARG",
+                  "anio": 2004
+                }
+              },
+              {
+                "texto": "casi una vez y media",
+                "valor": 1.49,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "URY",
+                      "ARG"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "URY",
+                  "paisB": "ARG",
+                  "anio": 2024
+                }
+              }
+            ],
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¡En 2004 iban parejos!",
+              "dice": "conviven"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Hasta aquí, la cuenta parece cerrada: precios altos en dólares y una economía que creció. Pero esta cuenta tiene huecos, y el mayor de todos se esconde en la palabra promedio."
+          }
+        ]
+      },
+      {
+        "titulo": "Lo que esta cuenta no mide",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Esta vara tiene límites, y conviene decirlos. Un colegio, una consulta médica o un arriendo pueden costar distinto porque no son lo mismo. La corrección por precios intenta comparar cosas parecidas, pero la calidad se le escapa. Y tampoco mira el sueldo de una persona concreta: mira lo que produce un país, dividido entre todos.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que se escapa de la cuenta",
+              "items": [
+                {
+                  "icono": "🏫",
+                  "texto": "Colegio",
+                  "dice": "colegio,"
+                },
+                {
+                  "icono": "🩺",
+                  "texto": "Consulta médica",
+                  "dice": "consulta"
+                },
+                {
+                  "icono": "🏠",
+                  "texto": "Arriendo",
+                  "dice": "arriendo"
+                }
+              ]
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Dividir entre todos esconde cómo se reparte. El Banco Mundial lo resume con el índice de Gini: mientras más alto, más desigual es el ingreso. En 2024, Uruguay marca unos 40. Perú, también unos 40. Brasil, unos 50. Colombia, unos 54. Un mismo promedio puede significar vidas muy distintas según esta línea.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Índice de Gini, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SI.POV.GINI",
+                "paises": [
+                  "COL",
+                  "BRA",
+                  "PER",
+                  "URY"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Índice de Gini (0–100)",
+                "unidad": "índice"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "Gini:"
+            },
+            "cifras": [
+              {
+                "texto": "marca unos 40",
+                "valor": 40,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "COL",
+                      "BRA",
+                      "PER",
+                      "URY"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0–100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "también unos 40",
+                "valor": 40,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "COL",
+                      "BRA",
+                      "PER",
+                      "URY"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0–100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 50",
+                "valor": 50,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "COL",
+                      "BRA",
+                      "PER",
+                      "URY"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0–100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "BRA",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unos 54",
+                "valor": 54,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "COL",
+                      "BRA",
+                      "PER",
+                      "URY"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0–100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "COL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Y un aviso sobre el mapa. Primero de estos seis no significa primero de Sudamérica. Guyana, con su petróleo, marca unos 80.000 con precios comparables. Es más del doble que Uruguay. Por eso aquí no decimos cuál es el país más caro del continente: esa cuenta pide mirar a todos, con la misma vara.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Guyana y Uruguay, corregido por precios",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "GUY",
+                  "URY"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Guyana,"
+            },
+            "cifras": [
+              {
+                "texto": "unos 80.000",
+                "valor": 80000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "GUY",
+                      "URY"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "valor",
+                  "pais": "GUY",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "más del doble",
+                "valor": 2.19,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "GUY",
+                      "URY"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "razon",
+                  "pais": "GUY",
+                  "paisB": "URY",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero fíjate en lo que pasa en Montevideo cuando se corrige. Uruguay pierde casi toda su ventaja sobre Chile, y aun así no baja ni un puesto. Entre estos seis, sigue primero con las dos varas. Más caro no quiere decir más pobre. Aquí, las dos cosas van juntas: un país caro que también produce mucho.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Con la vara corregida, sigue primero",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "URY",
+                  "CHL",
+                  "ARG",
+                  "COL",
+                  "PER",
+                  "BOL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                "unidad": "US$ PPA"
+              },
+              "destacar": {
+                "pais": "URY"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "puesto."
+            },
+            "cifras": [
+              {
+                "texto": "no baja ni un puesto",
+                "valor": 1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.CD",
+                    "paises": [
+                      "URY",
+                      "CHL",
+                      "ARG",
+                      "COL",
+                      "PER",
+                      "BOL"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ corrientes)",
+                    "unidad": "US$ PPA"
+                  },
+                  "operacion": "ranking",
+                  "pais": "URY",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "CARO Y PRIMERO",
+              "dice": "caro"
+            },
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Ciudad Vieja Montevideo",
+              "alternativas": [
+                "Plaza Independencia Montevideo",
+                "Mercado del Puerto Montevideo"
+              ],
+              "pie": "Ciudad Vieja de Montevideo, Uruguay",
+              "dice": "Montevideo",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido",
+            "mascota": {
+              "pose": "celebra",
+              "bocadillo": "Caro, pero sigue primero",
+              "dice": "primero"
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para alguien que vive en Montevideo, Lima o Bogotá? Que una cifra en dólares sirve para mirar lo que cuesta un viaje o un producto importado. Y que una cifra corregida por precios se acerca más a lo que rinde en casa. Ninguna de las dos es un sueldo: son promedios de producción. No es una receta para decidir dónde vivir. Es una pregunta para cualquier comparación entre países que te cruces: ¿con qué vara está medida? Cambia la vara, y a veces cambia la historia completa.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "URY",
+                "PER",
+                "COL"
+              ],
+              "zoom": 3,
+              "acercar": true,
+              "etiquetas": [
+                {
+                  "texto": "Montevideo",
+                  "en": [
+                    -56.16,
+                    -34.9
+                  ]
+                },
+                {
+                  "texto": "Lima",
+                  "en": [
+                    -77.04,
+                    -12.05
+                  ]
+                },
+                {
+                  "texto": "Bogotá",
+                  "en": [
+                    -74.07,
+                    4.71
+                  ]
+                }
+              ],
+              "dice": "Montevideo,"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Falta un número. Es muy chico, y resume casi toda la comparación entre Uruguay y Chile."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira es 20. Otra medida, el ingreso nacional por persona, suma lo que entra desde afuera y resta lo que sale. A precios comparables, en 2024, Chile marca 34.390. Uruguay, apenas 20 dólares menos. Y con el PIB en dólares de mercado, los separaban unos 7.700. Son dos indicadores distintos, por eso lo decimos claro. Pero ese es el recorrido: de miles a casi nada.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "Ingreso nacional por persona, PPA, 2024",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GNP.PCAP.PP.CD",
+          "paises": [
+            "URY",
+            "CHL"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "Ingreso nacional bruto por persona (PPA, US$ corrientes)",
+          "unidad": "US$ PPA"
+        },
+        "destacar": {
+          "pais": "URY"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "ingreso"
+      },
+      "cifras": [
+        {
+          "texto": "es 20",
+          "valor": 20,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GNP.PCAP.PP.CD",
+              "paises": [
+                "URY",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "Ingreso nacional bruto por persona (PPA, US$ corrientes)",
+              "unidad": "US$ PPA"
+            },
+            "operacion": "diferencia",
+            "pais": "CHL",
+            "paisB": "URY",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "34.390",
+          "valor": 34390,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GNP.PCAP.PP.CD",
+              "paises": [
+                "URY",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "Ingreso nacional bruto por persona (PPA, US$ corrientes)",
+              "unidad": "US$ PPA"
+            },
+            "operacion": "valor",
+            "pais": "CHL",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "unos 7.700",
+          "valor": 7700,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.CD",
+              "paises": [
+                "URY",
+                "CHL"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ corrientes)",
+              "unidad": "US$"
+            },
+            "operacion": "diferencia",
+            "pais": "URY",
+            "paisB": "CHL",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "remate": "Medido en dólares, Uruguay le saca ventaja a Chile. Medido en precios, camina a su lado.",
+    "siguiente": "Panamá estaba bajo Chile en 1990 y hoy le saca un 20 %. ¿Crecimiento real o un caso como Irlanda? Eso viene en el próximo video.",
+    "miniatura": {
+      "texto": "MISMO DÓLAR, OTRO PRECIO",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "Uruguay y Chile",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.CD",
+          "paises": [
+            "URY",
+            "CHL"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "PIB por persona (US$ corrientes)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "URY"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ corrientes (NY.GDP.PCAP.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=UY-CL-AR-PE-CO-BO"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ corrientes (NY.GDP.PCAP.PP.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?locations=UY-CL-AR-PE-CO-BO-GY"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Ingreso nacional bruto per cápita, PPA (NY.GNP.PCAP.PP.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD?locations=UY-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, deflactor del PIB (NY.GDP.DEFL.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=UY-CL-PE-AR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Tipo de cambio oficial (PA.NUS.FCRF), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=UY"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=UY-AR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Crecimiento del PIB per cápita (NY.GDP.PCAP.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=UY"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de manufacturas (TX.VAL.MANF.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MANF.ZS.UN?locations=UY-CL-AR-PE-CO-BO"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Índice de Gini (SI.POV.GINI), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=UY-PE-BR-CO"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Población total (SP.POP.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=UY-CL-AR"
+      }
+    ]
+  }
+}

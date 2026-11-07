@@ -14,6 +14,12 @@
  * título ≤ 60) y, si existe, con scripts/verificar-cifras.mts. Si algo falla, se reintenta UNA vez contándole a Claude por qué.
  * Cada guion queda en contenido/backlog/<plantilla>-<slug>.json con id `pendiente-<plantilla>-<slug>`.
  *
+ * v2 (2026-11-07): el contrato incluye src/plantillas/comun/visual.ts (foto/mapa/iconos/ilustración + mascota) y el system
+ * prompt trae GUION.md §7b. Además de zod, los chequeos propios exigen el ritmo visual del largo (6–9 visuales, 2–4 mascotas,
+ * ≤ 2 ilustraciones, 2 alternativas por foto, `dice` literal, nada de fotos seguidas sin gráfico) y cada `busqueda` de foto se
+ * prueba contra la API de Wikimedia Commons (con las mismas reglas de licencia que scripts/lib/imagenes.mts).
+ * Modelo por defecto: opus (con el de la sesión no cabía en el tiempo; lección de Línea Punteada). Un guion tesis ≈ 5–12 min.
+ *
  *   --derivar-de <id>      saca Shorts (`grafico`) de un largo existente: mismos hechos y datasets, texto 100 % nuevo,
  *                          `enlaceLargo` = <id>. Implica --plantilla grafico; --n por defecto 2.
  *   --actualizar-ejemplos  reescribe el bloque de ejemplos de docs/GUION.md §12 con los guiones indicados del backlog
@@ -26,6 +32,7 @@ import type { z } from 'zod';
 import {
   ESTRUCTURAS, EnvoltorioGrafico, EnvoltorioTesis, PLANTILLAS_CANAL, type PlantillaCanal,
 } from '../src/plantillas/comun/guion';
+import { clasificarLicencia } from './lib/imagenes.mjs';
 import { DIR_BACKLOG, DIR_GUIONES, RAIZ, asegurarDirectorios, correr, escribirJson, leerBandeja, slugificar } from './lib/operacion.mjs';
 
 const { values: opc, positionals } = parseArgs({
@@ -36,7 +43,7 @@ const { values: opc, positionals } = parseArgs({
     tema: { type: 'string' },
     estructura: { type: 'string' },
     'derivar-de': { type: 'string' },
-    modelo: { type: 'string' },
+    modelo: { type: 'string', default: 'opus' },
     'dry-run': { type: 'boolean', default: false },
     'mostrar-prompt': { type: 'boolean', default: false },
     'actualizar-ejemplos': { type: 'boolean', default: false },
@@ -71,7 +78,7 @@ const leerGuionMd = (): string => {
 };
 
 /** Contrato común tal cual: el modelo ve exactamente lo que se le exige. */
-const textoSchema = () => ['guion.ts', 'datos.ts'].map((f) => {
+const textoSchema = () => ['guion.ts', 'datos.ts', 'visual.ts'].map((f) => {
   const ruta = path.join(RAIZ, 'src', 'plantillas', 'comun', f);
   return `// ===== src/plantillas/comun/${f} =====\n${fs.readFileSync(ruta, 'utf8')}`;
 }).join('\n\n');
@@ -122,6 +129,11 @@ const REGLAS = `REGLAS DURAS (si no se cumplen, el guion se descarta):
   número con los datos reales (variacion en %, ver GUION.md §8). No inventes valores: si no sabes el dato exacto de un año, no lo
   afirmes con número. El revisor numérico recalcula todo contra la API con tolerancia 5 %.
 - "dice" y "rotulo.dice": palabra literal del texto de esa escena. Un gráfico = un indicador. Toda escena "dato" lleva grafico.
+- LARGO: dirección visual v2 de GUION.md §7b: 6–9 escenas con "visual" de ≥ 3 tipos (foto, mapa, iconos, ilustracion), 3–5 fotos,
+  ≤ 2 ilustraciones, 2–4 escenas con "mascota" (≤ 1 de cada 3 por capítulo, nunca en significado). Cada foto: "busqueda" en inglés
+  concreta (nombre propio + lugar/año, 2–5 palabras, como el título de un archivo de Commons), 2 "alternativas", "pie" con lugar y año.
+  "dice" del visual, de cada ítem de iconos y de la mascota = palabra literal del texto de esa escena. Nunca dos escenas seguidas con
+  foto sin gráfico. "dividido" solo si la escena tiene visual Y grafico.
 - Título ≤ ${MAX_TITULO} caracteres, sin palabras prohibidas, sin "Los 10…", no repetido ni parafraseado de la lista de usados.
 - Sin consejo financiero, sin catastrofismo, sin opinión política, sin "experto", sin la lista negra de GUION.md §6.
 - No incluyas campos que calcula el pipeline (datos resueltos, tiempos, duraciones).`;
@@ -200,7 +212,73 @@ const chequeosPropios = (g: Crudo): string[] => {
     for (const c of b.cifras ?? []) if (!b.texto.includes(c.texto)) mal.push(`cifra "${c.texto}" no está literal en "${b.texto.slice(0, 50)}…"`);
     if (NEGRA.test(b.texto)) mal.push(`lista negra en "${b.texto.slice(0, 60)}…"`);
   }
-  return mal.slice(0, 8);
+  if (g.plantilla === 'tesis') mal.push(...chequeosVisuales(escenas));
+  return mal.slice(0, 10);
+};
+
+/** Ritmo visual del largo (GUION.md §7b): lo que zod no mide. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const chequeosVisuales = (escenas: any[]): string[] => {
+  const mal: string[] = [];
+  const con = escenas.filter((e) => e.visual);
+  const tipos = new Set(con.map((e) => e.visual.tipo));
+  const n = (t: string) => con.filter((e) => e.visual.tipo === t).length;
+  const mascotas = escenas.filter((e) => e.mascota).length;
+  if (con.length < 6 || con.length > 9) mal.push(`${con.length} escenas con visual; el largo lleva 6–9 (§7b)`);
+  if (tipos.size < 3) mal.push(`visuales de solo ${tipos.size} tipo(s); mezcla ≥ 3 de foto/mapa/iconos/ilustracion`);
+  if (n('foto') < 3 || n('foto') > 5) mal.push(`${n('foto')} fotos; van 3–5`);
+  if (n('ilustracion') > 2) mal.push(`${n('ilustracion')} ilustraciones; máximo 2`);
+  if (mascotas < 2 || mascotas > 4) mal.push(`${mascotas} mascotas; van 2–4`);
+  escenas.forEach((e, i) => {
+    const t = e.texto ?? '';
+    const dices = [e.visual?.dice, e.mascota?.dice, ...(e.visual?.items ?? []).map((it: { dice?: string }) => it.dice)].filter(Boolean);
+    for (const d of dices) if (!t.includes(d)) mal.push(`dice visual "${d}" no está literal en "${t.slice(0, 50)}…"`);
+    if (e.mascota && e.tipo === 'significado') mal.push('la mascota no va en significado');
+    if (e.visual?.tipo === 'foto') {
+      if ((e.visual.alternativas ?? []).length < 2) mal.push(`foto "${e.visual.busqueda}" sin 2 alternativas`);
+      if (!e.visual.pie) mal.push(`foto "${e.visual.busqueda}" sin pie (lugar y año)`);
+      const previa = escenas[i - 1];
+      if (i > 0 && previa?.visual?.tipo === 'foto' && !e.grafico && !previa.grafico) mal.push(`dos fotos seguidas sin gráfico en medio ("${previa.visual.busqueda}", "${e.visual.busqueda}")`);
+    }
+  });
+  return mal;
+};
+
+// ---------------------------------------------------------------- fotos: ¿Commons tiene algo con licencia?
+const UA_COMMONS = 'EnNumerosRojos/1.0 (canal de YouTube En Numeros Rojos; contacto: sinostrozadev@gmail.com)';
+
+/** true si la búsqueda devuelve ≥ 1 jpg/png ≥ 1200 px con licencia libre y sin restricciones (mismas reglas que lib/imagenes). */
+const hayFotoEnCommons = async (busqueda: string): Promise<boolean> => {
+  const p = new URLSearchParams({
+    action: 'query', format: 'json', formatversion: '1', prop: 'imageinfo', iiprop: 'extmetadata|size|mime',
+    iiextmetadatafilter: 'LicenseShortName|Restrictions', generator: 'search', gsrsearch: `${busqueda} filetype:bitmap`, gsrnamespace: '6', gsrlimit: '20',
+  });
+  const r = await fetch(`https://commons.wikimedia.org/w/api.php?${p}`, { headers: { 'User-Agent': UA_COMMONS, 'Api-User-Agent': UA_COMMONS } });
+  if (!r.ok) throw new Error(`Commons respondió ${r.status}`);
+  const d = (await r.json()) as { query?: { pages?: Record<string, { imageinfo?: Array<{ width: number; height: number; mime: string; extmetadata?: Record<string, { value: string }> }> }> } };
+  return Object.values(d.query?.pages ?? {}).some((pg) => {
+    const ii = pg.imageinfo?.[0];
+    const m = ii?.extmetadata ?? {};
+    return !!ii && /^image\/(jpeg|png)$/.test(ii.mime) && Math.max(ii.width, ii.height) >= 1200 && !!clasificarLicencia(m.LicenseShortName?.value)
+      && !(m.Restrictions?.value ?? '').replace(/<[^>]*>/g, '').trim();
+  });
+};
+
+/** Fotos del guion cuya búsqueda Y alternativas no devuelven nada usable. Si Commons no responde, avisa y no bloquea. */
+const verificarFotos = async (g: Crudo): Promise<string[]> => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const fotos = (g.props?.capitulos ?? []).flatMap((c: any) => c.escenas ?? []).map((e: any) => e.visual).filter((v: any) => v?.tipo === 'foto');
+  const mal: string[] = [];
+  try {
+    for (const v of fotos) {
+      let ok = false;
+      for (const q of [v.busqueda, ...(v.alternativas ?? [])]) if ((ok = await hayFotoEnCommons(q))) break;
+      if (!ok) mal.push(`foto sin resultado con licencia en Commons: "${v.busqueda}" ni sus alternativas (usa nombre propio + lugar/año en inglés)`);
+    }
+  } catch (e) {
+    console.error(`  ⚠ no pude consultar Commons (${(e as Error).message}); las fotos se resuelven en preparar-tesis`);
+  }
+  return mal;
 };
 
 /** Corre el revisor numérico (scripts/verificar-cifras.mts). Devuelve los problemas, o [] si pasa o no existe. */
@@ -223,7 +301,9 @@ const actualizarEjemplos = (nombres: string[]) => {
   if (a < 0 || b < a) throw new Error('docs/GUION.md no tiene los marcadores EJEMPLOS:INICIO / EJEMPLOS:FIN');
   const cabecera = md.slice(a, md.indexOf('-->', a) + 3);
   const bloques = nombres.map((nom) => {
-    const ruta = path.join(DIR_BACKLOG, nom.endsWith('.json') ? nom : `${nom}.json`);
+    const archivo = nom.endsWith('.json') ? nom : `${nom}.json`;
+    const enGuiones = fs.existsSync(DIR_GUIONES) ? fs.readdirSync(DIR_GUIONES).find((f) => f.endsWith(`-${archivo}`)) : undefined;
+    const ruta = fs.existsSync(path.join(DIR_BACKLOG, archivo)) || !enGuiones ? path.join(DIR_BACKLOG, archivo) : path.join(DIR_GUIONES, enGuiones);
     const g = JSON.parse(fs.readFileSync(ruta, 'utf8')) as Crudo;
     return `### Ejemplo \`${g.plantilla}\` — ${g.id} (${rel(ruta)})\n\n\`\`\`json\n${JSON.stringify(g, null, 1)}\n\`\`\``;
   });
@@ -234,7 +314,7 @@ const actualizarEjemplos = (nombres: string[]) => {
 // ---------------------------------------------------------------- main
 const main = async () => {
   asegurarDirectorios();
-  if (opc['actualizar-ejemplos']) return actualizarEjemplos((positionals[0] ?? 'tesis-chile-corea,grafico-irlanda-consumo').split(','));
+  if (opc['actualizar-ejemplos']) return actualizarEjemplos((positionals[0] ?? 'tesis-chile-corea-v2,grafico-irlanda-consumo').split(','));
 
   const derivar = opc['derivar-de'];
   const plantilla = (derivar ? 'grafico' : opc.plantilla ?? 'tesis') as PlantillaCanal;
@@ -268,7 +348,7 @@ const main = async () => {
 
   const prompt = construirPrompt(plantilla, n, extra, ejemplos, usados);
   if (opc['mostrar-prompt']) console.log(prompt);
-  console.log(`Generando ${n} guion(es) "${plantilla}"${derivar ? ` derivados de ${derivar}` : ''} con claude -p (${opc.modelo ?? 'modelo por defecto'}; ` +
+  console.log(`Generando ${n} guion(es) "${plantilla}"${derivar ? ` derivados de ${derivar}` : ''} con claude -p (${opc.modelo}; ` +
     `prompt ${prompt.length} chars + system ${md.length}; ${ejemplos.length} ejemplo(s); ${usados.length} títulos usados)…`);
   if (opc['dry-run']) return console.log('[dry-run] no se llama a claude.');
 
@@ -304,6 +384,7 @@ const main = async () => {
       if (derivar) g.props.enlaceLargo = derivar;
 
       const mal = [...problemasZod(Envoltorio.safeParse(g)), ...chequeosPropios(g)];
+      if (!mal.length && plantilla === 'tesis') mal.push(...await verificarFotos(g));
       if (mal.length) { rechazos.push(`"${g.titulo}": ${mal.join('; ')}`); console.error(`  ✗ "${g.titulo}": ${mal.join('; ')}`); continue; }
 
       const destino = path.join(DIR_BACKLOG, `${nombre}.json`);

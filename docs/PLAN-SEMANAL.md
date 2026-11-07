@@ -11,6 +11,8 @@ Canal creado (id `UC8uOwislkGbnnfoqsJ_FgAw`, COPPA hecho). Los días anteriores 
 
 **Estado (2026-11-06 09:10): 7 de 13 ranuras PROGRAMADAS en Studio** (Short sáb 11-07 `LLiqQewooNI`, Short dom 11-08 `9SmuQH7bghE`, largo dom 11-08 `vQT5ObEGz5U`, Short lun 11-09 `mx9le_OLFx8`, largo lun 11-09 `a3akU1RoM6M`, Short mié 11-11 `yJV1sIgJJQ8`, largo mié 11-11 `2mGAJicF93o`); los largos sin miniatura propia hasta la verificación por teléfono (docs/SANTIAGO.md f). Antes: 7 de 13 con guion (7 del backlog validados por el revisor numérico: 3 largos + 4 Shorts, en `contenido/backlog/`). Sin guion: IPC Chile mar 11-10 (se genera el vie 11-06 con el dato del INE), casa jue 11-12, INDEC vie 11-13 (esperar dato del 11-12), largo nuevo vie 11-13 19:00 (Uruguay o Panamá: encargar a `generar-guiones`), Shorts sáb 11-14 y dom 11-15.
 
+**Nota 2026-11-07 · los tres largos pasan a dirección visual v2** (fotos de Commons, mapas, iconos, ilustraciones y mascota; docs/GUION.md §7b): `contenido/backlog/tesis-chile-corea-v2.json`, `tesis-argentina-rica-v2.json` y `tesis-irlanda-pib-v2.json` (mismo texto y cifras verificadas; solo cambia lo visual). Se re-renderizan en ese orden (dom 11-08, lun 11-09, mié 11-11) para las **mismas ranuras** de la tabla (no se cambian ranuras ni ids en este plan; cómo se sustituye en Studio el video ya programado lo resuelve la sesión principal: YouTube no permite cambiar el archivo de un video subido).
+
 ## Semana en curso: lun 2026-11-02 → dom 2026-11-08 (parcial, desde el lanzamiento)
 
 | Día | Hora | Plantilla | Tema | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
