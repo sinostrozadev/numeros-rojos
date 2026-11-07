@@ -11,7 +11,7 @@
     "#datos"
   ],
   "duracionSeg": 590,
-  "estado": "subido",
+  "estado": "reemplazado",
   "tipo": "largo",
   "miniatura": "salida/bandeja/2026-11-06-tesis-argentina-rica-mini.png",
   "publicarEn": "2026-11-09T19:00:00-03:00",
@@ -19,5 +19,7 @@
   "url": "https://www.youtube.com/watch?v=a3akU1RoM6M",
   "programado": "2026-11-09 19:00",
   "subidoEn": "2026-11-06T11:59:35.190Z",
-  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio"
+  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio",
+  "reemplazadoPor": "2026-11-07-tesis-argentina-rica-v2",
+  "nota": "v1 en privado en Studio el 2026-11-07 (\"(versión anterior)\"); la v2 b1F1JlfZwIw ocupa lun 11-09 19:00"
 }
