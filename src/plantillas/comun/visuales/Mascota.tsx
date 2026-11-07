@@ -73,14 +73,14 @@ export const MascotaEnPantalla: React.FC<{ m: TipoMascota; frame: number; desde:
           : <ArdillaSvg pose={m.pose} tamano={Z.ancho} t={local / fps} />}
       </div>
       {m.bocadillo && local >= Math.round(0.3 * fps) && (
-        <div style={{ position: 'absolute', left: B.x, top: B.y, maxWidth: B.anchoMax, opacity: Math.min(1, eb * 1.5) * (1 - sale),
+        <div style={{ position: 'absolute', left: B.x, top: B.y, maxWidth: 404, opacity: Math.min(1, eb * 1.5) * (1 - sale),
           transform: `scale(${0.7 + 0.3 * eb})`, transformOrigin: '0% 70%' }}>
-          <div style={{ position: 'relative', background: '#F4F1E8', color: PALETA.fondo, borderRadius: 22, padding: '12px 22px 14px', fontFamily: TIPO.display, fontWeight: 800,
-            fontSize: 30, lineHeight: 1.12, boxShadow: '0 10px 26px rgba(0,0,0,0.5)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', background: 'rgba(255,255,255,0.96)', color: PALETA.fondo, borderRadius: 22, width: 'max-content', maxWidth: 404, padding: '12px 22px 14px', fontFamily: TIPO.display, fontWeight: 800,
+            fontSize: m.bocadillo.length > 34 ? 24 : m.bocadillo.length > 28 ? 27 : 30, lineHeight: 1.12, boxShadow: '0 10px 26px rgba(0,0,0,0.5)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
             {m.bocadillo}
           </div>
           {/* Cola del bocadillo hacia la cabeza (a la izquierda, abajo). */}
-          <svg width={34} height={30} style={{ position: 'absolute', left: -20, top: 44 }} viewBox="0 0 34 30"><path d="M34 2 L0 22 L30 26 Z" fill="#F4F1E8" /></svg>
+          <svg width={34} height={30} style={{ position: 'absolute', left: -20, top: 44 }} viewBox="0 0 34 30"><path d="M34 2 L0 22 L30 26 Z" fill="rgba(255,255,255,0.96)" /></svg>
         </div>
       )}
     </>

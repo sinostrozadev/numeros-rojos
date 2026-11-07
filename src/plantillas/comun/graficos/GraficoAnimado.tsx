@@ -60,7 +60,10 @@ export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho,
   // Solo líneas: en el ranking cada fila lleva su nombre y la leyenda (hasta 8 países) se encimaba con las barras en la miniatura.
   const conLeyenda = g.tipo === 'lineas' && ps.length >= 2;
   const colores = coloresDe(g, ps);
-  const altoTitulo = sinTitulo ? 0 : T.titulo * (modo === 'short' ? 2.5 : 1.25) + (subtitulo ? T.subtitulo * 1.5 : 0) + (antetitulo ? T.subtitulo * 1.6 : 0);
+  // Largo en panel angosto (`dividido`, ≈ 910 px): el título puede ocupar 2 líneas a 0,85× en vez de cortarse con "…".
+  const dosLineas = modo === 'largo' && ancho < 1000;
+  const fsTitulo = dosLineas ? T.titulo * 0.85 : T.titulo;
+  const altoTitulo = sinTitulo ? 0 : T.titulo * (modo === 'short' ? 2.5 : dosLineas ? 0.85 * 1.08 * 2 + 0.25 : 1.25) + (subtitulo ? T.subtitulo * 1.5 : 0) + (antetitulo ? T.subtitulo * 1.6 : 0);
   const altoLeyenda = conLeyenda ? T.subtitulo * 1.9 : 0;
   const altoPie = T.fuente * 3.1;
   const altoCuerpo = Math.max(100, alto - altoTitulo - altoLeyenda - altoPie);
@@ -73,8 +76,8 @@ export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho,
           {antetitulo && (
             <div style={{ fontFamily: TIPO.texto, fontWeight: 800, fontSize: T.subtitulo, letterSpacing: 4, color: PALETA.rojo, textTransform: 'uppercase', marginBottom: 6 }}>{antetitulo}</div>
           )}
-          <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: T.titulo, lineHeight: 1.08, color: PALETA.tinta, letterSpacing: -0.5,
-            display: '-webkit-box', WebkitLineClamp: modo === 'short' ? 2 : 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{g.titulo}</div>
+          <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: fsTitulo, lineHeight: 1.08, color: PALETA.tinta, letterSpacing: -0.5,
+            display: '-webkit-box', WebkitLineClamp: modo === 'short' || dosLineas ? 2 : 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{g.titulo}</div>
           {subtitulo && <div style={{ fontFamily: TIPO.texto, fontWeight: 500, fontSize: T.subtitulo, color: PALETA.tintaSuave, marginTop: 6, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{subtitulo}</div>}
         </div>
       )}
