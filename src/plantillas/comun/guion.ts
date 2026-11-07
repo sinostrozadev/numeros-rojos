@@ -14,6 +14,7 @@
  * Tono: evidencia, no catastrofismo. Prohibido en títulos y remates: "colapso", "destruir", "el fin", "se acerca".
  */
 import { z } from 'zod';
+import { DISPOSICIONES, Mascota, Visual } from './visual';
 import { Cifra, Grafico, Iso3 } from './datos';
 
 export const PLANTILLAS_CANAL = ['tesis', 'grafico'] as const;
@@ -72,7 +73,19 @@ export const Escena = z.object({
   enfasis: z.object({ pais: Iso3 }).optional(),
   /** Solo en el Short: la escena `dato` sigue mostrando el gráfico principal (`props.grafico`) sin copiarlo entero. */
   usaGraficoPrincipal: z.boolean().optional(),
+  /**
+   * v2 (2026-11-07): recurso visual de la escena además del gráfico o en su lugar: foto de Commons (historia, lugares, objetos),
+   * mapa (cuando la voz nombra países o rutas), iconos (enumeraciones) o ilustración plana (conceptos). Regla: `dato` conserva
+   * su gráfico (puede sumar visual en disposición dividida); planteamiento/giro/reenganche/significado llevan visual salvo que
+   * el gráfico previo siga siendo lo que hay que mirar. Ver src/plantillas/comun/visual.ts y docs/GUION.md §visual.
+   */
+  visual: Visual.optional(),
+  /** `dividido` = visual a la izquierda y gráfico a la derecha; `completo` = uno solo a pantalla completa. */
+  disposicion: z.enum(DISPOSICIONES).optional(),
+  /** La mascota comenta (esquina inferior izquierda): pose + bocadillo. ≤ 1 de cada 3 escenas del capítulo. */
+  mascota: Mascota.optional(),
 }).superRefine((e, ctx) => {
+  if (e.disposicion === 'dividido' && !(e.visual && (e.grafico || e.usaGraficoPrincipal))) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'disposicion dividido exige visual Y gráfico en la misma escena' });
   if (e.tipo !== 'respiro' && e.texto.trim().length < 1) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `escena ${e.tipo} sin texto` });
   if (e.tipo === 'dato' && !e.grafico && !e.usaGraficoPrincipal) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'escena dato sin gráfico (o sin usaGraficoPrincipal en el Short)' });
 });
@@ -91,6 +104,8 @@ export const Capitulo = z.object({
   if (tipos.filter((t) => t === 'respiro').length > 1) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `capítulo "${c.titulo}": máximo 1 respiro` });
   if (!c.escenas.some((e) => e.fuenteEnVoz)) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `capítulo "${c.titulo}": ninguna escena nombra la fuente en la voz` });
   if (PROHIBIDAS_TITULO.test(c.titulo)) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `capítulo "${c.titulo}": palabra prohibida (catastrofismo)` });
+  const conMascota = c.escenas.filter((e) => e.mascota).length;
+  if (conMascota > Math.max(1, Math.floor(c.escenas.length / 3))) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `capítulo "${c.titulo}": la mascota aparece en ${conMascota} escenas; máximo 1 de cada 3` });
 });
 export type Capitulo = z.infer<typeof Capitulo>;
 
@@ -159,6 +174,12 @@ export const validarTesis = (g: z.infer<typeof CamposTesis>, ctx: z.RefinementCt
   if (conGrafico.length < 3) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `solo ${conGrafico.length} gráficos; el largo necesita ≥ 3 (uno por capítulo)` });
   const tipos = new Set(conGrafico.map((e) => e.grafico!.tipo));
   if (tipos.size < 2) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'todos los gráficos son del mismo tipo: variar (lineas, barras, contador…)' });
+  const visuales = g.capitulos.flatMap((c) => c.escenas.filter((e) => e.visual));
+  if (visuales.length < 5) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `solo ${visuales.length} escenas con visual (foto/mapa/iconos/ilustracion); el largo v2 necesita ≥ 5` });
+  if (new Set(visuales.map((e) => e.visual!.tipo)).size < 2) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'los visuales son todos del mismo tipo: mezclar foto, mapa, iconos, ilustración' });
+  g.capitulos.forEach((c) => c.escenas.forEach((e) => {
+    if (e.tipo === 'dato' && !e.grafico && !e.usaGraficoPrincipal) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'escena dato sin gráfico: los datos siempre van en gráfico, no en foto' });
+  }));
   const cifras = g.capitulos.flatMap((c) => c.escenas.flatMap((e) => e.cifras ?? [])).length + (g.gancho.cifras?.length ?? 0) + g.numeroQueNadieMira.cifras.length;
   if (cifras < 6) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `solo ${cifras} cifras declaradas para el revisor; el largo necesita ≥ 6` });
   g.capitulos.forEach((c, i) => {
