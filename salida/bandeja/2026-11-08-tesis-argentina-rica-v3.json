@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-08-tesis-argentina-rica-v3",
+  "plantilla": "tesis",
+  "titulo": "Argentina era más rica que Alemania. ¿Qué pasó después?",
+  "descripcion": "¿Cómo pasó Argentina de producir más por persona que Alemania en 1895 a quedar última entre esos mismos ocho países?\n\nCapítulos:\n0:00 Introducción\n0:23 1895: Argentina entre los países más ricos\n2:25 Crecer y quedarse atrás: 1913 a 1974\n4:19 1975 a 1990: la década de la inflación\n6:32 2001 a hoy: el vaivén argentino\n9:02 El número que nadie mira\n\nRecorremos 130 años de datos del Proyecto Maddison y del Banco Mundial en cuatro quiebres: el empate perdido con Australia, los sesenta años en que creció más lento que Europa, la inflación de los ochenta y el vaivén desde 2001.\nLa tesis: Argentina no se empobreció en un año. Se quedó atrás crisis tras crisis, mientras otros crecían sin retroceder tanto.\n\nFotos (Wikimedia Commons): Apetura avenida mayo — Unknown author Unknown author (Public domain), https://commons.wikimedia.org/wiki/File:Apetura_avenida_mayo.jpg; Puerto Madero Elevadores de Granos (Olds) — Harry Grant Olds (Public domain), https://commons.wikimedia.org/wiki/File:Puerto_Madero_Elevadores_de_Granos_(Olds).jpg; Horacio Coppola - Buenos Aires 1936 - Plaza de la República — Horacio Coppola (Public domain), https://commons.wikimedia.org/wiki/File:Horacio_Coppola_-_Buenos_Aires_1936_-_Plaza_de_la_Rep%C3%BAblica.jpg; Banco Central de la República Argentina (Reconquista) — Elsapucai (Public domain), https://commons.wikimedia.org/wiki/File:Banco_Central_de_la_Rep%C3%BAblica_Argentina_(Reconquista).JPG; Casa Central del Banco de la Nación Argentina — Jbover (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Casa_Central_del_Banco_de_la_Naci%C3%B3n_Argentina.JPG; Sembrado de soja en argentina — User:Alfonso\" (CC BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/), https://commons.wikimedia.org/wiki/File:Sembrado_de_soja_en_argentina.jpg; Santiago de Chile, Desde Cerro San Cristóbal (cropped) — Omnespsx ( D • ES ) (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0), https://commons.wikimedia.org/wiki/File:Santiago_de_Chile,_Desde_Cerro_San_Crist%C3%B3bal_(cropped).jpg\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.DEFL.KD.ZG, DT.DOD.DECT.GN.ZS, NY.GDP.PCAP.KD.ZG (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#argentina",
+    "#inflacion",
+    "#historiaeconomica",
+    "#datos"
+  ],
+  "duracionSeg": 600.9,
+  "estado": "listo",
+  "tipo": "largo",
+  "miniatura": "salida/caratulas/2026-11-08-argentina-rica-1.png",
+  "miniaturaNota": "GPT 2026-11-08 (Congreso: mitad impecable, mitad en ruinas; caja roja ERA POTENCIA). El lote del 11-09 la adjunta al subir; también puesta a b1F1JlfZwIw (v2) por si el lote no corre."
+}
