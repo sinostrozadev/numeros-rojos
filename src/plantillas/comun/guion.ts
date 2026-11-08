@@ -14,7 +14,7 @@
  * Tono: evidencia, no catastrofismo. Prohibido en títulos y remates: "colapso", "destruir", "el fin", "se acerca".
  */
 import { z } from 'zod';
-import { DISPOSICIONES, Mascota, Visual } from './visual';
+import { DISPOSICIONES, Mascota, Visual, Sello } from './visual';
 import { Cifra, Grafico, Iso3 } from './datos';
 
 export const PLANTILLAS_CANAL = ['tesis', 'grafico'] as const;
@@ -27,9 +27,11 @@ export const VOZ_POR_DEFECTO: (typeof VOCES)[number] = 'es-MX-JorgeNeural';
 /** Palabras habladas del LARGO (gancho + promesa + capítulos + número + remate + siguiente): ≈ 9–12 min a ~2,7 palabras/s. */
 export const PALABRAS_TESIS_MIN = 1350;
 export const PALABRAS_TESIS_MAX = 1950;
-/** Palabras habladas del SHORT: ≈ 35–50 s. */
+/** Palabras HABLADAS del SHORT (gancho + escenas + remate), contadas con `contarPalabrasHabladas` (los números se expanden:
+ *  la voz lee "1990" como tres palabras y "%" como dos). Medido el 2026-11-07 con la voz del canal: ≈ 0,40 s por palabra hablada
+ *  → 113 crudas con muchas cifras = 147 habladas = 59,5 s (rechazado: tope 55 s). 120 habladas ≈ 48 s. */
 export const PALABRAS_GRAFICO_MIN = 85;
-export const PALABRAS_GRAFICO_MAX = 150;
+export const PALABRAS_GRAFICO_MAX = 120;
 
 /** Palabras prohibidas en títulos, cabeceras y remates (catastrofismo = marca de la competencia y riesgo de brand safety). */
 export const PROHIBIDAS_TITULO = /colaps|destru|el fin de|se acerca|apocalip|hundir|quebrar[áa]|última oportunidad/i;
@@ -84,6 +86,8 @@ export const Escena = z.object({
   disposicion: z.enum(DISPOSICIONES).optional(),
   /** La mascota comenta (esquina inferior izquierda): pose + bocadillo. ≤ 1 de cada 3 escenas del capítulo. */
   mascota: Mascota.optional(),
+  /** v3: sellos grandes sobre el gráfico/visual cuando la voz dice la cifra ("4×" + bandera). ≤ 3 por escena. */
+  sellos: z.array(Sello).max(3).optional(),
 }).superRefine((e, ctx) => {
   if (e.disposicion === 'dividido' && !(e.visual && (e.grafico || e.usaGraficoPrincipal))) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'disposicion dividido exige visual Y gráfico en la misma escena' });
   if (e.tipo !== 'respiro' && e.texto.trim().length < 1) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `escena ${e.tipo} sin texto` });
@@ -134,6 +138,10 @@ export type GuionBase = z.infer<typeof CamposBase>;
 
 /** Cuenta palabras habladas (tokens separados por espacio que tienen letra o número). */
 export const contarPalabras = (texto: string) => texto.split(/\s+/).filter((t) => /[\p{L}\p{N}]/u.test(t)).length;
+/** Cuenta palabras como las LEE la voz: un token con dígitos vale 3 ("1990" = mil novecientos noventa; "5.200" = cinco mil doscientos),
+ *  "%" vale 2 ("por ciento"); el resto, 1. Es la medida que predice la duración del Short (≈ 0,40 s por palabra hablada). */
+export const contarPalabrasHabladas = (texto: string) =>
+  texto.split(/\s+/).reduce((s, t) => s + (/\p{N}/u.test(t) ? 3 : t.includes('%') ? 2 : /\p{L}/u.test(t) ? 1 : 0), 0);
 
 // ---------------------------------------------------------------- TESIS (largo 16:9)
 export const CamposTesis = CamposBase.extend({
@@ -207,11 +215,11 @@ export const CamposGrafico = CamposBase.extend({
 
 /** Líneas de voz del Short (0 = gancho, 1..n = escenas, n+1 = remate). */
 export const lineasDeVozGrafico = (g: z.infer<typeof CamposGrafico>): string[] => [g.gancho.texto, ...g.escenas.map((e) => e.texto), g.remate];
-export const palabrasGrafico = (g: z.infer<typeof CamposGrafico>) => lineasDeVozGrafico(g).reduce((s, t) => s + contarPalabras(t), 0);
+export const palabrasGrafico = (g: z.infer<typeof CamposGrafico>) => lineasDeVozGrafico(g).reduce((s, t) => s + contarPalabrasHabladas(t), 0);
 
 export const validarGrafico = (g: z.infer<typeof CamposGrafico>, ctx: z.RefinementCtx) => {
   const n = palabrasGrafico(g);
-  if (n < PALABRAS_GRAFICO_MIN || n > PALABRAS_GRAFICO_MAX) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `${n} palabras habladas; deben ser ${PALABRAS_GRAFICO_MIN}–${PALABRAS_GRAFICO_MAX} (35–50 s)` });
+  if (n < PALABRAS_GRAFICO_MIN || n > PALABRAS_GRAFICO_MAX) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `${n} palabras habladas (números expandidos); deben ser ${PALABRAS_GRAFICO_MIN}–${PALABRAS_GRAFICO_MAX} (35–50 s)` });
   const tipos = g.escenas.map((e) => e.tipo);
   if (tipos.filter((t) => t === 'giro').length !== 1) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'el Short necesita exactamente 1 giro' });
   if (tipos.some((t) => t === 'reenganche' || t === 'significado')) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'reenganche/significado son solo del largo' });

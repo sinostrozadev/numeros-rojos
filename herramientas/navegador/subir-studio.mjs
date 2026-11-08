@@ -9,6 +9,8 @@
 // El tipo sale de salida/bandeja/<id>.json (`tipo: 'largo'` → video normal 16:9: URL watch?v=, sin #Shorts, miniatura
 // salida/bandeja/<id>-mini.png si existe, descripción con capítulos tal como la dejó el diario; si no, Short).
 // Categoría: Educación siempre. Las pausas publicitarias y la pantalla final del largo se ponen después en Studio.
+// NR_VISIBILIDAD=privado: sube el video como PRIVADO (sin programar; fecha y hora se ignoran, pasar "-"). Sirve para que Santiago
+// revise una versión de prueba en Studio sin tocar la ranura programada. La bandeja queda con estado 'privado'.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,9 +18,15 @@ import { fileURLToPath } from 'node:url';
 const B = 'http://127.0.0.1:8777';
 const BANDEJA = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'salida', 'bandeja');
 const CANAL = process.env.NR_CANAL_ID;
+const PRIVADO = process.env.NR_VISIBILIDAD === 'privado';
+// RETOMAR=1: el diálogo de subida ya está abierto en el piloto con el archivo cargado y los detalles puestos (un intento
+// anterior falló después del paso 4): se salta todo hasta Visibility. Se comprueba que el título del diálogo coincida.
+const RETOMAR = process.env.RETOMAR === '1';
+// En modo privado el título en Studio lleva un sufijo con la versión (el id termina en -vN), para que Santiago lo
+// distinga del programado y para que el anti-duplicados no lo confunda con la versión ya subida con el mismo título.
 const NOMBRE = process.env.NR_CANAL_NOMBRE || 'En Números Rojos'; // nombre visible del canal de marca (selector "Select a channel")
 const [id, fecha, hora] = process.argv.slice(2);
-if (!id || !fecha || !hora) { console.error('uso: node subir-studio.mjs <id> <YYYY-MM-DD> <HH:MM>'); process.exit(2); }
+if (!id || (!PRIVADO && (!fecha || !hora))) { console.error('uso: node subir-studio.mjs <id> <YYYY-MM-DD> <HH:MM>   (o NR_VISIBILIDAD=privado node subir-studio.mjs <id> - -)'); process.exit(2); }
 
 const q = (s) => encodeURIComponent(s);
 const llamar = async (path) => { const r = await fetch(B + path); const t = await r.text(); try { return JSON.parse(t); } catch { return t; } };
@@ -34,7 +42,9 @@ const fallo = (m) => { console.error('FALLO:', m); process.exit(1); };
 if (!CANAL || !/^UC[\w-]{22}$/.test(CANAL)) fallo('falta NR_CANAL_ID (id UC… del canal @enumerosrojos)');
 
 const meta = JSON.parse(fs.readFileSync(`${BANDEJA}/${id}.json`, 'utf8'));
-if (meta.estado === 'subido') { console.log('ya subido:', id); process.exit(0); }
+const SUFIJO_PRIVADO = PRIVADO ? ` · PRUEBA ${(id.match(/-(v\d+)$/)?.[1] || 'privada').toUpperCase()}` : '';
+const TITULO_STUDIO = (meta.titulo.trim() + SUFIJO_PRIVADO).slice(0, 100);
+if (meta.estado === 'subido' || meta.estado === 'privado') { console.log('ya subido:', id, `(${meta.estado})`); process.exit(0); }
 const archivo = `${BANDEJA}/${id}.mp4`;
 if (!fs.existsSync(archivo)) fallo('no existe ' + archivo);
 const LARGO = meta.tipo === 'largo';
@@ -47,10 +57,10 @@ const MINIATURA = LARGO ? [meta.miniatura && path.resolve(BANDEJA, '..', '..', m
 const urlVideo = (v) => (LARGO ? `https://www.youtube.com/watch?v=${v}` : `https://youtube.com/shorts/${v}`);
 
 // Fecha → "Nov 5, 2026" y hora → "6:00 PM"
-const [y, m, d] = fecha.split('-').map(Number);
+const [y, m, d] = PRIVADO ? [0, 1, 0] : fecha.split('-').map(Number);
 const meses = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fechaStudio = `${meses[m - 1]} ${d}, ${y}`;
-const [hh, mm] = hora.split(':').map(Number);
+const [hh, mm] = PRIVADO ? [0, 0] : hora.split(':').map(Number);
 const horaStudio = `${((hh + 11) % 12) + 1}:${String(mm).padStart(2, '0')} ${hh < 12 ? 'AM' : 'PM'}`;
 
 // Selector de canal de marca: si Studio redirige a signin_prompt ("Select a channel"), elegir el canal objetivo por nombre y
@@ -87,7 +97,7 @@ const asegurarCanal = async () => {
   } catch { e = await estado(); fallo('no estoy en el canal "' + NOMBRE + '" / ' + CANAL + ': ' + JSON.stringify(e).slice(0, 300)); }
   console.log('✓ canal verificado:', (e.u || '').slice(0, 80));
 };
-const idDeFila = (extra = '') => `(()=>{const T=${JSON.stringify(meta.titulo.trim())};for(const r of document.querySelectorAll('ytcp-video-row')){const ls=r.innerText.split(String.fromCharCode(10)).map(x=>x.trim());if(!ls.includes(T)${extra})continue;const a=r.querySelector('a[href*="/video/"]');const m=a&&a.href.match(/\\/video\\/([\\w-]+)/);if(m)return m[1];}return ''})()`;
+const idDeFila = (extra = '') => `(()=>{const T=${JSON.stringify(TITULO_STUDIO)};for(const r of document.querySelectorAll('ytcp-video-row')){const ls=r.innerText.split(String.fromCharCode(10)).map(x=>x.trim());if(!ls.includes(T)${extra})continue;const a=r.querySelector('a[href*="/video/"]');const m=a&&a.href.match(/\\/video\\/([\\w-]+)/);if(m)return m[1];}return ''})()`;
 // Abre /videos/short (o /videos/upload si es largo) y devuelve el id de la fila programada/publicada con ese título ('' si no hay; los borradores no cuentan)
 const buscarEnLista = async () => {
   await llamar(`/ir?url=${q(`https://studio.youtube.com/channel/${CANAL}/videos/${PESTANA}`)}`);
@@ -98,11 +108,11 @@ const buscarEnLista = async () => {
 const extraerId = (hrefs, t = '') => ((hrefs || []).join(' ') + ' ' + t).match(/(?:youtube\.com\/shorts\/|youtu\.be\/|youtube\.com\/watch\?v=)([\w-]{11})/)?.[1] || '';
 const leerConfirmacion = () => evalJs(`(()=>{const ds=[...document.querySelectorAll('ytcp-uploads-dialog, ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog')];return {t:ds.map(d=>d.innerText).join(' ').replace(/\\n+/g,' | '),h:ds.flatMap(d=>[...d.querySelectorAll('a')].map(a=>a.href))}})()`);
 const marcar = (videoId, extra = {}) => {
-  meta.estado = 'subido';
-  meta.publicarEn = meta.publicarEn || `${fecha}T${hora}:00-03:00`;
+  meta.estado = PRIVADO ? 'privado' : 'subido';
+  if (!PRIVADO) meta.publicarEn = meta.publicarEn || `${fecha}T${hora}:00-03:00`;
   meta.videoId = videoId;
   meta.url = urlVideo(videoId);
-  meta.programado = `${fecha} ${hora}`;
+  if (!PRIVADO) meta.programado = `${fecha} ${hora}`;
   meta.subidoEn = new Date().toISOString();
   Object.assign(meta, extra);
   fs.writeFileSync(`${BANDEJA}/${id}.json`, JSON.stringify(meta, null, 2) + '\n');
@@ -110,6 +120,12 @@ const marcar = (videoId, extra = {}) => {
 
 console.log(`→ ${id} · ${LARGO ? 'LARGO' : 'Short'} · ${fechaStudio} ${horaStudio} · ${categoria}${LARGO ? ` · miniatura ${MINIATURA ? path.basename(MINIATURA) : '(no hay)'}` : ''}`);
 
+let notaMiniatura = '';
+if (RETOMAR) {
+  const tDialogo = await evalJs(`(document.querySelector('ytcp-uploads-dialog #title-textarea #textbox')||{}).innerText||''`);
+  if (String(tDialogo).trim() !== TITULO_STUDIO) fallo('RETOMAR: el diálogo abierto no es este video: ' + String(tDialogo).slice(0, 80));
+  console.log('↻ retomando el diálogo abierto desde Visibility');
+} else {
 // 1. Abrir diálogo de subida y cargar el archivo (o retomar un borrador ya subido con BORRADOR=1)
 if (process.env.BORRADOR === '1') {
   await llamar(`/ir?url=${q(`https://studio.youtube.com/channel/${CANAL}/videos/${PESTANA}`)}`);
@@ -137,7 +153,7 @@ await hasta(() => evalJs(`!!document.querySelector('#title-textarea #textbox')`)
 await esperar(2000);
 
 // 2. Título y descripción
-await llamar(`/escribir?sel=${q('#title-textarea #textbox')}&texto=${q(meta.titulo)}`);
+await llamar(`/escribir?sel=${q('#title-textarea #textbox')}&texto=${q(TITULO_STUDIO)}`);
 // La descripción a veces queda fuera de la vista del diálogo y /escribir responde "not visible": se enfoca por /eval y se tipea.
 const rDesc = await llamar(`/escribir?sel=${q('#description-textarea #textbox')}&texto=${q(meta.descripcion)}`);
 if (rDesc && rDesc.error) {
@@ -150,12 +166,12 @@ await esperar(1000);
 const leido = await evalJs(`[document.querySelector('#title-textarea #textbox').innerText.trim(), document.querySelector('#description-textarea #textbox').innerText.trim()]`);
 if (!Array.isArray(leido)) fallo('no pude leer título/descripción del diálogo: ' + JSON.stringify(leido).slice(0, 200));
 const [t, dsc] = leido;
-if (t !== meta.titulo.trim()) fallo('título no coincide: ' + t);
+if (t !== TITULO_STUDIO) fallo('título no coincide: ' + t);
 if (!dsc.startsWith(meta.descripcion.slice(0, 40))) fallo('descripción no coincide');
 
 // 2b. Miniatura del largo (input de archivo del bloque "Thumbnail" del diálogo). Mejor esfuerzo: si Studio no lo permite
 // (canal sin verificación por teléfono / funciones intermedias), se avisa y se sigue; queda anotado en la bandeja.
-let notaMiniatura = '';
+notaMiniatura = '';
 if (LARGO && MINIATURA) {
   const SEL_MINI = 'ytcp-uploads-dialog ytcp-thumbnails-compact-editor-uploader input[type=file], ytcp-uploads-dialog ytcp-thumbnail-uploader input[type=file], ytcp-uploads-dialog input#file-loader';
   const hay = await evalJs(`!!document.querySelector(${JSON.stringify(SEL_MINI)})`);
@@ -188,15 +204,21 @@ if (r1.error) fallo('idioma: ' + r1.error);
 await esperar(1200);
 await llamar(`/clicktexto?texto=${q('Spanish (Latin America)')}&exacto=1`);
 await esperar(1000);
-const r2 = await llamar(`/click?sel=${q('ytcp-uploads-dialog ytcp-dropdown-trigger:has-text("People & Blogs")')}`);
-if (r2.error) fallo('categoría: ' + r2.error);
-await esperar(1200);
-await llamar(`/clicktexto?texto=${q(categoria)}&exacto=1`);
-await esperar(1000);
+// Studio recuerda la última categoría del canal: el desplegable puede decir ya "Education" en vez de "People & Blogs".
+const catActual = String(await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads-dialog ytcp-dropdown-trigger')).map(i=>i.innerText.trim()).find(t=>/^(People & Blogs|Education|Entertainment|Science & Technology|News & Politics|Howto & Style|Film & Animation|Travel & Events)$/.test(t))||''`));
+if (catActual !== categoria) {
+  const r2 = await llamar(`/click?sel=${q(`ytcp-uploads-dialog ytcp-dropdown-trigger:has-text("${catActual || 'People & Blogs'}")`)}`);
+  if (r2.error) fallo('categoría: ' + r2.error);
+  await esperar(1200);
+  await llamar(`/clicktexto?texto=${q(categoria)}&exacto=1`);
+  await esperar(1000);
+}
 const resumen = await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads-dialog ytcp-dropdown-trigger')).map(i=>i.innerText.trim().replace(/\\n/g,'=')).filter(t=>/language|Entertain|Science|Educat|People/.test(t)).join(' ; ')`);
 if (!/Spanish \(Latin America\)/.test(resumen) || !resumen.includes(categoria)) fallo('idioma/categoría: ' + resumen);
 const chips = await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads-dialog ytcp-chip')).map(c=>c.innerText.trim())`);
 if (!Array.isArray(chips) || chips.length < 3) fallo('etiquetas: ' + JSON.stringify(chips));
+
+}
 
 // 5. Siguiente ×3 → Visibility
 for (let i = 0; i < 3; i++) {
@@ -206,32 +228,39 @@ for (let i = 0; i < 3; i++) {
 }
 await hasta(async () => /Schedule as public|Select a date to make your video public/.test(await textoDialogo()), 30000, 1000, 'paso Visibility');
 
-// 6. Programar: fecha, hora, zona
-await llamar(`/clicktexto?texto=Schedule&exacto=1`);
-await esperar(1500);
-const r3 = await llamar(`/click?sel=${q('ytcp-uploads-dialog ytcp-dropdown-trigger:has-text("2026")')}`);
-if (r3.error) fallo('selector de fecha: ' + r3.error);
-await esperar(1200);
-await llamar(`/escribir?sel=${q('ytcp-date-picker input')}&texto=${q(fechaStudio)}`);
-await llamar(`/tecla?k=Enter`);
-await esperar(1200);
-const r4 = await llamar(`/click?sel=${q('ytcp-uploads-dialog ytcp-datetime-picker input, ytcp-uploads-dialog input[value$=" AM"], ytcp-uploads-dialog input[value$=" PM"]')}`);
-if (r4.error) fallo('selector de hora: ' + r4.error);
-await esperar(1000);
-await llamar(`/clicktexto?texto=${q(horaStudio)}&exacto=1`);
-await esperar(1000);
-await llamar(`/clicktexto?texto=${q('Time zone')}&exacto=1`);
-await esperar(1200);
-await llamar(`/clicktexto?texto=${q('(GMT-0300) Local Time')}&exacto=1`);
-await esperar(1200);
-const vis = String(await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads-dialog ytcp-dropdown-trigger, ytcp-uploads-dialog input')).filter(e=>e.offsetParent).map(i=>(i.innerText||i.value||'').trim().slice(0,30)).join(' ; ')`)).replace(/\s/g, ' ');
-if (!vis.includes(fechaStudio) || !vis.includes(horaStudio) || !vis.includes('GMT-0300')) fallo('fecha/hora/zona: ' + vis);
+// 6. Visibilidad: PRIVADO (prueba) o programar fecha, hora y zona
+if (PRIVADO) {
+  await llamar(`/clicktexto?texto=Private&exacto=1`);
+  await esperar(1500);
+  const marcado = await evalJs(`(()=>{const r=Array.from(document.querySelectorAll('ytcp-uploads-dialog tp-yt-paper-radio-button, ytcp-uploads-dialog [role=radio]')).find(e=>/^\\s*Private/.test(e.innerText||''));return r?(r.getAttribute('aria-checked')||r.getAttribute('checked')||''):'no-radio'})()`);
+  if (marcado !== 'true' && marcado !== '') fallo('no quedó marcado Private: ' + marcado);
+} else {
+  await llamar(`/clicktexto?texto=Schedule&exacto=1`);
+  await esperar(1500);
+  const r3 = await llamar(`/click?sel=${q('ytcp-uploads-dialog ytcp-dropdown-trigger:has-text("2026")')}`);
+  if (r3.error) fallo('selector de fecha: ' + r3.error);
+  await esperar(1200);
+  await llamar(`/escribir?sel=${q('ytcp-date-picker input')}&texto=${q(fechaStudio)}`);
+  await llamar(`/tecla?k=Enter`);
+  await esperar(1200);
+  const r4 = await llamar(`/click?sel=${q('ytcp-uploads-dialog ytcp-datetime-picker input, ytcp-uploads-dialog input[value$=" AM"], ytcp-uploads-dialog input[value$=" PM"]')}`);
+  if (r4.error) fallo('selector de hora: ' + r4.error);
+  await esperar(1000);
+  await llamar(`/clicktexto?texto=${q(horaStudio)}&exacto=1`);
+  await esperar(1000);
+  await llamar(`/clicktexto?texto=${q('Time zone')}&exacto=1`);
+  await esperar(1200);
+  await llamar(`/clicktexto?texto=${q('(GMT-0300) Local Time')}&exacto=1`);
+  await esperar(1200);
+  const vis = String(await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads-dialog ytcp-dropdown-trigger, ytcp-uploads-dialog input')).filter(e=>e.offsetParent).map(i=>(i.innerText||i.value||'').trim().slice(0,30)).join(' ; ')`)).replace(/\s/g, ' ');
+  if (!vis.includes(fechaStudio) || !vis.includes(horaStudio) || !vis.includes('GMT-0300')) fallo('fecha/hora/zona: ' + vis);
+}
 
 // 7. Esperar a que termine la subida y programar (un largo de 9–12 min pesa cientos de MB: hasta 45 min)
 await hasta(async () => /Checks complete|Upload complete|Processing/.test(await textoDialogo()), LARGO ? 45 * 60000 : 120000, 3000, 'subida completa');
 await hasta(() => evalJs(`(()=>{const b=document.querySelector('ytcp-uploads-dialog #done-button');return !!b && !b.hasAttribute('disabled')})()`), 60000, 1000, 'botón Schedule');
 await llamar(`/click?sel=${q('ytcp-uploads-dialog #done-button')}`);
-await hasta(async () => { const c = await leerConfirmacion(); return c && /Video scheduled|will be set to public|Video processing|Video link/.test(c.t); }, 60000, 1000, 'confirmación');
+await hasta(async () => { const c = await leerConfirmacion(); return c && /Video scheduled|will be set to public|Video processing|Video link|Video saved|saved as private|Video published/i.test(c.t); }, 60000, 1000, 'confirmación');
 let c = await leerConfirmacion();
 let videoId = extraerId(c.h, c.t);
 if (!videoId) {
@@ -259,5 +288,5 @@ if (!videoId) fallo('video programado pero sin id (bandeja NO marcada): ' + (c.t
 
 // 8. Marcar en la bandeja (solo con id)
 marcar(videoId, notaMiniatura ? { notaMiniatura } : {});
-console.log(`✓ ${id} → ${urlVideo(videoId)} · ${fecha} ${hora}`);
+console.log(PRIVADO ? `✓ ${id} → ${urlVideo(videoId)} · PRIVADO (prueba para Santiago)` : `✓ ${id} → ${urlVideo(videoId)} · ${fecha} ${hora}`);
 if (LARGO) console.log('  Pendiente a mano en Studio (largo): pausas publicitarias en los límites de capítulo, pantalla final de 20 s y comentario fijado con la pregunta del cierre.');

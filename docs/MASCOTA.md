@@ -46,9 +46,18 @@ datos** (jamás tapa una cifra, eje o fuente), no repite la misma pose dos veces
    Pedir entre 09:00 y 23:00 (skill `caratulas-con-gpt`); 1 pedido al día.
 3. Esperar y verificar: `npx tsx scripts/mascota.mts esperar [v2]` (cada 60 s hasta 30 min, verifica IEND →
    `salida/caratulas/mascota-poses.png`).
-4. Recortar: `npx tsx scripts/mascota.mts recortar salida/caratulas/mascota-poses.png` → `public/mascota/<pose>.png` (se quita el 12 %
-   inferior del rótulo) + `public/mascota/hoja.png`. La composición `Mascota.tsx` lee `public/mascota/<pose>.png`.
-5. Revisar los 6 PNG (rótulo fuera, mismo personaje, bufanda en todos). Si GPT devuelve fondo no liso, la hoja se corrige
-   o se repide con el `-v2`. Fondo transparente: no lo da el generador; si hace falta, recortar con máscara por color `#111418` (pendiente).
+4. Recortar: `npx tsx scripts/mascota.mts recortar salida/caratulas/mascota-poses.png` → `public/mascota/<pose>.png` con **fondo
+   transparente** + `public/mascota/hoja.png`. Lo hace el Chromium headless de Playwright (canvas): quita el 20 % inferior (rótulo),
+   un 2 % de margen por lado (líneas de la grilla), rellena desde los bordes todo píxel parecido al de la esquina (tolerancia 60) con
+   alfa 0 y ajusta el lienzo al dibujo (≈ 380×390 px). La composición `Mascota.tsx` lee `public/mascota/<pose>.png`.
+5. Revisar los 6 PNG (rótulo fuera, mismo personaje, bufanda en todos) y un fotograma real (`npx remotion still … Tesis --frame=N`
+   con `mascotaPoses` lleno en los props). Si GPT devuelve fondo no liso o personajes distintos, se repide con el `-v2`.
 6. Hasta que llegue la hoja: SVG de reserva en `public/mascota/reserva/<pose>.svg` (400×400), contacto en `salida/pruebas/mascota-reserva.png`.
    Los PNG finales se guardan junto a `<id>.prompt.txt` (el prompt exacto, para aprender qué funcionó).
+
+## Estado 2026-11-07 09:15 — hoja recibida, poses en uso
+Pedido enviado 09:00, PNG 1536×1024 en 4 min; las 6 poses salieron consistentes (misma ardilla, bufanda roja, estilo plano) y ya
+están en `public/mascota/` con fondo transparente. Fotogramas reales: `salida/pruebas/mascota-real-7100.png` (sorpresa, cap. 2 de
+Argentina v2), `-9040.png` (tapa-ojos, inflación), `-14600.png`. Los largos ya subidos (Chile-Corea, Argentina, Irlanda v2) llevan el
+SVG de reserva; el PNG entra en el próximo render. **Pendiente de Santiago:** aprobar la identidad (ardilla "Nuez") viendo esos
+fotogramas; si la aprueba, se re-renderizan los tres largos con las poses reales antes de su fecha.

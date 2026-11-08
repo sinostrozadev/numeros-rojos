@@ -12,3 +12,23 @@
 - 2026-11-07 (docs/marca): mascota en PROTOTIPO, pendiente de que Santiago apruebe la identidad: ardilla dorada con bufanda roja (ficha en docs/MASCOTA.md), hoja de 6 poses pedida a GPT (`scripts/mascota.mts pedir`), recorte a `public/mascota/<pose>.png`; SVG de reserva en `public/mascota/reserva/`. No aparece en producción hasta el visto bueno.
 - 2026-11-07 04:10: **v2 visual del largo** (pedido de Santiago: "no estás aprovechando todas las herramientas"). Contrato con `visual` (foto Commons, mapa, iconos, ilustración) + `mascota` por escena; plantilla y pipeline hechos en una noche por 3 agentes; Chile-Corea v2 renderizado (25 min) y programado en la misma ranura (dom 11-08 19:00, `eTq0TBuEWIs`); la v1 `vQT5ObEGz5U` quedó privada con título "(versión anterior)". Argentina v2 y Irlanda v2 se reemplazan igual (lun y mié). Mascota "Nuez" (ardilla, bufanda roja) en prototipo con SVG de reserva; poses por GPT pedidas el 11-07 09:00. Pendiente: título del gráfico se corta en disposición dividida; lista de iconos deja medio cuadro vacío (usar dividido con el gráfico previo); ilustraciones por GPT (1 pedido/día) → mientras, caen al gráfico previo.
 
+
+## 2026-11-07 (mañana) — tope del Short en palabras HABLADAS, mascota real, 2 Shorts más programados
+- **Hecho:** los dos primeros Shorts generados por `generar-guiones.mts` (113 palabras crudas) duraron 67 s y luego 57–59 s: la voz lee
+  "1990" como tres palabras y "%" como dos. **Decisión:** el contrato cuenta palabras habladas (`contarPalabrasHabladas`: token con
+  dígitos = 3, "%" = 2) y el tope pasa a 85–120 habladas (≈ 0,40 s/palabra → ≤ 50 s). Con eso los dos quedaron en 49,4 s y 48,5 s a la
+  primera. `docs/GUION.md` §4 lo explica al generador. Idea de la casa (años de sueldo) a la cola: no hay dataset con licencia.
+- **Mascota:** hoja de poses de GPT en 4 min, 6 poses consistentes; `scripts/mascota.mts recortar` ahora usa Chromium (canvas) para dejar
+  fondo transparente y sin rótulo. Entra en los renders nuevos; los 3 largos subidos llevan el SVG de reserva. La identidad la decide
+  Santiago con `salida/pruebas/mascota-real-*.png`.
+- **Studio:** Irlanda v2 reemplaza a la v1 (mié 11-11 19:00, `m_Lp1dgEsvA`; v1 privada). Shorts jue 11-12 `k8gTTX8R9Ao` (México-Chile
+  consumo) y dom 11-15 `fHVOchMTSE0` (reservas de Bolivia) programados. Cadena del piloto con LP y Bolita por mensajes "PILOTO LIBRE".
+
+## 2026-11-07 (noche) — ritmo medible: nada fijo ni vacío en pantalla, y la revisión deja de ser manual
+- **Qué pasó:** Santiago vio el largo Chile-Corea v2 y marcó tarjetas ilegibles (1 s), una foto fija 26 s, una espera de 17 s antes de un
+  gráfico, un texto flash y un cierre sin marcar. Todo coincidía con lo que un validador de tiempos habría detectado sin mirar el video.
+- **Decisión:** las reglas de ritmo viven en código, no en la revisión. `problemasDeRitmo` bloquea en `preparar-tesis` (umbrales: espera ≤ 3 s,
+  nada fijo > 12 s, gráfico estático ≤ 20 s, tarjetas ≥ 2,5 s + 0,3 s/palabra). Las enumeraciones habladas van a `iconos` o `versus` con ✗/✓, las
+  cifras fuertes a `sellos`, los cambios grandes de país a `viaje` de mapa (≤ 2 por video), y el remate se funde a negro antes de "siguiente".
+- **Cómo se prueba:** Chile-Corea v3 (misma voz, dirección visual nueva) subido PRIVADO para que Santiago lo compare con la v2 programada
+  (dom 11-08 19:00, intacta). Si aprueba, las reglas pasan al generador y a los largos de Argentina e Irlanda.

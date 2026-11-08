@@ -1,0 +1,335 @@
+{
+  "plantilla": "grafico",
+  "id": "2026-11-07-grafico-bolivia-tenia-15-000-millones",
+  "titulo": "Bolivia tenía 15.000 millones en reservas. En 2024, 2.000",
+  "descripcion": "¿Por qué Bolivia se quedó con tan pocos dólares en reservas?\n\nVeinte años de reservas internacionales, según el Banco Mundial: unos 15.000 millones de dólares en 2014, unos 1.800 en 2023 y casi 2.000 en 2024, contando el oro.\nEn el mismo período bajó el peso de las exportaciones en la economía boliviana, mientras el tipo de cambio oficial se mantuvo plano desde 2012.\n\nFuentes:\n- Banco Mundial, WDI: FI.RES.TOTL.CD (CC BY 4.0) https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=BO\n- Banco Mundial, WDI: NE.EXP.GNFS.ZS (CC BY 4.0) https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=BO\n- Banco Mundial, WDI: PA.NUS.FCRF (CC BY 4.0) https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=BO\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#bolivia",
+    "#reservas",
+    "#datos"
+  ],
+  "props": {
+    "id": "2026-11-07-grafico-bolivia-tenia-15-000-millones",
+    "gancho": {
+      "texto": "En 2014, Bolivia tenía unos 15.000 millones en reservas. En 2023, unos 1.800. ¿Adónde se fueron?",
+      "rotulo": "15.000 → 1.800",
+      "cifras": [
+        {
+          "texto": "unos 15.000 millones",
+          "valor": 15000000000,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "FI.RES.TOTL.CD",
+              "paises": [
+                "BOL"
+              ],
+              "desde": 2005,
+              "hasta": 2024,
+              "etiqueta": "Reservas internacionales, con oro (US$ corrientes)",
+              "unidad": "US$"
+            },
+            "operacion": "valor",
+            "pais": "BOL",
+            "anio": 2014
+          }
+        },
+        {
+          "texto": "unos 1.800",
+          "valor": 1800000000,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "FI.RES.TOTL.CD",
+              "paises": [
+                "BOL"
+              ],
+              "desde": 2005,
+              "hasta": 2024,
+              "etiqueta": "Reservas internacionales, con oro (US$ corrientes)",
+              "unidad": "US$"
+            },
+            "operacion": "valor",
+            "pais": "BOL",
+            "anio": 2023
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "area",
+      "titulo": "Reservas de Bolivia, 2005–2024",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "FI.RES.TOTL.CD",
+        "paises": [
+          "BOL"
+        ],
+        "desde": 2005,
+        "hasta": 2024,
+        "etiqueta": "Reservas internacionales, con oro (US$ corrientes)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "BOL",
+        "anio": 2014
+      },
+      "anotaciones": [
+        {
+          "anio": 2014,
+          "texto": "Unos 15.000 millones"
+        },
+        {
+          "anio": 2023,
+          "texto": "Unos 1.800 millones"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Según el Banco Mundial, es todo lo que guarda el país. En nueve años se va casi nueve de cada diez dólares.",
+        "grafico": {
+          "tipo": "area",
+          "titulo": "Reservas de Bolivia, 2005–2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FI.RES.TOTL.CD",
+            "paises": [
+              "BOL"
+            ],
+            "desde": 2005,
+            "hasta": 2024,
+            "etiqueta": "Reservas internacionales, con oro (US$ corrientes)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "BOL",
+            "anio": 2014
+          },
+          "anotaciones": [
+            {
+              "anio": 2014,
+              "texto": "Unos 15.000 millones"
+            },
+            {
+              "anio": 2023,
+              "texto": "Unos 1.800 millones"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "2014,"
+        },
+        "cifras": [
+          {
+            "texto": "casi nueve de cada diez",
+            "valor": -88,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FI.RES.TOTL.CD",
+                "paises": [
+                  "BOL"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Reservas internacionales, con oro (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "BOL",
+              "anio": 2014,
+              "anioB": 2023
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "dato",
+        "texto": "Bolivia vivía del gas y cayó el precio. En 2014 las exportaciones eran un 43 % de su economía. En 2019, un 20 %.",
+        "grafico": {
+          "tipo": "area",
+          "titulo": "Exportaciones de Bolivia (% del PIB)",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NE.EXP.GNFS.ZS",
+            "paises": [
+              "BOL"
+            ],
+            "desde": 2005,
+            "hasta": 2024,
+            "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "BOL"
+          },
+          "anotaciones": [
+            {
+              "anio": 2014,
+              "texto": "43 %"
+            },
+            {
+              "anio": 2019,
+              "texto": "20 %"
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0
+          },
+          "dice": "exportaciones"
+        },
+        "cifras": [
+          {
+            "texto": "un 43 %",
+            "valor": 43,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "BOL"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "BOL",
+              "anio": 2014
+            }
+          },
+          {
+            "texto": "un 20 %",
+            "valor": 20,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "BOL"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "BOL",
+              "anio": 2019
+            }
+          }
+        ]
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero el dólar oficial es plano desde 2012: unos 6,9 bolivianos. Las reservas pagaron la diferencia.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Tipo de cambio oficial en Bolivia",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "PA.NUS.FCRF",
+            "paises": [
+              "BOL"
+            ],
+            "desde": 2005,
+            "hasta": 2024,
+            "etiqueta": "Tipo de cambio oficial (bolivianos por US$)",
+            "unidad": "Bs"
+          },
+          "destacar": {
+            "pais": "BOL",
+            "anio": 2012,
+            "texto": "Desde 2012: plano"
+          },
+          "formato": {
+            "decimales": 2
+          },
+          "dice": "precio"
+        },
+        "cifras": [
+          {
+            "texto": "unos 6,9 bolivianos",
+            "valor": 6.9,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "PA.NUS.FCRF",
+                "paises": [
+                  "BOL"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Tipo de cambio oficial (bolivianos por US$)",
+                "unidad": "Bs"
+              },
+              "operacion": "valor",
+              "pais": "BOL",
+              "anio": 2024
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "LÍNEA PLANA",
+          "dice": "plana:"
+        },
+        "fuenteEnVoz": false
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2024 quedan casi 2.000 millones.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "casi 2.000 millones",
+            "valor": 1977000000,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FI.RES.TOTL.CD",
+                "paises": [
+                  "BOL"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Reservas internacionales, con oro (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "BOL",
+              "anio": 2024
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "El precio del dólar no se movió. Las reservas sí.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Reservas totales, incluido el oro (FI.RES.TOTL.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=BO"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=BO"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Tipo de cambio oficial (PA.NUS.FCRF), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=BO"
+      }
+    ]
+  }
+}

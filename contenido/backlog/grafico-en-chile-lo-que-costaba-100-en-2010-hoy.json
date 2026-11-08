@@ -1,0 +1,290 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
+  "titulo": "En Chile, lo que costaba 100 en 2010 hoy cuesta 185",
+  "descripcion": "¿Cuánto subieron los precios en Chile desde 2010?\n\nUn gráfico con la inflación de cada año, del Banco Mundial: una línea tranquila durante una década, el salto de 2022 y la cuenta acumulada que casi no se mira.\nLa comparación con Brasil pone esa cuenta en contexto. Son precios al consumidor en promedio: el dato no mide cuánto subieron los sueldos.\n\nFuentes:\n- Banco Mundial, WDI: Inflación, precios al consumidor (FP.CPI.TOTL.ZG), CC BY 4.0 https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CL\n- Banco Mundial, WDI: Índice de precios al consumidor, 2010 = 100 (FP.CPI.TOTL), CC BY 4.0 https://data.worldbank.org/indicator/FP.CPI.TOTL?locations=CL-BR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#chile",
+    "#inflacion",
+    "#precios"
+  ],
+  "props": {
+    "id": "pendiente-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
+    "gancho": {
+      "texto": "Chile tiene fama de precios estables. Aun así, lo que costaba 100 pesos en 2010, en 2025 costaba unos 185.",
+      "rotulo": "100 → 185",
+      "cifras": [
+        {
+          "texto": "100 pesos",
+          "valor": 100,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "FP.CPI.TOTL",
+              "paises": [
+                "CHL",
+                "BRA"
+              ],
+              "desde": 2010,
+              "hasta": 2025,
+              "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+              "unidad": "índice"
+            },
+            "operacion": "valor",
+            "pais": "CHL",
+            "anio": 2010
+          }
+        },
+        {
+          "texto": "unos 185",
+          "valor": 185.5,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "FP.CPI.TOTL",
+              "paises": [
+                "CHL",
+                "BRA"
+              ],
+              "desde": 2010,
+              "hasta": 2025,
+              "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+              "unidad": "índice"
+            },
+            "operacion": "valor",
+            "pais": "CHL",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "area",
+      "titulo": "Inflación de cada año en Chile",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "FP.CPI.TOTL.ZG",
+        "paises": [
+          "CHL"
+        ],
+        "desde": 2010,
+        "hasta": 2025,
+        "etiqueta": "Inflación, precios al consumidor (% anual)",
+        "unidad": "%"
+      },
+      "destacar": {
+        "pais": "CHL",
+        "anio": 2022
+      },
+      "anotaciones": [
+        {
+          "anio": 2022,
+          "texto": "2022: casi 12 %",
+          "dice": "2022,"
+        }
+      ],
+      "formato": {
+        "sufijo": " %",
+        "decimales": 1
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la inflación de cada año, según el Banco Mundial. La línea se mueve tranquila durante una década. Hasta 2022, cuando salta a casi un 12 %.",
+        "grafico": {
+          "tipo": "area",
+          "titulo": "Inflación de cada año en Chile",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FP.CPI.TOTL.ZG",
+            "paises": [
+              "CHL"
+            ],
+            "desde": 2010,
+            "hasta": 2025,
+            "etiqueta": "Inflación, precios al consumidor (% anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "CHL",
+            "anio": 2022
+          },
+          "anotaciones": [
+            {
+              "anio": 2022,
+              "texto": "2022: casi 12 %",
+              "dice": "2022,"
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 1
+          },
+          "dice": "inflación"
+        },
+        "cifras": [
+          {
+            "texto": "casi un 12 %",
+            "valor": 11.6,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 2022
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero un solo salto no explica la cuenta. Año tras año, sin ruido, los precios de Chile subieron un 85 % desde 2010.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Lo que costaba 100 en 2010",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FP.CPI.TOTL",
+            "paises": [
+              "CHL"
+            ],
+            "desde": 2010,
+            "hasta": 2025,
+            "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+            "unidad": "índice"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "decimales": 0
+          },
+          "dice": "precios"
+        },
+        "cifras": [
+          {
+            "texto": "un 85 %",
+            "valor": 85.5,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL",
+                "paises": [
+                  "CHL",
+                  "BRA"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                "unidad": "índice"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 2010,
+              "anioB": 2025
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "+85 %",
+          "dice": "85"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En Brasil, lo mismo que costaba 100 ya cuesta unos 234.",
+        "grafico": {
+          "tipo": "barras",
+          "titulo": "Lo que costaba 100 en 2010, en 2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FP.CPI.TOTL",
+            "paises": [
+              "BRA",
+              "CHL"
+            ],
+            "desde": 2025,
+            "hasta": 2025,
+            "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+            "unidad": "índice"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "decimales": 0
+          },
+          "dice": "Brasil,"
+        },
+        "cifras": [
+          {
+            "texto": "costaba 100",
+            "valor": 100,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL",
+                "paises": [
+                  "CHL",
+                  "BRA"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                "unidad": "índice"
+              },
+              "operacion": "valor",
+              "pais": "BRA",
+              "anio": 2010
+            }
+          },
+          {
+            "texto": "unos 234",
+            "valor": 234.4,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL",
+                "paises": [
+                  "CHL",
+                  "BRA"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                "unidad": "índice"
+              },
+              "operacion": "valor",
+              "pais": "BRA",
+              "anio": 2025
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "Un mal año sale en las noticias. Quince años salen en la caja.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, precios al consumidor, % anual (FP.CPI.TOTL.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Índice de precios al consumidor, 2010 = 100 (FP.CPI.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL?locations=CL-BR"
+      }
+    ]
+  }
+}

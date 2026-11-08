@@ -9,7 +9,7 @@ Calendario (`contenido/calendario.json`): **largo `tesis` lun/mié/vie 19:00** +
 YPP). Lanzamiento: primer Short sáb 11-07, primer largo **dom 11-08 19:00 (excepción fuera de ranura)**, ranura normal desde el lun 11-09.
 Canal creado (id `UC8uOwislkGbnnfoqsJ_FgAw`, COPPA hecho). Los días anteriores al lanzamiento (11-02 → 11-06) no tienen ranuras.
 
-**Estado (2026-11-06 09:10): 7 de 13 ranuras PROGRAMADAS en Studio** (Short sáb 11-07 `LLiqQewooNI`, Short dom 11-08 `9SmuQH7bghE`, largo dom 11-08 `eTq0TBuEWIs`, Short lun 11-09 `mx9le_OLFx8`, largo lun 11-09 `b1F1JlfZwIw`, Short mié 11-11 `yJV1sIgJJQ8`, largo mié 11-11 `2mGAJicF93o`); los largos sin miniatura propia hasta la verificación por teléfono (docs/SANTIAGO.md f). Antes: 7 de 13 con guion (7 del backlog validados por el revisor numérico: 3 largos + 4 Shorts, en `contenido/backlog/`). Sin guion: IPC Chile mar 11-10 (se genera el vie 11-06 con el dato del INE), casa jue 11-12, INDEC vie 11-13 (esperar dato del 11-12), largo nuevo vie 11-13 19:00 (Uruguay o Panamá: encargar a `generar-guiones`), Shorts sáb 11-14 y dom 11-15.
+**Estado (2026-11-07 09:20): 9 de 13 ranuras PROGRAMADAS en Studio** (añadidos el 11-07: Short jue 11-12 `k8gTTX8R9Ao`, Short dom 11-15 `fHVOchMTSE0`; largos Chile-Corea, Argentina e Irlanda reemplazados por su v2 visual: `eTq0TBuEWIs`, `b1F1JlfZwIw`, `m_Lp1dgEsvA`). Faltan: Short mar 11-10 (IPC Chile, contingente), Short vie 11-13 (INDEC, contingente), largo vie 11-13 (Uruguay, en revisión), Short sáb 11-14. Estado anterior (Short sáb 11-07 `LLiqQewooNI`, Short dom 11-08 `9SmuQH7bghE`, largo dom 11-08 `eTq0TBuEWIs`, Short lun 11-09 `mx9le_OLFx8`, largo lun 11-09 `b1F1JlfZwIw`, Short mié 11-11 `yJV1sIgJJQ8`, largo mié 11-11 `m_Lp1dgEsvA`); los largos sin miniatura propia hasta la verificación por teléfono (docs/SANTIAGO.md f). Antes: 7 de 13 con guion (7 del backlog validados por el revisor numérico: 3 largos + 4 Shorts, en `contenido/backlog/`). Sin guion: IPC Chile mar 11-10 (se genera el vie 11-06 con el dato del INE), casa jue 11-12, INDEC vie 11-13 (esperar dato del 11-12), largo nuevo vie 11-13 19:00 (Uruguay o Panamá: encargar a `generar-guiones`), Shorts sáb 11-14 y dom 11-15.
 
 **Nota 2026-11-07 · los tres largos pasan a dirección visual v2** (fotos de Commons, mapas, iconos, ilustraciones y mascota; docs/GUION.md §7b): `contenido/backlog/tesis-chile-corea-v2.json`, `tesis-argentina-rica-v2.json` y `tesis-irlanda-pib-v2.json` (mismo texto y cifras verificadas; solo cambia lo visual). Se re-renderizan en ese orden (dom 11-08, lun 11-09, mié 11-11) para las **mismas ranuras** de la tabla (no se cambian ranuras ni ids en este plan; cómo se sustituye en Studio el video ya programado lo resuelve la sesión principal: YouTube no permite cambiar el archivo de un video subido).
 
@@ -30,11 +30,11 @@ Canal creado (id `UC8uOwislkGbnnfoqsJ_FgAw`, COPPA hecho). Los días anteriores 
 | mar 11-10 | 13:00 | `grafico` 9:16 | Lo que valían $1.000 chilenos en 2010 y lo que valen hoy | contingente · _Cuánto rinde tu sueldo_ | INE Chile publica el IPC de octubre de 2026 (08:00) ([2026-11-06](https://www.ine.gob.cl/docs/default-source/prensa-y-comunicacion/calendario/calendario-de-publicaciones.pdf)) | sin guion (idea) · ⚠ sin guion: se genera el vie 11-06 con el dato del INE (URL oficial); verificar la cifra el 2026-11-06 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 4 días (IPC); audiencia CL; abre la serie del sueldo |
 | mié 11-11 | 13:00 | `grafico` 9:16 | Irlanda produce el doble que Alemania. Gasta lo mismo | serie · _El indicador que nadie mira_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-grafico-irlanda-consumo.json` | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
 | mié 11-11 | 19:00 | **largo** 16:9 `tesis` | Irlanda creció un 25 % en un año. Su gente, un 2 % | evergreen · _El indicador que nadie mira_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-tesis-irlanda-pib.json` | Los Ecomonos (largo 9–12 min, una pregunta) | H2: primer tema global (contraste con LatAm); PIB vs INB en WDI; reemplaza al de Uruguay |
-| jue 11-12 | 13:00 | `grafico` 9:16 | El número que nadie mira: cuántos años de sueldo cuesta una casa | evergreen · _El indicador que nadie mira_ | — | sin guion (idea) · ⚠ sin guion: falta elegir dataset con licencia (no Numbeo; OCDE no verificada) | Data Is Beautiful narrado (un gráfico que sorprende) | abre la serie del indicador; variedad de tipo de gráfico (contador) |
+| jue 11-12 | 13:00 | `grafico` 9:16 | México gastaba el doble que Chile. En 2025, gasta menos | evergreen · _El indicador que nadie mira_ | — | **programado** (Studio) `k8gTTX8R9Ao` · `contenido/guiones/2026-11-07-grafico-mexico-gastaba-el-doble-que-chile.json` | Data Is Beautiful narrado (un gráfico que sorprende) | abre la serie del indicador (consumo de los hogares por persona, WDI); la idea de la casa pasa a la cola: no hay dataset con licencia |
 | vie 11-13 | 13:00 | `grafico` 9:16 | La inflación de octubre de Argentina en un gráfico de 30 años | contingente · _El país que fue rico_ | INDEC publica el IPC nacional de octubre de 2026 ([2026-11-12](https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf)) | sin guion (idea) · ⚠ sin guion: esperar el dato (INDEC 2026-11-12, 16:00 ART); render la madrugada del 13; si no está a las 06:00 entra el reemplazo 1 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 1 día; audiencia AR ya captada por el largo del lunes; enlaza a ese largo |
 | vie 11-13 | 19:00 | **largo** 16:9 `tesis` | ¿Por qué Uruguay es el país más caro de Sudamérica? | evergreen · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: encargar a generar-guiones (largo nuevo; Uruguay o Panamá) | Los Ecomonos (largo 9–12 min, una pregunta) | H2 LatAm; audiencia UY/AR que llega con Argentina; nivel de precios PPA (WDI); alternativa: Panamá |
 | sáb 11-14 | 13:00 | `grafico` 9:16 | Uruguay cobra más caro que cualquier vecino: el índice de precios en un gráfico | serie · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: depende del largo de Uruguay | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo del viernes (H5) |
-| dom 11-15 | 13:00 | `grafico` 9:16 | ¿Por qué Bolivia se quedó sin dólares? Las reservas en un gráfico | evergreen | — | sin guion (idea) · ⚠ sin guion: reservas del Banco Central de Bolivia con URL | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir; sale de la cola de reemplazos |
+| dom 11-15 | 13:00 | `grafico` 9:16 | Bolivia tenía 15.000 millones en reservas. En 2024, 2.000 | evergreen | — | **programado** (Studio) `fHVOchMTSE0` · `contenido/guiones/2026-11-07-grafico-bolivia-tenia-15-000-millones.json` (WDI FI.RES.TOTL.CD) | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir; sale de la cola de reemplazos |
 
 Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argentina, Irlanda, + 1 nuevo por generar); 4 Shorts derivados de su largo (H5: Chile-Corea, Argentina, Irlanda, Uruguay) + Panamá suelto. Una sola plantilla por formato: la variedad se mide por estructura argumental y tipo de gráfico.
 
@@ -52,7 +52,7 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
 | EE. UU.: IPC de octubre | 2026-11-10 | calendario económico (buscador) | **No entra**: no es LatAm; sin ángulo propio |
 
 ## Cola de reemplazos (si una ranura se cae)
-1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
+1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 0. `grafico` · Cuántos años de sueldo cuesta una casa (idea en espera: falta dataset con licencia; no Numbeo) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
 
 ## Plan (JSON)
 
@@ -202,7 +202,7 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "contingencia": null,
       "estado": "programado",
       "guion": "contenido/backlog/tesis-irlanda-pib.json",
-      "videoId": "2mGAJicF93o",
+      "videoId": "m_Lp1dgEsvA",
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
       "porQue": "H2: primer tema global (contraste con LatAm); PIB vs INB en WDI; reemplaza al de Uruguay",
       "bloqueo": null
@@ -212,16 +212,16 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "El número que nadie mira: cuántos años de sueldo cuesta una casa",
+      "tema": "México gastaba el doble que Chile. En 2025, gasta menos",
       "tipo": "evergreen",
       "serie": "El indicador que nadie mira",
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-07-grafico-mexico-gastaba-el-doble-que-chile.json",
+      "videoId": "k8gTTX8R9Ao",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
-      "porQue": "abre la serie del indicador; variedad de tipo de gráfico (contador)",
-      "bloqueo": "sin guion: falta elegir dataset con licencia (no Numbeo; OCDE no verificada)"
+      "porQue": "abre la serie del indicador (consumo de los hogares por persona, WDI); la idea de la casa queda en la cola sin dataset con licencia",
+      "bloqueo": null
     },
     {
       "fecha": "2026-11-13",
@@ -280,16 +280,16 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "¿Por qué Bolivia se quedó sin dólares? Las reservas en un gráfico",
+      "tema": "Bolivia tenía 15.000 millones en reservas. En 2024, 2.000",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-07-grafico-bolivia-tenia-15-000-millones.json",
+      "videoId": "fHVOchMTSE0",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "H2 LatAm; país sin cubrir; sale de la cola de reemplazos",
-      "bloqueo": "sin guion: reservas del Banco Central de Bolivia con URL"
+      "bloqueo": null
     }
   ]
 }

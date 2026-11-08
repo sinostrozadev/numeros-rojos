@@ -11,7 +11,7 @@
     "#datos"
   ],
   "duracionSeg": 585.6,
-  "estado": "subido",
+  "estado": "reemplazado",
   "tipo": "largo",
   "miniatura": "salida/bandeja/2026-11-06-tesis-irlanda-pib-mini.png",
   "publicarEn": "2026-11-11T19:00:00-03:00",
@@ -19,5 +19,7 @@
   "url": "https://www.youtube.com/watch?v=2mGAJicF93o",
   "programado": "2026-11-11 19:00",
   "subidoEn": "2026-11-06T12:04:50.693Z",
-  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio"
+  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio",
+  "reemplazadoPor": "2026-11-07-tesis-irlanda-pib-v2",
+  "nota": "v1 puesta en privado en Studio el 2026-11-07 (título con \"(versión anterior)\"); la v2 m_Lp1dgEsvA ocupa la ranura dom 11-08 19:00"
 }

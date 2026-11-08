@@ -15,7 +15,7 @@ import { Subtitulos } from '../comun/Subtitulos';
 import { Cabecera, RotuloCaja } from '../comun/Cabecera';
 import { Remate } from '../comun/Remate';
 import { BarraCapitulos, IndiceLista } from '../comun/Indice';
-import { estimarTiemposTesis, graficosTesis, planTesis, type BloqueTesis, type PlanTesis, type Vista } from './plan';
+import { estimarTiemposTesis, graficosTesis, planTesis, T_FUNDIDO_FINAL, type BloqueTesis, type PlanTesis, type Vista } from './plan';
 import { Cita } from '../comun/Cita';
 import { POSES_MASCOTA, type VisualesResueltos } from '../comun/visual';
 import type { VistaVisual } from './plan';
@@ -24,6 +24,8 @@ import { Ilustracion } from '../comun/visuales/Ilustracion';
 import { Mapa } from '../comun/visuales/Mapa';
 import { Iconos } from '../comun/visuales/Iconos';
 import { MASCOTA_ZONA, MascotaEnPantalla } from '../comun/visuales/Mascota';
+import { Versus } from '../comun/visuales/Versus';
+import { Sello } from '../comun/visuales/Sello';
 
 export { graficosTesis };
 
@@ -135,8 +137,10 @@ const VistaVisualEn: React.FC<{ vv: VistaVisual; frame: number; visuales?: Visua
   let cuerpo: React.ReactNode = null;
   if (v.tipo === 'foto') cuerpo = <Foto visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} encuadre={v.encuadre} variante={variante} />;
   else if (v.tipo === 'ilustracion') cuerpo = <Ilustracion visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} variante={variante} />;
-  else if (v.tipo === 'mapa') cuerpo = <Mapa v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} />;
+  else if (v.tipo === 'mapa') cuerpo = <Mapa v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} viajeEn={vv.viajeDesde !== undefined ? vv.viajeDesde - vv.desde : undefined} />;
   else if (v.tipo === 'iconos') cuerpo = <Iconos v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} itemsFrame={(vv.itemsFrame ?? []).map((x) => x - vv.desde)} />;
+  else if (v.tipo === 'versus') cuerpo = <Versus v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} itemsFrame={(vv.itemsFrame ?? []).map((x) => x - vv.desde)}
+    apuestaFrame={vv.apuestaFrame !== undefined ? vv.apuestaFrame - vv.desde : undefined} />;
   return (
     <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, opacity: atenuado, transform: deriva, transformOrigin: '50% 55%' }}>{cuerpo}</div>
   );
@@ -250,13 +254,15 @@ const CapituloFijo: React.FC<{ n: number; titulo: string; frame: number }> = ({ 
 const TarjetaTitulo: React.FC<{ g: GuionTesis; frame: number; frames: number }> = ({ g, frame, frames }) => {
   const s = spring({ frame, fps: FORMATO_LARGO.fps, config: { damping: 14, stiffness: 160 } });
   const salida = interpolate(frame, [frames - 6, frames], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  // El rótulo cabe en una línea (≈ 0,62 em por carácter en mayúsculas), entre 96 y 150 px.
+  const tamRotulo = Math.round(Math.max(96, Math.min(150, (W - 2 * S.lados - 120) / (0.62 * Math.max(1, g.gancho.rotulo.length)))));
   return (
     <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: salida }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 34, transform: `scale(${0.94 + 0.06 * s})` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontFamily: TIPO.texto, fontWeight: 700, fontSize: 30, letterSpacing: 5, color: PALETA.tintaSuave, textTransform: 'uppercase' }}>
           <Logo tamano={54} />{g.cabecera}
         </div>
-        <div style={{ background: PALETA.dorado, color: PALETA.fondo, borderRadius: 26, padding: '18px 54px 10px', fontFamily: TIPO.display, fontWeight: 800, fontSize: 150, lineHeight: 1, letterSpacing: -3, textTransform: 'uppercase', boxShadow: '0 24px 70px rgba(0,0,0,0.55)' }}>
+        <div style={{ background: PALETA.dorado, color: PALETA.fondo, borderRadius: 26, padding: '18px 54px 10px', fontFamily: TIPO.display, fontWeight: 800, fontSize: tamRotulo, maxWidth: W - 2 * S.lados, textAlign: 'center', lineHeight: 1, letterSpacing: -3, textTransform: 'uppercase', boxShadow: '0 24px 70px rgba(0,0,0,0.55)' }}>
           {g.gancho.rotulo}
         </div>
       </div>
@@ -264,7 +270,7 @@ const TarjetaTitulo: React.FC<{ g: GuionTesis; frame: number; frames: number }> 
   );
 };
 
-/** Tarjeta de capítulo (1 s): número enorme + título; un panel entra de izquierda y se va. */
+/** Tarjeta de capítulo (≥ 2,5 s, `tCapitulo`): número enorme + título; un panel entra de izquierda y se va. */
 const TarjetaCapitulo: React.FC<{ n: number; titulo: string; frame: number; frames: number }> = ({ n, titulo, frame, frames }) => {
   const fps = FORMATO_LARGO.fps;
   const e = spring({ frame, fps, config: { damping: 16, stiffness: 200 } });
@@ -282,16 +288,45 @@ const TarjetaCapitulo: React.FC<{ n: number; titulo: string; frame: number; fram
   );
 };
 
+/** Visibilidad 0–1 del rótulo del capítulo (entra en 0,25 s, sale en 0,6 s): la cabecera se apaga en la misma medida. */
+const visibleRotuloCapitulo = (r: BloqueTesis['rotuloCapitulo'], frame: number) => {
+  if (!r || frame < r.desde || frame >= r.hasta) return 0;
+  const fps = FORMATO_LARGO.fps;
+  const entra = interpolate(frame, [r.desde, r.desde + Math.round(0.25 * fps)], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const sale = interpolate(frame, [r.hasta - Math.round(0.6 * fps), r.hasta], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  return entra * (1 - sale);
+};
+
+/**
+ * Rótulo del capítulo (v3): tras la tarjeta, el título queda 3 s como caja pequeña en el lugar de la cabecera (arriba a
+ * la izquierda, sobre la barra de capítulos; la cabecera se apaga mientras tanto) con la voz ya hablando; se desvanece
+ * con suavidad. Ahí no choca con el título del gráfico ni con el rótulo de la escena (arriba a la derecha).
+ */
+const RotuloCapitulo: React.FC<{ texto: string; visible: number }> = ({ texto, visible }) => {
+  if (visible <= 0) return null;
+  const [num, ...resto] = texto.split(' · ');
+  return (
+    <div style={{ position: 'absolute', left: S.lados - 4, top: ZONA_TESIS.cabecera.y - 16, opacity: visible, transform: `translateY(${(1 - visible) * -8}px)`,
+      display: 'flex', alignItems: 'center', gap: 14, background: fondoAlfa(0.88), border: `2px solid ${PALETA.borde}`, borderLeft: `6px solid ${PALETA.dorado}`,
+      borderRadius: 10, padding: '6px 18px', fontFamily: TIPO.texto, fontWeight: 800, fontSize: 28, whiteSpace: 'nowrap', color: PALETA.tinta, boxShadow: '0 10px 30px rgba(0,0,0,0.45)' }}>
+      <span style={{ color: PALETA.dorado, fontVariantNumeric: 'tabular-nums' }}>{num}</span>
+      <span style={{ color: PALETA.tintaSuave }}>·</span>
+      <span>{resto.join(' · ')}</span>
+    </div>
+  );
+};
+
 /** Pantalla final (20 s): la próxima pregunta + suscripción a la izquierda, hueco del siguiente video a la derecha, aviso al pie. */
 const PantallaFinal: React.FC<{ g: GuionTesis; frame: number }> = ({ g, frame }) => {
   const e = spring({ frame, fps: FORMATO_LARGO.fps, config: { damping: 16, stiffness: 150 } });
   const latido = 1 + 0.02 * Math.sin(frame / 12);
   return (
     <AbsoluteFill style={{ opacity: Math.min(1, e * 1.4) }}>
-      <div style={{ position: 'absolute', left: S.lados, top: 210, width: 820, display: 'flex', flexDirection: 'column', gap: 26 }}>
-        <div style={{ fontFamily: TIPO.texto, fontWeight: 800, fontSize: 26, letterSpacing: 6, color: PALETA.rojo }}>LA PRÓXIMA PREGUNTA</div>
-        <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 58, lineHeight: 1.08, color: PALETA.tinta, letterSpacing: -1 }}>{g.siguiente}</div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 26, marginTop: 40, transform: `scale(${latido})`, transformOrigin: 'left center' }}>
+      {/* Columna izquierda: termina antes de y ≈ 760 para dejar la esquina inferior izquierda a la mascota que saluda. */}
+      <div style={{ position: 'absolute', left: S.lados, top: 150, width: 820, display: 'flex', flexDirection: 'column', gap: 22 }}>
+        <div style={{ alignSelf: 'flex-start', background: PALETA.rojo, color: PALETA.tinta, borderRadius: 10, padding: '8px 20px 6px', fontFamily: TIPO.texto, fontWeight: 800, fontSize: 28, letterSpacing: 6 }}>PRÓXIMO VIDEO</div>
+        <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 52, lineHeight: 1.08, color: PALETA.tinta, letterSpacing: -1 }}>{g.siguiente}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 26, marginTop: 24, transform: `scale(${latido})`, transformOrigin: 'left center' }}>
           <div style={{ width: 170, height: 170, borderRadius: '50%', border: `4px dashed ${PALETA.borde}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Logo tamano={110} />
           </div>
@@ -331,6 +366,20 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
   const reenganche = b.tipoEscena === 'reenganche';
   const fundido = reenganche ? interpolate(frame, [b.hasta - Math.round(0.7 * fps), b.hasta - 2], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
   const giroActivo = b.tipoEscena === 'giro' && b.enfasisDesde !== undefined && frame >= b.enfasisDesde;
+  // Cierre (v3): durante el número final y el remate la barra de capítulos queda completa; los últimos 0,7 s del remate
+  // funden a negro y la pantalla final entra desde negro en 0,4 s.
+  const barraFinal = b.tipo === 'numero' || b.tipo === 'remate';
+  const vRotuloCap = visibleRotuloCapitulo(b.rotuloCapitulo, frame);
+  const negro = b.tipo === 'remate'
+    ? interpolate(frame, [plan.remateFundidoDesde, b.hasta - 1], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })
+    : b.tipo === 'final' ? interpolate(frame, [b.desde, b.desde + Math.round(T_FUNDIDO_FINAL * fps)], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
+  // Sello vigente (uno a la vez): encima del gráfico si ya está en pantalla, si no encima del visual.
+  const sello = b.sellos?.find((x) => frame >= x.desde && frame < x.hasta);
+  const zonaSello = (() => {
+    const z = zonasDe(b);
+    const conGrafico = !!b.grafico && frame >= (b.graficoDesde ?? b.desde) && !(b.visual && b.disposicion === 'completo' && b.cambioAGrafico !== undefined && frame < b.cambioAGrafico);
+    return conGrafico ? z.grafico : b.visual ? z.visual : z.grafico;
+  })();
   return (
     <AbsoluteFill style={{ background: PALETA.fondo, overflow: 'hidden' }}>
       <FondoRejilla frame={frame} fps={fps} ancho={W} alto={H} />
@@ -363,13 +412,16 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
       {b.tipo === 'remate' && <Remate texto={props.remate} frame={local} segundaEn={plan.remateSegundaEn} ancho={W - S.lados * 2} izquierda={S.lados} centroY={H / 2} fsMax={112} />}
       {b.tipo === 'final' && <PantallaFinal g={props} frame={local} />}
 
-      {conCabecera && <Cabecera texto={props.cabecera} x={ZONA_TESIS.cabecera.x} y={ZONA_TESIS.cabecera.y} fontSize={24} maxAncho={1100} />}
+      {conCabecera && <Cabecera texto={props.cabecera} x={ZONA_TESIS.cabecera.x} y={ZONA_TESIS.cabecera.y} fontSize={24} maxAncho={1100} opacidad={1 - vRotuloCap} />}
       {conCabecera && <MarcaDeAgua top={46} right={S.lados} escala={0.85} />}
-      {enCapitulos && (
+      {(enCapitulos || barraFinal) && (
         <div style={{ position: 'absolute', left: S.lados, top: ZONA_TESIS.barra.y }}>
-          <BarraCapitulos items={props.indice} actual={capActual} avance={avanceCap} ancho={W - S.lados * 2} fontSize={19} opacidad={b.tipo === 'capitulo' ? 0.4 : 0.95} />
+          <BarraCapitulos items={props.indice} actual={enCapitulos ? capActual : props.indice.length - 1} avance={enCapitulos ? avanceCap : 1} ancho={W - S.lados * 2} fontSize={19}
+            opacidad={b.tipo === 'capitulo' ? 0.4 : 0.95} />
         </div>
       )}
+      {b.rotuloCapitulo && <RotuloCapitulo texto={b.rotuloCapitulo.texto} visible={vRotuloCap} />}
+      {sello && <Sello s={sello.s} frame={frame - sello.desde} fps={fps} zona={zonaSello} />}
       {b.rotulo && frame >= b.rotulo.desde && (
         <div style={{ position: 'absolute', right: S.lados, top: ZONA_TESIS.grafico.y + 6 }}>
           <RotuloCaja texto={b.rotulo.texto} visible={spring({ frame: frame - b.rotulo.desde, fps, config: { damping: 12, stiffness: 190 } })} fontSize={34} rojo={b.tipoEscena === 'giro'} />
@@ -380,7 +432,9 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
           acento={giroActivo ? PALETA.rojo : PALETA.dorado} />
       )}
       {b.mascota && <MascotaEnPantalla m={b.mascota.m} frame={frame} desde={b.mascota.desde} hasta={b.hasta} fps={fps} posesDisponibles={poses} />}
+      {b.tipo === 'final' && <MascotaEnPantalla m={{ pose: 'saluda' }} frame={frame} desde={b.desde + Math.round(0.6 * fps)} hasta={b.hasta} fps={fps} posesDisponibles={poses} />}
       {fundido > 0 && <AbsoluteFill style={{ background: `rgba(5,6,8,${fundido})` }} />}
+      {negro > 0 && <AbsoluteFill style={{ background: `rgba(0,0,0,${negro})` }} />}
 
       {tiempos.voz !== 'estimada' && tiempos.lineas.filter((l) => l.archivo).map((l) => (
         <Sequence key={l.indice} from={Math.round(l.inicio * fps)} durationInFrames={Math.ceil(l.duracionAudio * fps) + 2} layout="none">

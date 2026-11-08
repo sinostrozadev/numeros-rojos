@@ -5,6 +5,7 @@ import { Cierre } from './marca/Cierre';
 // Cada plantilla vive en src/plantillas/<nombre>/ y exporta `registrar()` con sus <Composition>.
 import { registrar as tesis } from './plantillas/tesis';
 import { registrar as grafico } from './plantillas/grafico';
+import { PruebaVisuales, type PropsPruebaVisuales } from './plantillas/comun/visuales/PruebaVisuales';
 
 export const Root: React.FC = () => (
   <>
@@ -13,6 +14,11 @@ export const Root: React.FC = () => (
     <Folder name="Marca">
       <Composition id="CierreLargo" component={Cierre} width={FORMATO_LARGO.ancho} height={FORMATO_LARGO.alto} fps={FORMATO_LARGO.fps} durationInFrames={36} />
       <Composition id="CierreShort" component={Cierre} width={FORMATO_SHORT.ancho} height={FORMATO_SHORT.alto} fps={FORMATO_SHORT.fps} durationInFrames={72} />
+    </Folder>
+    {/* Banco de prueba de los visuales v3 (versus, sello, iconos con marca, viaje en el mapa). No es un video. */}
+    <Folder name="Pruebas">
+      <Composition id="PruebaVisuales" component={PruebaVisuales} width={FORMATO_LARGO.ancho} height={FORMATO_LARGO.alto} fps={FORMATO_LARGO.fps} durationInFrames={240}
+        defaultProps={{ cual: 'versus' } as PropsPruebaVisuales} />
     </Folder>
   </>
 );

@@ -76,7 +76,12 @@ problema: la fábrica hay que pagarla antes de vender el primero." No: "Quédate
 **Giro**: el dato que cambia la lectura del capítulo, con su cifra. Puede abrir con "Pero mira…", "Y aquí, un matiz:",
 "Ahora, el dato que complica…", **variando** la entrada: dos giros seguidos no empiezan igual, y no más de un "nadie" por video.
 
-## 4. La fórmula del SHORT (`grafico`, 35–50 s, 85–150 palabras)
+## 4. La fórmula del SHORT (`grafico`, 35–50 s, 85–120 palabras HABLADAS en total)
+
+> Tope medido (2026-11-07): la voz hace ≈ 0,40 s por palabra hablada, y **lee los números expandidos**: "1990" son tres palabras,
+> "5.200" tres, "%" dos. Cuenta así gancho + escenas + remate (el validador usa `contarPalabrasHabladas`). 113 palabras crudas con
+> muchas cifras fueron 147 habladas = 59,5 s y `preparar-grafico` las rechazó (máximo 55 s). Apunta a 100–115 habladas: pocas cifras
+> por escena (2–3), años solo cuando cambian el sentido, nada de listas de países con número.
 
 UN gráfico (`grafico`) que se construye con la voz desde el frame 0 y UN giro.
 1. **Gancho** (`gancho`, 12–25 palabras): la cifra que sorprende, con el gráfico ya visible ("Esta línea dorada es Chile. En 1960
@@ -167,7 +172,8 @@ Cuidado: sin una serie de salarios con licencia, **no se afirma "tu sueldo perdi
   `DatoRef` puede repetirse: se descarga una vez.
 - **`rotulo`** (1–4 palabras, ≤ 28): la idea de la escena en la caja de acento ("EL EXPORTADOR ERA CHILE", "1/3 CONTRA 1/5").
   Uno cada 2–3 escenas, no en todas. **`respiro`**: 3–4 s con el gráfico solo, 1 por capítulo, después de un dato fuerte.
-- **Nada estático > 8 s**: si una escena dura más de 25 s sin gráfico nuevo, ponle `rotulo` o divídela.
+- **Nada estático > 8 s**: si una escena dura más de 25 s sin gráfico nuevo, ponle `rotulo` o divídela. Las reglas medibles de
+  ritmo (espera ≤ 3 s antes de un gráfico, nada fijo > 12 s) están en §7c y las aplica el validador.
 - `miniatura.texto`: 3–5 palabras grandes **distintas del título** ("3 VECES MÁS RICO", "DE 4.ª A 8.ª"), con el gráfico que la ilustra.
 
 ## 7b. Dirección visual v2: fotos, mapas, iconos, ilustraciones y la mascota (desde 2026-11-07)
@@ -219,8 +225,9 @@ lugar u objeto). `completo` = uno solo a pantalla completa (planteamiento, giro 
   montana carretera bandera`; si dudas, emoji). `texto` ≤ 28, `titulo` ≤ 40. Un `valor` solo si la cifra está declarada en `cifras[]`.
 
 **Ritmo en un largo de 9–12 min:**
-- **6–9 escenas con visual** (el schema exige ≥ 5 y ≥ 2 tipos; apunta a 3–4 tipos), **3–5 fotos**, 1–3 mapas, 1–3 iconos,
-  0–2 ilustraciones; **2–4 mascotas** en el video.
+- **8–24 escenas con visual** (el schema exige ≥ 5 y ≥ 2 tipos; apunta a 4–5 tipos): lo normal es que casi toda escena con voz
+  tenga algo propio. **2–5 fotos**, 1–3 mapas (de ellos ≤ 2 con `viaje`), los `iconos`/`versus` que pidan las enumeraciones,
+  0–2 ilustraciones; **2–4 mascotas** y **2–4 sellos** en el video.
 - Cada capítulo tiene al menos un visual; el `planteamiento` sin gráfico casi siempre lleva uno (foto de época o mapa).
 - **Nunca dos fotos seguidas sin gráfico en medio**: dentro de un `dato` la foto va `dividido` con su gráfico; entre dos escenas
   con foto `completo` tiene que haber una escena con gráfico.
@@ -283,6 +290,58 @@ iconos en el planteamiento, ilustración en la analogía, mascota en el giro, gr
  ]
 }
 ```
+
+## 7c. Dirección visual v3: versus, sellos, marcas, viajes y ritmo medido (desde 2026-11-07)
+
+Santiago vio el largo Chile–Corea v2 y marcó cuatro fallas: una foto de Seúl fija 26 s mientras la voz enumeraba lo que Corea
+no tenía y lo que Chile sí; 9 s de tarjeta de espera antes de un gráfico; 17 s de tarjeta mientras la voz contaba el ejemplo de
+dos familias; y cifras fuertes ("cuatro veces") que pasaban sin nada en pantalla. La v3 las arregla con cuatro recursos y un
+validador de ritmo. **El guion de referencia es `contenido/guiones/2026-11-07-tesis-chile-corea-v3.json`.**
+
+**Los recursos nuevos:**
+| Recurso | Cuándo | Nunca |
+|---|---|---|
+| **`versus`** (visual: dos columnas con bandera) | La voz pone frente a frente lo que tiene y no tiene cada país ("Corea no tiene petróleo, ni cobre… Chile tiene minas, puertos…"). Cada ítem con `marca` (`no` = cruz roja, `si` = check verde) y su `dice`. `apuesta` cuando la voz dice quién era el favorito | Para un solo país; para cifras de una serie (eso es gráfico); más de 5 ítems por lado |
+| **`marca`** en `iconos` | El texto dice que algo **falta o sobra** (`no`: "no lo llenaron fábricas", "deuda alta") o que **está** (`si`: "fruta, salmón, vino") | En listas neutras ("astillero, acería, chips"): ahí sin marca |
+| **`sellos`** (en la escena, sobre gráfico o visual) | La cifra fuerte que la voz **acaba de decir**: "Tres a uno" → `3 A 1`, "unas cuatro veces" → `4×`, "casi nueve de cada diez" → `9 DE 10`. Con `pais` (bandera del dueño del dato) y `animo` (`feliz` dorado ↑, `triste` rojo ↓). **2–4 por video, ≤ 3 por escena** | En cifras de relleno; una cifra que no se dijo; el `numeroQueNadieMira` (no admite sellos) |
+| **`viaje`** (en `mapa`: `desde` → `hasta`) | **Solo en los cambios grandes de protagonista**: de la crisis chilena de 1982 a Corea en la crisis asiática; de las patentes coreanas a "alguien que vive en Santiago, Lima o Bogotá". **1–2 por video.** Puede ir `dividido` con el gráfico | Escena a escena; para volver al mismo país de la escena anterior; como adorno |
+
+```json
+{"tipo":"versus","titulo":"1960: ¿a quién le apostabas?","lados":[
+ {"pais":"KOR","items":[{"icono":"🛢️","texto":"Petróleo","marca":"no","dice":"petróleo,"},{"icono":"⛏️","texto":"Cobre","marca":"no","dice":"cobre,"}]},
+ {"pais":"CHL","items":[{"icono":"⛏️","texto":"Minas","marca":"si","dice":"minas,"},{"icono":"⚓","texto":"Puertos","marca":"si","dice":"puertos,"}]}],
+ "apuesta":{"pais":"CHL","dice":"apuesta","texto":"LA APUESTA OBVIA"}}
+```
+```json
+"sellos": [{"texto":"4×","pais":"CHL","animo":"feliz","dice":"cuatro"}]
+```
+```json
+"visual": {"tipo":"mapa","destacar":["KOR","CHL"],"viaje":{"desde":"CHL","hasta":"KOR","dice":"Corea"}}, "disposicion": "dividido"
+```
+
+**Reglas de ritmo (las mide `problemasDeRitmo` de `src/plantillas/tesis/plan.ts`; el generador las corre con la voz estimada y
+`preparar-tesis` con la real; un error descarta el guion):**
+1. **La espera antes de un gráfico es ≤ 3 s.** Mientras la voz no dice el `dice` del gráfico, en pantalla hay una tarjeta de espera
+   con el gráfico anterior apagado. Pon el `dice` en las **primeras ~8 palabras** de la escena (`"Maddison,"` y no `"1913,"`, que
+   llegaba a los 9 s), o cubre ese tramo con un visual `completo` que la voz esté mirando.
+2. **Nada fijo > 12 s.** Una foto sola, una frase grande sin visual (un `reenganche` de 12 s también) o una lista ya completa no
+   pueden quedarse más de 12 s sin que entre algo: un ítem, un sello, un rótulo, la mascota o el gráfico. Una foto a pantalla
+   completa en una escena de 25 s no sirve: esa escena pide `versus`/`iconos` o `dividido`.
+3. **Enumeración ⇒ `iconos` o `versus`.** Toda oración que nombra ≥ 3 cosas en fila ("pescado, minerales, seda cruda";
+   "máquinas, edificios, caminos, puertos"; "una guerra, ayuda extranjera y gobiernos militares"; "Samsung, Hyundai o LG") lleva
+   `iconos` (un ítem por cosa, con su `dice`) o `versus` si son dos países. Si la escena además tiene gráfico, `dividido`.
+4. **Cifra fuerte ⇒ sello** (2–4 por video), en la palabra exacta.
+5. **Cambio grande de país ⇒ `viaje`** (1–2 por video, nunca escena a escena).
+6. **Ejemplo hablado (familias, personas, un taller) ⇒ `iconos` propios**: un ítem por paso del ejemplo ("gasta casi todo",
+   "aparta un tercio", "al principio vive peor" con `marca: "no"`, "después, distancia enorme" con `marca: "si"`) y el gráfico entra
+   en su `dice` ("líneas"), en `completo`. Nunca la tarjeta de espera del gráfico mientras la voz cuenta el ejemplo, y nunca una
+   `ilustracion` como único recurso (si no llega, la escena queda vacía).
+7. **Mascota: 2–4 en el video**, solo con las poses que existen (`saluda`, `senala`, `piensa`, `sorpresa`, `tapa-ojos`, `celebra`).
+8. **`dividido` con generosidad**: foto, mapa o iconos a la izquierda y el gráfico a la derecha es lo que mejor funcionó.
+9. **Si hace falta, se parte una escena** en dos del mismo tipo permitido (p. ej. `significado` → mapa + iconos), máximo 2 veces por
+   video y respetando 3–8 escenas por capítulo. El texto de la voz no se toca.
+
+Para revisar un guion ya escrito con los mismos chequeos del generador: `npx tsx scripts/generar-guiones.mts --revisar <guion.json>`.
 
 ## 8. Cómo declarar `cifras[]` (lo que el revisor numérico recalcula)
 
@@ -365,9 +424,13 @@ infantil de UNICEF, gasto militar del SIPRI. Un slug de OWID es CC BY solo si el
 - [ ] Remate simétrico sin pedir nada; `siguiente` con gancho; título ≤ 60 sin prohibidas y no repetido.
 - [ ] Descripción: pregunta + líneas propias + fuentes + "Voz sintetizada" + "No es asesoría financiera".
 - [ ] Shorts derivados: `enlaceLargo` + texto 100 % nuevo. Rotación: la estructura no supera el 40 % del backlog.
-- [ ] Visuales v2 (§7b): 6–9 escenas con visual de ≥ 3 tipos, 2–4 mascotas (≤ 1 de cada 3 escenas, nunca explicando), ≤ 2
+- [ ] Visuales v2 (§7b): 8–24 escenas con visual de ≥ 3 tipos, 2–5 fotos, 2–4 mascotas (≤ 1 de cada 3 escenas, nunca explicando), ≤ 2
       ilustraciones, fotos con `busqueda` en inglés + 2 `alternativas` + `pie` con lugar y año, `dice` literal, ninguna foto
       que parezca dato, ningún par de fotos seguidas sin gráfico en medio.
+- [ ] Visuales v3 (§7c): cada enumeración de ≥ 3 cosas con `iconos` o `versus` (`marca` donde algo falta o sobra); 2–4 `sellos`
+      (≤ 3 por escena) en las cifras fuertes; ≤ 2 mapas con `viaje`, solo en los cambios grandes de país; ejemplos hablados con
+      `iconos` propios; `dice` literal en sellos, ítems de versus, `apuesta` y `viaje`.
+- [ ] Ritmo (§7c, `problemasDeRitmo`): espera antes de cada gráfico ≤ 3 s; nada fijo > 12 s; `--revisar` sin errores.
 - [ ] Revisor independiente (`guiones-de-video` §6) con todos los cortes (Verdad = 5) y promedio ≥ 4,3.
 
 ## 12. Ejemplos completos (son el molde; NO copiar sus temas, títulos ni frases)

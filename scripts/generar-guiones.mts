@@ -15,13 +15,21 @@
  * Cada guion queda en contenido/backlog/<plantilla>-<slug>.json con id `pendiente-<plantilla>-<slug>`.
  *
  * v2 (2026-11-07): el contrato incluye src/plantillas/comun/visual.ts (foto/mapa/iconos/ilustración + mascota) y el system
- * prompt trae GUION.md §7b. Además de zod, los chequeos propios exigen el ritmo visual del largo (6–9 visuales, 2–4 mascotas,
- * ≤ 2 ilustraciones, 2 alternativas por foto, `dice` literal, nada de fotos seguidas sin gráfico) y cada `busqueda` de foto se
+ * prompt trae GUION.md §7b. Además de zod, los chequeos propios exigen el ritmo visual del largo (2–4 mascotas,
+ * ≤ 2 ilustraciones, 2 alternativas por foto, `dice` literal, nada de fotos seguidas sin gráfico; topes v3: 8–24 visuales, 2–5
+ * fotos) y cada `busqueda` de foto se
  * prueba contra la API de Wikimedia Commons (con las mismas reglas de licencia que scripts/lib/imagenes.mts).
+ * v3 (2026-11-07, pedido de Santiago al ver Chile-Corea v2): `versus`, `sellos`, `marca` en iconos y `viaje` en mapa
+ * (GUION.md §7c). Los chequeos exigen `dice` literal en todo eso, ≤ 2 viajes, 2–4 sellos (≤ 3 por escena), iconos o
+ * versus en cada enumeración de ≥ 3 cosas (heurística `enumeraciones`), y el validador de ritmo de la plantilla
+ * (`problemasDeRitmo` de tesis/plan.ts con tiempos ESTIMADOS: espera antes de un gráfico ≤ 3 s, nada fijo > 12 s…).
+ * Errores de ritmo = guion descartado (reintento contándoselo a Claude); avisos = ⚠ en consola.
  * Modelo por defecto: opus (con el de la sesión no cabía en el tiempo; lección de Línea Punteada). Un guion tesis ≈ 5–12 min.
  *
  *   --derivar-de <id>      saca Shorts (`grafico`) de un largo existente: mismos hechos y datasets, texto 100 % nuevo,
  *                          `enlaceLargo` = <id>. Implica --plantilla grafico; --n por defecto 2.
+ *   --revisar <guion.json> corre sobre un guion ya escrito los mismos chequeos (zod + propios + ritmo estimado), sin llamar a
+ *                          Claude ni a Commons; sale con código 1 si hay errores.
  *   --actualizar-ejemplos  reescribe el bloque de ejemplos de docs/GUION.md §12 con los guiones indicados del backlog
  *                          (por defecto tesis-chile-corea,grafico-irlanda-consumo).
  */
@@ -30,8 +38,11 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import type { z } from 'zod';
 import {
-  ESTRUCTURAS, EnvoltorioGrafico, EnvoltorioTesis, PLANTILLAS_CANAL, type PlantillaCanal,
+  ESTRUCTURAS, EnvoltorioGrafico, EnvoltorioTesis, PLANTILLAS_CANAL, VOZ_POR_DEFECTO, type GuionTesis, type PlantillaCanal,
 } from '../src/plantillas/comun/guion';
+import { estimarTiempos } from '../src/plantillas/comun/plan';
+import { claveDeVisual, type VisualesResueltos } from '../src/plantillas/comun/visual';
+import { lineasTesis, planTesis, problemasDeRitmo } from '../src/plantillas/tesis/plan';
 import { clasificarLicencia } from './lib/imagenes.mjs';
 import { DIR_BACKLOG, DIR_GUIONES, RAIZ, asegurarDirectorios, correr, escribirJson, leerBandeja, slugificar } from './lib/operacion.mjs';
 
@@ -47,6 +58,7 @@ const { values: opc, positionals } = parseArgs({
     'dry-run': { type: 'boolean', default: false },
     'mostrar-prompt': { type: 'boolean', default: false },
     'actualizar-ejemplos': { type: 'boolean', default: false },
+    revisar: { type: 'string' },
   },
   allowPositionals: true,
 });
@@ -129,11 +141,23 @@ const REGLAS = `REGLAS DURAS (si no se cumplen, el guion se descarta):
   número con los datos reales (variacion en %, ver GUION.md §8). No inventes valores: si no sabes el dato exacto de un año, no lo
   afirmes con número. El revisor numérico recalcula todo contra la API con tolerancia 5 %.
 - "dice" y "rotulo.dice": palabra literal del texto de esa escena. Un gráfico = un indicador. Toda escena "dato" lleva grafico.
-- LARGO: dirección visual v2 de GUION.md §7b: 6–9 escenas con "visual" de ≥ 3 tipos (foto, mapa, iconos, ilustracion), 3–5 fotos,
-  ≤ 2 ilustraciones, 2–4 escenas con "mascota" (≤ 1 de cada 3 por capítulo, nunca en significado). Cada foto: "busqueda" en inglés
-  concreta (nombre propio + lugar/año, 2–5 palabras, como el título de un archivo de Commons), 2 "alternativas", "pie" con lugar y año.
-  "dice" del visual, de cada ítem de iconos y de la mascota = palabra literal del texto de esa escena. Nunca dos escenas seguidas con
-  foto sin gráfico. "dividido" solo si la escena tiene visual Y grafico.
+- LARGO: dirección visual de GUION.md §7b y §7c: 8–24 escenas con "visual" de ≥ 3 tipos (foto, mapa, iconos, ilustracion, versus), 2–5
+  fotos, ≤ 2 ilustraciones, 2–4 escenas con "mascota" (≤ 1 de cada 3 por capítulo, nunca en significado). Cada foto: "busqueda" en
+  inglés concreta (nombre propio + lugar/año, 2–5 palabras, como el título de un archivo de Commons), 2 "alternativas", "pie" con
+  lugar y año. Nunca dos escenas seguidas con foto sin gráfico. "dividido" solo si la escena tiene visual Y grafico; úsalo con
+  generosidad (foto/mapa/iconos a la izquierda, gráfico a la derecha).
+- "dice" literal (palabra del texto de ESA escena, con su puntuación) en: gráfico, rótulo, visual, cada ítem de iconos y de versus,
+  apuesta, viaje, cada sello y mascota.
+- RITMO (lo mide problemasDeRitmo con la voz estimada): la espera antes de que entre un gráfico ≤ 3 s (su "dice" en las primeras
+  ~8 palabras de la escena, o un visual que cubra ese tramo); nada fijo > 12 s (foto sola, frase grande sin visual, iconos ya
+  completos); un ejemplo hablado ("piensa en dos familias") lleva iconos propios, no la tarjeta de espera del gráfico.
+- ENUMERACIONES: toda oración que nombra ≥ 3 cosas en fila ("no tiene petróleo, ni cobre…", "máquinas, edificios, caminos,
+  puertos") lleva "iconos" (con "marca": "no" en lo que falta o sobra, "si" en lo que hay) o "versus" (dos países: lo que tiene
+  y no tiene cada uno, + "apuesta" si la voz dice quién era el favorito).
+- SELLOS: 2–4 en el video (≤ 3 por escena), solo en la cifra fuerte que la voz acaba de decir ("Tres a uno" → "3 A 1"; "unas
+  cuatro veces" → "4×"), con la bandera del país del dato.
+- VIAJE (mapa con "viaje": desde → hasta): 1–2 por video, SOLO cuando el protagonista cambia de país de forma grande (de Chile a
+  Corea, de Corea a "alguien que vive en Lima"); nunca escena a escena. Puede ir "dividido" con el gráfico.
 - Título ≤ ${MAX_TITULO} caracteres, sin palabras prohibidas, sin "Los 10…", no repetido ni parafraseado de la lista de usados.
 - Sin consejo financiero, sin catastrofismo, sin opinión política, sin "experto", sin la lista negra de GUION.md §6.
 - No incluyas campos que calcula el pipeline (datos resueltos, tiempos, duraciones).`;
@@ -216,6 +240,51 @@ const chequeosPropios = (g: Crudo): string[] => {
   return mal.slice(0, 10);
 };
 
+const palabrasDe = (t: string) => t.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
+/** Un tramo que empieza con preposición ("en 1962", "según el Banco Mundial", "durante veinte años") o trae cifras es contexto, no ítem. */
+const NO_ITEM = /^(?:en|de|del|entre|seg[uú]n|durante|para|por|con|desde|hasta|sobre|hacia|que|como)\b|\d/i;
+
+/** Muletillas con "y"/"o"/coma que no son listas. */
+const MODISMOS = /\b(?:tarde o temprano|m[aá]s o menos|sobre todo|uno a uno|en cambio|por ejemplo|poco a poco|año tras año)\b/gi;
+
+/**
+ * ¿La oración enumera ≥ 3 cosas? Tramos separados por comas, ":", ";", " ni ", " y ", " o ". Un tramo es ÍTEM si tiene ≤ 4
+ * palabras (el primero de la racha ≤ 6: trae la cabeza "Corea también tuvo una guerra") y no es contexto (empieza con preposición o
+ * trae cifras). Cuenta una racha de ≥ 3 ítems seguidos si además: tiene ≥ 4 ítems, o un " y "/" o "/" ni " dentro, o todos sus ítems
+ * menos el primero son de ≤ 2 palabras ("pescado, minerales, seda cruda"). Así "Pero la línea, mirada de lejos, sube." no cuenta.
+ */
+const enumera = (oracion: string) => {
+  const partes = oracion.replace(MODISMOS, 'MODISMO').split(/(\s*[,:;]\s*|\s+(?:ni|y|o)\s+)/i);
+  let items: number[] = [];
+  let conjuncion = false;
+  const cierra = () => {
+    const ok = items.length >= 3 && (items.length >= 4 || conjuncion || items.slice(1).every((n) => n <= 2));
+    items = []; conjuncion = false;
+    return ok;
+  };
+  for (let k = 0; k < partes.length; k += 2) {
+    const t = partes[k].replace(/^[¿¡"«]+|[.?!…"»]+$/g, '').trim();
+    const sep = (partes[k - 1] ?? '').trim().toLowerCase();
+    const n = palabrasDe(t);
+    const esItem = !!t && !NO_ITEM.test(t) && !/MODISMO/.test(t) && (n <= 4 || (items.length === 0 && n <= 6));
+    // "…, un Estado que funciona y universidades con más de un siglo de historia": la conjunción cierra la lista aunque el
+    // último ítem sea largo.
+    if (!esItem) { if (/^(?:y|o|ni)$/.test(sep)) conjuncion = true; if (cierra()) return true; continue; }
+    if (items.length && /^(?:y|o|ni)$/.test(sep)) conjuncion = true;
+    items.push(n);
+  }
+  return cierra();
+};
+
+/**
+ * Oraciones del texto que enumeran ≥ 3 cosas (heurística, GUION.md §7c): ≥ 3 tramos cortos SEGUIDOS (≤ 4 palabras; el primero ≤ 6)
+ * que no son contexto (preposición o cifra). Caza "Chile tiene minas, puertos, un Estado que funciona y…", "pescado, minerales,
+ * seda cruda", "máquinas, edificios, caminos, puertos", "una guerra, ayuda extranjera y gobiernos militares"; deja pasar
+ * "Corea, en cambio, vivía de…", "Entre 1981 y 1983, …" y "Según el Banco Mundial, en el año 2000…".
+ */
+export const enumeraciones = (texto: string): string[] =>
+  texto.split(/(?<=[.?!…])\s+/).filter(enumera);
+
 /** Ritmo visual del largo (GUION.md §7b): lo que zod no mide. */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const chequeosVisuales = (escenas: any[]): string[] => {
@@ -224,24 +293,51 @@ const chequeosVisuales = (escenas: any[]): string[] => {
   const tipos = new Set(con.map((e) => e.visual.tipo));
   const n = (t: string) => con.filter((e) => e.visual.tipo === t).length;
   const mascotas = escenas.filter((e) => e.mascota).length;
-  if (con.length < 6 || con.length > 9) mal.push(`${con.length} escenas con visual; el largo lleva 6–9 (§7b)`);
-  if (tipos.size < 3) mal.push(`visuales de solo ${tipos.size} tipo(s); mezcla ≥ 3 de foto/mapa/iconos/ilustracion`);
-  if (n('foto') < 3 || n('foto') > 5) mal.push(`${n('foto')} fotos; van 3–5`);
+  const viajes = con.filter((e) => e.visual.tipo === 'mapa' && e.visual.viaje).length;
+  const sellos = escenas.reduce((s, e) => s + (e.sellos?.length ?? 0), 0);
+  if (con.length < 8 || con.length > 24) mal.push(`${con.length} escenas con visual; el largo lleva 8–24 (§7b)`);
+  if (tipos.size < 3) mal.push(`visuales de solo ${tipos.size} tipo(s); mezcla ≥ 3 de foto/mapa/iconos/ilustracion/versus`);
+  if (n('foto') < 2 || n('foto') > 5) mal.push(`${n('foto')} fotos; van 2–5`);
   if (n('ilustracion') > 2) mal.push(`${n('ilustracion')} ilustraciones; máximo 2`);
   if (mascotas < 2 || mascotas > 4) mal.push(`${mascotas} mascotas; van 2–4`);
+  if (viajes > 2) mal.push(`${viajes} mapas con viaje; máximo 2 (solo en los cambios grandes de país)`);
+  if (sellos < 2 || sellos > 4) mal.push(`${sellos} sellos; van 2–4 en el video, en las cifras fuertes`);
   escenas.forEach((e, i) => {
-    const t = e.texto ?? '';
-    const dices = [e.visual?.dice, e.mascota?.dice, ...(e.visual?.items ?? []).map((it: { dice?: string }) => it.dice)].filter(Boolean);
+    const t: string = e.texto ?? '';
+    const v = e.visual ?? {};
+    const dices: string[] = [
+      v.dice, v.apuesta?.dice, v.viaje?.dice, e.mascota?.dice,
+      ...(v.items ?? []).map((it: { dice?: string }) => it.dice),
+      ...(v.lados ?? []).flatMap((l: { items?: Array<{ dice?: string }> }) => (l.items ?? []).map((it) => it.dice)),
+      ...(e.sellos ?? []).map((s: { dice?: string }) => s.dice),
+    ].filter(Boolean);
     for (const d of dices) if (!t.includes(d)) mal.push(`dice visual "${d}" no está literal en "${t.slice(0, 50)}…"`);
+    if ((e.sellos?.length ?? 0) > 3) mal.push(`escena "${t.slice(0, 40)}…": ${e.sellos.length} sellos; máximo 3 por escena`);
     if (e.mascota && e.tipo === 'significado') mal.push('la mascota no va en significado');
-    if (e.visual?.tipo === 'foto') {
-      if ((e.visual.alternativas ?? []).length < 2) mal.push(`foto "${e.visual.busqueda}" sin 2 alternativas`);
-      if (!e.visual.pie) mal.push(`foto "${e.visual.busqueda}" sin pie (lugar y año)`);
+    const enums = enumeraciones(t);
+    if (enums.length && !['iconos', 'versus'].includes(v.tipo)) mal.push(`enumeración sin iconos ni versus: "${enums[0].slice(0, 70)}"`);
+    if (v.tipo === 'foto') {
+      if ((v.alternativas ?? []).length < 2) mal.push(`foto "${v.busqueda}" sin 2 alternativas`);
+      if (!v.pie) mal.push(`foto "${v.busqueda}" sin pie (lugar y año)`);
       const previa = escenas[i - 1];
-      if (i > 0 && previa?.visual?.tipo === 'foto' && !e.grafico && !previa.grafico) mal.push(`dos fotos seguidas sin gráfico en medio ("${previa.visual.busqueda}", "${e.visual.busqueda}")`);
+      if (i > 0 && previa?.visual?.tipo === 'foto' && !e.grafico && !previa.grafico) mal.push(`dos fotos seguidas sin gráfico en medio ("${previa.visual.busqueda}", "${v.busqueda}")`);
     }
   });
   return mal;
+};
+
+/**
+ * Validador de ritmo de la plantilla (tesis/plan.ts) con tiempos ESTIMADOS de la voz. Las fotos cuentan como resueltas (ya se
+ * comprobó que Commons las tiene); las ilustraciones no (pueden no llegar: el ritmo tiene que aguantar sin ellas).
+ */
+const ritmoTesis = (g: GuionTesis): { errores: string[]; avisos: string[] } => {
+  const visuales: VisualesResueltos = {};
+  g.capitulos.forEach((c, ci) => c.escenas.forEach((e, k) => {
+    if (e.visual?.tipo === 'foto') visuales[claveDeVisual(ci, k)] = { foto: { archivo: 'estimado.jpg', ancho: 1600, alto: 900, titulo: e.visual.busqueda, autor: '-', licencia: 'CC0', pagina: 'https://commons.wikimedia.org/' } };
+  }));
+  const conVisuales = { ...g, visuales };
+  const plan = planTesis(conVisuales, estimarTiempos(g.id, VOZ_POR_DEFECTO, lineasTesis(g)));
+  return problemasDeRitmo(plan, conVisuales as GuionTesis);
 };
 
 // ---------------------------------------------------------------- fotos: ¿Commons tiene algo con licencia?
@@ -314,6 +410,21 @@ const actualizarEjemplos = (nombres: string[]) => {
 // ---------------------------------------------------------------- main
 const main = async () => {
   asegurarDirectorios();
+  if (opc.revisar) {
+    const g = JSON.parse(fs.readFileSync(path.resolve(opc.revisar), 'utf8')) as Crudo;
+    const Env = g.plantilla === 'grafico' ? EnvoltorioGrafico : EnvoltorioTesis;
+    const parseado = Env.safeParse(g);
+    const mal = [...problemasZod(parseado), ...chequeosPropios(g)];
+    if (g.plantilla === 'tesis' && parseado.success) {
+      const ritmo = ritmoTesis((parseado.data as { props: GuionTesis }).props);
+      for (const a of ritmo.avisos) console.warn(`⚠ ritmo: ${a}`);
+      mal.push(...ritmo.errores.map((e) => `ritmo: ${e}`));
+    }
+    for (const m of mal) console.error(`✗ ${m}`);
+    console.log(mal.length ? `${mal.length} problema(s) en ${g.id}` : `✓ ${g.id}: sin problemas`);
+    if (mal.length) process.exitCode = 1;
+    return;
+  }
   if (opc['actualizar-ejemplos']) return actualizarEjemplos((positionals[0] ?? 'tesis-chile-corea-v2,grafico-irlanda-consumo').split(','));
 
   const derivar = opc['derivar-de'];
@@ -383,7 +494,17 @@ const main = async () => {
       g.props = { ...(g.props ?? {}), id: g.id };
       if (derivar) g.props.enlaceLargo = derivar;
 
-      const mal = [...problemasZod(Envoltorio.safeParse(g)), ...chequeosPropios(g)];
+      const parseado = Envoltorio.safeParse(g);
+      const mal = [...problemasZod(parseado), ...chequeosPropios(g)];
+      if (!mal.length && plantilla === 'tesis' && parseado.success) {
+        try {
+          const ritmo = ritmoTesis((parseado.data as { props: GuionTesis }).props);
+          for (const a of ritmo.avisos) console.warn(`  ⚠ "${g.titulo}" ritmo: ${a}`);
+          mal.push(...ritmo.errores.map((e) => `ritmo: ${e}`));
+        } catch (e) {
+          console.error(`  ⚠ no pude medir el ritmo (${(e as Error).message}); lo mide preparar-tesis`);
+        }
+      }
       if (!mal.length && plantilla === 'tesis') mal.push(...await verificarFotos(g));
       if (mal.length) { rechazos.push(`"${g.titulo}": ${mal.join('; ')}`); console.error(`  ✗ "${g.titulo}": ${mal.join('; ')}`); continue; }
 

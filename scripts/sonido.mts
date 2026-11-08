@@ -128,9 +128,14 @@ const sfx = (duracion: number, eventos: Evento[], semilla: number) => {
         whoosh(pista, e.t, 0.95, 0.45, s);
         break;
       case 'cierre':
+        // Fuerza < 0,8 (fundido a negro tras el remate, v3): una sola nota grave y suave, sin la firma.
+        if (e.fuerza < 0.8) {
+          nota(pista, { inicio: e.t + 0.05, hz: midiAHz(62), duracion: 0.1, volumen: 0.3 * e.fuerza, timbre: 'seno', ataque: 0.01, caida: 0.3, sostenido: 0.3, liberacion: 1.4 });
+          break;
+        }
         // Dos notas limpias (quinta) que suben: firma del canal.
-        nota(pista, { inicio: e.t + 0.05, hz: midiAHz(74), duracion: 0.08, volumen: 0.45, timbre: 'seno', ataque: 0.003, caida: 0.2, sostenido: 0.4, liberacion: 1.1 });
-        nota(pista, { inicio: e.t + 0.3, hz: midiAHz(81), duracion: 0.08, volumen: 0.4, timbre: 'seno', ataque: 0.003, caida: 0.2, sostenido: 0.4, liberacion: 1.3 });
+        nota(pista, { inicio: e.t + 0.05, hz: midiAHz(74), duracion: 0.08, volumen: 0.45 * e.fuerza, timbre: 'seno', ataque: 0.003, caida: 0.2, sostenido: 0.4, liberacion: 1.1 });
+        nota(pista, { inicio: e.t + 0.3, hz: midiAHz(81), duracion: 0.08, volumen: 0.4 * e.fuerza, timbre: 'seno', ataque: 0.003, caida: 0.2, sostenido: 0.4, liberacion: 1.3 });
         break;
     }
   });

@@ -1,6 +1,6 @@
 /**
  * Prepara un guion de la plantilla `tesis` (largo 16:9) para renderizar:
- *   npx tsx scripts/preparar-tesis.mts <guion.json> [--fixture <series.json>] [--refrescar] [--permitir-duracion]
+ *   npx tsx scripts/preparar-tesis.mts <guion.json> [--fixture <series.json>] [--refrescar] [--permitir-duracion] [--permitir-ritmo]
  * 1) valida el guion (EnvoltorioTesis),
  * 2) resuelve los datos de cada gráfico con scripts/lib/datos.mts (WDI/OWID/manual, con caché) y los guarda en
  *    props.datos[claveDeRef(ref)]; con --fixture (o si el pipeline de datos aún no existe) usa series FIXTURE
@@ -9,7 +9,9 @@
  *    ya entregadas (public/ilustraciones/<id>/<clave>.png) y poses de mascota con imagen (public/mascota/<pose>.png);
  *    lo que no se resuelve se avisa con ⚠ y la escena cae al gráfico previo (nunca bloquea el render),
  * 3) voz (msedge-tts) de lineasTesis → public/voz/<id>/ + tiempos.json,
- * 4) plan (tesis/plan.ts) y control de duración (RITMO.largoMin–largoMax, 8:30–12:30),
+ * 4) plan (tesis/plan.ts), control de duración (RITMO.largoMin–largoMax, 8:30–12:30) y de RITMO (`problemasDeRitmo`:
+ *    esperas con tarjeta > 3 s, fotos > 12 s sin cambio, citas > 12 s, gráficos quietos > 20 s → ✗ y sale con 1, salvo
+ *    --permitir-ritmo; avisos con ⚠),
  * 5) cama + SFX → public/audio/generado/<id>.wav,
  * y escribe salida/trabajo/<id>.props.json (guion + datos + tiempos + audio + duracionFrames) y
  * salida/trabajo/<id>.plan.json (capítulos con timestamps para la descripción, mid-rolls, fixture sí/no).
@@ -24,7 +26,7 @@ import { generarSonido } from './sonido.mjs';
 import { EnvoltorioTesis, lineasDeVozTesis, palabrasTesis, type GuionTesis } from '../src/plantillas/comun/guion';
 import { claveDeRef, type DatoRef, type DatosResueltos, type SerieResuelta } from '../src/plantillas/comun/datos';
 import { serieFixture } from '../src/plantillas/comun/graficos/fixture';
-import { graficosTesis, lineasTesis, planTesis, capitulosDescripcion, reloj } from '../src/plantillas/tesis/plan';
+import { graficosTesis, lineasTesis, planTesis, capitulosDescripcion, reloj, problemasDeRitmo } from '../src/plantillas/tesis/plan';
 import { RITMO } from '../src/marca/tokens';
 import { POSES_MASCOTA, claveDeVisual, type VisualesResueltos } from '../src/plantillas/comun/visual';
 import { prepararFotos } from './lib/imagenes.mjs';
@@ -33,7 +35,7 @@ const args = process.argv.slice(2);
 const ruta = args.find((a) => !a.startsWith('--') && args[args.indexOf(a) - 1] !== '--fixture');
 const iFix = args.indexOf('--fixture');
 const rutaFixture = iFix >= 0 ? args[iFix + 1] : undefined;
-if (!ruta) { console.error('uso: npx tsx scripts/preparar-tesis.mts <guion.json> [--fixture <series.json>] [--refrescar] [--permitir-duracion]'); process.exit(2); }
+if (!ruta) { console.error('uso: npx tsx scripts/preparar-tesis.mts <guion.json> [--fixture <series.json>] [--refrescar] [--permitir-duracion] [--permitir-ritmo]'); process.exit(2); }
 
 const crudo = JSON.parse(fs.readFileSync(path.resolve(ruta), 'utf8'));
 const v = EnvoltorioTesis.safeParse(crudo);
@@ -106,6 +108,16 @@ if ((plan.duracionSeg < RITMO.largoMin || plan.duracionSeg > RITMO.largoMax) && 
   console.error(`✗ duración ${reloj(plan.duracionSeg)} fuera de ${reloj(RITMO.largoMin)}–${reloj(RITMO.largoMax)}. ${plan.duracionSeg < RITMO.largoMin ? 'Alarga' : 'Recorta'} el guion (o --permitir-duracion para pruebas).`);
   process.exit(1);
 }
+const ritmo = problemasDeRitmo(plan, { ...guion, visuales } as GuionTesis);
+for (const a of ritmo.avisos) console.warn(`⚠ ritmo: ${a}`);
+for (const e of ritmo.errores) console.error(`✗ ritmo: ${e}`);
+if (ritmo.errores.length) {
+  if (!args.includes('--permitir-ritmo')) {
+    console.error(`✗ ${ritmo.errores.length} problema(s) de ritmo: corrige el guion (o --permitir-ritmo para pruebas).`);
+    process.exit(1);
+  }
+  console.warn(`⚠ ${ritmo.errores.length} problema(s) de ritmo ignorados por --permitir-ritmo: este video NO se publica así`);
+} else console.log(`ritmo: sin errores (${ritmo.avisos.length} avisos)`);
 const primerCorte = plan.midrolls[0];
 if (primerCorte !== undefined && primerCorte < 150) console.warn(`⚠ primer mid-roll en ${reloj(primerCorte)} (< 2:30): YouTube lo tolera, pero la skill videos-largos recomienda ≥ 2:30`);
 

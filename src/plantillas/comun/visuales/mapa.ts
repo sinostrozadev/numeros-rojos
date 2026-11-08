@@ -5,7 +5,7 @@
  * Zoom del contrato (VisualMapa.zoom): 1 = el mundo entero cabe a lo ancho del lienzo; cada +1 duplica la escala
  * (3 ≈ continente, 5 ≈ país grande, 7 ≈ país chico). Proyección Mercator; ortográfica (globo) si |lat| > 60.
  */
-import { geoArea, geoBounds, geoCentroid, geoMercator, geoOrthographic, type GeoProjection } from 'd3-geo';
+import { geoArea, geoBounds, geoCentroid, geoInterpolate, geoMercator, geoOrthographic, type GeoProjection } from 'd3-geo';
 import { feature } from 'topojson-client';
 import type { Feature, FeatureCollection, Geometry, MultiPolygon, Polygon } from 'geojson';
 import type { GeometryCollection, Topology } from 'topojson-specification';
@@ -168,4 +168,32 @@ export const ubicarEtiquetas = (cajas: Caja[], ancho: number, alto: number, marg
     }
     return null;
   });
+};
+
+/**
+ * VIAJE v3 entre dos países (cambio grande de protagonista): cámara de país sobre `desde`, cámara de país sobre
+ * `hasta` y el zoom mínimo de la mitad del camino (el que encuadra a ambos, nunca < 1). Se calcula una vez por mapa.
+ */
+export type PlanViaje = { a: Camara; b: Camara; zoomMedio: number; origen: LonLat; destino: LonLat; centro: (t: number) => LonLat; ruta: (t: number) => LonLat };
+export const planViaje = (desde: string, hasta: string, ancho: number, alto: number): PlanViaje | null => {
+  if (!paisPorIso(desde) || !paisPorIso(hasta)) return null;
+  const a = encuadre([desde], ancho, alto), b = encuadre([hasta], ancho, alto);
+  // La ruta une los centros de cámara (centro de la caja de cada país, siempre sobre tierra en países alargados como
+  // Chile, donde el centroide cae al mar): al aterrizar, la línea termina justo en el centro de la pantalla.
+  const origen = a.centro, destino = b.centro;
+  const ambos = encuadre([desde, hasta], ancho, alto);
+  const zoomMedio = Math.max(1, Math.min(ambos.zoom, a.zoom, b.zoom));
+  const ic = geoInterpolate(a.centro, b.centro);
+  return { a, b, zoomMedio, origen, destino, centro: (t) => ic(t) as LonLat, ruta: (t) => ic(t) as LonLat };
+};
+
+/**
+ * Cámara del viaje en el avance `p` (0–1, ya suavizado): el centro va por el círculo máximo y el zoom sigue una
+ * parábola que parte en el zoom de `desde`, toca `zoomMedio` a mitad de camino y termina en el de `hasta` (sin
+ * quiebres: una sola curva suave).
+ */
+export const camaraEnViaje = (pv: PlanViaje, p: number): Camara => {
+  const lineal = pv.a.zoom + (pv.b.zoom - pv.a.zoom) * p;
+  const hundir = (pv.a.zoom + pv.b.zoom) / 2 - pv.zoomMedio;
+  return { centro: pv.centro(p), zoom: lineal - Math.max(0, hundir) * 4 * p * (1 - p) };
 };

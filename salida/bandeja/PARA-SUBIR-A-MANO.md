@@ -1,6 +1,6 @@
 # Videos listos para subir a mano (YouTube Studio)
 
-Generado: 2026-11-06 09:02 (America/Santiago) · 0 Short(s) + 1 video(s) largo(s), en orden de calendario.
+Generado: 2026-11-07 09:12 (America/Santiago) · 2 Short(s), en orden de calendario.
 
 Cómo: YouTube Studio → **Crear → Subir videos** → elige el archivo indicado. Copia el título y la
 descripción **tal cual** (la descripción ya trae los hashtags al final). En "Público": **No, no es
@@ -11,56 +11,79 @@ Al terminar, marca cada video como subido para que no vuelva a aparecer: en `sal
 cambia `"estado": "listo"` por `"estado": "subido"` y agrega `"publicarEn": "<fecha ISO>"`
 (así el calendario sabe que esa ranura ya está ocupada). Si no lo haces, solo se volverá a listar.
 
----
+## 1. Bolivia tenía 15.000 millones en reservas. En 2024, 2.000
 
-# Videos largos (tesis 16:9: miniatura propia, capítulos en la descripción, pausas publicitarias manuales en Studio)
-
-## 1. Irlanda creció un 25 % en un año. Su gente, un 2 %
-
-- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-06-tesis-irlanda-pib.mp4`
-- **Programar para:** 2026-11-06 19:00 (America/Santiago)
-- **Id:** `2026-11-06-tesis-irlanda-pib` · **Tipo:** LARGO 16:9 (sin #Shorts) · **Plantilla:** tesis · **Duración:** 09:46 · **Categoría:** Educación
-- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-06-tesis-irlanda-pib 2026-11-06 19:00`
-- **Miniatura:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-06-tesis-irlanda-pib-mini.png`
+- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-07-grafico-bolivia-tenia-15-000-millones.mp4`
+- **Programar para:** 2026-11-10 13:00 (America/Santiago)
+- **Id:** `2026-11-07-grafico-bolivia-tenia-15-000-millones` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:49 · **Categoría:** Educación
+- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-07-grafico-bolivia-tenia-15-000-millones 2026-11-10 13:00`
 
 **Título:**
 ```
-Irlanda creció un 25 % en un año. Su gente, un 2 %
+Bolivia tenía 15.000 millones en reservas. En 2024, 2.000
 ```
 
 **Descripción:**
 ```
-¿Cómo creció la economía de Irlanda un 25 % en 2015 si el consumo de su gente subió apenas un 2 %?
+¿Por qué Bolivia se quedó con tan pocos dólares en reservas?
 
-Capítulos:
-0:00 Introducción
-0:25 El salto de 2015 en el PIB de Irlanda
-2:12 Quién llegó a Irlanda y por qué
-4:16 PIB contra ingreso nacional
-6:22 El bolsillo irlandés y el latinoamericano
-8:41 El número que nadie mira
-
-Hacemos la autopsia de un número: el PIB irlandés. Seguimos la inversión extranjera, las patentes y las exportaciones registradas en Dublín, y comparamos lo que se produce en Irlanda con lo que se queda en Irlanda.
-Después aplicamos la misma lupa a Chile y Panamá: en América Latina la brecha entre PIB e ingreso existe, pero es mucho más chica.
-El dato final: un irlandés consume prácticamente lo mismo que un alemán.
+Veinte años de reservas internacionales, según el Banco Mundial: unos 15.000 millones de dólares en 2014, unos 1.800 en 2023 y casi 2.000 en 2024, contando el oro.
+En el mismo período bajó el peso de las exportaciones en la economía boliviana, mientras el tipo de cambio oficial se mantuvo plano desde 2012.
 
 Fuentes:
-- Banco Mundial, WDI: NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.PP.CD, NY.GNP.PCAP.PP.CD, BX.KLT.DINV.WD.GD.ZS, NE.EXP.GNFS.ZS, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org
-- Comisión Europea, IP/16/2923 https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923
-- CSO Irlanda, Modified GNI https://www.cso.ie/en/interactivezone/statisticsexplained/nationalaccountsexplained/modifiedgni/
+- Banco Mundial, WDI: FI.RES.TOTL.CD (CC BY 4.0) https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=BO
+- Banco Mundial, WDI: NE.EXP.GNFS.ZS (CC BY 4.0) https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=BO
+- Banco Mundial, WDI: PA.NUS.FCRF (CC BY 4.0) https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=BO
 
 Voz sintetizada. Gráficos generados a partir de datos abiertos.
 No es asesoría financiera: el video describe lo que muestran los datos.
 
-#economia #irlanda #pib #latinoamerica #datos
+#shorts #economia #bolivia #reservas #datos
 ```
 
 **Hashtags:**
 ```
-#economia #irlanda #pib #latinoamerica #datos
+#shorts #economia #bolivia #reservas #datos
 ```
 
 **Etiquetas** (campo "Etiquetas" de Studio):
 ```
-economia, irlanda, pib, latinoamerica, datos
+shorts, economia, bolivia, reservas, datos
+```
+
+## 2. México gastaba el doble que Chile. En 2025, gasta menos
+
+- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-07-grafico-mexico-gastaba-el-doble-que-chile.mp4`
+- **Programar para:** 2026-11-12 13:00 (America/Santiago)
+- **Id:** `2026-11-07-grafico-mexico-gastaba-el-doble-que-chile` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:49 · **Categoría:** Educación
+- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-07-grafico-mexico-gastaba-el-doble-que-chile 2026-11-12 13:00`
+
+**Título:**
+```
+México gastaba el doble que Chile. En 2025, gasta menos
+```
+
+**Descripción:**
+```
+¿Cómo pasó Chile de gastar la mitad que México a gastar más?
+
+El consumo de los hogares por persona, del Banco Mundial, mide lo que gasta la gente y no lo que produce el país. En 1990, México duplicaba a Chile; en 2010 las líneas se cruzan.
+Las cifras están en dólares de 2015 a tipo de cambio: no corrigen lo que cuesta vivir en cada país.
+
+Fuente: Banco Mundial, WDI, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=MX-CL-AR-ES
+
+Voz sintetizada. Gráfico generado a partir de datos abiertos.
+No es asesoría financiera: el video describe lo que muestran los datos.
+
+#shorts #economia #mexico #chile #datos
+```
+
+**Hashtags:**
+```
+#shorts #economia #mexico #chile #datos
+```
+
+**Etiquetas** (campo "Etiquetas" de Studio):
+```
+shorts, economia, mexico, chile, datos
 ```

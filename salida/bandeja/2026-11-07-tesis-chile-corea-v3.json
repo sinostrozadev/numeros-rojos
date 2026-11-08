@@ -1,0 +1,20 @@
+{
+  "id": "2026-11-07-tesis-chile-corea-v3",
+  "plantilla": "tesis",
+  "titulo": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
+  "descripcion": "¿Por qué Corea del Sur, tres veces más pobre que Chile en 1960, hoy produce dos veces y media más por persona?\n\nCapítulos:\n0:00 Introducción\n0:30 1960: Chile iba adelante\n2:07 Qué le vendía cada país al mundo\n4:32 La plata que se guarda para construir\n6:54 Universidad y patentes: dónde se separan\n9:10 El número que nadie mira\n\nSeguimos 64 años de datos del Banco Mundial y del Proyecto Maddison para separar lo que de verdad cambió de lo que se repite.\nChile era más rico y más exportador en 1960. Corea apostó por fabricar y por guardar para construir; Chile cambió de materia prima.\nEl dato que más sorprende: en matrícula universitaria Chile ya alcanzó a Corea. En investigación y desarrollo, gasta doce veces menos.\n\nFotos (Wikimedia Commons): Mina de Chuquicamata, Calama, Chile, 2016-02-01, DD 110-112 PAN — Diego Delso (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0), https://commons.wikimedia.org/wiki/File:Mina_de_Chuquicamata,_Calama,_Chile,_2016-02-01,_DD_110-112_PAN.JPG; Hyundai Heavy Industries Ulsan Shipyard from Jujeon Beacon Mound - 2023-07-24 — Wvdp (CC0), https://commons.wikimedia.org/wiki/File:Hyundai_Heavy_Industries_Ulsan_Shipyard_from_Jujeon_Beacon_Mound_-_2023-07-24.jpg; Korea University Main Hall — Ksiom (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Korea_University_Main_Hall.jpg\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MMTL.ZS.UN, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, SE.TER.ENRR, IP.PAT.RESD, GB.XPD.RSDV.GD.ZS, TX.VAL.FOOD.ZS.UN, SP.POP.TOTL (CC BY 4.0) https://data.worldbank.org\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#chile",
+    "#coreadelsur",
+    "#desarrollo",
+    "#datos"
+  ],
+  "duracionSeg": 610.3,
+  "estado": "privado",
+  "tipo": "largo",
+  "miniatura": "salida/bandeja/2026-11-07-tesis-chile-corea-v3-mini.png",
+  "videoId": "bBeAk-psx5c",
+  "url": "https://www.youtube.com/watch?v=bBeAk-psx5c",
+  "subidoEn": "2026-11-08T01:54:22.665Z"
+}

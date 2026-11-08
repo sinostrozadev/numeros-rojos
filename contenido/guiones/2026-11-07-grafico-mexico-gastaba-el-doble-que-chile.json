@@ -1,0 +1,317 @@
+{
+  "plantilla": "grafico",
+  "id": "2026-11-07-grafico-mexico-gastaba-el-doble-que-chile",
+  "titulo": "México gastaba el doble que Chile. En 2025, gasta menos",
+  "descripcion": "¿Cómo pasó Chile de gastar la mitad que México a gastar más?\n\nEl consumo de los hogares por persona, del Banco Mundial, mide lo que gasta la gente y no lo que produce el país. En 1990, México duplicaba a Chile; en 2010 las líneas se cruzan.\nLas cifras están en dólares de 2015 a tipo de cambio: no corrigen lo que cuesta vivir en cada país.\n\nFuente: Banco Mundial, WDI, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=MX-CL-AR-ES\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#mexico",
+    "#chile",
+    "#datos"
+  ],
+  "props": {
+    "id": "2026-11-07-grafico-mexico-gastaba-el-doble-que-chile",
+    "gancho": {
+      "texto": "En 1990, un mexicano promedio gastaba el doble que un chileno; en 2025, gasta menos.",
+      "rotulo": "MÉXICO ×2",
+      "cifras": [
+        {
+          "texto": "el doble",
+          "valor": 2.03,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "MEX",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "MEX",
+            "paisB": "CHL",
+            "anio": 1990
+          }
+        },
+        {
+          "texto": "gasta menos",
+          "valor": 0.79,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "MEX",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "MEX",
+            "paisB": "CHL",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Lo que gasta cada persona, 1990–2025",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NE.CON.PRVT.PC.KD",
+        "paises": [
+          "MEX",
+          "CHL"
+        ],
+        "desde": 1990,
+        "hasta": 2025,
+        "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "MEX",
+        "anio": 2010,
+        "texto": "2010: se cruzan"
+      },
+      "anotaciones": [
+        {
+          "anio": 2010,
+          "texto": "Chile pasa a México"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Es el consumo de los hogares por persona. Según el Banco Mundial, en 1990 México marca unos 5.200 dólares. Chile, unos 2.600.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "unos 5.200 dólares",
+            "valor": 5200,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "MEX",
+              "anio": 1990
+            }
+          },
+          {
+            "texto": "unos 2.600",
+            "valor": 2600,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 1990
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Hasta 2010, el consumo de Chile sube más de un 160 %. El de México, un 23 %. Ahí las líneas se cruzan.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "más de un 160 %",
+            "valor": 163,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 1990,
+              "anioB": 2010
+            }
+          },
+          {
+            "texto": "un 23 %",
+            "valor": 23,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "MEX",
+              "anio": 1990,
+              "anioB": 2010
+            }
+          },
+          {
+            "texto": "las líneas se cruzan",
+            "valor": 1.06,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "MEX",
+              "anio": 2010
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "2010: SE CRUZAN",
+          "dice": "cruzan,"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2025, por cada 100 dólares que gasta un chileno, un mexicano gasta unos 79. Un español, unos 175.",
+        "grafico": {
+          "tipo": "barras",
+          "titulo": "2025: lo que gasta cada persona",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NE.CON.PRVT.PC.KD",
+            "paises": [
+              "ESP",
+              "CHL",
+              "ARG",
+              "MEX"
+            ],
+            "desde": 2025,
+            "hasta": 2025,
+            "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "MEX"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "2025,"
+        },
+        "cifras": [
+          {
+            "texto": "unos 79",
+            "valor": 0.79,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "ESP",
+                  "CHL",
+                  "ARG",
+                  "MEX"
+                ],
+                "desde": 2025,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "MEX",
+              "paisB": "CHL",
+              "anio": 2025
+            }
+          },
+          {
+            "texto": "unos 175",
+            "valor": 1.75,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "ESP",
+                  "CHL",
+                  "ARG",
+                  "MEX"
+                ],
+                "desde": 2025,
+                "hasta": 2025,
+                "etiqueta": "Consumo de los hogares por persona (US$ de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "ESP",
+              "paisB": "CHL",
+              "anio": 2025
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "79 DE CADA 100",
+          "dice": "79."
+        }
+      }
+    ],
+    "remate": "México partió arriba y avanzó lento. Chile partió abajo y avanzó rápido.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Consumo de los hogares por persona, US$ constantes de 2015 (NE.CON.PRVT.PC.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=MX-CL-AR-ES"
+      }
+    ]
+  }
+}

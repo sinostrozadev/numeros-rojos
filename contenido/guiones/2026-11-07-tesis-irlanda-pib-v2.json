@@ -1,6 +1,6 @@
 {
   "plantilla": "tesis",
-  "id": "tesis-irlanda-pib-v2",
+  "id": "2026-11-07-tesis-irlanda-pib-v2",
   "titulo": "Irlanda creció un 25 % en un año. Su gente, un 2 %",
   "descripcion": "¿Cómo creció la economía de Irlanda un 25 % en 2015 si el consumo de su gente subió apenas un 2 %?\n\nHacemos la autopsia de un número: el PIB irlandés. Seguimos la inversión extranjera, las patentes y las exportaciones registradas en Dublín, y comparamos lo que se produce en Irlanda con lo que se queda en Irlanda.\nDespués aplicamos la misma lupa a Chile y Panamá: en América Latina la brecha entre PIB e ingreso existe, pero es mucho más chica.\nEl dato final: un irlandés consume prácticamente lo mismo que un alemán.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.PP.CD, NY.GNP.PCAP.PP.CD, BX.KLT.DINV.WD.GD.ZS, NE.EXP.GNFS.ZS, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org\n- Comisión Europea, IP/16/2923 https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923\n- CSO Irlanda, Modified GNI https://www.cso.ie/en/interactivezone/statisticsexplained/nationalaccountsexplained/modifiedgni/\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
@@ -11,7 +11,7 @@
     "#datos"
   ],
   "props": {
-    "id": "tesis-irlanda-pib-v2",
+    "id": "2026-11-07-tesis-irlanda-pib-v2",
     "cabecera": "IRLANDA · PIB CONTRA INGRESO · 2015–2025",
     "gancho": {
       "texto": "En 2015, la economía de Irlanda creció un 25 %. En un solo año. Ese mismo año, lo que gastaba cada irlandés en su vida diaria subió un 2 %. ¿Dónde quedó todo lo demás?",
