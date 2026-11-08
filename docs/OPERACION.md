@@ -85,6 +85,13 @@ Shorts: `ranuras` 13:00 todos los días, `rotacion: ["grafico"]`, `minimoBandeja
 miércoles y viernes 19:00, `rotacionLargo: ["tesis"]`, `minimoBandejaLargos: 2`. `minimoBacklog: 8` (suma de ambos),
 `margenMinutos: 20`. `siguienteRanura(…, tipo)` y `ordenarParaPublicar(…, tipo)` separan los dos tipos.
 
+## Hito del miércoles: semana asegurada (orden de Santiago, 2026-11-08)
+El cupo semanal del Max se renueva los **miércoles**. Cada miércoles en la noche quedan escritos, verificados y dirigidos los guiones de
+TODAS las ranuras **jueves → miércoles siguiente**, arrancan los renders (local en serie con el lock; nube donde exista) y el **jueves**
+todo está `programado` en Studio con su fecha (tope jue 23:59; resto el viernes con ≥ 72 h de colchón). Solo después el cupo sobrante va a
+mejoras o canales nuevos. El bloque "Hito del mié AAAA-MM-DD" arriba de `docs/PLAN-SEMANAL.md` lleva la cuenta; `estado.mts` avisa
+"⚠ hito del miércoles" si quedan ranuras sin programar antes del próximo miércoles. Regla: skill `plan-semanal` §5b y `operacion-diaria` §0.
+
 ## Cron
 `scripts/cron.txt`: diario **00:30** (no 01:15: un Short + un largo ≈ 2 h 20 min y Bolita Lab toma el lock a las 03:30),
 estado + métricas **08:30** (después de Bolita 08:00 y Línea Punteada 08:15, por el piloto único), refresco de datos

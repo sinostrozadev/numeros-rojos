@@ -5,6 +5,21 @@
 > con guion, o termina, se hace el ritual de cierre y se arma la que viene. **Manda el bloque JSON del final** (lo leen
 > `estado.mts` y el panel de Santiago); la tabla es su vista legible.
 
+## 🔒 Hito del mié 2026-11-11 → semana asegurada 2026-11-12 (jue) → 2026-11-18 (mié)
+
+> Orden de Santiago (2026-11-08): el cupo del Max se renueva los **miércoles**. El miércoles en la noche quedan todos los guiones de
+> la semana jue → mié escritos y dirigidos, arrancan los renders y el **jueves** todo está `programado` en Studio. Recién entonces el
+> cupo sobrante va a mejoras. Regla completa: skill `plan-semanal` §5b · `operacion-diaria` §0 · `~/.claude/canales/calendario.json`.
+
+| Ranuras jue 11-12 → mié 11-18 | Ya `programado` | Falta (al 2026-11-08 02:40) | Orden de producción el mié 11-11 |
+|---|---|---|---|
+| 7 Shorts (13:00) | 2 (11-12 y 11-15; sus v2 se suben el 11-09 con el lote diferido) | **5**: 11-13 (INDEC, contingente: dato sale el jue 11-12), 11-14 (Uruguay), 11-16, 11-17, 11-18 (sin ranura aún) | 1.º guiones (Opus, `verificar-cifras`) → render (~20 min c/u) → Studio en orden de fecha |
+| 3 largos (vie 11-13, lun 11-16, mié 11-18, 19:00) | 0 | **3**: Uruguay (en revisión), 11-16 y 11-18 sin tema (cola: Panamá; banco de ideas) | guiones primero (son el producto) → render ≈ 2 h c/u, de noche, antes del jueves → Studio |
+
+Tope diario de subidas del canal (sin verificar): si corta, el resto el viernes, en orden de fecha. Al cumplirse: anotar aquí
+"✅ asegurada hasta el mié 11-18 (fecha/hora)" y en `salida/revisiones/<fecha>.md`. El plan debe extenderse hasta el 11-18 (hoy
+termina el 11-15): agregar las ranuras 11-16 → 11-18 en el ritual del miércoles.
+
 Calendario (`contenido/calendario.json`): **largo `tesis` lun/mié/vie 19:00** + **Short `grafico` diario 13:00** (tope 1/día hasta el
 YPP). Lanzamiento: primer Short sáb 11-07, primer largo **dom 11-08 19:00 (excepción fuera de ranura)**, ranura normal desde el lun 11-09.
 Canal creado (id `UC8uOwislkGbnnfoqsJ_FgAw`, COPPA hecho). Los días anteriores al lanzamiento (11-02 → 11-06) no tienen ranuras.
