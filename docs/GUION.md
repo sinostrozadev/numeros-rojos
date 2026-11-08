@@ -226,7 +226,7 @@ lugar u objeto). `completo` = uno solo a pantalla completa (planteamiento, giro 
 
 **Ritmo en un largo de 9–12 min:**
 - **8–24 escenas con visual** (el schema exige ≥ 5 y ≥ 2 tipos; apunta a 4–5 tipos): lo normal es que casi toda escena con voz
-  tenga algo propio. **2–5 fotos**, 1–3 mapas (de ellos ≤ 2 con `viaje`), los `iconos`/`versus` que pidan las enumeraciones,
+  tenga algo propio. **4–8 fotos** (Santiago, 2026-11-08: "más imágenes, le dan un toque genial"; una foto `dividido` junto al gráfico en la mayoría de las escenas de dato), 1–3 mapas (de ellos ≤ 2 con `viaje`), los `iconos`/`versus` que pidan las enumeraciones,
   0–2 ilustraciones; **2–4 mascotas** y **2–4 sellos** en el video.
 - Cada capítulo tiene al menos un visual; el `planteamiento` sin gráfico casi siempre lleva uno (foto de época o mapa).
 - **Nunca dos fotos seguidas sin gráfico en medio**: dentro de un `dato` la foto va `dividido` con su gráfico; entre dos escenas
@@ -424,7 +424,7 @@ infantil de UNICEF, gasto militar del SIPRI. Un slug de OWID es CC BY solo si el
 - [ ] Remate simétrico sin pedir nada; `siguiente` con gancho; título ≤ 60 sin prohibidas y no repetido.
 - [ ] Descripción: pregunta + líneas propias + fuentes + "Voz sintetizada" + "No es asesoría financiera".
 - [ ] Shorts derivados: `enlaceLargo` + texto 100 % nuevo. Rotación: la estructura no supera el 40 % del backlog.
-- [ ] Visuales v2 (§7b): 8–24 escenas con visual de ≥ 3 tipos, 2–5 fotos, 2–4 mascotas (≤ 1 de cada 3 escenas, nunca explicando), ≤ 2
+- [ ] Visuales v2 (§7b): 8–24 escenas con visual de ≥ 3 tipos, 4–8 fotos, 2–4 mascotas (≤ 1 de cada 3 escenas, nunca explicando), ≤ 2
       ilustraciones, fotos con `busqueda` en inglés + 2 `alternativas` + `pie` con lugar y año, `dice` literal, ninguna foto
       que parezca dato, ningún par de fotos seguidas sin gráfico en medio.
 - [ ] Visuales v3 (§7c): cada enumeración de ≥ 3 cosas con `iconos` o `versus` (`marca` donde algo falta o sobra); 2–4 `sellos`

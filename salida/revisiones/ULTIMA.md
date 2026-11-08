@@ -60,6 +60,9 @@
 - **(madrugada 11-08) Segunda ronda de Santiago sobre el v3 → v4 privado (`K5ma4A5VFj8`):** cifras con miles en palabras para la voz
   (es-MX leía "1.000" como decimal), preguntas en segmento propio con tono +10 %, tarjetas sin fundido (parpadeo), viaje de mapa sin línea,
   primer gráfico con título que nombra la variable. Medición de entonación por voz en `herramientas-disponibles`.
+- **(madrugada 11-08) Luz verde de Santiago al v4:** reglas guardadas (tono de voz único, cifras en palabras, 4–8 fotos), tres guiones nuevos
+  por agentes Opus (Chile-Corea v5 con 8 fotos, Argentina v3, Irlanda v3; voz idéntica, ritmo 0 errores), 4 Shorts re-renderizados (3 con cifras
+  mal leídas + el del martes, programado `BILBHyyu_h8`). Incidente: tope diario de subidas agotado por intentos fallidos → ver `incidentes-canal` §5.
 ## Pendiente
 - Verificación por teléfono del canal (Santiago) para poner las miniaturas (Remotion o GPT) a los 3 largos.
 - Mascota: aprobación de identidad por Santiago con los fotogramas reales; si aprueba, re-render de los 3 largos con las poses PNG (hoy llevan el SVG de reserva).

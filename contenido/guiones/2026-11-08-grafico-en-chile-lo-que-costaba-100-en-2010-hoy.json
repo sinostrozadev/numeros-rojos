@@ -1,6 +1,6 @@
 {
   "plantilla": "grafico",
-  "id": "pendiente-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
+  "id": "2026-11-08-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
   "titulo": "En Chile, lo que costaba 100 en 2010 hoy cuesta 185",
   "descripcion": "¿Cuánto subieron los precios en Chile desde 2010?\n\nUn gráfico con la inflación de cada año, del Banco Mundial: una línea tranquila durante una década, el salto de 2022 y la cuenta acumulada que casi no se mira.\nLa comparación con Brasil pone esa cuenta en contexto. Son precios al consumidor en promedio: el dato no mide cuánto subieron los sueldos.\n\nFuentes:\n- Banco Mundial, WDI: Inflación, precios al consumidor (FP.CPI.TOTL.ZG), CC BY 4.0 https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CL\n- Banco Mundial, WDI: Índice de precios al consumidor, 2010 = 100 (FP.CPI.TOTL), CC BY 4.0 https://data.worldbank.org/indicator/FP.CPI.TOTL?locations=CL-BR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
@@ -11,7 +11,7 @@
     "#precios"
   ],
   "props": {
-    "id": "pendiente-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
+    "id": "2026-11-08-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
     "gancho": {
       "texto": "Chile tiene fama de precios estables. Aun así, lo que costaba 100 pesos en 2010, en 2025 costaba unos 185.",
       "rotulo": "100 → 185",

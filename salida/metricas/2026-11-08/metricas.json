@@ -1,0 +1,140 @@
+{
+  "fecha": "2026-11-08",
+  "canalId": "UC8uOwislkGbnnfoqsJ_FgAw",
+  "generadoEn": "2026-11-08T04:27:16.794Z",
+  "zona": "America/Santiago",
+  "subs": null,
+  "videosPublicados": 1,
+  "vistasTotales": 608,
+  "vistasLargos": 0,
+  "vistasShorts": 608,
+  "vistas28d": 8,
+  "vistas48h": 628,
+  "horasTotales": 2,
+  "progresoYPP": {
+    "subs": null,
+    "vistasShorts90d": null,
+    "horas12m": null
+  },
+  "fuentes": {
+    "numeros": "públicos (curl a youtube.com)",
+    "studio": "texto de Studio, mejor esfuerzo",
+    "api": "sin token"
+  },
+  "capturas": {
+    "1-overview": "ok",
+    "2-monetizacion": "ok",
+    "3-alcance": "no cargó a tiempo",
+    "4-contenido": "ok"
+  },
+  "videos": [
+    {
+      "id": "mx9le_OLFx8",
+      "bandeja": "2026-11-06-grafico-argentina-espana",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-09T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "LLiqQewooNI",
+      "bandeja": "2026-11-06-grafico-chile-corea-cruce",
+      "titulo": "Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-07T13:00:00-03:00",
+      "vistas": 608,
+      "publicadoEn": "2026-11-07T08:00:01-08:00",
+      "segundos": 43,
+      "privado": false
+    },
+    {
+      "id": "yJV1sIgJJQ8",
+      "bandeja": "2026-11-06-grafico-irlanda-consumo",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-11T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "9SmuQH7bghE",
+      "bandeja": "2026-11-06-grafico-panama-chile",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-08T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "fHVOchMTSE0",
+      "bandeja": "2026-11-07-grafico-bolivia-tenia-15-000-millones",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-15T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "k8gTTX8R9Ao",
+      "bandeja": "2026-11-07-grafico-mexico-gastaba-el-doble-que-chile",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-12T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "b1F1JlfZwIw",
+      "bandeja": "2026-11-07-tesis-argentina-rica-v2",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-09T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "eTq0TBuEWIs",
+      "bandeja": "2026-11-07-tesis-chile-corea-v2",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-08T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "m_Lp1dgEsvA",
+      "bandeja": "2026-11-07-tesis-irlanda-pib-v2",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-11T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    }
+  ]
+}

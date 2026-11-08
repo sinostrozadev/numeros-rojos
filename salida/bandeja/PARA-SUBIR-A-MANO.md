@@ -1,6 +1,6 @@
 # Videos listos para subir a mano (YouTube Studio)
 
-Generado: 2026-11-07 09:12 (America/Santiago) · 2 Short(s), en orden de calendario.
+Generado: 2026-11-08 01:40 (America/Santiago) · 4 Short(s), en orden de calendario.
 
 Cómo: YouTube Studio → **Crear → Subir videos** → elige el archivo indicado. Copia el título y la
 descripción **tal cual** (la descripción ya trae los hashtags al final). En "Público": **No, no es
@@ -13,10 +13,10 @@ cambia `"estado": "listo"` por `"estado": "subido"` y agrega `"publicarEn": "<fe
 
 ## 1. Bolivia tenía 15.000 millones en reservas. En 2024, 2.000
 
-- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-07-grafico-bolivia-tenia-15-000-millones.mp4`
+- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-08-grafico-bolivia-tenia-15-000-millones-v2.mp4`
 - **Programar para:** 2026-11-10 13:00 (America/Santiago)
-- **Id:** `2026-11-07-grafico-bolivia-tenia-15-000-millones` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:49 · **Categoría:** Educación
-- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-07-grafico-bolivia-tenia-15-000-millones 2026-11-10 13:00`
+- **Id:** `2026-11-08-grafico-bolivia-tenia-15-000-millones-v2` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:47 · **Categoría:** Educación
+- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-08-grafico-bolivia-tenia-15-000-millones-v2 2026-11-10 13:00`
 
 **Título:**
 ```
@@ -51,12 +51,88 @@ No es asesoría financiera: el video describe lo que muestran los datos.
 shorts, economia, bolivia, reservas, datos
 ```
 
-## 2. México gastaba el doble que Chile. En 2025, gasta menos
+## 2. En Chile, lo que costaba 100 en 2010 hoy cuesta 185
 
-- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-07-grafico-mexico-gastaba-el-doble-que-chile.mp4`
-- **Programar para:** 2026-11-12 13:00 (America/Santiago)
-- **Id:** `2026-11-07-grafico-mexico-gastaba-el-doble-que-chile` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:49 · **Categoría:** Educación
-- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-07-grafico-mexico-gastaba-el-doble-que-chile 2026-11-12 13:00`
+- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-08-grafico-en-chile-lo-que-costaba-100-en-2010-hoy.mp4`
+- **Programar para:** 2026-11-13 13:00 (America/Santiago)
+- **Id:** `2026-11-08-grafico-en-chile-lo-que-costaba-100-en-2010-hoy` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:43 · **Categoría:** Educación
+- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-08-grafico-en-chile-lo-que-costaba-100-en-2010-hoy 2026-11-13 13:00`
+
+**Título:**
+```
+En Chile, lo que costaba 100 en 2010 hoy cuesta 185
+```
+
+**Descripción:**
+```
+¿Cuánto subieron los precios en Chile desde 2010?
+
+Un gráfico con la inflación de cada año, del Banco Mundial: una línea tranquila durante una década, el salto de 2022 y la cuenta acumulada que casi no se mira.
+La comparación con Brasil pone esa cuenta en contexto. Son precios al consumidor en promedio: el dato no mide cuánto subieron los sueldos.
+
+Fuentes:
+- Banco Mundial, WDI: Inflación, precios al consumidor (FP.CPI.TOTL.ZG), CC BY 4.0 https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CL
+- Banco Mundial, WDI: Índice de precios al consumidor, 2010 = 100 (FP.CPI.TOTL), CC BY 4.0 https://data.worldbank.org/indicator/FP.CPI.TOTL?locations=CL-BR
+
+Voz sintetizada. Gráfico generado a partir de datos abiertos.
+No es asesoría financiera: el video describe lo que muestran los datos.
+
+#shorts #economia #chile #inflacion #precios
+```
+
+**Hashtags:**
+```
+#shorts #economia #chile #inflacion #precios
+```
+
+**Etiquetas** (campo "Etiquetas" de Studio):
+```
+shorts, economia, chile, inflacion, precios
+```
+
+## 3. Irlanda produce el doble que Alemania. Gasta lo mismo
+
+- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-08-grafico-irlanda-consumo-v2.mp4`
+- **Programar para:** 2026-11-14 13:00 (America/Santiago)
+- **Id:** `2026-11-08-grafico-irlanda-consumo-v2` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:46 · **Categoría:** Educación
+- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-08-grafico-irlanda-consumo-v2 2026-11-14 13:00`
+
+**Título:**
+```
+Irlanda produce el doble que Alemania. Gasta lo mismo
+```
+
+**Descripción:**
+```
+¿Por qué un irlandés consume lo mismo que un alemán si el PIB de Irlanda por persona es casi el doble?
+
+El consumo de los hogares por persona, del Banco Mundial, cuenta otra historia que el PIB: la de lo que llega a la mesa.
+La autopsia completa del PIB irlandés, con patentes, Apple e ingreso nacional, está en el video largo.
+
+Fuentes: Banco Mundial, WDI, NE.CON.PRVT.PC.KD y NY.GDP.PCAP.PP.CD (CC BY 4.0) https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=IE-DE
+
+Voz sintetizada. Gráfico generado a partir de datos abiertos.
+No es asesoría financiera: el video describe lo que muestran los datos.
+
+#shorts #economia #irlanda #pib
+```
+
+**Hashtags:**
+```
+#shorts #economia #irlanda #pib
+```
+
+**Etiquetas** (campo "Etiquetas" de Studio):
+```
+shorts, economia, irlanda, pib
+```
+
+## 4. México gastaba el doble que Chile. En 2025, gasta menos
+
+- **Archivo:** `/home/santiago/projects/yt/numeros-rojos/salida/bandeja/2026-11-08-grafico-mexico-gastaba-el-doble-que-chile-v2.mp4`
+- **Programar para:** 2026-11-16 13:00 (America/Santiago)
+- **Id:** `2026-11-08-grafico-mexico-gastaba-el-doble-que-chile-v2` · **Tipo:** Short 9:16 · **Plantilla:** grafico · **Duración:** 00:48 · **Categoría:** Educación
+- **Subir con el piloto:** `NR_CANAL_ID=… node herramientas/navegador/subir-studio.mjs 2026-11-08-grafico-mexico-gastaba-el-doble-que-chile-v2 2026-11-16 13:00`
 
 **Título:**
 ```

@@ -149,21 +149,32 @@ if (process.env.BORRADOR === '1') {
   const sub = await llamar(`/archivo?sel=${q('input[type=file]')}&ruta=${q(archivo)}`);
   if (sub.error) fallo('archivo: ' + sub.error);
 }
-await hasta(() => evalJs(`!!document.querySelector('#title-textarea #textbox')`), 60000, 1000, 'formulario de detalles');
+await hasta(() => evalJs(`!!document.querySelector('ytcp-uploads-dialog #title-textarea #textbox')`), 60000, 1000, 'formulario de detalles del diálogo');
 await esperar(2000);
 
-// 2. Título y descripción
-await llamar(`/escribir?sel=${q('#title-textarea #textbox')}&texto=${q(TITULO_STUDIO)}`);
-// La descripción a veces queda fuera de la vista del diálogo y /escribir responde "not visible": se enfoca por /eval y se tipea.
-const rDesc = await llamar(`/escribir?sel=${q('#description-textarea #textbox')}&texto=${q(meta.descripcion)}`);
-if (rDesc && rDesc.error) {
-  console.log('… descripción: /escribir falló (' + String(rDesc.error).slice(0, 80) + '); enfocando por /eval + /tipear');
-  await evalJs(`(()=>{const e=document.querySelector('#description-textarea #textbox');e.scrollIntoView({block:'center'});e.focus();e.click();return true})()`);
-  await esperar(500);
-  await llamar(`/tipear?t=${q(meta.descripcion)}`);
-}
+// 2. Título y descripción (selectores acotados a ytcp-uploads-dialog: si el piloto venía de /video/<id>/edit, la página de
+//    atrás también tiene #title-textarea y el texto iba a parar al video equivocado; pasó el 2026-11-08 con reemplazar-largo.sh)
+// Escribe en una caja contenteditable del diálogo: /escribir (click+fill) y, si el texto no quedó, foco por /eval +
+// seleccionar todo + /tipear. El 2026-11-08 /escribir dejó el título sin cambiar en tres Shorts seguidos (sin error) y la
+// descripción respondió "not visible": con este camino de respaldo los dos quedan bien.
+const escribirCaja = async (sel, texto, nombre) => {
+  const r = await llamar(`/escribir?sel=${q(sel)}&texto=${q(texto)}`);
+  await esperar(600);
+  const lee = async () => String(await evalJs(`(document.querySelector(${JSON.stringify(sel)})||{}).innerText||''`)).trim();
+  if ((await lee()).startsWith(texto.slice(0, 40))) return;
+  console.log(`… ${nombre}: /escribir no dejó el texto${r && r.error ? ' (' + String(r.error).slice(0, 60) + ')' : ''}; foco por /eval + seleccionar todo + /tipear`);
+  await evalJs(`(()=>{const e=document.querySelector(${JSON.stringify(sel)});e.scrollIntoView({block:'center'});e.focus();e.click();document.execCommand('selectAll',false,null);return true})()`);
+  await esperar(400);
+  await llamar(`/tecla?k=Backspace`);
+  await esperar(300);
+  await llamar(`/tipear?t=${q(texto)}`);
+  await esperar(800);
+  if (!(await lee()).startsWith(texto.slice(0, 40))) fallo(`${nombre}: no pude escribirlo en el diálogo (quedó "${(await lee()).slice(0, 60)}")`);
+};
+await escribirCaja('ytcp-uploads-dialog #title-textarea #textbox', TITULO_STUDIO, 'título');
+await escribirCaja('ytcp-uploads-dialog #description-textarea #textbox', meta.descripcion, 'descripción');
 await esperar(1000);
-const leido = await evalJs(`[document.querySelector('#title-textarea #textbox').innerText.trim(), document.querySelector('#description-textarea #textbox').innerText.trim()]`);
+const leido = await evalJs(`[document.querySelector('ytcp-uploads-dialog #title-textarea #textbox').innerText.trim(), document.querySelector('ytcp-uploads-dialog #description-textarea #textbox').innerText.trim()]`);
 if (!Array.isArray(leido)) fallo('no pude leer título/descripción del diálogo: ' + JSON.stringify(leido).slice(0, 200));
 const [t, dsc] = leido;
 if (t !== TITULO_STUDIO) fallo('título no coincide: ' + t);

@@ -31,8 +31,11 @@ const PROSODIA = { rate: '+4%' };
  *  una afirmación (f0 final/cuerpo ≈ 0,8) y solo sube en las de sí/no; el servicio rechaza cualquier etiqueta SSML (prosody,
  *  contour, break), así que el único mando por frase es la prosodia de la llamada. */
 const PROSODIA_PREGUNTA = { rate: '-3%', pitch: '+10%' };
+/** Santiago (2026-11-08) probó el tono +10 % en las preguntas y NO le gustó: "mejor que dejes siempre el mismo tono". La
+ *  segmentación queda disponible pero apagada: toda la línea va en un solo pedido con PROSODIA. */
+const SEGMENTAR_PREGUNTAS = false;
 /** Sube cuando cambia cómo se prepara el texto para el servicio (números, segmentación): invalida la caché. */
-const VERSION_VOZ = 2;
+const VERSION_VOZ = 3;
 const REINTENTOS = 3;
 
 /**
@@ -60,7 +63,7 @@ export const segmentosDeVoz = (texto: string): { texto: string; prosodia: Record
 /** `limites` = WordBoundary crudos del servicio (para diagnosticar y realinear sin volver a sintetizar). */
 type Sidecar = { hash: string; voz: string; duracionAudio: number; palabras: Palabra[]; reales: boolean; texto: string; desfaseMax?: number; alineacion?: number; limites?: { texto: string; inicio: number; fin: number }[] };
 
-const hashDe = (texto: string, voz: string) => crypto.createHash('sha256').update(`${voz}\n${JSON.stringify(PROSODIA)}\n${JSON.stringify(PROSODIA_PREGUNTA)}\nv${VERSION_VOZ}\n${textoParaVoz(texto)}`).digest('hex').slice(0, 16);
+const hashDe = (texto: string, voz: string) => crypto.createHash('sha256').update(`${voz}\n${JSON.stringify(PROSODIA)}\n${SEGMENTAR_PREGUNTAS ? JSON.stringify(PROSODIA_PREGUNTA) : 'sin-segmentar'}\nv${VERSION_VOZ}\n${textoParaVoz(texto)}`).digest('hex').slice(0, 16);
 
 /** Lee un guion (envoltorio {plantilla, props}) SIN validar: cada preparar-* valida con su schema. */
 export const leerGuion = (ruta: string): { plantilla: 'tesis' | 'grafico'; props: GuionTesis | GuionGrafico } => {
@@ -108,7 +111,7 @@ const duracionMp3 = async (audio: Buffer, tmp: string) => {
  * segmentos siguientes se desplazan lo que dura el audio anterior (en ticks de 100 ns, como los entrega el servicio).
  */
 const sintetizar = async (tts: MsEdgeTTS, texto: string, tmp: string): Promise<{ audio: Buffer; limites: Limite[]; segmentos: number }> => {
-  const segmentos = segmentosDeVoz(textoParaVoz(texto));
+  const segmentos = SEGMENTAR_PREGUNTAS ? segmentosDeVoz(textoParaVoz(texto)) : [{ texto: textoParaVoz(texto), prosodia: PROSODIA, pregunta: false }];
   if (segmentos.length === 1) return { ...(await sintetizarUno(tts, segmentos[0].texto, segmentos[0].prosodia)), segmentos: 1 };
   const audios: Buffer[] = [];
   const limites: Limite[] = [];

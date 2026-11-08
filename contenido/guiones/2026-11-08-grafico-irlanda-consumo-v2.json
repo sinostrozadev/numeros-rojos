@@ -1,0 +1,214 @@
+{
+  "plantilla": "grafico",
+  "id": "2026-11-08-grafico-irlanda-consumo-v2",
+  "titulo": "Irlanda produce el doble que Alemania. Gasta lo mismo",
+  "descripcion": "¿Por qué un irlandés consume lo mismo que un alemán si el PIB de Irlanda por persona es casi el doble?\n\nEl consumo de los hogares por persona, del Banco Mundial, cuenta otra historia que el PIB: la de lo que llega a la mesa.\nLa autopsia completa del PIB irlandés, con patentes, Apple e ingreso nacional, está en el video largo.\n\nFuentes: Banco Mundial, WDI, NE.CON.PRVT.PC.KD y NY.GDP.PCAP.PP.CD (CC BY 4.0) https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=IE-DE\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#irlanda",
+    "#pib"
+  ],
+  "props": {
+    "id": "2026-11-08-grafico-irlanda-consumo-v2",
+    "gancho": {
+      "texto": "Según el Banco Mundial, el PIB por persona de Irlanda es casi el doble que el de Alemania.",
+      "rotulo": "PIB ×2",
+      "cifras": [
+        {
+          "texto": "casi el doble",
+          "valor": 1.9,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.CD",
+              "paises": [
+                "IRL",
+                "DEU"
+              ],
+              "desde": 2024,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "IRL",
+            "paisB": "DEU",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Consumo de los hogares por persona",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NE.CON.PRVT.PC.KD",
+        "paises": [
+          "IRL",
+          "DEU"
+        ],
+        "desde": 2000,
+        "hasta": 2024,
+        "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "IRL"
+      },
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Ahora mira lo que gasta cada persona en su vida diaria, que el Banco Mundial también publica: comida, casa, transporte. Esta es Irlanda. Esta es Alemania.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Consumo de los hogares por persona",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NE.CON.PRVT.PC.KD",
+            "paises": [
+              "IRL",
+              "DEU"
+            ],
+            "desde": 2000,
+            "hasta": 2024,
+            "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "IRL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "Irlanda."
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Van pegadas. En 2024, un irlandés consumía unos 24.000 dólares al año. Un alemán, prácticamente lo mismo.",
+        "cifras": [
+          {
+            "texto": "unos 24.000 dólares",
+            "valor": 24000,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "IRL",
+              "anio": 2024
+            }
+          },
+          {
+            "texto": "prácticamente lo mismo",
+            "valor": 1,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "IRL",
+              "paisB": "DEU",
+              "anio": 2024
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "LO MISMO",
+          "dice": "pegadas."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "La diferencia del PIB es de empresas extranjeras que registran en Dublín sus patentes y sus ganancias. Se cuentan en Irlanda. No se quedan en Irlanda.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "PIB por persona, 2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.CD",
+            "paises": [
+              "IRL",
+              "DEU"
+            ],
+            "desde": 2024,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "IRL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "PIB"
+        },
+        "cifras": [
+          {
+            "texto": "La diferencia del PIB",
+            "valor": 1.9,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.CD",
+                "paises": [
+                  "IRL",
+                  "DEU"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales corrientes)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "IRL",
+              "paisB": "DEU",
+              "anio": 2024
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "En el PIB, Irlanda vale dos Alemanias. En el supermercado, vale una.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Consumo final de los hogares per cápita, US$ constantes de 2015 (NE.CON.PRVT.PC.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=IE-DE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA (NY.GDP.PCAP.PP.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?locations=IE-DE"
+      }
+    ],
+    "enlaceLargo": "pendiente-tesis-irlanda-pib"
+  }
+}

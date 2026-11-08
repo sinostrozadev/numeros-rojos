@@ -16,7 +16,7 @@
  *
  * v2 (2026-11-07): el contrato incluye src/plantillas/comun/visual.ts (foto/mapa/iconos/ilustración + mascota) y el system
  * prompt trae GUION.md §7b. Además de zod, los chequeos propios exigen el ritmo visual del largo (2–4 mascotas,
- * ≤ 2 ilustraciones, 2 alternativas por foto, `dice` literal, nada de fotos seguidas sin gráfico; topes v3: 8–24 visuales, 2–5
+ * ≤ 2 ilustraciones, 2 alternativas por foto, `dice` literal, nada de fotos seguidas sin gráfico; topes v3: 8–24 visuales, 4–8
  * fotos) y cada `busqueda` de foto se
  * prueba contra la API de Wikimedia Commons (con las mismas reglas de licencia que scripts/lib/imagenes.mts).
  * v3 (2026-11-07, pedido de Santiago al ver Chile-Corea v2): `versus`, `sellos`, `marca` en iconos y `viaje` en mapa
@@ -141,7 +141,7 @@ const REGLAS = `REGLAS DURAS (si no se cumplen, el guion se descarta):
   número con los datos reales (variacion en %, ver GUION.md §8). No inventes valores: si no sabes el dato exacto de un año, no lo
   afirmes con número. El revisor numérico recalcula todo contra la API con tolerancia 5 %.
 - "dice" y "rotulo.dice": palabra literal del texto de esa escena. Un gráfico = un indicador. Toda escena "dato" lleva grafico.
-- LARGO: dirección visual de GUION.md §7b y §7c: 8–24 escenas con "visual" de ≥ 3 tipos (foto, mapa, iconos, ilustracion, versus), 2–5
+- LARGO: dirección visual de GUION.md §7b y §7c: 8–24 escenas con "visual" de ≥ 3 tipos (foto, mapa, iconos, ilustracion, versus), 4–8
   fotos, ≤ 2 ilustraciones, 2–4 escenas con "mascota" (≤ 1 de cada 3 por capítulo, nunca en significado). Cada foto: "busqueda" en
   inglés concreta (nombre propio + lugar/año, 2–5 palabras, como el título de un archivo de Commons), 2 "alternativas", "pie" con
   lugar y año. Nunca dos escenas seguidas con foto sin gráfico. "dividido" solo si la escena tiene visual Y grafico; úsalo con
@@ -297,7 +297,7 @@ const chequeosVisuales = (escenas: any[]): string[] => {
   const sellos = escenas.reduce((s, e) => s + (e.sellos?.length ?? 0), 0);
   if (con.length < 8 || con.length > 24) mal.push(`${con.length} escenas con visual; el largo lleva 8–24 (§7b)`);
   if (tipos.size < 3) mal.push(`visuales de solo ${tipos.size} tipo(s); mezcla ≥ 3 de foto/mapa/iconos/ilustracion/versus`);
-  if (n('foto') < 2 || n('foto') > 5) mal.push(`${n('foto')} fotos; van 2–5`);
+  if (n('foto') < 4 || n('foto') > 8) mal.push(`${n('foto')} fotos; van 4–8 (Santiago 2026-11-08: "más imágenes, le dan un toque genial")`);
   if (n('ilustracion') > 2) mal.push(`${n('ilustracion')} ilustraciones; máximo 2`);
   if (mascotas < 2 || mascotas > 4) mal.push(`${mascotas} mascotas; van 2–4`);
   if (viajes > 2) mal.push(`${viajes} mapas con viaje; máximo 2 (solo en los cambios grandes de país)`);
