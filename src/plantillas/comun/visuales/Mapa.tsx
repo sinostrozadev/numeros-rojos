@@ -29,8 +29,8 @@ export const colorDestacado = (k: number) => (k === 0 ? PALETA.dorado : SERIES_G
  *
  * VIAJE v3 (`v.viaje`): la cámara parte quieta sobre `viaje.desde` (zoom de país) y en `viajeEn` (frame local) vuela
  * `T_VIAJE` s por el círculo máximo hasta `viaje.hasta`: el zoom baja hasta ver ambos países a mitad de camino y vuelve
- * a subir; una línea punteada dorada se dibuja tras la cámara y el país de llegada se enciende en dorado al aterrizar
- * (el de partida queda tenue). Sin `viaje`, todo igual que antes (`acercar` o cámara fija).
+ * a subir; el país de llegada se enciende en dorado al aterrizar (el de partida queda tenue). Sin línea de trayecto
+ * (v3.1: con línea parecía la explicación de un viaje). Sin `viaje`, todo igual que antes (`acercar` o cámara fija).
  */
 export const Mapa: React.FC<{ v: VisualMapa; ancho: number; alto: number; frame: number; fps: number; viajeEn?: number }> = ({ v, ancho, alto, frame, fps, viajeEn = 0 }) => {
   const altoMapa = alto - ALTO_PIE;
@@ -151,14 +151,9 @@ export const Mapa: React.FC<{ v: VisualMapa; ancho: number; alto: number; frame:
             const { col, e } = estiloPais(p.iso!, k);
             return <path key={`d${i}`} d={p.d} fill={col} fillOpacity={0.25 + 0.7 * e} stroke={col} strokeWidth={1.6} />;
           })}
-          {geo.ruta && (
-            <g>
-              <path d={geo.ruta} fill="none" stroke="rgba(0,0,0,0.55)" strokeWidth={9} strokeLinecap="round" strokeDasharray="2 20" />
-              <path d={geo.ruta} fill="none" stroke={PALETA.dorado} strokeWidth={5} strokeLinecap="round" strokeDasharray="2 20" />
-              {geo.origen && <circle cx={geo.origen[0]} cy={geo.origen[1]} r={9} fill={PALETA.dorado} stroke={PALETA.fondo} strokeWidth={3} />}
-              {geo.fin && llegada > 0 && <circle cx={geo.fin.x} cy={geo.fin.y} r={10 * llegada} fill={PALETA.dorado} stroke={PALETA.fondo} strokeWidth={3} />}
-            </g>
-          )}
+          {/* v3.1 (Santiago, 2026-11-07): el viaje NO dibuja línea punteada ni puntos. Con la línea parecía que se explicaba
+              un trayecto; el vuelo de cámara solo (el país de partida se apaga, el de llegada se enciende) ya dice "pasamos
+              al otro país". `geo.ruta`/`geo.fin` se siguen calculando para ubicar la etiqueta de llegada. */}
           {geo.flechas.map((fl, i) => {
             if (!fl) return null;
             const t0 = (0.9 + i * PASO_FLECHA) * fps;

@@ -32,3 +32,15 @@
   cifras fuertes a `sellos`, los cambios grandes de país a `viaje` de mapa (≤ 2 por video), y el remate se funde a negro antes de "siguiente".
 - **Cómo se prueba:** Chile-Corea v3 (misma voz, dirección visual nueva) subido PRIVADO para que Santiago lo compare con la v2 programada
   (dom 11-08 19:00, intacta). Si aprueba, las reglas pasan al generador y a los largos de Argentina e Irlanda.
+
+## 2026-11-07 (noche, 2.ª ronda) — lo que Santiago vio en el v3 privado
+- **Cifras:** es-MX lee "1.000" como "uno punto cero cero cero" (en México el punto es decimal). Toda cifra con separador de miles
+  o decimal con coma va al servicio en palabras (`textoParaVoz` en `scripts/voz.mts`); los subtítulos siguen mostrando la cifra.
+- **Preguntas planas:** medido con Jorge, las preguntas con "qué/cómo" bajan el tono al final como una afirmación (f0 final/cuerpo ≈ 0,8)
+  y el servicio rechaza todo SSML. Decisión: la frase que termina en "?" se sintetiza aparte con tono +10 % y ritmo −3 %
+  (`PROSODIA_PREGUNTA`). Voces que sí suben al final en la misma frase: es-CO-Gonzalo (1,13), es-AR-Tomás casi plano (0,94);
+  cambiar de voz es identidad del canal → lo decide Santiago.
+- **Parpadeo de tarjetas:** la tarjeta de capítulo aclaraba su fondo en los últimos 7 frames y dejaba ver el gráfico anterior
+  apagado. Ahora tarjeta de título y de capítulo cortan limpio; la escena nueva entra con su animación.
+- **Viaje de mapa sin línea:** el vuelo de cámara basta; la línea punteada parecía explicar un trayecto.
+- **Primer gráfico:** el título dice la variable ("PIB por persona en 1960") y la etiqueta la explica en lenguaje llano.

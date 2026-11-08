@@ -57,6 +57,9 @@
 - **(noche) `subir-studio.mjs`:** `RETOMAR=1` (retoma un diálogo de subida abierto desde Visibility si falló un paso tardío), categoría tolerante (Studio
   recuerda "Education" y ya no muestra "People & Blogs"), y título con sufijo "· PRUEBA vN" en modo privado para que el anti-duplicados por título no lo
   confunda con la versión programada.
+- **(madrugada 11-08) Segunda ronda de Santiago sobre el v3 → v4 privado (`K5ma4A5VFj8`):** cifras con miles en palabras para la voz
+  (es-MX leía "1.000" como decimal), preguntas en segmento propio con tono +10 %, tarjetas sin fundido (parpadeo), viaje de mapa sin línea,
+  primer gráfico con título que nombra la variable. Medición de entonación por voz en `herramientas-disponibles`.
 ## Pendiente
 - Verificación por teléfono del canal (Santiago) para poner las miniaturas (Remotion o GPT) a los 3 largos.
 - Mascota: aprobación de identidad por Santiago con los fotogramas reales; si aprueba, re-render de los 3 largos con las poses PNG (hoy llevan el SVG de reserva).

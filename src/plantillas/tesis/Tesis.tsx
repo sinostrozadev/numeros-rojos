@@ -253,7 +253,8 @@ const CapituloFijo: React.FC<{ n: number; titulo: string; frame: number }> = ({ 
 /** Tarjeta de título del frame 0: se ve ENTERA desde el primer cuadro (cabecera grande + rótulo del gancho). */
 const TarjetaTitulo: React.FC<{ g: GuionTesis; frame: number; frames: number }> = ({ g, frame, frames }) => {
   const s = spring({ frame, fps: FORMATO_LARGO.fps, config: { damping: 14, stiffness: 160 } });
-  const salida = interpolate(frame, [frames - 6, frames], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  // Sin fundido de salida (v3.1): el gráfico del gancho entra con su propia animación justo al corte.
+  const salida = 1;
   // El rótulo cabe en una línea (≈ 0,62 em por carácter en mayúsculas), entre 96 y 150 px.
   const tamRotulo = Math.round(Math.max(96, Math.min(150, (W - 2 * S.lados - 120) / (0.62 * Math.max(1, g.gancho.rotulo.length)))));
   return (
@@ -274,10 +275,12 @@ const TarjetaTitulo: React.FC<{ g: GuionTesis; frame: number; frames: number }> 
 const TarjetaCapitulo: React.FC<{ n: number; titulo: string; frame: number; frames: number }> = ({ n, titulo, frame, frames }) => {
   const fps = FORMATO_LARGO.fps;
   const e = spring({ frame, fps, config: { damping: 16, stiffness: 200 } });
-  const sale = interpolate(frame, [frames - 7, frames], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  // v3.1 (Santiago, 2026-11-07): la tarjeta NO se desvanece al final. Antes el fondo se aclaraba en los últimos 7 frames y
+  // dejaba ver un cuarto de segundo el gráfico anterior apagado antes del corte: se leía como un parpadeo. Ahora la tarjeta
+  // se mantiene entera hasta el último frame y la escena nueva entra con su propia animación.
   return (
-    <AbsoluteFill style={{ background: fondoAlfa(0.92 * (1 - sale)), justifyContent: 'center', paddingLeft: 170 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 50, transform: `translateX(${(1 - e) * -120 - sale * 80}px)`, opacity: Math.min(1, e * 1.5) * (1 - sale) }}>
+    <AbsoluteFill style={{ background: fondoAlfa(0.92), justifyContent: 'center', paddingLeft: 170 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 50, transform: `translateX(${(1 - e) * -120}px)`, opacity: Math.min(1, e * 1.5) }}>
         <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 260, color: PALETA.dorado, lineHeight: 0.9, fontVariantNumeric: 'tabular-nums' }}>{String(n).padStart(2, '0')}</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 1150 }}>
           <div style={{ fontFamily: TIPO.texto, fontWeight: 800, fontSize: 28, letterSpacing: 6, color: PALETA.rojo }}>CAPÍTULO {n}</div>

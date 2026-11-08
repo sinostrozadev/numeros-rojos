@@ -20,17 +20,47 @@ import { habladasDe, alinearHabladas, VERSION_ALINEACION, type Limite } from './
 import { armarTiempos, type LineaVoz, type MedidaLinea, type Palabra, type Tiempos } from '../src/plantillas/comun/plan';
 import { lineasTesis } from '../src/plantillas/tesis/plan';
 import { lineasGrafico } from '../src/plantillas/grafico/plan';
+import { numeroAPalabras } from '../src/plantillas/comun/numeros';
 
 export const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const FORMATO_AUDIO = OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3;
 /** Narración: apenas más rápida que la lectura neutra (docs/CONVENCIONES.md: +4 %). */
 const PROSODIA = { rate: '+4%' };
+/** Preguntas (v3.1, Santiago 2026-11-07: "las preguntas suenan planas"): la frase que termina en "?" se sintetiza aparte,
+ *  un poco más aguda y más lenta. Medido con Jorge: en las preguntas con "qué/cómo/por qué" el tono BAJA al final igual que en
+ *  una afirmación (f0 final/cuerpo ≈ 0,8) y solo sube en las de sí/no; el servicio rechaza cualquier etiqueta SSML (prosody,
+ *  contour, break), así que el único mando por frase es la prosodia de la llamada. */
+const PROSODIA_PREGUNTA = { rate: '-3%', pitch: '+10%' };
+/** Sube cuando cambia cómo se prepara el texto para el servicio (números, segmentación): invalida la caché. */
+const VERSION_VOZ = 2;
 const REINTENTOS = 3;
+
+/**
+ * Texto que se manda al servicio. es-MX lee "1.000" como decimal ("uno punto cero cero cero") porque en México el punto es
+ * decimal: toda cifra con separador de miles (y las decimales con coma) va en palabras ("mil", "tres mil doscientos",
+ * "dos coma cinco"). El alineador ya reparte el límite de una cifra por su lectura en palabras (lib/alinear.mts), así que
+ * los subtítulos siguen mostrando "1.000".
+ */
+export const textoParaVoz = (texto: string) =>
+  texto.replace(/\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+,\d+/g, (m) => numeroAPalabras(m));
+
+/** Frases de una línea con la prosodia de cada una; las vecinas con la misma prosodia se juntan en un solo pedido. */
+export const segmentosDeVoz = (texto: string): { texto: string; prosodia: Record<string, string>; pregunta: boolean }[] => {
+  const frases = texto.match(/[^.!?…]+[.!?…]+["»)]?\s*|[^.!?…]+$/g) ?? [texto];
+  const seg: { texto: string; prosodia: Record<string, string>; pregunta: boolean }[] = [];
+  for (const f of frases) {
+    const pregunta = /\?["»)]?\s*$/.test(f);
+    const ultimo = seg[seg.length - 1];
+    if (ultimo && ultimo.pregunta === pregunta) ultimo.texto += f;
+    else seg.push({ texto: f, prosodia: pregunta ? PROSODIA_PREGUNTA : PROSODIA, pregunta });
+  }
+  return seg.map((s) => ({ ...s, texto: s.texto.trim() })).filter((s) => s.texto);
+};
 
 /** `limites` = WordBoundary crudos del servicio (para diagnosticar y realinear sin volver a sintetizar). */
 type Sidecar = { hash: string; voz: string; duracionAudio: number; palabras: Palabra[]; reales: boolean; texto: string; desfaseMax?: number; alineacion?: number; limites?: { texto: string; inicio: number; fin: number }[] };
 
-const hashDe = (texto: string, voz: string) => crypto.createHash('sha256').update(`${voz}\n${JSON.stringify(PROSODIA)}\n${texto}`).digest('hex').slice(0, 16);
+const hashDe = (texto: string, voz: string) => crypto.createHash('sha256').update(`${voz}\n${JSON.stringify(PROSODIA)}\n${JSON.stringify(PROSODIA_PREGUNTA)}\nv${VERSION_VOZ}\n${textoParaVoz(texto)}`).digest('hex').slice(0, 16);
 
 /** Lee un guion (envoltorio {plantilla, props}) SIN validar: cada preparar-* valida con su schema. */
 export const leerGuion = (ruta: string): { plantilla: 'tesis' | 'grafico'; props: GuionTesis | GuionGrafico } => {
@@ -45,8 +75,8 @@ export const lineasDe = (plantilla: 'tesis' | 'grafico', props: GuionTesis | Gui
 
 const esperar = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-const sintetizar = async (tts: MsEdgeTTS, texto: string): Promise<{ audio: Buffer; limites: Limite[] }> => {
-  const { audioStream, metadataStream } = tts.toStream(texto, PROSODIA);
+const sintetizarUno = async (tts: MsEdgeTTS, texto: string, prosodia: Record<string, string>): Promise<{ audio: Buffer; limites: Limite[] }> => {
+  const { audioStream, metadataStream } = tts.toStream(texto, prosodia);
   const partes: Buffer[] = [];
   const limites: Limite[] = [];
   const metaListo = new Promise<void>((resolve) => {
@@ -62,6 +92,34 @@ const sintetizar = async (tts: MsEdgeTTS, texto: string): Promise<{ audio: Buffe
   const audio = Buffer.concat(partes);
   if (audio.length < 1000) throw new Error('audio vacío');
   return { audio, limites };
+};
+
+/** Duración (s) de un mp3 en memoria. */
+const duracionMp3 = async (audio: Buffer, tmp: string) => {
+  fs.writeFileSync(tmp, audio);
+  const d = (await parseFile(tmp)).format.duration ?? 0;
+  fs.unlinkSync(tmp);
+  return d;
+};
+
+/**
+ * Sintetiza una línea: el texto se prepara con `textoParaVoz` y se parte en segmentos (afirmaciones / preguntas); cada
+ * segmento es un pedido con su prosodia y los mp3 (CBR, sin cabecera Xing) se concatenan; los límites de palabra de los
+ * segmentos siguientes se desplazan lo que dura el audio anterior (en ticks de 100 ns, como los entrega el servicio).
+ */
+const sintetizar = async (tts: MsEdgeTTS, texto: string, tmp: string): Promise<{ audio: Buffer; limites: Limite[]; segmentos: number }> => {
+  const segmentos = segmentosDeVoz(textoParaVoz(texto));
+  if (segmentos.length === 1) return { ...(await sintetizarUno(tts, segmentos[0].texto, segmentos[0].prosodia)), segmentos: 1 };
+  const audios: Buffer[] = [];
+  const limites: Limite[] = [];
+  let desplazamiento = 0; // ticks de 100 ns
+  for (const s of segmentos) {
+    const r = await sintetizarUno(tts, s.texto, s.prosodia);
+    for (const l of r.limites) limites.push({ ...l, Data: { ...l.Data, Offset: l.Data.Offset + desplazamiento } });
+    desplazamiento += Math.round((await duracionMp3(r.audio, tmp)) * 1e7);
+    audios.push(r.audio);
+  }
+  return { audio: Buffer.concat(audios), limites, segmentos: segmentos.length };
 };
 
 /** Genera (o reutiliza) la voz de las líneas y escribe tiempos.json. Devuelve los tiempos. */
@@ -101,8 +159,8 @@ export const generarVoz = async (id: string, vozElegida: string | undefined, lin
         for (let intento = 1; intento <= REINTENTOS && !sidecar; intento++) {
           try {
             if (!tts) { tts = new MsEdgeTTS({ connectionTimeoutMs: 15000, synthesisTimeoutMs: 30000 }); await tts.setMetadata(voz, FORMATO_AUDIO, { wordBoundaryEnabled: true }); }
-            const { audio, limites } = await sintetizar(tts, texto);
             const tmp = `${mp3}.tmp.mp3`;
+            const { audio, limites, segmentos } = await sintetizar(tts, texto, `${mp3}.seg.mp3`);
             fs.writeFileSync(tmp, audio);
             const meta = await parseFile(tmp);
             const duracionAudio = meta.format.duration ?? 0;
@@ -112,7 +170,7 @@ export const generarVoz = async (id: string, vozElegida: string | undefined, lin
             const { palabras, reales, desfaseMax } = alinearHabladas(texto, habladas, duracionAudio);
             sidecar = { hash, voz, duracionAudio: +duracionAudio.toFixed(3), palabras, reales, texto, desfaseMax, alineacion: VERSION_ALINEACION, limites: habladas };
             fs.writeFileSync(sidecarRuta, JSON.stringify(sidecar, null, 2) + '\n');
-            console.log(`+ voz ${id}/${i} (${tipo}): ${sidecar.duracionAudio}s, ${palabras.length} palabras${reales ? '' : ' (estimadas)'}`);
+            console.log(`+ voz ${id}/${i} (${tipo}): ${sidecar.duracionAudio}s, ${palabras.length} palabras${reales ? '' : ' (estimadas)'}${segmentos > 1 ? ` · ${segmentos} segmentos (pregunta con tono propio)` : ''}`);
           } catch (e) {
             ultimoError = e;
             console.warn(`! voz ${id}/${i} intento ${intento}/${REINTENTOS} falló: ${(e as Error).message}`);
