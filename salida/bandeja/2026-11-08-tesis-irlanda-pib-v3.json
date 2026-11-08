@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-08-tesis-irlanda-pib-v3",
+  "plantilla": "tesis",
+  "titulo": "Irlanda creció un 25 % en un año. Su gente, un 2 %",
+  "descripcion": "¿Cómo creció la economía de Irlanda un 25 % en 2015 si el consumo de su gente subió apenas un 2 %?\n\nCapítulos:\n0:00 Introducción\n0:27 El salto de 2015 en el PIB de Irlanda\n2:15 Quién llegó a Irlanda y por qué\n4:20 PIB contra ingreso nacional\n6:25 El bolsillo irlandés y el latinoamericano\n8:44 El número que nadie mira\n\nHacemos la autopsia de un número: el PIB irlandés. Seguimos la inversión extranjera, las patentes y las exportaciones registradas en Dublín, y comparamos lo que se produce en Irlanda con lo que se queda en Irlanda.\nDespués aplicamos la misma lupa a Chile y Panamá: en América Latina la brecha entre PIB e ingreso existe, pero es mucho más chica.\nEl dato final: un irlandés consume prácticamente lo mismo que un alemán.\n\nFotos (Wikimedia Commons): Custom House Quay, Dublin (DSC06368) — Matti Blume (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0), https://commons.wikimedia.org/wiki/File:Custom_House_Quay,_Dublin_(DSC06368).jpg; Reichstag building Berlin view from west before sunset — Jürgen Matern (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Reichstag_building_Berlin_view_from_west_before_sunset.jpg; IFSC IN DUBLIN DOCKLANDS Ref -293 — William Murphy (CC BY-SA 2.0, https://creativecommons.org/licenses/by-sa/2.0), https://commons.wikimedia.org/wiki/File:IFSC_IN_DUBLIN_DOCKLANDS_Ref_-293.jpg; Boland's Quay, Silicon Docks — William Murphy (CC BY-SA 2.0, https://creativecommons.org/licenses/by-sa/2.0), https://commons.wikimedia.org/wiki/File:Boland%27s_Quay,_Silicon_Docks.jpg; Containers at Dublin Port - geograph.org.uk - 6128743 — Gareth James (CC BY-SA 2.0, https://creativecommons.org/licenses/by-sa/2.0), https://commons.wikimedia.org/wiki/File:Containers_at_Dublin_Port_-_geograph.org.uk_-_6128743.jpg; Belgique - Bruxelles - Schuman - Berlaymont - 01 — EmDee (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0), https://commons.wikimedia.org/wiki/File:Belgique_-_Bruxelles_-_Schuman_-_Berlaymont_-_01.jpg; Central Bank of Ireland New HQ — Metro Centric (CC BY 2.0, https://creativecommons.org/licenses/by/2.0), https://commons.wikimedia.org/wiki/File:Central_Bank_of_Ireland_New_HQ.jpg; Dublin is famous for its Georgian Doors. - panoramio — Pastor Sam (CC BY 3.0, https://creativecommons.org/licenses/by/3.0), https://commons.wikimedia.org/wiki/File:Dublin_is_famous_for_its_Georgian_Doors._-_panoramio.jpg\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.MKTP.KD.ZG, NY.GDP.PCAP.PP.CD, NY.GNP.PCAP.PP.CD, BX.KLT.DINV.WD.GD.ZS, NE.EXP.GNFS.ZS, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org\n- Comisión Europea, IP/16/2923 https://ec.europa.eu/commission/presscorner/detail/en/ip_16_2923\n- CSO Irlanda, Modified GNI https://www.cso.ie/en/interactivezone/statisticsexplained/nationalaccountsexplained/modifiedgni/\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#irlanda",
+    "#pib",
+    "#latinoamerica",
+    "#datos"
+  ],
+  "duracionSeg": 589.7,
+  "estado": "listo",
+  "tipo": "largo",
+  "miniatura": "salida/caratulas/2026-11-08-irlanda-pib-1.png",
+  "miniaturaNota": "GPT 2026-11-08 (muelle de Dublín: torres de vidrio sobre casas georgianas; caja roja EL PIB MIENTE). El lote del 11-09 la adjunta al subir; también puesta a m_Lp1dgEsvA (v2)."
+}
