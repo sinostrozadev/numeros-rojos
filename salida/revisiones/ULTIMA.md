@@ -63,6 +63,8 @@
 - **(madrugada 11-08) Luz verde de Santiago al v4:** reglas guardadas (tono de voz único, cifras en palabras, 4–8 fotos), tres guiones nuevos
   por agentes Opus (Chile-Corea v5 con 8 fotos, Argentina v3, Irlanda v3; voz idéntica, ritmo 0 errores), 4 Shorts re-renderizados (3 con cifras
   mal leídas + el del martes, programado `BILBHyyu_h8`). Incidente: tope diario de subidas agotado por intentos fallidos → ver `incidentes-canal` §5.
+- **(02:35) Chile-Corea definitivo sin subir de nuevo:** el v4 privado aprobado pasó a programado (dom 19:00) editando visibilidad; v2 privado.
+  Sello baja 70 px en zona angosta (tapaba títulos de dos líneas). Tanda diferida para el 11-09 01:50 (Shorts primero como sonda del tope).
 ## Pendiente
 - Verificación por teléfono del canal (Santiago) para poner las miniaturas (Remotion o GPT) a los 3 largos.
 - Mascota: aprobación de identidad por Santiago con los fotogramas reales; si aprueba, re-render de los 3 largos con las poses PNG (hoy llevan el SVG de reserva).

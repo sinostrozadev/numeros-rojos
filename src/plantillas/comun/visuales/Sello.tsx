@@ -38,7 +38,10 @@ export const Sello: React.FC<{ s: TipoSello; frame: number; fps: number; zona: Z
   const opacidad = interpolate(frame, [0, 3], [0, 1], { extrapolateRight: 'clamp' });
   // Onda de impacto: aparece al tocar (≈ 4 frames) y se abre 0,4 s.
   const onda = interpolate(frame, [4, 4 + 0.4 * fps], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const top = MARGEN_SELLO + Math.min(FRANJA_TITULO, zona.alto * 0.2);
+  // Franja del título: en una zona angosta (`dividido`) el título del gráfico suele ocupar dos líneas más el subtítulo, y el
+  // sello le tapaba el final (visto en Chile-Corea v5, "1/3 CONTRA 1/5" sobre "Inversión en máquinas, edificios e…"): ahí
+  // baja 70 px más, a la parte alta del área de trazado.
+  const top = MARGEN_SELLO + Math.min(FRANJA_TITULO + (angosto ? 70 : 0), zona.alto * 0.3);
 
   return (
     <div style={{ position: 'relative', width: zona.ancho, height: zona.alto, pointerEvents: 'none' }}>

@@ -11,7 +11,7 @@
     "#datos"
   ],
   "duracionSeg": 599.2,
-  "estado": "subido",
+  "estado": "reemplazado",
   "tipo": "largo",
   "miniatura": "salida/bandeja/2026-11-07-tesis-chile-corea-v2-mini.png",
   "publicarEn": "2026-11-08T19:00:00-03:00",
@@ -19,5 +19,6 @@
   "url": "https://www.youtube.com/watch?v=eTq0TBuEWIs",
   "programado": "2026-11-08 19:00",
   "subidoEn": "2026-11-07T07:01:48.966Z",
-  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio"
+  "notaMiniatura": "miniatura enviada pero sin vista previa visible: revisarla en Studio",
+  "nota": "privado como \"(versión anterior)\" el 2026-11-08; lo reemplaza K5ma4A5VFj8 (v4)"
 }

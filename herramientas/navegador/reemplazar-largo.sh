@@ -32,4 +32,4 @@ R=$(curl -s -m 10 --get "$P/eval" --data-urlencode "js=(()=>({vis:document.query
 echo "viejo $VIEJO → $R"
 echo "$R" | grep -q '"vis":"Private"' || { echo "✗ el viejo no quedó privado; no subo el nuevo"; exit 1; }
 # 2) nuevo
-NR_CANAL_ID=$NR_CANAL_ID timeout 600 node herramientas/navegador/subir-studio.mjs "$NUEVO" "$FECHA" "$HORA"
+NR_CANAL_ID=$NR_CANAL_ID timeout 2400 node herramientas/navegador/subir-studio.mjs "$NUEVO" "$FECHA" "$HORA"

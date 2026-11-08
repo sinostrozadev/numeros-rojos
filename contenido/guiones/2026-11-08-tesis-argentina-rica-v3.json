@@ -1,6 +1,6 @@
 {
   "plantilla": "tesis",
-  "id": "pendiente-tesis-argentina-rica-v3",
+  "id": "2026-11-08-tesis-argentina-rica-v3",
   "titulo": "Argentina era más rica que Alemania. ¿Qué pasó después?",
   "descripcion": "¿Cómo pasó Argentina de producir más por persona que Alemania en 1895 a quedar última entre esos mismos ocho países?\n\nRecorremos 130 años de datos del Proyecto Maddison y del Banco Mundial en cuatro quiebres: el empate perdido con Australia, los sesenta años en que creció más lento que Europa, la inflación de los ochenta y el vaivén desde 2001.\nLa tesis: Argentina no se empobreció en un año. Se quedó atrás crisis tras crisis, mientras otros crecían sin retroceder tanto.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.DEFL.KD.ZG, DT.DOD.DECT.GN.ZS, NY.GDP.PCAP.KD.ZG (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
@@ -11,7 +11,7 @@
     "#datos"
   ],
   "props": {
-    "id": "pendiente-tesis-argentina-rica-v3",
+    "id": "2026-11-08-tesis-argentina-rica-v3",
     "cabecera": "ARGENTINA · 1895–2025",
     "gancho": {
       "texto": "En 1895, un argentino producía más que un alemán y más del doble que un español; hoy es el español quien produce casi el doble. ¿En qué momento se dio vuelta la cuenta?",

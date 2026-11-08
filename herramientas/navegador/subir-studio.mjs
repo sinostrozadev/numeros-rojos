@@ -150,6 +150,10 @@ if (process.env.BORRADOR === '1') {
   if (sub.error) fallo('archivo: ' + sub.error);
 }
 await hasta(() => evalJs(`!!document.querySelector('ytcp-uploads-dialog #title-textarea #textbox')`), 60000, 1000, 'formulario de detalles del diálogo');
+// Tope diario (canal sin verificar): el diálogo abre pero con un scrim que bloquea los campos. Abortar AQUÍ, antes de
+// escribir nada: cada reintento gasta otra subida del día siguiente. Código 3 para que un lote se detenga.
+await esperar(1500);
+if (/Daily upload limit reached/i.test(await textoDialogo())) { console.error('✗ TOPE DIARIO DE SUBIDAS: "Daily upload limit reached". No reintentar hasta dentro de 24 h (o verificar el teléfono).'); process.exit(3); }
 await esperar(2000);
 
 // 2. Título y descripción (selectores acotados a ytcp-uploads-dialog: si el piloto venía de /video/<id>/edit, la página de
