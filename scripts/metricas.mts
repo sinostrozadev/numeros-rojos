@@ -13,7 +13,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { DIR_SALIDA, RAIZ, cargarCalendario, escribirJson, leerBandeja, existeSecreto, ARCHIVO_TOKEN_YT } from './lib/operacion.mjs';
 
-const CANAL = process.env.NR_CANAL_ID ?? '';
+// Si el cron no pasa NR_CANAL_ID, se lee de secrets/canal.env (así cualquier invocación mide el canal correcto).
+const deEnv = (k: string) => { try { return fs.readFileSync(path.join(import.meta.dirname, '..', 'secrets', 'canal.env'), 'utf8').match(new RegExp(`^${k}=["']?([^"'\\n]*)`, 'm'))?.[1]; } catch { return undefined; } };
+const CANAL = process.env.NR_CANAL_ID ?? deEnv('NR_CANAL_ID') ?? '';
 if (!/^UC[\w-]{22}$/.test(CANAL)) {
   console.log('MÉTRICAS: falta NR_CANAL_ID (id UC… del canal En Números Rojos; Studio → Configuración → Canal → Configuración avanzada). No se mide nada.');
   process.exit(0);
@@ -39,7 +41,7 @@ const piloto = async (ruta: string, params: Record<string, string> = {}, bin = f
 const PANTALLAS = [
   { nombre: '1-overview', ruta: 'analytics/tab-overview/period-default', espera: /Views|Visualizaciones|Watch time|Tiempo de reproducci/i },
   { nombre: '2-monetizacion', ruta: 'monetization', espera: /Partner Program|Programa de Partners|subscribers|suscriptores/i },
-  { nombre: '3-alcance', ruta: 'analytics/tab-reach_viewers/period-default', espera: /Impressions|Impresiones/i },
+  { nombre: '3-audiencia', ruta: 'analytics/tab-build_audience/period-default', espera: /Returning viewers|Espectadores recurrentes|Unique viewers|Espectadores únicos|Subscribers|Suscriptores/i },
   { nombre: '4-contenido', ruta: 'analytics/tab-content/period-default', espera: /Content|Contenido|Views|Visualizaciones/i },
 ];
 
@@ -93,7 +95,7 @@ const capturar = async (): Promise<{ estado: Resultado | string; textos: Record<
         if (MALA.test(texto)) { texto = await asegurarCanal(`https://studio.youtube.com/channel/${CANAL}/${p.ruta}`); url = (await piloto('/url')).url ?? ''; if (MALA.test(texto)) break; }
         if (p.espera.test(texto) && texto.length > 300) { await dormir(2500); texto = String(await piloto('/texto', { max: '6000' })); break; }
       }
-      const png = await piloto('/captura', {}, true);
+      const png = await piloto('/captura', p.nombre.includes('monetizacion') ? { full: '1' } : {}, true);
       const archivo = path.join(dir, `${p.nombre}.png`);
       let veredicto = 'ok';
       if (MALA.test(texto)) veredicto = 'canal equivocado (el cambio de canal no funcionó)';
@@ -125,9 +127,11 @@ const numero = (s?: string) => {
   if (!s) return null;
   const m = s.match(/([\d.,]+)\s*(K|M|mil|mill)?/i);
   if (!m) return null;
-  let n = parseFloat(m[1].replace(/\./g, '').replace(',', '.'));
-  if (/k|mil$/i.test(m[2] ?? '')) n *= 1e3; else if (/m|mill/i.test(m[2] ?? '')) n *= 1e6;
-  return Math.round(n);
+  const suf = m[2] ?? '', t = m[1];
+  // Con sufijo (1.5K, 1,5 mil) el separador es decimal; sin sufijo, "1.234"/"1,234,567" son miles y "7.0"/"343,9" decimales.
+  let n = suf ? parseFloat(t.replace(',', '.')) : /^\d{1,3}([.,]\d{3})+$/.test(t) ? parseFloat(t.replace(/[.,]/g, '')) : parseFloat(t.replace(',', '.'));
+  if (/^k|^mil$/i.test(suf)) n *= 1e3; else if (/^m/i.test(suf)) n *= 1e6;
+  return Math.round(n * 10) / 10;
 };
 
 const canalPublico = async () => {
@@ -160,7 +164,7 @@ const deStudio = (textos: Record<string, string>) => {
   return {
     vistas28d: tras(t, /(?:Views|Visualizaciones)\s*\n?\s*([\d.,]+\s*[KM]?)/i),
     horas28d: tras(t, /(?:Watch time \(hours\)|Tiempo de reproducción \(horas\))\s*\n?\s*([\d.,]+)/i),
-    vistas48h: tras(t, /([\d.,]+)\s*\n?\s*(?:Views|Visualizaciones)\s*·?\s*(?:Last 48 hours|Últimas 48 horas)/i),
+    vistas48h: tras(t, /(?:48 hour views|Visualizaciones en 48 horas|Visualizaciones de las últimas 48 horas)\s*\n?\s*([\d.,]+\s*[KM]?)/i),
     ypp: m ? { subs: tras(m, /([\d.,]+)\s*\/\s*1[.,]?000/), vistasShorts90d: tras(m, /([\d.,]+\s*[KM]?)\s*\/\s*10\s*M/i), horas12m: tras(m, /([\d.,]+)\s*\/\s*4[.,]?000/) } : null,
   };
 };

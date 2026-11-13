@@ -1,0 +1,177 @@
+{
+  "fecha": "2026-11-12",
+  "canalId": "UC8uOwislkGbnnfoqsJ_FgAw",
+  "generadoEn": "2026-11-13T01:00:55.725Z",
+  "zona": "America/Santiago",
+  "subs": 2,
+  "videosPublicados": 6,
+  "vistasTotales": 1547,
+  "vistasLargos": 129,
+  "vistasShorts": 1418,
+  "vistas28d": 1500,
+  "vistas48h": 66,
+  "horasTotales": 7,
+  "progresoYPP": {
+    "subs": null,
+    "vistasShorts90d": null,
+    "horas12m": null
+  },
+  "fuentes": {
+    "numeros": "públicos (curl a youtube.com)",
+    "studio": "texto de Studio, mejor esfuerzo",
+    "api": "sin token"
+  },
+  "capturas": {
+    "1-overview": "ok",
+    "2-monetizacion": "ok",
+    "3-audiencia": "ok",
+    "4-contenido": "ok"
+  },
+  "videos": [
+    {
+      "id": "mx9le_OLFx8",
+      "bandeja": "2026-11-06-grafico-argentina-espana",
+      "titulo": "España tenía la mitad que Argentina. Hoy tiene el doble",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-09T13:00:00-03:00",
+      "vistas": 316,
+      "publicadoEn": "2026-11-09T08:00:28-08:00",
+      "segundos": 42,
+      "privado": false
+    },
+    {
+      "id": "LLiqQewooNI",
+      "bandeja": "2026-11-06-grafico-chile-corea-cruce",
+      "titulo": "Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-07T13:00:00-03:00",
+      "vistas": 646,
+      "publicadoEn": "2026-11-07T08:00:01-08:00",
+      "segundos": 43,
+      "privado": false
+    },
+    {
+      "id": "9SmuQH7bghE",
+      "bandeja": "2026-11-06-grafico-panama-chile",
+      "titulo": "Panamá estaba bajo Chile en 1990. Hoy le saca un 20 %",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-08T13:00:00-03:00",
+      "vistas": 411,
+      "publicadoEn": "2026-11-08T08:00:05-08:00",
+      "segundos": 46,
+      "privado": false
+    },
+    {
+      "id": "b1F1JlfZwIw",
+      "bandeja": "2026-11-07-tesis-argentina-rica-v2",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-09T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "K5ma4A5VFj8",
+      "bandeja": "2026-11-07-tesis-chile-corea-v4",
+      "titulo": "Chile era 3 veces más rico que Corea. ¿Qué pasó?",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-08T19:00:00-03:00",
+      "vistas": 129,
+      "publicadoEn": "2026-11-08T14:00:35-08:00",
+      "segundos": 608,
+      "privado": false
+    },
+    {
+      "id": "m_Lp1dgEsvA",
+      "bandeja": "2026-11-07-tesis-irlanda-pib-v2",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-11T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "yl7eM7b4w8g",
+      "bandeja": "2026-11-08-grafico-bolivia-tenia-15-000-millones-v2",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-15T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "BILBHyyu_h8",
+      "bandeja": "2026-11-08-grafico-en-chile-lo-que-costaba-100-en-2010-hoy",
+      "titulo": "En Chile, lo que costaba 100 en 2010 hoy cuesta 185",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-10T13:00:00-03:00",
+      "vistas": 43,
+      "publicadoEn": "2026-11-10T08:00:16-08:00",
+      "segundos": 43,
+      "privado": false
+    },
+    {
+      "id": "8JBkI1LW1B4",
+      "bandeja": "2026-11-08-grafico-irlanda-consumo-v2",
+      "titulo": "",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-11T13:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "IOD-VbAXEbg",
+      "bandeja": "2026-11-08-grafico-mexico-gastaba-el-doble-que-chile-v2",
+      "titulo": "México gastaba el doble que Chile. En 2025, gasta menos",
+      "plantilla": "grafico",
+      "tipo": "short",
+      "publicarEn": "2026-11-12T13:00:00-03:00",
+      "vistas": 2,
+      "publicadoEn": "2026-11-12T08:00:15-08:00",
+      "segundos": 48,
+      "privado": false
+    },
+    {
+      "id": "BQNaK5R-yrk",
+      "bandeja": "2026-11-08-tesis-argentina-rica-v3",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-09T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    },
+    {
+      "id": "3m2VqXoQIO0",
+      "bandeja": "2026-11-08-tesis-irlanda-pib-v3",
+      "titulo": "",
+      "plantilla": "tesis",
+      "tipo": "largo",
+      "publicarEn": "2026-11-11T19:00:00-03:00",
+      "vistas": null,
+      "publicadoEn": null,
+      "segundos": null,
+      "privado": false
+    }
+  ],
+  "actualizaciones": 1
+}
