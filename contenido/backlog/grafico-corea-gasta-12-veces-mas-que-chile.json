@@ -1,0 +1,283 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-corea-gasta-12-veces-mas-que-chile",
+  "titulo": "Corea gasta 12 veces más que Chile en investigar",
+  "descripcion": "¿Cuánto más le dedica Corea del Sur a investigar que Chile, y la distancia se achica o crece?\n\nEl gasto en investigación y desarrollo como parte de la economía, del Banco Mundial, de 2007 a 2022.\nEn 2022 Corea le dedicaba casi un 5 %, y Chile menos de medio punto. En 2007 la brecha era de unas nueve veces; quince años después, de doce.\nComo está medido en proporción a cada economía, el tamaño del país no explica la diferencia. La comparación completa entre Chile y Corea está en el video largo.\n\nFuente: Banco Mundial, World Development Indicators, GB.XPD.RSDV.GD.ZS (CC BY 4.0) https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=KR-CL\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#chile",
+    "#corea",
+    "#innovacion"
+  ],
+  "props": {
+    "id": "pendiente-grafico-corea-gasta-12-veces-mas-que-chile",
+    "gancho": {
+      "texto": "Corea le dedica a investigar doce veces más que Chile, si se mide como parte de cada economía.",
+      "rotulo": "12 VECES MÁS",
+      "cifras": [
+        {
+          "texto": "doce veces más",
+          "valor": 12,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2022,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "CHL",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "¿Cuánto de su economía pone cada país en investigar?",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "GB.XPD.RSDV.GD.ZS",
+        "paises": [
+          "CHL",
+          "KOR"
+        ],
+        "desde": 2007,
+        "hasta": 2022,
+        "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+        "unidad": "%"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "formato": {
+        "sufijo": " %",
+        "decimales": 2
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la línea dorada: es Chile. Según el Banco Mundial, en 2022 dedicaba a investigación y desarrollo menos de medio punto. Corea, casi un 5 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "¿Cuánto de su economía pone cada país en investigar?",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "GB.XPD.RSDV.GD.ZS",
+            "paises": [
+              "CHL",
+              "KOR"
+            ],
+            "desde": 2007,
+            "hasta": 2022,
+            "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 2
+          },
+          "dice": "dorada:"
+        },
+        "cifras": [
+          {
+            "texto": "menos de medio punto",
+            "valor": 0.39,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "GB.XPD.RSDV.GD.ZS",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 2007,
+                "hasta": 2022,
+                "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 2022
+            }
+          },
+          {
+            "texto": "casi un 5 %",
+            "valor": 4.85,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "GB.XPD.RSDV.GD.ZS",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 2007,
+                "hasta": 2022,
+                "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "KOR",
+              "anio": 2022
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira cómo se mueve la distancia. En 2007, Corea gastaba unas nueve veces más. Quince años después, doce. La brecha no se cierra: se abre.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "La distancia, de 2007 a 2022",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "GB.XPD.RSDV.GD.ZS",
+            "paises": [
+              "CHL",
+              "KOR"
+            ],
+            "desde": 2007,
+            "hasta": 2022,
+            "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "KOR",
+            "anio": 2022,
+            "texto": "2022: doce veces"
+          },
+          "anotaciones": [
+            {
+              "anio": 2007,
+              "texto": "2007: unas 9 veces",
+              "dice": "2007,"
+            },
+            {
+              "anio": 2022,
+              "texto": "2022: unas 12 veces",
+              "dice": "doce."
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 2
+          },
+          "dice": "distancia."
+        },
+        "cifras": [
+          {
+            "texto": "unas nueve veces más",
+            "valor": 8.9,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "GB.XPD.RSDV.GD.ZS",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 2007,
+                "hasta": 2022,
+                "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "razon",
+              "pais": "KOR",
+              "paisB": "CHL",
+              "anio": 2007
+            }
+          },
+          {
+            "texto": "Quince años después, doce",
+            "valor": 12.4,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "GB.XPD.RSDV.GD.ZS",
+                "paises": [
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 2007,
+                "hasta": 2022,
+                "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "razon",
+              "pais": "KOR",
+              "paisB": "CHL",
+              "anio": 2022
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "LA BRECHA SE ABRE",
+          "dice": "abre."
+        },
+        "sellos": [
+          {
+            "texto": "12×",
+            "pais": "KOR",
+            "animo": "feliz",
+            "dice": "doce."
+          }
+        ],
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¿De nueve a doce?",
+          "dice": "abre."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Ojo: no es por ser más grande. Está medido como parte de cada economía, así que el tamaño del país no explica la diferencia.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2022: Corea contra Chile",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "GB.XPD.RSDV.GD.ZS",
+            "paises": [
+              "KOR",
+              "CHL"
+            ],
+            "desde": 2022,
+            "hasta": 2022,
+            "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 2
+          },
+          "dice": "grande."
+        }
+      }
+    ],
+    "remate": "Chile exporta lo que encuentra. Corea exporta lo que investiga.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Gasto en investigación y desarrollo, % del PIB (GB.XPD.RSDV.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=KR-CL"
+      }
+    ],
+    "enlaceLargo": "tesis-chile-corea-v2"
+  }
+}
