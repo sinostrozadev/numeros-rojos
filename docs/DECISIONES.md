@@ -44,3 +44,5 @@
   apagado. Ahora tarjeta de título y de capítulo cortan limpio; la escena nueva entra con su animación.
 - **Viaje de mapa sin línea:** el vuelo de cámara basta; la línea punteada parecía explicar un trayecto.
 - **Primer gráfico:** el título dice la variable ("PIB por persona en 1960") y la etiqueta la explica en lenguaje llano.
+
+- **2026-11-12 · Render en la nube (GitHub Actions):** `.github/workflows/producir.yml` (solo `workflow_dispatch`, sin secretos ni commits del bot) renderiza Shorts `grafico` (2,5 min) y largos `tesis` (12 min) y entrega el mp4 como artifact de 14 días; la subida sigue local hasta la auditoría de la API. Ver docs/OPERACION.md § "Producción en la nube".

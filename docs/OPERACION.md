@@ -77,7 +77,7 @@ Queda a mano en Studio tras subir un largo: pausas publicitarias en cada límite
 | `NR_CANAL_NOMBRE` | nombre visible para "Select a channel" | `En Números Rojos` |
 | `NR_RENDER_MAX_MIN` / `NR_RENDER_LARGO_MAX_MIN` | tope de render Short / largo | 90 / 240 |
 | `NR_MEMORIA_MIN_MB` · `NR_CONCURRENCIA` · `NR_LOCK_RENDER` | RAM mínima · concurrency · lock compartido | 1500 · 1 · `/tmp/bolita-render.lock` |
-| `NR_NUBE=1` · `NR_ARTEFACTO` | producción en la nube (no configurada) | — |
+| `NR_NUBE=1` · `NR_ARTEFACTO` | producción en la nube (lo fija `.github/workflows/producir.yml`) | — |
 | `PILOTO_URL` | piloto de Bolita Lab | `http://127.0.0.1:8777` |
 
 ## Calendario (`contenido/calendario.json`)
@@ -91,6 +91,35 @@ TODAS las ranuras **jueves → miércoles siguiente**, arrancan los renders (loc
 todo está `programado` en Studio con su fecha (tope jue 23:59; resto el viernes con ≥ 72 h de colchón). Solo después el cupo sobrante va a
 mejoras o canales nuevos. El bloque "Hito del mié AAAA-MM-DD" arriba de `docs/PLAN-SEMANAL.md` lleva la cuenta; `estado.mts` avisa
 "⚠ hito del miércoles" si quedan ranuras sin programar antes del próximo miércoles. Regla: skill `plan-semanal` §5b y `operacion-diaria` §0.
+
+## Producción en la nube (GitHub Actions)
+Para no depender del PC: el mismo `diario.mts` corre en un runner de GitHub (repo público → minutos gratis) con
+`.github/workflows/producir.yml` ("Producir", <https://github.com/sinostrozadev/numeros-rojos/actions>). Modelo: el de Línea Punteada.
+**Solo render, sin secretos, sin commits del bot y sin cron/push automático** (solo `workflow_dispatch`). La subida a YouTube sigue siendo
+local (Studio) hasta la auditoría de la API.
+
+**Qué hace.** checkout de `main` → Node 22 + `npm ci` → `fonts-noto-color-emoji` → `npx remotion browser ensure` → copia el guion elegido
+a `contenido/backlog/` (solo en el runner) → `diario.mts --solo-render --sin-generar --sin-subir (--sin-largos --n 1 | --solo-largos --largos 1)`
+con `NR_NUBE=1` (voz Edge TTS, fotos de Commons, mapas y verificar-cifras salen sin credenciales) → `scripts/hojas.mts` → artifact
+**`<tipo>-<fecha>-<run>`** (mp4 + json de bandeja + hoja `.jpg` + guion promovido; 14 días) y `logs-<run>`. Timeout: 60 min Short, 330 min largo.
+`concurrency: producir` (un run a la vez).
+
+**Cómo se lanza.** El guion debe estar **commiteado en `main`** (el runner clona el repo); un guion solo local no existe en la nube.
+```
+gh workflow run producir.yml -f tipo=short -f guion=contenido/guiones/<archivo>.json     # Short `grafico`
+gh workflow run producir.yml -f tipo=largo -f guion=contenido/guiones/<archivo>.json     # largo `tesis`
+gh workflow run producir.yml -f tipo=short                                               # sin guion: el siguiente de contenido/backlog (-f cantidad=K)
+gh run list -w producir.yml -L 3 ;  gh run watch <run-id> --exit-status
+```
+`guion` acepta una ruta del repo o un texto contenido en el nombre de un guion de `contenido/backlog/`. Con guion explícito es siempre 1 video.
+El render re-promueve el guion con la fecha de hoy (id nuevo `<hoy>-<plantilla>-<slug>`), así que no pisa la bandeja versionada.
+
+**Bajar el resultado.** `gh run download <run-id> -D salida/nube/<tipo>/` (carpeta ignorada por git). Luego copiar el mp4 y su json a
+`salida/bandeja/` y subir por Studio como siempre (`subir-studio.mjs`).
+
+**Tiempos medidos (2026-11-12).** Short `grafico` (43 s, 1080×1920 @60): **2 min 25 s** el job completo (render ~1 min, 3 pestañas).
+Largo `tesis` (10:00, 18.028 frames @30, 1920×1080, 180 MB, con audio): **12 min** el job completo (render ~10,5 min con concurrency 3 en 4 vCPU / 16 GB;
+local tarda ~2 h). Sobra margen: no hace falta partir por tramos (skill `videos-largos` §5 solo si algún largo pasara de ~5 h).
 
 ## Cron
 `scripts/cron.txt`: diario **00:30** (no 01:15: un Short + un largo ≈ 2 h 20 min y Bolita Lab toma el lock a las 03:30),
