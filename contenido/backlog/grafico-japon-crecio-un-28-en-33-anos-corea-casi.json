@@ -1,0 +1,276 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-japon-crecio-un-28-en-33-anos-corea-casi",
+  "titulo": "Japón creció un 28 % en 33 años. Corea casi lo alcanza",
+  "descripcion": "¿Cómo hizo Corea del Sur para casi igualar a Japón en ingreso por persona en solo 33 años?\n\nEntre 1991 y 2024, el ingreso por persona de Japón subió un 28 %, medido en dólares de 2015 por el Banco Mundial. En el mismo tramo, el de Corea se multiplicó por tres y medio.\nY si se corrige por lo que cuestan las cosas en cada país, el cruce ya ocurrió: en 2024 un coreano produce un 16 % más que un japonés.\n\nFuentes:\n- Banco Mundial, WDI: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=JP-KR\n- Banco Mundial, WDI: PIB per cápita, PPA, US$ internacionales de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=JP-KR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#japon",
+    "#corea",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-japon-crecio-un-28-en-33-anos-corea-casi",
+    "gancho": {
+      "texto": "En 1991, un coreano producía algo más de un tercio de lo que producía un japonés. En 2024, casi lo mismo.",
+      "rotulo": "DE 1/3 A CASI IGUAL",
+      "cifras": [
+        {
+          "texto": "algo más de un tercio",
+          "valor": 0.36,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "JPN",
+                "KOR"
+              ],
+              "desde": 1991,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "JPN",
+            "anio": 1991
+          }
+        },
+        {
+          "texto": "casi lo mismo",
+          "valor": 0.98,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "JPN",
+                "KOR"
+              ],
+              "desde": 1991,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "JPN",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Japón y Corea del Sur, 1991–2024",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.KD",
+        "paises": [
+          "JPN",
+          "KOR"
+        ],
+        "desde": 1991,
+        "hasta": 2024,
+        "etiqueta": "PIB por persona (US$ constantes de 2015)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "JPN"
+      },
+      "anotaciones": [
+        {
+          "anio": 2024,
+          "texto": "Casi pegadas"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial, en dólares de 2015. Mira la línea dorada: Japón. En treinta y tres años, su ingreso por persona sube apenas un 28 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Japón y Corea del Sur, 1991–2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "JPN",
+              "KOR"
+            ],
+            "desde": 1991,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "JPN"
+          },
+          "anotaciones": [
+            {
+              "anio": 2024,
+              "texto": "Casi pegadas"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "datos"
+        },
+        "cifras": [
+          {
+            "texto": "un 28 %",
+            "valor": 28,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "JPN",
+                  "KOR"
+                ],
+                "desde": 1991,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "JPN",
+              "anio": 1991,
+              "anioB": 2024
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "+28 %",
+            "pais": "JPN",
+            "animo": "triste",
+            "dice": "28"
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "dato",
+        "texto": "Corea, en el mismo tramo, más que triplica el suyo. Su línea sube hasta quedar casi pegada a la japonesa.",
+        "usaGraficoPrincipal": true,
+        "enfasis": {
+          "pais": "KOR"
+        },
+        "cifras": [
+          {
+            "texto": "más que triplica",
+            "valor": 249,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "JPN",
+                  "KOR"
+                ],
+                "desde": 1991,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "KOR",
+              "anio": 1991,
+              "anioB": 2024
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "MÁS QUE TRIPLICA",
+          "dice": "triplica"
+        }
+      },
+      {
+        "tipo": "giro",
+        "texto": "Y si se corrige por lo que cuestan las cosas en cada país, Corea ya pasó a Japón. En 2024, un coreano produce un 16 % más.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2024, ajustado por precios",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "KOR",
+              "JPN"
+            ],
+            "desde": 2024,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "KOR"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "corrige"
+        },
+        "cifras": [
+          {
+            "texto": "un 16 % más",
+            "valor": 1.16,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "KOR",
+                  "JPN"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "KOR",
+              "paisB": "JPN",
+              "anio": 2024
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "+16 %",
+            "pais": "KOR",
+            "animo": "feliz",
+            "dice": "16"
+          }
+        ],
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¿Corea ya pasó a Japón?",
+          "dice": "pasó"
+        }
+      }
+    ],
+    "remate": "Japón avanzó a paso corto. Corea, a zancadas.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=JP-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=JP-KR"
+      }
+    ]
+  }
+}
