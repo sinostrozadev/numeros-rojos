@@ -1,0 +1,139 @@
+# Producción de En Números Rojos en la nube (docs/OPERACION.md § "Producción en la nube").
+# Solo RENDER: toma un guion YA ESCRITO del repo, lo prepara (voz Edge TTS, fotos de Commons, mapas: sin credenciales),
+# renderiza el mp4 y lo entrega como artifact (14 días). No sube a YouTube y no commitea nada (sin secretos).
+# Solo a mano (workflow_dispatch): sin cron ni push por ahora.
+name: Producir
+
+on:
+  workflow_dispatch:
+    inputs:
+      tipo:
+        description: 'short (grafico, 9:16) o largo (tesis, 16:9)'
+        type: choice
+        options: [short, largo]
+        default: short
+      guion:
+        description: 'Ruta del guion en el repo (ej. contenido/guiones/2026-11-08-grafico-xxx.json) o texto contenido en el nombre de uno del backlog. Vacío = siguiente del backlog'
+        type: string
+        default: ''
+      cantidad:
+        description: 'Cuántos videos renderizar (con guion explícito siempre es 1)'
+        type: string
+        default: '1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: producir
+  cancel-in-progress: false
+
+jobs:
+  producir:
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.tipo == 'largo' && 330 || 60 }}
+    env:
+      NR_NUBE: '1'
+      NR_MEMORIA_MIN_MB: '1500'
+      NR_RENDER_MAX_MIN: '50'
+      NR_RENDER_LARGO_MAX_MIN: '310'
+      TIPO: ${{ inputs.tipo }}
+      GUION: ${{ inputs.guion }}
+      CANTIDAD: ${{ inputs.cantidad || '1' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Máquina y nombre del artifact
+        id: fecha
+        run: |
+          echo "fecha=$(TZ=America/Santiago date +%F)" >> "$GITHUB_OUTPUT"
+          cpus=$(nproc); mem=$(awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo)
+          if [ "$cpus" -ge 4 ] && [ "$mem" -ge 12000 ]; then conc=3; else conc=2; fi
+          echo "NR_CONCURRENCIA=$conc" >> "$GITHUB_ENV"
+          echo "NR_ARTEFACTO=\`${TIPO}-$(TZ=America/Santiago date +%F)\` del run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" >> "$GITHUB_ENV"
+          echo "CPU $cpus · RAM ${mem} MB · concurrency $conc · flock: $(command -v flock)"
+
+      - name: Fuentes del sistema (emoji a color)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends fonts-noto-color-emoji > /dev/null
+          fc-list | grep -qi "Noto Color Emoji" && echo "✓ Noto Color Emoji"
+
+      - name: Dependencias
+        run: npm ci --no-audit --no-fund
+
+      - name: Chrome headless de Remotion
+        run: npx remotion browser ensure
+
+      - name: Poner el guion elegido en el backlog (solo en el runner, no se commitea)
+        run: |
+          mkdir -p contenido/backlog
+          if [ -n "$GUION" ]; then
+            if [ -f "$GUION" ]; then origen="$GUION"
+            else origen=$(ls contenido/backlog/*"$GUION"*.json 2>/dev/null | head -1 || true); fi
+            [ -n "$origen" ] && [ -f "$origen" ] || { echo "::error::No encuentro el guion '$GUION'"; exit 1; }
+            case "$origen" in contenido/backlog/*) ;; *) cp "$origen" contenido/backlog/ ;; esac
+            # Con guion explícito solo ese: se quita el resto del backlog del runner.
+            for f in contenido/backlog/*.json; do [ "$f" = "contenido/backlog/$(basename "$origen")" ] || rm -f "$f"; done
+            CANTIDAD=1; echo "CANTIDAD=1" >> "$GITHUB_ENV"
+            echo "Guion: $origen"
+          fi
+          ls contenido/backlog
+
+      - name: Producir (preparar + render)
+        id: diario
+        run: |
+          if [ "$TIPO" = largo ]; then banderas=(--solo-largos --largos "$CANTIDAD"); else banderas=(--sin-largos --n "$CANTIDAD"); fi
+          inicio=$(date +%s)
+          set +e
+          npx tsx scripts/diario.mts --solo-render --sin-generar --sin-subir "${banderas[@]}"
+          codigo=$?
+          set -e
+          echo "⏱ diario: $(( ($(date +%s) - inicio) / 60 )) min"
+          exit $codigo
+
+      - name: Hojas de contacto
+        if: always() && steps.diario.outcome != 'skipped'
+        run: npx tsx scripts/hojas.mts || true
+
+      - name: Reunir el resultado
+        if: always() && steps.diario.outcome != 'skipped'
+        run: |
+          mkdir -p resultado
+          # Solo lo producido en este run (mp4 y sus json/mini/hoja); la bandeja versionada no entra.
+          for mp4 in salida/bandeja/*.mp4; do
+            [ -f "$mp4" ] || continue
+            id=$(basename "$mp4" .mp4)
+            cp "$mp4" resultado/
+            for x in "salida/bandeja/$id.json" "salida/bandeja/$id-mini.png" "salida/revisiones/hojas/$id.jpg"; do [ -f "$x" ] && cp "$x" resultado/ || true; done
+          done
+          cp -r contenido/guiones resultado/guiones-promovidos 2>/dev/null || true
+          ls -la resultado
+
+      - name: Publicar resultado como artifact
+        if: always() && steps.diario.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.tipo }}-${{ steps.fecha.outputs.fecha }}-${{ github.run_id }}
+          path: resultado/
+          retention-days: 14
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: Publicar logs
+        if: always() && steps.diario.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ github.run_id }}
+          path: |
+            salida/logs/
+            salida/trabajo/*.verificacion.json
+          retention-days: 14
+          if-no-files-found: ignore
