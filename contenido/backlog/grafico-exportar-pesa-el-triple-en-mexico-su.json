@@ -1,0 +1,252 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-exportar-pesa-el-triple-en-mexico-su",
+  "titulo": "Exportar pesa el triple en México. Su ingreso subió 22 %",
+  "descripcion": "¿Por qué México triplicó el peso de sus exportaciones si el ingreso de cada mexicano apenas se movió?\n\nDos series del Banco Mundial, de 1993 a 2024: las exportaciones pasan de un 12 % a un 37 % del PIB.\nEn el mismo periodo, el PIB por persona en dólares de 2015 sube un 22 %.\nOjo con el punto de partida: 1993 fue el año más bajo de la serie desde 1990.\n\nFuentes:\n- Banco Mundial, WDI: NE.EXP.GNFS.ZS (CC BY 4.0) https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=MX\n- Banco Mundial, WDI: NY.GDP.PCAP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=MX\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#mexico",
+    "#exportaciones",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-exportar-pesa-el-triple-en-mexico-su",
+    "gancho": {
+      "texto": "Según el Banco Mundial, en 1993 las exportaciones de México eran un 12 % de su economía. En 2024, un 37 %.",
+      "rotulo": "EXPORTACIONES ×3",
+      "cifras": [
+        {
+          "texto": "un 12 %",
+          "valor": 11.6,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.EXP.GNFS.ZS",
+              "paises": [
+                "MEX"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "valor",
+            "pais": "MEX",
+            "anio": 1993
+          }
+        },
+        {
+          "texto": "un 37 %",
+          "valor": 37.3,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.EXP.GNFS.ZS",
+              "paises": [
+                "MEX"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "valor",
+            "pais": "MEX",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "area",
+      "titulo": "Lo que México exporta, como parte de su economía",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NE.EXP.GNFS.ZS",
+        "paises": [
+          "MEX"
+        ],
+        "desde": 1990,
+        "hasta": 2024,
+        "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+        "unidad": "%"
+      },
+      "destacar": {
+        "pais": "MEX",
+        "anio": 1994,
+        "texto": "1994: entra el tratado"
+      },
+      "anotaciones": [
+        {
+          "anio": 1993,
+          "texto": "1993: casi 12 %"
+        },
+        {
+          "anio": 2024,
+          "texto": "2024: más de 37 %"
+        }
+      ],
+      "formato": {
+        "sufijo": " %",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la línea. 1993 fue un año bajo; en 1994 entra en vigor el tratado con Estados Unidos y Canadá. En 1995, con la crisis del peso, ya pasa de una quinta parte.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "1993 fue un año bajo",
+            "valor": 11.6,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "minimo",
+              "pais": "MEX"
+            }
+          },
+          {
+            "texto": "ya pasa de una quinta parte",
+            "valor": 22.9,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "MEX",
+              "anio": 1995
+            }
+          }
+        ],
+        "visual": {
+          "tipo": "mapa",
+          "destacar": [
+            "MEX",
+            "USA",
+            "CAN"
+          ],
+          "zoom": 3,
+          "acercar": true,
+          "dice": "tratado"
+        },
+        "disposicion": "dividido",
+        "rotulo": {
+          "texto": "1994: EL TRATADO",
+          "dice": "vigor"
+        }
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero el ingreso por persona, en dólares de 2015, cuenta otra cosa. Entre 1993 y 2024 subió apenas un 22 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Ingreso por persona en México, 1993–2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "MEX"
+            ],
+            "desde": 1993,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "MEX"
+          },
+          "anotaciones": [
+            {
+              "anio": 1995,
+              "texto": "Crisis del peso"
+            },
+            {
+              "anio": 2009,
+              "texto": "Crisis global"
+            },
+            {
+              "anio": 2020,
+              "texto": "Pandemia"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "ingreso"
+        },
+        "cifras": [
+          {
+            "texto": "apenas un 22 %",
+            "valor": 22.3,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1993,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "MEX",
+              "anio": 1993,
+              "anioB": 2024
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "INGRESO +22 %",
+          "dice": "subió"
+        },
+        "sellos": [
+          {
+            "texto": "+22 %",
+            "pais": "MEX",
+            "animo": "triste",
+            "dice": "22"
+          }
+        ],
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¿Solo un 22 %?",
+          "dice": "apenas"
+        }
+      }
+    ],
+    "remate": "Lo que México exporta pesa el triple. Lo que produce cada mexicano, apenas un poco más.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=MX"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=MX"
+      }
+    ]
+  }
+}
