@@ -1,0 +1,358 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-noruega-y-venezuela-casi-empataban",
+  "titulo": "Noruega y Venezuela casi empataban en 1970. En 2022, 17 a 1",
+  "descripcion": "¿Cómo terminan a diecisiete veces de distancia dos países que en 1970 producían casi lo mismo por persona, y los dos con petróleo?\n\nUn gráfico del Proyecto Maddison, de 1950 a 2022. En 1960 Venezuela iba un poco arriba de Noruega. A fines de 1969 Noruega encuentra petróleo en el mar del Norte, y desde ahí las dos líneas se separan.\nVenezuela llega a su techo en 2012 y para 2020 había perdido casi tres cuartas partes de ese ingreso por persona.\n\nFuente: Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#venezuela",
+    "#noruega",
+    "#petroleo"
+  ],
+  "props": {
+    "id": "pendiente-grafico-noruega-y-venezuela-casi-empataban",
+    "gancho": {
+      "texto": "En 1970, un noruego y un venezolano producían casi lo mismo. En 2022, el noruego, casi diecisiete veces más.",
+      "rotulo": "EMPATE → 17 A 1",
+      "cifras": [
+        {
+          "texto": "casi lo mismo",
+          "valor": 1.05,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "NOR",
+                "VEN"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "NOR",
+            "paisB": "VEN",
+            "anio": 1970
+          }
+        },
+        {
+          "texto": "casi diecisiete veces más",
+          "valor": 16.8,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "NOR",
+                "VEN"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "NOR",
+            "paisB": "VEN",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Noruega y Venezuela, 1950–2022",
+      "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+          "NOR",
+          "VEN"
+        ],
+        "desde": 1950,
+        "hasta": 2022,
+        "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "VEN"
+      },
+      "anotaciones": [
+        {
+          "anio": 1969,
+          "texto": "Petróleo en el mar del Norte",
+          "dice": "1969,"
+        },
+        {
+          "anio": 2012,
+          "texto": "El techo de Venezuela"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira las dos líneas del Proyecto Maddison. En 1960, Venezuela iba un poco arriba. A fines de 1969, Noruega encuentra petróleo en el mar del Norte.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Noruega y Venezuela, 1950–2022",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "NOR",
+              "VEN"
+            ],
+            "desde": 1950,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "VEN"
+          },
+          "anotaciones": [
+            {
+              "anio": 1969,
+              "texto": "Petróleo en el mar del Norte",
+              "dice": "1969,"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "líneas"
+        },
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "un poco arriba",
+            "valor": 1.06,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "VEN",
+              "paisB": "NOR",
+              "anio": 1960
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero desde ahí se separan. Venezuela toca techo en 2012, y para 2020 había perdido casi tres cuartas partes de ese ingreso por persona.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Venezuela: el techo y lo que vino después",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "VEN"
+            ],
+            "desde": 1990,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "VEN",
+            "anio": 2012,
+            "texto": "2012: el techo"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "Venezuela"
+        },
+        "cifras": [
+          {
+            "texto": "toca techo en 2012",
+            "valor": 18486,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "maximo",
+              "pais": "VEN"
+            }
+          },
+          {
+            "texto": "casi tres cuartas partes",
+            "valor": -73,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "VEN",
+              "anio": 2012,
+              "anioB": 2020
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "−73 %",
+            "pais": "VEN",
+            "animo": "triste",
+            "dice": "partes"
+          }
+        ],
+        "mascota": {
+          "pose": "tapa-ojos",
+          "bocadillo": "¿Tres cuartas partes?",
+          "dice": "perdido"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2022, el noruego promedio produce unos ochenta y ocho mil dólares. El venezolano, unos cinco mil trescientos. Casi diecisiete a uno.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2022: Noruega contra Venezuela",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "NOR",
+              "VEN"
+            ],
+            "desde": 2022,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "VEN"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "noruego"
+        },
+        "cifras": [
+          {
+            "texto": "unos ochenta y ocho mil dólares",
+            "valor": 88000,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "NOR",
+              "anio": 2022
+            }
+          },
+          {
+            "texto": "unos cinco mil trescientos",
+            "valor": 5300,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "VEN",
+              "anio": 2022
+            }
+          },
+          {
+            "texto": "Casi diecisiete a uno",
+            "valor": 16.8,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "NOR",
+              "paisB": "VEN",
+              "anio": 2022
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "17 A 1",
+            "pais": "NOR",
+            "animo": "feliz",
+            "dice": "diecisiete"
+          }
+        ]
+      }
+    ],
+    "remate": "Mismo petróleo, mismo punto de partida. Distinto camino, diecisiete veces de distancia.",
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      }
+    ]
+  }
+}
