@@ -69,6 +69,24 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
 ## Cola de reemplazos (si una ranura se cae)
 1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 0. `grafico` · Cuántos años de sueldo cuesta una casa (idea en espera: falta dataset con licencia; no Numbeo) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
 
+
+## Semana 2026-11-16 → 2026-11-22 (agregada 2026-11-13 04:00 por el agente de guiones)
+
+**6 de 10 con guion** (6 Shorts `grafico` en `contenido/backlog/`, `verificar-cifras` exit 0). **Faltan los 3 largos `tesis`** (lun 16, mié 18, vie 20 19:00) y el Short del dom 22. Los largos fallaron los validadores de `generar-guiones`: palabras 'compra/vende' en la voz, enumeraciones sin iconos/versus, esperas > 3 s antes de un gráfico; reintentar con la ayuda de reglas en `--tema` (ver nrchain2). Orden sugerido: Panamá (lun), México TLCAN (mié), Venezuela (vie).
+
+| Día | Hora | Formato | Tema | Estado | Guion |
+|---|---|---|---|---|---|
+| 11-16 | 13:00 | short grafico | Panamá pasó a Chile en 2012 y no lo volvió a soltar | guion | contenido/backlog/grafico-panama-paso-a-chile-en-2012-y-no-lo.json |
+| 11-16 | 19:00 | largo tesis | Panamá pasó a Chile en 2012. ¿Cómo lo hizo? | idea · ⚠ falta guion | — |
+| 11-17 | 13:00 | short grafico | Venezuela producía en 2022 menos de la mitad que en 1960 | guion | contenido/backlog/grafico-venezuela-producia-en-2022-menos.json |
+| 11-18 | 13:00 | short grafico | Exportar pesa el triple en México. Su ingreso subió 22 % | guion | contenido/backlog/grafico-exportar-pesa-el-triple-en-mexico-su.json |
+| 11-18 | 19:00 | largo tesis | México firmó el TLCAN y creció un 19 % en 30 años | idea · ⚠ falta guion | — |
+| 11-19 | 13:00 | short grafico | Noruega y Venezuela casi empataban en 1970. En 2022, 17 a 1 | guion | contenido/backlog/grafico-noruega-y-venezuela-casi-empataban.json |
+| 11-20 | 13:00 | short grafico | Corea gasta 12 veces más que Chile en investigar | guion | contenido/backlog/grafico-corea-gasta-12-veces-mas-que-chile.json |
+| 11-20 | 19:00 | largo tesis | Venezuela tenía el doble que España en 1960. Hoy, un sexto | idea · ⚠ falta guion | — |
+| 11-21 | 13:00 | short grafico | Japón creció un 28 % en 33 años. Corea casi lo alcanza | guion | contenido/backlog/grafico-japon-crecio-un-28-en-33-anos-corea-casi.json |
+| 11-22 | 13:00 | short grafico | (vacío: Perú 6.261 % descartado, no cuadró verificar-cifras) | idea · ⚠ falta guion | — |
+
 ## Plan (JSON)
 
 ```json
@@ -76,7 +94,7 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
   "version": 1,
   "canal": "numeros-rojos",
   "zona": "America/Santiago",
-  "actualizado": "2026-11-06T09:10:00-03:00",
+  "actualizado": "2026-11-13T04:00:00-03:00",
   "semanas": [
     {
       "inicio": "2026-11-02",
@@ -86,6 +104,11 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
     {
       "inicio": "2026-11-09",
       "fin": "2026-11-15",
+      "rol": "siguiente"
+    },
+    {
+      "inicio": "2026-11-16",
+      "fin": "2026-11-22",
       "rol": "siguiente"
     }
   ],
@@ -305,6 +328,166 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "H2 LatAm; país sin cubrir; sale de la cola de reemplazos",
       "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-16",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Panamá pasó a Chile en 2012 y no lo volvió a soltar",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-panama-paso-a-chile-en-2012-y-no-lo.json",
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "Short teaser del largo de Panamá (H5)",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-16",
+      "hora": "19:00",
+      "formato": "largo",
+      "plantilla": "tesis",
+      "tema": "Panamá pasó a Chile en 2012. ¿Cómo lo hizo?",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
+      "porQue": "largo pendiente: 3 intentos fallaron validadores (consejo financiero/enumeración/ritmo) y se cortó por límite de uso",
+      "bloqueo": "falta guion"
+    },
+    {
+      "fecha": "2026-11-17",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Venezuela producía en 2022 menos de la mitad que en 1960",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-venezuela-producia-en-2022-menos.json",
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "H2 LatAm; sin opinión política",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-18",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Exportar pesa el triple en México. Su ingreso subió 22 %",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-exportar-pesa-el-triple-en-mexico-su.json",
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "H2 LatAm; WDI 2025",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-18",
+      "hora": "19:00",
+      "formato": "largo",
+      "plantilla": "tesis",
+      "tema": "México firmó el TLCAN y creció un 19 % en 30 años",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
+      "porQue": "largo pendiente: 3 intentos fallaron validadores (consejo financiero/enumeración/ritmo) y se cortó por límite de uso",
+      "bloqueo": "falta guion"
+    },
+    {
+      "fecha": "2026-11-19",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Noruega y Venezuela casi empataban en 1970. En 2022, 17 a 1",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-noruega-y-venezuela-casi-empataban.json",
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "mismo petróleo, dos destinos",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-20",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Corea gasta 12 veces más que Chile en investigar",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-corea-gasta-12-veces-mas-que-chile.json",
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "serie El país que fue rico",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-20",
+      "hora": "19:00",
+      "formato": "largo",
+      "plantilla": "tesis",
+      "tema": "Venezuela tenía el doble que España en 1960. Hoy, un sexto",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
+      "porQue": "largo pendiente: 3 intentos fallaron validadores (consejo financiero/enumeración/ritmo) y se cortó por límite de uso",
+      "bloqueo": "falta guion"
+    },
+    {
+      "fecha": "2026-11-21",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Japón creció un 28 % en 33 años. Corea casi lo alcanza",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "guion",
+      "guion": "contenido/backlog/grafico-japon-crecio-un-28-en-33-anos-corea-casi.json",
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "evergreen",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-22",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "(vacío: Perú 6.261 % descartado, no cuadró verificar-cifras)",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "cola: Perú inflación; Bolivia; China LatAm",
+      "bloqueo": "falta guion"
     }
   ]
 }
