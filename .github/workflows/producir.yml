@@ -112,9 +112,8 @@ jobs:
             [ -f "$mp4" ] || continue
             id=$(basename "$mp4" .mp4)
             cp "$mp4" resultado/
-            for x in "salida/bandeja/$id.json" "salida/bandeja/$id-mini.png" "salida/revisiones/hojas/$id.jpg"; do [ -f "$x" ] && cp "$x" resultado/ || true; done
+            for x in "salida/bandeja/$id.json" "salida/bandeja/$id-mini.png" "salida/revisiones/hojas/$id.jpg" "contenido/guiones/$id.json"; do [ -f "$x" ] && cp "$x" resultado/ || true; done
           done
-          cp -r contenido/guiones resultado/guiones-promovidos 2>/dev/null || true
           ls -la resultado
 
       - name: Publicar resultado como artifact
