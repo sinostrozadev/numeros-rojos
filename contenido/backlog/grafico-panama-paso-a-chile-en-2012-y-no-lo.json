@@ -1,0 +1,321 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-panama-paso-a-chile-en-2012-y-no-lo",
+  "titulo": "Panamá pasó a Chile en 2012 y no lo volvió a soltar",
+  "descripcion": "¿Cómo pasó Panamá a Chile en ingreso por persona, y por qué ni la pandemia lo devolvió abajo?\n\nUn gráfico del Banco Mundial, de 1990 a 2024, en dólares corregidos por lo que cuestan las cosas en cada país.\nEn 2020 el ingreso por persona panameño se encogió casi una quinta parte, y el chileno un 7 %. Aun así, Panamá siguió arriba.\nEn el video largo recorremos de dónde sale el ingreso panameño y qué parte se queda en el país.\n\nFuente: Banco Mundial, WDI, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#panama",
+    "#chile",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-panama-paso-a-chile-en-2012-y-no-lo",
+    "gancho": {
+      "texto": "Según el Banco Mundial, en 1990 un chileno producía más que un panameño. En 2012, Panamá lo pasa.",
+      "rotulo": "2012: PANAMÁ PASA",
+      "cifras": [
+        {
+          "texto": "producía más que un panameño",
+          "valor": 1.07,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CHL",
+                "URY"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "PAN",
+            "anio": 1990
+          }
+        },
+        {
+          "texto": "En 2012, Panamá lo pasa",
+          "valor": 1.01,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CHL",
+                "URY"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "PAN",
+            "paisB": "CHL",
+            "anio": 2012
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Panamá, Chile y Uruguay, 1990–2024",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "PAN",
+          "CHL",
+          "URY"
+        ],
+        "desde": 1990,
+        "hasta": 2024,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "PAN",
+        "anio": 2012,
+        "texto": "2012: Panamá pasa a Chile"
+      },
+      "anotaciones": [
+        {
+          "anio": 2012,
+          "texto": "Panamá pasa a Chile"
+        },
+        {
+          "anio": 2020,
+          "texto": "Pandemia"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la línea dorada: es Panamá, en dólares corregidos por lo que cuestan las cosas en cada país. Sube más empinada que Chile y que Uruguay.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Panamá, Chile y Uruguay, 1990–2024",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "CHL",
+              "URY"
+            ],
+            "desde": 1990,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN",
+            "anio": 2012,
+            "texto": "2012: Panamá pasa a Chile"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "dorada:"
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira 2020. Con la pandemia, el ingreso por persona panameño se encoge casi una quinta parte. El chileno, un 7 %. Y aun así, Panamá sigue arriba.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "2020: la caída más grande, y sigue arriba",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "CHL"
+            ],
+            "desde": 2015,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN",
+            "anio": 2020,
+            "texto": "2020: pandemia"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "2020."
+        },
+        "cifras": [
+          {
+            "texto": "casi una quinta parte",
+            "valor": -19,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "PAN",
+              "anio": 2019,
+              "anioB": 2020
+            }
+          },
+          {
+            "texto": "un 7 %",
+            "valor": -7,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 2019,
+              "anioB": 2020
+            }
+          },
+          {
+            "texto": "Panamá sigue arriba",
+            "valor": 1.02,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "CHL",
+              "anio": 2020
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "−19 %",
+            "pais": "PAN",
+            "animo": "triste",
+            "dice": "parte."
+          }
+        ],
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¡Y sigue arriba!",
+          "dice": "arriba."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2024, un panameño produce un 20 % más que un chileno. Desde 2012, nunca volvió a quedar abajo.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2024: Panamá contra Chile",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "CHL"
+            ],
+            "desde": 2024,
+            "hasta": 2024,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "panameño"
+        },
+        "cifras": [
+          {
+            "texto": "un 20 % más",
+            "valor": 1.2,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "CHL",
+              "anio": 2024
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "+20 %",
+            "pais": "PAN",
+            "animo": "feliz",
+            "dice": "20"
+          }
+        ]
+      }
+    ],
+    "remate": "Chile cayó poco y siguió abajo. Panamá cayó mucho y siguió arriba.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL-UY"
+      }
+    ],
+    "enlaceLargo": "pendiente-tesis-panama-chile"
+  }
+}
