@@ -1,0 +1,295 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-venezuela-producia-en-2022-menos",
+  "titulo": "Venezuela producía en 2022 menos de la mitad que en 1960",
+  "descripcion": "¿Cuánto cambió el ingreso por persona de Venezuela entre 1960 y 2022?\n\nUn gráfico del Proyecto Maddison, de 1950 a 2022, con Venezuela, Colombia y Chile en la misma escala.\nEn 1960 un venezolano producía el triple que un colombiano; entre 2012 y 2021 el ingreso por persona cayó casi tres cuartas partes.\nEn 2022 la relación con sus vecinos se había invertido.\n\nFuente: Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#venezuela",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-venezuela-producia-en-2022-menos",
+    "gancho": {
+      "texto": "Según el Proyecto Maddison, en 2022 un venezolano producía menos de la mitad que en 1960.",
+      "rotulo": "MENOS DE LA MITAD",
+      "cifras": [
+        {
+          "texto": "menos de la mitad",
+          "valor": -56.5,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "VEN",
+                "COL",
+                "CHL"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "variacion",
+            "pais": "VEN",
+            "anio": 1960,
+            "anioB": 2022
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Venezuela y sus vecinos, 1950–2022",
+      "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+          "VEN",
+          "COL",
+          "CHL"
+        ],
+        "desde": 1950,
+        "hasta": 2022,
+        "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "VEN"
+      },
+      "anotaciones": [
+        {
+          "anio": 2012,
+          "texto": "2012: su punto más alto"
+        },
+        {
+          "anio": 2021,
+          "texto": "2021: el más bajo desde 1950"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la línea dorada: es Venezuela. En 1960, cada venezolano producía el triple que un colombiano.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Venezuela y sus vecinos, 1950–2022",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "VEN",
+              "COL",
+              "CHL"
+            ],
+            "desde": 1950,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "VEN"
+          },
+          "anotaciones": [
+            {
+              "anio": 2012,
+              "texto": "2012: su punto más alto"
+            },
+            {
+              "anio": 2021,
+              "texto": "2021: el más bajo desde 1950"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "dorada:"
+        },
+        "cifras": [
+          {
+            "texto": "el triple",
+            "valor": 3,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "VEN",
+              "paisB": "COL",
+              "anio": 1960
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "3×",
+            "pais": "VEN",
+            "animo": "feliz",
+            "dice": "triple"
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira lo que pasa después. Entre 2012 y 2021, el ingreso por persona cae casi tres cuartas partes.",
+        "usaGraficoPrincipal": true,
+        "enfasis": {
+          "pais": "VEN"
+        },
+        "cifras": [
+          {
+            "texto": "casi tres cuartas partes",
+            "valor": -73.5,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "VEN",
+              "anio": 2012,
+              "anioB": 2021
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "−3/4",
+            "pais": "VEN",
+            "animo": "triste",
+            "dice": "cuartas"
+          }
+        ],
+        "mascota": {
+          "pose": "tapa-ojos",
+          "bocadillo": "¿Tres cuartas partes?",
+          "dice": "cae"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2022, un colombiano producía más de dos veces y media lo que un venezolano. Un chileno, más de cuatro veces.",
+        "grafico": {
+          "tipo": "barras",
+          "titulo": "2022: la relación se dio vuelta",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "CHL",
+              "COL",
+              "VEN"
+            ],
+            "desde": 2022,
+            "hasta": 2022,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "VEN"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "colombiano"
+        },
+        "cifras": [
+          {
+            "texto": "más de dos veces y media",
+            "valor": 2.75,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "COL",
+              "paisB": "VEN",
+              "anio": 2022
+            }
+          },
+          {
+            "texto": "más de cuatro veces",
+            "valor": 4.32,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1950,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "VEN",
+              "anio": 2022
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "4×",
+            "pais": "CHL",
+            "animo": "feliz",
+            "dice": "cuatro"
+          }
+        ],
+        "rotulo": {
+          "texto": "SE DIO VUELTA",
+          "dice": "chileno,"
+        }
+      }
+    ],
+    "remate": "En 1960, Venezuela les sacaba ventaja a sus vecinos. En 2022, los vecinos se la sacaban a Venezuela.",
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      }
+    ]
+  }
+}
