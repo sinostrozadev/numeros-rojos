@@ -11,6 +11,11 @@
     "#datos"
   ],
   "duracionSeg": 46.8,
-  "estado": "listo",
-  "tipo": "short"
+  "estado": "subido",
+  "tipo": "short",
+  "publicarEn": "2026-11-15T13:00:00-03:00",
+  "videoId": "yl7eM7b4w8g",
+  "url": "https://youtube.com/shorts/yl7eM7b4w8g",
+  "programado": "2026-11-15 13:00",
+  "subidoEn": "2026-11-09T04:56:19.444Z"
 }

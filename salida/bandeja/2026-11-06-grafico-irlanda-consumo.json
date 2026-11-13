@@ -10,11 +10,12 @@
     "#pib"
   ],
   "duracionSeg": 47.1,
-  "estado": "subido",
+  "estado": "reemplazado",
   "tipo": "short",
   "publicarEn": "2026-11-11T13:00:00-03:00",
   "videoId": "yJV1sIgJJQ8",
   "url": "https://youtube.com/shorts/yJV1sIgJJQ8",
   "programado": "2026-11-11 13:00",
-  "subidoEn": "2026-11-06T12:01:06.641Z"
+  "subidoEn": "2026-11-06T12:01:06.641Z",
+  "nota": "privado \"(versión anterior)\" el 2026-11-08 (leía mal las cifras); lo reemplaza 2026-11-08-grafico-irlanda-consumo-v2 (sube el 11-09 por el tope diario)"
 }

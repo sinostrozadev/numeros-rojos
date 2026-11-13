@@ -11,6 +11,11 @@
     "#datos"
   ],
   "duracionSeg": 47.8,
-  "estado": "listo",
-  "tipo": "short"
+  "estado": "subido",
+  "tipo": "short",
+  "publicarEn": "2026-11-12T13:00:00-03:00",
+  "videoId": "IOD-VbAXEbg",
+  "url": "https://youtube.com/shorts/IOD-VbAXEbg",
+  "programado": "2026-11-12 13:00",
+  "subidoEn": "2026-11-09T04:54:24.073Z"
 }

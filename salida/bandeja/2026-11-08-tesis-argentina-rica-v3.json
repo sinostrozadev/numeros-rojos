@@ -11,8 +11,13 @@
     "#datos"
   ],
   "duracionSeg": 600.9,
-  "estado": "listo",
+  "estado": "subido",
   "tipo": "largo",
   "miniatura": "salida/caratulas/2026-11-08-argentina-rica-1.png",
-  "miniaturaNota": "GPT 2026-11-08 (Congreso: mitad impecable, mitad en ruinas; caja roja ERA POTENCIA). El lote del 11-09 la adjunta al subir; también puesta a b1F1JlfZwIw (v2) por si el lote no corre."
+  "miniaturaNota": "GPT 2026-11-08 (Congreso: mitad impecable, mitad en ruinas; caja roja ERA POTENCIA). El lote del 11-09 la adjunta al subir; también puesta a b1F1JlfZwIw (v2) por si el lote no corre.",
+  "publicarEn": "2026-11-09T19:00:00-03:00",
+  "videoId": "BQNaK5R-yrk",
+  "url": "https://www.youtube.com/watch?v=BQNaK5R-yrk",
+  "programado": "2026-11-09 19:00",
+  "subidoEn": "2026-11-09T04:59:15.073Z"
 }

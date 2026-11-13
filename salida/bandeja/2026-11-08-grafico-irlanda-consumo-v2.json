@@ -10,6 +10,11 @@
     "#pib"
   ],
   "duracionSeg": 46.2,
-  "estado": "listo",
-  "tipo": "short"
+  "estado": "subido",
+  "tipo": "short",
+  "publicarEn": "2026-11-11T13:00:00-03:00",
+  "videoId": "8JBkI1LW1B4",
+  "url": "https://youtube.com/shorts/8JBkI1LW1B4",
+  "programado": "2026-11-11 13:00",
+  "subidoEn": "2026-11-09T04:51:49.972Z"
 }

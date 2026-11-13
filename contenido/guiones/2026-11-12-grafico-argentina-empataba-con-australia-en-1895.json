@@ -1,0 +1,261 @@
+{
+  "plantilla": "grafico",
+  "id": "2026-11-12-grafico-argentina-empataba-con-australia-en-1895",
+  "titulo": "Argentina empataba con Australia en 1895. ¿Qué pasó?",
+  "descripcion": "¿Cómo se abrió la distancia entre Argentina y Australia, si en 1895 producían por persona prácticamente lo mismo?\n\nLas dos le vendían comida y lana a la misma Europa. En dieciocho años, Australia salió de su crisis bancaria y le sacó más de un tercio.\nLa historia completa de cómo Argentina pasó de cuarta a octava entre ocho países está en el video largo del canal.\n\nFuentes: Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#argentina",
+    "#australia",
+    "#historiaeconomica"
+  ],
+  "props": {
+    "id": "2026-11-12-grafico-argentina-empataba-con-australia-en-1895",
+    "gancho": {
+      "texto": "En 1895, Australia y Argentina producían por persona prácticamente lo mismo. Dieciocho años después, ya no.",
+      "rotulo": "EMPATE EN 1895",
+      "cifras": [
+        {
+          "texto": "prácticamente lo mismo",
+          "valor": 1,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "ARG",
+                "AUS"
+              ],
+              "desde": 1870,
+              "hasta": 1913,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "AUS",
+            "paisB": "ARG",
+            "anio": 1895
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Argentina y Australia, 1870–1913",
+      "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+          "ARG",
+          "AUS"
+        ],
+        "desde": 1870,
+        "hasta": 1913,
+        "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "ARG",
+        "anio": 1895,
+        "texto": "1895: empate"
+      },
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira las dos líneas. Las dos vendían trigo y lana a la misma Europa. Son datos del Proyecto Maddison.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Argentina y Australia, 1870–1913",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "ARG",
+              "AUS"
+            ],
+            "desde": 1870,
+            "hasta": 1913,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "ARG",
+            "anio": 1895,
+            "texto": "1895: empate"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "líneas."
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero en 1895 Australia estaba en el fondo de su crisis bancaria. Y salió corriendo: hasta 1913 su ingreso por persona creció casi la mitad. El argentino, algo más de un 10 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Después de 1895, Australia acelera",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "ARG",
+              "AUS"
+            ],
+            "desde": 1895,
+            "hasta": 1913,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "AUS"
+          },
+          "anotaciones": [
+            {
+              "anio": 1895,
+              "texto": "Crisis bancaria en Australia",
+              "dice": "bancaria."
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "corriendo:"
+        },
+        "cifras": [
+          {
+            "texto": "creció casi la mitad",
+            "valor": 48,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "AUS"
+                ],
+                "desde": 1870,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "AUS",
+              "anio": 1895,
+              "anioB": 1913
+            }
+          },
+          {
+            "texto": "algo más de un 10 %",
+            "valor": 12,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "AUS"
+                ],
+                "desde": 1870,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "ARG",
+              "anio": 1895,
+              "anioB": 1913
+            },
+            "tolerancia": 0.15
+          }
+        ],
+        "rotulo": {
+          "texto": "AUSTRALIA CORRE",
+          "dice": "corriendo:"
+        },
+        "mascota": {
+          "pose": "senala",
+          "bocadillo": "Australia salió corriendo",
+          "dice": "mitad."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 1913, Australia ya le sacaba más de un tercio. La distancia se abrió justo cuando a Argentina le iba bien.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "1913: la grieta ya se ve",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "AUS",
+              "ARG"
+            ],
+            "desde": 1913,
+            "hasta": 1913,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "ARG"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "1913,"
+        },
+        "cifras": [
+          {
+            "texto": "más de un tercio",
+            "valor": 1.36,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ARG",
+                  "AUS"
+                ],
+                "desde": 1870,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "AUS",
+              "paisB": "ARG",
+              "anio": 1913
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "+36 %",
+            "pais": "AUS",
+            "animo": "feliz",
+            "dice": "tercio."
+          }
+        ]
+      }
+    ],
+    "remate": "En 1895 corrían parejas. En 1913, una ya iba adelante.",
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      }
+    ],
+    "enlaceLargo": "2026-11-08-tesis-argentina-rica-v3"
+  }
+}

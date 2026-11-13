@@ -1,0 +1,298 @@
+{
+  "plantilla": "grafico",
+  "id": "2026-11-12-grafico-argentina-tuvo-3-000-de-inflacion",
+  "titulo": "Argentina tuvo 3.000 % de inflación. En 1993, negativa",
+  "descripcion": "¿Cómo pasó Argentina de una inflación de unos 3.000 % en 1989 a un número negativo apenas cuatro años después?\n\nLa línea del deflactor del PIB del Banco Mundial muestra el salto de los setenta, la hiperinflación de 1989, el freno del uno a uno y el regreso de los últimos años.\nEl recorrido completo de Argentina desde 1895, con sus cuatro quiebres, está en el video largo del canal.\n\nFuentes: Banco Mundial, WDI, NY.GDP.DEFL.KD.ZG (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=AR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#argentina",
+    "#inflacion",
+    "#datos"
+  ],
+  "props": {
+    "id": "2026-11-12-grafico-argentina-tuvo-3-000-de-inflacion",
+    "gancho": {
+      "texto": "Según el Banco Mundial, en 1989 los precios de toda la economía argentina subieron unos 3.000 %.",
+      "rotulo": "3.000 % EN UN AÑO",
+      "cifras": [
+        {
+          "texto": "unos 3.000 %",
+          "valor": 3000,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.DEFL.KD.ZG",
+              "paises": [
+                "ARG"
+              ],
+              "desde": 1961,
+              "hasta": 2025,
+              "etiqueta": "Inflación (deflactor del PIB, % anual)",
+              "unidad": "%"
+            },
+            "operacion": "maximo",
+            "pais": "ARG"
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "area",
+      "titulo": "Inflación en Argentina (% anual)",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.DEFL.KD.ZG",
+        "paises": [
+          "ARG"
+        ],
+        "desde": 1961,
+        "hasta": 2025,
+        "etiqueta": "Inflación (deflactor del PIB, % anual)",
+        "unidad": "%"
+      },
+      "destacar": {
+        "pais": "ARG",
+        "anio": 1989,
+        "texto": "1989: unos 3.000 %"
+      },
+      "formato": {
+        "sufijo": " %",
+        "decimales": 0,
+        "escala": "log"
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "En los años sesenta, la inflación rondaba el 25 % anual. En 1975 saltó a casi 200 %.",
+        "grafico": {
+          "tipo": "area",
+          "titulo": "Inflación en Argentina (% anual)",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.DEFL.KD.ZG",
+            "paises": [
+              "ARG"
+            ],
+            "desde": 1961,
+            "hasta": 2025,
+            "etiqueta": "Inflación (deflactor del PIB, % anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "ARG",
+            "anio": 1975
+          },
+          "anotaciones": [
+            {
+              "anio": 1975,
+              "texto": "Casi 200 %",
+              "dice": "saltó"
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0,
+            "escala": "log"
+          },
+          "dice": "sesenta,"
+        },
+        "cifras": [
+          {
+            "texto": "rondaba el 25 %",
+            "valor": 25,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 1967,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "promedio",
+              "pais": "ARG"
+            }
+          },
+          {
+            "texto": "casi 200 %",
+            "valor": 198,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 1975
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "El freno llega en 1991: una ley ata el peso al dólar. En 1993, el índice marcó incluso un número negativo.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "El freno del uno a uno",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.DEFL.KD.ZG",
+            "paises": [
+              "ARG"
+            ],
+            "desde": 1985,
+            "hasta": 2000,
+            "etiqueta": "Inflación (deflactor del PIB, % anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "ARG",
+            "anio": 1991
+          },
+          "anotaciones": [
+            {
+              "anio": 1991,
+              "texto": "Uno a uno",
+              "dice": "ley"
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0
+          },
+          "dice": "freno"
+        },
+        "cifras": [
+          {
+            "texto": "un número negativo",
+            "valor": -3.6,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 1993
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "BAJO CERO",
+          "dice": "negativo."
+        },
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¿De 3.000 % a bajo cero?",
+          "dice": "negativo."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2024 volvió a pasar el 200 %. En 2025 bajó a cerca de 40 %. Falta ver si se sostiene.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Inflación 2010–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.DEFL.KD.ZG",
+            "paises": [
+              "ARG"
+            ],
+            "desde": 2010,
+            "hasta": 2025,
+            "etiqueta": "Inflación (deflactor del PIB, % anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "ARG",
+            "anio": 2025
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0
+          },
+          "dice": "2024"
+        },
+        "cifras": [
+          {
+            "texto": "volvió a pasar el 200 %",
+            "valor": 208,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 2024
+            }
+          },
+          {
+            "texto": "cerca de 40 %",
+            "valor": 39,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "200 %",
+            "pais": "ARG",
+            "animo": "triste",
+            "dice": "200"
+          }
+        ]
+      }
+    ],
+    "remate": "Bajarla una vez no fue lo difícil. Lo difícil fue mantenerla abajo.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, deflactor del PIB, % anual (NY.GDP.DEFL.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=AR"
+      }
+    ],
+    "enlaceLargo": "2026-11-08-tesis-argentina-rica-v3"
+  }
+}
