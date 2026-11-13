@@ -1,5 +1,5 @@
-# Criterios de guion — En Números Rojos (BORRADOR INCOMPLETO, 2026-11-13)
-> Quedó a medias porque se alcanzó el límite de uso. Base: `docs/GUION.md` §2, §3, §4, §6, §9, §11.
+# Criterios de guion — En Números Rojos (borrador para aprobación de Santiago, 2026-11-13)
+> Formato común: `yt/_propuestas/plantilla-criterios-guion.md`. Base: `docs/GUION.md` §2, §3, §4, §6, §9, §11.
 
 ## 1. Bloqueantes
 | # | Criterio | ¿Lo comprueba una máquina? |
@@ -27,7 +27,7 @@
 Todos los bloqueantes, Verdad = 5, promedio ≥ 4,3 en el largo (≥ 4 en el Short) y ninguno < 3. En el largo, 2 rondas de revisor como mínimo; si a la 2.ª no pasa, el guion se descarta.
 
 ## 4. Veredicto
-JSON común (`/home/santiago/projects/yt/_propuestas/revisor-de-guiones.md`), con `"canal":"numeros-rojos"`.
+JSON común (`/home/santiago/projects/yt/_propuestas/plantilla-criterios-guion.md` §4), con `"canal":"numeros-rojos"`.
 
 ## 5. Ejemplos
 - **Aprobaría:** `contenido/guiones/2026-11-08-tesis-argentina-rica-v3.json`: cifras ✓ y `--revisar` sin problemas.
