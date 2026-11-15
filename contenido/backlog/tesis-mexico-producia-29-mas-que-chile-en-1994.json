@@ -2549,7 +2549,19 @@
           "sufijo": " %",
           "decimales": 2
         },
-        "dice": "cuarto"
+        "dice": "cuarto",
+        "anotaciones": [
+          {
+            "anio": 2010,
+            "texto": "2010: casi el doble",
+            "dice": "2010"
+          },
+          {
+            "anio": 2022,
+            "texto": "Corea 2022: 19 veces más",
+            "dice": "Corea"
+          }
+        ]
       },
       "cifras": [
         {
