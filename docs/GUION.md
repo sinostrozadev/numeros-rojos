@@ -93,6 +93,33 @@ UN gráfico (`grafico`) que se construye con la voz desde el frame 0 y UN giro.
 4. Si sale de un largo: `enlaceLargo` = id del largo (`pendiente-tesis-<slug>` mientras está en backlog). **Texto 100 % nuevo**:
    mismos hechos y fuentes, otra frase de apertura, otro orden (si no, es contenido reutilizado). La descripción remite al largo.
 
+## 4b. El primer segundo del Short y la elección de tema (revisión de estrategia 2026-11-15 — manda sobre §4)
+
+> Medido en Studio (9 Shorts, 2026-11-15): YouTube los muestra (95,7 % de las vistas vienen del feed de Shorts) pero **solo el
+> 18–48 % se queda** (media 32,6 %; Línea Punteada, mismo motor: **71 %**). Tras la prueba inicial el feed deja de empujarlos:
+> 646 → 412 → 319 → 43 → 3 vistas. El primer segundo era un gráfico vacío con jerga ("deflactor del PIB, % anual") y la voz
+> abría con "Según el Banco Mundial". Desde ahora:
+
+1. **Primera frase = el hecho que choca o una pregunta al espectador, ≤ 14 palabras, sin fuente ni jerga.** Prohibido abrir con
+   "Según…", "De acuerdo con…", "Los datos…", el nombre de una institución; prohibidas en la primera frase "PIB", "per cápita",
+   "PPA", "deflactor", "dólares constantes", "% del PIB". La fuente se dice en la 1.ª o 2.ª escena (sigue siendo obligatoria).
+   Bien: "En 1989 los precios en Argentina subieron 3.000 % en un solo año." / "¿Quién gasta más, un chileno o un mexicano?"
+   Mal: "Según el Banco Mundial, en 1989 los precios de toda la economía argentina subieron unos 3.000 %." (lo valida `generar-guiones`).
+2. **El gráfico se ve TERMINADO en el frame 0** (la plantilla ya lo hace: cold open de 1,1 s con el desenlace y rebobinado). El
+   gancho debe nombrar lo que se ve en ese gráfico completo (el pico, el cruce, la brecha): no prometas algo que no está en pantalla.
+3. **Rótulo ≤ 4 palabras, en lenguaje de la calle** ("PRECIOS ×30 EN UN AÑO", no "INFLACIÓN DEFLACTOR").
+4. **Duración objetivo 30–40 s (75–100 palabras habladas)**, no 45–50: menos escenas (2–3), un solo giro. Un Short corto que se
+   ve entero rinde más que uno largo abandonado a la mitad.
+5. **Temas que se eligen primero** (en este orden; datos del canal y de los referentes que crecen):
+   a. **El bolsillo del espectador**: precios, sueldo, casa, dólar, jubilación, cuánto rinde la plata, comparado entre países
+      ("Con lo que gana un chileno, ¿cuántos kilos de pan compra frente a un argentino?" — solo con datasets con licencia).
+      Es lo que hacen los más vistos de Los Ecomonos ("Comprar casa vs alquilar", "La trampa de los 2 salarios").
+   b. **Rivalidad directa entre vecinos** con Chile o Argentina dentro (81 % de la audiencia es de Chile): Chile vs Argentina,
+      Chile vs Perú, Argentina vs Uruguay, México vs Chile. Un solo país lejano (Irlanda, Noruega, Japón) va al final de la cola.
+   c. **Lo que pasó hace ≤ 14 días** (IPC del mes, dato del INE/INDEC, récord del cobre o del dólar) con la serie larga detrás.
+   Se evita: series abstractas sin persona (reservas, exportaciones/PIB, I+D/PIB) salvo que la primera frase las traduzca a gente.
+6. **Escala humana en la primera escena**: "un chileno", "una familia", "tu sueldo"; nunca solo "la economía".
+
 ## 5. Las 4 estructuras (rotan: ninguna > 40 % de los largos)
 
 **`comparacion`** — dos o más países frente a frente en el tiempo. Ej. Chile vs Corea.
@@ -404,6 +431,11 @@ infantil de UNICEF, gasto militar del SIPRI. Un slug de OWID es CC BY solo si el
   rico que Y. ¿Qué pasó?", "X creció un 25 % en un año. Su gente, un 2 %", "X pasó a Y en 2012. ¿Cómo lo hizo?". Nada de
   `PROHIBIDAS_TITULO`, nada de "Los 10/15…", "Descubren", "Nadie te cuenta", mayúsculas enteras o emojis. Lo que promete, el video
   lo cumple (si el título dice "el triple", la cifra está). No repetir ni parafrasear un título usado.
+- **(2026-11-15) El largo vive o muere en el clic**: Chile-Corea abrió 2,7 % de 1.600 impresiones (carátula GPT) y Uruguay 1,0 % de
+  1.300 (miniatura de Remotion con barras y pie de fuente). Por eso: (a) **ningún largo se publica sin carátula GPT** (si no
+  llegó, se corre la ranura); (b) el título mete al espectador o a su país en la frase cuando el dato lo permite ("Un chileno
+  produce lo mismo que un uruguayo. ¿Por qué allá todo cuesta más?") y prefiere Chile/Argentina en el título (81 % de la audiencia
+  es de Chile); (c) cifra o contraste en las primeras 5 palabras; (d) el tema del largo sale de la misma lista de §4b.5.
 - **Descripción** (40–4.000 c, distinta en cada video): línea 1 = **la pregunta** del video. Línea en blanco. 2–4 líneas propias
   (qué se recorre, la tesis, el dato que más sorprende). Los capítulos con tiempos **los agrega el pipeline** (no los escribas).
   Luego `Fuentes:` con cada dataset (código + URL), luego "Voz sintetizada. Gráficos generados a partir de datos abiertos." y

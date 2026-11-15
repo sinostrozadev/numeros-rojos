@@ -237,7 +237,24 @@ const chequeosPropios = (g: Crudo): string[] => {
     if (NEGRA.test(b.texto)) mal.push(`lista negra en "${b.texto.slice(0, 60)}…"`);
   }
   if (g.plantilla === 'tesis') mal.push(...chequeosVisuales(escenas));
+  if (g.plantilla === 'grafico') mal.push(...chequeosGanchoShort(p.gancho?.texto ?? '', p.gancho?.rotulo ?? ''));
   return mal.slice(0, 10);
+};
+
+/**
+ * Gancho del SHORT (estrategia 2026-11-15, GUION.md §4b): en el feed el 67 % deslizaba en el primer segundo. La primera frase
+ * no puede abrir con la fuente ni con jerga; ≤ 14 palabras antes del primer punto; el rótulo ≤ 4 palabras.
+ */
+const ABRE_MAL = /^\s*(?:seg[uú]n|de acuerdo con|los datos|el banco mundial|our world|el proyecto maddison)/i;
+const JERGA_GANCHO = /\b(?:deflactor|PPA|paridad de poder|formaci[oó]n bruta|per c[aá]pita|PIB|INB|d[oó]lares constantes|% del PIB)\b/i;
+export const chequeosGanchoShort = (texto: string, rotulo: string): string[] => {
+  const mal: string[] = [];
+  const primera = texto.split(/(?<=[.?!…])\s+/)[0] ?? '';
+  if (ABRE_MAL.test(texto)) mal.push(`gancho del Short abre con la fuente ("${texto.slice(0, 40)}…"): la fuente va en una escena; abre con el hecho o una pregunta al espectador (§4b)`);
+  if (palabrasDe(primera) > 14) mal.push(`primera frase del gancho de ${palabrasDe(primera)} palabras (≤ 14, §4b)`);
+  if (JERGA_GANCHO.test(primera)) mal.push(`jerga en la primera frase del gancho ("${primera.match(JERGA_GANCHO)?.[0]}"): dilo en palabras de la calle (§4b)`);
+  if (rotulo && palabrasDe(rotulo) > 4) mal.push(`rótulo del gancho de ${palabrasDe(rotulo)} palabras (≤ 4)`);
+  return mal;
 };
 
 const palabrasDe = (t: string) => t.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;

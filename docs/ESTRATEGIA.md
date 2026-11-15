@@ -1,6 +1,59 @@
 > 🎯 **OBJETIVO: lograr la MONETIZACIÓN y GANAR MUCHO DINERO. Lo MÁS IMPORTANTE, por encima de calidad, volumen, herramientas o cualquier otra meta, es MONETIZAR y HACER GANAR DINERO a Santiago** (orden textual de Santiago, 2026-11-05). Todo lo demás es instrumento. Skill `estrategia-viva`.
 
-# En Números Rojos — Estrategia (Claude al mando; actualizado 2026-11-05 noche)
+# En Números Rojos — Estrategia (Claude al mando; actualizado 2026-11-15, revisión "salvar o cerrar")
+
+## 0. Revisión 2026-11-15 — MODO "SALVAR O CERRAR" (manda sobre las secciones de abajo donde choquen)
+
+Pedido de Santiago: "no está siendo efectivo, no crece". Diagnóstico con Studio (piloto, 2026-11-15 00:00) a 8 días del lanzamiento:
+**3 subs, ~1.950 vistas, ~7 h de visualización**. Línea Punteada, mismo motor y 2 días mayor: 51 subs / 26 K vistas.
+
+| Eslabón | Medido | Umbral sano | Veredicto |
+|---|---|---|---|
+| **Shorts: distribución** | 95,7 % de sus vistas vienen del feed de Shorts | — | YouTube SÍ los prueba |
+| **Shorts: se queda a ver** | 38 · 34 · 18 · 48 · 33 · 32 · 29 % (media 32,6 %) | ≥ 55 % (LP: 71 %) | **ROTO** → el feed corta: 646 → 412 → 319 → 43 → 3 → 89 → 139 vistas |
+| Largos: impresiones | Chile-Corea 1.600 · Uruguay 1.300 | — | hay distribución (Browse 78 %) |
+| **Largos: CTR** | Chile-Corea **2,7 %** (carátula GPT) · Uruguay **1,0 %** (miniatura Remotion) | ≥ 4 % | **ROTO** en el clic |
+| Largos: duración media | 3:06 (30 %) · 3:47 (37 %) | > 40 % | flojo pero no es el cuello |
+| **Operación** | Argentina e Irlanda (largos) y 1 Short quedaron en **Draft** el 11-09 (el subidor dijo ✓); salieron 2 largos de 4 | 100 % | **ROTO**: la mitad de los largos nunca se publicó |
+| Audiencia | 81 % Chile · hombres 25–44 y 65+ | — | el tema "PIB de países lejanos" atrae a pocos |
+
+**Dónde se rompe el embudo:** (1) primer segundo del Short — el frame 0 era un gráfico vacío con jerga técnica y la voz abría
+"Según el Banco Mundial…"; LP abre con un mapa y una pregunta; (2) el clic del largo — miniatura de gráfico con pie de fuente
+y temas lejanos al bolsillo; (3) la operación — 2 de 4 largos sin publicar. No falta distribución: falta que la gente se quede.
+
+**Hipótesis muertas o heridas:** "el gráfico de datos solo, desde el frame 0, retiene en el feed" (muerta: 32,6 % vs 71 % de LP);
+"temas de PIB comparado de países lejanos (Irlanda, Japón, Noruega) traen audiencia LatAm" (herida: los más bajos); "3 largos por
+semana compran crecimiento" (herida: con CTR 1–2,7 % el volumen no es el cuello).
+**Se duplica:** rivalidades con Chile/Argentina dentro (Chile-Corea 646, Panamá-Chile 412 fueron los mejores Shorts; Chile-Corea
+el único largo con tracción) y la carátula GPT (2,7× el CTR de la de Remotion).
+**Se mata:** el arranque "Según…"; la miniatura de Remotion en largos; el gráfico vacío en el frame 0; países lejanos como tema
+principal; el subidor sin verificar el estado final en Studio.
+
+**Correcciones aplicadas (2026-11-15):**
+1. Plantilla `grafico`: **cold open** — el gráfico se ve terminado en el frame 0 (1,1 s) y se rebobina; sin la línea técnica del
+   indicador; el pie "Fuente" entra a los 3 s (sigue en pantalla y en la descripción).
+2. Guion del Short (`GUION.md` §4b + validador `chequeosGanchoShort` en `generar-guiones`): primera frase ≤ 14 palabras sin fuente
+   ni jerga, rótulo ≤ 4 palabras, 30–40 s, temas en orden: bolsillo → rivalidad con Chile/Argentina → contingente ≤ 14 días.
+3. Largos: ninguno sin carátula GPT; título con Chile/Argentina o el espectador dentro (`GUION.md` §10). Uruguay pedido al agente
+   de carátulas (`_propuestas/largos-sin-caratula.md`).
+4. Operación: los largos Argentina e Irlanda (ya renderizados, con carátula) se rescatan del Draft (`subir-studio.mjs` BORRADOR=1
+   ahora elige el borrador por título); Argentina dom 15-11 19:00, Irlanda lun 23-11 19:00. Toda subida se verifica en la lista de
+   Studio ("Scheduled"), no por el ✓ del subidor.
+5. Cadencia desde el **lun 2026-11-23**: **2 largos/semana (lun y jue 19:00)** + 1 Short/día 13:00. El cupo que se libera va a
+   tema, título y carátula de cada largo. (La semana 16–22 ya en producción no se toca.)
+
+**Proyección honesta:** a 36 vistas de largo/día, 120.000 vistas (8.000 h) tardan ~9 años; el escenario pesimista de la propuesta
+pedía 600 vistas/largo y estamos en ~125 (mediana de 2). Para el YPP en 2027 hace falta multiplicar por ~30 las vistas por largo:
+solo pasa si el CTR sube a ≥ 4 % **y** algún Short o largo rompe el techo. Con lo de hoy, **no hay YPP en 12 meses**.
+
+**Criterio de corte (fecha: lun 2026-12-07; control intermedio lun 2026-11-30)** — se miden los Shorts publicados desde el
+11-17 (ya con cold open) y los largos con carátula GPT:
+- (a) mediana de "se queda a ver" de los Shorts ≥ **50 %**, y al menos 1 Short ≥ **1.500 vistas**;
+- (b) mediana de CTR de los largos ≥ **3,5 %** y mediana de vistas a 7 d ≥ **400**;
+- (c) **≥ 40 suscriptores** totales.
+Cumple 3 → sigue y se reabre la cadencia; cumple 2 → sigue 2 semanas más con la variable que falle; **cumple 0–1 → se recomienda a
+Santiago pausar la producción de NR** (el canal queda publicado, sin borrar nada) y pasar su cupo de guiones y render a Línea Punteada.
+La pausa la decide Santiago.
 
 Canal **@enumerosrojos** · economía explicada con datos abiertos · español neutro LatAm · lema "La economía, con la cuenta en
 pantalla." Propuesta aprobada (GO con condiciones): `docs/PROPUESTA-CANAL.md`. Reglas de producción: `docs/CONVENCIONES.md`.
