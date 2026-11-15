@@ -32,12 +32,12 @@
 - ffmpeg del sistema no está; se usó el de `@remotion/compositor-linux-x64-gnu` (sin filtro hstack).
 
 ## Agregado
+- Rescate verificado en la lista de Studio: Argentina `BQNaK5R-yrk` Scheduled 15-11 19:00 e Irlanda `3m2VqXoQIO0` Scheduled 23-11 19:00.
 - `/home/santiago/projects/yt/_propuestas/nr-estrategia-2026-11-15.md` (reglas de 1 página para producción).
 - Pedido de carátula GPT para Uruguay (ya publicado) y para los largos 16/18/20 en `_propuestas/largos-sin-caratula.md`.
 - Bloque "Revisión de estrategia 2026-11-15" en `docs/PLAN-SEMANAL.md` (rescates y semana 23–29).
 
 ## Pendiente
 - Medir el cold open: "se queda a ver" de los Shorts del 17-11 en adelante (meta ≥ 50 %). Control lun 2026-11-30; corte lun 2026-12-07.
-- Rescatar Irlanda del Draft para lun 23-11 19:00 (si no quedó hecho en esta sesión, `BORRADOR=1 … subir-studio.mjs 2026-11-08-tesis-irlanda-pib-v3 2026-11-23 19:00`).
 - Que la verificación "Scheduled" en la lista quede dentro de `subir-studio.mjs` (hoy se hace a mano).
 - Decisión de Santiago si el 2026-12-07 cumple 0–1 de 3 criterios: pausar NR y pasar su cupo a Línea Punteada.
