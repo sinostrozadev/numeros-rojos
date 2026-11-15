@@ -44,7 +44,7 @@ if (!CANAL || !/^UC[\w-]{22}$/.test(CANAL)) fallo('falta NR_CANAL_ID (id UC… d
 const meta = JSON.parse(fs.readFileSync(`${BANDEJA}/${id}.json`, 'utf8'));
 const SUFIJO_PRIVADO = PRIVADO ? ` · PRUEBA ${(id.match(/-(v\d+)$/)?.[1] || 'privada').toUpperCase()}` : '';
 const TITULO_STUDIO = (meta.titulo.trim() + SUFIJO_PRIVADO).slice(0, 100);
-if (meta.estado === 'subido' || meta.estado === 'privado') { console.log('ya subido:', id, `(${meta.estado})`); process.exit(0); }
+if (process.env.BORRADOR !== '1' && (meta.estado === 'subido' || meta.estado === 'privado')) { console.log('ya subido:', id, `(${meta.estado})`); process.exit(0); }
 const archivo = `${BANDEJA}/${id}.mp4`;
 if (!fs.existsSync(archivo)) fallo('no existe ' + archivo);
 const LARGO = meta.tipo === 'largo';
@@ -118,7 +118,7 @@ const extraerId = (hrefs, t = '') => ((hrefs || []).join(' ') + ' ' + t).match(/
 const leerConfirmacion = () => evalJs(`(()=>{const ds=[...document.querySelectorAll('ytcp-uploads-dialog, ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog')];return {t:ds.map(d=>d.innerText).join(' ').replace(/\\n+/g,' | '),h:ds.flatMap(d=>[...d.querySelectorAll('a')].map(a=>a.href))}})()`);
 const marcar = (videoId, extra = {}) => {
   meta.estado = PRIVADO ? 'privado' : 'subido';
-  if (!PRIVADO) meta.publicarEn = meta.publicarEn || `${fecha}T${hora}:00-03:00`;
+  if (!PRIVADO) meta.publicarEn = `${fecha}T${hora}:00-03:00`; // siempre la fecha con la que se programó (un borrador retomado cambia de ranura)
   meta.videoId = videoId;
   meta.url = urlVideo(videoId);
   if (!PRIVADO) meta.programado = `${fecha} ${hora}`;
@@ -140,9 +140,12 @@ if (process.env.BORRADOR === '1') {
   await llamar(`/ir?url=${q(`https://studio.youtube.com/channel/${CANAL}/videos/${PESTANA}`)}`);
   await asegurarCanal();
   await hasta(() => evalJs(`Array.from(document.querySelectorAll('ytcp-video-row')).some(r=>/Edit draft/.test(r.innerText))`), 90000, 2000, 'fila del borrador');
-  const fila = await evalJs(`Array.from(document.querySelectorAll('ytcp-video-row')).filter(r=>/Edit draft/.test(r.innerText)).map(r=>r.innerText.split(String.fromCharCode(10))[1]||r.innerText.slice(0,60))`);
-  if (!Array.isArray(fila) || fila.length !== 1 || !fila[0].replace(/\s/g,'-').includes(id)) fallo('borrador inesperado: ' + JSON.stringify(fila));
-  await llamar(`/clicktexto?texto=${q('Edit draft')}&exacto=1`);
+  // Con varios borradores en la lista (pasó el 2026-11-09: Studio dijo "Oops" y dejó 3 videos en Draft), se elige la fila
+  // cuyo título coincide EXACTO con el de este video; si hay 0 o > 1, se aborta sin tocar nada.
+  const filas = await evalJs(`(()=>{const T=${JSON.stringify(TITULO_STUDIO)};return Array.from(document.querySelectorAll('ytcp-video-row')).map((r,i)=>({i,t:r.innerText.split(String.fromCharCode(10)).map(x=>x.trim()),d:/Edit draft/.test(r.innerText)})).filter(x=>x.d&&x.t.includes(T)).map(x=>x.i)})()`);
+  if (!Array.isArray(filas) || filas.length !== 1) fallo('borrador: esperaba 1 fila en Draft con el título exacto, hay ' + JSON.stringify(filas));
+  const rc = await evalJs(`(()=>{const r=document.querySelectorAll('ytcp-video-row')[${filas?.[0]}];const b=[...r.querySelectorAll('*')].find(e=>e.children.length===0&&/^\\s*Edit draft\\s*$/.test(e.textContent||''));if(!b)return false;(b.closest('button,ytcp-button,a,tp-yt-paper-button')||b).click();return true})()`);
+  if (rc !== true) fallo('borrador: no encontré el botón "Edit draft" en la fila');
 } else {
   // Anti-duplicados: si ya hay una fila con este título (fallo a medias), no volver a subir.
   const previo = await buscarEnLista();
@@ -164,6 +167,9 @@ await hasta(() => evalJs(`!!document.querySelector('ytcp-uploads-dialog #title-t
 await esperar(1500);
 if (/Daily upload limit reached/i.test(await textoDialogo())) { console.error('✗ TOPE DIARIO DE SUBIDAS: "Daily upload limit reached". No reintentar hasta dentro de 24 h (o verificar el teléfono).'); process.exit(3); }
 await esperar(2000);
+// Borrador retomado (BORRADOR=1): título, descripción, miniatura, etiquetas e idioma ya están guardados en el borrador.
+// Volver a escribirlos duplicaba las etiquetas (> 500 caracteres) y el diálogo no avanzaba de Details (2026-11-15). Se va directo a Next.
+if (process.env.BORRADOR !== '1') {
 
 // 2. Título y descripción (selectores acotados a ytcp-uploads-dialog: si el piloto venía de /video/<id>/edit, la página de
 //    atrás también tiene #title-textarea y el texto iba a parar al video equivocado; pasó el 2026-11-08 con reemplazar-largo.sh)
@@ -241,6 +247,7 @@ const resumen = await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads
 if (!/Spanish \(Latin America\)/.test(resumen) || !resumen.includes(categoria)) fallo('idioma/categoría: ' + resumen);
 const chips = await evalJs(`Array.from(document.querySelectorAll('ytcp-uploads-dialog ytcp-chip')).map(c=>c.innerText.trim())`);
 if (!Array.isArray(chips) || chips.length < 3) fallo('etiquetas: ' + JSON.stringify(chips));
+} // fin de los pasos 2–4 (se saltan con BORRADOR=1)
 
 }
 

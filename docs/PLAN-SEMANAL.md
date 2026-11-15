@@ -70,6 +70,17 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
 1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 0. `grafico` · Cuántos años de sueldo cuesta una casa (idea en espera: falta dataset con licencia; no Numbeo) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
 
 
+## ⚠ Revisión de estrategia 2026-11-15 (agente de estrategia) — leer antes de planear la semana 23–29
+
+- **Rescates del Draft** (Studio los dejó sin publicar el 11-09): largo Argentina `BQNaK5R-yrk` → **dom 15-11 19:00**; largo
+  Irlanda `3m2VqXoQIO0` → **lun 23-11 19:00** (esa ranura ya está ocupada). Short Irlanda `8JBkI1LW1B4` = reserva en Draft.
+- **Desde el lun 23-11: largos lunes y jueves 19:00** (2/semana, `contenido/calendario.json`), Short diario 13:00.
+  Semana 23–29: lun 23 = Irlanda (rescatado); jue 26 = largo nuevo con tema de la lista §4b.5 de GUION.md (bolsillo o
+  rivalidad con Chile/Argentina; candidato: Chile vs Argentina, cuánto rinde la plata en cada uno (ingreso por persona en dólares
+  vs corregido por precios, WDI); el título sale de la cifra que dé `verificar-cifras`, no al revés).
+- Shorts nuevos: gancho §4b (sin "Según…", ≤ 14 palabras, 30–40 s). Los 6 del backlog 16–22 ya guionados se publican tal cual
+  (llevan el cold open de la plantilla si se renderizan desde hoy). Resumen de 1 página: `/home/santiago/projects/yt/_propuestas/nr-estrategia-2026-11-15.md`.
+
 ## Semana 2026-11-16 → 2026-11-22 (agregada 2026-11-13 04:00 por el agente de guiones)
 
 **6 de 10 con guion** (6 Shorts `grafico` en `contenido/backlog/`, `verificar-cifras` exit 0). **Faltan los 3 largos `tesis`** (lun 16, mié 18, vie 20 19:00) y el Short del dom 22. Los largos fallaron los validadores de `generar-guiones`: palabras 'compra/vende' en la voz, enumeraciones sin iconos/versus, esperas > 3 s antes de un gráfico; reintentar con la ayuda de reglas en `--tema` (ver nrchain2). Orden sugerido: Panamá (lun), México TLCAN (mié), Venezuela (vie).
