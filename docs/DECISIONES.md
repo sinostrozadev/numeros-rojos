@@ -46,3 +46,20 @@
 - **Primer gráfico:** el título dice la variable ("PIB por persona en 1960") y la etiqueta la explica en lenguaje llano.
 
 - **2026-11-12 · Render en la nube (GitHub Actions):** `.github/workflows/producir.yml` (solo `workflow_dispatch`, sin secretos ni commits del bot) renderiza Shorts `grafico` (2,5 min) y largos `tesis` (12 min) y entrega el mp4 como artifact de 14 días; la subida sigue local hasta la auditoría de la API. Ver docs/OPERACION.md § "Producción en la nube".
+
+- 2026-11-15 · **Carátula GPT obligatoria en todo largo (gate en el subidor).** Revisión de los largos: Panamericana (LP) salió sin miniatura (fotograma automático), Uruguay (NR) y Torneo (Bolita) con la miniatura de Remotion; solo Bushby y Chile-Corea tenían GPT, y porque una sesión la pidió a mano. Causa: el pedido GPT (skill `caratulas-con-gpt`) nunca estuvo cableado al flujo de largos; `preparar/diario` generan el still de Remotion como respaldo y los subidores aceptaban cualquier miniatura o ninguna, sin aviso que frenara. Arreglo: el subidor de largos por Studio (`herramientas/navegador/subir-studio*.mjs`) ahora FALLA si la `miniatura` del json no está en `salida/caratulas/` (donde se guarda la GPT revisada); escape consciente `CARATULA_REMOTION=1`. Flujo nuevo del largo: guion aprobado → pedido GPT (fórmula §2b de la skill, 2–4 palabras, sujeto nombrado) → revisión a ojo del PNG → `salida/caratulas/<id>.png` + `.prompt.txt` → ruta en `miniatura` del json → subir. Para cambiarla a un video ya subido: `scripts/miniatura.mts` (API) o `miniatura-studio.mjs` (NR).
+
+## 2026-11-15 — Revisión de estrategia: MODO "SALVAR O CERRAR" (agente de estrategia; pedido de Santiago: "no crece")
+- **Datos (Studio, piloto, 2026-11-15 00:00):** 3 subs, ~1.950 vistas. Shorts: 95,7 % de las vistas desde el feed, pero "se queda a ver"
+  38/34/18/48/33/32/29 % (media 32,6 %; LP 71 %) → el feed los corta (646 → 3 vistas). Largos: Chile-Corea 1,6 K impresiones, CTR 2,7 %
+  (carátula GPT), duración media 3:06 (30 %); Uruguay 1,3 K impresiones, CTR 1,0 % (miniatura Remotion), 3:47 (37 %). **Argentina e
+  Irlanda (largos) y el Short Irlanda nunca se publicaron**: Draft desde el 11-09 aunque el lote dijo ✓.
+- **Decisiones:** (1) cold open en la plantilla `grafico` (gráfico terminado en el frame 0, rebobina a 1,1 s; sin línea técnica; fuente
+  desde 3 s); (2) GUION.md §4b + validador `chequeosGanchoShort`: primera frase ≤ 14 palabras sin "Según…"/jerga, rótulo ≤ 4 palabras,
+  30–40 s, temas bolsillo → rivalidad con Chile/Argentina → contingente; (3) GUION.md §10: largo sin carátula GPT no se publica, título
+  con Chile/Argentina o el espectador; (4) `subir-studio.mjs` BORRADOR=1 elige el borrador por título y actualiza `publicarEn`;
+  Argentina rescatado a dom 15-11 19:00 e Irlanda a lun 23-11 19:00; (5) desde el 23-11, largos lun y jue 19:00 (2/semana).
+- **Criterio de corte:** lun 2026-12-07 (control 11-30): Shorts nuevos con mediana ≥ 50 % "se queda" y 1 ≥ 1.500 vistas; largos con GPT
+  CTR ≥ 3,5 % y ≥ 400 vistas a 7 d; ≥ 40 subs. 0–1 de 3 → recomendar a Santiago pausar NR y pasar el cupo a Línea Punteada.
+- Proyección honesta: a ~36 vistas de largo/día no hay YPP en 12 meses; hace falta ×30 en vistas por largo. Resumen para producción:
+  `/home/santiago/projects/yt/_propuestas/nr-estrategia-2026-11-15.md`.
