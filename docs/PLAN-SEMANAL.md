@@ -1,5 +1,7 @@
 # En Números Rojos — Plan semanal (rodante)
 
+> **2026-11-15 (agente de producción):** semana 16→22 producida y programada; ids verificados en YouTube/Studio según la tabla JSON. Revisor independiente aplicado a cada guion (veredictos en `salida/revisiones/guiones/`).
+
 > Actualizado **2026-11-06 09:10** (America/Santiago) por Claude (agente de documentación). Método: skill global `plan-semanal`.
 > Regla: siempre hay plan de la semana en curso **y** de la siguiente. Cuando a la semana en curso le quedan < 3 ranuras futuras
 > con guion, o termina, se hace el ritual de cierre y se arma la que viene. **Manda el bloque JSON del final** (lo leen
@@ -105,7 +107,7 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
   "version": 1,
   "canal": "numeros-rojos",
   "zona": "America/Santiago",
-  "actualizado": "2026-11-13T04:00:00-03:00",
+  "actualizado": "2026-11-15T08:40:32.937Z",
   "semanas": [
     {
       "inicio": "2026-11-02",
@@ -349,9 +351,9 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "guion",
+      "estado": "programado",
       "guion": "contenido/backlog/grafico-panama-paso-a-chile-en-2012-y-no-lo.json",
-      "videoId": null,
+      "videoId": "KXbVulf_zZc",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "Short teaser del largo de Panamá (H5)",
       "bloqueo": null
@@ -361,16 +363,16 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "Panamá pasó a Chile en 2012. ¿Cómo lo hizo?",
+      "tema": "Panamá produce más que Chile. Su gente consume menos",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/backlog/tesis-panama-produce-mas-que-chile-su-gente.json",
+      "videoId": "vRrVLHRROnA",
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
       "porQue": "largo pendiente: 3 intentos fallaron validadores (consejo financiero/enumeración/ritmo) y se cortó por límite de uso",
-      "bloqueo": "falta guion"
+      "bloqueo": "carátula GPT puesta por el agente de carátulas; rescatado de Draft con BORRADOR=1"
     },
     {
       "fecha": "2026-11-17",
@@ -381,9 +383,9 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "guion",
+      "estado": "programado",
       "guion": "contenido/backlog/grafico-venezuela-producia-en-2022-menos.json",
-      "videoId": null,
+      "videoId": "3_oHrD018nY",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "H2 LatAm; sin opinión política",
       "bloqueo": null
@@ -397,9 +399,9 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "guion",
+      "estado": "programado",
       "guion": "contenido/backlog/grafico-exportar-pesa-el-triple-en-mexico-su.json",
-      "videoId": null,
+      "videoId": "6VVjuWsOVQE",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "H2 LatAm; WDI 2025",
       "bloqueo": null
@@ -409,16 +411,16 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "México firmó el TLCAN y creció un 19 % en 30 años",
+      "tema": "México producía 29 % más que Chile en 1994. Ya no",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/backlog/tesis-mexico-producia-29-mas-que-chile-en-1994.json",
+      "videoId": "419I0beU4SA",
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
       "porQue": "largo pendiente: 3 intentos fallaron validadores (consejo financiero/enumeración/ritmo) y se cortó por límite de uso",
-      "bloqueo": "falta guion"
+      "bloqueo": "carátula PROVISORIA (Remotion); pendiente GPT (largos-sin-caratula.md)"
     },
     {
       "fecha": "2026-11-19",
@@ -429,9 +431,9 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "guion",
+      "estado": "programado",
       "guion": "contenido/backlog/grafico-noruega-y-venezuela-casi-empataban.json",
-      "videoId": null,
+      "videoId": "l2WHrXxAxng",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "mismo petróleo, dos destinos",
       "bloqueo": null
@@ -445,9 +447,9 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "guion",
+      "estado": "programado",
       "guion": "contenido/backlog/grafico-corea-gasta-12-veces-mas-que-chile.json",
-      "videoId": null,
+      "videoId": "7z5bMWnsmH0",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "serie El país que fue rico",
       "bloqueo": null
@@ -457,16 +459,16 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "Venezuela tenía el doble que España en 1960. Hoy, un sexto",
+      "tema": "Venezuela doblaba a España en 1960. En 2022, ni un sexto",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/backlog/tesis-venezuela-doblaba-a-espana-en-1960.json",
+      "videoId": "PpkBOxDMuLg",
       "referente": "Los Ecomonos (largo 9–12 min, una pregunta)",
       "porQue": "largo pendiente: 3 intentos fallaron validadores (consejo financiero/enumeración/ritmo) y se cortó por límite de uso",
-      "bloqueo": "falta guion"
+      "bloqueo": "carátula GPT puesta; rescatado de Draft"
     },
     {
       "fecha": "2026-11-21",
@@ -477,9 +479,9 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "guion",
+      "estado": "programado",
       "guion": "contenido/backlog/grafico-japon-crecio-un-28-en-33-anos-corea-casi.json",
-      "videoId": null,
+      "videoId": "Vp8sDNnlmUw",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "evergreen",
       "bloqueo": null
@@ -489,16 +491,16 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "(vacío: Perú 6.261 % descartado, no cuadró verificar-cifras)",
+      "tema": "Colombia casi duplicó su ingreso. Chile casi lo triplicó",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/backlog/grafico-colombia-casi-duplico-su-ingreso-chile.json",
+      "videoId": "4F169bS8QJA",
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "cola: Perú inflación; Bolivia; China LatAm",
-      "bloqueo": "falta guion"
+      "bloqueo": null
     }
   ]
 }
