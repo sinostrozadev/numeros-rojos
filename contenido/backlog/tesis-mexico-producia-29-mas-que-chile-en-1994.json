@@ -2,7 +2,7 @@
   "plantilla": "tesis",
   "id": "pendiente-tesis-mexico-producia-29-mas-que-chile-en-1994",
   "titulo": "México producía 29 % más que Chile en 1994. Ya no",
-  "descripcion": "¿Por qué México firmó el TLCAN produciendo casi un 30 % más por persona que Chile y treinta años después quedó atrás, si sus exportaciones casi triplicaron su peso en la economía?\n\nRecorremos tres décadas de datos del Banco Mundial en cinco capítulos: el punto de partida de 1994, el salto exportador, las crisis y la inversión, la universidad y las patentes, y lo que llega a la mesa de cada familia.\nLa tesis: exportar mucho no fue lo mismo que enriquecerse. México exporta casi como Corea, pero su ingreso por persona subió apenas un 19 % entre 1994 y 2024.\nEl dato que más sorprende: en 1994 un hogar mexicano consumía por persona casi un 60 % más que uno chileno; en 2024 el chileno consumía un 25 % más.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, BX.KLT.DINV.WD.GD.ZS, SE.TER.ENRR, IP.PAT.RESD, SP.POP.TOTL, NE.CON.PRVT.PC.KD, GB.XPD.RSDV.GD.ZS (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "descripcion": "¿Por qué México firmó el TLCAN produciendo casi un 30 % más por persona que Chile y treinta años después quedó atrás, si sus exportaciones casi triplicaron su peso en la economía?\n\nRecorremos tres décadas de datos del Banco Mundial en cinco capítulos: el punto de partida de 1994, el salto exportador, las crisis y la inversión, la universidad y las patentes, y lo que llega a la mesa de cada familia.\nLa tesis: exportar mucho no fue lo mismo que enriquecerse. México exporta manufacturas casi como Corea, pero lo que produce cada persona subió apenas un 19 % entre 1994 y 2024.\nEl dato que más sorprende: en 1994 un hogar mexicano consumía por persona casi un 60 % más que uno chileno; en 2024 el chileno consumía un 25 % más.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, BX.KLT.DINV.WD.GD.ZS, SE.TER.ENRR, IP.PAT.RESD, SP.POP.TOTL, NE.CON.PRVT.PC.KD, GB.XPD.RSDV.GD.ZS (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
     "#economia",
     "#mexico",
@@ -235,7 +235,7 @@
           },
           {
             "tipo": "dato",
-            "texto": "En 1960 la ventaja era todavía mayor. Un mexicano producía unas cuatro veces lo que un coreano. Y casi un 30 % más que un chileno. Corea salía de una guerra. México ya tenía fábricas propias.",
+            "texto": "En 1960 México iba adelante de los dos. Un mexicano producía unas cuatro veces lo que un coreano. Y casi un 30 % más que un chileno. Corea salía de una guerra. México ya tenía fábricas propias.",
             "grafico": {
               "tipo": "barras",
               "titulo": "1960: México arriba de los dos",
@@ -965,7 +965,7 @@
           },
           {
             "tipo": "dato",
-            "texto": "En 2024 los tres países exportan mucho. En Corea las exportaciones equivalen a un 44 % de la economía. En México, a un 37 %. En Chile, a casi un 34 %. En Chile pesa sobre todo el cobre. Medido así México se parece más a Corea que a Chile.",
+            "texto": "En 2024 los tres países exportan mucho. En Corea las exportaciones equivalen a un 44 % de la economía. En México, a un 37 %. En Chile, a casi un 34 %. En Chile pesa sobre todo el cobre. En México, ocho de cada diez dólares son fábricas, como en Corea.",
             "grafico": {
               "tipo": "barras",
               "titulo": "2024: cuánto pesa exportar",
@@ -1073,7 +1073,7 @@
           },
           {
             "tipo": "giro",
-            "texto": "Ahora mira el ingreso por persona. Entre 1994 y 2024 el de México subió apenas un 19 %. El de Chile más que se duplicó. El de Corea casi se multiplicó por tres. En 1994 un coreano producía una vez y media lo que un mexicano. En 2024, más de tres veces y media. México exportó como Corea. Su ingreso creció muy poco.",
+            "texto": "Ahora mira el ingreso por persona. Entre 1994 y 2024 el de México subió apenas un 19 %. El de Chile más que se duplicó. El de Corea casi se multiplicó por tres. En 1994 un coreano producía una vez y media lo que un mexicano. En 2024, más de tres veces y media. México exportó fábricas como Corea. Su ingreso creció muy poco.",
             "grafico": {
               "tipo": "lineas",
               "titulo": "Ingreso por persona desde el tratado",
