@@ -4,45 +4,47 @@
  "titulo": "Colombia casi duplicó su ingreso. Chile casi lo triplicó",
  "ranura": "2026-11-22T13:00",
  "ronda": 2,
- "aprobado": false,
+ "aprobado": true,
  "bloqueantes": {
   "B1": true,
   "B2": true,
   "B3": true,
   "B4": true,
-  "B5": false,
+  "B5": true,
   "B6": true,
   "B7": true
  },
  "maquina": {
-  "verificar-cifras": "exit 0: 6/6 cifras dentro del 5 % (desvío máximo 1,6 %)",
-  "revisar": "exit 0: sin problemas",
-  "verificacion_independiente": "Revisé la API del Banco Mundial (NY.GDP.PCAP.PP.KD). CHL 1990 10.955, 2005 20.923, 2025 30.863. COL 1990 9.999, 2005 11.999, 2025 18.779. Coinciden con el dataset. Brecha en US$: 956 en 1990, 8.924 en 2005 y 12.085 en 2025. En 2005 ya existía el 74 % de la brecha actual, y después de 2005 la brecha creció otros 3.160 US$ (+35 %)."
+  "verificar_cifras": "exit 0 · 6/6 cifras dentro de tolerancia (máx. desvío 1,6 %)",
+  "revisar": "exit 0 · sin problemas",
+  "verificacion_propia": "Consulté directo la API del Banco Mundial (NY.GDP.PCAP.PP.KD) y los valores cuadran: CHL 1990 = 10.955, 2005 = 20.923, 2025 = 30.863; COL 1990 = 9.999, 2005 = 11.999, 2025 = 18.779. 'Tres cuartos de la distancia antes de 2005' también se sostiene: la brecha fue de 956 → 8.924 → 12.085, o sea un 74 % de la brecha final ya existía en 2005. 'La brecha todavía crece' también es cierto: era 11.786 en 2024 y 12.085 en 2025.",
+  "palabras_habladas_aprox": 98
  },
  "puntajes": {
   "gancho": 4,
   "claridad": 4,
-  "verdad": 4,
+  "verdad": 5,
   "ritmo_visual": 4,
   "giro": 5,
   "cierre": 4,
   "parecido_ecomonos": 4
  },
- "promedio": 4.14,
+ "promedio": 4.29,
  "motivos": [
-  "Verdad < 5 (obligatorio): 'Casi toda la distancia se abrió antes de 2005' exagera. Antes de 2005 se abrió el 74 % de la brecha actual, no 'casi toda', y la brecha en dólares siguió creciendo un 35 % después de 2005.",
-  "La descripción dice 'la brecha en dólares sigue ahí', pero en realidad creció de unos 8.900 a unos 12.100 US$. El giro ('Colombia acelera') y el remate pueden hacer creer que Colombia está alcanzando a Chile en dólares, y no es así. Falta ese matiz (B5: causalidad y lectura con matiz).",
-  "Gancho bueno pero sin las dos cifras explícitas en la 1.ª frase ('apenas un poco menos' es cualitativo). Hay un solo tipo de gráfico (líneas).",
-  "Todo lo demás es sólido: las cifras cuadran, la fuente está permitida, la longitud es de unas 87 palabras habladas, el giro trae un dato que cambia la lectura y el remate es espejo. Con los 3 cambios de abajo debería aprobar."
+  "Todos los bloqueantes pasan. Las cifras centrales y las dos afirmaciones que el verificador no revisa (los 'tres cuartos' y que la brecha en dólares sigue creciendo) las confirmé con la fuente primaria.",
+  "El giro es bueno: Colombia crece más rápido en porcentaje (56 % contra 47 %) pero la brecha absoluta igual se agranda. Esa paradoja está medida y cambia la lectura del gráfico.",
+  "El remate funciona como espejo ('Hasta 2005, Chile corrió… Desde 2005, Colombia corre'), pero no tiene ese número final que nadie mira (por ejemplo, el tamaño de la brecha en dólares).",
+  "Claridad: la unidad se explica bien ('ajustados por lo que cuestan las cosas'), pero la voz no dice ningún monto absoluto. No hay escala humana que dé idea del tamaño de la brecha.",
+  "Hay una inconsistencia menor de concepto: el título dice 'ingreso' y la voz dice 'lo que produce cada persona'. Es PIB per cápita PPA. No es un error, pero conviene ser coherente.",
+  "'Dos tercios más' corresponde a 1,644×, o sea un 64 %. Está dentro de la tolerancia, pero 'casi dos tercios' es más exacto."
  ],
  "cambios": [
-  "esc2: 'Casi toda la distancia se abrió antes de 2005.' → 'Tres cuartos de la distancia se abrieron antes de 2005.'",
-  "remate: 'Hasta 2005, Chile corrió más rápido. Desde 2005, Colombia corre un poco más.' → 'Hasta 2005, Chile corrió más rápido. Desde 2005, Colombia corre un poco más, pero la brecha en dólares todavía crece.'",
-  "descripcion: 'Casi toda la distancia se abrió antes de 2005. Desde entonces, Colombia crece algo más rápido que Chile, aunque la brecha en dólares sigue ahí.' → 'Tres cuartos de la distancia se abrieron antes de 2005. Desde entonces, Colombia crece algo más rápido en porcentaje, pero la brecha en dólares siguió creciendo.'",
-  "(opcional, gancho) 'producía apenas un poco menos que un chileno' → 'producía nueve de cada diez dólares que producía un chileno'"
+  "gancho.texto: 'Hoy, un chileno produce dos tercios más.' → 'Hoy, un chileno produce casi dos tercios más.' (cifras[0].texto 'dos tercios más' → 'casi dos tercios más')",
+  "remate: 'Hasta 2005, Chile corrió más rápido. Desde 2005, Colombia corre un poco más, pero la brecha en dólares todavía crece.' → 'Hasta 2005, Chile corrió más rápido. Desde 2005, Colombia corre un poco más, pero la brecha sigue creciendo: hoy son doce mil dólares por persona.' (agregar la cifra con calculo diferencia CHL−COL 2025 ≈ 12.085)",
+  "titulo (opcional): 'Colombia casi duplicó su ingreso. Chile casi lo triplicó' → 'Colombia casi duplicó lo que produce. Chile casi lo triplicó' (coherente con la voz y con el indicador)"
  ],
  "revisor": "opus",
- "fecha": "2026-11-15T07:59:17.950Z",
+ "fecha": "2026-11-15T08:00:38.080Z",
  "santiago": {
   "estado": "delegado al agente de producción (2026-11-14)"
  }

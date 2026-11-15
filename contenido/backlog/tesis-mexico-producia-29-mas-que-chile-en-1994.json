@@ -1,0 +1,2696 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-mexico-producia-29-mas-que-chile-en-1994",
+  "titulo": "México producía 29 % más que Chile en 1994. Ya no",
+  "descripcion": "¿Por qué México firmó el TLCAN produciendo casi un 30 % más por persona que Chile y treinta años después quedó atrás, si sus exportaciones casi triplicaron su peso en la economía?\n\nRecorremos tres décadas de datos del Banco Mundial en cinco capítulos: el punto de partida de 1994, el salto exportador, las crisis y la inversión, la universidad y las patentes, y lo que llega a la mesa de cada familia.\nLa tesis: exportar mucho no fue lo mismo que enriquecerse. México exporta casi como Corea, pero su ingreso por persona subió apenas un 19 % entre 1994 y 2024.\nEl dato que más sorprende: en 1994 un hogar mexicano consumía por persona casi un 60 % más que uno chileno; en 2024 el chileno consumía un 25 % más.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.KD, NY.GDP.PCAP.PP.KD, NE.EXP.GNFS.ZS, TX.VAL.MANF.ZS.UN, NE.GDI.TOTL.ZS, BX.KLT.DINV.WD.GD.ZS, SE.TER.ENRR, IP.PAT.RESD, SP.POP.TOTL, NE.CON.PRVT.PC.KD, GB.XPD.RSDV.GD.ZS (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#mexico",
+    "#chile",
+    "#tlcan",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-mexico-producia-29-mas-que-chile-en-1994",
+    "cabecera": "MÉXICO, CHILE Y COREA · 1994–2024",
+    "gancho": {
+      "texto": "En 1994 un mexicano producía casi un 30 % más que un chileno; en 2024 el chileno producía más de un 40 % más. En esos treinta años las exportaciones mexicanas casi triplicaron su peso en la economía. ¿Por qué su gente no se enriqueció como la de Chile?",
+      "rotulo": "MÉXICO IBA ADELANTE",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2024: Chile contra México",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD",
+          "paises": [
+            "MEX",
+            "CHL"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "PIB por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "MEX"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        }
+      },
+      "cifras": [
+        {
+          "texto": "casi un 30 % más",
+          "valor": 1.29,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "MEX",
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "MEX",
+            "paisB": "CHL",
+            "anio": 1994
+          }
+        },
+        {
+          "texto": "más de un 40 % más",
+          "valor": 1.42,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "MEX",
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "MEX",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "casi triplicaron",
+          "valor": 192.3,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.EXP.GNFS.ZS",
+              "paises": [
+                "MEX",
+                "CHL",
+                "KOR"
+              ],
+              "desde": 1960,
+              "hasta": 2024,
+              "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "variacion",
+            "pais": "MEX",
+            "anio": 1994,
+            "anioB": 2024
+          }
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber qué cambió con el libre comercio y por qué exportar mucho no bastó para subir el ingreso de la gente.",
+    "indice": [
+      "1994: México adelante",
+      "Exportar el triple",
+      "Crisis e inversión",
+      "Aulas y patentes",
+      "Lo que llega a la mesa"
+    ],
+    "estructura": "comparacion",
+    "capitulos": [
+      {
+        "titulo": "1994: México firma el TLCAN por delante de Chile",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Primero de enero de 1994. Entra en vigor el Tratado de Libre Comercio de América del Norte. México se suma a Estados Unidos y Canadá en un solo mercado. Del otro lado de la frontera espera la economía más grande del mundo. La promesa es sencilla: exportar más para vivir mejor.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "MEX",
+                "USA",
+                "CAN"
+              ],
+              "zoom": 3,
+              "acercar": true
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "TLCAN · 1994",
+              "dice": "mercado."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira la línea dorada: es México. Según el Banco Mundial, en 1994 cada mexicano producía unos ocho mil seiscientos dólares al año. Son dólares de 2015 para que la inflación no engañe. Un chileno producía unos seis mil setecientos. México iba claramente adelante.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona hasta el tratado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 1994,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "línea"
+            },
+            "cifras": [
+              {
+                "texto": "unos ocho mil seiscientos dólares",
+                "valor": 8623,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "unos seis mil setecientos",
+                "valor": 6688,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1994
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MÉXICO ADELANTE",
+              "dice": "adelante."
+            },
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Paseo de la Reforma Mexico City",
+              "alternativas": [
+                "Angel de la Independencia Mexico City",
+                "Torre Latinoamericana Mexico City"
+              ],
+              "pie": "Paseo de la Reforma, Ciudad de México (foto reciente)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 1960 la ventaja era todavía mayor. Un mexicano producía unas cuatro veces lo que un coreano. Y casi un 30 % más que un chileno. Corea salía de una guerra. México ya tenía fábricas propias.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1960: México arriba de los dos",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1960,
+                "hasta": 1960,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1960"
+            },
+            "cifras": [
+              {
+                "texto": "unas cuatro veces",
+                "valor": 4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "MEX",
+                  "paisB": "KOR",
+                  "anio": 1960
+                }
+              },
+              {
+                "texto": "casi un 30 % más",
+                "valor": 1.29,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "MEX",
+                  "paisB": "CHL",
+                  "anio": 1960
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "4×",
+                "pais": "MEX",
+                "animo": "feliz",
+                "dice": "cuatro"
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Seoul 1953 panorama",
+              "alternativas": [
+                "Seoul 1952",
+                "Seoul 1950s"
+              ],
+              "pie": "Seúl en 1953, el año del armisticio",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ahora corrige por lo que cuestan las cosas en cada país. Con esa vara México le sacaba a Chile un tercio en 1994. Con Corea estaba prácticamente empatado. El coreano producía apenas un 3 % más.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1994, corregido por precios",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1994,
+                "hasta": 1994,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "corrige"
+            },
+            "cifras": [
+              {
+                "texto": "un tercio",
+                "valor": 1.33,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "MEX",
+                  "paisB": "CHL",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "prácticamente empatado",
+                "valor": 1.03,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "MEX",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "apenas un 3 % más",
+                "valor": 1.03,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "MEX",
+                  "anio": 1994
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "CASI EMPATE CON COREA",
+              "dice": "empatado."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Chile llegaba con otro impulso. Entre 1985 y 1994 su ingreso por persona subió más de un 60 %. El de México, apenas un 5 %. México tenía el nivel. Chile tenía la velocidad.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Nueve años antes del tratado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1985,
+                "hasta": 1994,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1985"
+            },
+            "cifras": [
+              {
+                "texto": "más de un 60 %",
+                "valor": 61,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1985,
+                  "anioB": 1994
+                }
+              },
+              {
+                "texto": "apenas un 5 %",
+                "valor": 5.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1985,
+                  "anioB": 1994
+                },
+                "tolerancia": 0.1
+              }
+            ],
+            "rotulo": {
+              "texto": "NIVEL VS VELOCIDAD",
+              "dice": "velocidad."
+            }
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero mira el año 1981. Ese año México producía por persona más que en 1994. Después vino la crisis de la deuda. Entre 1981 y 1989 su ingreso por persona cayó más de un 12 %. México firmó el tratado casi un 3 % por debajo de su propio récord.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "México firmó bajo su récord de 1981",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1975,
+                "hasta": 1994,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX",
+                "anio": 1981
+              },
+              "anotaciones": [
+                {
+                  "anio": 1981,
+                  "texto": "Récord de la época"
+                },
+                {
+                  "anio": 1982,
+                  "texto": "Crisis de la deuda"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1981."
+            },
+            "cifras": [
+              {
+                "texto": "más de un 12 %",
+                "valor": -12.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1981,
+                  "anioB": 1989
+                }
+              },
+              {
+                "texto": "casi un 3 % por debajo",
+                "valor": -2.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1981,
+                  "anioB": 1994
+                },
+                "tolerancia": 0.1
+              }
+            ],
+            "rotulo": {
+              "texto": "DÉCADA DE LA DEUDA",
+              "dice": "deuda."
+            },
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "¿Firmó bajo su propio récord?",
+              "dice": "récord."
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "Exportar el triple: lo que cambió el TLCAN",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Con el tratado bajaron los aranceles entre los tres países. Muchas fábricas se instalaron cerca de la frontera norte. Ciudades como Tijuana o Ciudad Juárez se llenaron de plantas de ensamblaje. Autos, televisores y computadoras cruzaban hacia Estados Unidos. ¿Cuánto creció ese comercio?",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que cruzaba la frontera",
+              "items": [
+                {
+                  "icono": "🚗",
+                  "texto": "Autos",
+                  "dice": "Autos,"
+                },
+                {
+                  "icono": "📺",
+                  "texto": "Televisores",
+                  "dice": "televisores"
+                },
+                {
+                  "icono": "💻",
+                  "texto": "Computadoras",
+                  "dice": "computadoras"
+                }
+              ]
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "ARANCELES A LA BAJA",
+              "dice": "aranceles"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Las exportaciones lo muestran. En 1994 pesaban menos de un 13 % de la economía mexicana. En 2024 ya eran más de un 37 %. Su peso casi se triplicó. Son datos del Banco Mundial.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Cuánto pesa exportar en México",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1994,
+                  "texto": "TLCAN"
+                },
+                {
+                  "anio": 2020,
+                  "texto": "T-MEC"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "exportaciones"
+            },
+            "cifras": [
+              {
+                "texto": "menos de un 13 %",
+                "valor": 12.75,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "más de un 37 %",
+                "valor": 37.28,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "casi se triplicó",
+                "valor": 192.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1994,
+                  "anioB": 2024
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "×3",
+                "pais": "MEX",
+                "animo": "feliz",
+                "dice": "triplicó."
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "World Trade International Bridge Laredo",
+              "alternativas": [
+                "Laredo Texas border crossing trucks",
+                "Otay Mesa Port of Entry"
+              ],
+              "pie": "Cruce de carga entre Nuevo Laredo y Laredo (foto reciente)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira ahora las manufacturas. En 1982 eran menos de uno de cada diez dólares exportados. México dependía del petróleo. En 2024 eran casi ocho de cada diez. Chile está en uno de cada ocho.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Cuánto de lo exportado es fabricado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "MEX",
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1962,
+                "hasta": 2024,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1982,
+                  "texto": "México: petróleo"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "manufacturas."
+            },
+            "cifras": [
+              {
+                "texto": "menos de uno de cada diez",
+                "valor": 9.36,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 1982
+                }
+              },
+              {
+                "texto": "casi ocho de cada diez",
+                "valor": 79,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "uno de cada ocho",
+                "valor": 12.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "8 DE CADA 10",
+              "dice": "ocho"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Pero la subida no fue en línea recta. En 2001 China entra a la Organización Mundial del Comercio. Compite por el mismo cliente del norte. Entre 2001 y 2007 las manufacturas bajaron de un 85 % a un 72 % de lo exportado. Una parte de esa baja es el petróleo caro de esos años. El tratado no frenó esa competencia.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Manufacturas mexicanas, 1994–2012",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1994,
+                "hasta": 2012,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX",
+                "anio": 2001
+              },
+              "anotaciones": [
+                {
+                  "anio": 2001,
+                  "texto": "China entra a la OMC"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "recta."
+            },
+            "cifras": [
+              {
+                "texto": "un 85 %",
+                "valor": 85.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2001
+                }
+              },
+              {
+                "texto": "un 72 %",
+                "valor": 71.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2007
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 2024 los tres países exportan mucho. En Corea las exportaciones equivalen a un 44 % de la economía. En México, a un 37 %. En Chile, a casi un 34 %. En Chile pesa sobre todo el cobre. Medido así México se parece más a Corea que a Chile.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2024: cuánto pesa exportar",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "KOR",
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "2024"
+            },
+            "cifras": [
+              {
+                "texto": "un 44 %",
+                "valor": 44.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "a un 37 %",
+                "valor": 37.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "casi un 34 %",
+                "valor": 33.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "MEX",
+                "KOR",
+                "CHL"
+              ],
+              "zoom": 1,
+              "acercar": false
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ahora mira el ingreso por persona. Entre 1994 y 2024 el de México subió apenas un 19 %. El de Chile más que se duplicó. El de Corea casi se multiplicó por tres. En 1994 un coreano producía una vez y media lo que un mexicano. En 2024, más de tres veces y media. México exportó como Corea. Su ingreso creció muy poco.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona desde el tratado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 1994,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "ingreso"
+            },
+            "cifras": [
+              {
+                "texto": "apenas un 19 %",
+                "valor": 19.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1994,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "más que se duplicó",
+                "valor": 118.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1994,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "casi se multiplicó por tres",
+                "valor": 189,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "KOR",
+                  "anio": 1994,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "una vez y media",
+                "valor": 1.49,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "MEX",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "más de tres veces y media",
+                "valor": 3.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "MEX",
+                  "anio": 2024
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "+19 %",
+                "pais": "MEX",
+                "animo": "triste",
+                "dice": "19"
+              }
+            ],
+            "rotulo": {
+              "texto": "EXPORTAR NO BASTÓ",
+              "dice": "exportó"
+            },
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¿Exporta como Corea y crece tan poco?",
+              "dice": "poco."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Si exportar tanto no subió el ingreso, algo se perdió en el camino. Los datos muestran por lo menos tres frenos."
+          }
+        ]
+      },
+      {
+        "titulo": "Crisis e inversión: los frenos de México",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "El primer freno llegó casi enseguida. En diciembre de 1994 el peso se devaluó de golpe.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Banco de Mexico building Mexico City",
+              "alternativas": [
+                "Edificio del Banco de Mexico",
+                "Banco de Mexico 5 de Mayo"
+              ],
+              "pie": "Edificio del Banco de México, Ciudad de México (foto reciente)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Esa caída se ve en la línea. Según el Banco Mundial, en 1995 el ingreso por persona cayó más de un 7 %. Se la llamó efecto tequila. En 2009 la crisis de Estados Unidos le restó casi un 8 %. En 2020 la pandemia, más de un 9 %. Cada caída borró años de avance.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Tres caídas en treinta años",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1995,
+                  "texto": "Efecto tequila"
+                },
+                {
+                  "anio": 2009,
+                  "texto": "Crisis en Estados Unidos"
+                },
+                {
+                  "anio": 2020,
+                  "texto": "Pandemia"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "línea."
+            },
+            "cifras": [
+              {
+                "texto": "más de un 7 %",
+                "valor": -7.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1994,
+                  "anioB": 1995
+                }
+              },
+              {
+                "texto": "casi un 8 %",
+                "valor": -7.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 2008,
+                  "anioB": 2009
+                }
+              },
+              {
+                "texto": "más de un 9 %",
+                "valor": -9.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 2019,
+                  "anioB": 2020
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Tres caídas",
+              "items": [
+                {
+                  "icono": "🥃",
+                  "texto": "Efecto tequila",
+                  "marca": "no",
+                  "dice": "tequila."
+                },
+                {
+                  "icono": "🏦",
+                  "texto": "Crisis de 2009",
+                  "marca": "no",
+                  "dice": "2009"
+                },
+                {
+                  "icono": "😷",
+                  "texto": "Pandemia",
+                  "marca": "no",
+                  "dice": "pandemia,"
+                }
+              ]
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira solo este siglo. Entre 2000 y 2024 el ingreso por persona de México subió un 7 %. Son veinticuatro años. En el mismo tiempo Chile lo aumentó casi tres cuartos. Un mexicano de 2024 produce casi lo mismo que uno de 2000.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "México y Chile en este siglo",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "siglo."
+            },
+            "cifras": [
+              {
+                "texto": "un 7 %",
+                "valor": 7.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 2000,
+                  "anioB": 2024
+                },
+                "tolerancia": 0.1
+              },
+              {
+                "texto": "casi tres cuartos",
+                "valor": 72.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 2000,
+                  "anioB": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "+7 % EN 24 AÑOS",
+              "dice": "veinticuatro"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "El segundo freno es la inversión. Es la parte de la economía que se queda construyendo. Una fábrica nueva se paga antes de producir la primera pieza. Entre 1995 y 2024 México destinó a eso algo más de una quinta parte. Corea, casi un tercio. Chile, casi un cuarto. Durante todo el período México construyó menos que Corea.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Lo que se guarda para construir",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.GDI.TOTL.ZS",
+                "paises": [
+                  "MEX",
+                  "KOR",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Formación bruta de capital (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "inversión."
+            },
+            "cifras": [
+              {
+                "texto": "algo más de una quinta parte",
+                "valor": 22.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1995,
+                    "hasta": 2024,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "MEX"
+                }
+              },
+              {
+                "texto": "casi un tercio",
+                "valor": 32.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1995,
+                    "hasta": 2024,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "KOR"
+                }
+              },
+              {
+                "texto": "casi un cuarto",
+                "valor": 24.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1995,
+                    "hasta": 2024,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "CHL"
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1/5 CONTRA 1/3",
+              "dice": "tercio."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "La inversión extranjera trae una sorpresa. Como parte de su economía México recibió menos que Chile. Entre 1995 y 2024 promedió menos de un 3 % al año. Chile, más de un 6 %. En dólares México recibe mucho. Pero su economía es mucho más grande. Y una parte llega para ensamblar y exportar.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inversión extranjera que entra",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Inversión extranjera directa, entradas (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "extranjera"
+            },
+            "cifras": [
+              {
+                "texto": "menos de un 3 %",
+                "valor": 2.57,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1995,
+                    "hasta": 2024,
+                    "etiqueta": "Inversión extranjera directa, entradas (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "MEX"
+                }
+              },
+              {
+                "texto": "más de un 6 %",
+                "valor": 6.14,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1995,
+                    "hasta": 2024,
+                    "etiqueta": "Inversión extranjera directa, entradas (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "CHL"
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Un matiz: compara la caída de 2009. México perdió casi un 8 % por persona. Chile perdió apenas un 2 %. Los dos exportaban mucho. Uno resistió el golpe bastante mejor.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "2009: el mismo golpe, otra caída",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 2005,
+                "hasta": 2012,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX",
+                "anio": 2009
+              },
+              "anotaciones": [
+                {
+                  "anio": 2009,
+                  "texto": "Crisis en Estados Unidos"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "2009."
+            },
+            "cifras": [
+              {
+                "texto": "casi un 8 %",
+                "valor": -7.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 2008,
+                  "anioB": 2009
+                }
+              },
+              {
+                "texto": "apenas un 2 %",
+                "valor": -2.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 2008,
+                  "anioB": 2009
+                },
+                "tolerancia": 0.1
+              }
+            ],
+            "rotulo": {
+              "texto": "8 % CONTRA 2 %",
+              "dice": "mejor."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Queda el freno más difícil de ver. No está en las fábricas. Está en lo que aprende la gente que trabaja en ellas."
+          }
+        ]
+      },
+      {
+        "titulo": "Aulas y patentes: lo que México no exporta",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Armar autos no es lo mismo que diseñarlos. Por eso importa quién estudia y quién inventa.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Biblioteca Central UNAM",
+              "alternativas": [
+                "Ciudad Universitaria UNAM",
+                "Rectoria UNAM Mexico City"
+              ],
+              "pie": "Biblioteca Central de la UNAM, Ciudad de México (foto reciente)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira la matrícula universitaria desde 2000. Según el Banco Mundial, ese año la tasa bruta de Corea era más de tres veces y media la de México. Esa tasa compara a quienes estudian con la gente en edad de hacerlo. Por eso puede pasar de cien. Corea llevaba ventaja desde antes.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Matrícula universitaria (tasa bruta)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SE.TER.ENRR",
+                "paises": [
+                  "MEX",
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 2000,
+                "hasta": 2024,
+                "etiqueta": "Matrícula terciaria (% bruto)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "matrícula"
+            },
+            "cifras": [
+              {
+                "texto": "más de tres veces y media",
+                "valor": 3.64,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "MEX",
+                  "anio": 2000
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 2024 la de México llegó a un 48 %. Es más del doble que en 2000. Chile la triplicó en el mismo tiempo. La de Chile pasaba de cien. La de Corea también. México tiene menos de la mitad que Chile.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Matrícula universitaria, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SE.TER.ENRR",
+                "paises": [
+                  "MEX",
+                  "CHL",
+                  "KOR"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Matrícula terciaria (% bruto)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "2024"
+            },
+            "cifras": [
+              {
+                "texto": "un 48 %",
+                "valor": 48.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "más del doble que en 2000",
+                "valor": 134.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 2000,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "la triplicó",
+                "valor": 211,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 2000,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "pasaba de cien",
+                "valor": 110.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "menos de la mitad",
+                "valor": 0.44,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SE.TER.ENRR",
+                    "paises": [
+                      "MEX",
+                      "CHL",
+                      "KOR"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2024,
+                    "etiqueta": "Matrícula terciaria (% bruto)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "MEX",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MENOS DE LA MITAD",
+              "dice": "mitad"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Las patentes dicen algo parecido. En 2024 los residentes de México pidieron unas mil doscientas. Los de Corea casi ciento noventa y seis mil. Es unas ciento sesenta y siete veces más. Y México tiene unas dos veces y media los habitantes de Corea.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Patentes pedidas por residentes",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "IP.PAT.RESD",
+                "paises": [
+                  "MEX",
+                  "KOR"
+                ],
+                "desde": 1980,
+                "hasta": 2024,
+                "etiqueta": "Solicitudes de patentes de residentes",
+                "unidad": "solicitudes"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "patentes"
+            },
+            "cifras": [
+              {
+                "texto": "unas mil doscientas",
+                "valor": 1172,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "casi ciento noventa y seis mil",
+                "valor": 195786,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "KOR",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unas ciento sesenta y siete veces más",
+                "valor": 167,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "razon",
+                  "pais": "KOR",
+                  "paisB": "MEX",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "unas dos veces y media",
+                "valor": 2.53,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "MEX",
+                      "KOR"
+                    ],
+                    "desde": 2024,
+                    "hasta": 2024,
+                    "etiqueta": "Población",
+                    "unidad": "personas"
+                  },
+                  "operacion": "razon",
+                  "pais": "MEX",
+                  "paisB": "KOR",
+                  "anio": 2024
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "167×",
+                "pais": "KOR",
+                "animo": "feliz",
+                "dice": "veces"
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ojo con la lectura fácil. Chile pide todavía menos patentes que México. Unas trescientas noventa en 2024. Patentar poco no impidió que su ingreso creciera. La universidad y las patentes no explican solas la diferencia. Ninguna causa sola lo hace.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Patentes de residentes, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "IP.PAT.RESD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Solicitudes de patentes de residentes",
+                "unidad": "solicitudes"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "Chile"
+            },
+            "cifras": [
+              {
+                "texto": "Unas trescientas noventa",
+                "valor": 390,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "IP.PAT.RESD",
+                    "paises": [
+                      "MEX",
+                      "KOR",
+                      "CHL"
+                    ],
+                    "desde": 1980,
+                    "hasta": 2024,
+                    "etiqueta": "Solicitudes de patentes de residentes",
+                    "unidad": "solicitudes"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "Entonces no es solo la universidad…",
+              "dice": "hace."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Si la escuela y las patentes no lo explican solas, queda mirar lo que cada familia tiene en la mano. Ahí la diferencia se vuelve concreta."
+          }
+        ]
+      },
+      {
+        "titulo": "Lo que llega a la mesa de cada familia",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Producir no es lo mismo que vivir mejor. Lo que siente una familia es lo que gasta cada mes. Comida, arriendo y transporte.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que se gasta cada mes",
+              "items": [
+                {
+                  "icono": "🍞",
+                  "texto": "Comida",
+                  "dice": "Comida,"
+                },
+                {
+                  "icono": "🏠",
+                  "texto": "Arriendo",
+                  "dice": "arriendo"
+                },
+                {
+                  "icono": "🚌",
+                  "texto": "Transporte",
+                  "dice": "transporte."
+                }
+              ]
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "El consumo de los hogares por persona mide justo eso. Son datos del Banco Mundial en dólares de 2015. En 1994 un mexicano consumía casi un 60 % más que un chileno. Eran unos cinco mil seiscientos dólares al año contra unos tres mil quinientos. Una familia mexicana partía con más en la mesa.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Consumo de los hogares por persona",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "consumo"
+            },
+            "cifras": [
+              {
+                "texto": "casi un 60 % más",
+                "valor": 1.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "MEX",
+                  "paisB": "CHL",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "unos cinco mil seiscientos dólares",
+                "valor": 5570,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "MEX",
+                  "anio": 1994
+                }
+              },
+              {
+                "texto": "unos tres mil quinientos",
+                "valor": 3487,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1994
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Desde el tratado el consumo mexicano por persona subió apenas un tercio. El chileno se multiplicó por más de dos y media. Son tres décadas con poco cambio en la mesa de una familia promedio mexicana.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Consumo por persona desde 1994",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 1994,
+                "hasta": 2024,
+                "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "consumo"
+            },
+            "cifras": [
+              {
+                "texto": "apenas un tercio",
+                "valor": 33.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "MEX",
+                  "anio": 1994,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "por más de dos y media",
+                "valor": 166.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1994,
+                  "anioB": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Mercado de La Merced Mexico City",
+              "alternativas": [
+                "Mercado de Jamaica Mexico City",
+                "Mercado de San Juan Mexico City"
+              ],
+              "pie": "Mercado de La Merced, Ciudad de México (foto reciente)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "En 2010 Chile ya lo había pasado. La línea dorada es México. En 2024 el chileno consumía un 25 % más. El mexicano empezó el tratado con ventaja en la mesa. Treinta años después la ventaja cambió de lado.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "2010: el consumo se da vuelta",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.CON.PRVT.PC.KD",
+                "paises": [
+                  "MEX",
+                  "CHL"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "MEX",
+                "anio": 2010,
+                "texto": "2010: Chile pasa"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "2010"
+            },
+            "cifras": [
+              {
+                "texto": "ya lo había pasado",
+                "valor": 1.06,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "MEX",
+                  "anio": 2010
+                }
+              },
+              {
+                "texto": "un 25 % más",
+                "valor": 1.25,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.CON.PRVT.PC.KD",
+                    "paises": [
+                      "MEX",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "MEX",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "LA MESA SE DIO VUELTA",
+              "dice": "ventaja"
+            },
+            "mascota": {
+              "pose": "tapa-ojos",
+              "bocadillo": "¡La ventaja cambió de lado!",
+              "dice": "lado."
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para quien vive en Monterrey, Santiago o Lima? Que en estos datos exportar mucho no fue lo mismo que enriquecerse. México armó una potencia exportadora. Su ingreso por persona casi no se movió.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "MEX",
+                "CHL",
+                "PER"
+              ],
+              "etiquetas": [
+                {
+                  "texto": "Monterrey",
+                  "en": [
+                    -100.31,
+                    25.67
+                  ]
+                },
+                {
+                  "texto": "Lima",
+                  "en": [
+                    -77.04,
+                    -12.05
+                  ]
+                },
+                {
+                  "texto": "Santiago",
+                  "en": [
+                    -70.67,
+                    -33.45
+                  ]
+                }
+              ],
+              "viaje": {
+                "desde": "MEX",
+                "hasta": "CHL",
+                "dice": "Santiago"
+              }
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "significado",
+            "texto": "Esto deja tres preguntas para leer cualquier tratado nuevo. Cuánto se va a exportar. Cuánto de ese valor se queda en el país. Y cuánto resiste la economía cuando llega una crisis. No es una receta: Chile también tuvo años malos. Tampoco prueba que el tratado fuera un error. Sin él quizá el ingreso habría subido menos. Ese dato no existe.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Tres preguntas para un tratado",
+              "items": [
+                {
+                  "icono": "📦",
+                  "texto": "¿Cuánto se exporta?",
+                  "dice": "exportar."
+                },
+                {
+                  "icono": "🏭",
+                  "texto": "¿Cuánto se queda aquí?",
+                  "dice": "país."
+                },
+                {
+                  "icono": "🛡️",
+                  "texto": "¿Cuánto resiste?",
+                  "dice": "resiste"
+                },
+                {
+                  "icono": "⚖️",
+                  "texto": "¿Fue un error? Sin dato",
+                  "dice": "error."
+                }
+              ]
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Falta un número. Es pequeño y rara vez sale en las noticias del tratado."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira es un cuarto de punto. Es lo que México destina a investigación y desarrollo como parte de su economía. Es el gasto en laboratorios e ingenieros que inventan. En 2010 era casi el doble. En 2022 Corea ponía casi diecinueve veces más. Armar es una cosa. Inventar es otra.",
+      "grafico": {
+        "tipo": "contador",
+        "titulo": "Investigación y desarrollo, 2024",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "GB.XPD.RSDV.GD.ZS",
+          "paises": [
+            "MEX"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+          "unidad": "%"
+        },
+        "destacar": {
+          "pais": "MEX",
+          "texto": "México · 2024"
+        },
+        "formato": {
+          "sufijo": " %",
+          "decimales": 2
+        },
+        "dice": "cuarto"
+      },
+      "cifras": [
+        {
+          "texto": "un cuarto de punto",
+          "valor": 0.25,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "MEX",
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2024,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "valor",
+            "pais": "MEX",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "casi el doble",
+          "valor": 86.6,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "MEX",
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2024,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "variacion",
+            "pais": "MEX",
+            "anio": 2024,
+            "anioB": 2010
+          }
+        },
+        {
+          "texto": "casi diecinueve veces más",
+          "valor": 18.8,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "GB.XPD.RSDV.GD.ZS",
+              "paises": [
+                "MEX",
+                "KOR",
+                "CHL"
+              ],
+              "desde": 2007,
+              "hasta": 2024,
+              "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+              "unidad": "%"
+            },
+            "operacion": "razon",
+            "pais": "KOR",
+            "paisB": "MEX",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "remate": "México multiplicó lo que exporta. No multiplicó lo que gana.",
+    "siguiente": "¿Y si el problema no fuera exportar poco, sino producir poco por cada hora trabajada? Eso viene en el próximo video.",
+    "miniatura": {
+      "texto": "MÉXICO IBA ADELANTE",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "México vs Chile",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD",
+          "paises": [
+            "MEX",
+            "CHL"
+          ],
+          "desde": 1990,
+          "hasta": 2024,
+          "etiqueta": "PIB por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "MEX"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de manufacturas, % de las exportaciones de mercancías (TX.VAL.MANF.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MANF.ZS.UN?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Formación bruta de capital, % del PIB (NE.GDI.TOTL.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inversión extranjera directa, entradas netas, % del PIB (BX.KLT.DINV.WD.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS?locations=MX-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Matrícula terciaria, % bruto (SE.TER.ENRR), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SE.TER.ENRR?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Solicitudes de patentes de residentes (IP.PAT.RESD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/IP.PAT.RESD?locations=MX-CL-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Población total (SP.POP.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MX-KR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Consumo final de los hogares per cápita, US$ constantes de 2015 (NE.CON.PRVT.PC.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=MX-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Gasto en investigación y desarrollo, % del PIB (GB.XPD.RSDV.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=MX-KR-CL"
+      }
+    ]
+  }
+}
