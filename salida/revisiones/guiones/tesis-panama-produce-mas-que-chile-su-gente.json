@@ -1,0 +1,62 @@
+{
+ "id": "tesis-panama-produce-mas-que-chile-su-gente",
+ "canal": "numeros-rojos",
+ "titulo": "Panamá produce más que Chile. Su gente consume menos",
+ "ranura": "2026-11-16T19:00",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0, todas las cifras dentro del 5 % (desvío máximo -1,7 %)",
+  "revisar": "exit 0, sin problemas de ritmo",
+  "fotos": 6,
+  "tipos_de_grafico": [
+   "lineas",
+   "barras",
+   "area",
+   "comparacion"
+  ]
+ },
+ "verificacion_web": [
+  "Metro de Panamá: la línea 1 se inauguró el 5-04-2014 y fue el primer metro de Centroamérica ✓ (panamaamerica.com.pa, laestrella.com.pa)",
+  "Sanciones de EE. UU. de 1988 con caída fuerte del PIB ✓. La GAO y el Departamento de Estado de la época estimaron cerca de -20 % del PIB; el -15 % por persona sale de la serie WDI revisada y es coherente (gao.gov T-NSIAD-89-44)",
+  "Canal a manos panameñas el 31-12-1999, dólar en circulación desde 1904, esclusas ampliadas 2007–2016: hechos de dominio público, sin discrepancia"
+ ],
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 5,
+  "giro_por_capitulo": 4,
+  "cierre": 5,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.57,
+ "motivos": [
+  "El gancho cumple: contradicción medible en la 1.ª frase con las dos cifras (7 % contra 20 %) y un rótulo legible.",
+  "La verdad aguanta: las cifras cuadran, los hechos históricos se verificaron y la causalidad lleva matiz ('los datos no separan cuánto de eso fue el canal'; 'no es una receta').",
+  "Claridad 4: el guion usa tres varas (PIB en PPA de 2021, PIB en US$ de 2015 y consumo en US$ de 2015). En los giros lo explica, pero en el cierre compara el consumo (US$ de 2015) con 'produce más' (que el público asocia al PPA del gancho) sin decir que en esa misma vara Panamá también produce más. No es un error de hecho, porque en US$ de 2015 Panamá también supera a Chile en PIB por persona, pero el titular depende de la vara y conviene blindarlo.",
+  "Giro del cap. 4 algo flojo: el Gini 'a favor' termina en 'la distancia creció', así que la mascota que 'celebra' contradice el remate de la escena.",
+  "El cierre cumple: número que nadie mira, remate espejo y un 'siguiente' (México) con gancho."
+ ],
+ "cambios": [
+  "numeroQueNadieMira: 'Es un 8 % menos que cada chileno, aunque Panamá produce más por persona.' → 'Es un 8 % menos que cada chileno, aunque con esa misma vara Panamá produce más por persona.'",
+  "cap4 giro, mascota: pose 'celebra', '¡Algo menos desigual!' → pose 'piensa', 'Bajó, pero Chile bajó más'",
+  "cap4 giro: 'Pero Chile bajó más, y por eso la distancia entre los dos creció.' → 'Pero Chile bajó más: en 1990 casi empataban; hoy los separan casi siete puntos.'",
+  "cap2 dato inflación: 'Para quien ahorra, la inflación muerde mucho menos.' → 'Para quien tiene ahorros en el banco, eso significa que pierden valor mucho más lento.' (escala humana, sin sonar a consejo)",
+  "remate: 'Chile le gana a Panamá en lo que consume.' → 'Chile todavía le gana a Panamá en lo que consume.' (coherente con 'la distancia se viene cerrando')"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:13:27.528Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

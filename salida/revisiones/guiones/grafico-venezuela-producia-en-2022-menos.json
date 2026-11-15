@@ -1,0 +1,55 @@
+{
+ "id": "grafico-venezuela-producia-en-2022-menos",
+ "canal": "numeros-rojos",
+ "titulo": "Venezuela producía en 2022 menos de la mitad que en 1960",
+ "ranura": "x",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 5/5 cifras dentro de tolerancia (desvío máx. -1,5 %) · 2 referencias resueltas",
+  "revisar": "exit 0 · sin problemas",
+  "palabras_habladas_aprox": 88,
+  "verificacion_propia": "Revisé la serie de Venezuela en la caché de OWID/Maddison 2023 (contenido/datos/owid/gdp-per-capita-maddison-project-database.json): 1960 = 12.116, 2012 = 18.486 (máximo de toda la serie; 2013 = 18.484), 2021 = 4.897, 2022 = 5.267, 1950 = 8.462. Colombia 1960 = 3.980 y 2022 = 14.469, Chile 2022 = 22.741: cuadran con lo que trae la fuente vía WebFetch. La unidad (US$ internacionales de 2011) es la de Maddison 2023."
+ },
+ "puntajes": {
+  "gancho": 4,
+  "claridad": 3,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 3,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4,
+ "motivos": [
+  "Todos los bloqueantes pasan. B7 no aplica en la práctica: es un Short autónomo, sin largo del que derive.",
+  "Verdad 5: las cifras centrales coinciden con Maddison 2023. '2012: su punto más alto' es cierto para toda la serie desde 1800. '2021: el más bajo desde 1950' es cierto, aunque se queda corto: es el más bajo desde 1944.",
+  "Gancho: la contradicción está en la 1.ª frase y el rótulo se lee bien. Le falta un dato más fuerte que trae el mismo dataset: en 2022 Venezuela producía menos que en 1950 (5.267 contra 8.462).",
+  "Claridad 3: la voz dice 'producía' y después 'ingreso por persona' sin unificar, nunca nombra la unidad y no da escala humana a ninguna cifra.",
+  "Giro 5: −73,5 % en nueve años es el dato que cambia la lectura, y va con su cifra.",
+  "Cierre 3: el remate espejo funciona, pero falta el número que nadie mira y no hay 'siguiente' con gancho.",
+  "Neutral y sin causalidad atribuida (B5 OK). Queda justo sobre el piso de 85 palabras, así que se puede ampliar.",
+  "Promedio 4,0 con ningún puntaje bajo 3: llega al umbral del Short (≥ 4), justo en el límite. Se aprueba, y se recomiendan los cambios."
+ ],
+ "cambios": [
+  "gancho.texto: 'Según el Proyecto Maddison, en 2022 un venezolano producía menos de la mitad que en 1960.' → 'Según el Proyecto Maddison, en 2022 un venezolano producía menos de la mitad que en 1960. Y menos que en 1950.' (agregar una cifra 'variacion' VEN 1950→2022 = −37,8 %)",
+  "escenas[1].texto: 'el ingreso por persona cae casi tres cuartas partes.' → 'lo que produce cada venezolano cae casi tres cuartas partes: de cada cuatro dólares, quedan menos de uno y medio.' (mismo término que en el gancho y escala humana; 26,5 % de 4 = 1,06, así que también vale 'queda uno')",
+  "escenas[0].texto: 'cada venezolano producía el triple que un colombiano.' → 'cada venezolano producía el triple que un colombiano, en dólares de igual poder de compra.' (nombra la unidad en la 1.ª mención)",
+  "anotaciones[1].texto: '2021: el más bajo desde 1950' → '2021: su nivel más bajo en 77 años' (cierto en la serie: el anterior más bajo es 1944, con 4.769)",
+  "remate: 'En 1960, Venezuela les sacaba ventaja a sus vecinos. En 2022, los vecinos se la sacaban a Venezuela.' → mantener y agregar un 'siguiente' con gancho hacia el largo o Short relacionado (p. ej., '¿Cuántos años le tomaría volver a 2012? Lo vemos en el próximo.')"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:05:01.357Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

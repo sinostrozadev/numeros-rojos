@@ -1,0 +1,251 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-colombia-casi-duplico-su-ingreso-chile",
+  "titulo": "Colombia casi duplicó su ingreso. Chile casi lo triplicó",
+  "descripcion": "¿Cómo pasaron Chile y Colombia de casi empatar en 1990 a una distancia de dos tercios?\n\nUn gráfico del Banco Mundial con lo que produce cada persona, ajustado por lo que cuestan las cosas en cada país, de 1990 a 2025.\nTres cuartos de la distancia se abrieron antes de 2005. Desde entonces, Colombia crece algo más rápido en porcentaje, pero la brecha en dólares siguió creciendo.\n\nFuente: Banco Mundial, World Development Indicators, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-CO\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#colombia",
+    "#chile",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-colombia-casi-duplico-su-ingreso-chile",
+    "gancho": {
+      "texto": "En 1990, un colombiano producía apenas un poco menos que un chileno. Hoy, un chileno produce dos tercios más.",
+      "rotulo": "CASI EMPATE EN 1990",
+      "cifras": [
+        {
+          "texto": "apenas un poco menos",
+          "valor": 0.91,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "COL",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "COL",
+            "paisB": "CHL",
+            "anio": 1990
+          }
+        },
+        {
+          "texto": "dos tercios más",
+          "valor": 1.67,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "COL",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "COL",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Colombia y Chile: de casi empate a brecha",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "COL",
+          "CHL"
+        ],
+        "desde": 1990,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "COL"
+      },
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial, ajustados por lo que cuestan las cosas. La línea dorada es Colombia: casi duplicó lo que produce cada persona.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "casi duplicó",
+            "valor": 88,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "COL",
+              "anio": 1990,
+              "anioB": 2025
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "dato",
+        "texto": "Chile, en cambio, casi lo triplicó. Tres cuartos de la distancia se abrieron antes de 2005.",
+        "usaGraficoPrincipal": true,
+        "enfasis": {
+          "pais": "CHL"
+        },
+        "cifras": [
+          {
+            "texto": "casi lo triplicó",
+            "valor": 182,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 1990,
+              "anioB": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "CASI ×3",
+            "pais": "CHL",
+            "animo": "feliz",
+            "dice": "triplicó."
+          }
+        ]
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira los últimos veinte años. Desde 2005, Colombia sube un 56 %. Chile, un 47 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Desde 2005, Colombia crece más rápido",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "COL",
+              "CHL"
+            ],
+            "desde": 2005,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "COL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "últimos"
+        },
+        "cifras": [
+          {
+            "texto": "un 56 %",
+            "valor": 56.5,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "COL",
+              "anio": 2005,
+              "anioB": 2025
+            }
+          },
+          {
+            "texto": "un 47 %",
+            "valor": 47.5,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "COL",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 2005,
+              "anioB": 2025
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "COLOMBIA ACELERA",
+          "dice": "56"
+        },
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¿Colombia más rápido?",
+          "dice": "Colombia"
+        }
+      }
+    ],
+    "remate": "Hasta 2005, Chile corrió más rápido. Desde 2005, Colombia corre un poco más, pero la brecha en dólares todavía crece.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-CO"
+      }
+    ]
+  }
+}

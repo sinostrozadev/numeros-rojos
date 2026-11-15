@@ -1,0 +1,50 @@
+{
+ "id": "grafico-panama-paso-a-chile-en-2012-y-no-lo",
+ "canal": "numeros-rojos",
+ "titulo": "Panamá pasó a Chile en 2012 y no lo volvió a soltar",
+ "ranura": "x",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 6/6 cifras dentro de la tolerancia (desvío máximo 0,4 %) · 3 referencias resueltas",
+  "revisar": "exit 0 · sin problemas",
+  "verificacion_propia": "Revisé la serie WDI NY.GDP.PCAP.PP.KD guardada (contenido/datos/wdi, consultada 2026-11-05). Chile 25.372 > Panamá 24.999 en 2011, y Panamá 26.927 > Chile 26.677 en 2012, así que el cruce fue en 2012 ✓. Panamá queda arriba en TODOS los años 2012–2024, incluido 2020 (26.882 contra 26.258) ✓. 2024: 36.395 / 30.268 = 1,20 ✓. Panamá ×3,5 desde 1990 contra ×2,8 de Chile, así que su línea sí sube más empinada ✓. No pude consultar la API en vivo (timeout), así que verifiqué contra la copia guardada de la misma fuente primaria."
+ },
+ "puntajes": {
+  "gancho": 3,
+  "claridad": 3,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro_por_capitulo": 5,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4,
+ "motivos": [
+  "Todas las cifras y la afirmación central ('desde 2012 nunca volvió a quedar abajo') están verificadas año por año contra el WDI. La fuente está permitida y se dice en la voz.",
+  "El giro es bueno: Panamá cae ~19 % en 2020, Chile 7 %, y aun así Panamá sigue arriba. Tiene la cifra que cambia la lectura, y el remate espejo funciona ('cayó poco y siguió abajo / cayó mucho y siguió arriba').",
+  "Claridad (3): el indicador es PIB por persona (producción), pero el giro y la descripción lo llaman 'ingreso por persona'. En Panamá la diferencia importa, porque el INB queda bastante por debajo del PIB por las utilidades que se van al exterior. Es justo el tema del largo enlazado ('qué parte se queda en el país'). Que el Short diga 'ingreso' contradice al propio largo. No lo marco como bloqueante de Verdad porque las cifras son correctas, pero hay que corregirlo antes de renderizar.",
+  "Gancho (3): la contradicción está en la 1.ª frase, pero la voz no dice ninguna cifra, y la ventaja de Chile en 1990 era de apenas 7 %, así que 'producía más' suena débil. Decir los dos números lo vuelve medible.",
+  "Pasa el umbral del Short justo en 4,0, sin ningún puntaje bajo 3. Se recomienda aplicar los cambios."
+ ],
+ "cambios": [
+  "giro.texto: 'el ingreso por persona panameño se encoge casi una quinta parte' → 'la producción por persona panameña se encoge casi una quinta parte'",
+  "descripcion: 'en ingreso por persona' → 'en producción (PIB) por persona' y 'el ingreso por persona panameño se encogió' → 'el PIB por persona panameño se encogió'",
+  "gancho.texto: 'en 1990 un chileno producía más que un panameño. En 2012, Panamá lo pasa.' → 'en 1990 un chileno producía unos once mil dólares al año; un panameño, unos diez mil. En 2012, Panamá lo pasa. Y no lo suelta.' (agregar las cifras con calculo 'valor' CHL/PAN 1990 para que verificar-cifras las cubra)",
+  "escenas[0].texto: 'Sube más empinada que Chile y que Uruguay.' → 'Desde 1990 se multiplica por tres y medio; Chile, por menos de tres.' (cifra nueva con calculo, opcional, sube Claridad/Giro)"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:06:00.901Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

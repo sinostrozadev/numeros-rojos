@@ -1,0 +1,1964 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-venezuela-doblaba-a-espana-en-1960",
+  "titulo": "Venezuela doblaba a España en 1960. En 2022, ni un sexto",
+  "descripcion": "¿Cómo pasó Venezuela de producir por persona más del doble que España en 1960 a menos de un sexto en 2022?\n\nSeguimos la línea venezolana con datos del Proyecto Maddison y del Banco Mundial: la OPEP en 1960, el boom de 1974, el cruce con España en 1983 y la caída de 2013 a 2021.\nNoruega entra como contraste: en 1960 producía por persona un poco menos que Venezuela y todavía no sacaba petróleo.\nLa tesis: el petróleo no explica la distancia por sí solo. Los datos apuntan a qué se hizo con la renta en los años buenos.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NE.EXP.GNFS.ZS, FI.RES.TOTL.CD, NY.GDP.DEFL.KD.ZG, TX.VAL.MANF.ZS.UN, SP.POP.TOTL, NY.GDP.PCAP.KD.ZG (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#venezuela",
+    "#petroleo",
+    "#noruega",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-venezuela-doblaba-a-espana-en-1960",
+    "cabecera": "VENEZUELA, ESPAÑA Y NORUEGA · 1950–2022",
+    "gancho": {
+      "texto": "En 1960 un venezolano producía más del doble que un español; en 2022 producía menos de un sexto. Venezuela tenía el petróleo y España no. ¿Cómo se dio vuelta la cuenta?",
+      "rotulo": "EL DOBLE QUE ESPAÑA",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "1960: Venezuela contra España",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "VEN",
+            "ESP"
+          ],
+          "desde": 1960,
+          "hasta": 1960,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "VEN"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        }
+      },
+      "cifras": [
+        {
+          "texto": "más del doble que un español",
+          "valor": 2.41,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "VEN",
+                "ESP",
+                "NOR"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "VEN",
+            "paisB": "ESP",
+            "anio": 1960
+          }
+        },
+        {
+          "texto": "menos de un sexto",
+          "valor": 0.154,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "VEN",
+                "ESP",
+                "NOR"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "VEN",
+            "paisB": "ESP",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber en qué años se fue la ventaja venezolana y qué la separó de España. Y por qué tener petróleo no alcanza para explicarlo, si Noruega también lo tiene.",
+    "indice": [
+      "1960: Venezuela adelante",
+      "El boom y el cruce",
+      "Qué exportaba cada uno",
+      "La caída de 2013"
+    ],
+    "estructura": "linea-de-tiempo",
+    "capitulos": [
+      {
+        "titulo": "1960: Venezuela iba adelante de España",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Caracas a fines de los años cincuenta. Crecen autopistas y torres nuevas. El dinero sale del petróleo del lago de Maracaibo.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Caracas 1950s",
+              "alternativas": [
+                "Caracas 1954 Avenida Bolivar",
+                "Centro Simon Bolivar Caracas"
+              ],
+              "pie": "Caracas, década de 1950",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Proyecto Maddison mide cuánto producía cada persona en cada país. Lo calcula la Universidad de Groningen en dólares que corrigen lo que cuesta vivir en cada lugar. Así se puede comparar a un venezolano con un español sin que el tipo de cambio engañe. En 1960 un venezolano producía unos doce mil dólares al año. Un español, unos cinco mil.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1960: cuánto producía cada persona",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "ESP"
+                ],
+                "desde": 1960,
+                "hasta": 1960,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Maddison"
+            },
+            "cifras": [
+              {
+                "texto": "unos doce mil dólares",
+                "valor": 12100,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1960
+                }
+              },
+              {
+                "texto": "unos cinco mil",
+                "valor": 5000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "ESP",
+                  "anio": 1960
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "12 MIL CONTRA 5 MIL",
+              "dice": "cinco"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Las exportaciones pesaban casi un tercio de la economía venezolana en 1960. Casi todo lo exportado era crudo del lago de Maracaibo y del oriente del país. El Banco Mundial sigue esa serie desde entonces. Ese septiembre Venezuela funda la OPEP en Bagdad junto a Irak y otros países petroleros.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Cuánto pesaba exportar en Venezuela",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 1960,
+                "hasta": 1990,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1960
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "exportaciones"
+            },
+            "cifras": [
+              {
+                "texto": "casi un tercio",
+                "valor": 30.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1960,
+                    "hasta": 1990,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1960
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "VEN",
+                "IRQ",
+                "IRN",
+                "KWT",
+                "SAU"
+              ],
+              "zoom": 1,
+              "etiquetas": [
+                {
+                  "texto": "Bagdad",
+                  "en": [
+                    44.37,
+                    33.31
+                  ]
+                },
+                {
+                  "texto": "Caracas",
+                  "en": [
+                    -66.9,
+                    10.5
+                  ]
+                }
+              ],
+              "dice": "OPEP"
+            },
+            "disposicion": "dividido",
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "No era la foto de un año raro. En 1950 la ventaja sobre España ya era de más del doble. La línea venezolana venía subiendo desde los años veinte con cada pozo nuevo. Su petróleo se exportaba sobre todo a Estados Unidos. Entre 1920 y 1960 el ingreso por persona se multiplicó por más de seis.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Cuarenta años de subida",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "ESP"
+                ],
+                "desde": 1920,
+                "hasta": 1960,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1950,
+                  "texto": "Más del doble que España"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "raro."
+            },
+            "cifras": [
+              {
+                "texto": "más del doble",
+                "valor": 2.45,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP"
+                    ],
+                    "desde": 1920,
+                    "hasta": 1960,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "VEN",
+                  "paisB": "ESP",
+                  "anio": 1950
+                }
+              },
+              {
+                "texto": "por más de seis",
+                "valor": 537,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP"
+                    ],
+                    "desde": 1920,
+                    "hasta": 1960,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "VEN",
+                  "anio": 1920,
+                  "anioB": 1960
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "LA LÍNEA VENÍA SUBIENDO",
+              "dice": "subiendo"
+            }
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ahora mira a Noruega. Hoy se la asocia con el petróleo bien administrado. En 1960 un noruego producía un poco menos que un venezolano. Y Noruega ni siquiera sacaba petróleo todavía. Vivía de la pesca y de los barcos y de la energía de sus ríos. Su primer gran yacimiento en el mar del Norte apareció a fines de 1969.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Venezuela, España y Noruega, 1950–1975",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "ESP",
+                  "NOR"
+                ],
+                "desde": 1950,
+                "hasta": 1975,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1960
+              },
+              "anotaciones": [
+                {
+                  "anio": 1969,
+                  "texto": "1969: petróleo noruego"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Noruega."
+            },
+            "cifras": [
+              {
+                "texto": "un poco menos que un venezolano",
+                "valor": 0.95,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NOR",
+                  "paisB": "VEN",
+                  "anio": 1960
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MÁS RICA QUE NORUEGA",
+              "dice": "venezolano."
+            },
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Noruega antes del petróleo",
+              "items": [
+                {
+                  "icono": "🐟",
+                  "texto": "Pesca",
+                  "dice": "pesca"
+                },
+                {
+                  "icono": "🚢",
+                  "texto": "Barcos",
+                  "dice": "barcos"
+                },
+                {
+                  "icono": "💧",
+                  "texto": "Energía de los ríos",
+                  "dice": "ríos."
+                }
+              ]
+            },
+            "disposicion": "dividido",
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¿Noruega detrás de Venezuela?",
+              "dice": "todavía."
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "1973 a 1983: el boom del petróleo y el cruce",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "En 1973 los países árabes de la OPEP cortan el petróleo a Estados Unidos y a otros aliados de Israel. El barril se encarece. Venezuela tiene pozos de sobra.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Lake Maracaibo oil derricks",
+              "alternativas": [
+                "Lago de Maracaibo oil wells",
+                "Cabimas oil field"
+              ],
+              "pie": "Pozos petroleros en el lago de Maracaibo, Venezuela",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira la línea de las exportaciones venezolanas. En 1972 pesaban menos de un cuarto de la economía. En 1974 ya eran más del 40 %. El país no exportaba mucho más crudo que antes. Cobraba mucho más por cada barril. Y el Estado se quedaba con buena parte de esa diferencia. Son datos del Banco Mundial.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "1974: el salto de las exportaciones",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 1960,
+                "hasta": 1990,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1974
+              },
+              "anotaciones": [
+                {
+                  "anio": 1974,
+                  "texto": "Más del 40 %"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "exportaciones"
+            },
+            "cifras": [
+              {
+                "texto": "menos de un cuarto",
+                "valor": 23.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1960,
+                    "hasta": 1990,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1972
+                }
+              },
+              {
+                "texto": "más del 40 %",
+                "valor": 42.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1960,
+                    "hasta": 1990,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1974
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MÁS DEL 40 %",
+              "dice": "40"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Las reservas internacionales del país también saltan. Entre 1970 y 1974 se multiplicaron casi por ocho. Con esa holgura el Estado toma el control del petróleo en 1976. La empresa nueva se llama PDVSA. Desde entonces casi todo lo que entra por el crudo pasa por sus cuentas.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Reservas internacionales de Venezuela",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FI.RES.TOTL.CD",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 1960,
+                "hasta": 1990,
+                "etiqueta": "Reservas internacionales totales (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1974
+              },
+              "anotaciones": [
+                {
+                  "anio": 1976,
+                  "texto": "Nace PDVSA"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "reservas"
+            },
+            "cifras": [
+              {
+                "texto": "casi por ocho",
+                "valor": 676,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FI.RES.TOTL.CD",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1960,
+                    "hasta": 1990,
+                    "etiqueta": "Reservas internacionales totales (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "VEN",
+                  "anio": 1970,
+                  "anioB": 1974
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Amuay refinery",
+              "alternativas": [
+                "Paraguana Refining Center",
+                "Cardon refinery Venezuela"
+              ],
+              "pie": "Refinería de Amuay, península de Paraguaná, Venezuela",
+              "dice": "PDVSA.",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido",
+            "sellos": [
+              {
+                "texto": "×8",
+                "pais": "VEN",
+                "animo": "feliz",
+                "dice": "ocho."
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "El dinero entra tan rápido que los precios internos también se aceleran. Lo mide el deflactor del Banco Mundial. En 1974 los precios de toda la economía subieron un 50 %, incluido el del propio crudo. En los años sesenta solían moverse menos de un 3 % al año. Es la primera señal de que la bonanza también tiene costo.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Inflación en Venezuela, 1961–1980",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 1961,
+                "hasta": 1980,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1974
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "precios"
+            },
+            "cifras": [
+              {
+                "texto": "un 50 %",
+                "valor": 50.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1974
+                }
+              },
+              {
+                "texto": "menos de un 3 % al año",
+                "valor": 1.92,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1961,
+                    "hasta": 1969,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "VEN"
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "En la base Maddison el venezolano promedio toca un techo en 1977. Producía casi dieciocho mil dólares al año. Un español de entonces producía unos trece mil. Venezuela seguía adelante por más de cuatro mil dólares. Ese nivel no vuelve a verse hasta 2008.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "1977: el techo venezolano",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "ESP"
+                ],
+                "desde": 1960,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1977
+              },
+              "anotaciones": [
+                {
+                  "anio": 1977,
+                  "texto": "Techo venezolano"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Maddison"
+            },
+            "cifras": [
+              {
+                "texto": "casi dieciocho mil dólares",
+                "valor": 17700,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1977
+                }
+              },
+              {
+                "texto": "unos trece mil",
+                "valor": 13300,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "ESP",
+                  "anio": 1977
+                }
+              },
+              {
+                "texto": "más de cuatro mil dólares",
+                "valor": 4358,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "diferencia",
+                  "pais": "VEN",
+                  "paisB": "ESP",
+                  "anio": 1977
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero fíjate en lo que pasa justo después. Desde 1978 el ingreso venezolano empieza a bajar con el barril todavía caro. En 1983 la línea de España la cruza. Ese febrero el bolívar se devalúa de golpe frente al dólar. En Caracas ese día queda como el Viernes Negro.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "1983: España pasa a Venezuela",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "ESP"
+                ],
+                "desde": 1970,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1983,
+                "texto": "1983: se cruzan"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1983,
+                  "texto": "Viernes Negro"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "después."
+            },
+            "cifras": [
+              {
+                "texto": "En 1983 la línea de España la cruza",
+                "valor": 1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "ESP",
+                  "paisB": "VEN",
+                  "anio": 1983
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1983: SE CRUZAN",
+              "dice": "cruza."
+            },
+            "mascota": {
+              "pose": "tapa-ojos",
+              "bocadillo": "¡Bajó con el barril caro!",
+              "dice": "caro."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Venezuela tenía el petróleo y tenía el dinero. Le faltaba algo que España sí tenía y que Noruega construyó a propósito."
+          }
+        ]
+      },
+      {
+        "titulo": "Qué exportaba Venezuela y qué exportaba España",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "España no tenía petróleo ni gas. Tenía sol para el turismo y fábricas de autos que recién empezaban. Venezuela tenía crudo de sobra y refinerías propias. En 1960 la apuesta parecía obvia. Era Venezuela.",
+            "visual": {
+              "tipo": "versus",
+              "titulo": "1960: ¿a quién le apostabas?",
+              "lados": [
+                {
+                  "pais": "ESP",
+                  "items": [
+                    {
+                      "icono": "🛢️",
+                      "texto": "Petróleo",
+                      "marca": "no",
+                      "dice": "petróleo"
+                    },
+                    {
+                      "icono": "☀️",
+                      "texto": "Turismo",
+                      "marca": "si",
+                      "dice": "turismo"
+                    },
+                    {
+                      "icono": "🚗",
+                      "texto": "Fábricas de autos",
+                      "marca": "si",
+                      "dice": "autos"
+                    }
+                  ]
+                },
+                {
+                  "pais": "VEN",
+                  "items": [
+                    {
+                      "icono": "🛢️",
+                      "texto": "Crudo de sobra",
+                      "marca": "si",
+                      "dice": "crudo"
+                    },
+                    {
+                      "icono": "🏭",
+                      "texto": "Refinerías",
+                      "marca": "si",
+                      "dice": "refinerías"
+                    }
+                  ]
+                }
+              ],
+              "apuesta": {
+                "pais": "VEN",
+                "dice": "apuesta",
+                "texto": "LA APUESTA OBVIA"
+              }
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira qué parte de lo exportado eran productos fabricados. En 1962 las manufacturas eran poco más de un cuarto de lo que España exportaba. En 1977 eran siete de cada diez dólares. En Noruega, más de la mitad. En Venezuela, menos de un 2 %. Son cifras del Banco Mundial con datos de comercio de Naciones Unidas.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Productos fabricados en lo exportado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "ESP",
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1962,
+                "hasta": 1990,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 1977
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "exportado"
+            },
+            "cifras": [
+              {
+                "texto": "poco más de un cuarto",
+                "valor": 27.75,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "ESP",
+                      "NOR",
+                      "VEN"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2022,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ESP",
+                  "anio": 1962
+                }
+              },
+              {
+                "texto": "siete de cada diez dólares",
+                "valor": 70.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "ESP",
+                      "NOR",
+                      "VEN"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2022,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ESP",
+                  "anio": 1977
+                }
+              },
+              {
+                "texto": "más de la mitad",
+                "valor": 53.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "ESP",
+                      "NOR",
+                      "VEN"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2022,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "NOR",
+                  "anio": 1977
+                }
+              },
+              {
+                "texto": "menos de un 2 %",
+                "valor": 1.44,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "ESP",
+                      "NOR",
+                      "VEN"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2022,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 1977
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MENOS DE UN 2 %",
+              "dice": "2"
+            },
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "SEAT Zona Franca factory Barcelona",
+              "alternativas": [
+                "SEAT 600 Barcelona 1960",
+                "SEAT factory Martorell"
+              ],
+              "pie": "Fábrica de SEAT en Barcelona, España",
+              "dice": "España",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido",
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "La línea de Noruega casi nunca retrocede. En 1990 su Parlamento crea un fondo para guardar fuera del país la renta del petróleo. Desde 2001 una regla pide gastar solo una parte pequeña de ese fondo cada año. Así los años buenos no inflan el gasto de golpe. Hoy ese fondo es uno de los más grandes del mundo. Entre 1960 y 2022 el noruego promedio multiplicó su ingreso por más de siete.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Noruega y Venezuela, 1960–2022",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NOR",
+                  "VEN"
+                ],
+                "desde": 1960,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "NOR",
+                "anio": 1990
+              },
+              "anotaciones": [
+                {
+                  "anio": 1990,
+                  "texto": "Nace el fondo petrolero"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Noruega"
+            },
+            "cifras": [
+              {
+                "texto": "por más de siete",
+                "valor": 670,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NOR",
+                  "anio": 1960,
+                  "anioB": 2022
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Storting building Oslo",
+              "alternativas": [
+                "Stortinget Oslo",
+                "Norwegian Parliament building"
+              ],
+              "pie": "Parlamento de Noruega (Storting), Oslo",
+              "dice": "Parlamento",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Ahora el dato que complica la historia. En 2022 menos de uno de cada diez dólares que exportó Noruega eran manufacturas. Noruega también terminó viviendo del petróleo y del gas. Exportar crudo no explica la diferencia por sí solo. Los datos apuntan a otra parte: a qué se hizo con la renta.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Noruega también se volvió petrolera",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "NOR"
+                ],
+                "desde": 1962,
+                "hasta": 2022,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "NOR",
+                "anio": 2022
+              },
+              "anotaciones": [
+                {
+                  "anio": 2022,
+                  "texto": "Menos de 1 de cada 10"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "dato"
+            },
+            "cifras": [
+              {
+                "texto": "menos de uno de cada diez",
+                "valor": 8.08,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "ESP",
+                      "NOR",
+                      "VEN"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2022,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "NOR",
+                  "anio": 2022
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "QUÉ SE HIZO CON LA RENTA",
+              "dice": "renta."
+            },
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "Noruega también es petrolera…",
+              "dice": "gas."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira las dos líneas entre 1977 y 1989. En ese tramo el venezolano promedio perdió más de una cuarta parte de su ingreso. El español ganó más de un tercio. Venezuela subía y bajaba con el precio del barril. Los años de barril caro no alcanzaron para tapar los de barril barato. España sumaba de a poco y casi sin retroceder.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "1977–1989: uno baja, el otro sube",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN",
+                  "ESP"
+                ],
+                "desde": 1975,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "líneas"
+            },
+            "cifras": [
+              {
+                "texto": "más de una cuarta parte",
+                "valor": -27.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "VEN",
+                  "anio": 1977,
+                  "anioB": 1989
+                }
+              },
+              {
+                "texto": "más de un tercio",
+                "valor": 37.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ESP",
+                  "anio": 1977,
+                  "anioB": 1989
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "−28 %",
+                "pais": "VEN",
+                "animo": "triste",
+                "dice": "ingreso."
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "España también tuvo sus golpes. Entre 2007 y 2013 su ingreso por persona cayó más de un 7 %. En 2020 la pandemia le quitó más de un 11 % en un solo año. La diferencia es que cada caída partió desde muy arriba. Y en pocos años volvió a subir.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Las caídas de España, 2000–2022",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "ESP"
+                ],
+                "desde": 2000,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "ESP",
+                "anio": 2020
+              },
+              "anotaciones": [
+                {
+                  "anio": 2009,
+                  "texto": "Crisis financiera"
+                },
+                {
+                  "anio": 2020,
+                  "texto": "Pandemia"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "golpes."
+            },
+            "cifras": [
+              {
+                "texto": "más de un 7 %",
+                "valor": -7.36,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ESP",
+                  "anio": 2007,
+                  "anioB": 2013
+                }
+              },
+              {
+                "texto": "más de un 11 %",
+                "valor": -11.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ESP",
+                  "anio": 2019,
+                  "anioB": 2020
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Lo peor de la línea venezolana todavía no había llegado. Vino después y casi no tiene igual en tiempos de paz."
+          }
+        ]
+      },
+      {
+        "titulo": "2013 a 2021: la caída de Venezuela",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Volvemos a Venezuela. En 2014 el precio del barril se desploma en pocos meses. Y una economía que dependía de él se queda sin colchón.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "VEN",
+                "NOR"
+              ],
+              "viaje": {
+                "desde": "NOR",
+                "hasta": "VEN",
+                "dice": "Venezuela."
+              }
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Según el Proyecto Maddison, el ingreso por persona venezolano cayó casi tres cuartas partes entre 2013 y 2021. Es como si de cada cuatro dólares quedara uno. Mira cómo la línea baja año tras año desde 2014. Ningún país de esta comparación vivió algo parecido en tiempos de paz.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Venezuela, 2000–2022",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 2000,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 2013
+              },
+              "anotaciones": [
+                {
+                  "anio": 2014,
+                  "texto": "Cae el barril"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Maddison,"
+            },
+            "cifras": [
+              {
+                "texto": "casi tres cuartas partes",
+                "valor": -73.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "VEN",
+                      "ESP",
+                      "NOR"
+                    ],
+                    "desde": 1950,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "VEN",
+                  "anio": 2013,
+                  "anioB": 2021
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "1 DE 4",
+                "pais": "VEN",
+                "animo": "triste",
+                "dice": "uno."
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Las reservas del país ya venían bajando. En 2008 sumaban unos cuarenta y tres mil millones de dólares. En 2017 quedaban menos de diez mil millones. Sin reservas un país no tiene con qué traer comida ni medicinas de afuera. El colchón se había ido antes de la peor caída.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Reservas internacionales, 2000–2017",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FI.RES.TOTL.CD",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 2000,
+                "hasta": 2017,
+                "etiqueta": "Reservas internacionales totales (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 2008
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "reservas"
+            },
+            "cifras": [
+              {
+                "texto": "unos cuarenta y tres mil millones de dólares",
+                "valor": 43065463087,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FI.RES.TOTL.CD",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2017,
+                    "etiqueta": "Reservas internacionales totales (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 2008
+                }
+              },
+              {
+                "texto": "menos de diez mil millones",
+                "valor": 9794062064,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FI.RES.TOTL.CD",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2017,
+                    "etiqueta": "Reservas internacionales totales (US$ corrientes)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 2017
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "SIN COLCHÓN",
+              "dice": "colchón"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "La inflación de toda la economía la mide el deflactor del Banco Mundial. En 2018 marcó más de doscientos mil por ciento. Los precios cambiaban de una semana a otra. Un sueldo se gastaba el mismo día en que se cobraba.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Inflación en Venezuela, 2000–2025",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 2000,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 2018
+              },
+              "anotaciones": [
+                {
+                  "anio": 2018,
+                  "texto": "Más de 200.000 %"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "inflación"
+            },
+            "cifras": [
+              {
+                "texto": "más de doscientos mil por ciento",
+                "valor": 225652,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "maximo",
+                  "pais": "VEN"
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Venezuelan bolivar fuerte banknotes",
+              "alternativas": [
+                "Bolivar fuerte billetes",
+                "Venezuela banknotes 2016"
+              ],
+              "pie": "Billetes de bolívar fuerte, Venezuela",
+              "dice": "sueldo",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido",
+            "sellos": [
+              {
+                "texto": "200.000 %",
+                "pais": "VEN",
+                "animo": "triste",
+                "dice": "ciento."
+              }
+            ],
+            "mascota": {
+              "pose": "tapa-ojos",
+              "bocadillo": "¡Doscientos mil por ciento!",
+              "dice": "semana"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "También la población lo muestra. En 2016 Venezuela tenía unos treinta millones de habitantes. En 2022 tenía más de un 8 % menos. Millones de venezolanos se fueron a países vecinos como Colombia y Perú. Muchos llegaron también a Chile. Es una de las mayores salidas de gente de la historia reciente del continente.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Población de Venezuela, 2000–2025",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SP.POP.TOTL",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 2000,
+                "hasta": 2025,
+                "etiqueta": "Población total",
+                "unidad": "personas"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 2016
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "población"
+            },
+            "cifras": [
+              {
+                "texto": "unos treinta millones",
+                "valor": 30765720,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Población total",
+                    "unidad": "personas"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 2016
+                }
+              },
+              {
+                "texto": "más de un 8 % menos",
+                "valor": -8.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Población total",
+                    "unidad": "personas"
+                  },
+                  "operacion": "variacion",
+                  "pais": "VEN",
+                  "anio": 2016,
+                  "anioB": 2022
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "VEN",
+                "COL",
+                "PER",
+                "CHL"
+              ],
+              "zoom": 3,
+              "flechas": [
+                {
+                  "desde": "VEN",
+                  "hasta": "COL"
+                },
+                {
+                  "desde": "VEN",
+                  "hasta": "PER"
+                },
+                {
+                  "desde": "VEN",
+                  "hasta": "CHL"
+                }
+              ],
+              "dice": "vecinos"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y aquí, un matiz en la última barra. En 2022 el ingreso por persona volvió a crecer cerca de un 8 % según el Banco Mundial. Y siguió creciendo hasta 2025, aunque más despacio. Es un rebote real. También es un rebote que parte desde muy abajo. El venezolano promedio sigue lejos de lo que tenía en 2013.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Crecimiento del ingreso por persona (% anual)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD.ZG",
+                "paises": [
+                  "VEN"
+                ],
+                "desde": 2012,
+                "hasta": 2025,
+                "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "VEN",
+                "anio": 2022
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "barra."
+            },
+            "cifras": [
+              {
+                "texto": "cerca de un 8 %",
+                "valor": 8.17,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "VEN"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "VEN",
+                  "anio": 2022
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "REBOTE DESDE ABAJO",
+              "dice": "abajo."
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué dice esto para quien vive en Santiago o en Lima? Que en estos datos un recurso natural no asegura nada por sí solo. Chile tiene cobre. Perú tiene oro. Bolivia tiene litio. La distancia entre Noruega y Venezuela no está en lo que había bajo tierra. Está en cuánto se guardó en los años buenos. No es una receta. Es una pregunta para leer cada alza de precios: cuánto de esa renta sigue ahí cuando el precio baja.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que hay bajo tierra",
+              "items": [
+                {
+                  "icono": "⛏️",
+                  "texto": "Chile: cobre",
+                  "dice": "cobre."
+                },
+                {
+                  "icono": "🪙",
+                  "texto": "Perú: oro",
+                  "dice": "oro."
+                },
+                {
+                  "icono": "🔋",
+                  "texto": "Bolivia: litio",
+                  "dice": "litio."
+                }
+              ]
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "GUARDAR EN LOS AÑOS BUENOS",
+              "dice": "guardó"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Queda un número para cerrar la cuenta. Es el de Noruega frente a Venezuela."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira es un diecisiete. En 1960 un noruego producía un poco menos que un venezolano. En 2022 producía casi diecisiete veces más. Lo que produce un noruego en un año equivale a lo de casi diecisiete venezolanos. Los dos países tienen petróleo. Uno convirtió la renta en ahorro. El otro la vio subir y bajar con el barril.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2022: Noruega contra Venezuela",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "NOR",
+            "VEN"
+          ],
+          "desde": 2022,
+          "hasta": 2022,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "VEN"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "diecisiete."
+      },
+      "cifras": [
+        {
+          "texto": "casi diecisiete veces más",
+          "valor": 16.8,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "VEN",
+                "ESP",
+                "NOR"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "NOR",
+            "paisB": "VEN",
+            "anio": 2022
+          }
+        },
+        {
+          "texto": "un poco menos que un venezolano",
+          "valor": 0.95,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "VEN",
+                "ESP",
+                "NOR"
+              ],
+              "desde": 1950,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "NOR",
+            "paisB": "VEN",
+            "anio": 1960
+          }
+        }
+      ]
+    },
+    "remate": "Venezuela vivió al ritmo del barril. Noruega hizo que el barril viviera a su ritmo.",
+    "siguiente": "Chile vive del cobre hace más de un siglo. ¿Por qué su ingreso no subió y bajó como el venezolano? Eso viene en el próximo video.",
+    "miniatura": {
+      "texto": "DEL DOBLE A UN SEXTO",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "Venezuela vs España",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "VEN",
+            "ESP"
+          ],
+          "desde": 1950,
+          "hasta": 2022,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "VEN"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=VE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Reservas internacionales totales, US$ corrientes (FI.RES.TOTL.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=VE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, deflactor del PIB, % anual (NY.GDP.DEFL.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=VE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de manufacturas, % de las exportaciones de mercancías (TX.VAL.MANF.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MANF.ZS.UN?locations=VE-ES-NO"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Población total (SP.POP.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=VE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Crecimiento del PIB per cápita, % anual (NY.GDP.PCAP.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=VE"
+      }
+    ]
+  }
+}

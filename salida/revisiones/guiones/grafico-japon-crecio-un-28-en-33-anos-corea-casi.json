@@ -1,0 +1,53 @@
+{
+ "id": "grafico-japon-crecio-un-28-en-33-anos-corea-casi",
+ "canal": "numeros-rojos",
+ "titulo": "Japón creció un 28 % en 33 años. Corea casi lo alcanza",
+ "ranura": "x",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 5/5 cifras dentro de tolerancia (desvío máx. 1,7 %) · 3 referencias WDI resueltas",
+  "revisar": "exit 0 · sin problemas",
+  "palabras_habladas_aprox": 98,
+  "verificacion_externa": "intenté consultar la API del Banco Mundial (WebFetch y curl) y no se pudo: timeout y permiso denegado. Hago un cotejo de orden de magnitud con lo que sé, y concuerda: Corea pasa a Japón en PIB per cápita PPA y casi lo empata en US$ constantes. Las cifras exactas se apoyan en verificar-cifras contra el dataset WDI"
+ },
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 3,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.29,
+ "motivos": [
+  "Gancho de manual: la contradicción se puede medir en la 1.ª frase, con las dos cifras (1/3 → 0,98), y el rótulo 'DE 1/3 A CASI IGUAL' se lee bien.",
+  "El giro cambia la lectura con una cifra verificada: ajustado por precios (PPA), Corea ya supera a Japón por un 16 %.",
+  "Fuentes permitidas (WDI, CC BY) en pantalla y en la descripción; no hay consejo, bando ni catastrofismo, y no se afirma ninguna causa.",
+  "Claridad: el gancho dice 'un coreano producía' y la escena 1 dice 'ingreso por persona'. PIB per cápita no es lo que produce cada trabajador, así que el verbo es impreciso. Además, la unidad (dólares de 2015) recién se dice en la escena 1.",
+  "Cierre flojo: 'paso corto / zancadas' funciona como remate, pero no hay un número que nadie mire ni un gancho de 'siguiente' o enlace a un largo.",
+  "Visual correcto pero justo: hay 2 tipos de gráfico (líneas y comparación), sellos y mascota. Al ser un Short de gráfico, no le pido 4 tipos.",
+  "B7 no aplica: es un Short independiente, no derivado de un largo. Pasa por defecto."
+ ],
+ "cambios": [
+  "gancho.texto: 'En 1991, un coreano producía algo más de un tercio de lo que producía un japonés. En 2024, casi lo mismo.' → 'En 1991, el ingreso por persona de Corea era algo más de un tercio del de Japón. En 2024, casi lo mismo.'",
+  "esc3 (giro).texto: 'En 2024, un coreano produce un 16 % más.' → 'En 2024, el ingreso por persona de Corea es un 16 % mayor.'",
+  "remate: 'Japón avanzó a paso corto. Corea, a zancadas.' → 'Japón avanzó a paso corto. Corea, a zancadas. Y la próxima pregunta es cuánto le queda a Chile para alcanzarlos.' (agregar `siguiente`/`enlaceLargo` hacia el largo Chile-Corea `K5ma4A5VFj8` si el schema lo permite)",
+  "sellos esc1: animo 'triste' en Japón → 'neutro' (+28 % sigue siendo crecimiento; así se evita leerlo como catástrofe)"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:05:43.690Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "id": "grafico-exportar-pesa-el-triple-en-mexico-su",
+ "canal": "numeros-rojos",
+ "titulo": "Exportar pesa el triple en México. Su ingreso subió 22 %",
+ "ranura": "x",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "5/5 cifras dentro de tolerancia, 2 referencias WDI resueltas, exit 0",
+  "revisar": "sin problemas, exit 0",
+  "verificacion_independiente": "API del Banco Mundial NE.EXP.GNFS.ZS MEX: 1993 = 11,60 (mínimo de 1990-2024, confirmado), 1995 = 22,87, 2024 = 37,28 ✓. El TLCAN/NAFTA entró en vigor el 1-1-1994 y la crisis del peso fue entre dic-1994 y 1995 ✓. NY.GDP.PCAP.KD: la consulta se cortó por timeout, así que el +22,3 % queda verificado solo por la máquina contra el dataset. Palabras habladas: ~89 (B6 OK pero justo en el piso de 85)."
+ },
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 3,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 3,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.14,
+ "motivos": [
+  "Gancho de nivel máximo: las dos cifras (12 % → 37 %) en la primera frase, con fuente y el rótulo 'EXPORTACIONES ×3'.",
+  "El giro funciona: +22 % de PIB por persona en 31 años cambia la lectura del dato de exportaciones.",
+  "Honestidad con el año base: el guion reconoce que 1993 fue el mínimo de la serie. Pero el título no lo advierte: desde 1990 (18,7 %) las exportaciones solo se duplican. Es aceptable porque la voz y la descripción lo transparentan.",
+  "Claridad 3: al PIB per cápita (NY.GDP.PCAP.KD) se le llama 'ingreso por persona' en el título, la voz y el rótulo. El PIB no es ingreso (el ingreso sería el INB). El remate sí lo dice bien ('lo que produce cada mexicano'), así que el guion queda incoherente consigo mismo. No es un error de cifra, por eso no bloquea, pero hay que corregirlo.",
+  "Matiz causal: el salto de 1995 se debe en buena parte a la devaluación, que infla el peso de las exportaciones sobre el PIB. El guion pone el tratado y la crisis lado a lado sin atribuirle el salto a ninguno; queda en el límite de B5 pero lo cumple.",
+  "Cierre 3: hay remate espejo, pero falta el 'siguiente' con gancho y un número que nadie mira.",
+  "Palabras habladas al borde del mínimo (~89 de 85-120): se pueden sumar unas 10 sin pasar de 55 s."
+ ],
+ "cambios": [
+  "titulo: 'Exportar pesa el triple en México. Su ingreso subió 22 %' → 'México exporta el triple. Lo que produce cada mexicano, solo 22 % más'",
+  "escenas[1].texto: 'Pero el ingreso por persona, en dólares de 2015, cuenta otra cosa.' → 'Pero lo que produce cada mexicano, el PIB por persona en dólares de 2015, cuenta otra cosa.'",
+  "escenas[1].grafico.titulo: 'Ingreso por persona en México, 1993–2024' → 'PIB por persona en México, 1993–2024'",
+  "escenas[1].rotulo.texto: 'INGRESO +22 %' → 'PIB POR PERSONA +22 %' (cambiar también el 'dice' si hace falta)",
+  "descripcion: '¿...si el ingreso de cada mexicano apenas se movió?' → '¿...si lo que produce cada mexicano apenas se movió?'",
+  "escenas[0].texto: 'En 1995, con la crisis del peso, ya pasa de una quinta parte.' → 'En 1995, con la crisis y un peso devaluado que abarata lo que vende, ya pasa de una quinta parte.' (matiz causal y +8 palabras)",
+  "remate: 'Lo que México exporta pesa el triple. Lo que produce cada mexicano, apenas un poco más.' → mantenerlo y agregar 'siguiente' con gancho (p. ej., '¿Quién se quedó con la diferencia? Te lo cuento en el largo.') si hay un largo relacionado"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:05:51.069Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

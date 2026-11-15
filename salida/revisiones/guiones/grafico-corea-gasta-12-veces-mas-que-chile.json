@@ -1,0 +1,53 @@
+{
+ "id": "grafico-corea-gasta-12-veces-mas-que-chile",
+ "canal": "numeros-rojos",
+ "titulo": "Corea gasta 12 veces más que Chile en investigar",
+ "ranura": "x",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 5/5 cifras dentro de tolerancia (máx. desvío -2,9 %, 'doce' frente a 12,37×)",
+  "revisar": "exit 0 · sin problemas de ritmo",
+  "verificacion_independiente": "Consulté directo la API del Banco Mundial (GB.XPD.RSDV.GD.ZS). Chile: 2007 = 0,311 y 2022 = 0,392. Corea: 2007 = 2,76 y 2022 = 4,85. Razón 8,9× en 2007 y 12,4× en 2022 ✓. 2022 es el último año con dato de Chile (2023 viene en null) ✓",
+  "palabras_habladas_aprox": 102
+ },
+ "puntajes": {
+  "gancho": 4,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.29,
+ "motivos": [
+  "Pasa el umbral del Short: todos los bloqueantes OK, Verdad 5, promedio 4,29 (≥ 4) y ningún puntaje bajo 3.",
+  "El gancho pone la contradicción en la 1.ª frase, con la cifra y el rótulo '12 VECES MÁS'. Pierde un punto porque dice una sola cifra y no las dos (4,85 % frente a 0,39 %).",
+  "El giro de 9× a 12× es bueno: cambia la lectura y lleva cifra. Las dos son correctas si se comparan los extremos 2007 y 2022.",
+  "Matiz que conviene decir: la razón tocó máximo en 2020 (4,52 / 0,335 ≈ 13,5×) y desde ahí baja (12,8× en 2021, 12,4× en 2022). 'La brecha se abre' es cierto entre los extremos, pero los últimos dos años la razón se achica. No bloquea porque la frase compara los extremos, pero queda expuesta a un comentario que la corrija.",
+  "Claridad: 'menos de medio punto' no nombra la unidad. Falta 'del PIB' y falta una escala humana.",
+  "El remate tiene espejo, pero sugiere una causa monocausal (Chile 'encuentra' y Corea 'investiga'). Roza B5 sin caer en él, y no hay un 'siguiente' con gancho.",
+  "enlaceLargo apunta a 'tesis-chile-corea-v2'. Esa versión fue reemplazada: la v2 quedó privada y la v4 aprobada es K5ma4A5VFj8. Si se deja así, el enlace del Short puede llevar a un video privado."
+ ],
+ "cambios": [
+  "enlaceLargo: \"tesis-chile-corea-v2\" → el id del largo v4 publicado (K5ma4A5VFj8 / 2026-11-07-tesis-chile-corea-v4)",
+  "esc1: \"en 2022 dedicaba a investigación y desarrollo menos de medio punto. Corea, casi un 5 %.\" → \"en 2022 dedicaba a investigación y desarrollo menos de medio punto de su PIB: unos 39 pesos de cada diez mil. Corea, casi un 5 %.\"",
+  "esc2: \"La brecha no se cierra: se abre.\" → \"En quince años, la brecha no se cerró: se abrió.\"",
+  "remate: \"Chile exporta lo que encuentra. Corea exporta lo que investiga.\" → \"Chile vende sobre todo lo que saca de la tierra. Corea, lo que sale de sus laboratorios.\" (y agregar un 'siguiente' que invite al largo: \"Por qué pasó, en el video completo.\")"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:07:06.988Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

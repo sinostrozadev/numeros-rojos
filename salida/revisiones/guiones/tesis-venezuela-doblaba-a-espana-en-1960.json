@@ -1,0 +1,53 @@
+{
+ "id": "tesis-venezuela-doblaba-a-espana-en-1960",
+ "canal": "numeros-rojos",
+ "titulo": "Venezuela doblaba a España en 1960. En 2022, ni un sexto",
+ "ranura": "2026-11-20T19:00",
+ "ronda": 2,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0, todas las cifras dentro del 5 %",
+  "revisar": "exit 0, sin problemas",
+  "verificacion_propia": "Contrasté contra contenido/datos los dichos que no tienen bloque de cifras: el nivel de 1977 recién vuelve en 2008 (VEN 2007 17.386 < 17.693 < 2008 18.019) ✓; cruce en 1983 (ESP 14.241 > VEN 14.155; en 1982 ESP 14.046 < VEN 15.423) ✓; crecimiento WDI 2023–2025 = +3,7 / +5,1 / +1,2 % ✓ ('siguió creciendo, más despacio'). En la web: el fondo noruego nace por ley en 1990, recibe su primer aporte en mayo de 1996 y la regla fiscal es de 2001 (NBIM, regjeringen.no) ✓. La OPEP se funda en Bagdad en septiembre de 1960, Ekofisk se descubre en dic-1969, PDVSA nace en 1976 y el Viernes Negro es el 18-02-1983 ✓. Venezuela también creó el Fondo de Inversiones de Venezuela (FIV) en 1974 para contener la bonanza (GlobalSecurity, Banco Mundial 1974); el guion no lo nombra."
+ },
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 5,
+  "giro_por_capitulo": 4,
+  "cierre": 5,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.57,
+ "motivos": [
+  "Gancho de nivel 5: en la 1.ª frase dice la contradicción con las dos cifras (más del doble → menos de un sexto) y el rótulo se lee solo.",
+  "Visual variado: líneas, barras, área, comparación, mapa con viaje y flechas, versus, iconos, sellos, mascota y 5 fotos. Cumple B3.",
+  "Las cifras cuadran con el dataset y los hechos históricos que revisé con fuente primaria están bien. Nada de FMI ni Numbeo, y no toma bando político.",
+  "Apruebo con 4 cambios: el n.º 1 y el n.º 2 son OBLIGATORIOS antes de renderizar porque protegen la nota de Verdad. La frase del significado 'La distancia entre Noruega y Venezuela no está en lo que había bajo tierra. Está en cuánto se guardó en los años buenos' es causal y no tiene matiz. Además el propio gráfico la contradice en el tiempo: Noruega ya se había despegado en los 70 y 80, antes de poner un peso en su fondo (primer aporte en 1996). Y Venezuela también intentó guardar con el FIV en 1974. Si queda como está, es un B5 límite.",
+  "'Volvió a crecer' en 2022 no calza con la barra WDI de 2021, que ya sale positiva (+1,4 %). El espectador ve una barra verde antes de la que la voz anuncia como la primera.",
+  "Giro del cap. 3: el dato de Noruega con menos de 1 de cada 10 en manufacturas es bueno. El reenganche 'le faltaba algo que España sí tenía' nunca dice qué era, y eso deja una promesa abierta.",
+  "'Casi un tercio' para 30,4 % roza el límite; pasa la tolerancia, pero 'cerca de un tercio' es más honesto."
+ ],
+ "cambios": [
+  "significado: 'La distancia entre Noruega y Venezuela no está en lo que había bajo tierra. Está en cuánto se guardó en los años buenos.' → 'La distancia entre Noruega y Venezuela no se explica por lo que había bajo tierra. Una pista está en cómo se manejó la renta en los años buenos: Venezuela también creó un fondo en 1974, pero Noruega le puso una regla que se respetó.' (OBLIGATORIO)",
+  "numeroQueNadieMira: 'Uno convirtió la renta en ahorro. El otro la vio subir y bajar con el barril.' → 'Uno le puso reglas a la renta y la convirtió en ahorro. El otro la vio subir y bajar con el barril.' (OBLIGATORIO, coherente con el anterior)",
+  "cap4 giro: 'En 2022 el ingreso por persona volvió a crecer cerca de un 8 % según el Banco Mundial.' → 'En 2022 el ingreso por persona creció cerca de un 8 % según el Banco Mundial, el mayor salto en años.'",
+  "cap1 dato: 'Las exportaciones pesaban casi un tercio de la economía venezolana en 1960.' → 'Las exportaciones pesaban cerca de un tercio de la economía venezolana en 1960.'",
+  "cap2 reenganche: 'Le faltaba algo que España sí tenía y que Noruega construyó a propósito.' → 'Le faltaba algo que España sí tenía, otras cosas que vender, y algo que Noruega construyó a propósito: reglas para la renta.'"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T07:59:40.784Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

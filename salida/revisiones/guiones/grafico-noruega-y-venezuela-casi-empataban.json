@@ -1,0 +1,53 @@
+{
+ "id": "grafico-noruega-y-venezuela-casi-empataban",
+ "canal": "numeros-rojos",
+ "titulo": "Noruega y Venezuela casi empataban en 1970. En 2022, 17 a 1",
+ "ranura": "x",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · zod OK · 3 referencias, 8 cifras, todas dentro del 5 % (desvío máximo 0,6 %)",
+  "revisar": "exit 0 · sin problemas de ritmo",
+  "palabras_habladas_aprox": 104,
+  "verificacion_propia": "El yacimiento Ekofisk de Phillips se descubrió en diciembre de 1969 y se anunció el 23-12-1969, así que 'a fines de 1969' es correcto. La unidad de Maddison 2023 son US$ internacionales de 2011, y la etiqueta coincide. B7 no aplica: no hay ningún largo de Noruega o Venezuela en contenido/ ni en el plan, así que es un Short original y no le falta enlaceLargo."
+ },
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.43,
+ "motivos": [
+  "Gancho de 5: la contradicción se puede medir y está en la primera frase, con las dos cifras (casi igual → 17 a 1). El rótulo 'EMPATE → 17 A 1' se lee de un vistazo.",
+  "Giro fuerte con cifra: el techo de 2012 y la caída del 73 % al 2020. Todo cuadra con el dataset.",
+  "Claridad: la unidad nunca se dice en la voz. 'Producían casi lo mismo' y 'ochenta y ocho mil dólares' no dicen 'por persona al año', y sin eso el espectador no tiene escala.",
+  "Matiz (no es bloqueante): 'Mismo petróleo' en el remate es impreciso. Venezuela explotaba petróleo desde los años veinte y Noruega empieza en 1971. Además, el valor de Noruega en 2022 está inflado por los precios del gas de ese año. Conviene suavizarlo para no dar pie a correcciones en comentarios.",
+  "Ritmo y visual: solo hay 2 tipos de gráfico (líneas y comparación). Tiene sellos y mascota, pero no llega a 5.",
+  "Cierre: el remate es espejo y está bien, pero no hay un 'siguiente' que enganche con otro video. Tampoco hay ningún enlace al canal."
+ ],
+ "cambios": [
+  "gancho.texto: 'En 1970, un noruego y un venezolano producían casi lo mismo.' → 'En 1970, un noruego y un venezolano producían casi lo mismo por persona.'",
+  "esc3.texto: 'el noruego promedio produce unos ochenta y ocho mil dólares.' → 'el noruego promedio produce unos ochenta y ocho mil dólares al año.'",
+  "remate: 'Mismo petróleo, mismo punto de partida. Distinto camino, diecisiete veces de distancia.' → 'Los dos con petróleo, casi el mismo punto de partida. Distinto camino, diecisiete veces de distancia.'",
+  "(opcional) esc3: agregar media frase de matiz, por ejemplo 'y 2022 fue un año de gas caro para Noruega', o comparar con 2019 si la brecha se mantiene sobre 15 a 1.",
+  "(opcional) agregar 'siguiente' o un cierre que lleve al largo de economía petrolera o de Venezuela cuando exista."
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-15T03:04:32.860Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}
