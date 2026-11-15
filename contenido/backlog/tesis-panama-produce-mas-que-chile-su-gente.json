@@ -1,0 +1,2101 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-panama-produce-mas-que-chile-su-gente",
+  "titulo": "Panamá produce más que Chile. Su gente consume menos",
+  "descripcion": "¿Cómo pasó Panamá a Chile en ingreso por persona en 2012, y por qué sus hogares todavía consumen menos que los chilenos?\n\nRecorremos 35 años de datos del Banco Mundial: el canal en manos panameñas desde 1999, una economía en dólares con precios estables y una década en que cuatro de cada diez dólares de su PIB se fueron a obras.\nLa tesis: Panamá creció con su ubicación, su moneda y sus obras, pero el PIB por persona cuenta solo una parte de cómo vive su gente.\nEl dato que más sorprende: en 2024, cada panameño consumió un 8 % menos que cada chileno, aunque produce más.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.PCAP.PP.KD, NY.GDP.PCAP.KD, NY.GDP.PCAP.KD.ZG, NE.EXP.GNFS.ZS, FP.CPI.TOTL.ZG, PA.NUS.FCRF, NE.GDI.TOTL.ZS, BX.KLT.DINV.WD.GD.ZS, SP.POP.TOTL, SI.POV.GINI, NE.CON.PRVT.PC.KD (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#panama",
+    "#chile",
+    "#pib",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-panama-produce-mas-que-chile-su-gente",
+    "cabecera": "PANAMÁ VS CHILE · 1990–2025",
+    "gancho": {
+      "texto": "En 1990, Chile producía por persona un 7 % más que Panamá; hoy, Panamá le saca más de un 20 %. Un país chico, con un canal y sin moneda propia, dio vuelta la tabla. ¿Cómo lo hizo, y cuánto de eso llega a la mesa de su gente?",
+      "rotulo": "PANAMÁ PASÓ A CHILE",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2025: Panamá contra Chile",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.PP.KD",
+          "paises": [
+            "PAN",
+            "CHL"
+          ],
+          "desde": 2025,
+          "hasta": 2025,
+          "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "PAN"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        }
+      },
+      "cifras": [
+        {
+          "texto": "un 7 % más",
+          "valor": 1.07,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "PAN",
+            "anio": 1990
+          }
+        },
+        {
+          "texto": "más de un 20 %",
+          "valor": 1.2,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "PAN",
+            "paisB": "CHL",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "promesa": "Al final vas a saber qué empujó a Panamá, paso a paso y con los datos en pantalla, y por qué la explicación del canal se queda corta.",
+    "indice": [
+      "El cruce de 2012",
+      "El canal y el dólar",
+      "Cuatro de cada diez",
+      "Lo que llega a la mesa"
+    ],
+    "estructura": "autopsia",
+    "capitulos": [
+      {
+        "titulo": "2012: el año en que Panamá pasó a Chile",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Ciudad de Panamá, frente al Pacífico. Una fila de torres de vidrio que se ve desde el mar. En 1990, este país producía por persona menos que Chile. Hoy produce bastante más, y la historia de cómo llegó ahí tiene más de una pieza.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Panama City skyline Cinta Costera",
+              "alternativas": [
+                "Panama City skyline 2015",
+                "Punta Paitilla Panama City"
+              ],
+              "pie": "Ciudad de Panamá vista desde la bahía (años 2010)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "EN 1990, DETRÁS DE CHILE",
+              "dice": "Chile."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira estas dos líneas del Banco Mundial, corregidas por lo que cuestan las cosas en cada país. Es la vara habitual para comparar quién produce más por persona. En 1990, un chileno producía unos once mil dólares al año. Un panameño, algo más de diez mil. Chile iba un 7 % arriba.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona, 1990–2025",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1990,
+                  "texto": "Chile, 7 % arriba",
+                  "dice": "1990,"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "líneas"
+            },
+            "cifras": [
+              {
+                "texto": "unos once mil dólares",
+                "valor": 11000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1990
+                }
+              },
+              {
+                "texto": "algo más de diez mil",
+                "valor": 10264,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 1990
+                }
+              },
+              {
+                "texto": "un 7 % arriba",
+                "valor": 1.07,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "PAN",
+                  "anio": 1990
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "PAN",
+                "CHL"
+              ],
+              "centro": [
+                -75,
+                -12
+              ],
+              "zoom": 2,
+              "acercar": false,
+              "dice": "Mira"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "En los noventa, Chile se aleja. Desde 2006, Panamá acorta la distancia a saltos. Y en 2012 las líneas se cruzan: el panameño promedio produce un poco más que el chileno. Son unos veintisiete mil dólares cada uno, casi un empate.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "2012: las líneas se cruzan",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1995,
+                "hasta": 2015,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PAN",
+                "anio": 2012,
+                "texto": "2012: se cruzan"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "noventa,"
+            },
+            "cifras": [
+              {
+                "texto": "en 2012 las líneas se cruzan",
+                "valor": 1.01,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "PAN",
+                  "paisB": "CHL",
+                  "anio": 2012
+                }
+              },
+              {
+                "texto": "unos veintisiete mil dólares",
+                "valor": 27000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2012
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "2012",
+              "dice": "2012"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Desde entonces, la brecha se abre casi todos los años. En 2025, la serie anota para Panamá unos treinta y siete mil quinientos dólares por persona. Para Chile, casi treinta y un mil. Panamá le saca más de un 20 %. Y mirado desde 1990, el ingreso por persona panameño se multiplicó por más de tres y media. El chileno, casi por tres.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Después del cruce, la brecha se abre",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "brecha"
+            },
+            "cifras": [
+              {
+                "texto": "unos treinta y siete mil quinientos dólares",
+                "valor": 37500,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "casi treinta y un mil",
+                "valor": 30863,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "más de un 20 %",
+                "valor": 1.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "PAN",
+                  "paisB": "CHL",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "más de tres y media",
+                "valor": 265,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "PAN",
+                  "anio": 1990,
+                  "anioB": 2025
+                }
+              },
+              {
+                "texto": "casi por tres",
+                "valor": 182,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1990,
+                  "anioB": 2025
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "+20 %",
+                "pais": "PAN",
+                "animo": "feliz",
+                "dice": "20"
+              }
+            ]
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero mira esta otra vara: dólares de 2015. Llega hasta 1960, aunque no corrige por lo que cuestan las cosas en cada país. Con ella, Panamá ya iba adelante desde 1972. En 1982 producía por persona más de un tercio más que Chile. Después llegó 1988, con sanciones económicas de Estados Unidos en plena crisis política. Ese año, su ingreso por persona cayó más de un 15 %, y Chile volvió a pasar adelante. Lo de 2012 no fue una primera vez: fue una segunda vuelta.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Antes de 2012: Panamá ya había ido adelante",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 2000,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PAN",
+                "anio": 1988
+              },
+              "anotaciones": [
+                {
+                  "anio": 1982,
+                  "texto": "Panamá, un tercio arriba",
+                  "dice": "1982"
+                },
+                {
+                  "anio": 1988,
+                  "texto": "Sanciones y crisis",
+                  "dice": "1988,"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "vara:"
+            },
+            "cifras": [
+              {
+                "texto": "desde 1972",
+                "valor": 1.04,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "PAN",
+                  "paisB": "CHL",
+                  "anio": 1972
+                }
+              },
+              {
+                "texto": "más de un tercio más",
+                "valor": 1.37,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "PAN",
+                  "paisB": "CHL",
+                  "anio": 1982
+                }
+              },
+              {
+                "texto": "más de un 15 %",
+                "valor": -15.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "PAN",
+                  "anio": 1987,
+                  "anioB": 1988
+                }
+              },
+              {
+                "texto": "Chile volvió a pasar adelante",
+                "valor": 1.04,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "PAN",
+                  "anio": 1988
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "SEGUNDA VUELTA",
+              "dice": "vuelta."
+            },
+            "enfasis": {
+              "pais": "PAN"
+            },
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¿Panamá ya iba adelante?",
+              "dice": "1972."
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "El canal, el dólar y los servicios",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "La explicación de siempre tiene nombre: el canal. Desde 1914, los barcos cruzan por aquí de un océano a otro sin rodear Sudamérica. Durante casi todo el siglo veinte lo administró Estados Unidos. El 31 de diciembre de 1999 pasó a manos de Panamá.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Gatun Locks construction 1913",
+              "alternativas": [
+                "Panama Canal construction 1913",
+                "Culebra Cut 1913"
+              ],
+              "pie": "Construcción de las esclusas de Gatún, Panamá, hacia 1913",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "PANAMÁ, DESDE 1999",
+              "dice": "Estados"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Desde ahí, la línea panameña se empina. Entre 2000 y 2012, el ingreso por persona de Panamá subió más de un 80 %. El de Chile, algo más de la mitad. Los datos no separan cuánto de eso fue el canal. Muestran que el salto coincide con los primeros años de administración panameña.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Con el canal en manos panameñas",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1999,
+                "hasta": 2013,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1999,
+                  "texto": "Panamá recibe el canal"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "línea"
+            },
+            "cifras": [
+              {
+                "texto": "más de un 80 %",
+                "valor": 85,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "PAN",
+                  "anio": 2000,
+                  "anioB": 2012
+                }
+              },
+              {
+                "texto": "algo más de la mitad",
+                "valor": 52,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 2000,
+                  "anioB": 2012
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira cuánto pesa lo que Panamá gana con el resto del mundo. En 2012, según el Banco Mundial, exportar bienes y servicios equivalía a casi tres cuartas partes de su economía. En Chile, a un tercio.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Exportaciones como parte de la economía",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN",
+                "anio": 2012
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "pesa"
+            },
+            "cifras": [
+              {
+                "texto": "casi tres cuartas partes",
+                "valor": 74.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2012
+                }
+              },
+              {
+                "texto": "a un tercio",
+                "valor": 33.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2012
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "sellos": [
+              {
+                "texto": "3 DE 4",
+                "pais": "PAN",
+                "animo": "feliz",
+                "dice": "cuartas"
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Miraflores Locks Panama Canal",
+              "alternativas": [
+                "Pedro Miguel Locks Panama Canal",
+                "Panama Canal locks container ship"
+              ],
+              "pie": "Esclusas de Miraflores, canal de Panamá (años 2010)",
+              "dice": "Panamá",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "En Chile, esa línea la empujan sobre todo el cobre y la fruta. En Panamá, la empujan el paso y los servicios. El peaje del canal, los puertos de los dos océanos, la Zona Libre de Colón y los bancos de la capital. Cada barco que cruza paga peaje, y cada contenedor que pasa por Colón deja algo en el camino. Nada de eso sale de una mina ni de un campo. Sale de estar en el lugar justo, entre dos océanos.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Panamá vive de lo que pasa por ahí",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "PAN"
+                ],
+                "desde": 1960,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "línea"
+            },
+            "visual": {
+              "tipo": "versus",
+              "titulo": "Qué empuja cada línea",
+              "lados": [
+                {
+                  "pais": "CHL",
+                  "items": [
+                    {
+                      "icono": "⛏️",
+                      "texto": "Cobre",
+                      "marca": "si",
+                      "dice": "cobre"
+                    },
+                    {
+                      "icono": "🍇",
+                      "texto": "Fruta",
+                      "marca": "si",
+                      "dice": "fruta."
+                    }
+                  ]
+                },
+                {
+                  "pais": "PAN",
+                  "items": [
+                    {
+                      "icono": "🚢",
+                      "texto": "Peaje del canal",
+                      "marca": "si",
+                      "dice": "peaje"
+                    },
+                    {
+                      "icono": "⚓",
+                      "texto": "Puertos",
+                      "marca": "si",
+                      "dice": "puertos"
+                    },
+                    {
+                      "icono": "📦",
+                      "texto": "Zona Libre de Colón",
+                      "marca": "si",
+                      "dice": "Colón"
+                    },
+                    {
+                      "icono": "🏦",
+                      "texto": "Bancos",
+                      "marca": "si",
+                      "dice": "bancos"
+                    }
+                  ]
+                }
+              ]
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "La segunda pieza es el dólar. En Panamá circula el dólar estadounidense desde 1904. Su moneda oficial se llama balboa y vale exactamente un dólar. Sin una moneda propia que devaluar, los precios se mueven poco. En 2022, cuando en Chile subieron casi un 12 %, en Panamá subieron menos de un 3 %. Para quien ahorra, la inflación muerde mucho menos.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación: Panamá contra Chile",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1991,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "anotaciones": [
+                {
+                  "anio": 2022,
+                  "texto": "Chile: casi 12 %",
+                  "dice": "2022,"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "pieza"
+            },
+            "cifras": [
+              {
+                "texto": "vale exactamente un dólar",
+                "valor": 1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "PA.NUS.FCRF",
+                    "paises": [
+                      "PAN"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "Tipo de cambio oficial (moneda local por US$)",
+                    "unidad": "por US$"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "casi un 12 %",
+                "valor": 11.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1991,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación, precios al consumidor (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2022
+                }
+              },
+              {
+                "texto": "menos de un 3 %",
+                "valor": 2.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1991,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación, precios al consumidor (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2022
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "SIN MONEDA PROPIA",
+              "dice": "devaluar,"
+            }
+          },
+          {
+            "tipo": "giro",
+            "texto": "Aquí la explicación del canal se queda corta. Desde 2012, las exportaciones pasaron de casi tres cuartos de la economía a menos de la mitad. Y el ingreso por persona, salvo en 2020, siguió subiendo. Algo más estaba empujando.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Las exportaciones bajan; el ingreso, no",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.EXP.GNFS.ZS",
+                "paises": [
+                  "PAN"
+                ],
+                "desde": 2005,
+                "hasta": 2024,
+                "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN",
+                "anio": 2012
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "explicación"
+            },
+            "cifras": [
+              {
+                "texto": "casi tres cuartos",
+                "valor": 74.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2012
+                }
+              },
+              {
+                "texto": "menos de la mitad",
+                "valor": 44.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.EXP.GNFS.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "Exportaciones de bienes y servicios (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "DE 3/4 A MENOS DE 1/2",
+              "dice": "mitad."
+            },
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "¿Y entonces qué empujó?",
+              "dice": "empujando."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "La pista está en las obras. Y en cuánto de lo que produce el país se queda construyendo, en vez de gastarse ese mismo año."
+          }
+        ]
+      },
+      {
+        "titulo": "La inversión: cuatro de cada diez dólares",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Entre 2007 y 2016, Panamá construyó un tercer juego de esclusas, más anchas, para barcos que antes no cabían. En 2014 abrió la primera línea de metro de Centroamérica. Y en la capital, una torre tras otra cambió la línea del horizonte.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Agua Clara Locks Panama",
+              "alternativas": [
+                "Cocoli Locks Panama",
+                "Panama Canal expansion 2016"
+              ],
+              "pie": "Esclusas de Agua Clara, ampliación del canal (2016)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "EL PRIMER METRO",
+              "dice": "metro"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ese ritmo se mide con la formación bruta de capital: maquinaria, edificios, carreteras y obras como las esclusas. Entre 2010 y 2019, según el Banco Mundial, Panamá destinó a eso, en promedio, cuatro de cada diez dólares. Chile, una cuarta parte. En 2014, el año más alto de esa década, Panamá pasó del 43 %.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Cuánto se queda construyendo cada país",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NE.GDI.TOTL.ZS",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "Formación bruta de capital (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "anotaciones": [
+                {
+                  "anio": 2014,
+                  "texto": "Panamá: más de 43 %",
+                  "dice": "2014,"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "formación"
+            },
+            "cifras": [
+              {
+                "texto": "cuatro de cada diez dólares",
+                "valor": 40.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2019,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "PAN"
+                }
+              },
+              {
+                "texto": "una cuarta parte",
+                "valor": 25.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2019,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "CHL"
+                }
+              },
+              {
+                "texto": "pasó del 43 %",
+                "valor": 43.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2019,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "maximo",
+                  "pais": "PAN"
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "sellos": [
+              {
+                "texto": "4 DE 10",
+                "pais": "PAN",
+                "animo": "feliz",
+                "dice": "cuatro"
+              }
+            ],
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que cuenta como inversión",
+              "items": [
+                {
+                  "icono": "🏭",
+                  "texto": "Maquinaria",
+                  "dice": "maquinaria,"
+                },
+                {
+                  "icono": "🏢",
+                  "texto": "Edificios",
+                  "dice": "edificios,"
+                },
+                {
+                  "icono": "🛣️",
+                  "texto": "Carreteras",
+                  "dice": "carreteras"
+                },
+                {
+                  "icono": "🚢",
+                  "texto": "Esclusas",
+                  "dice": "esclusas."
+                }
+              ]
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Parte de esa plata llegó de afuera. El Banco Mundial mide la inversión extranjera directa: empresas de otros países que ponen capital aquí. Llegaron sedes regionales de empresas y de bancos. En 2006, la que entró a Panamá equivalió a casi un 16 % de su economía. Panamá ofrecía algo poco común en la región: operar en dólares, en el centro del continente.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Capital que llega de afuera",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                "paises": [
+                  "PAN"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Inversión extranjera directa, entradas (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN",
+                "anio": 2006
+              },
+              "anotaciones": [
+                {
+                  "anio": 2006,
+                  "texto": "Casi 16 %",
+                  "dice": "2006,"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "plata"
+            },
+            "cifras": [
+              {
+                "texto": "casi un 16 %",
+                "valor": 15.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "BX.KLT.DINV.WD.GD.ZS",
+                    "paises": [
+                      "PAN"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2025,
+                    "etiqueta": "Inversión extranjera directa, entradas (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2006
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Punta Pacifica Panama City",
+              "alternativas": [
+                "Panama City skyline 2012",
+                "Avenida Balboa Panama City"
+              ],
+              "pie": "Torres de Punta Pacífica, Ciudad de Panamá (años 2010)",
+              "dice": "afuera.",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "El ingreso corrió con esas obras. Entre 2004 y 2013, el de cada panameño creció más de un 6 % al año, en promedio. El de cada chileno, menos de un 4 %. Sostenida durante una década, esa diferencia alcanza para que dos países cambien de lugar.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Panamá: crecimiento del ingreso por persona",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD.ZG",
+                "paises": [
+                  "PAN"
+                ],
+                "desde": 2000,
+                "hasta": 2019,
+                "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "corrió"
+            },
+            "cifras": [
+              {
+                "texto": "más de un 6 %",
+                "valor": 6.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2004,
+                    "hasta": 2013,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "PAN"
+                }
+              },
+              {
+                "texto": "menos de un 4 %",
+                "valor": 3.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2004,
+                    "hasta": 2013,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "CHL"
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Panama Metro Line 1",
+              "alternativas": [
+                "Metro de Panama station",
+                "Panama Metro train"
+              ],
+              "pie": "Metro de Panamá, línea 1 (inaugurada en 2014)",
+              "dice": "obras.",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "En 2020 llega el golpe más fuerte. Con la pandemia, el ingreso por persona de Panamá cayó casi un 19 %. El de Chile, un 7 %. Las obras se pararon y la inversión bajó a menos de una cuarta parte de la economía. Medido en dólares de 2015, ese año Chile volvió a quedar apenas por encima. En 2021, Panamá rebotó un 15 %. El modelo que más subió fue también el que más cayó.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2020: cuánto cayó el ingreso por persona",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD.ZG",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 2020,
+                "hasta": 2020,
+                "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "2020"
+            },
+            "cifras": [
+              {
+                "texto": "casi un 19 %",
+                "valor": -18.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2020
+                }
+              },
+              {
+                "texto": "un 7 %",
+                "valor": -6.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2020
+                }
+              },
+              {
+                "texto": "menos de una cuarta parte",
+                "valor": 23.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NE.GDI.TOTL.ZS",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "Formación bruta de capital (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2020
+                }
+              },
+              {
+                "texto": "Chile volvió a quedar apenas por encima",
+                "valor": 1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "PAN",
+                  "anio": 2020
+                }
+              },
+              {
+                "texto": "rebotó un 15 %",
+                "valor": 15,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2000,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2021
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "REBOTE: +15 %",
+              "dice": "rebotó"
+            },
+            "sellos": [
+              {
+                "texto": "−19 %",
+                "pais": "PAN",
+                "animo": "triste",
+                "dice": "19"
+              }
+            ],
+            "mascota": {
+              "pose": "tapa-ojos",
+              "bocadillo": "¡Casi un 19 % en un año!",
+              "dice": "pararon"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Panamá creció más rápido y hoy produce más por persona. Lo que falta saber es a dónde llega todo eso."
+          }
+        ]
+      },
+      {
+        "titulo": "Lo que el PIB de Panamá no cuenta",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "El PIB suma todo lo que se produce dentro de un país: peajes, torres, préstamos, contenedores. No dice cuánto de eso queda en el bolsillo de quien vive ahí. Para saberlo hay que mirar otras varas.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Todo suma en el PIB",
+              "items": [
+                {
+                  "icono": "🚢",
+                  "texto": "Peajes",
+                  "dice": "peajes,"
+                },
+                {
+                  "icono": "🏢",
+                  "texto": "Torres",
+                  "dice": "torres,"
+                },
+                {
+                  "icono": "🏦",
+                  "texto": "Préstamos",
+                  "dice": "préstamos,"
+                },
+                {
+                  "icono": "📦",
+                  "texto": "Contenedores",
+                  "dice": "contenedores."
+                }
+              ]
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Primero, el tamaño. Panamá tiene unos cuatro millones y medio de habitantes. Chile, más de cuatro veces eso. Un canal, un puerto grande y un centro bancario pesan mucho más cuando se reparten entre pocos. Por eso, en una cuenta por persona, un país chico con algo único puede pasar a uno mucho más grande.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Población, 2025",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SP.POP.TOTL",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 2025,
+                "hasta": 2025,
+                "etiqueta": "Población total",
+                "unidad": "personas"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "tamaño."
+            },
+            "cifras": [
+              {
+                "texto": "unos cuatro millones y medio",
+                "valor": 4500000,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2025,
+                    "hasta": 2025,
+                    "etiqueta": "Población total",
+                    "unidad": "personas"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "más de cuatro veces",
+                "valor": 4.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SP.POP.TOTL",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 2025,
+                    "hasta": 2025,
+                    "etiqueta": "Población total",
+                    "unidad": "personas"
+                  },
+                  "operacion": "razon",
+                  "pais": "CHL",
+                  "paisB": "PAN",
+                  "anio": 2025
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Pesan más entre pocos",
+              "items": [
+                {
+                  "icono": "🚢",
+                  "texto": "Canal",
+                  "dice": "canal,"
+                },
+                {
+                  "icono": "⚓",
+                  "texto": "Puerto",
+                  "dice": "puerto"
+                },
+                {
+                  "icono": "🏦",
+                  "texto": "Centro bancario",
+                  "dice": "bancario"
+                }
+              ]
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira el índice de Gini, que mide la desigualdad del ingreso. Cero sería igualdad total; cien, que una sola persona se lleva todo. Según el Banco Mundial, en 2024 Panamá marcaba casi 50. Chile, 43. En un país que crece rápido, ese número dice si lo ganado se reparte o se concentra.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "Desigualdad del ingreso, 2024",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SI.POV.GINI",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Índice de Gini (0 a 100)",
+                "unidad": "índice"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "formato": {
+                "decimales": 1
+              },
+              "dice": "Gini,"
+            },
+            "cifras": [
+              {
+                "texto": "casi 50",
+                "valor": 49.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1987,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0 a 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "Chile, 43",
+                "valor": 43,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1987,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0 a 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "50 CONTRA 43",
+              "dice": "43."
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y aquí, un matiz que juega a favor. En 1991, el Gini de Panamá era de 58. En 2024, menos de 50. Creció rápido y, al mismo tiempo, se volvió algo menos desigual. Chile hizo un camino parecido: desde más de 57 en 1990 hasta 43. Pero Chile bajó más, y por eso la distancia entre los dos creció.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "La desigualdad baja en los dos",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SI.POV.GINI",
+                "paises": [
+                  "PAN",
+                  "CHL"
+                ],
+                "desde": 1989,
+                "hasta": 2024,
+                "etiqueta": "Índice de Gini (0 a 100)",
+                "unidad": "índice"
+              },
+              "destacar": {
+                "pais": "PAN"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1991,
+                  "texto": "Panamá: 58",
+                  "dice": "1991,"
+                },
+                {
+                  "anio": 2024,
+                  "texto": "Panamá: menos de 50",
+                  "dice": "2024,"
+                }
+              ],
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "matiz"
+            },
+            "cifras": [
+              {
+                "texto": "era de 58",
+                "valor": 58,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1987,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0 a 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 1991
+                }
+              },
+              {
+                "texto": "menos de 50",
+                "valor": 49.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1987,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0 a 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "PAN",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "más de 57",
+                "valor": 57.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1987,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0 a 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1990
+                }
+              },
+              {
+                "texto": "hasta 43",
+                "valor": 43,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "SI.POV.GINI",
+                    "paises": [
+                      "PAN",
+                      "CHL"
+                    ],
+                    "desde": 1987,
+                    "hasta": 2024,
+                    "etiqueta": "Índice de Gini (0 a 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "mascota": {
+              "pose": "celebra",
+              "bocadillo": "¡Algo menos desigual!",
+              "dice": "desigual."
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para alguien que vive en Santiago o en Bogotá? Que el PIB por persona mide bien lo que un país produce. Mide peor cómo vive su gente. Panamá muestra que un lugar único y una moneda estable pueden empujar el ingreso durante décadas. También muestra que ese empuje no llega igual a todos los hogares. Un país puede crecer rápido y que la mesa de sus familias tarde más en notarlo. No es una receta: ningún otro país de la región tiene un canal como ese. Ante cualquier récord de crecimiento, la pregunta útil es otra: cuánto de eso termina en la mesa.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "CHL",
+                "PAN",
+                "COL"
+              ],
+              "etiquetas": [
+                {
+                  "texto": "Santiago",
+                  "en": [
+                    -70.67,
+                    -33.45
+                  ]
+                },
+                {
+                  "texto": "Bogotá",
+                  "en": [
+                    -74.07,
+                    4.71
+                  ]
+                },
+                {
+                  "texto": "Ciudad de Panamá",
+                  "en": [
+                    -79.52,
+                    8.98
+                  ]
+                }
+              ],
+              "viaje": {
+                "desde": "PAN",
+                "hasta": "CHL",
+                "dice": "Santiago"
+              }
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "NO ES UNA RECETA",
+              "dice": "receta:"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Queda un número para cerrar la cuenta. Es el que mide cuánto gasta, de verdad, una familia panameña."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira: el consumo de los hogares por persona. Es lo que una familia gasta en el día a día, de la comida al arriendo. El Banco Mundial lo mide en dólares de 2015. En 2024, cada panameño consumió unos ocho mil quinientos dólares. Es un 8 % menos que cada chileno, aunque Panamá produce más por persona. La distancia se viene cerrando: en 2012, el chileno consumía más de un 20 % más. Pero esta línea todavía no se cruzó como se cruzó la del PIB.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "Consumo de los hogares por persona, 2024",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NE.CON.PRVT.PC.KD",
+          "paises": [
+            "PAN",
+            "CHL"
+          ],
+          "desde": 2024,
+          "hasta": 2024,
+          "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "PAN"
+        },
+        "anotaciones": [
+          {
+            "anio": 2024,
+            "texto": "Panamá: 8 % menos",
+            "dice": "menos"
+          }
+        ],
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "nadie"
+      },
+      "cifras": [
+        {
+          "texto": "unos ocho mil quinientos dólares",
+          "valor": 8500,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "PAN",
+                "CHL"
+              ],
+              "desde": 1996,
+              "hasta": 2024,
+              "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "valor",
+            "pais": "PAN",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "un 8 % menos",
+          "valor": 0.92,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "PAN",
+                "CHL"
+              ],
+              "desde": 1996,
+              "hasta": 2024,
+              "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "PAN",
+            "paisB": "CHL",
+            "anio": 2024
+          }
+        },
+        {
+          "texto": "más de un 20 % más",
+          "valor": 1.22,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NE.CON.PRVT.PC.KD",
+              "paises": [
+                "PAN",
+                "CHL"
+              ],
+              "desde": 1996,
+              "hasta": 2024,
+              "etiqueta": "Consumo de los hogares por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "PAN",
+            "anio": 2012
+          }
+        }
+      ]
+    },
+    "remate": "Panamá le ganó a Chile en lo que produce. Chile le gana a Panamá en lo que consume.",
+    "siguiente": "México se volvió una fábrica que exporta a Estados Unidos. ¿Por qué el ingreso de su gente se movió tan poco? Eso viene en el próximo video.",
+    "miniatura": {
+      "texto": "PASÓ A CHILE EN 2012",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "Panamá vs Chile",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.PP.KD",
+          "paises": [
+            "PAN",
+            "CHL"
+          ],
+          "desde": 1990,
+          "hasta": 2025,
+          "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "PAN"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Crecimiento del PIB per cápita, % anual (NY.GDP.PCAP.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de bienes y servicios, % del PIB (NE.EXP.GNFS.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, precios al consumidor, % anual (FP.CPI.TOTL.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Tipo de cambio oficial (PA.NUS.FCRF), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=PA"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Formación bruta de capital, % del PIB (NE.GDI.TOTL.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inversión extranjera directa, entradas netas, % del PIB (BX.KLT.DINV.WD.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS?locations=PA"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Población total (SP.POP.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Índice de Gini (SI.POV.GINI), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=PA-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Consumo final de los hogares per cápita, US$ constantes de 2015 (NE.CON.PRVT.PC.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD?locations=PA-CL"
+      }
+    ]
+  }
+}
