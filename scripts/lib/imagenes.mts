@@ -76,6 +76,9 @@ const consultar = async (busqueda: string): Promise<Pagina[]> => {
 type Candidata = Omit<FotoResuelta, 'archivo'> & { descarga: string; ext: string; clase: Clase; licenciaUrl?: string };
 
 /** Primera página que cumple formato, tamaño, licencia y categorías. */
+/** Títulos y categorías sensibles o estigmatizantes: la foto se descarta (privacidad, difamación, monetización). */
+const TERMINOS_SENSIBLES = /prostitut|sex[\s_-]?work|brothel|burdel|nude|naked|desnud|nsfw|porn|erotic|corpse|cadaver|cadáver|dead[\s_-]?body|murder|victim|crime[\s_-]?scene|arrest|detain|mugshot|drug[\s_-]?(addict|user)|junkie|homeless|beggar|slum[\s_-]?kid|refugee[\s_-]?camp[\s_-]?child/i;
+
 const elegir = (paginas: Pagina[]): { candidata?: Candidata; rechazos: string[] } => {
   const rechazos: string[] = [];
   for (const pg of paginas) {
@@ -89,6 +92,7 @@ const elegir = (paginas: Pagina[]): { candidata?: Candidata; rechazos: string[] 
       : !clasificarLicencia(corta) ? `licencia "${corta ?? '?'}"`
       : sinHtml(m.Restrictions?.value ?? '') ? `restricciones "${sinHtml(m.Restrictions!.value).slice(0, 40)}"`
       : pg.categories?.some((c) => CATEGORIAS_PROHIBIDAS.test(c.title)) ? 'categoría prohibida'
+      : TERMINOS_SENSIBLES.test(pg.title) || pg.categories?.some((c) => TERMINOS_SENSIBLES.test(c.title)) ? 'término sensible en título/categoría'
       : '';
     if (motivo) { rechazos.push(`${pg.title}: ${motivo}`); continue; }
     const k = Math.min(1, ANCHO_DESCARGA / ii.width);
