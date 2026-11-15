@@ -122,7 +122,9 @@ export const textoCreditos = (fotos: { foto: FotoResuelta; licenciaUrl?: string 
     vistas.add(foto.pagina);
     // TASL: título, autor, fuente y licencia (con el enlace de la licencia cuando pide atribución).
     const lic = licenciaUrl && clasificarLicencia(foto.licencia) === 'atribucion' ? `${foto.licencia}, ${licenciaUrl}` : foto.licencia;
-    partes.push(`${foto.titulo} — ${foto.autor} (${lic}), ${foto.pagina}`);
+    // Títulos/autores en alfabeto no latino (coreano, árabe…) se ven rotos en la descripción de YouTube: se indica y el enlace da el original.
+    const latino = (t: string, alt: string) => (/[^\u0000-\u024F\u2000-\u206F\u2190-\u21FF]/.test(t) ? alt : t);
+    partes.push(`${latino(foto.titulo, 'Foto de Wikimedia Commons (título original en otro alfabeto)')} — ${latino(foto.autor, 'autoría en otro alfabeto, ver enlace')} (${lic}), ${foto.pagina}`);
   }
   return partes.length ? `Fotos (Wikimedia Commons): ${partes.join('; ')}` : '';
 };
