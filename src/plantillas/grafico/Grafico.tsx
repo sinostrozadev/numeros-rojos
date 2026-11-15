@@ -17,6 +17,8 @@ import { estimarTiemposGrafico, planGrafico, type PlanGrafico } from './plan';
 
 export type PropsGrafico = GuionGrafico & { datos?: DatosResueltos; tiempos?: Tiempos; duracionFrames?: number; audio?: string };
 
+/** Segundos del cold open con el gráfico completo y del rebobinado (ver Grafico). */
+export const COLD_SEG = 1.1, REBOBINA_SEG = 0.4;
 const W = FORMATO_SHORT.ancho, H = FORMATO_SHORT.alto, S = FORMATO_SHORT.seguro;
 const T = TIPO_GRAFICO.short;
 /**
@@ -59,7 +61,16 @@ export const Grafico: React.FC<PropsGrafico> = (props) => {
   const linea = b.linea !== undefined ? tiempos.lineas[b.linea] : undefined;
   const local = frame - b.desde;
   const principal = b.graficoId === 'principal';
-  const progreso = avanceEn(b.claves, frame);
+  // COLD OPEN (2026-11-15, estrategia: el 67 % deslizaba en el primer segundo con un gráfico vacío): el frame 0 muestra el
+  // gráfico principal YA DIBUJADO hasta el final (el desenlace a la vista, como el viral del nicho) y a los COLD_SEG se
+  // rebobina en REBOBINA_SEG hasta donde va la construcción con la voz. Solo en el gráfico principal.
+  const fCold = Math.round(COLD_SEG * fps), fReb = Math.round(REBOBINA_SEG * fps);
+  const progresoVoz = avanceEn(b.claves, frame);
+  const progreso = principal && frame < fCold + fReb
+    ? (frame < fCold ? 1 : interpolate(frame, [fCold, fCold + fReb], [1, progresoVoz], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: (x) => x * x * (3 - 2 * x) }))
+    : progresoVoz;
+  // El pie "Fuente: …" entra a los 3 s (primero el gancho; la fuente queda en pantalla el resto del video y en la descripción).
+  const pieVisible = interpolate(frame, [3 * fps, 3.5 * fps], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const enfasis = b.enfasisDesde !== undefined ? interpolate(frame, [b.enfasisDesde, b.enfasisDesde + 10], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
   const t = frame / fps;
   // Nada estático > 2 s: deriva lenta del gráfico + rejilla de fondo que se mueve.
@@ -76,7 +87,8 @@ export const Grafico: React.FC<PropsGrafico> = (props) => {
       <div style={{ position: 'absolute', left: Z.x, top: Z.y, width: Z.ancho, height: Z.alto, transform: deriva, transformOrigin: '50% 50%' }}>
         <GraficoAnimado key={b.graficoId} g={b.grafico} datos={datos} ancho={Z.ancho} alto={Z.alto} modo="short" progreso={progreso}
           frame={principal ? frame + fps : frame - b.graficoDesde} fps={fps} enfasis={enfasis} inmediato={principal} enfasisPais={b.enfasisPais}
-          anotacionesFrame={b.anotFrames?.map((x) => (x === undefined ? undefined : principal ? x + fps : x - b.graficoDesde))} />
+          anotacionesFrame={b.anotFrames?.map((x) => (x === undefined ? undefined : principal ? x + fps : x - b.graficoDesde))}
+          sinSubtitulo pieVisible={pieVisible} />
       </div>
       {!enRemate && (
         <div style={{ position: 'absolute', left: S.lados, top: ZONA_GRAFICO.rotulo.y, maxWidth: W - S.lados * 2 }}>

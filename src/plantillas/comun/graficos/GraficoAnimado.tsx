@@ -33,6 +33,10 @@ export type PropsGraficoAnimado = {
   enfasisPais?: string;
   /** Frames LOCALES de las anotaciones con `dice`. */
   anotacionesFrame?: (number | undefined)[];
+  /** Sin la línea técnica del indicador bajo el título (el Short: en el feed es ruido; la fuente sigue abajo y en la descripción). */
+  sinSubtitulo?: boolean;
+  /** Opacidad del pie "Fuente: …" (0–1). El Short lo esconde los primeros segundos: el primer fotograma es para el gancho. */
+  pieVisible?: number;
 };
 
 const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
@@ -51,12 +55,12 @@ const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
  * unidad + leyenda (≥ 2 series en líneas) + cuerpo + "Fuente: …" abajo, SIEMPRE. Funciona en 16:9 y 9:16
  * (recibe ancho/alto y el modo, que fija la escala tipográfica). Entra con un deslizamiento corto la primera vez.
  */
-export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato, enfasisPais, anotacionesFrame, maxMarcasX }) => {
+export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho, alto, modo, progreso, frame, fps, enfasis = 0, sinTitulo, antetitulo, inmediato, enfasisPais, anotacionesFrame, maxMarcasX, sinSubtitulo, pieVisible = 1 }) => {
   const T = TIPO_GRAFICO[modo];
   const serie = serieDe(g, datos);
   const ps = paisesDe(g, serie);
   const entrada = inmediato ? 1 : salida3(frame / (0.45 * fps));
-  const subtitulo = [g.datos.etiqueta ?? serie?.etiqueta, g.datos.unidad ?? serie?.unidad].filter(Boolean).join(' · ');
+  const subtitulo = sinSubtitulo ? '' : [g.datos.etiqueta ?? serie?.etiqueta, g.datos.unidad ?? serie?.unidad].filter(Boolean).join(' · ');
   // Solo líneas: en el ranking cada fila lleva su nombre y la leyenda (hasta 8 países) se encimaba con las barras en la miniatura.
   const conLeyenda = g.tipo === 'lineas' && ps.length >= 2;
   const colores = coloresDe(g, ps);
@@ -90,7 +94,7 @@ export const GraficoAnimado: React.FC<PropsGraficoAnimado> = ({ g, datos, ancho,
       <div style={{ height: altoCuerpo, position: 'relative' }}>
         <Cuerpo g={g} serie={serie} ps={ps} ancho={ancho} alto={altoCuerpo} modo={modo} progreso={clamp01(progreso)} frame={frame} fps={fps} enfasis={enfasis} enfasisPais={enfasisPais} anotacionesFrame={anotacionesFrame} maxMarcasX={maxMarcasX} />
       </div>
-      <div style={{ height: altoPie, display: 'flex', alignItems: 'flex-end' }}>
+      <div style={{ height: altoPie, display: 'flex', alignItems: 'flex-end', opacity: clamp01(pieVisible) }}>
         <PieFuente texto={fuente} fontSize={T.fuente} fixture={esFixture(serie)} licencia={serie?.licencia} />
       </div>
     </div>
