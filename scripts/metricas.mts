@@ -157,6 +157,31 @@ const videoPublico = async (id: string) => {
   } catch (e) { return { vistas: null, error: String((e as Error).message) }; }
 };
 
+/**
+ * Respaldo cuando youtube.com/watch responde 302 a google.com/sorry (captcha por IP; desde 2026-11-17 bloquea el curl y
+ * todas las vistas quedaban en null → "0 vistas"). El piloto va con la sesión de Santiago y no cae en el captcha:
+ * se hace el mismo fetch desde una pestaña propia de youtube.com (mismo origen) y se cierra al terminar.
+ */
+const vistasPorPiloto = async (ids: string[]): Promise<Record<string, number>> => {
+  const out: Record<string, number> = {};
+  if (!ids.length) return out;
+  let idx = 0;
+  try {
+    const antes = await piloto('/url');
+    const paginas: string[] = await piloto('/paginas');
+    idx = Math.max(0, paginas.findIndex((u) => u === antes.url));
+    await piloto('/nueva', { url: 'https://www.youtube.com/robots.txt' });
+    for (const id of ids) {
+      const js = `fetch('/watch?v=${id}',{credentials:'include'}).then(r=>r.text()).then(t=>(t.match(/"viewCount":"(\\d+)"/)||[])[1]||null)`;
+      const r = await piloto('/eval', { js });
+      const n = Number(typeof r === 'object' && r ? (r.resultado ?? r.result ?? r.valor) : r);
+      if (Number.isFinite(n) && n > 0) out[id] = n;
+    }
+  } catch { /* piloto caído: quedan en null */ }
+  finally { try { await piloto('/cerrar'); await piloto('/usar', { i: String(idx) }); } catch { /* nada que restaurar */ } }
+  return out;
+};
+
 /** Mejor esfuerzo sobre el texto de Studio (se afinará con la primera captura real; el .txt queda guardado). */
 const deStudio = (textos: Record<string, string>) => {
   const t = textos['1-overview'] ?? '', m = textos['2-monetizacion'] ?? '';
@@ -178,6 +203,11 @@ const main = async () => {
   for (const e of subidos) {
     const v = await videoPublico(e.videoId!);
     videos.push({ id: e.videoId, bandeja: e.id, titulo: v.titulo ?? e.titulo, plantilla: e.plantilla, tipo: e.tipo, publicarEn: e.publicarEn ?? null, ...v });
+  }
+  const sinVistas = videos.filter((v) => v.vistas == null).map((v) => v.id!);
+  if (sinVistas.length) {
+    const r = await vistasPorPiloto(sinVistas);
+    for (const v of videos) if (v.vistas == null && r[v.id!] != null) v.vistas = r[v.id!];
   }
   const previo = path.join(dir, 'metricas.json');
   const anterior = fs.existsSync(previo) ? JSON.parse(fs.readFileSync(previo, 'utf8')) : null;
