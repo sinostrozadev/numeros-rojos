@@ -57,7 +57,7 @@ type Pagina = {
 };
 
 /** Categorías que descartan un archivo aunque su licencia sea libre. */
-const CATEGORIAS_PROHIBIDAS = /trademark|nudity|nude\b|pornograph|logos?\b/i;
+const CATEGORIAS_PROHIBIDAS = /trademark|nudity|nude\b|pornograph|\blogos?\b/i;
 
 const consultar = async (busqueda: string): Promise<Pagina[]> => {
   const p = new URLSearchParams({
@@ -77,7 +77,7 @@ type Candidata = Omit<FotoResuelta, 'archivo'> & { descarga: string; ext: string
 
 /** Primera página que cumple formato, tamaño, licencia y categorías. */
 /** Títulos y categorías sensibles o estigmatizantes: la foto se descarta (privacidad, difamación, monetización). */
-const TERMINOS_SENSIBLES = /prostitut|sex[\s_-]?work|brothel|burdel|nude|naked|desnud|nsfw|porn|erotic|corpse|cadaver|cadáver|dead[\s_-]?body|murder|victim|crime[\s_-]?scene|arrest|detain|mugshot|drug[\s_-]?(addict|user)|junkie|homeless|beggar|slum[\s_-]?kid|refugee[\s_-]?camp[\s_-]?child/i;
+const TERMINOS_SENSIBLES = /prostitu|prost[ií]bulo|sex[\s_-]?work|trabajador\w*[\s_-]sexual|brothel|burdel|\bnudes?\b|\bnudity\b|\bnaked\b|desnud|nsfw|\bporn(?:o|ograph\w*)?\b|erotic|corpse|cadaver|cadáver|dead[\s_-]?body|murder|v[ií]ctim|crime[\s_-]?scene|\barrest(?:s|ed|ing)?\b|arrestad[oa]|\bdetain(?:ed|ee|ees)?\b|detenid[oa]|mugshot|drug[\s_-]?(addict|user)|junkie|homeless|beggar|slum[\s_-]?kid|refugee[\s_-]?camp[\s_-]?child/i;
 
 const elegir = (paginas: Pagina[]): { candidata?: Candidata; rechazos: string[] } => {
   const rechazos: string[] = [];
@@ -127,7 +127,7 @@ export const textoCreditos = (fotos: { foto: FotoResuelta; licenciaUrl?: string 
     // TASL: título, autor, fuente y licencia (con el enlace de la licencia cuando pide atribución).
     const lic = licenciaUrl && clasificarLicencia(foto.licencia) === 'atribucion' ? `${foto.licencia}, ${licenciaUrl}` : foto.licencia;
     // Títulos/autores en alfabeto no latino (coreano, árabe…) se ven rotos en la descripción de YouTube: se indica y el enlace da el original.
-    const latino = (t: string, alt: string) => (/[^\u0000-\u024F\u2000-\u206F\u2190-\u21FF]/.test(t) ? alt : t);
+    const latino = (t: string, alt: string) => (/[^\u0000-\u024F\u02B0-\u02FF\u1E00-\u1EFF\u2000-\u206F\u2190-\u21FF]/.test(t) ? alt : t);
     partes.push(`${latino(foto.titulo, 'Foto de Wikimedia Commons (título original en otro alfabeto)')} — ${latino(foto.autor, 'autoría en otro alfabeto, ver enlace')} (${lic}), ${foto.pagina}`);
   }
   return partes.length ? `Fotos (Wikimedia Commons): ${partes.join('; ')}` : '';
