@@ -75,7 +75,7 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
 ## ⚠ Revisión de estrategia 2026-11-15 (agente de estrategia) — leer antes de planear la semana 23–29
 
 - **Rescates del Draft** (Studio los dejó sin publicar el 11-09): largo Argentina `BQNaK5R-yrk` → **dom 15-11 19:00**; largo
-  Irlanda `3m2VqXoQIO0` → **lun 23-11 19:00** (esa ranura ya está ocupada). Short Irlanda `8JBkI1LW1B4` = reserva en Draft.
+  Irlanda `3m2VqXoQIO0` → **lun 23-11 19:00** (esa ranura ya está ocupada). Short Irlanda `8JBkI1LW1B4` PROGRAMADO lun 23-11 13:00 (2026-11-18, por API).
 - **Desde el lun 23-11: largos lunes y jueves 19:00** (2/semana, `contenido/calendario.json`), Short diario 13:00.
   Semana 23–29: lun 23 = Irlanda (rescatado); jue 26 = largo nuevo con tema de la lista §4b.5 de GUION.md (bolsillo o
   rivalidad con Chile/Argentina; candidato: Chile vs Argentina, cuánto rinde la plata en cada uno (ingreso por persona en dólares
