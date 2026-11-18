@@ -21,7 +21,7 @@ type PedidoFoto = { clave: string; visual: z.infer<typeof VisualFoto> };
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const API = 'https://commons.wikimedia.org/w/api.php';
 /** Wikimedia pide un User-Agent descriptivo con contacto: https://meta.wikimedia.org/wiki/User-Agent_policy */
-const USER_AGENT = 'EnNumerosRojos/1.0 (canal de YouTube En Números Rojos; contacto: sinostrozadev@gmail.com)';
+const USER_AGENT = 'EnNumerosRojos/1.0 (canal de YouTube En Números Rojos; contacto: https://github.com/sinostrozadev/numeros-rojos)';
 const LADO_MINIMO = 1200;
 const ANCHO_DESCARGA = 1280;
 const RESULTADOS = 20;

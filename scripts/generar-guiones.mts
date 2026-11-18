@@ -358,7 +358,7 @@ const ritmoTesis = (g: GuionTesis): { errores: string[]; avisos: string[] } => {
 };
 
 // ---------------------------------------------------------------- fotos: ¿Commons tiene algo con licencia?
-const UA_COMMONS = 'EnNumerosRojos/1.0 (canal de YouTube En Numeros Rojos; contacto: sinostrozadev@gmail.com)';
+const UA_COMMONS = 'EnNumerosRojos/1.0 (canal de YouTube En Numeros Rojos; contacto: https://github.com/sinostrozadev/numeros-rojos)';
 
 /** true si la búsqueda devuelve ≥ 1 jpg/png ≥ 1200 px con licencia libre y sin restricciones (mismas reglas que lib/imagenes). */
 const hayFotoEnCommons = async (busqueda: string): Promise<boolean> => {
