@@ -25,7 +25,7 @@ import {
   siguienteRanura, type Calendario, type EntradaConRuta,
 } from './lib/operacion.mjs';
 
-const SCOPES = ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube'];
+const SCOPES = ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.force-ssl', 'https://www.googleapis.com/auth/yt-analytics.readonly'];
 const PUERTO = 8765;
 const REDIRECT = `http://127.0.0.1:${PUERTO}`;
 const TROZO = 8 * 1024 * 1024; // múltiplo de 256 KiB, como exige la API
