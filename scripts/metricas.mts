@@ -10,6 +10,7 @@
  * Exige NR_CANAL_ID (id UC… de En Números Rojos): sin él no captura nada (nunca mide otro canal por error).
  */
 import fs from 'node:fs';
+import { asegurarPiloto } from './lib/asegurar-piloto.mjs';
 import path from 'node:path';
 import { DIR_SALIDA, RAIZ, cargarCalendario, escribirJson, leerBandeja, existeSecreto, ARCHIVO_TOKEN_YT } from './lib/operacion.mjs';
 
@@ -27,6 +28,7 @@ const fecha = arg('--fecha') ?? new Intl.DateTimeFormat('en-CA', { timeZone: zon
 const dir = path.join(DIR_SALIDA, 'metricas', fecha);
 fs.mkdirSync(dir, { recursive: true });
 const dormir = (ms: number) => new Promise((r) => setTimeout(r, ms));
+if (!(await asegurarPiloto(PILOTO))) console.log('AVISO: el piloto no responde en ' + PILOTO + ' y no se pudo levantar; las capturas de Studio fallarán.');
 
 // ------------------------------------------------------------ piloto
 const piloto = async (ruta: string, params: Record<string, string> = {}, bin = false): Promise<any> => {
