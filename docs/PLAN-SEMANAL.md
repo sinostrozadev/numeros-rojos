@@ -464,16 +464,16 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
         "url": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
       },
       "guion": "contenido/guiones/2026-11-19-grafico-gta6-horas-sueldo-minimo.json",
-      "videoId": null,
+      "videoId": "AgGIMWE67oI",
       "referente": "propuesta 2026-11-18-gta6.md §5B",
-      "porQue": "excepción puntual a 'solo largos' (sesión principal, 18-11): tema de demanda enorme; precios Xbox Store leídos el 18-11; sin imágenes del juego",
-      "bloqueo": "render en cola del lock compartido; subir por Studio y verificar publishAt",
+      "porQue": "excepción puntual a 'solo largos' (sesión principal, 18-11): tema de demanda enorme; precios Xbox Store leídos el 18-11; sin imágenes del juego; render en GitHub Actions (run 44450277857), subido por Studio y publishAt verificado por API (2026-11-20T16:00Z)",
+      "bloqueo": null,
       "fecha": "2026-11-20",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
       "tema": "¿Cuántas horas de sueldo mínimo cuesta GTA 6 en tu país?",
-      "estado": "guion"
+      "estado": "programado"
     },
     {
       "fecha": "2026-11-20",
