@@ -36,7 +36,7 @@ if (!ruta) {
 }
 
 /** Dominios de organismos oficiales aceptados para datos `manual` (añadir aquí con la licencia verificada). */
-const OFICIAL = /(\.gob\.[a-z]{2}|\.gov(\.[a-z]{2})?|\.gub\.uy|\.mil\.[a-z]{2}|cepal\.org|worldbank\.org|un\.org|ilo\.org|ine\.cl|ine\.es|inegi\.org\.mx|indec\.gob\.ar|ibge\.gov\.br|dane\.gov\.co|bcrp\.gob\.pe|banxico\.org\.mx|bcra\.gob\.ar|bcu\.gub\.uy|sec\.gov|europa\.eu|ourworldindata\.org)$/i;
+const OFICIAL = /(\.gob\.[a-z]{2}|\.gov(\.[a-z]{2})?|\.gub\.uy|\.mil\.[a-z]{2}|cepal\.org|worldbank\.org|un\.org|ilo\.org|ine\.cl|ine\.es|inegi\.org\.mx|indec\.gob\.ar|ibge\.gov\.br|dane\.gov\.co|bcrp\.gob\.pe|banxico\.org\.mx|bcra\.gob\.ar|bcu\.gub\.uy|sec\.gov|europa\.eu|ourworldindata\.org|xbox\.com)$/i; // xbox.com (2026-11-18): solo PRECIOS de lista de la tienda oficial (un precio es un hecho, no un dataset con licencia)
 /** Fuentes prohibidas (docs/CONVENCIONES.md): uso comercial sin permiso o términos sin verificar. */
 const PROHIBIDO = /(imf\.org|oecd\.org|numbeo\.com|bcentral\.cl|si3\.bcentral\.cl)$/i;
 

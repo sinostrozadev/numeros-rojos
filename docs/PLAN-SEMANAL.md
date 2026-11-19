@@ -129,21 +129,16 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
   "version": 1,
   "canal": "numeros-rojos",
   "zona": "America/Santiago",
-  "actualizado": "2026-11-15T08:40:32.937Z",
+  "actualizado": "2026-11-19T03:04:51.822144Z",
   "semanas": [
-    {
-      "inicio": "2026-11-02",
-      "fin": "2026-11-08",
-      "rol": "en-curso"
-    },
-    {
-      "inicio": "2026-11-09",
-      "fin": "2026-11-15",
-      "rol": "siguiente"
-    },
     {
       "inicio": "2026-11-16",
       "fin": "2026-11-22",
+      "rol": "en-curso"
+    },
+    {
+      "inicio": "2026-11-23",
+      "fin": "2026-11-29",
       "rol": "siguiente"
     }
   ],
@@ -433,7 +428,7 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "México producía 29 % más que Chile en 1994. Ya no",
+      "tema": "México era más rico que Chile. ¿Qué pasó?",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
@@ -461,27 +456,31 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "bloqueo": null
     },
     {
+      "tipo": "contingente",
+      "serie": null,
+      "contingencia": {
+        "hecho": "Lanzamiento de GTA 6 (PS5 y Xbox Series)",
+        "fecha": "2026-11-19",
+        "url": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+      },
+      "guion": "contenido/guiones/2026-11-19-grafico-gta6-horas-sueldo-minimo.json",
+      "videoId": null,
+      "referente": "propuesta 2026-11-18-gta6.md §5B",
+      "porQue": "excepción puntual a 'solo largos' (sesión principal, 18-11): tema de demanda enorme; precios Xbox Store leídos el 18-11; sin imágenes del juego",
+      "bloqueo": "render en cola del lock compartido; subir por Studio y verificar publishAt",
       "fecha": "2026-11-20",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Corea gasta 12 veces más que Chile en investigar",
-      "tipo": "evergreen",
-      "serie": null,
-      "contingencia": null,
-      "estado": "programado",
-      "guion": "contenido/backlog/grafico-corea-gasta-12-veces-mas-que-chile.json",
-      "videoId": "7z5bMWnsmH0",
-      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
-      "porQue": "serie El país que fue rico",
-      "bloqueo": null
+      "tema": "¿Cuántas horas de sueldo mínimo cuesta GTA 6 en tu país?",
+      "estado": "guion"
     },
     {
       "fecha": "2026-11-20",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "Venezuela doblaba a España en 1960. En 2022, ni un sexto",
+      "tema": "Venezuela era más rica que España. ¿Qué pasó?",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
@@ -523,6 +522,70 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
       "porQue": "cola: Perú inflación; Bolivia; China LatAm",
       "bloqueo": null
+    },
+    {
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "guion": null,
+      "videoId": "8JBkI1LW1B4",
+      "referente": null,
+      "porQue": "último Short del canal (rescatado del Draft, programado por API el 18-11)",
+      "bloqueo": null,
+      "fecha": "2026-11-23",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Irlanda produce el doble que Alemania. Gasta lo mismo",
+      "estado": "programado"
+    },
+    {
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "guion": "contenido/backlog/tesis-irlanda-pib-v2.json",
+      "videoId": "3m2VqXoQIO0",
+      "referente": null,
+      "porQue": "rescatado del Draft; retitulado al molde el 18-11",
+      "bloqueo": null,
+      "fecha": "2026-11-23",
+      "hora": "19:00",
+      "formato": "largo",
+      "plantilla": "tesis",
+      "tema": "¿Por qué Irlanda creció 25 % en un año y su gente no?",
+      "estado": "programado"
+    },
+    {
+      "fecha": "2026-11-24",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Corea gasta 12 veces más que Chile en investigar",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "programado",
+      "guion": "contenido/backlog/grafico-corea-gasta-12-veces-mas-que-chile.json",
+      "videoId": "7z5bMWnsmH0",
+      "referente": "Data Is Beautiful narrado (un gráfico que sorprende)",
+      "porQue": "serie El país que fue rico; corrido del vie 20 al mar 24-11 13:00 (18-11, por API) para la contingencia GTA 6",
+      "bloqueo": null
+    },
+    {
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "guion": null,
+      "videoId": null,
+      "referente": "Fortune of Nations ES, ¿Por qué Australia se hizo rica y Argentina no? (67 K) https://www.youtube.com/watch?v=ij_ab_gDcyU",
+      "porQue": "molde de los canales nuevos (GUION §10b) + arranque con escena (§3b); si Take-Two publica ventas oficiales al jue 19 17:00, esta ranura es 'GTA 6 en números' y NZ pasa al lun 30",
+      "bloqueo": "guion en el hito del jue 19-11 17:00",
+      "fecha": "2026-11-26",
+      "hora": "19:00",
+      "formato": "largo",
+      "plantilla": "tesis",
+      "tema": "¿Por qué Nueva Zelanda se hizo rica y Chile no?",
+      "estado": "idea"
     }
   ]
 }

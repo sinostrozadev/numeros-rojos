@@ -1,0 +1,650 @@
+{
+  "plantilla": "grafico",
+  "id": "2026-11-19-grafico-gta6-horas-sueldo-minimo",
+  "titulo": "¿Cuántas horas de sueldo mínimo cuesta GTA 6 en tu país?",
+  "descripcion": "¿Cuántas horas de trabajo con sueldo mínimo hacen falta para comprar GTA 6, el día que sale?\n\nTomamos el precio de la edición estándar digital en la tienda de Xbox de cada país (leído el 18-11-2026) y el sueldo mínimo mensual vigente, dividido por las horas de la jornada legal (horas semanales × 4,33).\nEspaña 9,7 horas · Estados Unidos 11,0 · Chile 24,6 · México 32,5 · Colombia 35,3 · Argentina 59,1.\nPerú y Uruguay quedaron fuera: no encontramos un precio en moneda local verificable.\n\nFuentes:\nPrecios: Xbox Store (es-CL, es-AR, es-MX, es-CO, es-ES, en-US), Grand Theft Auto VI, edición estándar: CLP 74.990, ARS 113.299, MXN 1.499, COP 339.900, EUR 79,99, USD 79,99. https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN\nChile: Ley 21.830, sueldo mínimo $553.553 desde el 01-05-2026; jornada de 42 horas desde el 26-04-2026 (Ley 21.561). https://www.dt.gob.cl\nArgentina: Salario Mínimo, Vital y Móvil $398.800 desde el 01-11-2026 (Consejo del Salario, Res. 4/2026); jornada de 48 horas. https://www.argentina.gob.ar/trabajo\nMéxico: salario mínimo general 2026, $315,04 diarios (CONASAMI, DOF 09-12-2025), ×30,4 días; jornada de 48 horas. https://www.gob.mx/conasami\nColombia: salario mínimo 2026 $1.750.905 (sin auxilio de transporte); jornada de 42 horas desde el 15-07-2026 (Ley 2101 de 2021). https://www.mintrabajo.gov.co\nEspaña: SMI 2026 de 1.221 € en 14 pagas (RD 126/2026, BOE 19-02-2026), prorrateado a 12 meses; jornada de 40 horas. https://www.boe.es\nEstados Unidos: salario mínimo federal US$7,25 por hora. https://www.dol.gov/agencies/whd/minimum-wage\n\nNo usamos imágenes del juego. Voz sintetizada. Gráfico generado a partir de datos públicos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#gta6",
+    "#economia",
+    "#sueldominimo",
+    "#latinoamerica"
+  ],
+  "props": {
+    "id": "2026-11-19-grafico-gta6-horas-sueldo-minimo",
+    "gancho": {
+      "texto": "Un español paga GTA 6 con 10 horas de sueldo mínimo. Un argentino necesita 59.",
+      "rotulo": "10 HORAS CONTRA 59",
+      "cifras": [
+        {
+          "texto": "10 horas",
+          "valor": 9.73,
+          "calculo": {
+            "datos": {
+              "fuente": "manual",
+              "indicador": "horas-sueldo-minimo-gta6-2026",
+              "paises": [
+                "ARG",
+                "COL",
+                "MEX",
+                "CHL",
+                "USA",
+                "ESP"
+              ],
+              "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+              "unidad": "horas",
+              "valores": {
+                "ESP": [
+                  [
+                    2026,
+                    9.73
+                  ]
+                ],
+                "USA": [
+                  [
+                    2026,
+                    11.03
+                  ]
+                ],
+                "CHL": [
+                  [
+                    2026,
+                    24.64
+                  ]
+                ],
+                "MEX": [
+                  [
+                    2026,
+                    32.51
+                  ]
+                ],
+                "COL": [
+                  [
+                    2026,
+                    35.3
+                  ]
+                ],
+                "ARG": [
+                  [
+                    2026,
+                    59.05
+                  ]
+                ]
+              },
+              "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+              "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+            },
+            "operacion": "valor",
+            "pais": "ESP",
+            "anio": 2026
+          },
+          "tolerancia": 0.05
+        },
+        {
+          "texto": "59",
+          "valor": 59.05,
+          "calculo": {
+            "datos": {
+              "fuente": "manual",
+              "indicador": "horas-sueldo-minimo-gta6-2026",
+              "paises": [
+                "ARG",
+                "COL",
+                "MEX",
+                "CHL",
+                "USA",
+                "ESP"
+              ],
+              "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+              "unidad": "horas",
+              "valores": {
+                "ESP": [
+                  [
+                    2026,
+                    9.73
+                  ]
+                ],
+                "USA": [
+                  [
+                    2026,
+                    11.03
+                  ]
+                ],
+                "CHL": [
+                  [
+                    2026,
+                    24.64
+                  ]
+                ],
+                "MEX": [
+                  [
+                    2026,
+                    32.51
+                  ]
+                ],
+                "COL": [
+                  [
+                    2026,
+                    35.3
+                  ]
+                ],
+                "ARG": [
+                  [
+                    2026,
+                    59.05
+                  ]
+                ]
+              },
+              "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+              "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+            },
+            "operacion": "valor",
+            "pais": "ARG",
+            "anio": 2026
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "barras",
+      "titulo": "Horas de sueldo mínimo para comprar GTA 6",
+      "datos": {
+        "fuente": "manual",
+        "indicador": "horas-sueldo-minimo-gta6-2026",
+        "paises": [
+          "ARG",
+          "COL",
+          "MEX",
+          "CHL",
+          "USA",
+          "ESP"
+        ],
+        "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+        "unidad": "horas",
+        "valores": {
+          "ESP": [
+            [
+              2026,
+              9.73
+            ]
+          ],
+          "USA": [
+            [
+              2026,
+              11.03
+            ]
+          ],
+          "CHL": [
+            [
+              2026,
+              24.64
+            ]
+          ],
+          "MEX": [
+            [
+              2026,
+              32.51
+            ]
+          ],
+          "COL": [
+            [
+              2026,
+              35.3
+            ]
+          ],
+          "ARG": [
+            [
+              2026,
+              59.05
+            ]
+          ]
+        },
+        "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+        "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "formato": {
+        "decimales": 0,
+        "sufijo": " h"
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Usamos el precio de la tienda de Xbox en cada país y el sueldo mínimo oficial. En Estados Unidos alcanza con 11 horas.",
+        "usaGraficoPrincipal": true,
+        "fuenteEnVoz": true,
+        "cifras": [
+          {
+            "texto": "11 horas",
+            "valor": 11.03,
+            "calculo": {
+              "datos": {
+                "fuente": "manual",
+                "indicador": "horas-sueldo-minimo-gta6-2026",
+                "paises": [
+                  "ARG",
+                  "COL",
+                  "MEX",
+                  "CHL",
+                  "USA",
+                  "ESP"
+                ],
+                "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+                "unidad": "horas",
+                "valores": {
+                  "ESP": [
+                    [
+                      2026,
+                      9.73
+                    ]
+                  ],
+                  "USA": [
+                    [
+                      2026,
+                      11.03
+                    ]
+                  ],
+                  "CHL": [
+                    [
+                      2026,
+                      24.64
+                    ]
+                  ],
+                  "MEX": [
+                    [
+                      2026,
+                      32.51
+                    ]
+                  ],
+                  "COL": [
+                    [
+                      2026,
+                      35.3
+                    ]
+                  ],
+                  "ARG": [
+                    [
+                      2026,
+                      59.05
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+                "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+              },
+              "operacion": "valor",
+              "pais": "USA",
+              "anio": 2026
+            }
+          }
+        ]
+      },
+      {
+        "tipo": "dato",
+        "texto": "En Chile son 25 horas. En México, 33. En Colombia, 35.",
+        "usaGraficoPrincipal": true,
+        "enfasis": {
+          "pais": "CHL"
+        },
+        "cifras": [
+          {
+            "texto": "25 horas",
+            "valor": 24.64,
+            "calculo": {
+              "datos": {
+                "fuente": "manual",
+                "indicador": "horas-sueldo-minimo-gta6-2026",
+                "paises": [
+                  "ARG",
+                  "COL",
+                  "MEX",
+                  "CHL",
+                  "USA",
+                  "ESP"
+                ],
+                "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+                "unidad": "horas",
+                "valores": {
+                  "ESP": [
+                    [
+                      2026,
+                      9.73
+                    ]
+                  ],
+                  "USA": [
+                    [
+                      2026,
+                      11.03
+                    ]
+                  ],
+                  "CHL": [
+                    [
+                      2026,
+                      24.64
+                    ]
+                  ],
+                  "MEX": [
+                    [
+                      2026,
+                      32.51
+                    ]
+                  ],
+                  "COL": [
+                    [
+                      2026,
+                      35.3
+                    ]
+                  ],
+                  "ARG": [
+                    [
+                      2026,
+                      59.05
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+                "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 2026
+            }
+          },
+          {
+            "texto": "33",
+            "valor": 32.51,
+            "calculo": {
+              "datos": {
+                "fuente": "manual",
+                "indicador": "horas-sueldo-minimo-gta6-2026",
+                "paises": [
+                  "ARG",
+                  "COL",
+                  "MEX",
+                  "CHL",
+                  "USA",
+                  "ESP"
+                ],
+                "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+                "unidad": "horas",
+                "valores": {
+                  "ESP": [
+                    [
+                      2026,
+                      9.73
+                    ]
+                  ],
+                  "USA": [
+                    [
+                      2026,
+                      11.03
+                    ]
+                  ],
+                  "CHL": [
+                    [
+                      2026,
+                      24.64
+                    ]
+                  ],
+                  "MEX": [
+                    [
+                      2026,
+                      32.51
+                    ]
+                  ],
+                  "COL": [
+                    [
+                      2026,
+                      35.3
+                    ]
+                  ],
+                  "ARG": [
+                    [
+                      2026,
+                      59.05
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+                "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+              },
+              "operacion": "valor",
+              "pais": "MEX",
+              "anio": 2026
+            }
+          },
+          {
+            "texto": "35",
+            "valor": 35.3,
+            "calculo": {
+              "datos": {
+                "fuente": "manual",
+                "indicador": "horas-sueldo-minimo-gta6-2026",
+                "paises": [
+                  "ARG",
+                  "COL",
+                  "MEX",
+                  "CHL",
+                  "USA",
+                  "ESP"
+                ],
+                "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+                "unidad": "horas",
+                "valores": {
+                  "ESP": [
+                    [
+                      2026,
+                      9.73
+                    ]
+                  ],
+                  "USA": [
+                    [
+                      2026,
+                      11.03
+                    ]
+                  ],
+                  "CHL": [
+                    [
+                      2026,
+                      24.64
+                    ]
+                  ],
+                  "MEX": [
+                    [
+                      2026,
+                      32.51
+                    ]
+                  ],
+                  "COL": [
+                    [
+                      2026,
+                      35.3
+                    ]
+                  ],
+                  "ARG": [
+                    [
+                      2026,
+                      59.05
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+                "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+              },
+              "operacion": "valor",
+              "pais": "COL",
+              "anio": 2026
+            }
+          }
+        ]
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero el récord es Argentina: 59 horas. Seis veces lo que trabaja un español por el mismo juego.",
+        "usaGraficoPrincipal": true,
+        "enfasis": {
+          "pais": "ARG"
+        },
+        "cifras": [
+          {
+            "texto": "59 horas",
+            "valor": 59.05,
+            "calculo": {
+              "datos": {
+                "fuente": "manual",
+                "indicador": "horas-sueldo-minimo-gta6-2026",
+                "paises": [
+                  "ARG",
+                  "COL",
+                  "MEX",
+                  "CHL",
+                  "USA",
+                  "ESP"
+                ],
+                "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+                "unidad": "horas",
+                "valores": {
+                  "ESP": [
+                    [
+                      2026,
+                      9.73
+                    ]
+                  ],
+                  "USA": [
+                    [
+                      2026,
+                      11.03
+                    ]
+                  ],
+                  "CHL": [
+                    [
+                      2026,
+                      24.64
+                    ]
+                  ],
+                  "MEX": [
+                    [
+                      2026,
+                      32.51
+                    ]
+                  ],
+                  "COL": [
+                    [
+                      2026,
+                      35.3
+                    ]
+                  ],
+                  "ARG": [
+                    [
+                      2026,
+                      59.05
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+                "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 2026
+            }
+          },
+          {
+            "texto": "Seis veces",
+            "valor": 6.07,
+            "calculo": {
+              "datos": {
+                "fuente": "manual",
+                "indicador": "horas-sueldo-minimo-gta6-2026",
+                "paises": [
+                  "ARG",
+                  "COL",
+                  "MEX",
+                  "CHL",
+                  "USA",
+                  "ESP"
+                ],
+                "etiqueta": "Horas de sueldo mínimo para pagar GTA 6 (Standard, digital)",
+                "unidad": "horas",
+                "valores": {
+                  "ESP": [
+                    [
+                      2026,
+                      9.73
+                    ]
+                  ],
+                  "USA": [
+                    [
+                      2026,
+                      11.03
+                    ]
+                  ],
+                  "CHL": [
+                    [
+                      2026,
+                      24.64
+                    ]
+                  ],
+                  "MEX": [
+                    [
+                      2026,
+                      32.51
+                    ]
+                  ],
+                  "COL": [
+                    [
+                      2026,
+                      35.3
+                    ]
+                  ],
+                  "ARG": [
+                    [
+                      2026,
+                      59.05
+                    ]
+                  ]
+                },
+                "fuenteTexto": "Xbox Store de cada país (18-11-2026) y sueldo mínimo oficial; cálculo propio",
+                "fuenteUrl": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+              },
+              "operacion": "razon",
+              "pais": "ARG",
+              "anio": 2026,
+              "paisB": "ESP"
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "×6",
+            "pais": "ARG",
+            "animo": "triste",
+            "dice": "Seis"
+          }
+        ]
+      }
+    ],
+    "remate": "El juego es el mismo en todas partes. Las horas, no.",
+    "fuentes": [
+      {
+        "texto": "Xbox Store Chile, GTA VI edición estándar (18-11-2026)",
+        "url": "https://www.xbox.com/es-CL/games/store/grand-theft-auto-vi/9NL3WWNZLZZN"
+      },
+      {
+        "texto": "Dirección del Trabajo de Chile, sueldo mínimo 2026",
+        "url": "https://www.dt.gob.cl"
+      },
+      {
+        "texto": "CONASAMI, salario mínimo 2026",
+        "url": "https://www.gob.mx/conasami"
+      },
+      {
+        "texto": "Departamento de Trabajo de EE. UU., salario mínimo federal",
+        "url": "https://www.dol.gov/agencies/whd/minimum-wage"
+      }
+    ]
+  }
+}
