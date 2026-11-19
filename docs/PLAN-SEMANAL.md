@@ -3,6 +3,7 @@
 > **2026-11-15 (agente de producción):** semana 16→22 producida y programada; ids verificados en YouTube/Studio según la tabla JSON. Revisor independiente aplicado a cada guion (veredictos en `salida/revisiones/guiones/`).
 
 > Actualizado **2026-11-06 09:10** (America/Santiago) por Claude (agente de documentación). Método: skill global `plan-semanal`.
+> **2026-11-18:** canal solo de largos desde el 23-11 (ver hito del jue 19-11 abajo).
 > Regla: siempre hay plan de la semana en curso **y** de la siguiente. Cuando a la semana en curso le quedan < 3 ranuras futuras
 > con guion, o termina, se hace el ritual de cierre y se arma la que viene. **Manda el bloque JSON del final** (lo leen
 > `estado.mts` y el panel de Santiago); la tabla es su vista legible.
@@ -72,7 +73,28 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
 1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 0. `grafico` · Cuántos años de sueldo cuesta una casa (idea en espera: falta dataset con licencia; no Numbeo) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
 
 
-## ⚠ Revisión de estrategia 2026-11-15 (agente de estrategia) — leer antes de planear la semana 23–29
+## 🔒 Hito del jue 2026-11-19 17:00 → semana 2026-11-23 (lun) → 2026-11-29 (dom) · preparado el 18-11 noche
+
+> **Desde el lun 23-11 el canal es SOLO DE LARGOS** (lun y jue 19:00; `docs/ESTRATEGIA.md` §00, decisión 2026-11-18). No se
+> escriben guiones de Shorts. Todo largo nuevo: título del molde (`GUION.md` §10b), arranque con escena (§3b, lo valida
+> `generar-guiones`), carátula del molde (`docs/PEDIDO-CARATULA-MOLDE.md`) y tema de comparación entre países (nunca solo Chile:
+> eso es de Entender Chile).
+
+| Día | Hora | Largo | Estado | Modelado sobre (outlier, vistas) | Por qué |
+|---|---|---|---|---|---|
+| lun 23-11 | 13:00 | (Short Irlanda `8JBkI1LW1B4`, ya programado; último Short del canal) | programado | — | se queda |
+| lun 23-11 | 19:00 | **¿Por qué Irlanda creció 25 % en un año y su gente no?** (`3m2VqXoQIO0`, retitulado el 18-11) | programado | — | ranura ocupada desde el rescate del 15-11 |
+| jue 26-11 | 19:00 | **¿Por qué Nueva Zelanda se hizo rica y Chile no?** — escena de arranque candidata: un barco frigorífico zarpa de Port Chalmers (Dunedin) en febrero de 1882 con carne congelada hacia Londres (el "Dunedin", 15-02-1882; verificar), mientras Chile vive del salitre de Iquique y Antofagasta | idea → guion el jue 19 | Fortune of Nations, "¿Por qué Australia se hizo rica y Argentina no?" 67 K, 202 comentarios ← https://www.youtube.com/watch?v=ij_ab_gDcyU | mismo molde y mismo dataset (Maddison/WDI); los dos son exportadores de materias primas del sur, lejos de todo; audiencia CL (70 %+) dentro |
+| (jue 26-11 alternativa) | 19:00 | **GTA 6 en números** — SOLO si al jue 19-11 17:00 Take-Two publicó **cifras oficiales** de ventas (comunicado o reporte; nunca estimaciones de Sensor Tower como si fueran oficiales). Si entra, toma el jue 26 y Nueva Zelanda pasa al lun 30-11 | condicional | propuesta `/home/santiago/projects/yt/_propuestas/2026-11-18-gta6.md` §5B/§7 | la ola dura 1–2 semanas; sin imágenes del juego, tráilers, logos ni tipografía que lo imite; comparación con taquillas, giras y PIB de países LatAm |
+
+**Cola de largos (molde, sobre outliers del informe):**
+1. ¿Por qué España no se hizo rica con la plata de Potosí? ← Curiosito 153 K https://www.youtube.com/watch?v=ZakfKXrgqJ4 (Bolivia/España).
+2. ¿Por qué EE. UU. se hizo rico y Latinoamérica no? ← Fortune 160 K https://www.youtube.com/watch?v=iKXJVXbpnoA (usar con un par concreto: "¿Por qué Canadá se hizo rica y Argentina no?").
+3. ¿Qué país de Latinoamérica será el próximo en hacerse rico? ← Fortune 109 K https://www.youtube.com/watch?v=FXfxW2dTW6M (cuidado: sin pronóstico como consejo; leer tendencias).
+4. ¿Por qué Uruguay es más rico que Paraguay? / ¿Por qué Panamá se hizo rico y Costa Rica no? (rivalidad de vecinos, molde Borderline 201 K https://www.youtube.com/watch?v=zio__98MTL0).
+Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" (tema solo chileno → Entender Chile).
+
+## ⚠ Revisión de estrategia 2026-11-15 (agente de estrategia) — leer antes de planear la semana 23–29 (la parte de Shorts quedó derogada el 18-11)
 
 - **Rescates del Draft** (Studio los dejó sin publicar el 11-09): largo Argentina `BQNaK5R-yrk` → **dom 15-11 19:00**; largo
   Irlanda `3m2VqXoQIO0` → **lun 23-11 19:00** (esa ranura ya está ocupada). Short Irlanda `8JBkI1LW1B4` PROGRAMADO lun 23-11 13:00 (2026-11-18, por API).

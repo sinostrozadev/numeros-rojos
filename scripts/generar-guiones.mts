@@ -158,6 +158,13 @@ const REGLAS = `REGLAS DURAS (si no se cumplen, el guion se descarta):
   cuatro veces" → "4×"), con la bandera del país del dato.
 - VIAJE (mapa con "viaje": desde → hasta): 1–2 por video, SOLO cuando el protagonista cambia de país de forma grande (de Chile a
   Corea, de Corea a "alguien que vive en Lima"); nunca escena a escena. Puede ir "dividido" con el gráfico.
+- LARGO, ARRANQUE (GUION.md §3b, lo valida chequeosArranqueLargo): el gancho es una ESCENA con fecha (año), lugar con nombre
+  propio y un detalle humano; sin "grafico" en el gancho; en gancho, promesa, rótulo y cabecera NO van "PIB", "per cápita",
+  "Maddison", "US$ internacionales", "PPA", "capítulos", "gráficos", "fuentes", "Banco Mundial". La cifra del contraste llega
+  dentro de la historia, después de la escena; la fuente se nombra en el capítulo 1.
+- LARGO, TÍTULO (GUION.md §10b): molde "¿Por qué A se hizo rico y B no?" / "A era más rico que B. ¿Qué pasó?" / paradoja
+  concreta con el país nombrado, ≤ 50 caracteres, sin cifras técnicas. Tema: comparación entre países (LatAm vs LatAm o
+  LatAm vs mundo); nunca un tema exclusivamente chileno (eso es de Entender Chile).
 - Título ≤ ${MAX_TITULO} caracteres, sin palabras prohibidas, sin "Los 10…", no repetido ni parafraseado de la lista de usados.
 - Sin consejo financiero, sin catastrofismo, sin opinión política, sin "experto", sin la lista negra de GUION.md §6.
 - No incluyas campos que calcula el pipeline (datos resueltos, tiempos, duraciones).`;
@@ -238,7 +245,32 @@ const chequeosPropios = (g: Crudo): string[] => {
   }
   if (g.plantilla === 'tesis') mal.push(...chequeosVisuales(escenas));
   if (g.plantilla === 'grafico') mal.push(...chequeosGanchoShort(p.gancho?.texto ?? '', p.gancho?.rotulo ?? ''));
+  if (g.plantilla === 'tesis') mal.push(...chequeosArranqueLargo(p));
   return mal.slice(0, 10);
+};
+
+/**
+ * Arranque del LARGO con escena (decisión 2026-11-18, GUION.md §3b): en los largos que despegan (Fortune of Nations, Curiosito,
+ * Factor Bélico) los primeros 20–30 s son una escena con fecha, lugar y un detalle humano; los nuestros abrían con PIB, un
+ * gráfico con "Maddison, US$ internacionales" y un índice que anunciaba "capítulos con gráficos y fuentes" → 44 % se iba en 30 s.
+ * Mira el tramo hablado de los primeros ~30 s: gancho + promesa (la tarjeta de título y el rótulo se ven en el frame 0).
+ */
+const VETADAS_ARRANQUE = /\b(?:PIB|INB|per c[aá]pita|Maddison|US\$ internacionales|d[oó]lares internacionales|PPA|paridad|cap[ií]tulos?|gr[aá]ficos?|fuentes?|Banco Mundial|Our World in Data|indicador(?:es)?)\b/i;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const chequeosArranqueLargo = (p: any): string[] => {
+  const mal: string[] = [];
+  const gancho: string = p.gancho?.texto ?? '';
+  const promesa: string = p.promesa ?? '';
+  if (p.gancho?.grafico) mal.push('arranque: el gancho del largo no lleva gráfico (abre con la escena; el primer gráfico entra en el capítulo 1, §3b)');
+  for (const [campo, t] of [['gancho', gancho], ['promesa', promesa], ['rótulo del gancho', p.gancho?.rotulo ?? ''], ['cabecera', p.cabecera ?? '']] as const) {
+    const m = t.match(VETADAS_ARRANQUE);
+    if (m) mal.push(`arranque: "${m[0]}" en ${campo} (prohibido en los primeros 30 s: PIB, per cápita, Maddison, US$ internacionales, capítulos, gráficos, fuentes… §3b)`);
+  }
+  if (!/\b(?:1[5-9]\d\d|20\d\d)\b/.test(gancho)) mal.push('arranque: el gancho no tiene fecha (año) — abre con una escena fechada: "El 1 de diciembre de 1913, debajo de Buenos Aires…" (§3b)');
+  // Lugar: un nombre propio que no sea la primera palabra de una oración (heurística barata).
+  const propios = gancho.split(/(?<=[.?!…:])\s+/).flatMap((o) => o.split(/\s+/).slice(1)).filter((w) => /^[«"(¿¡]?\p{Lu}\p{Ll}/u.test(w));
+  if (!propios.length) mal.push('arranque: el gancho no nombra un lugar (ciudad, puerto, calle, región) — la escena necesita dónde (§3b)');
+  return mal;
 };
 
 /**

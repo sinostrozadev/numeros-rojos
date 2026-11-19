@@ -194,6 +194,12 @@ export const CalendarioSchema = z.object({
   ranurasLargo: z.array(RanuraSchema).default([{ dias: [1, 3, 5], hora: '19:00' }]),
   /** Rotación de plantillas de Shorts. */
   rotacion: z.array(z.enum(PLANTILLAS)).min(1),
+  /**
+   * false = el canal no produce Shorts nuevos (decisión 2026-11-18: NR solo de largos desde el lun 2026-11-23).
+   * El diario no renderiza ni genera guiones `grafico` (salvo `--n K` explícito) y estado.mts no avisa ranuras de Short vacías.
+   * Los Shorts ya programados en Studio no se tocan.
+   */
+  shortsActivos: z.boolean().default(true),
   /** Rotación de plantillas de largos. */
   rotacionLargo: z.array(z.enum(PLANTILLAS)).min(1).default(['tesis']),
   /** Shorts 'listo' que el diario mantiene en la bandeja. */

@@ -13,6 +13,13 @@ economía, con la cuenta en pantalla." Público: hispanohablantes de 20–45 añ
 México, Argentina, Uruguay, Bolivia, Panamá, Venezuela, Brasil) y España; ven VisualEconomik o Los Ecomonos y no encuentran el
 ángulo latinoamericano ni la fuente en pantalla.
 
+**Reparto de temas con Entender Chile (decisión 2026-11-18, manda):** NR = **comparaciones entre países** (LatAm vs LatAm,
+LatAm vs el mundo, "¿por qué A se hizo rico y B no?"). **Entender Chile = solo Chile** (regiones, ciudades, obras, noticias
+chilenas). NR **no** hace temas exclusivamente chilenos (el IPC de Chile, una región chilena, el presupuesto chileno): Chile
+entra como uno de los dos lados de una comparación, nunca como tema único.
+**Formato (2026-11-18): el canal es solo de largos** desde el lun 2026-11-23 (2 por semana, lun y jue 19:00). §4 y §4b quedan
+para Shorts de excepción (una contingencia de demanda enorme, decidida por la sesión principal), no para el diario.
+
 **Cómo le ganamos al referente** (Los Ecomonos, 9–12 min, 100–800 K vistas; la crítica que recibe: desinformar y catastrofismo):
 cada cifra se puede recalcular y aparece con su fuente; el tono es de **evidencia**, no de alarma. La tensión sale de una
 **contradicción medible** ("era tres veces más rico; hoy produce menos de la mitad"), nunca de "colapso", "se viene", "el fin".
@@ -75,6 +82,37 @@ problema: la fábrica hay que pagarla antes de vender el primero." No: "Quédate
 
 **Giro**: el dato que cambia la lectura del capítulo, con su cifra. Puede abrir con "Pero mira…", "Y aquí, un matiz:",
 "Ahora, el dato que complica…", **variando** la entrada: dos giros seguidos no empiezan igual, y no más de un "nadie" por video.
+
+## 3b. El arranque del largo es una ESCENA (decisión 2026-11-18 — manda sobre la fila 0–2 de §3)
+
+> Medido: en Chile-Corea solo el 56 % sigue a los 30 s y el 42 % al minuto. Los canales nuevos que ganan con nuestro mismo
+> formato (Fortune of Nations en Español, mediana 71 K; Curiosito, "¿Por qué Argentina dejó de ser potencia?" 347 K; Factor
+> Bélico) abren con **una escena con fecha, lugar y un detalle humano**; nosotros abríamos con una estadística de PIB, un
+> gráfico con "Maddison, US$ internacionales de 2011" y un índice que anunciaba "capítulos con gráficos y fuentes".
+> Transcripciones en `/home/santiago/projects/yt/lab/diagnostico-2026-11-18/tr/` (ij_ab_gDcyU, QVCeJURMU1Q, zio__98MTL0).
+
+1. **`gancho` = una escena** (30–55 palabras): **fecha** (año, mejor día y mes), **lugar con nombre propio** (ciudad, puerto,
+   calle, mina) y **un detalle humano o concreto** que el espectador pueda ver (un tren que arranca, un barco que llega, una
+   frase que se decía en París). La contradicción llega en la 2.ª o 3.ª frase, **dentro de la historia**, y cierra con la
+   pregunta del título.
+2. **Sin gráfico en el gancho** (`gancho.grafico` vacío). El primer gráfico entra en el capítulo 1, cuando ya hay una pregunta.
+3. **Prohibido en gancho, promesa, rótulo y cabecera** (primeros ~30 s): "PIB", "per cápita", "PPA", "Maddison", "US$/dólares
+   internacionales", "Banco Mundial", "Our World in Data", "indicador", "capítulos", "gráficos", "fuentes". La fuente se dice en
+   el capítulo 1 y va en la descripción. Nada de "En cuatro capítulos con gráficos y fuentes vas a ver…".
+4. **`promesa`** = la apuesta del video en lenguaje de la calle, sin anunciar estructura: "Lo que pasó después no lo explica el
+   cobre ni la guerra. Lo explica una decisión que se tomó en un puerto." (no: "Al final vas a saber… en cuatro capítulos").
+5. **Rótulo del gancho** = lugar + año o la paradoja en 2–4 palabras ("BUENOS AIRES, 1913", "RICO COMO UN ARGENTINO").
+6. Lo valida `chequeosArranqueLargo` en `scripts/generar-guiones.mts` (también con `--revisar`): gancho con gráfico, palabra
+   vetada, sin año o sin nombre propio → guion descartado.
+
+Antes → después (mismos datos):
+- Mal (Argentina, 21 vistas): "En 1895, un argentino producía más que un alemán y más del doble que un español… En cuatro
+  quiebres y con los datos en pantalla, vas a ver en qué año se fue la ventaja…"
+- Bien: "Buenos Aires, 1910. Al puerto llegan barcos con miles de italianos y españoles que vienen a hacerse ricos aquí, no en
+  Nueva York. En París, al que derrocha dinero le dicen 'rico como un argentino'. Cien años después, ese país dejó de pagar su
+  deuda nueve veces. ¿Qué pasó?"
+- Bien (Fortune of Nations, 66 K, 202 comentarios): "El 1 de diciembre de 1913, debajo de las calles de Buenos Aires, arranca
+  un tren. Es el primer metro de América Latina…"
 
 ## 4. La fórmula del SHORT (`grafico`, 35–50 s, 85–120 palabras HABLADAS en total)
 
@@ -442,6 +480,30 @@ infantil de UNICEF, gasto militar del SIPRI. Un slug de OWID es CC BY solo si el
   "No es asesoría financiera: el video describe lo que muestran los datos." Sin hashtags en el texto.
 - **Hashtags** (≤ 6, minúsculas, sin tildes): el largo **sin `#shorts`** (`#economia`, `#<pais>`, `#<tema>`, `#datos`); el Short
   empieza con `#shorts`.
+
+## 10b. Molde de título y carátula (decisión 2026-11-18 — manda sobre §10 donde choque)
+
+> Los tres canales nuevos que crecen con nuestro formato usan el mismo empaque: Fortune of Nations ("¿Por qué Australia se
+> hizo rica y Argentina no?" 67 K; "¿Por qué EE. UU. se hizo rico y Latinoamérica no?" 160 K), Borderline Billions ("¿Por qué
+> el País Vasco se hizo rico y Andalucía no?" 201 K; "Extremadura tenía más que Madrid. ¿Qué pasó?") y Curiosito ("¿Por qué
+> Argentina dejó de ser potencia?" 347 K). Nuestro Panamá ("Panamá produce más que Chile…", pantalla partida A | B) ya dio
+> **CTR 6,5 %**; los títulos con cifra técnica dieron 1,0–3,2 %.
+
+**Título (≤ 50 caracteres, sin cifra técnica):** uno de estos tres moldes, con los dos países nombrados.
+1. "¿Por qué A se hizo rico y B no?" (rivalidad de destinos).
+2. "A era más rico que B. ¿Qué pasó?" / "A tenía más que B. ¿Qué pasó?" (la vuelta).
+3. Paradoja concreta: "Singapur no tiene agua. ¿Por qué es más rico que EE. UU.?", "¿Por qué Uruguay es tan caro?".
+Prefiere un país de LatAm dentro (Chile o Argentina si el dato lo permite). Sin "PIB", "per cápita", "%", "TLCAN", años sueltos
+salvo uno ("1895 vs hoy"). Lo que promete, el video lo cumple con datos (si dice "se hizo rico y B no", las cifras lo muestran).
+
+**Carátula (pedido GPT, skill `caratulas-con-gpt`):** fondo oscuro; **dos siluetas de mapa en relieve, lado a lado**: A en oro
+brillante, B en gris piedra/rojo apagado (o el mismo país "1895" dorado vs "HOY" agrietado); al centro una caja roja con
+**"¿POR QUÉ?"** o **"¿QUÉ PASÓ?"** (2 palabras), los nombres de los países en etiquetas pequeñas con franja de bandera; marca
+"EN NÚMEROS ROJOS" pequeña abajo a la izquierda; esquina inferior derecha libre; sin gráfico con ejes, sin foto de calle, sin
+cifras. Alternativa probada: pantalla partida con fotos documentales A | B (Panamá 6,5 %). Plantilla del pedido:
+`docs/PEDIDO-CARATULA-MOLDE.md` (copia en `salida/caratulas/pedidos/`). Prueba final: "¿sin leer el título se entiende quién contra quién?".
+
+**Medida:** CTR ≥ 4,5 % e impresiones ≥ 1.500 a 7 días por largo (`docs/ESTRATEGIA.md` §0).
 
 ## 11. Lista de verificación final (el generador y el revisor la pasan; todo bloqueante)
 

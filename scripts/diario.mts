@@ -390,14 +390,15 @@ const pasoRender = (tipo: TipoVideo) => async (log: Log) => {
 // ---------------------------------------------------------------- (b) generar
 const pasoGenerar = async (log: Log) => {
   const calendario = cargarCalendario();
-  const backlog = leerBacklog();
+  // Sin Shorts activos, los guiones `grafico` que queden en el backlog no cuentan para el mínimo.
+  const backlog = leerBacklog().filter((g) => calendario.shortsActivos || g.plantilla !== 'grafico');
   if (backlog.length >= calendario.minimoBacklog) {
     log(`(b) Backlog con ${backlog.length} guion(es) ≥ ${calendario.minimoBacklog}: no se generan.`);
     return;
   }
   const generador = path.join(RAIZ, 'scripts', 'generar-guiones.mts');
   if (!fs.existsSync(generador)) return log('(b) No existe scripts/generar-guiones.mts: no se puede generar.');
-  const plantillas = [...new Set<Plantilla>([...calendario.rotacionLargo, ...calendario.rotacion])];
+  const plantillas = [...new Set<Plantilla>([...calendario.rotacionLargo, ...(calendario.shortsActivos ? calendario.rotacion : [])])];
   // Lleva cada plantilla a ~minimoBacklog/plantillas, empezando por la que menos tiene (largos primero: son el producto).
   const meta = Math.ceil(calendario.minimoBacklog / plantillas.length) + 1;
   const plan = plantillas
@@ -465,7 +466,8 @@ const main = async () => {
       if (h.length) l(`(0) ✗ ${h.length} json 'listo' sin mp4 → estado 'error': ${h.map((e) => e.id).join(', ')}`);
     }, true],
     // Shorts primero (minutos; la ranura de las 13:00 es diaria), luego el largo (~2 h, de madrugada).
-    ['render shorts', pasoRender('short'), render && !opc['solo-largos']],
+    // Canal solo de largos (calendario.shortsActivos = false, desde 2026-11-23): sin Shorts salvo `--n K` explícito.
+    ['render shorts', pasoRender('short'), render && !opc['solo-largos'] && (cargarCalendario().shortsActivos || opc.n !== undefined)],
     ['render largos', pasoRender('largo'), render && !opc['sin-largos']],
     ['generar', pasoGenerar, render && !opc['solo-render'] && !opc['sin-generar'] && !opc['solo-largos']],
     ['subir', pasoSubir, !opc['solo-render'] && !opc['solo-largos']],

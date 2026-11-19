@@ -1,8 +1,34 @@
 > 🎯 **OBJETIVO: lograr la MONETIZACIÓN y GANAR MUCHO DINERO. Lo MÁS IMPORTANTE, por encima de calidad, volumen, herramientas o cualquier otra meta, es MONETIZAR y HACER GANAR DINERO a Santiago** (orden textual de Santiago, 2026-11-05). Todo lo demás es instrumento. Skill `estrategia-viva`.
 
-# En Números Rojos — Estrategia (Claude al mando; actualizado 2026-11-15, revisión "salvar o cerrar")
+# En Números Rojos — Estrategia (Claude al mando; actualizado 2026-11-18, solo largos + molde de los canales nuevos)
 
-## 0. Revisión 2026-11-15 — MODO "SALVAR O CERRAR" (manda sobre las secciones de abajo donde choquen)
+## 00. Revisión 2026-11-18 — SOLO LARGOS + molde de los canales nuevos (manda sobre §0 y todo lo de abajo donde choque)
+
+Base: diagnóstico de virales del 18-11 (`/home/santiago/projects/yt/_propuestas/2026-11-18-diagnostico-virales.md` §4), aprobado
+por Santiago ("si choca con lo mío, gana lo que tenga evidencias"). Hay **tres canales nacidos en octubre de 2026 con exactamente
+nuestro formato largo** que crecen: Fortune of Nations en Español (mediana 71 K), Borderline Billions (41 K) y Curiosito (13 K;
+"¿Por qué Argentina dejó de ser potencia?" 347 K, mismo tema que nuestro Argentina de 21 vistas). Ninguno sube Shorts.
+
+| Decisión | Por qué (evidencia) | Dónde vive |
+|---|---|---|
+| **Canal solo de largos desde el lun 2026-11-23**: 2 por semana, **lunes y jueves 19:00**. No se producen Shorts nuevos; los ya programados (hasta el lun 23-11 13:00) se quedan. Excepción puntual: contingencia de demanda enorme decidida por la sesión principal (GTA 6, vie 20-11). | Shorts NR: mediana 166 vistas, 31–39 % "se queda" incluso con cold open (2 rediseños); los 3 referentes son solo largos: el canal entero es una señal limpia de "largo de economía comparada" | `contenido/calendario.json` (`shortsActivos: false`), `scripts/diario.mts`, `docs/PLAN-SEMANAL.md` |
+| **Molde de título y carátula** (`GUION.md` §10b): "¿Por qué A se hizo rico y B no?" / "A era más rico que B. ¿Qué pasó?" / paradoja concreta; carátula = 2 siluetas de mapa (oro vs gris) + "¿POR QUÉ?" | Panamá (pantalla partida A \| B) CTR 6,5 %; títulos con cifra técnica 1,0–3,2 %; los 3 referentes usan el molde | `docs/GUION.md` §10b, `docs/PEDIDO-CARATULA-MOLDE.md` |
+| **Arranque con escena** (`GUION.md` §3b): fecha + lugar + detalle humano; sin gráfico ni "PIB/Maddison/capítulos" en los primeros 30 s | Chile-Corea: 56 % sigue a los 30 s; los referentes abren con escena ("El 1 de diciembre de 1913, debajo de Buenos Aires…") | `scripts/generar-guiones.mts` (`chequeosArranqueLargo`) |
+| **Reparto con Entender Chile**: NR = comparaciones entre países (LatAm vs LatAm, LatAm vs mundo); EC = solo Chile. NR no hace temas exclusivamente chilenos | Los dos canales se pisaban (economía de Chile con gráficos, mismo motor) | `docs/GUION.md` §1; EC `estrategia/decisiones.md` |
+| Retitulados al molde (por API, reversibles): Venezuela, Irlanda, Argentina, Uruguay, México | ver `docs/DECISIONES.md` 2026-11-18 | `scripts/titulo.mts` |
+
+**Criterio de corte (fecha sin cambio: lun 2026-12-07; control lun 2026-11-30) — ahora se mide en LARGOS.** Se miden los largos
+publicados del **vie 20-11 al lun 30-11** con título del molde (Venezuela, Irlanda, jue 26-11, lun 30-11), en Studio a 7 días:
+- (a) **CTR ≥ 4,5 %** en al menos 3 de los 4;
+- (b) **impresiones ≥ 1.500** a 7 días en al menos 3 de los 4;
+- (c) **retención a los 30 s ≥ 60 %** (mediana de los 4; hoy 56 % en Chile-Corea);
+- (d) **≥ 40 suscriptores** totales al 07-12.
+Cumple 4 → sigue y se evalúa subir a 3 largos/semana; cumple 2–3 → sigue 2 semanas más atacando la variable que falla (CTR →
+carátula/título; impresiones → tema; retención → arranque); **cumple 0–1 → se recomienda a Santiago pausar la producción de NR**
+(el canal queda publicado, sin borrar nada) y pasar su cupo a Línea Punteada. La pausa la decide Santiago. Los criterios de
+Shorts de §0 (se queda ≥ 50 %, Short ≥ 1.500) **quedan derogados**.
+
+## 0. Revisión 2026-11-15 — MODO "SALVAR O CERRAR" (manda sobre las secciones de abajo donde choquen; §00 manda sobre esta)
 
 Pedido de Santiago: "no está siendo efectivo, no crece". Diagnóstico con Studio (piloto, 2026-11-15 00:00) a 8 días del lanzamiento:
 **3 subs, ~1.950 vistas, ~7 h de visualización**. Línea Punteada, mismo motor y 2 días mayor: 51 subs / 26 K vistas.
@@ -95,7 +121,7 @@ y lo mismo con subs. Si cae después del 2027-04-30, se cambia algo esa misma se
   consejo → cierre simétrico + puente al siguiente).
 - **4 estructuras argumentales en rotación** (ninguna > 40 % de los largos de la semana): las define el schema de `tesis`
   (`estructura`). **≥ 2 tipos de gráfico por largo** (líneas, barras, ranking, área, contador, comparación, mapa, tarjeta).
-- **Short `grafico` 9:16, 35–50 s** = el embudo: UN gráfico que sorprende, derivado del largo de la semana o autónomo, con
+- (Derogado el 2026-11-18: el canal no produce Shorts desde el 23-11; ver §00.) **Short `grafico` 9:16, 35–50 s** = el embudo: UN gráfico que sorprende, derivado del largo de la semana o autónomo, con
   enlace al largo (descripción + comentario fijado).
 - **Series** (razón para volver): "El país que fue rico", "Cuánto rinde tu sueldo", "Quiebras explicadas", "El indicador que
   nadie mira". Cada largo termina con la pregunta del siguiente de su serie.
@@ -104,7 +130,7 @@ y lo mismo con subs. Si cae después del 2027-04-30, se cambia algo esa misma se
 
 ## 4. Cadencia
 
-- **3 largos/semana: lunes, miércoles y viernes 19:00** (America/Santiago; 17:00 CDMX, 19:00 Buenos Aires, 23:00 Madrid).
+- (2026-11-18, §00: **2 largos/semana, lunes y jueves 19:00, sin Shorts**; lo que sigue es el plan original.) **3 largos/semana: lunes, miércoles y viernes 19:00** (America/Santiago; 17:00 CDMX, 19:00 Buenos Aires, 23:00 Madrid).
 - **1 Short/día a las 13:00.** **Tope 1 Short/día hasta el YPP** (luego 3/semana): AIR Media-Tech midió que mezclar 21+
   Shorts/mes deprime el RPM de los largos del mismo canal (−77 % en entretenimiento). Más Shorts no compran horas.
 - Lanzamiento (decidido por la sesión principal el 2026-11-05): primer Short **sáb 2026-11-07 13:00**, primer largo

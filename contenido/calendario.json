@@ -1,6 +1,6 @@
 {
   "zonaHoraria": "America/Santiago",
-  "comentario": "En Números Rojos. Ranuras (dias: 0=domingo … 6=sábado). El PRODUCTO es el largo `tesis` (ranurasLargo): lunes y jueves 19:00 (desde 2026-11-23, revisión de estrategia 2026-11-15; antes L-M-V). El Short `grafico` es el embudo: 1 al día a las 13:00 (tope 1/día hasta el YPP: mezclar muchos Shorts deprime el RPM de los largos). El diario trata `tesis` como tipo 'largo' (16:9, sin #Shorts, categoría 27) y `grafico` como 'short'.",
+  "comentario": "En Números Rojos. Ranuras (dias: 0=domingo … 6=sábado). DESDE EL LUN 2026-11-23 EL CANAL ES SOLO DE LARGOS (decisión 2026-11-18, diagnóstico de virales: los canales nuevos que ganan con este formato no suben Shorts; los nuestros daban mediana 166 vistas y 31–39 % 'se queda'): `shortsActivos: false` → el diario no renderiza ni genera Shorts `grafico` (salvo `--n K` a mano). Los Shorts ya programados en Studio hasta el 23-11 se quedan. Largo `tesis` lunes y jueves 19:00 (2/semana). `ranuras` y `rotacion` quedan solo para compatibilidad del schema.",
   "ranuras": [
     {
       "dias": [
@@ -31,8 +31,9 @@
   "rotacionLargo": [
     "tesis"
   ],
+  "shortsActivos": false,
   "minimoBandeja": 3,
   "minimoBandejaLargos": 2,
-  "minimoBacklog": 8,
+  "minimoBacklog": 4,
   "margenMinutos": 20
 }

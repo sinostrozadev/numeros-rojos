@@ -63,3 +63,35 @@
   CTR ≥ 3,5 % y ≥ 400 vistas a 7 d; ≥ 40 subs. 0–1 de 3 → recomendar a Santiago pausar NR y pasar el cupo a Línea Punteada.
 - Proyección honesta: a ~36 vistas de largo/día no hay YPP en 12 meses; hace falta ×30 en vistas por largo. Resumen para producción:
   `/home/santiago/projects/yt/_propuestas/nr-estrategia-2026-11-15.md`.
+
+## 2026-11-18 (noche) — Solo largos, molde de los canales nuevos, arranque con escena, reparto con EC (diagnóstico de virales)
+- **Base:** `/home/santiago/projects/yt/_propuestas/2026-11-18-diagnostico-virales.md` §4, aprobado por Santiago ("si choca con lo
+  mío, gana lo que tenga evidencias… yo solo quiero ver buenos resultados"). Tres canales nacidos en oct-2026 con nuestro formato
+  largo crecen (Fortune of Nations ES mediana 71 K, Borderline Billions 41 K, Curiosito 13 K y 347 K con nuestro mismo tema de
+  Argentina); ninguno sube Shorts. Nuestros Shorts: mediana 166, 31–39 % "se queda" tras 2 rediseños.
+- **(1) Solo largos desde el lun 23-11** (lun y jue 19:00). `contenido/calendario.json` → `shortsActivos: false`, `minimoBacklog` 4
+  (solo cuentan los `tesis`); `diario.mts` no renderiza ni genera `grafico` salvo `--n K`; `estado.mts` deja de pedir Shorts.
+  Los Shorts ya programados (hasta el Short Irlanda `8JBkI1LW1B4`, lun 23-11 13:00) se quedan.
+- **Corte del 07-12 reescrito en largos** (ESTRATEGIA §00): CTR ≥ 4,5 % e impresiones ≥ 1.500 a 7 d en 3 de 4 largos (20-11 → 30-11),
+  retención a 30 s ≥ 60 % (mediana), ≥ 40 subs. 0–1 de 4 → recomendar pausa a Santiago. Los criterios de Shorts quedan derogados.
+- **(2) Molde de título y carátula** → `GUION.md` §10b + `docs/PEDIDO-CARATULA-MOLDE.md` (2 siluetas de mapa oro/gris + "¿POR QUÉ?").
+- **(3) Arranque con escena** → `GUION.md` §3b + `chequeosArranqueLargo` en `generar-guiones.mts` (gancho sin gráfico, con año y
+  nombre propio; sin PIB/per cápita/Maddison/capítulos/gráficos/fuentes en gancho, promesa, rótulo ni cabecera). Los 4 `tesis`
+  viejos del backlog no lo pasan (esperado: no se re-renderizan los ya subidos; el untracked `tesis-chile-era-mas-pobre-que-mexico`
+  repite el tema de México y no debe producirse sin reescribir el arranque).
+- **(5) Reparto con Entender Chile:** NR = comparaciones entre países (LatAm/mundo); EC = solo Chile. NR deja los temas
+  exclusivamente chilenos (`GUION.md` §1).
+- **(4) Retitulados por API** (`scripts/titulo.mts`, conserva descripción, tags, categoría, idiomas y `publishAt`; para revertir:
+  `npx tsx scripts/titulo.mts <id> "<título anterior>" --aplicar`):
+
+| id | Publica | Título anterior | Título nuevo |
+|---|---|---|---|
+| `PpkBOxDMuLg` | vie 20-11 19:00 | Venezuela doblaba a España en 1960. En 2022, ni un sexto | Venezuela era más rica que España. ¿Qué pasó? |
+| `3m2VqXoQIO0` | lun 23-11 19:00 | Irlanda creció un 25 % en un año. Su gente, un 2 % | ¿Por qué Irlanda creció 25 % en un año y su gente no? |
+| `BQNaK5R-yrk` | público (CTR 2,2 %) | Argentina era más rica que Alemania. ¿Qué pasó después? | ¿Por qué Argentina dejó de ser rica? 1895 vs hoy |
+| `JBZm6fouVPM` | público (CTR 1,0 %) | ¿Por qué Uruguay es el país más caro de Sudamérica? | ¿Por qué Uruguay es tan caro? |
+| `419I0beU4SA` | público desde 18-11 19:00 | México producía 29 % más que Chile en 1994. Ya no | México era más rico que Chile. ¿Qué pasó? |
+
+  Sin cambio: Chile-Corea `K5ma4A5VFj8` (ya tiene el molde "A era más rico que B. ¿Qué pasó?") y Panamá `vRrVLHRROnA` (CTR 6,5 %).
+  Carátulas: Venezuela e Irlanda conservan su GPT (pantalla partida, el estilo de Panamá); se pidió a GPT la carátula molde de
+  Argentina (2 siluetas "1895" oro vs "HOY" gris + "¿QUÉ PASÓ?") como primera prueba del molde puro.
