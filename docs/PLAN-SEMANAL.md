@@ -84,7 +84,7 @@ Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argenti
 |---|---|---|---|---|---|
 | lun 23-11 | 13:00 | (Short Irlanda `8JBkI1LW1B4`, ya programado; último Short del canal) | programado | — | se queda |
 | lun 23-11 | 19:00 | **¿Por qué Irlanda creció 25 % en un año y su gente no?** (`3m2VqXoQIO0`, retitulado el 18-11) | programado | — | ranura ocupada desde el rescate del 15-11 |
-| jue 26-11 | 19:00 | **¿Por qué Nueva Zelanda se hizo rica y Chile no?** — escena de arranque candidata: un barco frigorífico zarpa de Port Chalmers (Dunedin) en febrero de 1882 con carne congelada hacia Londres (el "Dunedin", 15-02-1882; verificar), mientras Chile vive del salitre de Iquique y Antofagasta | guion aprobado (revisor ronda 2, 4,57) → render nube → subida el jue 19 | Fortune of Nations, "¿Por qué Australia se hizo rica y Argentina no?" 67 K, 202 comentarios ← https://www.youtube.com/watch?v=ij_ab_gDcyU | mismo molde y mismo dataset (Maddison/WDI); los dos son exportadores de materias primas del sur, lejos de todo; audiencia CL (70 %+) dentro |
+| jue 26-11 | 19:00 | **¿Por qué Nueva Zelanda se hizo rica y Chile no?** — escena de arranque candidata: un barco frigorífico zarpa de Port Chalmers (Dunedin) en febrero de 1882 con carne congelada hacia Londres (el "Dunedin", 15-02-1882; verificar), mientras Chile vive del salitre de Iquique y Antofagasta | **programado `n8fV62smf04`** (publishAt 2026-11-26T22:00Z verificado por API; carátula GPT puesta) | Fortune of Nations, "¿Por qué Australia se hizo rica y Argentina no?" 67 K, 202 comentarios ← https://www.youtube.com/watch?v=ij_ab_gDcyU | mismo molde y mismo dataset (Maddison/WDI); los dos son exportadores de materias primas del sur, lejos de todo; audiencia CL (70 %+) dentro |
 | (jue 26-11 alternativa) | 19:00 | **GTA 6 en números** — SOLO si al jue 19-11 17:00 Take-Two publicó **cifras oficiales** de ventas (comunicado o reporte; nunca estimaciones de Sensor Tower como si fueran oficiales). Si entra, toma el jue 26 y Nueva Zelanda pasa al lun 30-11 | **descartado el jue 19-11 14:00**: sin cifras oficiales de Take-Two (solo "sin precedentes" de Zelnick sin unidades y estimaciones de analistas) | propuesta `/home/santiago/projects/yt/_propuestas/2026-11-18-gta6.md` §5B/§7 | la ola dura 1–2 semanas; sin imágenes del juego, tráilers, logos ni tipografía que lo imite; comparación con taquillas, giras y PIB de países LatAm |
 
 **Ritual del jue 19-11 (sesión multicanal, regla "cerrar frentes"):** semana 23→29 = lun 23 Irlanda `3m2VqXoQIO0` y jue 26 Nueva
@@ -585,7 +585,7 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "serie": null,
       "contingencia": null,
       "guion": "contenido/backlog/tesis-por-que-nueva-zelanda-se-hizo-rica.json",
-      "videoId": null,
+      "videoId": "n8fV62smf04",
       "referente": "Fortune of Nations ES, ¿Por qué Australia se hizo rica y Argentina no? (67 K) https://www.youtube.com/watch?v=ij_ab_gDcyU",
       "porQue": "molde de los canales nuevos (GUION §10b) + arranque con escena (§3b); si Take-Two publica ventas oficiales al jue 19 17:00, esta ranura es 'GTA 6 en números' y NZ pasa al lun 30 · GTA descartado el 19-11 (sin cifras oficiales de Take-Two)",
       "bloqueo": null,
@@ -594,7 +594,7 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "formato": "largo",
       "plantilla": "tesis",
       "tema": "¿Por qué Nueva Zelanda se hizo rica y Chile no?",
-      "estado": "guion"
+      "estado": "programado"
     },
     {
       "fecha": "2026-11-30",
