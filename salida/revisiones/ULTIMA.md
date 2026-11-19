@@ -1,43 +1,47 @@
-# Revisión 2026-11-15 — En Números Rojos (agente de estrategia: "no crece, revisa la estrategia")
+# Revisión 2026-11-18 (noche) — En Números Rojos (aplicar el diagnóstico de virales)
 
 ## Detectado
-- Studio a 8 días del lanzamiento: 3 subs, ~1.950 vistas, ~7 h. Línea Punteada (mismo motor): 51 subs / 26 K.
-- **Shorts:** el 95,7 % de sus vistas viene del feed (YouTube sí los prueba), pero "se queda a ver" es 38 · 34 · 18 · 48 · 33 · 32 · 29 %
-  (media 32,6 %; LP 71 %; meta ≥ 55 %). El feed los deja de empujar: 646 → 412 → 319 → 43 → 3 → 89 → 139 vistas.
-- **Fotograma 0 del Short:** gráfico vacío con ejes, subtítulo técnico "Inflación (deflactor del PIB, % anual) · %" y bloque de fuente;
-  la voz abre "Según el Banco Mundial…". LP abre con un mapa y "¿DE QUIÉN ES ESTE LAGO?".
-- **Largos:** Chile-Corea 1.600 impresiones, CTR 2,7 % (carátula GPT), 227 vistas, duración media 3:06 (30 %); Uruguay 1.300 impresiones,
-  CTR 1,0 % (miniatura de Remotion con barras y pie de fuente), 24 vistas, 3:47 (37 %). El cuello está en el clic.
-- **Operación:** los largos Argentina (`BQNaK5R-yrk`) e Irlanda (`3m2VqXoQIO0`) y el Short Irlanda (`8JBkI1LW1B4`) estaban en **Draft**
-  desde el 11-09: el lote imprimió ✓ y nadie verificó la lista de Studio. Solo 2 de 4 largos salieron.
-- Audiencia: 81 % Chile, 99 % espectadores nuevos; los mejores Shorts son rivalidades con Chile dentro (Chile-Corea 646, Panamá-Chile 412).
+- Tres canales nacidos en octubre de 2026 con **exactamente nuestro formato largo** crecen: Fortune of Nations en Español (mediana
+  71 K), Borderline Billions (41 K), Curiosito (13 K; "¿Por qué Argentina dejó de ser potencia?" 347 K = nuestro Argentina de 21
+  vistas). Ninguno sube Shorts. Diagnóstico completo: `/home/santiago/projects/yt/_propuestas/2026-11-18-diagnostico-virales.md` §4.
+- Nuestros Shorts: mediana 166 vistas, 31–39 % "se queda" aun con cold open (2 rediseños). Largos: CTR 1,0–3,2 % con títulos de cifra
+  técnica; Panamá (pantalla partida A | B) 6,5 %. Chile-Corea: 56 % sigue a los 30 s.
+- **Visual a los 3 s** (fotogramas en `lab/diagnostico-2026-11-18/tr/`): Fortune = archivo sepia de Buenos Aires 1913 a sangre;
+  Curiosito = mapa de época ilustrado con íconos, un personaje y la etiqueta "PARÍS hacia 1910"; chilenómetro = valle en 3D con "AÑO
+  1540"; Batallas en el Mapa = campo de batalla en 3D. Nosotros = gráfico de barras vacío con "PIB por persona (Maddison, US$
+  internacionales de 2011)" y la línea de fuente.
 
 ## Mejorado
-- Plantilla `grafico`: **cold open** (gráfico terminado en el frame 0 durante 1,1 s y rebobinado en 0,4 s), sin la línea técnica del
-  indicador, pie "Fuente" desde los 3 s. tsc limpio; fotogramas de prueba revisados (Argentina inflación, escala 0,25).
-- `docs/GUION.md` §4b (primer segundo del Short y orden de temas) y §10 (largo sin carátula GPT no sale; título con Chile/Argentina).
-- `scripts/generar-guiones.mts`: `chequeosGanchoShort` rechaza ganchos que abren con la fuente, primera frase > 14 palabras, jerga
-  (PIB, per cápita, PPA, deflactor…) y rótulos > 4 palabras. Probado sobre los 19 Shorts existentes: marca 10.
-- `herramientas/navegador/subir-studio.mjs`: BORRADOR=1 elige el borrador por título exacto (había 4 en Draft) y `publicarEn` refleja
-  la fecha programada.
-- `docs/ESTRATEGIA.md` §0: modo "salvar o cerrar", hipótesis muertas, qué se duplica y qué se mata, proyección y criterio de corte.
-- `contenido/calendario.json`: largos lunes y jueves 19:00 desde el 23-11.
+- **Canal solo de largos desde el lun 23-11** (lun y jue 19:00): `calendario.json` `shortsActivos: false`; `diario.mts` no renderiza ni
+  genera Shorts (salvo `--n`), `estado.mts` deja de pedirlos. Corte del 07-12 reescrito en largos (ESTRATEGIA §00).
+- **Arranque con escena** (GUION §3b) con validador `chequeosArranqueLargo` en `generar-guiones` (gancho sin gráfico, con año y lugar;
+  sin PIB/per cápita/Maddison/capítulos/gráficos/fuentes en los primeros 30 s).
+- **Molde de título y carátula** (GUION §10b, `docs/PEDIDO-CARATULA-MOLDE.md`).
+- **5 largos retitulados al molde por API** (tabla con títulos anteriores en `docs/DECISIONES.md`): Venezuela `PpkBOxDMuLg`, Irlanda
+  `3m2VqXoQIO0`, Argentina `BQNaK5R-yrk`, Uruguay `JBZm6fouVPM`, México `419I0beU4SA`.
+- Reparto con Entender Chile: NR = comparaciones entre países; EC = solo Chile (GUION §1).
+
+- **Contingencia GTA 6** (excepción puntual a "solo largos", pedida por la sesión principal): Short "¿Cuántas horas de sueldo mínimo
+  cuesta GTA 6 en tu país?" (España 10 h · EE. UU. 11 · Chile 25 · México 33 · Colombia 35 · Argentina 59), precios leídos de la Xbox
+  Store el 18-11, `verificar-cifras` ✓, render en GitHub Actions (2,5 min, run 44450277857), subido por Studio bajo `piloto.lock`:
+  `AgGIMWE67oI`, **publishAt 2026-11-20T16:00Z = vie 20-11 13:00** verificado por API. El Short Corea `7z5bMWnsmH0` pasó al mar 24-11 13:00.
 
 ## Herramientas exploradas
-- Studio por video con el piloto (Analytics → "Stayed to watch", Impressions, CTR, Average view duration): script de volcado de texto
-  por URL (scratchpad) — candidato a `herramientas/navegador/retencion-studio.mjs` propio de NR.
-- Referentes por el piloto: Los Ecomonos (474 K subs; últimos 24 largos 96 K–1,2 M; temas de bolsillo, futuro e IA, todos "explicado con
-  plátanos"); VisualEconomik Shorts (3–28 K, picos 162–224 K con "¿Es hoy todo más caro que antes?"); búsquedas "por qué Chile economía"
-  y "economía latinoamérica explicada" (lo que crece: Chile vs Argentina, cobre, "por qué no despega").
-- ffmpeg del sistema no está; se usó el de `@remotion/compositor-linux-x64-gnu` (sin filtro hstack).
+- YouTube Data API `videos.update` (snippet) y `status.publishAt` con el token nuevo del canal (sin piloto): retitular y reprogramar.
+  Gotcha: la lectura tarda ~10–20 s en reflejar el cambio (los scripts reintentan).
+- Precios de la Xbox Store leídos del JSON embebido en xbox.com/<locale>/games/store/… (`productSummaries`/`specificPrices`): sirve para
+  verificar precios oficiales sin piloto (la PS Store carga con JavaScript y no se lee con curl).
 
 ## Agregado
-- Rescate verificado en la lista de Studio: Argentina `BQNaK5R-yrk` Scheduled 15-11 19:00 e Irlanda `3m2VqXoQIO0` Scheduled 23-11 19:00.
-- `/home/santiago/projects/yt/_propuestas/nr-estrategia-2026-11-15.md` (reglas de 1 página para producción).
-- Pedido de carátula GPT para Uruguay (ya publicado) y para los largos 16/18/20 en `_propuestas/largos-sin-caratula.md`.
-- Bloque "Revisión de estrategia 2026-11-15" en `docs/PLAN-SEMANAL.md` (rescates y semana 23–29).
+- `scripts/titulo.mts` (cambia solo el título, conserva el snippet, verifica canal), `scripts/reprogramar.mts` (publishAt de un video
+  privado), `scripts/miniatura.mts` (copiado de LP), `docs/PEDIDO-CARATULA-MOLDE.md`.
+- Plan del hito del jue 19-11 (semana 23→29) con el molde: jue 26 "¿Por qué Nueva Zelanda se hizo rica y Chile no?" (sobre el
+  outlier de Fortune) y "GTA 6 en números" solo si Take-Two publica cifras oficiales.
 
 ## Pendiente
-- Medir el cold open: "se queda a ver" de los Shorts del 17-11 en adelante (meta ≥ 50 %). Control lun 2026-11-30; corte lun 2026-12-07.
-- Que la verificación "Scheduled" en la lista quede dentro de `subir-studio.mjs` (hoy se hace a mano).
-- Decisión de Santiago si el 2026-12-07 cumple 0–1 de 3 criterios: pausar NR y pasar su cupo a Línea Punteada.
+- ⚠ Error propio: corrí `scripts/estado.mts` sin `--sin-metricas` y lanzó `metricas.mts`, que usó el piloto ~1 min (03:05 UTC) **sin**
+  `flock /tmp/piloto.lock` (verificó el canal NR; capturas en `salida/metricas/2026-11-19/`). Para revisar el plan: `estado.mts --sin-metricas`.
+  Propuesta: que `metricas.mts` tome el lock él mismo.
+- Render local del GTA quedó en cola >20 min detrás de Bolita/Blender/serie: para un Short urgente, `producir.yml` en Actions es más rápido.
+- Plantilla `tesis`: soportar `gancho.visual` (foto de archivo a sangre en el frame 0) antes del render del jue 26.
+- Medir el 25-11 el CTR de los 5 retitulados (Studio, 7 días) y la carátula molde de Argentina.
