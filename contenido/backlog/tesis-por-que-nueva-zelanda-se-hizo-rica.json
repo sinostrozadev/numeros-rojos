@@ -1,0 +1,1820 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-por-que-nueva-zelanda-se-hizo-rica",
+  "titulo": "¿Por qué Nueva Zelanda se hizo rica y Chile no?",
+  "descripcion": "¿Por qué Nueva Zelanda se hizo rica y Chile no, si los dos viven de exportar lo que da la tierra?\n\nDesde el velero Dunedin, que en 1882 llevó la primera carga de carne congelada de Nueva Zelanda a Londres, seguimos más de 170 años de datos del Proyecto Maddison y del Banco Mundial.\nChile se acercó con el salitre y se alejó en cada crisis: 1930, 1975, 1982. Nueva Zelanda también vive de materias primas, pero se cayó mucho menos.\nEl dato que más sorprende: desde 1882, el ingreso por persona de Chile creció más rápido que el neozelandés.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.PCAP.PP.KD, NY.GDP.PCAP.KD, NY.GDP.PCAP.KD.ZG, FP.CPI.TOTL.ZG, TX.VAL.MMTL.ZS.UN, TX.VAL.FOOD.ZS.UN, TX.VAL.MANF.ZS.UN, GB.XPD.RSDV.GD.ZS (CC BY 4.0) https://data.worldbank.org\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#nuevazelanda",
+    "#chile",
+    "#salitre",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-por-que-nueva-zelanda-se-hizo-rica",
+    "cabecera": "NUEVA ZELANDA VS CHILE · 1850–2024",
+    "gancho": {
+      "texto": "Port Chalmers, Nueva Zelanda, 15 de febrero de 1882. Zarpa hacia Londres el velero Dunedin, con la bodega llena de carne congelada. En mayo llega en buen estado. Ese mismo año, en Iquique y Antofagasta, los barcos se llenan de salitre, que Chile acaba de tomar en la Guerra del Pacífico. Dos exportadores del sur, lejos de todo. Hoy, por cada diez dólares que produce un neozelandés, un chileno produce seis. ¿Por qué uno se hizo rico y el otro no?",
+      "rotulo": "PORT CHALMERS, 1882",
+      "cifras": [
+        {
+          "texto": "un chileno produce seis",
+          "valor": 0.6,
+          "tolerancia": 0.08,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "NZL",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "NZL",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "promesa": "La respuesta fácil es que Chile exportaba minerales y Nueva Zelanda comida. Los datos cuentan otra historia. Lo que separó a estos dos países no se ve en los años buenos. Se ve en las caídas.",
+    "indice": [
+      "Quién iba adelante",
+      "El golpe de 1930",
+      "Qué exporta cada uno",
+      "Lo que sí los separa"
+    ],
+    "estructura": "comparacion",
+    "capitulos": [
+      {
+        "titulo": "1882: Nueva Zelanda ya iba adelante",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Mira el mapa. Nueva Zelanda y Chile están a medio planeta de Londres, que en el siglo diecinueve era el gran mercado del mundo. Los dos le exportaban sobre todo a Europa. Los dos vivían de lo que daba la tierra o de lo que había debajo de ella. Y cada carga tenía que cruzar océanos enteros antes de cobrarse.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "NZL",
+                "CHL",
+                "GBR"
+              ],
+              "zoom": 1,
+              "flechas": [
+                {
+                  "desde": "NZL",
+                  "hasta": "GBR",
+                  "texto": "lana y carne"
+                },
+                {
+                  "desde": "CHL",
+                  "hasta": "GBR",
+                  "texto": "salitre"
+                }
+              ],
+              "etiquetas": [
+                {
+                  "texto": "Port Chalmers",
+                  "en": [
+                    170.62,
+                    -45.81
+                  ]
+                },
+                {
+                  "texto": "Iquique",
+                  "en": [
+                    -70.15,
+                    -20.21
+                  ]
+                }
+              ],
+              "dice": "mapa."
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "El Proyecto Maddison, de la Universidad de Groningen, reconstruye cuánto producía cada país hacia atrás. En 1850, un neozelandés producía un tercio más que un chileno. Veinte años después, el ingreso neozelandés casi se triplicó. En 1861 aparece oro en Otago, y detrás del oro llegan barcos con colonos y ovejas.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona, 1850–1913",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1850,
+                "hasta": 1913,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1861,
+                  "texto": "Oro en Otago",
+                  "dice": "Otago,"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "Maddison,"
+            },
+            "cifras": [
+              {
+                "texto": "un tercio más",
+                "valor": 1.35,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 1850
+                }
+              },
+              {
+                "texto": "casi se triplicó",
+                "valor": 171,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NZL",
+                  "anio": 1850,
+                  "anioB": 1870
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Otago goldfields 1860s",
+              "alternativas": [
+                "Gabriels Gully Otago",
+                "Otago gold rush"
+              ],
+              "pie": "Campos de oro de Otago, Nueva Zelanda (siglo XIX)",
+              "dice": "Otago,",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ahora vuelve a 1882, el año del Dunedin. Según esa misma base, un neozelandés ya producía más del doble que un chileno. Hasta entonces, la carne que sobraba se hervía para sacarle grasa. El barco frigorífico le abrió a Nueva Zelanda un negocio nuevo. Ya no exportaba solo lana. Ahora también podía mandar cordero y mantequilla a Londres sin que se echaran a perder.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "1882: el año del Dunedin",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1882,
+                "hasta": 1882,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1882,"
+            },
+            "cifras": [
+              {
+                "texto": "más del doble",
+                "valor": 2.16,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 1882
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MÁS DEL DOBLE",
+              "dice": "doble"
+            },
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Dunedin ship 1882",
+              "alternativas": [
+                "Dunedin (ship)",
+                "Dunedin refrigerated ship"
+              ],
+              "pie": "Velero Dunedin, primer envío de carne congelada (1882)",
+              "dice": "Dunedin.",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero mira lo que hizo el salitre. Con el impuesto al salitre, el Estado chileno financiaba buena parte de su gasto. Entre 1882 y 1928, el ingreso por persona chileno más que se duplicó. El neozelandés creció algo más de un 40 %. En 1928, un neozelandés producía menos de una vez y media lo que un chileno. Desde 1860, nunca volvieron a estar tan cerca.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Con el salitre, Chile se acerca",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1880,
+                "hasta": 1930,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1928
+              },
+              "anotaciones": [
+                {
+                  "anio": 1928,
+                  "texto": "La menor distancia",
+                  "dice": "cerca."
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "salitre."
+            },
+            "cifras": [
+              {
+                "texto": "más que se duplicó",
+                "valor": 108,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1882,
+                  "anioB": 1928
+                }
+              },
+              {
+                "texto": "algo más de un 40 %",
+                "valor": 41,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NZL",
+                  "anio": 1882,
+                  "anioB": 1928
+                }
+              },
+              {
+                "texto": "menos de una vez y media",
+                "valor": 1.46,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 1928
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "1928: LO MÁS CERCA",
+              "dice": "1928,"
+            },
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Humberstone saltpeter works",
+              "alternativas": [
+                "Humberstone and Santa Laura Saltpeter Works",
+                "Oficina Santa Laura Chile"
+              ],
+              "pie": "Oficina salitrera de Tarapacá, Chile (hoy museo)",
+              "dice": "salitre.",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido",
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¡Chile se estaba acercando!",
+              "dice": "cerca."
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "1930: el golpe que Chile sintió más",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "El salitre tenía un rival que en Chile pocos vieron venir. Desde 1913, en Alemania, una fábrica saca nitrógeno del aire para hacer abono. Y en 1929 llega la Gran Depresión. Los países que pagaban por el salitre dejan de pedir, y el que todavía pide prefiere el abono de fábrica.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Dos golpes al salitre",
+              "items": [
+                {
+                  "icono": "🏭",
+                  "texto": "Abono de fábrica",
+                  "marca": "no",
+                  "dice": "fábrica"
+                },
+                {
+                  "icono": "📉",
+                  "texto": "Gran Depresión",
+                  "marca": "no",
+                  "dice": "Depresión."
+                }
+              ]
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "La caída se ve en la línea. Según la base Maddison, entre 1929 y 1932 el ingreso por persona de Chile se encogió casi la mitad. En Nueva Zelanda, el mismo golpe se llevó algo menos de una quinta parte. Fue la misma crisis. A Chile le pegó justo en el centro de lo que exportaba. La pampa salitrera empezó a vaciarse.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "La Gran Depresión en los dos países",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1920,
+                "hasta": 1940,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1932
+              },
+              "anotaciones": [
+                {
+                  "anio": 1932,
+                  "texto": "Fondo de la crisis",
+                  "dice": "1932"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "línea."
+            },
+            "cifras": [
+              {
+                "texto": "casi la mitad",
+                "valor": -48,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1929,
+                  "anioB": 1932
+                }
+              },
+              {
+                "texto": "algo menos de una quinta parte",
+                "valor": -17.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NZL",
+                  "anio": 1929,
+                  "anioB": 1932
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "−48 %",
+                "pais": "CHL",
+                "animo": "triste",
+                "dice": "mitad."
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Oficina Chacabuco Chile",
+              "alternativas": [
+                "Chacabuco saltpeter works",
+                "Pampa salitrera Antofagasta"
+              ],
+              "pie": "Oficina salitrera en la pampa de Antofagasta, hoy abandonada",
+              "dice": "Chile",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Vamos ahora a Nueva Zelanda. Allí el golpe también llegó. Pero su campo siguió exportando lana y carne, y en 1938 su ingreso ya estaba por encima del de 1929. En 1950, un neozelandés volvía a producir más del doble que un chileno. La distancia que el salitre había acortado se abrió de nuevo.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1950: la distancia se abre otra vez",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1950,
+                "hasta": 1950,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1950,"
+            },
+            "cifras": [
+              {
+                "texto": "por encima del de 1929",
+                "valor": 22.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NZL",
+                  "anio": 1929,
+                  "anioB": 1938
+                }
+              },
+              {
+                "texto": "más del doble",
+                "valor": 2.29,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 1950
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "NZL",
+                "CHL"
+              ],
+              "viaje": {
+                "desde": "CHL",
+                "hasta": "NZL",
+                "dice": "Nueva"
+              },
+              "dice": "Vamos"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Los precios cuentan lo mismo. Según el Banco Mundial, en 1974 la inflación de Chile pasó del 500 % en un solo año. En Nueva Zelanda, el peor año desde 1971 llegó a un 17 %. Con precios que suben todos los meses, ahorrar o planificar una fábrica se vuelve casi imposible.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación anual, 1971–1998",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "NZL"
+                ],
+                "desde": 1971,
+                "hasta": 1998,
+                "etiqueta": "Inflación (precios al consumidor, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1974
+              },
+              "anotaciones": [
+                {
+                  "anio": 1974,
+                  "texto": "Chile: más de 500 %",
+                  "dice": "1974"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "precios"
+            },
+            "cifras": [
+              {
+                "texto": "pasó del 500 %",
+                "valor": 505,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "CHL",
+                      "NZL"
+                    ],
+                    "desde": 1971,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1974
+                }
+              },
+              {
+                "texto": "un 17 %",
+                "valor": 17.15,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "CHL",
+                      "NZL"
+                    ],
+                    "desde": 1971,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "maximo",
+                  "pais": "NZL"
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "MÁS DE 500 %",
+              "dice": "500"
+            },
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "giro",
+            "texto": "Y en 1975 la economía chilena se encoge otra vez. Entre 1971 y 1975, el ingreso chileno cayó casi una cuarta parte. En 1975, un neozelandés producía casi el triple que un chileno. Es la mayor distancia entre los dos desde 1882. Chile había pasado casi un siglo creciendo para terminar más lejos que el año en que zarpó el Dunedin.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "1975: la mayor distancia",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1900,
+                "hasta": 1990,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1975,
+                "texto": "1975: casi el triple"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1975"
+            },
+            "cifras": [
+              {
+                "texto": "casi una cuarta parte",
+                "valor": -23.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1971,
+                  "anioB": 1975
+                }
+              },
+              {
+                "texto": "casi el triple",
+                "valor": 2.96,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 1975
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "CASI 3×",
+                "pais": "NZL",
+                "animo": "triste",
+                "dice": "triple"
+              }
+            ],
+            "mascota": {
+              "pose": "tapa-ojos",
+              "bocadillo": "¡Más lejos que en 1882!",
+              "dice": "Dunedin."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Hasta acá, parece una historia de minerales contra comida. Pero en esos mismos años, Nueva Zelanda perdió a su mejor cliente."
+          }
+        ]
+      },
+      {
+        "titulo": "Qué exporta cada uno, y a quién",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "El 1 de enero de 1973, Gran Bretaña entra a la Comunidad Económica Europea. Para Nueva Zelanda, eso es perder la puerta preferente al mercado que recibía su mantequilla y su cordero desde hacía casi un siglo.",
+            "rotulo": {
+              "texto": "SE CIERRA UNA PUERTA",
+              "dice": "Zelanda,"
+            },
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Edward Heath 1973",
+              "alternativas": [
+                "Edward Heath 1972",
+                "Edward Heath Prime Minister"
+              ],
+              "pie": "Edward Heath, primer ministro británico al entrar a la CEE (1973)",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ese golpe, junto con las crisis del petróleo, se nota en la línea. Según el Banco Mundial, entre 1974 y 1992 el ingreso por persona neozelandés creció apenas un 2 %. Fueron dieciocho años casi quietos, en un país que ya era rico. Nueva Zelanda tuvo que salir a buscar clientes en Asia y en el resto del mundo.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Nueva Zelanda, dieciocho años quieta",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "NZL"
+                ],
+                "desde": 1960,
+                "hasta": 2000,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "NZL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1973,
+                  "texto": "Gran Bretaña entra a la CEE"
+                },
+                {
+                  "anio": 1992,
+                  "texto": "Casi igual que en 1974",
+                  "dice": "1992"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "línea."
+            },
+            "cifras": [
+              {
+                "texto": "apenas un 2 %",
+                "valor": 2.2,
+                "tolerancia": 0.15,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NZL",
+                  "anio": 1974,
+                  "anioB": 1992
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Canterbury sheep New Zealand",
+              "alternativas": [
+                "Sheep farm New Zealand",
+                "Merino sheep New Zealand"
+              ],
+              "pie": "Ovejas en el campo de Nueva Zelanda (siglo XXI)",
+              "dice": "golpe",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira qué exporta hoy cada uno. En Chile, algo más de la mitad de los bienes que salen del país son minerales y metales. Sobre todo cobre, que en el siglo veinte tomó el lugar del salitre. Y el precio del cobre sube y baja con lo que construye el resto del planeta.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2024: minerales y metales en lo exportado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MMTL.ZS.UN",
+                "paises": [
+                  "CHL",
+                  "NZL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Minerales y metales (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "exporta"
+            },
+            "cifras": [
+              {
+                "texto": "algo más de la mitad",
+                "valor": 56,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MMTL.ZS.UN",
+                    "paises": [
+                      "CHL",
+                      "NZL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Minerales y metales (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Chuquicamata copper mine",
+              "alternativas": [
+                "Chuquicamata mine",
+                "Mina Chuquicamata"
+              ],
+              "pie": "Mina Chuquicamata, Calama, Chile (siglo XXI)",
+              "dice": "cobre,",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Ahora Nueva Zelanda. Dos de cada tres dólares que gana exportando bienes vienen de alimentos: leche en polvo, mantequilla, carne y kiwis. Es una economía que exporta, sobre todo, lo que sale de sus campos. Y esa parte no bajó con los años. En 1964 era algo más de la mitad.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Nueva Zelanda: comida en lo exportado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.FOOD.ZS.UN",
+                "paises": [
+                  "NZL"
+                ],
+                "desde": 1964,
+                "hasta": 2024,
+                "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "NZL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1964,
+                  "texto": "Algo más de la mitad",
+                  "dice": "1964"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "tres"
+            },
+            "cifras": [
+              {
+                "texto": "Dos de cada tres dólares",
+                "valor": 67,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.FOOD.ZS.UN",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "NZL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "algo más de la mitad",
+                "valor": 52.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.FOOD.ZS.UN",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "NZL",
+                  "anio": 1964
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que exporta Nueva Zelanda",
+              "items": [
+                {
+                  "icono": "🥛",
+                  "texto": "Leche en polvo",
+                  "dice": "polvo,"
+                },
+                {
+                  "icono": "🧈",
+                  "texto": "Mantequilla",
+                  "dice": "mantequilla,"
+                },
+                {
+                  "icono": "🥩",
+                  "texto": "Carne",
+                  "dice": "carne"
+                },
+                {
+                  "icono": "🥝",
+                  "texto": "Kiwis",
+                  "dice": "kiwis."
+                }
+              ]
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Chile también giró hacia la comida. En 1962, los alimentos eran menos de un 7 % de lo que exportaba. En 2024 ya eran casi una cuarta parte: fruta, salmón y vino.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Chile: comida en lo exportado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.FOOD.ZS.UN",
+                "paises": [
+                  "CHL"
+                ],
+                "desde": 1962,
+                "hasta": 2024,
+                "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "comida."
+            },
+            "cifras": [
+              {
+                "texto": "menos de un 7 %",
+                "valor": 6.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.FOOD.ZS.UN",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 1962
+                }
+              },
+              {
+                "texto": "casi una cuarta parte",
+                "valor": 23.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.FOOD.ZS.UN",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Alimentos (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "La comida que exporta Chile",
+              "items": [
+                {
+                  "icono": "🍇",
+                  "texto": "Fruta",
+                  "marca": "si",
+                  "dice": "fruta,"
+                },
+                {
+                  "icono": "🐟",
+                  "texto": "Salmón",
+                  "marca": "si",
+                  "dice": "salmón"
+                },
+                {
+                  "icono": "🍷",
+                  "texto": "Vino",
+                  "marca": "si",
+                  "dice": "vino."
+                }
+              ]
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Fíjate ahora en las fábricas. En Nueva Zelanda, cerca de un 16 % de lo que exporta son manufacturas. En Chile, uno de cada ocho dólares. Y Nueva Zelanda depende de la comida más de lo que Chile depende del cobre. Los dos siguen siendo exportadores de materias primas. Así que la explicación de siempre no alcanza.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "2024: cuánto de lo exportado es fabricado",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "TX.VAL.MANF.ZS.UN",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "fábricas."
+            },
+            "cifras": [
+              {
+                "texto": "cerca de un 16 %",
+                "valor": 15.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "NZL",
+                  "anio": 2024
+                }
+              },
+              {
+                "texto": "uno de cada ocho dólares",
+                "valor": 12.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "TX.VAL.MANF.ZS.UN",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1962,
+                    "hasta": 2024,
+                    "etiqueta": "Manufacturas (% de las exportaciones de bienes)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "LOS DOS, MATERIAS PRIMAS",
+              "dice": "primas."
+            },
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "¿Y entonces qué los separa?",
+              "dice": "alcanza."
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Si los dos viven de la tierra, la diferencia está en otra parte: en lo que pasa cuando el precio se da vuelta."
+          }
+        ]
+      },
+      {
+        "titulo": "Lo que sí separa a Chile de Nueva Zelanda",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Volvamos a la pregunta del principio. Chile y Nueva Zelanda viven de exportar lo que da la tierra. Los dos tienen años de cosecha buena y años de precio bajo. Lo que cambia es qué le pasa a cada país cuando llega el precio bajo.",
+            "rotulo": {
+              "texto": "EL AÑO MALO",
+              "dice": "cambia"
+            },
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "CHL",
+                "NZL"
+              ],
+              "dice": "Volvamos"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira el peor año de cada uno desde 1961. Para Chile fue 1975: su ingreso por persona cayó casi un 14 %. Para Nueva Zelanda fue 1967, con algo más de un 6 %. Son datos del Banco Mundial, y la diferencia está en la profundidad del pozo.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Crecimiento del ingreso por persona cada año",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD.ZG",
+                "paises": [
+                  "CHL",
+                  "NZL"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1975,
+                  "texto": "Chile: −13,6 %",
+                  "dice": "1975:"
+                },
+                {
+                  "anio": 1967,
+                  "texto": "Nueva Zelanda: −6,3 %",
+                  "dice": "1967,"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 1
+              },
+              "dice": "peor"
+            },
+            "cifras": [
+              {
+                "texto": "casi un 14 %",
+                "valor": -13.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "CHL",
+                      "NZL"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "minimo",
+                  "pais": "CHL"
+                }
+              },
+              {
+                "texto": "algo más de un 6 %",
+                "valor": -6.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD.ZG",
+                    "paises": [
+                      "CHL",
+                      "NZL"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Crecimiento del PIB por persona (% anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "minimo",
+                  "pais": "NZL"
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Y no fue el único pozo. Entre 1981 y 1983, en la crisis de la deuda, el ingreso chileno volvió a caer casi una quinta parte. Nueva Zelanda, en esos mismos dos años, siguió creciendo. Cada caída chilena borró años de avance que después hubo que volver a ganar.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "La crisis de la deuda, 1975–1995",
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1975,
+                "hasta": 1995,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1982
+              },
+              "anotaciones": [
+                {
+                  "anio": 1982,
+                  "texto": "Crisis de la deuda",
+                  "dice": "deuda,"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "pozo."
+            },
+            "cifras": [
+              {
+                "texto": "casi una quinta parte",
+                "valor": -18.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "owid",
+                    "indicador": "gdp-per-capita-maddison-project-database",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1850,
+                    "hasta": 2022,
+                    "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1981,
+                  "anioB": 1983
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Pero hay un número que no se acorta: lo que cada país destina a investigación y desarrollo. En 2021, Nueva Zelanda le dedicó unas cuatro veces más que Chile, como parte de su economía. Esa plata no paga la cosecha de este año. Paga lo que el país sabrá hacer después.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "Investigación y desarrollo, 2021 (% del PIB)",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "GB.XPD.RSDV.GD.ZS",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 2021,
+                "hasta": 2021,
+                "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 2
+              },
+              "dice": "número"
+            },
+            "cifras": [
+              {
+                "texto": "unas cuatro veces",
+                "valor": 4.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "GB.XPD.RSDV.GD.ZS",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 2007,
+                    "hasta": 2022,
+                    "etiqueta": "Gasto en investigación y desarrollo (% del PIB)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 2021
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "4×",
+                "pais": "NZL",
+                "animo": "triste",
+                "dice": "cuatro"
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "University of Otago clocktower",
+              "alternativas": [
+                "University of Otago Dunedin",
+                "University of Otago"
+              ],
+              "pie": "Universidad de Otago, Dunedin, Nueva Zelanda (siglo XXI)",
+              "dice": "investigación",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Algo cambió también en los precios. Desde 1999, la inflación chilena no pasó del 12 % en ningún año. Es otro país comparado con el de 1974. En Nueva Zelanda, los precios también se calmaron en los noventa. Con precios tranquilos, una empresa puede planificar a años y no a semanas.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación anual desde 1990",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "NZL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Inflación (precios al consumidor, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "CHL",
+                "anio": 1999
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "precios."
+            },
+            "cifras": [
+              {
+                "texto": "del 12 %",
+                "valor": 11.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "CHL",
+                      "NZL"
+                    ],
+                    "desde": 1999,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "maximo",
+                  "pais": "CHL"
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "giro",
+            "texto": "Desde 1990, la historia da la vuelta. Corregido por lo que cuestan las cosas en cada país, el ingreso por persona chileno casi se triplicó hasta 2024. El neozelandés creció algo más de la mitad. En 2024, un neozelandés produce un 60 % más que un chileno. Cuando Chile no se cae, acorta la distancia.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona ajustado por precios",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2024,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "CHL"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "1990,"
+            },
+            "cifras": [
+              {
+                "texto": "casi se triplicó",
+                "valor": 176,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "CHL",
+                  "anio": 1990,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "algo más de la mitad",
+                "valor": 57,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "NZL",
+                  "anio": 1990,
+                  "anioB": 2024
+                }
+              },
+              {
+                "texto": "un 60 % más",
+                "valor": 1.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.PP.KD",
+                    "paises": [
+                      "NZL",
+                      "CHL"
+                    ],
+                    "desde": 1990,
+                    "hasta": 2024,
+                    "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "razon",
+                  "pais": "NZL",
+                  "paisB": "CHL",
+                  "anio": 2024
+                }
+              }
+            ],
+            "rotulo": {
+              "texto": "CHILE ACORTA",
+              "dice": "triplicó"
+            },
+            "mascota": {
+              "pose": "celebra",
+              "bocadillo": "¡Chile acorta la distancia!",
+              "dice": "distancia."
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para quien vive en Sudamérica? Que en estos datos vivir de materias primas no condena a un país. Nueva Zelanda vive de lo que da el campo, y es rica. Lo que separa a los dos aparece en los años malos: cuánto se cae cada uno cuando el precio baja, y cuánto de lo ganado sigue en pie después. Y los años malos llegan para todos. No es una receta. Nueva Zelanda también tuvo sus años quietos. Pero cambia la pregunta para leer una noticia de crecimiento: no solo cuánto subió el país, sino cuánto perdió en su última caída.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "CHL",
+                "NZL"
+              ],
+              "etiquetas": [
+                {
+                  "texto": "Santiago",
+                  "en": [
+                    -70.67,
+                    -33.45
+                  ]
+                },
+                {
+                  "texto": "Wellington",
+                  "en": [
+                    174.78,
+                    -41.29
+                  ]
+                }
+              ],
+              "dice": "¿Qué"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Falta un número para cerrar la cuenta. Es el que resume toda esta carrera, desde el año en que zarpó el Dunedin."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "El número que nadie mira es un ocho. Desde 1882, el ingreso por persona de Chile se multiplicó por más de ocho. El de Nueva Zelanda, por algo más de seis y media. El que corría más rápido era Chile. Por eso en 2022 la distancia, de cerca de 1,7 veces, era más corta que en el año del Dunedin. Lo que Chile perdió, lo perdió en las caídas.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2022: Nueva Zelanda contra Chile",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "NZL",
+            "CHL"
+          ],
+          "desde": 2022,
+          "hasta": 2022,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "CHL"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "número"
+      },
+      "cifras": [
+        {
+          "texto": "por más de ocho",
+          "valor": 744,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "NZL",
+                "CHL"
+              ],
+              "desde": 1850,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "variacion",
+            "pais": "CHL",
+            "anio": 1882,
+            "anioB": 2022
+          }
+        },
+        {
+          "texto": "algo más de seis y media",
+          "valor": 558,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "NZL",
+                "CHL"
+              ],
+              "desde": 1850,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "variacion",
+            "pais": "NZL",
+            "anio": 1882,
+            "anioB": 2022
+          }
+        },
+        {
+          "texto": "cerca de 1,7 veces",
+          "valor": 1.68,
+          "calculo": {
+            "datos": {
+              "fuente": "owid",
+              "indicador": "gdp-per-capita-maddison-project-database",
+              "paises": [
+                "NZL",
+                "CHL"
+              ],
+              "desde": 1850,
+              "hasta": 2022,
+              "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "NZL",
+            "paisB": "CHL",
+            "anio": 2022
+          }
+        }
+      ]
+    },
+    "remate": "Nueva Zelanda se cayó poco y conservó lo ganado. Chile creció más rápido, pero se cayó más fuerte.",
+    "siguiente": "Canadá y México tienen al lado al mismo vecino rico. ¿Por qué a uno le fue tan distinto que al otro? Eso viene en el próximo video.",
+    "miniatura": {
+      "texto": "¿POR QUÉ ELLOS SÍ?",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "Nueva Zelanda vs Chile",
+        "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+            "NZL",
+            "CHL"
+          ],
+          "desde": 1850,
+          "hasta": 2022,
+          "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "CHL"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Crecimiento del PIB per cápita, % anual (NY.GDP.PCAP.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, precios al consumidor, % anual (FP.CPI.TOTL.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de minerales y metales, % de las exportaciones de mercancías (TX.VAL.MMTL.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MMTL.ZS.UN?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de alimentos, % de las exportaciones de mercancías (TX.VAL.FOOD.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.FOOD.ZS.UN?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Exportaciones de manufacturas, % de las exportaciones de mercancías (TX.VAL.MANF.ZS.UN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/TX.VAL.MANF.ZS.UN?locations=NZ-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Gasto en investigación y desarrollo, % del PIB (GB.XPD.RSDV.GD.ZS), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=NZ-CL"
+      }
+    ]
+  }
+}
