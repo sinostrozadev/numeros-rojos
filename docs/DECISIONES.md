@@ -95,3 +95,4 @@
   Sin cambio: Chile-Corea `K5ma4A5VFj8` (ya tiene el molde "A era más rico que B. ¿Qué pasó?") y Panamá `vRrVLHRROnA` (CTR 6,5 %).
   Carátulas: Venezuela e Irlanda conservan su GPT (pantalla partida, el estilo de Panamá); se pidió a GPT la carátula molde de
   Argentina (2 siluetas "1895" oro vs "HOY" gris + "¿QUÉ PASÓ?") como primera prueba del molde puro.
+- 2026-11-19 (madrugada): carátula molde de Argentina (GPT, 2 siluetas "1895" oro vs "HOY" gris + "¿QUÉ PASÓ?") llegó y se revisó a ojo (textos exactos, forma del país correcta, una sola imagen); puesta por API en `BQNaK5R-yrk` (`salida/caratulas/argentina-molde.png`). La anterior (`argentina-v2.jpg`, CTR 2,2 %) queda para revertir. Medir CTR a 7 días (25-11).
