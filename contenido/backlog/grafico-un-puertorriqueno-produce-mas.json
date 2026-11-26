@@ -1,0 +1,306 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-un-puertorriqueno-produce-mas",
+  "titulo": "Un puertorriqueño produce más que un panameño. Y son menos",
+  "descripcion": "¿Cómo puede Puerto Rico producir por persona más que cualquier país hispanohablante de América y tener cada año menos habitantes?\n\nCon los datos del Banco Mundial, ajustados por lo que cuestan las cosas en cada lugar, Puerto Rico (territorio de Estados Unidos) queda por encima de Panamá, Uruguay y Chile en 2025.\nEl giro está en la población: desde 2004 perdió casi uno de cada seis habitantes, y lo que produce cada uno subió apenas un 3 %. En el mismo tiempo, Panamá más que duplicó lo suyo.\n\nFuentes:\n- Banco Mundial, WDI: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PR-PA-UY-CL\n- Banco Mundial, WDI: Población total (SP.POP.TOTL), CC BY 4.0 https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PR\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#puertorico",
+    "#panama",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-un-puertorriqueno-produce-mas",
+    "gancho": {
+      "texto": "Un puertorriqueño produce más que un panameño, un uruguayo o un chileno. Ningún país hispanohablante de América le gana.",
+      "rotulo": "PUERTO RICO, PRIMERO",
+      "cifras": [
+        {
+          "texto": "más que un panameño, un uruguayo o un chileno",
+          "valor": 1,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PRI",
+                "PAN",
+                "URY",
+                "CHL",
+                "CRI",
+                "ARG",
+                "DOM",
+                "MEX"
+              ],
+              "desde": 2025,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "ranking",
+            "pais": "PRI",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "barras",
+      "titulo": "2025: quién produce más por persona",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "PRI",
+          "PAN",
+          "URY",
+          "CHL",
+          "CRI",
+          "ARG"
+        ],
+        "desde": 2025,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "PRI"
+      },
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Según el Banco Mundial, ajustado por precios, produce unos 44.600 dólares al año. Panamá, unos 37.500.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "unos 44.600 dólares",
+            "valor": 44600,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRI",
+                  "PAN"
+                ],
+                "desde": 2004,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "PRI",
+              "anio": 2025
+            }
+          },
+          {
+            "texto": "unos 37.500",
+            "valor": 37500,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRI",
+                  "PAN"
+                ],
+                "desde": 2004,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "PAN",
+              "anio": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "N.º 1",
+            "pais": "PRI",
+            "animo": "feliz",
+            "dice": "44.600"
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira la gente. Desde 2004, Puerto Rico perdió casi uno de cada seis habitantes. Hoy viven menos personas que en 1990.",
+        "grafico": {
+          "tipo": "area",
+          "titulo": "Puerto Rico: cada año, menos habitantes",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "SP.POP.TOTL",
+            "paises": [
+              "PRI"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "Población",
+            "unidad": "personas"
+          },
+          "destacar": {
+            "pais": "PRI",
+            "anio": 2004,
+            "texto": "2004: el máximo"
+          },
+          "formato": {
+            "decimales": 0
+          },
+          "dice": "gente."
+        },
+        "cifras": [
+          {
+            "texto": "casi uno de cada seis habitantes",
+            "valor": -16.8,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SP.POP.TOTL",
+                "paises": [
+                  "PRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Población",
+                "unidad": "personas"
+              },
+              "operacion": "variacion",
+              "pais": "PRI",
+              "anio": 2004,
+              "anioB": 2025
+            }
+          },
+          {
+            "texto": "menos personas que en 1990",
+            "valor": -10,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SP.POP.TOTL",
+                "paises": [
+                  "PRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "Población",
+                "unidad": "personas"
+              },
+              "operacion": "variacion",
+              "pais": "PRI",
+              "anio": 1990,
+              "anioB": 2025
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "MENOS GENTE",
+          "dice": "habitantes."
+        },
+        "sellos": [
+          {
+            "texto": "1 DE 6",
+            "pais": "PRI",
+            "animo": "triste",
+            "dice": "seis"
+          }
+        ]
+      },
+      {
+        "tipo": "dato",
+        "texto": "Y lo que produce cada uno casi no se movió: un 3 % en veintiún años. Panamá, en el mismo tiempo, más que duplicó el suyo.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "2004–2025: uno quieto, otro subiendo",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PRI",
+              "PAN"
+            ],
+            "desde": 2004,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PRI"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "produce"
+        },
+        "cifras": [
+          {
+            "texto": "un 3 %",
+            "valor": 2.9,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRI",
+                  "PAN"
+                ],
+                "desde": 2004,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "PRI",
+              "anio": 2004,
+              "anioB": 2025
+            },
+            "tolerancia": 0.15
+          },
+          {
+            "texto": "más que duplicó el suyo",
+            "valor": 136,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRI",
+                  "PAN"
+                ],
+                "desde": 2004,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "PAN",
+              "anio": 2004,
+              "anioB": 2025
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "Puerto Rico está arriba y se queda quieto. Panamá está abajo y no para. ¿Tu país, de qué lado está?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PR-PA-UY-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Población total (SP.POP.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PR"
+      }
+    ]
+  }
+}
