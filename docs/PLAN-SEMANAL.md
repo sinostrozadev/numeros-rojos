@@ -3,10 +3,47 @@
 > **2026-11-15 (agente de producción):** semana 16→22 producida y programada; ids verificados en YouTube/Studio según la tabla JSON. Revisor independiente aplicado a cada guion (veredictos en `salida/revisiones/guiones/`).
 
 > Actualizado **2026-11-06 09:10** (America/Santiago) por Claude (agente de documentación). Método: skill global `plan-semanal`.
-> **2026-11-18:** canal solo de largos desde el 23-11 (ver hito del jue 19-11 abajo).
+> **2026-11-18:** canal solo de largos desde el 23-11 (ver hito del jue 19-11 abajo). **REVERTIDO el 25-11: vuelve el Short diario 13:00 (hito del jue 26-11, arriba).**
 > Regla: siempre hay plan de la semana en curso **y** de la siguiente. Cuando a la semana en curso le quedan < 3 ranuras futuras
 > con guion, o termina, se hace el ritual de cierre y se arma la que viene. **Manda el bloque JSON del final** (lo leen
 > `estado.mts` y el panel de Santiago); la tabla es su vista legible.
+
+## 🔒 Hito del jue 2026-11-26 17:00 → semana 2026-11-30 (lun) → 2026-12-06 (dom) · preparado el 25-11 noche
+
+> **2026-11-25: VUELVE EL SHORT DIARIO** (orden de Santiago: "todos los canales deben tener shorts para los suscriptores y largos para
+> las horas"; `docs/ESTRATEGIA.md` §000). Semana tipo = **2 largos (lun y jue 19:00) + 7 Shorts (13:00)**: los días de largo el Short es
+> su **TRÁILER** (`generar-guiones --derivar-de <largo> --tema "…"`, cierre que remite al largo, related video → largo; `GUION.md` §4c-A);
+> los otros 5 días, **Short de DATO** de comparación entre países (gancho §4b, fórmula directa de LP, §4c-B). Nunca temas solo-Chile.
+> Todo guion: `verificar-cifras` + `--revisar` + revisor independiente (promedio ≥ 4, ningún criterio < 3) antes de renderizar.
+
+**Semana en curso 23→29 (Shorts agregados el 25-11):**
+
+| Día | Hora | Formato | Título | Estado | Video |
+|---|---|---|---|---|---|
+| jue 26-11 | 13:00 | Short TRÁILER | Chile se acercó a Nueva Zelanda en 1928. ¿Qué pasó? | programado (publishAt 13:00 verificado por API) | `K1y43ptjkvs` |
+| jue 26-11 | 19:00 | largo | ¿Por qué Nueva Zelanda se hizo rica y Chile no? | programado | `n8fV62smf04` |
+| vie 27-11 | 13:00 | Short DATO | Un chileno vive más que un estadounidense. ¿Cómo? | programado (publishAt 13:00 verificado por API) | `AuMaUJ9CHy4` |
+| sáb 28-11 | 13:00 | Short DATO | Argentina le sacaba 55 % a Chile en 1990. Hoy va detrás | programado (publishAt 13:00 verificado por API) | `_BbvmhwQ_9g` |
+| dom 29-11 | 13:00 | Short DATO | Perú tuvo más de 7.000 % de inflación. Hoy, menos que Chile | programado (publishAt 13:00 verificado por API) | `FQp6ZZQJ-M0` |
+
+**Semana siguiente 30-11 → 06-12 (guiones en el ritual del jue 26-11 17:00; títulos tentativos: el título final sale de la cifra que dé
+`verificar-cifras`, no al revés):**
+
+| Día | Hora | Formato | Idea | Modelado sobre (outlier, vistas) |
+|---|---|---|---|---|
+| lun 30-11 | 13:00 | Short TRÁILER | paradoja del largo del día en ≤ 14 palabras ("España trajo toneladas de plata de Potosí. ¿Dónde quedó?") + 2 datos + "lo explico hoy a las siete" | tráiler NZ del 26-11 (medir clics al largo) |
+| lun 30-11 | 19:00 | largo | **¿Por qué España no se hizo rica con la plata de Potosí?** (Bolivia/España; Maddison; arranque con escena en Potosí) | Curiosito 153 K https://www.youtube.com/watch?v=ZakfKXrgqJ4 |
+| mar 01-12 | 13:00 | Short DATO | **Uruguay vs Argentina**: "Argentina le ganaba a Uruguay. Mira cuándo se dio vuelta" (NY.GDP.PCAP.PP.KD; comprobar el cruce) | nuestro mejor Short: Chile-Corea "le ganaba 3 a 1… se dio vuelta" 649; España-Argentina 319 |
+| mié 02-12 | 13:00 | Short DATO | **Puerto Rico vs Chile/LatAm**: "Puerto Rico produce más que cualquier país de Latinoamérica" (WDI; verificar el ranking) | Curiosito 135 K "¿Por qué Puerto Rico es más rico que cualquier país de Latinoamérica…?" |
+| jue 03-12 | 13:00 | Short TRÁILER | paradoja del largo del día + 2 datos + "lo explico hoy a las siete" | — |
+| jue 03-12 | 19:00 | largo | **¿Por qué Uruguay es más rico que Paraguay?** (vecinos; arranque con escena en el puerto de Montevideo o Asunción) | Borderline 201 K https://www.youtube.com/watch?v=zio__98MTL0 (rivalidad de vecinos) |
+| vie 04-12 | 13:00 | Short DATO | **Singapur vs Chile**: "Singapur no tiene cobre ni agua. Produce más del doble que Chile" (WDI; verificar la razón) | Fortune 209 K "Singapur no tiene agua… ¿Por qué es más rico que EE. UU.?" |
+| sáb 05-12 | 13:00 | Short DATO | **Bolsillo**: precios de Argentina vs Uruguay o Chile en el último año (FP.CPI.TOTL.ZG) o productividad por hora México vs Chile (Penn) — el que dé la paradoja más clara | Perú-Chile 29-11 (medir) · Los Ecomonos "bolsillo" |
+| dom 06-12 | 13:00 | Short DATO | **Panamá vs Costa Rica**: "Panamá era más pobre que Costa Rica. Hoy produce más" (comprobar el cruce) — anticipa un largo de la cola | Panamá-Chile 414 y el CTR 6,5 % del largo de Panamá |
+
+Si el jue 26 alguna idea no cuadra en `verificar-cifras`, sale de la cola: Colombia vs Perú (cruce), Brasil vs México (vecinos grandes),
+Chile vs Portugal (Short sobre un país europeo con el que se compara la audiencia). Medición el lun 07-12: criterio (e) de Shorts
+(subs por 1.000 vistas ≥ 2, "se queda" ≥ 50 %) + clics de los tráileres al largo (Studio → largo → Fuentes de tráfico).
 
 ## 🔒 Hito del mié 2026-11-11 → semana asegurada 2026-11-12 (jue) → 2026-11-18 (mié)
 
@@ -138,16 +175,16 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
   "version": 1,
   "canal": "numeros-rojos",
   "zona": "America/Santiago",
-  "actualizado": "2026-11-19T18:10:00Z",
+  "actualizado": "2026-11-26T02:45:00Z",
   "semanas": [
-    {
-      "inicio": "2026-11-16",
-      "fin": "2026-11-22",
-      "rol": "en-curso"
-    },
     {
       "inicio": "2026-11-23",
       "fin": "2026-11-29",
+      "rol": "en-curso"
+    },
+    {
+      "inicio": "2026-11-30",
+      "fin": "2026-12-06",
       "rol": "siguiente"
     }
   ],
@@ -581,6 +618,22 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "bloqueo": null
     },
     {
+      "fecha": "2026-11-26",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Chile se acercó a Nueva Zelanda en 1928. ¿Qué pasó?",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-25-grafico-chile-casi-alcanzo-a-nueva-zelanda.json",
+      "videoId": "K1y43ptjkvs",
+      "referente": null,
+      "porQue": "tráiler del largo de las 19:00 (GUION §4c-A)",
+      "bloqueo": null
+    },
+    {
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
@@ -597,19 +650,131 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "estado": "programado"
     },
     {
+      "fecha": "2026-11-27",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Un chileno vive más que un estadounidense. ¿Cómo?",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-25-grafico-un-chileno-vive-mas.json",
+      "videoId": "AuMaUJ9CHy4",
+      "referente": null,
+      "porQue": "Short de dato (§4c-B): bolsillo/vida",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-28",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Argentina le sacaba 55 % a Chile en 1990. Hoy va detrás",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-25-grafico-argentina-le-sacaba-55-a-chile-en-1990.json",
+      "videoId": "_BbvmhwQ_9g",
+      "referente": "Chile-Corea 649 (cruce)",
+      "porQue": "rivalidad de vecinos con cruce",
+      "bloqueo": null
+    },
+    {
+      "fecha": "2026-11-29",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Perú tuvo más de 7.000 % de inflación. Hoy, menos que Chile",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-25-grafico-peru-tuvo-mas-de-7-000-de-inflacion-hoy.json",
+      "videoId": "FQp6ZZQJ-M0",
+      "referente": null,
+      "porQue": "rivalidad + bolsillo (precios)",
+      "bloqueo": null
+    },
+    {
       "fecha": "2026-11-30",
-      "hora": "19:00",
-      "formato": "largo",
-      "plantilla": "tesis",
-      "tema": "(de la cola de largos del molde)",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Tráiler del largo del lun 30-11",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
       "estado": "idea",
       "guion": null,
       "videoId": null,
-      "referente": "Fortune of Nations / Curiosito / Borderline (informe 18-11)",
+      "referente": null,
+      "porQue": "tráiler §4c-A",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-11-30",
+      "hora": "19:00",
+      "formato": "largo",
+      "plantilla": "tesis",
+      "tema": "¿Por qué España no se hizo rica con la plata de Potosí? (tentativo)",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Curiosito 153 K",
       "porQue": "esqueleto; guion en el hito del jue 26-11",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-12-01",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Uruguay vs Argentina: cuándo se dio vuelta (verificar cruce)",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Chile-Corea 649 / España-Argentina 319",
+      "porQue": "rivalidad de vecinos",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-12-02",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Puerto Rico produce más que cualquier país de Latinoamérica (verificar)",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Curiosito 135 K",
+      "porQue": "outlier de referente",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-12-03",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Tráiler del largo del jue 03-12",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": null,
+      "porQue": "tráiler §4c-A",
       "bloqueo": "guion el jue 26-11 17:00"
     },
     {
@@ -617,15 +782,63 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "(de la cola de largos del molde)",
+      "tema": "¿Por qué Uruguay es más rico que Paraguay? (tentativo)",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
       "estado": "idea",
       "guion": null,
       "videoId": null,
-      "referente": "Fortune of Nations / Curiosito / Borderline (informe 18-11)",
+      "referente": "Borderline Billions 201 K",
       "porQue": "esqueleto; guion en el hito del jue 26-11",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-12-04",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Singapur no tiene cobre ni agua. Produce más del doble que Chile (verificar)",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Fortune of Nations 209 K",
+      "porQue": "outlier de referente",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-12-05",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Bolsillo: precios Argentina vs Uruguay/Chile o productividad por hora México vs Chile",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Los Ecomonos (bolsillo)",
+      "porQue": "bolsillo",
+      "bloqueo": "guion el jue 26-11 17:00"
+    },
+    {
+      "fecha": "2026-12-06",
+      "hora": "13:00",
+      "formato": "short",
+      "plantilla": "grafico",
+      "tema": "Panamá era más pobre que Costa Rica. Hoy produce más (verificar)",
+      "tipo": "evergreen",
+      "serie": null,
+      "contingencia": null,
+      "estado": "idea",
+      "guion": null,
+      "videoId": null,
+      "referente": "Panamá-Chile 414 · largo Panamá CTR 6,5 %",
+      "porQue": "rivalidad de vecinos",
       "bloqueo": "guion el jue 26-11 17:00"
     }
   ]

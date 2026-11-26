@@ -1,0 +1,50 @@
+{
+ "id": "grafico-un-chileno-vive-mas",
+ "canal": "numeros-rojos",
+ "titulo": "Un chileno vive más que un estadounidense. ¿Cómo?",
+ "ranura": "2026-11-27 13:00",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 4/4 cifras dentro de tolerancia (desvío máx. -4,5 %)",
+  "revisar": "exit 0 · sin problemas",
+  "palabras_habladas_aprox": 91,
+  "verificacion_propia": "WDI SP.DYN.LE00.IN: 1960 Chile 57,2 / EE. UU. 69,8 (12,6 años de diferencia); Chile pasa a EE. UU. por primera vez en 1999 (76,7 vs 76,6) y NO vuelve atrás ningún año hasta 2024 (2023: 81,2 vs 78,4; 2024: 81,4 vs 78,9). Por tanto 'tardó décadas en alcanzarlo' es cierto (39 años) y 'hoy lo supera' también. PIB PPA 2023: 74.352 / 29.600 = 2,51 ('más del doble' ✓). Gasto en salud 2022 (US$ corrientes): 12.586 / 1.541 = 8,17 ('unas ocho veces' ✓)."
+ },
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 4,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.29,
+ "motivos": [
+  "Todos los bloqueantes pasan. B7 no aplica: Short de dato autónomo. Es comparación entre dos países, no un tema solo-Chile.",
+  "Verdad 5: verifiqué año por año la serie de esperanza de vida. Chile cruza a EE. UU. en 1999 y no hay vuelta atrás; 'décadas' es exacto. Las otras cifras cuadran con el dataset.",
+  "Gancho 5: 12 palabras, paradoja completa (vive más, produce más del doble… menos) y rótulo de 4 palabras 'VIVE MÁS, PRODUCE MENOS'. Sin 'Según…' ni jerga.",
+  "Giro 4: 'era al revés' funciona, pero 'muchos más años' y 'décadas' son vagos cuando el dataset da cifras fuertes (casi 13 años en 1960; el cruce en 1999).",
+  "Cierre 4: pregunta contestable en comentarios ('¿Y tu país, dónde está?'). Falta un número que nadie mira, pero cumple §4c-B.",
+  "91 palabras habladas ≈ 36 s. Promedio 4,29, mínimo 4: aprueba. Los cambios son mejoras opcionales."
+ ],
+ "cambios": [
+  "escenas[1].texto: 'Pero en 1960 era al revés. El estadounidense vivía muchos más años, y Chile tardó décadas en alcanzarlo.' → 'Pero en 1960 era al revés. El estadounidense vivía casi trece años más, y Chile recién lo alcanzó en 1999.' (ambos datos verificados: 12,6 años y cruce en 1999; la cifra 'era al revés' declarada sigue valiendo)",
+  "remate (opcional): 'Estados Unidos tiene más dinero. Chile tiene más años. ¿Y tu país, dónde está?' → 'Estados Unidos produce más. Chile vive más. ¿Y tu país, dónde está?' ('más dinero' es impreciso: la cifra es producción por persona)."
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-26T01:39:09.000Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

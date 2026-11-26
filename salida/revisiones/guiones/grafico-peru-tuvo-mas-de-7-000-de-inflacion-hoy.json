@@ -1,0 +1,50 @@
+{
+ "id": "grafico-peru-tuvo-mas-de-7-000-de-inflacion-hoy",
+ "canal": "numeros-rojos",
+ "titulo": "Perú tuvo más de 7.000 % de inflación. Hoy, menos que Chile",
+ "ranura": "2026-11-29 13:00",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 5/5 cifras dentro de tolerancia (desvío máx. -2,0 %)",
+  "revisar": "exit 0 · sin problemas",
+  "palabras_habladas_aprox": 109,
+  "verificacion_propia": "WDI FP.CPI.TOTL.ZG: Perú 1990 = 7.481,7 % ; Chile 1990 = 26,0 %. 2025: Chile 4,21 %, Perú 1,53 % (razón 2,75: 'casi el triple' ✓). Año por año, Perú < Chile en 2018 (1,51 vs 2,43), 2019 (2,25 vs 2,56), 2020 (2,00 vs 3,05), 2021 (4,27 vs 4,52), 2022 (8,33 vs 11,64), 2023 (6,46 vs 7,58), 2024 (2,01 vs 4,30), 2025 (1,53 vs 4,21): 'desde 2018, cada año' ✓ y 2017 sí fue al revés (2,99 vs 2,18), así que la fecha de corte es la correcta."
+ },
+ "puntajes": {
+  "gancho": 4,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.29,
+ "motivos": [
+  "Todos los bloqueantes pasan. B7 no aplica. Comparación de vecinos con Chile dentro; no solo-Chile.",
+  "Verdad 5: comprobé los ocho años 2018–2025 uno por uno y el 2017 en contra, que justifica 'desde 2018'. 1990 y 2025 cuadran al decimal.",
+  "Giro 5: 7.000 % contra 26 % en el mismo año es el dato que cambia la lectura.",
+  "Gancho 4: la 1.ª frase ('En Chile los precios suben casi el triple que en Perú') es chocante, pero la paradoja completa (7.000 % → hoy menos que Chile) recién se completa en la escena 2, hacia los 15 s; §4c pide la paradoja entera en ~6 s. Un riesgo visual a mirar en el render: con 7.482 % en el eje, las líneas de 2018–2025 (1–4 %) se ven pegadas al piso; el cold open debe apoyarse en las anotaciones.",
+  "109 palabras habladas ≈ 44 s, en el límite pero dentro. Sin consejo ni catastrofismo ('apenas', 'frena mejor' es descriptivo). Cierre con pregunta contestable.",
+  "Promedio 4,29, mínimo 4: aprueba. Los cambios son opcionales."
+ ],
+ "cambios": [
+  "gancho.texto (opcional, sube Gancho a 5): 'En Chile los precios suben casi el triple que en Perú. Mira el final de cada línea.' → 'Perú tuvo más de 7.000 % de inflación en un año. Hoy sus precios suben menos que en Chile.' Declarar en el gancho la cifra 'más de 7.000 %' (valor 7.481, tolerancia 0,05, calculo valor PER 1990, FP.CPI.TOTL.ZG) y mover 'casi el triple' (cifra 2,75) a la escena 1: 'En 2025 en Chile subieron un 4 %. En Perú, apenas un 1,5 %: casi el triple.' Ojo: cambiaría el rótulo/giro; solo si se revisa el cold open.",
+  "escenas[2].texto: 'El país que vivió aquello hoy frena mejor sus precios.' → 'El país que vivió aquello hoy tiene precios más calmos que Chile.' ('aquello' es vago y 'frena mejor' es una valoración; la frase nueva solo repite el dato)."
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-26T01:39:09.000Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

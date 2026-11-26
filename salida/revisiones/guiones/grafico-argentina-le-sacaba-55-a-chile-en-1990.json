@@ -1,0 +1,51 @@
+{
+ "id": "grafico-argentina-le-sacaba-55-a-chile-en-1990",
+ "canal": "numeros-rojos",
+ "titulo": "Argentina le sacaba 55 % a Chile en 1990. Hoy va detrás",
+ "ranura": "2026-11-28 13:00",
+ "ronda": 1,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · cifras dentro de tolerancia (desvío máx. -0,6 %)",
+  "revisar": "exit 0 · sin problemas",
+  "palabras_habladas_aprox": 116,
+  "verificacion_propia": "WDI NY.GDP.PCAP.PP.KD (PPA 2021): ratio Chile/Argentina 1990 = 0,644 (Argentina 1,55×); 2002 = 0,982; 2015 = 0,970; 2016 = 1,006 (primer año con Chile arriba); 2017 = 0,985 (Argentina vuelve arriba); desde 2018 Chile arriba todos los años hasta 2025 (1,041; 1,06; 1,10; 1,107; 1,062; 1,087; 1,131; 1,108); 2025: 30.863 vs 27.847, diferencia 3.017. Remate: Argentina tiene 14 años de caída del PIB por persona entre 1991 y 2025 y Chile 5, la mayor caída argentina −11,8 % (2002) y −10,3 % (2020) vs −7,0 % chilena (2020): 'frenó menos' se sostiene. OJO: en la serie Maddison (PPP 2011) Chile ya pasa a Argentina en 1995; 'por primera vez' solo vale dentro de la serie WDI 1990–2025 que se muestra."
+ },
+ "puntajes": {
+  "gancho": 5,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 4,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.29,
+ "motivos": [
+  "Todos los bloqueantes pasan. B7 no aplica. Rivalidad de vecinos con Chile y Argentina (§4c-B, prioridad 2); no repite un par ya publicado como Short.",
+  "Verdad 5 dentro de la serie citada: el cruce 2016, la vuelta de 2017 y el 'siempre adelante' desde 2018 hasta 2025 están año por año. La salvedad: con Maddison Chile ya adelantaba en 1995, así que 'por primera vez' debe acotarse a la serie que se muestra.",
+  "Gancho 5: paradoja completa en dos frases cortas (12 + 4 palabras) y rótulo de 4 palabras ('ANTES ARGENTINA, HOY CHILE').",
+  "Ritmo: 116 palabras habladas ≈ 46 s, justo sobre el techo de 45 s del objetivo (dentro del tope de 120). Se recomienda recortar ~6 palabras. Además dos escenas seguidas empiezan con 'En' (giro y última escena).",
+  "Cierre 4: remate espejo con pregunta; las afirmaciones 'frenó en cada crisis'/'frenó menos' son ciertas según los datos pero sin cifra visible.",
+  "Promedio 4,29, mínimo 4: aprueba con cambios menores."
+ ],
+ "cambios": [
+  "escenas[1].texto: 'En 2016, Chile lo pasa por primera vez.' → 'En 2016, Chile lo pasa por primera vez en esta serie.' (la serie WDI parte en 1990; con Maddison el cruce es anterior)",
+  "escenas[2].texto: 'En 2025, un chileno produce un 11 % más que un argentino: unos 3.000 dólares por persona.' → 'Hoy, un chileno produce un 11 % más que un argentino: unos 3.000 dólares por persona.' (evita dos escenas seguidas con 'En'; mismas cifras declaradas; el dato es 2025, por lo que 'hoy' vale)",
+  "escenas[0].texto: 'Son datos del Banco Mundial, corregidos por lo que cuestan las cosas en cada país. Mira las líneas: en 2002, con la crisis argentina, casi se tocan.' → 'Son datos del Banco Mundial, corregidos por lo que cuestan las cosas en cada país. En 2002, con la crisis argentina, casi se tocan.' (−3 palabras; ≈ 110 en total, ≈ 44 s)"
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-26T01:39:09.000Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}

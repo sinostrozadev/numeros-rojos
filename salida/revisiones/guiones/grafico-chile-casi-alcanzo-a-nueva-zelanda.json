@@ -1,0 +1,46 @@
+{
+ "id": "grafico-chile-casi-alcanzo-a-nueva-zelanda",
+ "canal": "numeros-rojos",
+ "titulo": "Chile se acercó a Nueva Zelanda en 1928. ¿Qué pasó?",
+ "ranura": "2026-11-26 13:00",
+ "ronda": 2,
+ "aprobado": true,
+ "bloqueantes": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B4": true,
+  "B5": true,
+  "B6": true,
+  "B7": true
+ },
+ "maquina": {
+  "verificar-cifras": "exit 0 · 6/6 cifras dentro de tolerancia (nueva: 1932 NZL/CHL = 2,338 vs 2,34)",
+  "revisar": "exit 0 · sin problemas",
+  "palabras_habladas_aprox": 116,
+  "verificacion_propia": "Maddison (owid): ratio NZL/CHL 1882 = 2,157; 1928 = 1,461 (mínimo de la serie desde 1860; 1929 = 1,477; solo 1850, 1,349, es menor); 1932 = 2,34. Variación 1929→1932: Chile -48,1 %, NZ -17,8 %. WDI 2024: Chile 30.268 / NZ 48.325 = 0,626. Todo cuadra. Fechas: jue 26-11-2026 es jueves; enlaceLargo = id del largo (pendiente-tesis-por-que-nueva-zelanda-se-hizo-rica) correcto. Ronda 2: 1929→1932 son tres años ('en tres años' ✓); ratio 1932 = 2,338 ✓. Frases comparadas contra el largo: ya no se repiten oraciones (solo la línea de gancho de §4c y las etiquetas de cifra, inevitables)."
+ },
+ "puntajes": {
+  "gancho": 4,
+  "claridad": 4,
+  "verdad": 5,
+  "ritmo_visual": 4,
+  "giro": 5,
+  "cierre": 4,
+  "parecido_ecomonos": 4
+ },
+ "promedio": 4.29,
+ "motivos": [
+  "Ronda 2: B7 resuelto. Escena 1, giro, remate, título y descripción están reformulados; el giro aporta un dato que no está en el largo (1932: brecha de nuevo > 2×, 2,34). Verdad 5: título 'se acercó' es exacto; 'en tres años' y 1932 verificados.",
+  "Hora coherente: descripción 'hoy jueves 26 a las 19:00' y remate 'hoy a las siete de la tarde, en el video largo'.",
+  "Aviso: 116 palabras habladas ≈ 46 s (objetivo 35–45, tope 60). Se aprueba; se recomienda recortar 'Partieron lejos:' si se quiere bajar a ~113."
+ ],
+ "cambios": [
+  "Opcional: escenas[0].texto: 'Partieron lejos: en 1882, un neozelandés…' → 'En 1882, un neozelandés…' (−2 palabras)."
+ ],
+ "revisor": "opus",
+ "fecha": "2026-11-26T01:41:33.000Z",
+ "santiago": {
+  "estado": "delegado al agente de producción (2026-11-14)"
+ }
+}
