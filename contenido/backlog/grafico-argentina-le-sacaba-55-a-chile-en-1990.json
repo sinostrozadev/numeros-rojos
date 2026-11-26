@@ -78,7 +78,7 @@
     "escenas": [
       {
         "tipo": "dato",
-        "texto": "Son datos del Banco Mundial, corregidos por lo que cuestan las cosas en cada país. Mira las líneas: en 2002, con la crisis argentina, casi se tocan.",
+        "texto": "Son datos del Banco Mundial, corregidos por lo que cuestan las cosas en cada país. En 2002, con la crisis argentina, casi se tocan.",
         "grafico": {
           "tipo": "lineas",
           "titulo": "Chile y Argentina, 1990–2025",
@@ -108,7 +108,7 @@
             "prefijo": "US$ ",
             "decimales": 0
           },
-          "dice": "Mira"
+          "dice": "2002,"
         },
         "cifras": [
           {
@@ -138,7 +138,7 @@
       },
       {
         "tipo": "giro",
-        "texto": "En 2016, Chile lo pasa por primera vez. Al año siguiente, Argentina vuelve arriba. Desde 2018, Chile va siempre adelante.",
+        "texto": "En 2016, Chile lo pasa por primera vez en esta serie. Al año siguiente, Argentina vuelve arriba. Desde 2018, Chile va siempre adelante.",
         "cifras": [
           {
             "texto": "En 2016, Chile lo pasa",
@@ -219,7 +219,7 @@
       },
       {
         "tipo": "dato",
-        "texto": "En 2025, un chileno produce un 11 % más que un argentino: unos 3.000 dólares por persona.",
+        "texto": "Hoy, un chileno produce un 11 % más que un argentino: unos 3.000 dólares por persona.",
         "grafico": {
           "tipo": "comparacion",
           "titulo": "2025: Chile contra Argentina",
@@ -242,7 +242,7 @@
             "prefijo": "US$ ",
             "decimales": 0
           },
-          "dice": "2025,"
+          "dice": "Hoy,"
         },
         "cifras": [
           {

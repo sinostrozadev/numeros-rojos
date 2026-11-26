@@ -120,7 +120,7 @@
       },
       {
         "tipo": "giro",
-        "texto": "Pero en 1960 era al revés. El estadounidense vivía muchos más años, y Chile tardó décadas en alcanzarlo.",
+        "texto": "Pero en 1960 era al revés. El estadounidense vivía casi trece años más, y Chile recién lo alcanzó en 1999.",
         "grafico": {
           "tipo": "lineas",
           "titulo": "1960: al revés",
@@ -239,7 +239,7 @@
         ]
       }
     ],
-    "remate": "Estados Unidos tiene más dinero. Chile tiene más años. ¿Y tu país, dónde está?",
+    "remate": "Estados Unidos produce más. Chile vive más. ¿Y tu país, dónde está?",
     "fuentes": [
       {
         "texto": "Banco Mundial, World Development Indicators: Esperanza de vida al nacer (SP.DYN.LE00.IN), CC BY 4.0",

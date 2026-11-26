@@ -50,7 +50,7 @@
           "PER",
           "CHL"
         ],
-        "desde": 1985,
+        "desde": 2015,
         "hasta": 2025,
         "etiqueta": "Inflación, precios al consumidor (% anual)",
         "unidad": "%"
@@ -248,7 +248,7 @@
       },
       {
         "tipo": "dato",
-        "texto": "Desde 2018, cada año, los precios en Perú subieron menos que en Chile. El país que vivió aquello hoy frena mejor sus precios.",
+        "texto": "Desde 2018, cada año, los precios en Perú subieron menos que en Chile. El país que vivió aquello hoy tiene precios más calmos que Chile.",
         "grafico": {
           "tipo": "lineas",
           "titulo": "Desde 2018, Perú va por debajo",

@@ -1,8 +1,8 @@
 {
   "plantilla": "grafico",
   "id": "pendiente-grafico-chile-casi-alcanzo-a-nueva-zelanda",
-  "titulo": "Chile casi alcanzó a Nueva Zelanda en 1928. ¿Qué pasó?",
-  "descripcion": "Video completo: hoy jueves 26 a las 19:00 en el canal.\n\n¿Por qué Nueva Zelanda se hizo rica y Chile no, si los dos viven de lo que da la tierra?\n\nEn 1882 un neozelandés producía más del doble que un chileno. Con el salitre, en 1928 Chile quedó a menos de una vez y media. Después llegó la Gran Depresión, y no les pegó igual a los dos.\nLa historia completa, desde el velero Dunedin hasta hoy, está en el video largo.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=NZ-CL\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "titulo": "Chile se acercó a Nueva Zelanda en 1928. ¿Qué pasó?",
+  "descripcion": "Video completo: hoy jueves 26 a las 19:00 en el canal.\n\n¿Por qué Nueva Zelanda se hizo rica y Chile no, si los dos viven de lo que da la tierra?\n\nHace un siglo la brecha era enorme, y el salitre la acortó. Después vino la crisis mundial y se abrió de nuevo.\nLa historia completa, desde el velero Dunedin hasta hoy, está en el video largo.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=NZ-CL\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
   "hashtags": [
     "#shorts",
     "#economia",
@@ -67,7 +67,7 @@
     "escenas": [
       {
         "tipo": "dato",
-        "texto": "En 1882, un neozelandés producía más del doble que un chileno. Según el Proyecto Maddison, en 1928 la distancia ya era menos de una vez y media.",
+        "texto": "Partieron lejos: en 1882, un neozelandés producía más del doble que un chileno. Pero la base Maddison muestra que con el salitre, en 1928, la brecha bajó a menos de una vez y media.",
         "grafico": {
           "tipo": "lineas",
           "titulo": "Con el salitre, Chile se acerca",
@@ -154,7 +154,7 @@
       },
       {
         "tipo": "giro",
-        "texto": "Entonces llegó la Gran Depresión. Entre 1929 y 1932, el ingreso por persona chileno se encogió casi la mitad. El neozelandés, algo menos de una quinta parte.",
+        "texto": "En 1929 llega la crisis mundial. En tres años, lo que produce un chileno cae casi la mitad. En Nueva Zelanda, algo menos de una quinta parte. Y en 1932 la brecha vuelve a ser de más del doble.",
         "grafico": {
           "tipo": "lineas",
           "titulo": "La Gran Depresión en los dos países",
@@ -178,7 +178,7 @@
             {
               "anio": 1932,
               "texto": "Fondo de la crisis",
-              "dice": "1932,"
+              "dice": "1932"
             }
           ],
           "formato": {
@@ -231,6 +231,28 @@
               "anio": 1929,
               "anioB": 1932
             }
+          },
+          {
+            "texto": "de más del doble",
+            "valor": 2.34,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1850,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "NZL",
+              "paisB": "CHL",
+              "anio": 1932
+            }
           }
         ],
         "sellos": [
@@ -248,7 +270,7 @@
         }
       }
     ],
-    "remate": "¿Qué hizo distinto Nueva Zelanda? Lo explico en el video largo de hoy.",
+    "remate": "Lo explico hoy a las siete de la tarde, en el video largo.",
     "fuentes": [
       {
         "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
@@ -259,6 +281,7 @@
         "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=NZ-CL"
       }
     ],
-    "enlaceLargo": "pendiente-tesis-por-que-nueva-zelanda-se-hizo-rica"
+    "enlaceLargo": "pendiente-tesis-por-que-nueva-zelanda-se-hizo-rica",
+    "titulo": null
   }
 }
