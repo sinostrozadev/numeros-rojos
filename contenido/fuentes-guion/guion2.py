@@ -174,7 +174,7 @@ cap5 = {'titulo': 'Los años aburridos', 'escenas': [
         'Parte de la riqueza de un lado de la isla la trabajó gente del otro.', visual=foto('cana-corte', pie='Corte de caña, República Dominicana'), rotulo={'texto': 'MANOS HAITIANAS', 'dice': 'caña'}),
     esc('significado', 'Lo que me llevo: en 1950 pocos habrían apostado por República Dominicana. Era igual de pobre y le quedaban once años de Trujillo. '
         'Lo que vino después fue, sobre todo, estabilidad. No tengo claro cuánto de eso fue mérito de sus gobiernos y cuánto fue suerte.',
-        visual=foto('dajabon-mercado', pie='Dajabón, en la frontera'), rotulo={'texto': 'ESTABILIDAD', 'dice': 'estabilidad.'}, sellos=[{'texto': '11 AÑOS', 'pais': 'DOM', 'animo': 'triste', 'dice': 'once'}]),
+        visual=foto('isla-satelite', pie='La Española desde el espacio'), rotulo={'texto': 'ESTABILIDAD', 'dice': 'estabilidad.'}, sellos=[{'texto': '11 AÑOS', 'pais': 'DOM', 'animo': 'triste', 'dice': 'once'}]),
     esc('reenganche', 'Queda un número.'),
 ]}
 
@@ -192,7 +192,7 @@ props = {
     'id': ID, 'cabecera': 'HAITÍ Y REPÚBLICA DOMINICANA · 1950–2024', 'gancho': gancho, 'promesa': promesa, 'promesaVisual': promesaVisual,
     'indice': ['El empate', 'La factura', 'La lluvia', '1961', 'Los años aburridos'], 'estructura': 'comparacion',
     'capitulos': [cap1, cap2, cap3, cap4, cap5], 'numeroQueNadieMira': numero,
-    'remate': 'República Dominicana: 12 años malos de 64. Haití: 35.',
+    'remate': 'República Dominicana tuvo 12 años malos de 64. Haití tuvo 35.',
     'siguiente': 'Puerto Rico produce por persona más que cualquier país de América Latina y aun así, en 2017, terminó en un tribunal de quiebras. ¿Cómo?',
     'miniatura': {'texto': '¿QUÉ PASÓ?'},
     'fuentes': [

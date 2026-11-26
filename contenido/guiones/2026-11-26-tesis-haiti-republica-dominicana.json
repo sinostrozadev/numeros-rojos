@@ -1638,8 +1638,9 @@
       "texto": "Lo que me llevo: en 1950 pocos habrían apostado por República Dominicana. Era igual de pobre y le quedaban once años de Trujillo. Lo que vino después fue, sobre todo, estabilidad. No tengo claro cuánto de eso fue mérito de sus gobiernos y cuánto fue suerte.",
       "visual": {
        "tipo": "foto",
-       "busqueda": "Dajabón market",
-       "pie": "Dajabón, en la frontera",
+       "busqueda": "Hispaniola satellite",
+       "archivo": "File:Haiti and Dominican Republic (MODIS 2016-02-07).jpg",
+       "pie": "La Española desde el espacio",
        "sangrado": true
       },
       "rotulo": {
@@ -1741,7 +1742,7 @@
     }
    ]
   },
-  "remate": "República Dominicana: 12 años malos de 64. Haití: 35.",
+  "remate": "República Dominicana tuvo 12 años malos de 64. Haití tuvo 35.",
   "siguiente": "Puerto Rico produce por persona más que cualquier país de América Latina y aun así, en 2017, terminó en un tribunal de quiebras. ¿Cómo?",
   "miniatura": {
    "texto": "¿QUÉ PASÓ?"

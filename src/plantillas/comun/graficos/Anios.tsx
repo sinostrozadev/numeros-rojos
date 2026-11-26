@@ -14,15 +14,19 @@ export const Anios: React.FC<PropsCuerpo> = ({ g, ps, ancho, alto, modo, progres
   if (!ps.length) return <SinDatos ancho={ancho} alto={alto} fontSize={T.etiqueta} />;
   const a0 = Math.min(...ps.map((p) => p.puntos[0].anio)), a1 = Math.max(...ps.map((p) => p.puntos[p.puntos.length - 1].anio));
   const n = a1 - a0 + 1;
-  const anchoNombre = Math.min(360, ancho * 0.2), anchoConteo = Math.min(300, ancho * 0.17);
-  const paso = (ancho - anchoNombre - anchoConteo - 20) / n;
-  const lado = Math.max(4, Math.min(paso - 3, 44));
-  const altoFila = Math.min((alto - T.eje * 2.2) / ps.length, lado + T.etiqueta * 2.6);
-  const y0 = (alto - T.eje * 2.2 - altoFila * ps.length) / 2;
+  // Filas de cuadros por país: series largas (> 40 años) se parten en 2 renglones para que el cuadro sea grande.
+  const renglones = n > 40 ? 2 : 1;
+  const porRenglon = Math.ceil(n / renglones);
+  const anchoNombre = Math.min(330, ancho * 0.19), anchoConteo = Math.min(300, ancho * 0.17);
+  const paso = (ancho - anchoNombre - anchoConteo - 20) / porRenglon;
+  const altoPais = (alto - T.eje * 2.4) / ps.length;
+  const lado = Math.max(4, Math.min(paso - 4, (altoPais - 26) / renglones - 6, 64));
+  const pasoY = lado + 6;
+  const altoFila = Math.min(altoPais, renglones * pasoY + 26);
+  const y0 = (alto - T.eje * 2.4 - altoFila * ps.length) / 2;
   const hasta = a0 + progreso * n; // años ya revelados
   const dest = enfasisPais ?? g.destacar?.pais;
   const pulso = enfasis > 0 ? 0.5 + 0.5 * Math.sin((frame / fps) * Math.PI * 2.2) : 0;
-  const marcas = [...new Set([a0, ...Array.from({ length: n }, (_, k) => a0 + k).filter((a) => a % 10 === 0), a1])];
   return (
     <div style={{ width: ancho, height: alto, position: 'relative' }}>
       {ps.map((p, fila) => {
@@ -34,7 +38,7 @@ export const Anios: React.FC<PropsCuerpo> = ({ g, ps, ancho, alto, modo, progres
         return (
           <div key={p.iso} style={{ position: 'absolute', left: 0, top: y, width: ancho, height: altoFila, display: 'flex', alignItems: 'center' }}>
             <div style={{ width: anchoNombre, fontFamily: TIPO.texto, fontWeight: 800, fontSize: T.etiqueta * 1.15, color: PALETA.tinta, lineHeight: 1.05 }}>{p.pais}</div>
-            <div style={{ position: 'relative', width: paso * n, height: lado }}>
+            <div style={{ position: 'relative', width: paso * porRenglon, height: renglones * pasoY }}>
               {Array.from({ length: n }, (_, k) => {
                 const anio = a0 + k;
                 const v = porAnio.get(anio);
@@ -42,7 +46,7 @@ export const Anios: React.FC<PropsCuerpo> = ({ g, ps, ancho, alto, modo, progres
                 const malo = v !== undefined && v < 0;
                 return (
                   <div key={anio} style={{
-                    position: 'absolute', left: k * paso, top: 0, width: lado, height: lado, borderRadius: Math.max(2, lado * 0.16),
+                    position: 'absolute', left: (k % porRenglon) * paso, top: Math.floor(k / porRenglon) * pasoY, width: lado, height: lado, borderRadius: Math.max(2, lado * 0.16),
                     background: v === undefined ? 'transparent' : malo ? PALETA.rojo : '#3B4552',
                     border: v === undefined ? '1px dashed #3B4552' : undefined,
                     opacity: v === undefined ? 0.5 : visible * (malo ? 1 : 0.9), transform: `scale(${0.6 + 0.4 * visible + (malo && fuerte ? 0.06 * pulso : 0)})`,
@@ -58,11 +62,9 @@ export const Anios: React.FC<PropsCuerpo> = ({ g, ps, ancho, alto, modo, progres
           </div>
         );
       })}
-      {/* Eje de años bajo la última fila. */}
-      <div style={{ position: 'absolute', left: anchoNombre, top: y0 + altoFila * ps.length + 4, width: paso * n, height: T.eje * 1.6 }}>
-        {marcas.map((a) => (
-          <div key={a} style={{ position: 'absolute', left: (a - a0) * paso + lado / 2, transform: 'translateX(-50%)', fontFamily: TIPO.texto, fontWeight: 600, fontSize: T.eje, color: PALETA.tintaSuave, fontVariantNumeric: 'tabular-nums' }}>{a}</div>
-        ))}
+      {/* Rango de años bajo las filas. */}
+      <div style={{ position: 'absolute', left: anchoNombre, top: y0 + altoFila * ps.length + 6, fontFamily: TIPO.texto, fontWeight: 600, fontSize: T.eje, color: PALETA.tintaSuave, fontVariantNumeric: 'tabular-nums' }}>
+        {renglones > 1 ? `Cada renglón: ${porRenglon} años · de ${a0} a ${a1}` : `${a0} → ${a1}`}
       </div>
       <div style={{ position: 'absolute', right: 0, bottom: 0, display: 'flex', alignItems: 'center', gap: 10, fontFamily: TIPO.texto, fontWeight: 600, fontSize: T.eje, color: PALETA.tintaSuave }}>
         <span style={{ width: T.eje * 0.9, height: T.eje * 0.9, borderRadius: 3, background: PALETA.rojo, display: 'inline-block' }} /> año en que cayó
