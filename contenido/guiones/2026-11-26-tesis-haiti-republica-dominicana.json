@@ -20,6 +20,7 @@
     {
      "tipo": "foto",
      "busqueda": "baseball closeup stitches",
+     "archivo": "File:Ball (6071275468).jpg",
      "sangrado": true
     },
     {
@@ -75,6 +76,7 @@
     {
      "tipo": "foto",
      "busqueda": "Santo Domingo skyline",
+     "archivo": "File:DOM Santo Domingo, Paseo Marítimo Malecón 0019.jpg",
      "pie": "Santo Domingo",
      "sangrado": true,
      "dice": "Hoy,"
@@ -82,6 +84,7 @@
     {
      "tipo": "foto",
      "busqueda": "Port-au-Prince view",
+     "archivo": "File:Port-au-Prince Haiti 2008.JPG",
      "pie": "Puerto Príncipe",
      "sangrado": true,
      "dice": "haitiano."
@@ -448,6 +451,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Saint-Domingue map 18th century",
+       "archivo": "File:Delisle - Carte de l'Isle de Saint Domingue.png",
        "pie": "La Española en el siglo XVIII",
        "sangrado": true
       },
@@ -462,6 +466,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "sugar plantation engraving 18th century Caribbean",
+       "archivo": "File:The Mill Yard - Ten Views in the Island of Antigua (1823), plate V - BL.jpg",
        "pie": "Ingenio azucarero del Caribe, grabado de época",
        "sangrado": true
       },
@@ -476,6 +481,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Battle for Palm Tree Hill Suchodolski",
+       "archivo": "File:January Suchodolski - Legionaries at San Domingo - MP 2606 - National Museum in Warsaw (cropped) (cropped).jpg",
        "pie": "La Revolución haitiana (óleo de J. Suchodolski, 1845)",
        "sangrado": true
       },
@@ -497,6 +503,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "French ship of the line 1820s painting",
+       "archivo": "File:Le baron de Mackau apportant au président haïtien J.-P. Boyer l'ordonnance de Charles X exigeant le paiement de 150 millions de francs or en échange de la reconnaissance de l'indépendance d'Haïti, le 11 juillet 1825.jpg",
        "pie": "Navío de guerra francés, década de 1820",
        "sangrado": true
       },
@@ -518,6 +525,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Charles X Haiti 1825",
+       "archivo": "File:Grabado de Carlos X de Francia danddole la independencia a Haití.jpg",
        "pie": "Carlos X de Francia",
        "sangrado": true
       },
@@ -532,6 +540,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Jean-Pierre Boyer president Haiti",
+       "archivo": "File:National Bank of Haiti, Port-au-Prince.jpg",
        "pie": "Jean-Pierre Boyer, presidente de Haití",
        "sangrado": true
       },
@@ -655,6 +664,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Hispaniola satellite",
+       "archivo": "File:Haiti and Dominican Republic (MODIS 2016-02-07).jpg",
        "pie": "La Española desde el espacio",
        "sangrado": true
       },
@@ -678,6 +688,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Haiti deforestation border NASA",
+       "archivo": "File:Haiti deforestation.jpg",
        "pie": "Frontera Haití–República Dominicana · NASA",
        "sangrado": true
       },
@@ -797,6 +808,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Haiti deforested hills",
+       "archivo": "File:Border Haiti-Dom.Republic.jpg",
        "pie": "Laderas en Haití",
        "sangrado": true
       }
@@ -807,6 +819,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "charcoal Haiti",
+       "archivo": "File:Deforested hillside on La Gonâve.jpg",
        "pie": "Carbón de leña, Haití",
        "sangrado": true
       }
@@ -888,6 +901,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Pico Duarte",
+       "archivo": "File:Foggy scenic view of Dominican Mountains, Cordillera Central.jpg",
        "pie": "Cordillera Central, República Dominicana",
        "sangrado": true
       },
@@ -899,7 +913,7 @@
        {
         "texto": "SIGUE AHÍ",
         "pais": "DOM",
-        "dice": "bosque"
+        "dice": "pie."
        }
       ]
      },
@@ -939,6 +953,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Rafael Trujillo",
+       "archivo": "File:Rafael L.Trujillo en la Ciudad del Vaticano.jpg",
        "pie": "Rafael Trujillo",
        "sangrado": true
       },
@@ -951,10 +966,28 @@
       "tipo": "relato",
       "texto": "Del lado haitiano, François Duvalier, Papa Doc. Llega en 1957, se nombra presidente vitalicio y le hereda el cargo a su hijo de diecinueve años.",
       "visual": {
-       "tipo": "foto",
-       "busqueda": "François Duvalier",
-       "pie": "François Duvalier, «Papa Doc»",
-       "sangrado": true
+       "tipo": "mapa",
+       "destacar": [
+        "HTI"
+       ],
+       "zoom": 6.6,
+       "centro": [
+        -72.6,
+        18.9
+       ],
+       "etiquetas": [
+        {
+         "texto": "Puerto Príncipe",
+         "en": [
+          -72.34,
+          18.54
+         ]
+        }
+       ]
+      },
+      "rotulo": {
+       "texto": "PAPA DOC · 1957",
+       "dice": "1957,"
       }
      },
      {
@@ -963,6 +996,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Santo Domingo 1965 United States troops",
+       "archivo": "File:DR1965-3 (8161964105).jpg",
        "pie": "Santo Domingo, 1965",
        "sangrado": true
       },
@@ -1035,6 +1069,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Punta Cana beach",
+       "archivo": "File:View southwards along coastline at Punta Cana 10.jpg",
        "pie": "Punta Cana",
        "sangrado": true
       },
@@ -1112,7 +1147,8 @@
       "texto": "Haití también estaba en esa carrera. Las pelotas de béisbol del principio son de esa época: en los setenta, el país se llenó de fábricas de ensamblaje.",
       "visual": {
        "tipo": "foto",
-       "busqueda": "baseball closeup stitches"
+       "busqueda": "baseball closeup stitches",
+       "archivo": "File:Ball (6071275468).jpg"
       }
      },
      {
@@ -1272,6 +1308,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "rice Artibonite Haiti",
+       "archivo": "File:Bill Clinton 100118-F-1644L-036 (4290068154).jpg",
        "pie": "Arroz en Haití",
        "sangrado": true
       },
@@ -1294,6 +1331,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Haitian National Palace earthquake 2010",
+       "archivo": "File:Haiti National Palace damaged.jpg",
        "pie": "Palacio Nacional de Haití, enero de 2010",
        "sangrado": true
       },
@@ -1516,6 +1554,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "Santo Domingo skyline",
+       "archivo": "File:DOM Santo Domingo, Paseo Marítimo Malecón 0019.jpg",
        "pie": "Santo Domingo, hoy",
        "sangrado": true
       },
@@ -1530,6 +1569,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "garment factory Dominican Republic",
+       "archivo": "File:Torres del sector La Esperilla.jpg",
        "sangrado": true
       },
       "sellos": [
@@ -1598,6 +1638,7 @@
       "visual": {
        "tipo": "foto",
        "busqueda": "sugar cane cutting Dominican Republic",
+       "archivo": "File:Sugarcane dominican.jpg",
        "pie": "Corte de caña, República Dominicana",
        "sangrado": true
       },
