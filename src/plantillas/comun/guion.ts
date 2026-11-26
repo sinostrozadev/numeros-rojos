@@ -158,7 +158,7 @@ export const CamposTesis = CamposBase.extend({
   /** Título corto en pantalla durante el video, arriba a la izquierda, mayúsculas (≤ 44): "CHILE VS COREA DEL SUR · 1960–2024". */
   cabecera: z.string().min(3).max(44),
   /** Qué sabrá el espectador al final, en una frase que dice la voz tras el gancho ("Al final vas a saber por qué…"). */
-  promesa: z.string().min(10).max(320),
+  promesa: z.string().min(10).max(480),
   /** v4: visual de la promesa (foto/mapa) EN LUGAR de la lista del índice (el índice sigue en la barra de capítulos). */
   promesaVisual: Visual.optional(),
   /** 3–5 paradas del índice (≤ 24 c/u) que se ven como lista con pictogramas y luego marcan cada capítulo. */

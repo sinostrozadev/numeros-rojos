@@ -112,7 +112,10 @@ jobs:
             [ -f "$mp4" ] || continue
             id=$(basename "$mp4" .mp4)
             cp "$mp4" resultado/
-            for x in "salida/bandeja/$id.json" "salida/bandeja/$id-mini.png" "salida/revisiones/hojas/$id.jpg" "contenido/guiones/$id.json"; do [ -f "$x" ] && cp "$x" resultado/ || true; done
+            for x in "salida/bandeja/$id.json" "salida/bandeja/$id-mini.png" "salida/revisiones/hojas/$id.jpg"; do [ -f "$x" ] && cp "$x" resultado/ || true; done
+            # El guion promovido se llama igual que el json de la bandeja: va con otro nombre para no pisarlo (se perdían capítulos y créditos).
+            [ -f "contenido/guiones/$id.json" ] && cp "contenido/guiones/$id.json" "resultado/$id.guion.json" || true
+            [ -f "salida/trabajo/$id.plan.json" ] && cp "salida/trabajo/$id.plan.json" "resultado/$id.plan.json" || true
           done
           ls -la resultado
 
