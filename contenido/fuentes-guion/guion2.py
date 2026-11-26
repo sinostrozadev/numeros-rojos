@@ -17,7 +17,7 @@ gancho = {
     'visuales': [
         foto('beisbol-costura', pie=''),
         mapa(['HTI'], zoom=6.3, centro=ISLA, etiquetas=[PAP], dice='Haití.'),
-        mapa(['DOM', 'HTI'], zoom=6.3, centro=ISLA, etiquetas=[PAP, SDQ], dice='isla,'),
+        mapa(['HTI', 'DOM'], zoom=6.3, centro=ISLA, etiquetas=[PAP, SDQ], dice='isla,'),
         foto('santo-domingo-hoy', pie='Santo Domingo', dice='Hoy,'),
         foto('puerto-principe-hoy', pie='Puerto Príncipe', dice='haitiano.'),
     ],
@@ -29,11 +29,7 @@ gancho = {
 
 promesa = ('Todos tienen su teoría: la deuda con Francia, los dictadores, el terremoto. Yo tenía la mía, pero choca con 1954. '
            'Ese año los dos países eran igual de pobres, y cualquier teoría tiene que pasar por ahí. Así que voy a buscar el año en que se separan.')
-promesaVisual = {'tipo': 'iconos', 'titulo': 'Las teorías de siempre', 'items': [
-    {'icono': '📜', 'texto': 'La deuda con Francia', 'dice': 'deuda'},
-    {'icono': '🎖️', 'texto': 'Los dictadores', 'dice': 'dictadores,'},
-    {'icono': '🏚️', 'texto': 'El terremoto', 'dice': 'terremoto.'},
-]}
+promesaVisual = foto('frontera-satelite', pie='La frontera desde el espacio · NASA, 2002')
 
 cap1 = {'titulo': '1954: dos países empatados', 'escenas': [
     esc('planteamiento', 'Primero, el tamaño. La isla se llama La Española y cabe dos veces dentro de Uruguay. Haití ocupa algo más de un tercio. '
@@ -100,7 +96,7 @@ cap3 = {'titulo': 'La lluvia que no cruza la montaña', 'escenas': [
         cifras=[cifra('el 13 %', 13, BOSQUE, 'valor', 'HTI', anio=2022), cifra('casi la mitad', 46.4, BOSQUE, 'valor', 'DOM', anio=2022)]),
     esc('relato', 'Una parte es geografía pura. Es la misma isla, pero no la misma lluvia: los vientos llegan cargados desde el este, chocan con la Cordillera Central, '
         'donde está el pico más alto del Caribe, y sueltan el agua del lado dominicano.',
-        visual=mapa(['DOM', 'HTI'], zoom=6.3, centro=ISLA, etiquetas=[('Pico Duarte · 3.098 m', [-70.99, 19.02]), ('vientos del este →', [-67.6, 19.6])], acercar=True)),
+        visual=mapa(['HTI', 'DOM'], zoom=6.3, centro=ISLA, etiquetas=[('Pico Duarte · 3.098 m', [-70.99, 19.02]), ('vientos del este →', [-67.6, 19.6])], acercar=True)),
     esc('relato', 'A Haití le llega menos agua y le tocó más cerro que valle. En ese terreno vive la misma cantidad de gente, en poco más de la mitad del espacio.',
         visual=foto('cerros-pelados', pie='Laderas en Haití')),
     esc('relato', 'Con poca tierra y sin electricidad, se cocina con carbón de leña. Cada saco es un árbol menos.', visual=foto('carbon', pie='Carbón de leña, Haití')),

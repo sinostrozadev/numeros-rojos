@@ -47,8 +47,8 @@
     {
      "tipo": "mapa",
      "destacar": [
-      "DOM",
-      "HTI"
+      "HTI",
+      "DOM"
      ],
      "zoom": 6.3,
      "centro": [
@@ -139,25 +139,11 @@
   },
   "promesa": "Todos tienen su teoría: la deuda con Francia, los dictadores, el terremoto. Yo tenía la mía, pero choca con 1954. Ese año los dos países eran igual de pobres, y cualquier teoría tiene que pasar por ahí. Así que voy a buscar el año en que se separan.",
   "promesaVisual": {
-   "tipo": "iconos",
-   "titulo": "Las teorías de siempre",
-   "items": [
-    {
-     "icono": "📜",
-     "texto": "La deuda con Francia",
-     "dice": "deuda"
-    },
-    {
-     "icono": "🎖️",
-     "texto": "Los dictadores",
-     "dice": "dictadores,"
-    },
-    {
-     "icono": "🏚️",
-     "texto": "El terremoto",
-     "dice": "terremoto."
-    }
-   ]
+   "tipo": "foto",
+   "busqueda": "Haiti deforestation border NASA",
+   "archivo": "File:Haiti deforestation.jpg",
+   "pie": "La frontera desde el espacio · NASA, 2002",
+   "sangrado": true
   },
   "indice": [
    "El empate",
@@ -775,8 +761,8 @@
       "visual": {
        "tipo": "mapa",
        "destacar": [
-        "DOM",
-        "HTI"
+        "HTI",
+        "DOM"
        ],
        "zoom": 6.3,
        "centro": [
