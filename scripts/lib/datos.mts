@@ -497,6 +497,14 @@ export const calcularCifra = (cifra: Cifra, series: SerieResuelta[]): ResultadoC
       }
       break;
     }
+    case 'cuenta': {
+      // v4: años del rango con valor bajo el umbral (por defecto 0): "cayó en 34 de los últimos 64 años". Exacto (sin tolerancia).
+      const desde = c.anio ?? -Infinity, hasta = c.anioB ?? Infinity, umbral = c.umbral ?? 0;
+      const rango = pts(pais).filter((p) => p.anio >= desde && p.anio <= hasta);
+      if (!rango.length) return mal(`cuenta: ${nombre(pais)} sin datos en el rango`);
+      const n = rango.filter((p) => p.valor < umbral).length;
+      return { esperado: n, dicho, desvio: n === 0 ? (dicho === 0 ? 0 : Infinity) : (dicho - n) / n, ok: dicho === n, detalle: `${nombre(pais)}: ${n} de ${rango.length} años (${rango[0].anio}–${rango.at(-1)!.anio}) con valor < ${umbral} · dicho ${dicho}` };
+    }
     case 'ranking': {
       const anio = c.anio ?? Math.min(...c.datos.paises.map((p) => ultimo(p) ?? Infinity));
       const vals = c.datos.paises.map((p) => ({ p, v: en(p, anio) })).filter((x): x is { p: string; v: number } => x.v !== undefined);

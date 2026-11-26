@@ -123,9 +123,11 @@ const vistaDe = (b: BloqueTesis): Vista | undefined => (b.grafico ? { grafico: b
  * Un visual v2 (foto, mapa, iconos, ilustración) en su zona. `atenuado` < 1 = fondo de una cita, una espera o una
  * tarjeta de capítulo (con deriva lenta, como el gráfico previo). El ken-burns y la cámara corren desde `vv.desde`.
  */
-const VistaVisualEn: React.FC<{ vv: VistaVisual; frame: number; visuales?: VisualesResueltos; zona?: Rect; atenuado?: number }> = ({ vv, frame, visuales, zona, atenuado = 1 }) => {
+const VistaVisualEn: React.FC<{ vv: VistaVisual; frame: number; visuales?: VisualesResueltos; zona?: Rect; atenuado?: number; sinEntrada?: boolean }> = ({ vv, frame, visuales, zona, atenuado = 1, sinEntrada }) => {
   const fps = FORMATO_LARGO.fps;
-  const Z = zona ?? ZONA_TESIS.grafico;
+  // v4: foto `sangrado` = 1920×1080 completos, salvo en `dividido` (zona angosta), donde va en su panel.
+  const sangrado = vv.v.tipo === 'foto' && !!vv.v.sangrado && !(zona && zona.ancho < 1200);
+  const Z = sangrado ? { x: 0, y: 0, ancho: W, alto: H } : zona ?? ZONA_TESIS.grafico;
   const local = frame - vv.desde;
   const frames = Math.max(1, vv.hasta - vv.desde);
   const fondo = atenuado < 1;
@@ -135,7 +137,7 @@ const VistaVisualEn: React.FC<{ vv: VistaVisual; frame: number; visuales?: Visua
   const variante = Number(vv.clave.replace(/\D/g, '')) || 0;
   const v = vv.v;
   let cuerpo: React.ReactNode = null;
-  if (v.tipo === 'foto') cuerpo = <Foto visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} encuadre={v.encuadre} variante={variante} />;
+  if (v.tipo === 'foto') cuerpo = <Foto visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} encuadre={v.encuadre} variante={variante} sangrado={sangrado} sinEntrada={sinEntrada} />;
   else if (v.tipo === 'ilustracion') cuerpo = <Ilustracion visuales={visuales} clave={vv.clave} ancho={Z.ancho} alto={Z.alto} frame={local} frames={frames} pie={v.pie} variante={variante} />;
   else if (v.tipo === 'mapa') cuerpo = <Mapa v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} viajeEn={vv.viajeDesde !== undefined ? vv.viajeDesde - vv.desde : undefined} />;
   else if (v.tipo === 'iconos') cuerpo = <Iconos v={v} ancho={Z.ancho} alto={Z.alto} frame={local} fps={fps} itemsFrame={(vv.itemsFrame ?? []).map((x) => x - vv.desde)} />;
@@ -357,7 +359,8 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
   const b = plan.bloques.find((x) => frame >= x.desde && frame < x.hasta) ?? plan.bloques[plan.bloques.length - 1];
   const linea = b.linea !== undefined ? tiempos.lineas[b.linea] : undefined;
   const local = frame - b.desde;
-  const conCabecera = b.tipo !== 'titulo' && b.tipo !== 'final' && b.tipo !== 'cierre';
+  const ganchoVisual = b.tipo === 'gancho' && !!b.visualesGancho?.length;
+  const conCabecera = b.tipo !== 'titulo' && b.tipo !== 'final' && b.tipo !== 'cierre' && !ganchoVisual;
   const enCapitulos = b.capitulo !== null && b.capitulo !== undefined;
   const capActual = enCapitulos ? b.capitulo! : -1;
   const bloquesCap = enCapitulos ? plan.bloques.filter((x) => x.capitulo === capActual) : [];
@@ -387,12 +390,29 @@ export const Tesis: React.FC<PropsTesis> = (props) => {
     <AbsoluteFill style={{ background: PALETA.fondo, overflow: 'hidden' }}>
       <FondoRejilla frame={frame} fps={fps} ancho={W} alto={H} />
       {b.tipo === 'titulo' && <TarjetaTitulo g={props} frame={local} frames={b.hasta - b.desde} />}
-      {b.tipo === 'gancho' && (b.grafico ? <GraficoConEspera b={b} frame={frame} datos={datos} /> : (
+      {ganchoVisual && (() => {
+        // v4: los visuales del gancho, uno tras otro; el anterior queda debajo 0,4 s para que el fundido no muestre el fondo.
+        const vs = b.visualesGancho!;
+        const k = vs.reduce((acc, x, i) => (frame >= x.desde ? i : acc), 0);
+        const previoG = k > 0 && frame < vs[k].desde + Math.round(0.45 * fps) ? vs[k - 1] : undefined;
+        const rot = spring({ frame: frame - Math.round(0.15 * fps), fps, config: { damping: 14, stiffness: 170 } });
+        return (
+          <>
+            {previoG && <VistaVisualEn vv={{ ...previoG, hasta: vs[k].desde + Math.round(0.45 * fps) }} frame={frame} visuales={props.visuales} sinEntrada />}
+            <VistaVisualEn vv={vs[k]} frame={frame} visuales={props.visuales} sinEntrada={k === 0} />
+            <div style={{ position: 'absolute', left: S.lados, top: 64 }}>
+              <RotuloCaja texto={props.gancho.rotulo} visible={frame < 3 ? 1 : Math.max(rot, 0.999)} fontSize={58} />
+            </div>
+          </>
+        );
+      })()}
+      {b.tipo === 'gancho' && !ganchoVisual && (b.grafico ? <GraficoConEspera b={b} frame={frame} datos={datos} /> : (
         <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ fontFamily: TIPO.display, fontWeight: 800, fontSize: 170, color: PALETA.dorado, textTransform: 'uppercase', letterSpacing: -3, transform: `scale(${1 + local / fps * 0.01})` }}>{props.gancho.rotulo}</div>
         </AbsoluteFill>
       ))}
-      {b.tipo === 'promesa' && (
+      {b.tipo === 'promesa' && b.visual && <VistaVisualEn vv={b.visual} frame={frame} visuales={props.visuales} />}
+      {b.tipo === 'promesa' && !b.visual && (
         <div style={{ position: 'absolute', left: 260, top: 210 }}>
           <IndiceLista items={props.indice} frame={frame} desde={plan.indiceDesde} fontSize={62} ancho={1400} />
         </div>

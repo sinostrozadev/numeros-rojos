@@ -26,7 +26,7 @@ import { PAUSA, buscarPalabra, type LineaTiempo, depurarEventos, primeraCifra, t
 import { clavesDeGrafico, frameDice, framesAnotaciones } from '../comun/construccion';
 import { mitadesRemate } from '../comun/remate-texto';
 import { FORMATO_LARGO, RITMO } from '../../marca/tokens';
-import { claveDeVisual, type Mascota, type Sello, type Visual, type VisualesResueltos } from '../comun/visual';
+import { CLAVE_VISUAL_PROMESA, claveDeVisual, claveDeVisualGancho, type Mascota, type Sello, type Visual, type VisualesResueltos } from '../comun/visual';
 
 export const FPS_TESIS = FORMATO_LARGO.fps;
 /** Tarjeta de título en el frame 0 (cabecera + rótulo del gancho): mínimo; crece con `tiempoLectura` del rótulo. */
@@ -49,7 +49,9 @@ export const T_FUNDIDO_FINAL = 0.4;
  */
 export const tiempoLectura = (texto: string) => Math.max(2.5, 1 + 0.3 * texto.split(/\s+/).filter(Boolean).length);
 /** Duración de la tarjeta de título del guion. */
-export const tTitulo = (g: Pick<GuionTesis, 'gancho'>) => Math.max(T_TITULO, tiempoLectura(g.gancho.rotulo));
+/** v4: con `gancho.visuales` NO hay tarjeta de título: la imagen llena el frame 0 y la voz entra a los 0,35 s. */
+export const T_ANTES_GANCHO_VISUAL = 0.35;
+export const tTitulo = (g: Pick<GuionTesis, 'gancho'>) => (g.gancho.visuales?.length ? T_ANTES_GANCHO_VISUAL : Math.max(T_TITULO, tiempoLectura(g.gancho.rotulo)));
 /** Duración de la tarjeta de un capítulo (el número no cuenta como palabra). */
 export const tCapitulo = (titulo: string) => Math.max(T_CAPITULO, tiempoLectura(titulo));
 /** Texto del rótulo del capítulo: "01 · 1960: Chile iba adelante". */
@@ -145,6 +147,8 @@ export type BloqueTesis = {
   previoVisual?: VistaVisual;
   /** Mascota de la escena y el frame en que entra. */
   mascota?: { m: Mascota; desde: number };
+  /** v4: visuales del gancho en orden (el primero desde el frame 0); cada uno vive [desde, hasta). */
+  visualesGancho?: VistaVisual[];
 };
 
 /** Un visual tal como se ve: tipo, clave en props.visuales y frames ABSOLUTOS [desde, hasta) (+ entrada de cada ítem en `iconos`). */
@@ -218,21 +222,65 @@ export const planTesis = (g: GuionTesis & { visuales?: VisualesResueltos }, tiem
 
   // Título + gancho
   const fTitulo = f(tTitulo(g));
-  bloques.push({ tipo: 'titulo', desde: 0, hasta: fTitulo, capitulo: null });
+  /** v4: vista de un visual suelto (gancho/promesa) en [desde, hasta): ítems repartidos o por `dice`, viaje del mapa. */
+  const vistaSuelta = (v: Visual, clave: string, linea: LineaTiempo, desde: number, hasta: number): VistaVisual => {
+    const vv: VistaVisual = { v, clave, desde, hasta };
+    if (v.tipo === 'iconos' || v.tipo === 'versus') {
+      const items: { dice?: string }[] = v.tipo === 'iconos' ? v.items : [...v.lados[0].items, ...v.lados[1].items];
+      let piDesde = 0;
+      vv.itemsFrame = items.map((it, j) => {
+        const pi = it.dice ? buscarPalabra(linea.palabras, it.dice, piDesde) : -1;
+        if (pi >= 0) { piDesde = pi + 1; return Math.max(desde, f(linea.inicio + linea.palabras[pi].inicio - 0.1)); }
+        return Math.round(desde + f(0.35) + ((hasta - desde) * 0.8 * j) / items.length);
+      });
+    }
+    if (v.tipo === 'mapa' && v.viaje) {
+      const fv = frameDePalabra(linea, v.viaje.dice);
+      vv.viajeDesde = fv !== null ? Math.min(Math.max(desde, fv), hasta - f(1)) : desde;
+    }
+    return vv;
+  };
+  const ganchoVisuales = (g.gancho.visuales ?? []).map((v, k) => ({ v, clave: claveDeVisualGancho(k) })).filter((x) => visualDisponible(x.v, x.clave, g.visuales));
   const ganchoGraf = g.gancho.grafico;
-  if (ganchoGraf) {
-    const { vista, esperaHasta } = vistaNueva(ganchoGraf, 'gancho', [L[0]], fTitulo);
-    bloques.push({ tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0, ...vista, esperaHasta });
-    ultimo = vista;
-  } else bloques.push({ tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0 });
-  eventos.push({ t: fTitulo / fps - 0.1, tipo: 'whoosh', fuerza: 0.8 });
+  if (ganchoVisuales.length) {
+    // Sin tarjeta: el gancho ocupa desde el frame 0. Cada visual entra con su `dice` (o repartidos) y dura hasta el siguiente.
+    const fin = desdeVisual(1);
+    const entradas = ganchoVisuales.map((x, k) => {
+      if (k === 0) return 0;
+      const fd = frameDePalabra(L[0], x.v.dice);
+      return fd ?? Math.round((fin * k) / ganchoVisuales.length);
+    });
+    for (let k = 1; k < entradas.length; k++) entradas[k] = Math.min(Math.max(entradas[k], entradas[k - 1] + f(1)), fin - f(1));
+    const vistas = ganchoVisuales.map((x, k) => vistaSuelta(x.v, x.clave, L[0], entradas[k], k + 1 < entradas.length ? entradas[k + 1] : fin));
+    bloques.push({ tipo: 'gancho', desde: 0, hasta: fin, capitulo: null, linea: 0, visualesGancho: vistas });
+    vistas.slice(1).forEach((x) => eventos.push({ t: x.desde / fps, tipo: 'whoosh', fuerza: 0.45 }));
+    ultimoVisual = vistas[vistas.length - 1];
+    ultimoFueVisual = true;
+  } else {
+    bloques.push({ tipo: 'titulo', desde: 0, hasta: fTitulo, capitulo: null });
+    if (ganchoGraf) {
+      const { vista, esperaHasta } = vistaNueva(ganchoGraf, 'gancho', [L[0]], fTitulo);
+      bloques.push({ tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0, ...vista, esperaHasta });
+      ultimo = vista;
+    } else bloques.push({ tipo: 'gancho', desde: fTitulo, hasta: desdeVisual(1), capitulo: null, linea: 0 });
+    eventos.push({ t: fTitulo / fps - 0.1, tipo: 'whoosh', fuerza: 0.8 });
+  }
 
   // Promesa + índice
   const lp = L[1];
   const n = g.indice.length;
   const indiceDesde = g.indice.map((_, k) => f(lp.inicio + (lp.duracionHablada * 0.85 * k) / n + 0.2));
-  bloques.push({ tipo: 'promesa', desde: desdeVisual(1), hasta: desdeVisual(2), capitulo: null, linea: 1 });
-  indiceDesde.forEach((fr) => eventos.push({ t: fr / fps, tipo: 'pop', fuerza: 0.55 }));
+  if (g.promesaVisual && visualDisponible(g.promesaVisual, CLAVE_VISUAL_PROMESA, g.visuales)) {
+    // v4: la promesa se dice sobre su visual (sin lista de índice: el índice vive en la barra de capítulos).
+    const vp = vistaSuelta(g.promesaVisual, CLAVE_VISUAL_PROMESA, lp, desdeVisual(1), desdeVisual(2));
+    bloques.push({ tipo: 'promesa', desde: desdeVisual(1), hasta: desdeVisual(2), capitulo: null, linea: 1, visual: vp, disposicion: 'completo' });
+    eventos.push({ t: vp.desde / fps, tipo: 'whoosh', fuerza: 0.45 });
+    ultimoVisual = vp;
+    ultimoFueVisual = true;
+  } else {
+    bloques.push({ tipo: 'promesa', desde: desdeVisual(1), hasta: desdeVisual(2), capitulo: null, linea: 1 });
+    indiceDesde.forEach((fr) => eventos.push({ t: fr / fps, tipo: 'pop', fuerza: 0.55 }));
+  }
 
   // Capítulos
   const capitulos: PlanTesis['capitulos'] = [{ titulo: 'Introducción', seg: 0, frame: 0 }];

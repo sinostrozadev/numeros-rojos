@@ -23,7 +23,8 @@ const API = 'https://commons.wikimedia.org/w/api.php';
 /** Wikimedia pide un User-Agent descriptivo con contacto: https://meta.wikimedia.org/wiki/User-Agent_policy */
 const USER_AGENT = 'EnNumerosRojos/1.0 (canal de YouTube En Números Rojos; contacto: https://github.com/sinostrozadev/numeros-rojos)';
 const LADO_MINIMO = 1200;
-const ANCHO_DESCARGA = 1280;
+/** v4 (2026-11-26): 1920 para que las fotos a sangre no se vean blandas (las ya descargadas siguen en caché a 1280). */
+const ANCHO_DESCARGA = 1920;
 const RESULTADOS = 20;
 
 type Clase = 'libre' | 'atribucion';
@@ -71,6 +72,20 @@ const consultar = async (busqueda: string): Promise<Pagina[]> => {
   if (!r.ok) throw new Error(`Commons respondió ${r.status}`);
   const d = (await r.json()) as { query?: { pages?: Record<string, Pagina> } };
   return Object.values(d.query?.pages ?? {}).sort((a, b) => (a.index ?? 0) - (b.index ?? 0));
+};
+
+/** v4: trae un archivo EXACTO de Commons por su título ("File:….jpg"); pasa por el mismo `elegir` (licencia, tamaño…). */
+const consultarArchivo = async (titulo: string): Promise<Pagina[]> => {
+  const p = new URLSearchParams({
+    action: 'query', format: 'json', formatversion: '1', titles: titulo,
+    prop: 'imageinfo|categories', cllimit: 'max',
+    iiprop: 'url|extmetadata|size|mime', iiurlwidth: String(ANCHO_DESCARGA),
+    iiextmetadatafilter: 'LicenseShortName|LicenseUrl|Artist|Credit|ObjectName|Restrictions',
+  });
+  const r = await pedir(`${API}?${p}`);
+  if (!r.ok) throw new Error(`Commons respondió ${r.status}`);
+  const d = (await r.json()) as { query?: { pages?: Record<string, Pagina> } };
+  return Object.values(d.query?.pages ?? {});
 };
 
 type Candidata = Omit<FotoResuelta, 'archivo'> & { descarga: string; ext: string; clase: Clase; licenciaUrl?: string };
@@ -144,7 +159,7 @@ export const prepararFotos = async (id: string, pedidos: PedidoFoto[]): Promise<
   const fallidas: string[] = [];
   if (pedidos.length) fs.mkdirSync(dir, { recursive: true });
   for (const { clave, visual } of pedidos) {
-    const busquedas = [visual.busqueda, ...(visual.alternativas ?? [])];
+    const busquedas = [...(visual.archivo ? [visual.archivo] : []), visual.busqueda, ...(visual.alternativas ?? [])];
     const firma = busquedas.join(' | ');
     const enCache = previo[clave];
     if (enCache && enCache.busquedas === firma && fs.existsSync(path.join(RAIZ, 'public', enCache.foto.archivo))) {
@@ -156,7 +171,7 @@ export const prepararFotos = async (id: string, pedidos: PedidoFoto[]): Promise<
     let lista = false;
     for (const b of busquedas) {
       try {
-        const { candidata, rechazos } = elegir(await consultar(b));
+        const { candidata, rechazos } = elegir(/^File:/i.test(b) ? await consultarArchivo(b) : await consultar(b));
         if (!candidata) { console.log(`  · foto ${clave} "${b}": ninguna válida (${rechazos.length} descartadas${rechazos.length ? `: ${rechazos.slice(0, 2).join('; ')}` : ''})`); await espera(250); continue; }
         const r = await pedir(candidata.descarga);
         const tipo = r.headers.get('content-type') ?? '';

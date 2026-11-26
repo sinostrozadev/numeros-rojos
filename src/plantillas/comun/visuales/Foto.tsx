@@ -23,6 +23,10 @@ export type PropsPanelImagen = {
   credito?: string;
   /** Sentido del paneo (alterna entre fotos para que no se vean iguales). */
   variante?: number;
+  /** v4: a sangre (sin marco ni esquinas; velo arriba y abajo para cabecera y subtítulos; pie arriba, crédito al borde inferior). */
+  sangrado?: boolean;
+  /** v4: sin fundido de entrada (la imagen del frame 0 del video se ve entera desde el primer cuadro). */
+  sinEntrada?: boolean;
 };
 
 /**
@@ -31,9 +35,9 @@ export type PropsPanelImagen = {
  * una copia desenfocada (no se recortan cabezas ni carteles). Velo oscuro abajo para que pie y crédito se lean; pie
  * en caja de acento abajo a la izquierda; crédito (autor · licencia) abajo a la derecha, siempre visible.
  */
-export const PanelImagen: React.FC<PropsPanelImagen> = ({ src, anchoImg, altoImg, ancho, alto, frame, frames, encuadre = 'ken-burns', pie, credito, variante = 0 }) => {
+export const PanelImagen: React.FC<PropsPanelImagen> = ({ src, anchoImg, altoImg, ancho, alto, frame, frames, encuadre = 'ken-burns', pie, credito, variante = 0, sangrado, sinEntrada }) => {
   const { fps } = useVideoConfig();
-  const entra = clamp01(frame / (0.4 * fps));
+  const entra = sinEntrada ? 1 : clamp01(frame / (0.4 * fps));
   const p = clamp01(frame / Math.max(1, frames));
   const kb = encuadre === 'ken-burns';
   const zoom = kb ? 1 + 0.08 * p : 1;
@@ -44,20 +48,22 @@ export const PanelImagen: React.FC<PropsPanelImagen> = ({ src, anchoImg, altoImg
   const url = staticFile(src);
   const estiloImg: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', transform: `scale(${zoom}) translate(${dx}%, ${dy}%)`, transformOrigin: '50% 45%' };
   return (
-    <div style={{ position: 'relative', width: ancho, height: alto, borderRadius: 22, overflow: 'hidden', opacity: 0.3 + 0.7 * entra, transform: `scale(${0.985 + 0.015 * entra})`, background: PALETA.fondo2,
-      boxShadow: '0 22px 60px rgba(0,0,0,0.55)', border: '2px solid rgba(255,255,255,0.12)' }}>
+    <div style={{ position: 'relative', width: ancho, height: alto, borderRadius: sangrado ? 0 : 22, overflow: 'hidden', opacity: 0.3 + 0.7 * entra, transform: sangrado ? undefined : `scale(${0.985 + 0.015 * entra})`, background: PALETA.fondo2,
+      boxShadow: sangrado ? undefined : '0 22px 60px rgba(0,0,0,0.55)', border: sangrado ? undefined : '2px solid rgba(255,255,255,0.12)' }}>
       {entera && <Img src={url} style={{ ...estiloImg, objectFit: 'cover', filter: 'blur(28px) brightness(0.45) saturate(0.8)', transform: 'scale(1.15)' }} />}
       <Img src={url} style={{ ...estiloImg, objectFit: entera ? 'contain' : 'cover', objectPosition: 'center 40%', filter: 'saturate(0.92) contrast(1.04)' }} />
       {/* Velo: oscurece apenas el conjunto y más abajo, donde van pie y crédito. */}
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(17,20,24,0.10) 0%, rgba(17,20,24,0) 45%, rgba(17,20,24,0.72) 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: sangrado
+        ? 'linear-gradient(180deg, rgba(17,20,24,0.78) 0%, rgba(17,20,24,0.18) 17%, rgba(17,20,24,0) 45%, rgba(17,20,24,0.30) 72%, rgba(17,20,24,0.88) 100%)'
+        : 'linear-gradient(180deg, rgba(17,20,24,0.10) 0%, rgba(17,20,24,0) 45%, rgba(17,20,24,0.72) 100%)' }} />
       {pie && (
-        <div style={{ position: 'absolute', left: 26, bottom: 26, maxWidth: ancho * (credito ? 0.6 : 0.9), background: PALETA.dorado, color: PALETA.fondo, borderRadius: 8,
+        <div style={{ position: 'absolute', left: sangrado ? 110 : 26, ...(sangrado ? { top: 156 } : { bottom: 26 }), maxWidth: ancho * (credito ? 0.6 : 0.9), background: PALETA.dorado, color: PALETA.fondo, borderRadius: 8,
           padding: '4px 16px 0', fontFamily: TIPO.condensada, fontSize: 40, lineHeight: 1.15, letterSpacing: 1, textTransform: 'uppercase',
           whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', boxShadow: '0 6px 18px rgba(0,0,0,0.45)',
           transform: `translateY(${(1 - clamp01((frame - 0.3 * fps) / (0.35 * fps))) * 12}px)` }}>{pie}</div>
       )}
       {credito && (
-        <div style={{ position: 'absolute', right: 22, bottom: 24, maxWidth: ancho * (pie ? 0.36 : 0.8), textAlign: 'right', fontFamily: TIPO.texto, fontWeight: 500, fontSize: 18,
+        <div style={{ position: 'absolute', right: sangrado ? 110 : 22, bottom: sangrado ? 10 : 24, maxWidth: ancho * (pie && !sangrado ? 0.36 : 0.8), textAlign: 'right', fontFamily: TIPO.texto, fontWeight: 500, fontSize: 18,
           lineHeight: 1.25, color: 'rgba(255,255,255,0.82)', textShadow: '0 1px 3px rgba(0,0,0,0.9)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {credito}
         </div>
@@ -73,7 +79,7 @@ export const creditoFoto = (f: FotoResuelta) => `Foto: ${corto(f.autor)} · ${f.
  * Foto de Wikimedia Commons ya resuelta por preparar-tesis (props.visuales[clave].foto). Si no está resuelta no dibuja
  * nada (el contenedor cae al gráfico previo).
  */
-export const Foto: React.FC<{ visuales?: VisualesResueltos; clave: string; ancho: number; alto: number; frame: number; frames: number; pie?: string; encuadre?: 'ken-burns' | 'fijo'; variante?: number }> = ({ visuales, clave, ...r }) => {
+export const Foto: React.FC<{ visuales?: VisualesResueltos; clave: string; ancho: number; alto: number; frame: number; frames: number; pie?: string; encuadre?: 'ken-burns' | 'fijo'; variante?: number; sangrado?: boolean; sinEntrada?: boolean }> = ({ visuales, clave, ...r }) => {
   const f = visuales?.[clave]?.foto;
   if (!f) return null;
   return <PanelImagen src={f.archivo} anchoImg={f.ancho} altoImg={f.alto} credito={creditoFoto(f)} {...r} />;

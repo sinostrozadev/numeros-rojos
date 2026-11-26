@@ -28,6 +28,13 @@ export const VisualFoto = z.object({
   /** Palabra EXACTA de la voz con la que aparece (si falta, al empezar la escena). */
   dice: z.string().optional(),
   encuadre: z.enum(['ken-burns', 'fijo']).optional(),
+  /**
+   * v4 (2026-11-26): título EXACTO del archivo en Commons ("File:Haiti deforestation.jpg"). Si se da, `preparar-*` trae ese
+   * archivo (con el mismo control de licencia) y solo si falla recurre a `busqueda`. Para cuando la foto ES el argumento.
+   */
+  archivo: z.string().regex(/^File:.+\.(jpe?g|png)$/i).optional(),
+  /** v4: a sangre (1920×1080 completos, sin marco): para abrir el video o una escena `relato` con una imagen que manda. */
+  sangrado: z.boolean().optional(),
 });
 
 /** Mapa de países (Natural Earth): se centra, destaca países en los colores de las series y dibuja etiquetas/flechas. */
@@ -163,6 +170,16 @@ export const DISPOSICIONES = ['completo', 'dividido'] as const;
 
 /** Clave estable de un visual dentro del guion (capítulo, escena) para que preparar-* guarde lo resuelto en props.visuales. */
 export const claveDeVisual = (capitulo: number, escena: number) => `c${capitulo}e${escena}`;
+
+/** Claves de los visuales que NO son de una escena (v4): los del gancho (`g0`, `g1`…) y el de la promesa (`p0`). */
+export const claveDeVisualGancho = (k: number) => `g${k}`;
+export const CLAVE_VISUAL_PROMESA = 'p0';
+/** Todos los visuales de un guion `tesis` con su clave (gancho, promesa y escenas), en orden de aparición. */
+export const visualesDelGuion = (g: { gancho: { visuales?: Visual[] }; promesaVisual?: Visual; capitulos: { escenas: { visual?: Visual }[] }[] }): { clave: string; visual: Visual }[] => [
+  ...(g.gancho.visuales ?? []).map((visual, k) => ({ clave: claveDeVisualGancho(k), visual })),
+  ...(g.promesaVisual ? [{ clave: CLAVE_VISUAL_PROMESA, visual: g.promesaVisual }] : []),
+  ...g.capitulos.flatMap((c, ci) => c.escenas.flatMap((e, k) => (e.visual ? [{ clave: claveDeVisual(ci, k), visual: e.visual }] : []))),
+];
 
 /** Foto ya resuelta por preparar-* (descargada en public/imagenes/<id>/): la composición la lee de props.visuales[clave]. */
 export const FotoResuelta = z.object({

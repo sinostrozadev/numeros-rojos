@@ -28,7 +28,7 @@ import { claveDeRef, type DatoRef, type DatosResueltos, type SerieResuelta } fro
 import { serieFixture } from '../src/plantillas/comun/graficos/fixture';
 import { graficosTesis, lineasTesis, planTesis, capitulosDescripcion, reloj, problemasDeRitmo } from '../src/plantillas/tesis/plan';
 import { RITMO } from '../src/marca/tokens';
-import { POSES_MASCOTA, claveDeVisual, type VisualesResueltos } from '../src/plantillas/comun/visual';
+import { POSES_MASCOTA, claveDeVisual, visualesDelGuion, type VisualesResueltos } from '../src/plantillas/comun/visual';
 import { prepararFotos } from './lib/imagenes.mjs';
 
 const args = process.argv.slice(2);
@@ -77,18 +77,19 @@ const refs = graficosTesis(guion).map((g) => g.datos);
 const { datos, fixture } = await prepararDatos(refs, rutaFixture, args.includes('--refrescar'));
 
 // ---------------------------------------------------------------- visuales v2
-const pedidosFoto = guion.capitulos.flatMap((c, ci) => c.escenas.flatMap((e, k) => (e.visual?.tipo === 'foto' ? [{ clave: claveDeVisual(ci, k), visual: e.visual }] : [])));
+// v4: incluye los visuales del gancho (g0…) y de la promesa (p0), no solo los de las escenas.
+const todosVisuales = visualesDelGuion(guion);
+const pedidosFoto = todosVisuales.flatMap(({ clave, visual }) => (visual.tipo === 'foto' ? [{ clave, visual }] : []));
 const fotos = await prepararFotos(guion.id, pedidosFoto);
 const visuales: VisualesResueltos = { ...fotos.visuales };
 for (const clave of fotos.fallidas) console.warn(`⚠ foto ${clave}: sin foto con licencia clara; la escena cae al gráfico previo`);
 const ilustraciones: string[] = [];
-guion.capitulos.forEach((c, ci) => c.escenas.forEach((e, k) => {
-  if (e.visual?.tipo !== 'ilustracion') return;
-  const clave = claveDeVisual(ci, k);
+todosVisuales.forEach(({ clave, visual }) => {
+  if (visual.tipo !== 'ilustracion') return;
   const rel = `ilustraciones/${guion.id}/${clave}.png`;
   if (fs.existsSync(path.join(RAIZ, 'public', rel))) { visuales[clave] = { ...visuales[clave], ilustracion: rel }; ilustraciones.push(clave); }
   else console.warn(`⚠ ilustración ${clave}: falta public/${rel} (pedirla con la skill caratulas-con-gpt); la escena cae al gráfico previo`);
-}));
+});
 const mascotaPoses = POSES_MASCOTA.filter((p) => fs.existsSync(path.join(RAIZ, 'public', 'mascota', `${p}.png`)));
 const conMascota = guion.capitulos.flatMap((c) => c.escenas.filter((e) => e.mascota)).length;
 if (conMascota && mascotaPoses.length < POSES_MASCOTA.length) console.warn(`⚠ mascota: ${POSES_MASCOTA.length - mascotaPoses.length} poses sin imagen en public/mascota/ → dibujo de reserva`);

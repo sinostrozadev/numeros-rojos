@@ -8,6 +8,7 @@ import { Contador } from './Contador';
 import { Comparacion } from './Comparacion';
 import { Mapa } from './Mapa';
 import { Tarjeta } from './Tarjeta';
+import { Anios } from './Anios';
 import { Leyenda } from './Leyenda';
 import { PieFuente } from './PieFuente';
 import { clamp01, salida3, type PropsCuerpo } from './tipos';
@@ -48,6 +49,7 @@ const CUERPOS: Record<Grafico['tipo'], React.FC<PropsCuerpo>> = {
   comparacion: Comparacion,
   mapa: Mapa,
   tarjeta: Tarjeta,
+  anios: Anios,
 };
 
 /**

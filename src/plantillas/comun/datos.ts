@@ -78,8 +78,10 @@ export type SerieResuelta = z.infer<typeof SerieResuelta>;
  *  - comparacion: dos cifras grandes lado a lado (A vs B) con la razón entre ellas ("3,1×").
  *  - mapa: coroplético discreto del mundo o de América (world-atlas, dominio público) coloreado por el valor del año.
  *  - tarjeta: dato textual con fuente (cuando no hay serie: "Ley 21.XXX, 2024").
+ *  - anios (v4): un cuadro por año y una fila por país; rojo si el valor del año es negativo (rachas de caídas), con el
+ *    conteo "34 de 64" al lado. Para series de variación anual (crecimiento del PIB por persona, % anual).
  */
-export const TIPOS_GRAFICO = ['lineas', 'barras', 'area', 'ranking', 'contador', 'comparacion', 'mapa', 'tarjeta'] as const;
+export const TIPOS_GRAFICO = ['lineas', 'barras', 'area', 'ranking', 'contador', 'comparacion', 'mapa', 'tarjeta', 'anios'] as const;
 
 export const Grafico = z.object({
   tipo: z.enum(TIPOS_GRAFICO),
@@ -117,8 +119,10 @@ export const Cifra = z.object({
   valor: z.number(),
   calculo: z.object({
     datos: DatoRef,
-    /** valor: el dato del país en el año · razon: paisA / paisB en el año · variacion: (hasta − desde) / desde · diferencia: paisA − paisB · maximo/minimo: en el rango · promedio: del rango · ranking: posición del país entre `paises` en el año. */
-    operacion: z.enum(['valor', 'razon', 'variacion', 'diferencia', 'maximo', 'minimo', 'promedio', 'ranking']),
+    /** cuenta (v4): n.º de años entre `anio` y `anioB` con valor < `umbral` (por defecto 0) · valor: el dato del país en el año · razon: paisA / paisB en el año · variacion: (hasta − desde) / desde · diferencia: paisA − paisB · maximo/minimo: en el rango · promedio: del rango · ranking: posición del país entre `paises` en el año. */
+    operacion: z.enum(['valor', 'razon', 'variacion', 'diferencia', 'maximo', 'minimo', 'promedio', 'ranking', 'cuenta']),
+    /** Solo `cuenta`: umbral (se cuentan los años con valor estrictamente menor). Por defecto 0. */
+    umbral: z.number().optional(),
     pais: Iso3.optional(),
     paisB: Iso3.optional(),
     anio: z.number().int().optional(),

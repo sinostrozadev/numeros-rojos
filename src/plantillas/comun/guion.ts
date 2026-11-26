@@ -26,7 +26,8 @@ export const VOZ_POR_DEFECTO: (typeof VOCES)[number] = 'es-MX-JorgeNeural';
 
 /** Palabras habladas del LARGO (gancho + promesa + capítulos + número + remate + siguiente): ≈ 9–12 min a ~2,7 palabras/s. */
 export const PALABRAS_TESIS_MIN = 1350;
-export const PALABRAS_TESIS_MAX = 1950;
+/** v4 (2026-11-26): tope 2.600 (≈ 16 min) para el largo `relato`; los largos del generador siguen apuntando a 1.450–1.650. */
+export const PALABRAS_TESIS_MAX = 2600;
 /** Palabras HABLADAS del SHORT (gancho + escenas + remate), contadas con `contarPalabrasHabladas` (los números se expanden:
  *  la voz lee "1990" como tres palabras y "%" como dos). Medido el 2026-11-07 con la voz del canal: ≈ 0,40 s por palabra hablada
  *  → 113 crudas con muchas cifras = 147 habladas = 59,5 s (rechazado: tope 55 s). 120 habladas ≈ 48 s. */
@@ -46,7 +47,7 @@ export const PROHIBIDAS_TITULO = /colaps|destru|el fin de|se acerca|apocalip|hun
  */
 export const ESTRUCTURAS = ['comparacion', 'linea-de-tiempo', 'autopsia', 'cuanto-rinde'] as const;
 
-export const TIPOS_ESCENA = ['planteamiento', 'dato', 'giro', 'respiro', 'reenganche', 'significado'] as const;
+export const TIPOS_ESCENA = ['planteamiento', 'dato', 'giro', 'respiro', 'reenganche', 'significado', 'relato'] as const;
 
 export const Escena = z.object({
   /**
@@ -57,6 +58,9 @@ export const Escena = z.object({
    *  - respiro: 3–4 s sin voz, el gráfico queda solo (`texto` vacío permitido); 1 por capítulo como máximo.
    *  - reenganche: frase-anzuelo de 1–2 oraciones justo antes del corte publicitario (solo en el largo, capítulos ≥ 2).
    *  - significado: qué quiere decir esto para el espectador latino, SIN consejo (solo en el último capítulo).
+   *  - relato (v4, 2026-11-26): un tramo de HISTORIA (personas, lugar, fecha) con su visual propio (foto, mapa, ilustración,
+   *    iconos) y sin gráfico. Sin tope por capítulo: es lo que saca al video del gráfico. Corto (≤ ~35 palabras) para que la
+   *    imagen cambie cada 6–12 s.
    */
   tipo: z.enum(TIPOS_ESCENA),
   /** Lo que dice la voz: UNA idea, frases cortas, cifras redondeadas como se hablan ("unos 3.200 dólares"). Vacío solo en `respiro`. */
@@ -98,8 +102,8 @@ export type Escena = z.infer<typeof Escena>;
 export const Capitulo = z.object({
   /** Título SEO del capítulo (≤ 50): va a la descripción con su timestamp y a la tarjeta de capítulo ("Por qué Corea apostó al acero"). */
   titulo: z.string().min(3).max(50),
-  /** 3–8 escenas: empieza con `planteamiento`, tiene ≥ 1 `dato` con gráfico y exactamente 1 `giro`. */
-  escenas: z.array(Escena).min(3).max(8),
+  /** 3–18 escenas (hasta 8 en los largos del generador; más solo con escenas `relato` cortas): empieza con `planteamiento`, tiene ≥ 1 `dato` con gráfico y exactamente 1 `giro`. */
+  escenas: z.array(Escena).min(3).max(18),
 }).superRefine((c, ctx) => {
   const tipos = c.escenas.map((e) => e.tipo);
   if (tipos[0] !== 'planteamiento') ctx.addIssue({ code: z.ZodIssueCode.custom, message: `capítulo "${c.titulo}": la primera escena debe ser planteamiento` });
@@ -128,6 +132,12 @@ export const CamposBase = z.object({
     /** Gráfico del cold open (opcional): en el largo suele ser el `contador` o la `comparacion` que resume la contradicción. */
     grafico: Grafico.optional(),
     cifras: z.array(Cifra).max(4).optional(),
+    /**
+     * v4 (2026-11-26, `visualGancho` del diagnóstico de virales): 1–6 visuales que ocupan el gancho EN ORDEN, el primero desde
+     * el frame 0 (sin tarjeta de título: la voz arranca en el primer medio segundo) y cada uno de los siguientes cuando la voz
+     * dice su `dice`. Fotos `sangrado: true` o mapas. Incompatible con `gancho.grafico`. El rótulo va encima, en caja.
+     */
+    visuales: z.array(Visual).min(1).max(6).optional(),
   }),
   /** Frase final SIMÉTRICA (dos mitades espejo), gigante en dos líneas. ≤ 130 caracteres. Sin palabras prohibidas. */
   remate: z.string().min(1).max(130),
@@ -148,12 +158,14 @@ export const CamposTesis = CamposBase.extend({
   /** Título corto en pantalla durante el video, arriba a la izquierda, mayúsculas (≤ 44): "CHILE VS COREA DEL SUR · 1960–2024". */
   cabecera: z.string().min(3).max(44),
   /** Qué sabrá el espectador al final, en una frase que dice la voz tras el gancho ("Al final vas a saber por qué…"). */
-  promesa: z.string().min(10).max(220),
+  promesa: z.string().min(10).max(320),
+  /** v4: visual de la promesa (foto/mapa) EN LUGAR de la lista del índice (el índice sigue en la barra de capítulos). */
+  promesaVisual: Visual.optional(),
   /** 3–5 paradas del índice (≤ 24 c/u) que se ven como lista con pictogramas y luego marcan cada capítulo. */
-  indice: z.array(z.string().min(2).max(24)).min(3).max(5),
+  indice: z.array(z.string().min(2).max(24)).min(3).max(6),
   estructura: z.enum(ESTRUCTURAS),
   /** 3–5 capítulos. Los capítulos ≥ 2 terminan con un `reenganche` si el video lleva pausas publicitarias (todos lo llevan). */
-  capitulos: z.array(Capitulo).min(3).max(5),
+  capitulos: z.array(Capitulo).min(3).max(6),
   /** "El número que nadie mira": UNA cifra contraintuitiva con su gráfico `contador` o `comparacion` que explica el caso. Se dice después del último capítulo, antes del remate. */
   numeroQueNadieMira: z.object({ texto: z.string().min(10), grafico: Grafico, cifras: z.array(Cifra).min(1).max(3) }),
   /** Pregunta que abre el siguiente largo (la dice la voz al final y va al comentario fijado). */
@@ -176,6 +188,7 @@ export const palabrasTesis = (g: z.infer<typeof CamposTesis>) => lineasDeVozTesi
 export const validarTesis = (g: z.infer<typeof CamposTesis>, ctx: z.RefinementCtx) => {
   const n = palabrasTesis(g);
   if (n < PALABRAS_TESIS_MIN || n > PALABRAS_TESIS_MAX) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `${n} palabras habladas; deben ser ${PALABRAS_TESIS_MIN}–${PALABRAS_TESIS_MAX} (9–12 min)` });
+  if (g.gancho.visuales && g.gancho.grafico) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'gancho.visuales y gancho.grafico son incompatibles' });
   if (g.fuentes.length < 4) ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'el largo necesita ≥ 4 fuentes' });
   if (g.indice.length !== g.capitulos.length) ctx.addIssue({ code: z.ZodIssueCode.custom, message: `índice (${g.indice.length}) y capítulos (${g.capitulos.length}) deben coincidir` });
   const conGrafico = g.capitulos.flatMap((c) => c.escenas.filter((e) => e.grafico));
