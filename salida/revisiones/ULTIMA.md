@@ -31,6 +31,6 @@
 ## Pendiente
 - Carátula GPT: el pedido A no llegó en 3,5 h; reintentar (`gh run list -R sinostrozadev/entender-chile -w "Pedido a GPT"`), mirarla y ponerla con
   `herramientas/navegador/miniatura-studio.mjs`. No publicar con la miniatura de Remotion.
-- Subida privada sin fecha: `bash salida/tmp/subir-haiti.sh` (idempotente; espera el lock del piloto).
+- Tráiler subido privado (`EPyqg1wKfSc`). Largo (`…-3.mp4`, run `45875686447`) SIN subir: Studio dio "Oops, you don't have permission" 3 veces; reintentar `bash salida/tmp/subir-haiti.sh`.
 - Santiago: ver el largo entero, oír los 3 clips de voz, decidir canal (NR o canal nuevo de solo largos) y fecha.
 - Integrar `lab/voces/narrar.py` al pipeline si elige la voz diseñada; portar `videos.mts` de Línea Punteada; llevar la lista de tics al validador del generador.
