@@ -1,0 +1,146 @@
+{
+ "plantilla": "grafico",
+ "id": "2026-11-26-grafico-haiti-iba-adelante-trailer",
+ "titulo": "En 1954, Haití era más rico que su vecino. ¿Qué pasó?",
+ "descripcion": "Video completo en el canal: \"Haití era más rico que República Dominicana. ¿Qué pasó?\"\n\nMisma isla. En 1954 Haití todavía iba adelante; hoy un dominicano produce unas once veces más.\n\nFuente: Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n\nVoz sintetizada. No es asesoría financiera.",
+ "hashtags": [
+  "#Shorts",
+  "#haiti",
+  "#republicadominicana",
+  "#economia"
+ ],
+ "props": {
+  "id": "2026-11-26-grafico-haiti-iba-adelante-trailer",
+  "gancho": {
+   "texto": "Haití y República Dominicana comparten una isla. En 1954, el más rico de los dos era Haití.",
+   "rotulo": "HAITÍ IBA ADELANTE",
+   "cifras": [
+    {
+     "texto": "el más rico de los dos era Haití",
+     "valor": 1.03,
+     "calculo": {
+      "datos": {
+       "fuente": "owid",
+       "indicador": "gdp-per-capita-maddison-project-database",
+       "paises": [
+        "HTI",
+        "DOM"
+       ],
+       "desde": 1950,
+       "hasta": 2022,
+       "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+       "unidad": "US$"
+      },
+      "operacion": "razon",
+      "pais": "HTI",
+      "paisB": "DOM",
+      "anio": 1954
+     }
+    }
+   ]
+  },
+  "grafico": {
+   "tipo": "lineas",
+   "titulo": "Haití y República Dominicana",
+   "datos": {
+    "fuente": "owid",
+    "indicador": "gdp-per-capita-maddison-project-database",
+    "paises": [
+     "HTI",
+     "DOM"
+    ],
+    "desde": 1950,
+    "hasta": 2022,
+    "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+    "unidad": "US$"
+   },
+   "destacar": {
+    "pais": "HTI"
+   },
+   "formato": {
+    "prefijo": "US$ ",
+    "decimales": 0
+   }
+  },
+  "escenas": [
+   {
+    "tipo": "dato",
+    "texto": "Son datos del Proyecto Maddison. La línea dorada es Haití: hasta mediados de los cincuenta va pegada a la de su vecino.",
+    "usaGraficoPrincipal": true,
+    "fuenteEnVoz": true
+   },
+   {
+    "tipo": "giro",
+    "texto": "Después, una sola se dispara. Al final de la serie, un dominicano produce unas once veces lo que un haitiano.",
+    "usaGraficoPrincipal": true,
+    "rotulo": {
+     "texto": "11 VECES",
+     "dice": "once"
+    },
+    "cifras": [
+     {
+      "texto": "unas once veces",
+      "valor": 11.4,
+      "calculo": {
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI",
+         "DOM"
+        ],
+        "desde": 1950,
+        "hasta": 2022,
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$"
+       },
+       "operacion": "razon",
+       "pais": "DOM",
+       "paisB": "HTI",
+       "anio": 2022
+      }
+     }
+    ],
+    "enfasis": {
+     "pais": "DOM"
+    }
+   },
+   {
+    "tipo": "dato",
+    "texto": "Y Haití termina más abajo que en 1945, el primer año con datos. Un haitiano produce hoy menos que su bisabuelo.",
+    "usaGraficoPrincipal": true,
+    "cifras": [
+     {
+      "texto": "más abajo que en 1945",
+      "valor": -13.1,
+      "calculo": {
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI"
+        ],
+        "desde": 1945,
+        "hasta": 2022,
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$"
+       },
+       "operacion": "variacion",
+       "pais": "HTI",
+       "anio": 1945,
+       "anioB": 2022
+      }
+     }
+    ]
+   }
+  ],
+  "remate": "¿Qué pasó después de 1954? La respuesta está en el video largo del canal.",
+  "enlaceLargo": "2026-11-26-tesis-haiti-republica-dominicana",
+  "fuentes": [
+   {
+    "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023), CC BY 4.0",
+    "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+   }
+  ]
+ }
+}

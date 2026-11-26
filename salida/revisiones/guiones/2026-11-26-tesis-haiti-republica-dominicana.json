@@ -1,0 +1,42 @@
+{
+  "canal": "numeros-rojos",
+  "id": "2026-11-26-tesis-haiti-republica-dominicana",
+  "ronda": 2,
+  "estado": "con cambios",
+  "promedio": 4.0,
+  "promedio_tras_cambios": 4.14,
+  "puntajes": {
+    "gancho": 4,
+    "claridad": 4,
+    "verdad": 4,
+    "ritmo_visual": 4,
+    "giro_por_capitulo": 4,
+    "cierre": 4,
+    "referente": 4
+  },
+  "bloqueantes": {
+    "B1": "falla menor: lista negra 'además' en 3.8 ('…pesó una decisión de gobierno, además de la lluvia')",
+    "B2": "cumple (24 cifras); confirmar que estén declarados el 'vuelve a subir' de 2011 (4.10) y el PIB por persona de Puerto Rico del 'siguiente'",
+    "B3": "falla menor: 2.9 foto 14,0 s; 3.8 frase grande 13,8 s; 5.5 foto 12,5 s; 2.1 y 2.2 fotos seguidas; enumeración sin iconos en 4.11 (fotos, sellos y alternativas excepcionados)",
+    "B4": "cumple",
+    "B5": "cumple salvo 3.7 'y funcionó' (causalidad sin dato)",
+    "B6": "cumple",
+    "B7": "no aplica"
+  },
+  "cambios": [
+    "5.3: 'Catorce años en que el haitiano promedio terminó diciembre con menos que en enero.' -> 'Catorce años en que el haitiano promedio terminó el año más pobre que el anterior.' (la serie compara años, no meses)",
+    "3.7: 'Fue la medida de un gobierno autoritario, y funcionó.' -> 'Fue la medida de un gobierno autoritario, y ese bosque hoy sigue en pie.'",
+    "3.8: 'O sea que en el bosque dominicano pesó una decisión de gobierno, además de la lluvia.' -> 'O sea que en el bosque dominicano pesaron la lluvia y también una decisión de gobierno.'",
+    "2.7: 'en dólares de 2011.' -> 'en dólares de 2011, ajustados por lo que cuestan las cosas en cada país.'",
+    "Ritmo: sello con '1825 → 1947' en 2.9; rótulo o iconos en 3.8; sello 'METRO, 2009' en 5.5; gráfico o mapa entre 2.1 y 2.2; iconos de las 3 explicaciones en 4.11",
+    "Declarar en cifras[] el rebote de 2011 (4.10) y el PIB por persona de Puerto Rico (siguiente) si no lo están"
+  ],
+  "motivos": [
+    "Ronda 2: se corrigieron los 15 cambios de la ronda 1; quedan detalles literales",
+    "Verdad 4 solo por 5.3 (diciembre/enero) y 'funcionó'; con los cambios 1-2 sube a 5",
+    "Claridad: una sola medida, aviso de series estimadas; falta la PPA en la 1.ª mención",
+    "Giros con cifra en todos los capítulos (+9 %, 1950, decreto, quinta parte, aporte haitiano)",
+    "Remate con cifras espejo, sobrio y memorable",
+    "Voz en primera persona creíble sin caer en tics (1 solo 'nadie')"
+  ]
+}

@@ -1,0 +1,1745 @@
+{
+ "plantilla": "tesis",
+ "id": "2026-11-26-tesis-haiti-republica-dominicana",
+ "titulo": "Haití era más rico que República Dominicana. ¿Qué pasó?",
+ "descripcion": "En 1954, Haití todavía era un poco más rico que República Dominicana. Hoy, un dominicano produce unas once veces más. Misma isla. ¿Qué pasó?\n\nTres explicaciones puestas a prueba: la factura que Francia le cobró a Haití en 1825, la lluvia que no cruza la Cordillera Central y lo que cada país hizo después de 1961. Con los datos del Proyecto Maddison y del Banco Mundial en pantalla, y un gráfico que cuenta los años en que cada país terminó más pobre: 12 de 64 en República Dominicana, 35 de 64 en Haití.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.PCAP.KD.ZG, AG.LND.FRST.ZS, EG.ELC.ACCS.ZS, ST.INT.ARVL, SP.DYN.LE00.IN, BX.TRF.PWKR.DT.GD.ZS, SP.POP.TOTL (CC BY 4.0) https://data.worldbank.org\n- The New York Times, «The Ransom» (2022); J. Diamond, «Colapso» (2005), cap. 11; NASA SVS 2640.\n\nVoz sintetizada. Guion, gráficos y montaje propios a partir de datos abiertos; fotos de Wikimedia Commons con su crédito abajo.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+ "hashtags": [
+  "#haiti",
+  "#republicadominicana",
+  "#economia",
+  "#historia",
+  "#datos"
+ ],
+ "props": {
+  "id": "2026-11-26-tesis-haiti-republica-dominicana",
+  "cabecera": "HAITÍ Y REPÚBLICA DOMINICANA · 1950–2024",
+  "gancho": {
+   "texto": "Hasta fines de los ochenta, las pelotas de las Grandes Ligas se cosían a mano en Haití. Ciento ocho puntadas cada una. Al otro lado de la misma isla, en República Dominicana, crecían los que iban a batearlas. Hoy, un dominicano produce unas once veces lo que un haitiano. Pero en 1954, el que iba adelante era Haití.",
+   "rotulo": "HAITÍ IBA ADELANTE",
+   "visuales": [
+    {
+     "tipo": "foto",
+     "busqueda": "baseball closeup stitches",
+     "sangrado": true
+    },
+    {
+     "tipo": "mapa",
+     "destacar": [
+      "HTI"
+     ],
+     "zoom": 6.3,
+     "centro": [
+      -71.2,
+      18.9
+     ],
+     "etiquetas": [
+      {
+       "texto": "Puerto Príncipe",
+       "en": [
+        -72.34,
+        18.54
+       ]
+      }
+     ],
+     "dice": "Haití."
+    },
+    {
+     "tipo": "mapa",
+     "destacar": [
+      "DOM",
+      "HTI"
+     ],
+     "zoom": 6.3,
+     "centro": [
+      -71.2,
+      18.9
+     ],
+     "etiquetas": [
+      {
+       "texto": "Puerto Príncipe",
+       "en": [
+        -72.34,
+        18.54
+       ]
+      },
+      {
+       "texto": "Santo Domingo",
+       "en": [
+        -69.93,
+        18.47
+       ]
+      }
+     ],
+     "dice": "isla,"
+    },
+    {
+     "tipo": "foto",
+     "busqueda": "Santo Domingo skyline",
+     "pie": "Santo Domingo",
+     "sangrado": true,
+     "dice": "Hoy,"
+    },
+    {
+     "tipo": "foto",
+     "busqueda": "Port-au-Prince view",
+     "pie": "Puerto Príncipe",
+     "sangrado": true,
+     "dice": "haitiano."
+    }
+   ],
+   "cifras": [
+    {
+     "texto": "unas once veces",
+     "valor": 11.4,
+     "calculo": {
+      "datos": {
+       "fuente": "owid",
+       "indicador": "gdp-per-capita-maddison-project-database",
+       "paises": [
+        "HTI",
+        "DOM"
+       ],
+       "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+       "unidad": "US$",
+       "desde": 1950,
+       "hasta": 2022
+      },
+      "operacion": "razon",
+      "pais": "DOM",
+      "paisB": "HTI",
+      "anio": 2022
+     }
+    },
+    {
+     "texto": "en 1954, el que iba adelante era Haití",
+     "valor": 1.03,
+     "calculo": {
+      "datos": {
+       "fuente": "owid",
+       "indicador": "gdp-per-capita-maddison-project-database",
+       "paises": [
+        "HTI",
+        "DOM"
+       ],
+       "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+       "unidad": "US$",
+       "desde": 1950,
+       "hasta": 2022
+      },
+      "operacion": "razon",
+      "pais": "HTI",
+      "paisB": "DOM",
+      "anio": 1954
+     }
+    }
+   ]
+  },
+  "promesa": "Todos tienen su teoría: la deuda con Francia, los dictadores, el terremoto. Yo tenía la mía, pero choca con 1954. Ese año los dos países eran igual de pobres, y cualquier teoría tiene que pasar por ahí. Así que voy a buscar el año en que se separan.",
+  "promesaVisual": {
+   "tipo": "iconos",
+   "titulo": "Las teorías de siempre",
+   "items": [
+    {
+     "icono": "📜",
+     "texto": "La deuda con Francia",
+     "dice": "deuda"
+    },
+    {
+     "icono": "🎖️",
+     "texto": "Los dictadores",
+     "dice": "dictadores,"
+    },
+    {
+     "icono": "🏚️",
+     "texto": "El terremoto",
+     "dice": "terremoto."
+    }
+   ]
+  },
+  "indice": [
+   "El empate",
+   "La factura",
+   "La lluvia",
+   "1961",
+   "Los años aburridos"
+  ],
+  "estructura": "comparacion",
+  "capitulos": [
+   {
+    "titulo": "1954: dos países empatados",
+    "escenas": [
+     {
+      "tipo": "planteamiento",
+      "texto": "Primero, el tamaño. La isla se llama La Española y cabe dos veces dentro de Uruguay. Haití ocupa algo más de un tercio. República Dominicana, el resto. A cada lado viven hoy unos once millones y medio de personas.",
+      "visual": {
+       "tipo": "mapa",
+       "destacar": [
+        "HTI",
+        "DOM"
+       ],
+       "zoom": 6.3,
+       "centro": [
+        -71.2,
+        18.9
+       ],
+       "etiquetas": [
+        {
+         "texto": "Puerto Príncipe",
+         "en": [
+          -72.34,
+          18.54
+         ]
+        },
+        {
+         "texto": "Santo Domingo",
+         "en": [
+          -69.93,
+          18.47
+         ]
+        }
+       ],
+       "acercar": true
+      },
+      "sellos": [
+       {
+        "texto": "11,5 M",
+        "pais": "HTI",
+        "dice": "once"
+       }
+      ],
+      "cifras": [
+       {
+        "texto": "unos once millones y medio",
+        "valor": 11770000.0,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "SP.POP.TOTL",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Población",
+          "unidad": "personas",
+          "desde": 1960,
+          "hasta": 2024
+         },
+         "operacion": "valor",
+         "pais": "HTI",
+         "anio": 2024
+        }
+       },
+       {
+        "texto": "A cada lado",
+        "valor": 11430000.0,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "SP.POP.TOTL",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Población",
+          "unidad": "personas",
+          "desde": 1960,
+          "hasta": 2024
+         },
+         "operacion": "valor",
+         "pais": "DOM",
+         "anio": 2024
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "dato",
+      "texto": "El Proyecto Maddison, de la Universidad de Groningen, reconstruye cuánto producía por persona cada país, año por año. La línea dorada es Haití. Fíjate dónde parten las dos: pegadas. En 1954, Haití todavía va adelante.",
+      "fuenteEnVoz": true,
+      "grafico": {
+       "tipo": "lineas",
+       "titulo": "La partida: 1950 a 1960",
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI",
+         "DOM"
+        ],
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$",
+        "desde": 1950,
+        "hasta": 1960
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "anotaciones": [
+        {
+         "anio": 1954,
+         "texto": "Haití, adelante",
+         "dice": "1954,"
+        }
+       ],
+       "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+       },
+       "dice": "Maddison,"
+      },
+      "cifras": [
+       {
+        "texto": "En 1954, Haití todavía va adelante",
+        "valor": 1.03,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1950,
+          "hasta": 2022
+         },
+         "operacion": "razon",
+         "pais": "HTI",
+         "paisB": "DOM",
+         "anio": 1954
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "dato",
+      "texto": "Y esto es lo que viene después. Una línea despega. La otra se queda en el suelo, hasta donde termina la serie.",
+      "grafico": {
+       "tipo": "lineas",
+       "titulo": "Haití y República Dominicana, 1950–2022",
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI",
+         "DOM"
+        ],
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$",
+        "desde": 1950,
+        "hasta": 2022
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+       }
+      },
+      "sellos": [
+       {
+        "texto": "11×",
+        "pais": "DOM",
+        "animo": "feliz",
+        "dice": "serie."
+       }
+      ]
+     },
+     {
+      "tipo": "giro",
+      "texto": "Yo pensaba que Haití perdía desde el primer año. No: en 1950 producía cerca de un 9 % más que su vecino. Empezaron parejos. Ojo: tan atrás, estas series son estimaciones, y el año exacto es discutible. Que iban parejos, no.",
+      "visual": {
+       "tipo": "mapa",
+       "destacar": [
+        "HTI",
+        "DOM"
+       ],
+       "zoom": 6.3,
+       "centro": [
+        -71.2,
+        18.9
+       ],
+       "etiquetas": [
+        {
+         "texto": "Puerto Príncipe",
+         "en": [
+          -72.34,
+          18.54
+         ]
+        },
+        {
+         "texto": "Santo Domingo",
+         "en": [
+          -69.93,
+          18.47
+         ]
+        }
+       ]
+      },
+      "sellos": [
+       {
+        "texto": "+9 %",
+        "pais": "HTI",
+        "animo": "feliz",
+        "dice": "9"
+       }
+      ],
+      "rotulo": {
+       "texto": "EMPATE",
+       "dice": "parejos."
+      },
+      "cifras": [
+       {
+        "texto": "cerca de un 9 % más",
+        "valor": 1.09,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1950,
+          "hasta": 2022
+         },
+         "operacion": "razon",
+         "pais": "HTI",
+         "paisB": "DOM",
+         "anio": 1950
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "¿Y qué pasó después? Hay tres explicaciones dando vueltas. Voy primero con la más famosa.",
+      "visual": {
+       "tipo": "iconos",
+       "titulo": "Tres explicaciones",
+       "items": [
+        {
+         "icono": "📜",
+         "texto": "La factura de 1825"
+        },
+        {
+         "icono": "🌧️",
+         "texto": "La lluvia"
+        },
+        {
+         "icono": "🏛️",
+         "texto": "La política"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "titulo": "La factura de 1825",
+    "escenas": [
+     {
+      "tipo": "planteamiento",
+      "texto": "La más famosa es una factura, y para entenderla hay que ir al siglo dieciocho, cuando el lado rico era el otro. El oeste de la isla es una colonia francesa, Saint-Domingue. El este, español, es ganado y contrabando.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Saint-Domingue map 18th century",
+       "pie": "La Española en el siglo XVIII",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "SAINT-DOMINGUE",
+       "dice": "Saint-Domingue."
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "De Saint-Domingue sale cerca del cuarenta por ciento del azúcar y más de la mitad del café que consume Europa. Lo producen unas quinientas mil personas esclavizadas.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "sugar plantation engraving 18th century Caribbean",
+       "pie": "Ingenio azucarero del Caribe, grabado de época",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "500.000 ESCLAVIZADOS",
+       "dice": "quinientas"
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "En 1791 se levantan. Le ganan al ejército de Napoleón, cosa que en esos años no hacía casi nadie, y el primero de enero de 1804 declaran la independencia.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Battle for Palm Tree Hill Suchodolski",
+       "pie": "La Revolución haitiana (óleo de J. Suchodolski, 1845)",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "1 DE ENERO DE 1804",
+       "dice": "primero"
+      },
+      "sellos": [
+       {
+        "texto": "1791",
+        "pais": "HTI",
+        "dice": "1791"
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "Julio de 1825. Frente a Puerto Príncipe aparecen catorce barcos de guerra franceses, con más de quinientos cañones. Traen una oferta del rey: Francia reconoce a Haití si Haití paga ciento cincuenta millones de francos.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "French ship of the line 1820s painting",
+       "pie": "Navío de guerra francés, década de 1820",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "JULIO DE 1825",
+       "dice": "Puerto"
+      },
+      "sellos": [
+       {
+        "texto": "150 M",
+        "animo": "triste",
+        "dice": "ciento"
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "El dinero era para indemnizar a los antiguos colonos por lo que habían perdido. Y en lo que habían perdido contaban a las personas. Me cuesta leerlo sin enojarme: les cobraron por ellos mismos.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Charles X Haiti 1825",
+       "pie": "Carlos X de Francia",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "LES COBRARON POR ELLOS",
+       "dice": "cobraron"
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "Haití no tenía esa plata. Pidió prestada la primera cuota a banqueros franceses, o sea, deuda para pagar deuda. La suma se rebajó después, pero entre una cosa y otra, el último préstamo de esa cadena se terminó de pagar en 1947.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Jean-Pierre Boyer president Haiti",
+       "pie": "Jean-Pierre Boyer, presidente de Haití",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "DEUDA PARA PAGAR DEUDA",
+       "dice": "deuda"
+      },
+      "sellos": [
+       {
+        "texto": "1947",
+        "pais": "HTI",
+        "animo": "triste",
+        "dice": "1947."
+       }
+      ]
+     },
+     {
+      "tipo": "dato",
+      "texto": "Con eso parecería resuelto. Pero mira 1950, tres años después de ese último pago. Maddison pone a Haití en unos 1.800 dólares por persona al año, en dólares de 2011, ajustados por lo que cuestan las cosas en cada país. Y a República Dominicana, en unos 1.600.",
+      "fuenteEnVoz": true,
+      "grafico": {
+       "tipo": "comparacion",
+       "titulo": "1950: tres años después del último pago",
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI",
+         "DOM"
+        ],
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$",
+        "desde": 1950,
+        "hasta": 1950
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+       },
+       "dice": "1950,"
+      },
+      "cifras": [
+       {
+        "texto": "unos 1.800 dólares",
+        "valor": 1800,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1950,
+          "hasta": 2022
+         },
+         "operacion": "valor",
+         "pais": "HTI",
+         "anio": 1950
+        }
+       },
+       {
+        "texto": "unos 1.600",
+        "valor": 1600,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1950,
+          "hasta": 2022
+         },
+         "operacion": "valor",
+         "pais": "DOM",
+         "anio": 1950
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "giro",
+      "texto": "El vecino no pagó ninguna factura y era igual de pobre. Tenía lo suyo: veintidós años ocupado por el propio Haití, una vuelta a ser colonia de España pedida por su propio presidente, y las aduanas en manos de Estados Unidos por décadas.",
+      "visual": {
+       "tipo": "iconos",
+       "titulo": "República Dominicana antes de 1950",
+       "items": [
+        {
+         "icono": "🇭🇹",
+         "texto": "Ocupada por Haití",
+         "valor": "1822–1844",
+         "dice": "veintidós"
+        },
+        {
+         "icono": "🇪🇸",
+         "texto": "Otra vez colonia",
+         "valor": "1861–1865",
+         "dice": "colonia"
+        },
+        {
+         "icono": "🇺🇸",
+         "texto": "Aduanas intervenidas",
+         "valor": "1905–1940",
+         "dice": "aduanas"
+        }
+       ]
+      }
+     },
+     {
+      "tipo": "reenganche",
+      "texto": "A mí la deuda de 1825 me parece una de las grandes injusticias de la historia. Y aun así no me alcanza para explicar lo que pasa después de 1954.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Hispaniola satellite",
+       "pie": "La Española desde el espacio",
+       "sangrado": true
+      },
+      "sellos": [
+       {
+        "texto": "1825→1947",
+        "pais": "HTI",
+        "animo": "triste",
+        "dice": "injusticias"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "La lluvia que no cruza la montaña",
+    "escenas": [
+     {
+      "tipo": "planteamiento",
+      "texto": "La segunda explicación es la geografía, y tiene una foto famosa. La tomó la NASA. A la izquierda, Haití; a la derecha, República Dominicana. Ojo: es un tramo de la frontera, el más vistoso. No toda la línea se ve así.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Haiti deforestation border NASA",
+       "pie": "Frontera Haití–República Dominicana · NASA",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "UN TRAMO, NO TODA",
+       "dice": "tramo"
+      }
+     },
+     {
+      "tipo": "dato",
+      "texto": "El dato completo es menos espectacular y apunta para el mismo lado. Según el Banco Mundial, a Haití le queda bosque en el 13 % de su territorio. A República Dominicana, en casi la mitad.",
+      "fuenteEnVoz": true,
+      "grafico": {
+       "tipo": "comparacion",
+       "titulo": "¿Cuánto bosque le queda a cada uno?",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "AG.LND.FRST.ZS",
+        "paises": [
+         "DOM",
+         "HTI"
+        ],
+        "etiqueta": "Superficie con bosque (% del territorio)",
+        "unidad": "%",
+        "desde": 2022,
+        "hasta": 2022
+       },
+       "destacar": {
+        "pais": "DOM"
+       },
+       "formato": {
+        "sufijo": " %",
+        "decimales": 0
+       }
+      },
+      "cifras": [
+       {
+        "texto": "el 13 %",
+        "valor": 13,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "AG.LND.FRST.ZS",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Superficie con bosque (% del territorio)",
+          "unidad": "%",
+          "desde": 2022,
+          "hasta": 2022
+         },
+         "operacion": "valor",
+         "pais": "HTI",
+         "anio": 2022
+        }
+       },
+       {
+        "texto": "casi la mitad",
+        "valor": 46.4,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "AG.LND.FRST.ZS",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Superficie con bosque (% del territorio)",
+          "unidad": "%",
+          "desde": 2022,
+          "hasta": 2022
+         },
+         "operacion": "valor",
+         "pais": "DOM",
+         "anio": 2022
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "Una parte es geografía pura. Es la misma isla, pero no la misma lluvia: los vientos llegan cargados desde el este, chocan con la Cordillera Central, donde está el pico más alto del Caribe, y sueltan el agua del lado dominicano.",
+      "visual": {
+       "tipo": "mapa",
+       "destacar": [
+        "DOM",
+        "HTI"
+       ],
+       "zoom": 6.3,
+       "centro": [
+        -71.2,
+        18.9
+       ],
+       "etiquetas": [
+        {
+         "texto": "Pico Duarte · 3.098 m",
+         "en": [
+          -70.99,
+          19.02
+         ]
+        },
+        {
+         "texto": "vientos del este →",
+         "en": [
+          -67.6,
+          19.6
+         ]
+        }
+       ],
+       "acercar": true
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "A Haití le llega menos agua y le tocó más cerro que valle. En ese terreno vive la misma cantidad de gente, en poco más de la mitad del espacio.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Haiti deforested hills",
+       "pie": "Laderas en Haití",
+       "sangrado": true
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "Con poca tierra y sin electricidad, se cocina con carbón de leña. Cada saco es un árbol menos.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "charcoal Haiti",
+       "pie": "Carbón de leña, Haití",
+       "sangrado": true
+      }
+     },
+     {
+      "tipo": "dato",
+      "texto": "Y lo de sin electricidad es literal: casi la mitad de los haitianos no tiene luz en su casa. Al otro lado de la frontera, casi todos tienen.",
+      "grafico": {
+       "tipo": "comparacion",
+       "titulo": "Hogares con electricidad",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "EG.ELC.ACCS.ZS",
+        "paises": [
+         "DOM",
+         "HTI"
+        ],
+        "etiqueta": "Población con electricidad en casa",
+        "unidad": "%",
+        "desde": 2023,
+        "hasta": 2023
+       },
+       "destacar": {
+        "pais": "DOM"
+       },
+       "formato": {
+        "sufijo": " %",
+        "decimales": 0
+       }
+      },
+      "cifras": [
+       {
+        "texto": "casi la mitad de los haitianos no tiene luz",
+        "valor": 51.3,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "EG.ELC.ACCS.ZS",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Población con electricidad en casa",
+          "unidad": "%",
+          "desde": 2023,
+          "hasta": 2023
+         },
+         "operacion": "valor",
+         "pais": "HTI",
+         "anio": 2023
+        }
+       },
+       {
+        "texto": "casi todos tienen",
+        "valor": 99.6,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "EG.ELC.ACCS.ZS",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Población con electricidad en casa",
+          "unidad": "%",
+          "desde": 2023,
+          "hasta": 2023
+         },
+         "operacion": "valor",
+         "pais": "DOM",
+         "anio": 2023
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "giro",
+      "texto": "Pero en los sesenta los dominicanos también estaban talando su bosque. En 1967, el gobierno de Joaquín Balaguer cerró los aserraderos y puso al ejército a cuidar los árboles. Fue la medida de un gobierno autoritario, y ese bosque hoy sigue en pie. No sé muy bien qué hacer con eso.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Pico Duarte",
+       "pie": "Cordillera Central, República Dominicana",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "DECRETO DE 1967",
+       "dice": "1967,"
+      },
+      "sellos": [
+       {
+        "texto": "SIGUE AHÍ",
+        "pais": "DOM",
+        "dice": "bosque"
+       }
+      ]
+     },
+     {
+      "tipo": "reenganche",
+      "texto": "O sea que en el bosque dominicano pesaron la lluvia y también una decisión de gobierno. Me queda la explicación que menos me gusta, porque es la más difícil de medir: la política.",
+      "visual": {
+       "tipo": "iconos",
+       "titulo": "Tres explicaciones",
+       "items": [
+        {
+         "icono": "📜",
+         "texto": "La factura de 1825",
+         "marca": "no"
+        },
+        {
+         "icono": "🌧️",
+         "texto": "La lluvia",
+         "marca": "no"
+        },
+        {
+         "icono": "🏛️",
+         "texto": "La política",
+         "dice": "política."
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "titulo": "1961: se rompe el empate",
+    "escenas": [
+     {
+      "tipo": "planteamiento",
+      "texto": "En dictadores, estos dos países también empatan. Del lado dominicano, Rafael Trujillo: treinta y un años en el poder, la capital rebautizada con su apellido y, en 1937, una matanza de miles de haitianos en la frontera.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Rafael Trujillo",
+       "pie": "Rafael Trujillo",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "31 AÑOS",
+       "dice": "treinta"
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "Del lado haitiano, François Duvalier, Papa Doc. Llega en 1957, se nombra presidente vitalicio y le hereda el cargo a su hijo de diecinueve años.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "François Duvalier",
+       "pie": "François Duvalier, «Papa Doc»",
+       "sangrado": true
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "La noche del 30 de mayo de 1961, a Trujillo lo emboscan en la carretera y lo matan a tiros en su auto. Lo que sigue es feo: un golpe, una guerra civil y, en 1965, una intervención militar de Estados Unidos.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Santo Domingo 1965 United States troops",
+       "pie": "Santo Domingo, 1965",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "30 DE MAYO DE 1961",
+       "dice": "mayo"
+      },
+      "sellos": [
+       {
+        "texto": "1965",
+        "pais": "DOM",
+        "animo": "triste",
+        "dice": "1965,"
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "Después no llega la paz: los primeros años de Balaguer tienen presos y muertos políticos. Pero las reglas del juego se mantienen, década tras década. Sobre eso aparecen las zonas francas a fines de los sesenta, los hoteles de Puerto Plata en los setenta y, en los ochenta, un aeropuerto privado en una punta de la isla donde no había casi nada. Punta Cana.",
+      "visual": {
+       "tipo": "mapa",
+       "destacar": [
+        "DOM"
+       ],
+       "zoom": 6.6,
+       "centro": [
+        -70.0,
+        18.9
+       ],
+       "etiquetas": [
+        {
+         "texto": "La Romana",
+         "en": [
+          -68.97,
+          18.43
+         ]
+        },
+        {
+         "texto": "Puerto Plata",
+         "en": [
+          -70.69,
+          19.79
+         ]
+        },
+        {
+         "texto": "Punta Cana",
+         "en": [
+          -68.37,
+          18.58
+         ]
+        },
+        {
+         "texto": "Santo Domingo",
+         "en": [
+          -69.93,
+          18.47
+         ]
+        }
+       ]
+      },
+      "rotulo": {
+       "texto": "PUNTA CANA",
+       "dice": "Punta"
+      }
+     },
+     {
+      "tipo": "dato",
+      "texto": "En 2019, el último año antes de la pandemia, República Dominicana recibió siete millones y medio de visitantes. Haití, menos de un millón. Son cifras del Banco Mundial.",
+      "fuenteEnVoz": true,
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Punta Cana beach",
+       "pie": "Punta Cana",
+       "sangrado": true
+      },
+      "disposicion": "completo",
+      "grafico": {
+       "tipo": "comparacion",
+       "titulo": "Visitantes en 2019",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "ST.INT.ARVL",
+        "paises": [
+         "DOM",
+         "HTI"
+        ],
+        "etiqueta": "Llegadas de visitantes internacionales",
+        "unidad": "personas",
+        "desde": 2019,
+        "hasta": 2019
+       },
+       "destacar": {
+        "pais": "DOM"
+       },
+       "formato": {
+        "decimales": 0
+       },
+       "dice": "siete"
+      },
+      "cifras": [
+       {
+        "texto": "siete millones y medio",
+        "valor": 7550000.0,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "ST.INT.ARVL",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Llegadas de visitantes internacionales",
+          "unidad": "personas",
+          "desde": 2019,
+          "hasta": 2019
+         },
+         "operacion": "valor",
+         "pais": "DOM",
+         "anio": 2019
+        }
+       },
+       {
+        "texto": "menos de un millón",
+        "valor": 938000.0,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "ST.INT.ARVL",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Llegadas de visitantes internacionales",
+          "unidad": "personas",
+          "desde": 2019,
+          "hasta": 2019
+         },
+         "operacion": "valor",
+         "pais": "HTI",
+         "anio": 2019
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "Haití también estaba en esa carrera. Las pelotas de béisbol del principio son de esa época: en los setenta, el país se llenó de fábricas de ensamblaje.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "baseball closeup stitches"
+      }
+     },
+     {
+      "tipo": "dato",
+      "texto": "Se ve en la línea. Entre 1970 y 1980, lo que produce cada haitiano sube casi un tercio. 1980 es su mejor año de toda la serie. No lo ha vuelto a tocar.",
+      "grafico": {
+       "tipo": "lineas",
+       "titulo": "Haití, 1960–1980: la subida",
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI"
+        ],
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$",
+        "desde": 1960,
+        "hasta": 1980
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "anotaciones": [
+        {
+         "anio": 1980,
+         "texto": "Su mejor año",
+         "dice": "mejor"
+        }
+       ],
+       "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+       }
+      },
+      "cifras": [
+       {
+        "texto": "casi un tercio",
+        "valor": 31.7,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1945,
+          "hasta": 2022
+         },
+         "operacion": "variacion",
+         "pais": "HTI",
+         "anio": 1970,
+         "anioB": 1980
+        }
+       },
+       {
+        "texto": "1980 es su mejor año",
+        "valor": 2063,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1945,
+          "hasta": 2022
+         },
+         "operacion": "maximo",
+         "pais": "HTI",
+         "anio": 1945,
+         "anioB": 2022
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "giro",
+      "texto": "Después viene lo peor. A comienzos de los ochenta, una peste porcina y la orden de sacrificio que vino detrás acaban con casi todos los cerdos del país. El cerdo era la libreta de ahorros de la familia campesina. En 1986 cae Duvalier hijo. En 1991 hay un golpe de Estado y, detrás, un embargo. En cuatro años se pierde una quinta parte de lo que producía cada haitiano.",
+      "grafico": {
+       "tipo": "lineas",
+       "titulo": "Haití, 1980–1995",
+       "datos": {
+        "fuente": "owid",
+        "indicador": "gdp-per-capita-maddison-project-database",
+        "paises": [
+         "HTI"
+        ],
+        "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+        "unidad": "US$",
+        "desde": 1980,
+        "hasta": 1995
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "anotaciones": [
+        {
+         "anio": 1982,
+         "texto": "Peste porcina",
+         "dice": "peste"
+        },
+        {
+         "anio": 1986,
+         "texto": "Cae Duvalier",
+         "dice": "1986"
+        },
+        {
+         "anio": 1991,
+         "texto": "Golpe y embargo",
+         "dice": "1991"
+        }
+       ],
+       "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+       }
+      },
+      "sellos": [
+       {
+        "texto": "−21 %",
+        "pais": "HTI",
+        "animo": "triste",
+        "dice": "quinta"
+       }
+      ],
+      "cifras": [
+       {
+        "texto": "una quinta parte",
+        "valor": -21.2,
+        "calculo": {
+         "datos": {
+          "fuente": "owid",
+          "indicador": "gdp-per-capita-maddison-project-database",
+          "paises": [
+           "HTI"
+          ],
+          "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+          "unidad": "US$",
+          "desde": 1945,
+          "hasta": 2022
+         },
+         "operacion": "variacion",
+         "pais": "HTI",
+         "anio": 1990,
+         "anioB": 1994
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "A mediados de los noventa, presionado por sus prestamistas, Haití baja el arancel al arroz importado hasta dejarlo en 3 %. Entra arroz subsidiado de Estados Unidos y el campo haitiano no puede competir. Quince años después, Bill Clinton dijo que esa política «fue un error». Que lo dijera él mismo, que había empujado la medida, tiene su mérito.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "rice Artibonite Haiti",
+       "pie": "Arroz en Haití",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "«FUE UN ERROR»",
+       "dice": "error»."
+      },
+      "sellos": [
+       {
+        "texto": "3 %",
+        "pais": "HTI",
+        "animo": "triste",
+        "dice": "3"
+       }
+      ]
+     },
+     {
+      "tipo": "dato",
+      "texto": "El 12 de enero de 2010, un terremoto destruye la capital. En los datos del Banco Mundial queda una marca que cuesta mirar: la esperanza de vida del país cae dieciséis años de un año al siguiente. Al otro año vuelve a subir.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Haitian National Palace earthquake 2010",
+       "pie": "Palacio Nacional de Haití, enero de 2010",
+       "sangrado": true
+      },
+      "disposicion": "completo",
+      "grafico": {
+       "tipo": "lineas",
+       "titulo": "Esperanza de vida en Haití",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "SP.DYN.LE00.IN",
+        "paises": [
+         "HTI"
+        ],
+        "etiqueta": "Esperanza de vida al nacer",
+        "unidad": "años",
+        "desde": 2000,
+        "hasta": 2015
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "anotaciones": [
+        {
+         "anio": 2010,
+         "texto": "Terremoto",
+         "dice": "dieciséis"
+        }
+       ],
+       "formato": {
+        "decimales": 0,
+        "sufijo": " años"
+       },
+       "dice": "esperanza"
+      },
+      "cifras": [
+       {
+        "texto": "cae dieciséis años",
+        "valor": -16.1,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "SP.DYN.LE00.IN",
+          "paises": [
+           "HTI"
+          ],
+          "etiqueta": "Esperanza de vida al nacer",
+          "unidad": "años",
+          "desde": 2000,
+          "hasta": 2015
+         },
+         "operacion": "diferencia",
+         "pais": "HTI",
+         "anio": 2009,
+         "anioB": 2010
+        }
+       },
+       {
+        "texto": "Al otro año vuelve a subir",
+        "valor": 16.0,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "SP.DYN.LE00.IN",
+          "paises": [
+           "HTI"
+          ],
+          "etiqueta": "Esperanza de vida al nacer",
+          "unidad": "años",
+          "desde": 2000,
+          "hasta": 2015
+         },
+         "operacion": "diferencia",
+         "pais": "HTI",
+         "anio": 2010,
+         "anioB": 2011
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "reenganche",
+      "texto": "Ninguna de las tres alcanza sola. Así que probé otra cosa: contar los años."
+     }
+    ]
+   },
+   {
+    "titulo": "Los años aburridos",
+    "escenas": [
+     {
+      "tipo": "planteamiento",
+      "texto": "Es un gráfico más simple que los anteriores. No estoy seguro de que sea la respuesta; dime en los comentarios si te convence."
+     },
+     {
+      "tipo": "dato",
+      "texto": "Cada cuadro es un año, desde 1961. En rojo, los años en que cada persona produjo menos que el año anterior. Son datos del Banco Mundial. República Dominicana: doce cuadros rojos de sesenta y cuatro. Haití: treinta y cinco. Más de la mitad.",
+      "fuenteEnVoz": true,
+      "grafico": {
+       "tipo": "anios",
+       "titulo": "Años en que el país terminó más pobre",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.KD.ZG",
+        "paises": [
+         "DOM",
+         "HTI"
+        ],
+        "etiqueta": "Años en que el ingreso por persona cayó",
+        "unidad": "% anual",
+        "desde": 1961,
+        "hasta": 2024
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "dice": "cuadro"
+      },
+      "cifras": [
+       {
+        "texto": "doce cuadros rojos",
+        "valor": 12,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD.ZG",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Años en que el ingreso por persona cayó",
+          "unidad": "% anual",
+          "desde": 1961,
+          "hasta": 2024
+         },
+         "operacion": "cuenta",
+         "pais": "DOM",
+         "anio": 1961,
+         "anioB": 2024
+        }
+       },
+       {
+        "texto": "treinta y cinco",
+        "valor": 35,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD.ZG",
+          "paises": [
+           "DOM",
+           "HTI"
+          ],
+          "etiqueta": "Años en que el ingreso por persona cayó",
+          "unidad": "% anual",
+          "desde": 1961,
+          "hasta": 2024
+         },
+         "operacion": "cuenta",
+         "pais": "HTI",
+         "anio": 1961,
+         "anioB": 2024
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "dato",
+      "texto": "Mira la fila de Haití entre 1981 y 1994. Catorce rojos seguidos. Catorce años en que cada año fue más pobre que el anterior.",
+      "grafico": {
+       "tipo": "anios",
+       "titulo": "Haití: catorce años seguidos de caída",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.KD.ZG",
+        "paises": [
+         "HTI"
+        ],
+        "etiqueta": "Años en que el ingreso por persona cayó",
+        "unidad": "% anual",
+        "desde": 1975,
+        "hasta": 2000
+       },
+       "destacar": {
+        "pais": "HTI"
+       }
+      },
+      "sellos": [
+       {
+        "texto": "14",
+        "pais": "HTI",
+        "animo": "triste",
+        "dice": "Catorce"
+       }
+      ],
+      "cifras": [
+       {
+        "texto": "Catorce rojos seguidos",
+        "valor": 14,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD.ZG",
+          "paises": [
+           "HTI"
+          ],
+          "etiqueta": "Años en que el ingreso por persona cayó",
+          "unidad": "% anual",
+          "desde": 1975,
+          "hasta": 2000
+         },
+         "operacion": "cuenta",
+         "pais": "HTI",
+         "anio": 1981,
+         "anioB": 1994
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "relato",
+      "texto": "Mi veredicto va por ahí. Lo que separó a estos dos países fue una racha larga, más que un hecho puntual. República Dominicana lleva sesenta años más o menos aburridos. Haití, desde 1986, no ha tenido una sola década tranquila.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Santo Domingo skyline",
+       "pie": "Santo Domingo, hoy",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "AÑOS ABURRIDOS",
+       "dice": "aburridos."
+      }
+     },
+     {
+      "tipo": "relato",
+      "texto": "Cuesta poner un hotel, una fábrica o una línea de metro donde no se sabe quién va a mandar el año que viene. Santo Domingo tiene metro desde 2009. Lo aburrido, mal que mal, rinde.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "garment factory Dominican Republic",
+       "sangrado": true
+      },
+      "sellos": [
+       {
+        "texto": "METRO 2009",
+        "pais": "DOM",
+        "animo": "feliz",
+        "dice": "2009."
+       }
+      ]
+     },
+     {
+      "tipo": "dato",
+      "texto": "A Haití, lo que sí le llega son remesas. Según el Banco Mundial, lo que mandan los que se fueron equivale a uno de cada seis dólares de su economía.",
+      "fuenteEnVoz": true,
+      "grafico": {
+       "tipo": "lineas",
+       "titulo": "Remesas: lo que mandan los que se fueron",
+       "datos": {
+        "fuente": "wdi",
+        "indicador": "BX.TRF.PWKR.DT.GD.ZS",
+        "paises": [
+         "HTI",
+         "DOM"
+        ],
+        "etiqueta": "Remesas recibidas (% de la economía)",
+        "unidad": "%",
+        "desde": 1990,
+        "hasta": 2024
+       },
+       "destacar": {
+        "pais": "HTI"
+       },
+       "formato": {
+        "decimales": 0,
+        "sufijo": " %"
+       }
+      },
+      "cifras": [
+       {
+        "texto": "uno de cada seis dólares",
+        "valor": 16.95,
+        "calculo": {
+         "datos": {
+          "fuente": "wdi",
+          "indicador": "BX.TRF.PWKR.DT.GD.ZS",
+          "paises": [
+           "HTI",
+           "DOM"
+          ],
+          "etiqueta": "Remesas recibidas (% de la economía)",
+          "unidad": "%",
+          "desde": 1990,
+          "hasta": 2024
+         },
+         "operacion": "valor",
+         "pais": "HTI",
+         "anio": 2024
+        }
+       }
+      ]
+     },
+     {
+      "tipo": "giro",
+      "texto": "Un matiz para el lado dominicano. Muchos de los que se fueron cruzaron la frontera, y hoy cortan la caña dominicana y levantan sus edificios. Parte de la riqueza de un lado de la isla la trabajó gente del otro.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "sugar cane cutting Dominican Republic",
+       "pie": "Corte de caña, República Dominicana",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "MANOS HAITIANAS",
+       "dice": "caña"
+      }
+     },
+     {
+      "tipo": "significado",
+      "texto": "Lo que me llevo: en 1950 pocos habrían apostado por República Dominicana. Era igual de pobre y le quedaban once años de Trujillo. Lo que vino después fue, sobre todo, estabilidad. No tengo claro cuánto de eso fue mérito de sus gobiernos y cuánto fue suerte.",
+      "visual": {
+       "tipo": "foto",
+       "busqueda": "Dajabón market",
+       "pie": "Dajabón, en la frontera",
+       "sangrado": true
+      },
+      "rotulo": {
+       "texto": "ESTABILIDAD",
+       "dice": "estabilidad."
+      },
+      "sellos": [
+       {
+        "texto": "11 AÑOS",
+        "pais": "DOM",
+        "animo": "triste",
+        "dice": "once"
+       }
+      ]
+     },
+     {
+      "tipo": "reenganche",
+      "texto": "Queda un número."
+     }
+    ]
+   }
+  ],
+  "numeroQueNadieMira": {
+   "texto": "Es 1.546. Eso producía un haitiano en 2022, en los mismos dólares de antes. En 1945, el primer año con datos, producía 1.780. Setenta y siete años después, un haitiano produce menos que su bisabuelo.",
+   "grafico": {
+    "tipo": "lineas",
+    "titulo": "Haití, 1945–2022",
+    "datos": {
+     "fuente": "owid",
+     "indicador": "gdp-per-capita-maddison-project-database",
+     "paises": [
+      "HTI"
+     ],
+     "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+     "unidad": "US$",
+     "desde": 1945,
+     "hasta": 2022
+    },
+    "destacar": {
+     "pais": "HTI"
+    },
+    "anotaciones": [
+     {
+      "anio": 1945,
+      "texto": "1.780",
+      "dice": "1.780."
+     },
+     {
+      "anio": 2022,
+      "texto": "1.546",
+      "dice": "bisabuelo."
+     }
+    ],
+    "formato": {
+     "prefijo": "US$ ",
+     "decimales": 0
+    }
+   },
+   "cifras": [
+    {
+     "texto": "Es 1.546",
+     "valor": 1546,
+     "calculo": {
+      "datos": {
+       "fuente": "owid",
+       "indicador": "gdp-per-capita-maddison-project-database",
+       "paises": [
+        "HTI"
+       ],
+       "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+       "unidad": "US$",
+       "desde": 1945,
+       "hasta": 2022
+      },
+      "operacion": "valor",
+      "pais": "HTI",
+      "anio": 2022
+     }
+    },
+    {
+     "texto": "producía 1.780",
+     "valor": 1780,
+     "calculo": {
+      "datos": {
+       "fuente": "owid",
+       "indicador": "gdp-per-capita-maddison-project-database",
+       "paises": [
+        "HTI"
+       ],
+       "etiqueta": "Ingreso por persona (Maddison, US$ de 2011)",
+       "unidad": "US$",
+       "desde": 1945,
+       "hasta": 2022
+      },
+      "operacion": "valor",
+      "pais": "HTI",
+      "anio": 1945
+     }
+    }
+   ]
+  },
+  "remate": "República Dominicana: 12 años malos de 64. Haití: 35.",
+  "siguiente": "Puerto Rico produce por persona más que cualquier país de América Latina y aun así, en 2017, terminó en un tribunal de quiebras. ¿Cómo?",
+  "miniatura": {
+   "texto": "¿QUÉ PASÓ?"
+  },
+  "fuentes": [
+   {
+    "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+    "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+   },
+   {
+    "texto": "Banco Mundial, World Development Indicators (crecimiento del PIB per cápita, bosque, electricidad, turismo, esperanza de vida, remesas, población), CC BY 4.0",
+    "url": "https://data.worldbank.org"
+   },
+   {
+    "texto": "The New York Times, «The Ransom» (2022): la deuda de la independencia de Haití",
+    "url": "https://www.nytimes.com/2022/05/20/world/americas/haiti-history-colonized-france.html"
+   },
+   {
+    "texto": "NASA Scientific Visualization Studio: Haitian Deforestation (2002)",
+    "url": "https://svs.gsfc.nasa.gov/2640"
+   },
+   {
+    "texto": "Jared Diamond, «Colapso» (2005), cap. 11: una isla, dos pueblos, dos historias",
+    "url": "https://es.wikipedia.org/wiki/Colapso_(libro)"
+   }
+  ]
+ }
+}
