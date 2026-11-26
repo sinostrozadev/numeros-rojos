@@ -114,3 +114,16 @@
   sigue fuera (repite tema).
 - `generar-guiones.mts --derivar-de` ahora acepta `--tema` (pedido del tráiler).
 
+
+## 2026-11-26 — Largo candidato a viral: Haití vs República Dominicana (pieza escrita a mano, fuera del generador)
+- **Por qué este tema:** es el de mayor demanda medida del nicho (Mapas Mudos 1,62 M como video n.º 1; Geo Relatos 82 K con 12 Shorts previos).
+  Ángulo propio: en 1954 Haití iba adelante (Maddison) y el gráfico `anios` (12 vs 35 años de caída de 64). Detalle en
+  `/home/santiago/projects/yt/_propuestas/2026-11-26-viral-numeros-rojos.md`.
+- **Excepciones a GUION.md solo para esta pieza** (pedido de Santiago: "que no se sienta nada de IA, muy humano"): narrador en primera persona
+  con dudas y opiniones marcadas; remate con dato en vez de espejo; sin índice anunciado; fotos a sangre. No inventa experiencias personales.
+- **Plantilla v4** (compatible hacia atrás): `relato`, `gancho.visuales`, `promesaVisual`, `archivo`/`sangrado` en fotos, gráfico `anios`,
+  cifra `cuenta`. El generador puede usarlas; las reglas viejas siguen valiendo.
+- **Voz:** Edge. La voz diseñada Qwen3 no fue claramente mejor en lo medible (deriva de tono 10–26 % entre frases; Edge 6,5 %).
+- **Estado:** largo y tráiler renderizados, PRIVADOS SIN FECHA (o por subir: `salida/tmp/subir-haiti.sh`). Canal y fecha los decide Santiago.
+- **Medición propuesta:** 48 h: impresiones ≥ 1.500, CTR ≥ 5 %, sigue a los 30 s ≥ 70 %. A 7 días: ≥ 5.000 vistas = repetir la fórmula;
+  < 500 con < 1.000 impresiones = el problema es el canal (probar el mismo archivo en un canal nuevo de solo largos).
