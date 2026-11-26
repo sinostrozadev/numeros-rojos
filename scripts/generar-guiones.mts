@@ -500,6 +500,8 @@ const main = async () => {
       `del largo. "enlaceLargo": "${derivar}". La descripción remite al video largo.\n` +
       (ya.length ? `Shorts que ya salieron de este largo (elige otras cifras):\n${ya.join('\n')}\n` : '') +
       `\n=== LARGO DE ORIGEN ===\n${JSON.stringify(limpiar(largo), null, 1)}\n`;
+    // Short TRÁILER del día del largo (GUION.md §4c): --tema afina qué paradoja usar y cómo cierra.
+    if (opc.tema) extra += `\nPEDIDO DEL SHORT: ${opc.tema}\n`;
   } else {
     if (opc.tema) extra += `\nTEMA PEDIDO: ${opc.tema}. Comprueba que el título sea verdadero con los datos del catálogo antes de escribirlo.\n`;
     if (opc.estructura) extra += `\nESTRUCTURA OBLIGATORIA: ${opc.estructura}.\n`;

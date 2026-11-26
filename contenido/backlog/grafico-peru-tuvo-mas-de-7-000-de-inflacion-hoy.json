@@ -1,0 +1,321 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-peru-tuvo-mas-de-7-000-de-inflacion-hoy",
+  "titulo": "Perú tuvo más de 7.000 % de inflación. Hoy, menos que Chile",
+  "descripcion": "¿Cómo pasa un país de que sus precios suban más de 7.000 % en un año a que suban menos que en Chile?\n\nLa inflación de Perú y de Chile, año por año, de 1985 a 2025, con los datos del Banco Mundial.\nEn 1990 los precios en Perú subieron más de 7.000 %; en Chile, un 26 %. Desde 2018, todos los años, los precios en Perú subieron menos que en Chile. En 2025 la diferencia fue de casi el triple.\n\nFuente: Banco Mundial, World Development Indicators, Inflación, precios al consumidor (% anual), FP.CPI.TOTL.ZG (CC BY 4.0) https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PE-CL\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#peru",
+    "#chile",
+    "#inflacion"
+  ],
+  "props": {
+    "id": "pendiente-grafico-peru-tuvo-mas-de-7-000-de-inflacion-hoy",
+    "gancho": {
+      "texto": "En Chile los precios suben casi el triple que en Perú. Mira el final de cada línea.",
+      "rotulo": "PRECIOS: CHILE CASI ×3",
+      "cifras": [
+        {
+          "texto": "casi el triple",
+          "valor": 2.75,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "FP.CPI.TOTL.ZG",
+              "paises": [
+                "CHL",
+                "PER"
+              ],
+              "desde": 1985,
+              "hasta": 2025,
+              "etiqueta": "Inflación, precios al consumidor (% anual)",
+              "unidad": "%"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "PER",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Cuánto subieron los precios cada año",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "FP.CPI.TOTL.ZG",
+        "paises": [
+          "PER",
+          "CHL"
+        ],
+        "desde": 1985,
+        "hasta": 2025,
+        "etiqueta": "Inflación, precios al consumidor (% anual)",
+        "unidad": "%"
+      },
+      "destacar": {
+        "pais": "PER"
+      },
+      "anotaciones": [
+        {
+          "anio": 1990,
+          "texto": "Perú: más de 7.000 %"
+        },
+        {
+          "anio": 2025,
+          "texto": "Chile 4,2 % · Perú 1,5 %"
+        }
+      ],
+      "formato": {
+        "sufijo": " %",
+        "decimales": 1,
+        "escala": "log"
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial. En 2025, en Chile, subieron un 4 %. En Perú, apenas un 1,5 %.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2025: cuánto subieron los precios",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FP.CPI.TOTL.ZG",
+            "paises": [
+              "CHL",
+              "PER"
+            ],
+            "desde": 2025,
+            "hasta": 2025,
+            "etiqueta": "Inflación, precios al consumidor (% anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "PER"
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 1
+          },
+          "dice": "2025,"
+        },
+        "cifras": [
+          {
+            "texto": "un 4 %",
+            "valor": 4.2,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "PER"
+                ],
+                "desde": 1985,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 2025
+            }
+          },
+          {
+            "texto": "apenas un 1,5 %",
+            "valor": 1.5,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "PER"
+                ],
+                "desde": 1985,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "PER",
+              "anio": 2025
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira 1990. Ese año, en Perú, los precios subieron más de 7.000 %. En Chile, un 26 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "1990: el año en que Perú perdió el control",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FP.CPI.TOTL.ZG",
+            "paises": [
+              "PER",
+              "CHL"
+            ],
+            "desde": 1985,
+            "hasta": 2025,
+            "etiqueta": "Inflación, precios al consumidor (% anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "PER",
+            "anio": 1990,
+            "texto": "1990: más de 7.000 %"
+          },
+          "anotaciones": [
+            {
+              "anio": 1990,
+              "texto": "Perú: más de 7.000 %",
+              "dice": "7.000"
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0,
+            "escala": "log"
+          },
+          "dice": "1990."
+        },
+        "cifras": [
+          {
+            "texto": "más de 7.000 %",
+            "valor": 7481,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "PER"
+                ],
+                "desde": 1985,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "PER",
+              "anio": 1990
+            }
+          },
+          {
+            "texto": "un 26 %",
+            "valor": 26,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "PER"
+                ],
+                "desde": 1985,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 1990
+            }
+          }
+        ],
+        "enfasis": {
+          "pais": "PER"
+        },
+        "sellos": [
+          {
+            "texto": "+7.000 %",
+            "pais": "PER",
+            "animo": "triste",
+            "dice": "7.000"
+          }
+        ],
+        "mascota": {
+          "pose": "tapa-ojos",
+          "bocadillo": "¡Más de 7.000 % en un año!",
+          "dice": "7.000"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Desde 2018, cada año, los precios en Perú subieron menos que en Chile. El país que vivió aquello hoy frena mejor sus precios.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Desde 2018, Perú va por debajo",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "FP.CPI.TOTL.ZG",
+            "paises": [
+              "PER",
+              "CHL"
+            ],
+            "desde": 2015,
+            "hasta": 2025,
+            "etiqueta": "Inflación, precios al consumidor (% anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "PER",
+            "anio": 2018
+          },
+          "anotaciones": [
+            {
+              "anio": 2022,
+              "texto": "Chile 11,6 % · Perú 8,3 %"
+            }
+          ],
+          "formato": {
+            "sufijo": " %",
+            "decimales": 1
+          },
+          "dice": "2018,"
+        },
+        "cifras": [
+          {
+            "texto": "menos que en Chile",
+            "valor": 1.61,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "CHL",
+                  "PER"
+                ],
+                "desde": 2015,
+                "hasta": 2025,
+                "etiqueta": "Inflación, precios al consumidor (% anual)",
+                "unidad": "%"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "PER",
+              "anio": 2018
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "DESDE 2018",
+          "dice": "2018,"
+        }
+      }
+    ],
+    "remate": "¿En tu país los precios suben como en Chile o como en Perú?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, precios al consumidor, % anual (FP.CPI.TOTL.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PE-CL"
+      }
+    ]
+  }
+}

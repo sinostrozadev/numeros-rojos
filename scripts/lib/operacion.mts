@@ -195,7 +195,7 @@ export const CalendarioSchema = z.object({
   /** Rotación de plantillas de Shorts. */
   rotacion: z.array(z.enum(PLANTILLAS)).min(1),
   /**
-   * false = el canal no produce Shorts nuevos (decisión 2026-11-18: NR solo de largos desde el lun 2026-11-23).
+   * false = el canal no produce Shorts nuevos (estuvo así del 23 al 25-11; el 2026-11-25 Santiago pidió volver al Short diario).
    * El diario no renderiza ni genera guiones `grafico` (salvo `--n K` explícito) y estado.mts no avisa ranuras de Short vacías.
    * Los Shorts ya programados en Studio no se tocan.
    */

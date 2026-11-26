@@ -63,7 +63,7 @@ const seccion = (tipo: TipoVideo) => {
 };
 seccion('largo');
 if (cal.shortsActivos) seccion('short');
-else console.log('\nSHORTS: canal solo de largos desde el lun 2026-11-23 (calendario.shortsActivos = false). Los ya programados siguen en Studio; no se producen nuevos.');
+else console.log('\nSHORTS: apagados (calendario.shortsActivos = false); no se producen nuevos. Desde el 26-11 el canal lleva Short diario: revisa el calendario.');
 if (huerfanos.length) console.log(`\n✗ huérfanos (json 'listo' sin mp4)${marcar ? ' → marcados error' : ''}: ${huerfanos.map((e) => e.id).join(', ')}`);
 const compilaciones = leerBandeja(true).filter((e) => e.tipo === 'largo' && !bandeja.includes(e) && e.rutaJson.includes('compilaciones'));
 if (compilaciones.length) console.log(`  compilaciones: ${compilaciones.map((c) => `${c.id} [${c.estado}${c.mp4Existe ? '' : ', sin mp4'}] ${formatoDuracion(c.duracionSeg)}`).join(', ')}`);

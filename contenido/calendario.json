@@ -1,6 +1,6 @@
 {
   "zonaHoraria": "America/Santiago",
-  "comentario": "En Números Rojos. Ranuras (dias: 0=domingo … 6=sábado). DESDE EL LUN 2026-11-23 EL CANAL ES SOLO DE LARGOS (decisión 2026-11-18, diagnóstico de virales: los canales nuevos que ganan con este formato no suben Shorts; los nuestros daban mediana 166 vistas y 31–39 % 'se queda'): `shortsActivos: false` → el diario no renderiza ni genera Shorts `grafico` (salvo `--n K` a mano). Los Shorts ya programados en Studio hasta el 23-11 se quedan. Largo `tesis` lunes y jueves 19:00 (2/semana). `ranuras` y `rotacion` quedan solo para compatibilidad del schema.",
+  "comentario": "En Números Rojos. Ranuras (dias: 0=domingo … 6=sábado). DESDE EL JUE 2026-11-26 VUELVE EL SHORT DIARIO (orden de Santiago 2026-11-25: 'todos los canales deben tener shorts para los suscriptores y largos para las horas'; revierte el 'solo largos' del 2026-11-18): Short `grafico` 1/día a las 13:00 (tope 1/día). Los días de largo (lun y jue 19:00) el Short es el TRÁILER del largo (`enlaceLargo`); el resto, un Short de comparación entre países (GUION.md §4b/§4c). Largo `tesis` lunes y jueves 19:00 (2/semana). `shortsActivos: false` vuelve a apagar los Shorts del diario.",
   "ranuras": [
     {
       "dias": [
@@ -31,9 +31,9 @@
   "rotacionLargo": [
     "tesis"
   ],
-  "shortsActivos": false,
+  "shortsActivos": true,
   "minimoBandeja": 3,
   "minimoBandejaLargos": 2,
-  "minimoBacklog": 4,
+  "minimoBacklog": 6,
   "margenMinutos": 20
 }

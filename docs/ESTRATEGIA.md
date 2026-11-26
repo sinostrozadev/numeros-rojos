@@ -1,6 +1,25 @@
 > 🎯 **OBJETIVO: lograr la MONETIZACIÓN y GANAR MUCHO DINERO. Lo MÁS IMPORTANTE, por encima de calidad, volumen, herramientas o cualquier otra meta, es MONETIZAR y HACER GANAR DINERO a Santiago** (orden textual de Santiago, 2026-11-05). Todo lo demás es instrumento. Skill `estrategia-viva`.
 
-# En Números Rojos — Estrategia (Claude al mando; actualizado 2026-11-18, solo largos + molde de los canales nuevos)
+# En Números Rojos — Estrategia (Claude al mando; actualizado 2026-11-25, vuelve el Short diario + largos lun/jue)
+
+## 000. Revisión 2026-11-25 — VUELVE EL SHORT DIARIO (orden de Santiago; manda sobre §00 en la parte "solo largos")
+
+Santiago, textual (2026-11-25): *"en números no tiene shorts, por eso paró el crecimiento de suscriptores. Todos los canales deben
+tener shorts para los suscriptores y largos para las horas. Corrijamos eso."* Revierte la decisión del 18-11 ("solo largos").
+
+| Decisión | Por qué | Dónde vive |
+|---|---|---|
+| **Short diario 13:00** desde el jue 2026-11-26 (tope 1/día) + **largos lun y jue 19:00** (sin cambio) | Shorts = suscriptores y embudo al largo; largos = horas del YPP. Al 19-11 los Shorts eran el 79 % de las vistas (2.315 de 2.939) y el canal tenía 5 subs; sin Shorts nuevos programados después del mar 24-11, el canal se quedaba sin su fuente principal de vistas | `contenido/calendario.json` (`shortsActivos: true`, `minimoBacklog: 6`), `scripts/diario.mts`, `scripts/estado.mts` |
+| **Días de largo: Short TRÁILER** del mismo tema (paradoja del largo en ≤ 60 s, cierre que remite al largo; "related video" → el largo) | convierte la vista del feed en clic al largo el mismo día | `docs/GUION.md` §4c-A, `scripts/generar-guiones.mts --derivar-de <largo> --tema "…"` |
+| **Demás días: Short de DATO** de comparación entre países con el gancho §4b y la fórmula "directa" de Línea Punteada (paradoja completa en ~6 s, dato nuevo cada 4–6 s, cierre con pregunta) | los Shorts viejos (21–249 vistas, 31–39 % se queda) abrían con jerga y fuente; LP retiene 71 % con la fórmula directa | `docs/GUION.md` §4c-B |
+| NR = comparaciones entre países (sin cambio); temas solo-Chile → Entender Chile | reparto del 18-11 | `docs/GUION.md` §1 |
+
+**Corte del lun 2026-12-07 (control 30-11):** los criterios (a)–(d) de §00 siguen midiéndose en LARGOS, sin cambio. **Se añade (e), de
+Shorts**, sobre los Shorts publicados del 26-11 al 06-12 (Studio, a 7 días o lo que haya): **subs ganados por cada 1.000 vistas de Shorts
+≥ 2** (Bolita Lab, meta propia) **y mediana de "se queda a ver" ≥ 50 %** (hoy 31–39 %; LP 71 %). Si (e) falla pero los largos cumplen, el
+Short se rediseña (no se apaga) — la orden de Santiago es que todo canal tenga Shorts. Los tráileres se miden además por clics al largo
+(Studio → largo → Fuentes de tráfico → "Shorts" / "Related video").
+
 
 ## 00. Revisión 2026-11-18 — SOLO LARGOS + molde de los canales nuevos (manda sobre §0 y todo lo de abajo donde choque)
 
@@ -11,7 +30,7 @@ nuestro formato largo** que crecen: Fortune of Nations en Español (mediana 71 K
 
 | Decisión | Por qué (evidencia) | Dónde vive |
 |---|---|---|
-| **Canal solo de largos desde el lun 2026-11-23**: 2 por semana, **lunes y jueves 19:00**. No se producen Shorts nuevos; los ya programados (hasta el lun 23-11 13:00) se quedan. Excepción puntual: contingencia de demanda enorme decidida por la sesión principal (GTA 6, vie 20-11). | Shorts NR: mediana 166 vistas, 31–39 % "se queda" incluso con cold open (2 rediseños); los 3 referentes son solo largos: el canal entero es una señal limpia de "largo de economía comparada" | `contenido/calendario.json` (`shortsActivos: false`), `scripts/diario.mts`, `docs/PLAN-SEMANAL.md` |
+| ~~**Canal solo de largos desde el lun 2026-11-23**~~ (REVERTIDO el 25-11, ver §000): 2 por semana, **lunes y jueves 19:00**. No se producen Shorts nuevos; los ya programados (hasta el lun 23-11 13:00) se quedan. Excepción puntual: contingencia de demanda enorme decidida por la sesión principal (GTA 6, vie 20-11). | Shorts NR: mediana 166 vistas, 31–39 % "se queda" incluso con cold open (2 rediseños); los 3 referentes son solo largos: el canal entero es una señal limpia de "largo de economía comparada" | `contenido/calendario.json` (`shortsActivos: false`), `scripts/diario.mts`, `docs/PLAN-SEMANAL.md` |
 | **Molde de título y carátula** (`GUION.md` §10b): "¿Por qué A se hizo rico y B no?" / "A era más rico que B. ¿Qué pasó?" / paradoja concreta; carátula = 2 siluetas de mapa (oro vs gris) + "¿POR QUÉ?" | Panamá (pantalla partida A \| B) CTR 6,5 %; títulos con cifra técnica 1,0–3,2 %; los 3 referentes usan el molde | `docs/GUION.md` §10b, `docs/PEDIDO-CARATULA-MOLDE.md` |
 | **Arranque con escena** (`GUION.md` §3b): fecha + lugar + detalle humano; sin gráfico ni "PIB/Maddison/capítulos" en los primeros 30 s | Chile-Corea: 56 % sigue a los 30 s; los referentes abren con escena ("El 1 de diciembre de 1913, debajo de Buenos Aires…") | `scripts/generar-guiones.mts` (`chequeosArranqueLargo`) |
 | **Reparto con Entender Chile**: NR = comparaciones entre países (LatAm vs LatAm, LatAm vs mundo); EC = solo Chile. NR no hace temas exclusivamente chilenos | Los dos canales se pisaban (economía de Chile con gráficos, mismo motor) | `docs/GUION.md` §1; EC `estrategia/decisiones.md` |

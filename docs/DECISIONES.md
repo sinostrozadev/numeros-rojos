@@ -98,3 +98,19 @@
 - 2026-11-19 (madrugada): carátula molde de Argentina (GPT, 2 siluetas "1895" oro vs "HOY" gris + "¿QUÉ PASÓ?") llegó y se revisó a ojo (textos exactos, forma del país correcta, una sola imagen); puesta por API en `BQNaK5R-yrk` (`salida/caratulas/argentina-molde.png`). La anterior (`argentina-v2.jpg`, CTR 2,2 %) queda para revertir. Medir CTR a 7 días (25-11).
 
 - 2026-11-19 · **Largo del jue 26-11 = "¿Por qué Nueva Zelanda se hizo rica y Chile no?" (`n8fV62smf04`), no GTA 6.** Al jue 19-11 14:00 Take-Two no había publicado cifras oficiales de ventas (solo "preventas sin precedentes" sin unidades; lo demás son estimaciones o rumores), y la regla de contingencia exigía cifras oficiales. Guion con el generador (3.er intento), `verificar-cifras` ✓, ritmo ✓, revisor independiente ronda 1 Verdad 4 → 4 correcciones → ronda 2 aprobado 4,57. Carátula GPT del molde (dos mapas + ¿POR QUÉ?). Render en la nube (run 44581244730, 12 min, 10:31). Studio lo dejó sin `publishAt` (el Draft silencioso de siempre) → puesto por API con `reprogramar.mts` y verificado. Gotcha: el artifact de `producir.yml` trae el guion promovido con el MISMO nombre que el json de bandeja (`cp` lo pisa): el json de bandeja se rehízo local con `preparar-tesis` (51 s, mismos 18.942 frames) para recuperar capítulos y créditos de fotos.
+
+## 2026-11-25 — Vuelve el Short diario (revierte "solo largos" del 18-11; orden de Santiago)
+- **Cita de Santiago:** "en números no tiene shorts, por eso paró el crecimiento de suscriptores. Todos los canales deben tener shorts
+  para los suscriptores y largos para las horas. Corrijamos eso."
+- **Datos al decidir (métricas 2026-11-19, las últimas tomadas):** 5 subs; 2.939 vistas = 2.315 de Shorts (79 %) + 624 de largos. Shorts
+  con 21–249 vistas en su mayoría y 31–39 % "se queda a ver" (media 32,6 % el 15-11; LP 71 %). Último Short programado: mar 24-11.
+- **Decisión:** Short diario 13:00 desde el jue 26-11 + largos lun y jue 19:00. Los días de largo, Short TRÁILER del mismo tema
+  (`enlaceLargo`, cierre que remite al largo, related video → largo); los otros días, Short de dato de comparación entre países con el
+  gancho §4b y la fórmula directa de LP (GUION.md §4c). `calendario.json`: `shortsActivos: true`, `minimoBacklog: 6`.
+- **Medición:** criterios del corte del 07-12 en largos sin cambio + (e) Shorts del 26-11 al 06-12: subs por 1.000 vistas de Shorts ≥ 2 y
+  mediana "se queda" ≥ 50 % (ESTRATEGIA §000). Si (e) falla, se rediseña el Short, no se apaga.
+- **Limpieza:** los 10 guiones del backlog que ya estaban publicados (7 Shorts del 16→22-11 y 3 largos) y el de Nueva Zelanda (programado)
+  pasaron a `contenido/guiones/` con su fecha de render: el backlog quedó sin falsos "sin asignar". `tesis-chile-era-mas-pobre-que-mexico-en-1994`
+  sigue fuera (repite tema).
+- `generar-guiones.mts --derivar-de` ahora acepta `--tema` (pedido del tráiler).
+

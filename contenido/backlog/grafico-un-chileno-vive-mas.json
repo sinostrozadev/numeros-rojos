@@ -1,0 +1,258 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-un-chileno-vive-mas",
+  "titulo": "Un chileno vive más que un estadounidense. ¿Cómo?",
+  "descripcion": "¿Cómo vive más años un chileno que un estadounidense, si Estados Unidos produce por persona más del doble?\n\nLa esperanza de vida al nacer, del Banco Mundial, de 1960 a 2023: en 1960 el estadounidense vivía bastante más; hoy el chileno lo supera.\nY no es por gasto: en 2022 Estados Unidos gastó en salud unas ocho veces más por persona que Chile.\n\nFuentes:\n- Banco Mundial, WDI: esperanza de vida al nacer (SP.DYN.LE00.IN), CC BY 4.0 https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=CL-US\n- Banco Mundial, WDI: PIB per cápita, PPA (NY.GDP.PCAP.PP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-US\n- Banco Mundial, WDI: gasto en salud por persona (SH.XPD.CHEX.PC.CD), CC BY 4.0 https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD?locations=CL-US\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#chile",
+    "#estadosunidos",
+    "#salud",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-un-chileno-vive-mas",
+    "gancho": {
+      "texto": "Un chileno vive más años que un estadounidense, que produce más del doble.",
+      "rotulo": "VIVE MÁS, PRODUCE MENOS",
+      "cifras": [
+        {
+          "texto": "más del doble",
+          "valor": 2.5,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "USA",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "USA",
+            "paisB": "CHL",
+            "anio": 2023
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "¿Quién vive más años?",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "SP.DYN.LE00.IN",
+        "paises": [
+          "CHL",
+          "USA"
+        ],
+        "desde": 1960,
+        "hasta": 2023,
+        "etiqueta": "Esperanza de vida al nacer (años)",
+        "unidad": "años"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "formato": {
+        "sufijo": " años",
+        "decimales": 1
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la línea dorada: es Chile. Según el Banco Mundial, en 2023 un chileno vivía más años que un estadounidense.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "¿Quién vive más años?",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "SP.DYN.LE00.IN",
+            "paises": [
+              "CHL",
+              "USA"
+            ],
+            "desde": 1960,
+            "hasta": 2023,
+            "etiqueta": "Esperanza de vida al nacer (años)",
+            "unidad": "años"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "sufijo": " años",
+            "decimales": 1
+          },
+          "dice": "dorada:"
+        },
+        "cifras": [
+          {
+            "texto": "vivía más años",
+            "valor": 1.03,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SP.DYN.LE00.IN",
+                "paises": [
+                  "CHL",
+                  "USA"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "Esperanza de vida al nacer (años)",
+                "unidad": "años"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "USA",
+              "anio": 2023
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero en 1960 era al revés. El estadounidense vivía muchos más años, y Chile tardó décadas en alcanzarlo.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "1960: al revés",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "SP.DYN.LE00.IN",
+            "paises": [
+              "CHL",
+              "USA"
+            ],
+            "desde": 1960,
+            "hasta": 2023,
+            "etiqueta": "Esperanza de vida al nacer (años)",
+            "unidad": "años"
+          },
+          "destacar": {
+            "pais": "USA",
+            "anio": 1960,
+            "texto": "1960: EE. UU. arriba"
+          },
+          "formato": {
+            "sufijo": " años",
+            "decimales": 1
+          },
+          "dice": "1960"
+        },
+        "cifras": [
+          {
+            "texto": "era al revés",
+            "valor": 1.2,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SP.DYN.LE00.IN",
+                "paises": [
+                  "CHL",
+                  "USA"
+                ],
+                "desde": 1960,
+                "hasta": 2023,
+                "etiqueta": "Esperanza de vida al nacer (años)",
+                "unidad": "años"
+              },
+              "operacion": "razon",
+              "pais": "USA",
+              "paisB": "CHL",
+              "anio": 1960
+            },
+            "tolerancia": 0.1
+          }
+        ],
+        "rotulo": {
+          "texto": "1960: AL REVÉS",
+          "dice": "revés."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Y no es que Chile gaste más. En 2022, Estados Unidos gastó en salud unas ocho veces más por persona.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "Gasto en salud por persona, 2022",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "SH.XPD.CHEX.PC.CD",
+            "paises": [
+              "USA",
+              "CHL"
+            ],
+            "desde": 2022,
+            "hasta": 2022,
+            "etiqueta": "Gasto total en salud por persona (US$ corrientes)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "salud"
+        },
+        "cifras": [
+          {
+            "texto": "unas ocho veces",
+            "valor": 7.8,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "SH.XPD.CHEX.PC.CD",
+                "paises": [
+                  "USA",
+                  "CHL"
+                ],
+                "desde": 2022,
+                "hasta": 2022,
+                "etiqueta": "Gasto total en salud por persona (US$ corrientes)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "USA",
+              "paisB": "CHL",
+              "anio": 2022
+            },
+            "tolerancia": 0.15
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "8×",
+            "pais": "USA",
+            "animo": "triste",
+            "dice": "ocho"
+          }
+        ]
+      }
+    ],
+    "remate": "Estados Unidos tiene más dinero. Chile tiene más años. ¿Y tu país, dónde está?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Esperanza de vida al nacer (SP.DYN.LE00.IN), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=CL-US"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-US"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Gasto corriente en salud per cápita, US$ corrientes (SH.XPD.CHEX.PC.CD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD?locations=CL-US"
+      }
+    ]
+  }
+}

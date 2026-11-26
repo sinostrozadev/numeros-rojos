@@ -390,7 +390,7 @@ const pasoRender = (tipo: TipoVideo) => async (log: Log) => {
 // ---------------------------------------------------------------- (b) generar
 const pasoGenerar = async (log: Log) => {
   const calendario = cargarCalendario();
-  // Sin Shorts activos, los guiones `grafico` que queden en el backlog no cuentan para el mínimo.
+  // Sin Shorts activos (calendario.shortsActivos = false), los guiones `grafico` del backlog no cuentan para el mínimo.
   const backlog = leerBacklog().filter((g) => calendario.shortsActivos || g.plantilla !== 'grafico');
   if (backlog.length >= calendario.minimoBacklog) {
     log(`(b) Backlog con ${backlog.length} guion(es) ≥ ${calendario.minimoBacklog}: no se generan.`);
@@ -466,7 +466,7 @@ const main = async () => {
       if (h.length) l(`(0) ✗ ${h.length} json 'listo' sin mp4 → estado 'error': ${h.map((e) => e.id).join(', ')}`);
     }, true],
     // Shorts primero (minutos; la ranura de las 13:00 es diaria), luego el largo (~2 h, de madrugada).
-    // Canal solo de largos (calendario.shortsActivos = false, desde 2026-11-23): sin Shorts salvo `--n K` explícito.
+    // Con calendario.shortsActivos = false no hay Shorts salvo `--n K` explícito (estuvo así del 23 al 25-11; Short diario de vuelta desde el 26-11).
     ['render shorts', pasoRender('short'), render && !opc['solo-largos'] && (cargarCalendario().shortsActivos || opc.n !== undefined)],
     ['render largos', pasoRender('largo'), render && !opc['sin-largos']],
     ['generar', pasoGenerar, render && !opc['solo-render'] && !opc['sin-generar'] && !opc['solo-largos']],

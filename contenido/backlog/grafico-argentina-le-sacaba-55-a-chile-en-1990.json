@@ -1,0 +1,311 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-argentina-le-sacaba-55-a-chile-en-1990",
+  "titulo": "Argentina le sacaba 55 % a Chile en 1990. Hoy va detrás",
+  "descripcion": "¿En qué año pasó Chile a Argentina en lo que produce cada persona?\n\nEn 1990, un argentino producía un 55 % más que un chileno, con los precios de cada país corregidos. En 2016 Chile lo pasa, en 2017 Argentina vuelve arriba y desde 2018 Chile va siempre adelante.\nEn 2025, la diferencia es de un 11 %: unos 3.000 dólares por persona.\n\nFuente: Banco Mundial, World Development Indicators, PIB per cápita PPA en US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-AR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#chile",
+    "#argentina",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-argentina-le-sacaba-55-a-chile-en-1990",
+    "gancho": {
+      "texto": "En 1990, un argentino producía un 55 % más que un chileno. Hoy es al revés.",
+      "rotulo": "ANTES ARGENTINA, HOY CHILE",
+      "cifras": [
+        {
+          "texto": "un 55 % más",
+          "valor": 1.55,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "CHL",
+                "ARG"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ARG",
+            "paisB": "CHL",
+            "anio": 1990
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Chile y Argentina, 1990–2025",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "CHL",
+          "ARG"
+        ],
+        "desde": 1990,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "CHL",
+        "anio": 2018,
+        "texto": "2018: Chile adelante"
+      },
+      "anotaciones": [
+        {
+          "anio": 2002,
+          "texto": "Crisis argentina"
+        },
+        {
+          "anio": 2016,
+          "texto": "Primer cruce"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial, corregidos por lo que cuestan las cosas en cada país. Mira las líneas: en 2002, con la crisis argentina, casi se tocan.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Chile y Argentina, 1990–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "CHL",
+              "ARG"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "anotaciones": [
+            {
+              "anio": 2002,
+              "texto": "Crisis argentina",
+              "dice": "2002,"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "Mira"
+        },
+        "cifras": [
+          {
+            "texto": "casi se tocan",
+            "valor": 0.98,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "ARG",
+              "anio": 2002
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "En 2016, Chile lo pasa por primera vez. Al año siguiente, Argentina vuelve arriba. Desde 2018, Chile va siempre adelante.",
+        "cifras": [
+          {
+            "texto": "En 2016, Chile lo pasa",
+            "valor": 1.01,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "ARG",
+              "anio": 2016
+            }
+          },
+          {
+            "texto": "Argentina vuelve arriba",
+            "valor": 1.02,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "ARG",
+              "paisB": "CHL",
+              "anio": 2017
+            }
+          },
+          {
+            "texto": "Desde 2018, Chile va siempre adelante",
+            "valor": 1.04,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "ARG",
+              "anio": 2018
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "2018",
+          "dice": "2018,"
+        },
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¡Se cruzaron dos veces!",
+          "dice": "arriba."
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2025, un chileno produce un 11 % más que un argentino: unos 3.000 dólares por persona.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2025: Chile contra Argentina",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "CHL",
+              "ARG"
+            ],
+            "desde": 2025,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "2025,"
+        },
+        "cifras": [
+          {
+            "texto": "un 11 % más",
+            "valor": 1.11,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "CHL",
+              "paisB": "ARG",
+              "anio": 2025
+            }
+          },
+          {
+            "texto": "unos 3.000 dólares",
+            "valor": 3000,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "CHL",
+                  "ARG"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "diferencia",
+              "pais": "CHL",
+              "paisB": "ARG",
+              "anio": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "+11 %",
+            "pais": "CHL",
+            "animo": "feliz",
+            "dice": "11"
+          }
+        ]
+      }
+    ],
+    "remate": "Argentina partió adelante y frenó en cada crisis. Chile partió atrás y frenó menos. ¿Y en tu país?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=CL-AR"
+      }
+    ]
+  }
+}

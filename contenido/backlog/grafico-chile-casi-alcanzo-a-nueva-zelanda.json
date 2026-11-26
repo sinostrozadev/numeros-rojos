@@ -1,0 +1,264 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-chile-casi-alcanzo-a-nueva-zelanda",
+  "titulo": "Chile casi alcanzó a Nueva Zelanda en 1928. ¿Qué pasó?",
+  "descripcion": "Video completo: hoy jueves 26 a las 19:00 en el canal.\n\n¿Por qué Nueva Zelanda se hizo rica y Chile no, si los dos viven de lo que da la tierra?\n\nEn 1882 un neozelandés producía más del doble que un chileno. Con el salitre, en 1928 Chile quedó a menos de una vez y media. Después llegó la Gran Depresión, y no les pegó igual a los dos.\nLa historia completa, desde el velero Dunedin hasta hoy, está en el video largo.\n\nFuentes:\n- Maddison Project Database 2023 vía Our World in Data (CC BY 4.0) https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database\n- Banco Mundial, WDI: NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=NZ-CL\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#nuevazelanda",
+    "#chile",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-chile-casi-alcanzo-a-nueva-zelanda",
+    "gancho": {
+      "texto": "Chile y Nueva Zelanda viven de lo que da la tierra. Por cada diez dólares de un neozelandés, un chileno produce seis.",
+      "rotulo": "DIEZ CONTRA SEIS",
+      "cifras": [
+        {
+          "texto": "un chileno produce seis",
+          "valor": 0.6,
+          "tolerancia": 0.08,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "NZL",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2024,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CHL",
+            "paisB": "NZL",
+            "anio": 2024
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "comparacion",
+      "titulo": "2024: Nueva Zelanda contra Chile",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "NZL",
+          "CHL"
+        ],
+        "desde": 2024,
+        "hasta": 2024,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "En 1882, un neozelandés producía más del doble que un chileno. Según el Proyecto Maddison, en 1928 la distancia ya era menos de una vez y media.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Con el salitre, Chile se acerca",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "NZL",
+              "CHL"
+            ],
+            "desde": 1880,
+            "hasta": 1930,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL",
+            "anio": 1928
+          },
+          "anotaciones": [
+            {
+              "anio": 1928,
+              "texto": "La menor distancia",
+              "dice": "1928"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "1882,"
+        },
+        "cifras": [
+          {
+            "texto": "más del doble",
+            "valor": 2.16,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1850,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "NZL",
+              "paisB": "CHL",
+              "anio": 1882
+            }
+          },
+          {
+            "texto": "menos de una vez y media",
+            "valor": 1.46,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1850,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "NZL",
+              "paisB": "CHL",
+              "anio": 1928
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "1928: LO MÁS CERCA",
+          "dice": "1928"
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Entonces llegó la Gran Depresión. Entre 1929 y 1932, el ingreso por persona chileno se encogió casi la mitad. El neozelandés, algo menos de una quinta parte.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "La Gran Depresión en los dos países",
+          "datos": {
+            "fuente": "owid",
+            "indicador": "gdp-per-capita-maddison-project-database",
+            "paises": [
+              "NZL",
+              "CHL"
+            ],
+            "desde": 1920,
+            "hasta": 1940,
+            "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL",
+            "anio": 1932
+          },
+          "anotaciones": [
+            {
+              "anio": 1932,
+              "texto": "Fondo de la crisis",
+              "dice": "1932,"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "1929"
+        },
+        "cifras": [
+          {
+            "texto": "casi la mitad",
+            "valor": -48,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1850,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 1929,
+              "anioB": 1932
+            }
+          },
+          {
+            "texto": "algo menos de una quinta parte",
+            "valor": -17.8,
+            "calculo": {
+              "datos": {
+                "fuente": "owid",
+                "indicador": "gdp-per-capita-maddison-project-database",
+                "paises": [
+                  "NZL",
+                  "CHL"
+                ],
+                "desde": 1850,
+                "hasta": 2022,
+                "etiqueta": "PIB por persona (Maddison, US$ internacionales de 2011)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "NZL",
+              "anio": 1929,
+              "anioB": 1932
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "−48 %",
+            "pais": "CHL",
+            "animo": "triste",
+            "dice": "mitad."
+          }
+        ],
+        "mascota": {
+          "pose": "tapa-ojos",
+          "bocadillo": "¡Casi la mitad!",
+          "dice": "mitad."
+        }
+      }
+    ],
+    "remate": "¿Qué hizo distinto Nueva Zelanda? Lo explico en el video largo de hoy.",
+    "fuentes": [
+      {
+        "texto": "Our World in Data: PIB per cápita (Maddison Project Database 2023, Bolt y van Zanden), CC BY 4.0",
+        "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=NZ-CL"
+      }
+    ],
+    "enlaceLargo": "pendiente-tesis-por-que-nueva-zelanda-se-hizo-rica"
+  }
+}

@@ -17,8 +17,9 @@ México, Argentina, Uruguay, Bolivia, Panamá, Venezuela, Brasil) y España; ven
 LatAm vs el mundo, "¿por qué A se hizo rico y B no?"). **Entender Chile = solo Chile** (regiones, ciudades, obras, noticias
 chilenas). NR **no** hace temas exclusivamente chilenos (el IPC de Chile, una región chilena, el presupuesto chileno): Chile
 entra como uno de los dos lados de una comparación, nunca como tema único.
-**Formato (2026-11-18): el canal es solo de largos** desde el lun 2026-11-23 (2 por semana, lun y jue 19:00). §4 y §4b quedan
-para Shorts de excepción (una contingencia de demanda enorme, decidida por la sesión principal), no para el diario.
+**Formato (2026-11-25, orden de Santiago; revierte el "solo largos" del 18-11):** 2 largos por semana (lun y jue 19:00) para las
+horas + **1 Short diario a las 13:00** para los suscriptores y como embudo al largo. Los días de largo el Short es su **tráiler**
+(§4c); los demás días, un Short de dato/paradoja entre países (§4, §4b, §4c).
 
 **Cómo le ganamos al referente** (Los Ecomonos, 9–12 min, 100–800 K vistas; la crítica que recibe: desinformar y catastrofismo):
 cada cifra se puede recalcular y aparece con su fuente; el tono es de **evidencia**, no de alarma. La tensión sale de una
@@ -157,6 +158,30 @@ UN gráfico (`grafico`) que se construye con la voz desde el frame 0 y UN giro.
    c. **Lo que pasó hace ≤ 14 días** (IPC del mes, dato del INE/INDEC, récord del cobre o del dólar) con la serie larga detrás.
    Se evita: series abstractas sin persona (reservas, exportaciones/PIB, I+D/PIB) salvo que la primera frase las traduzca a gente.
 6. **Escala humana en la primera escena**: "un chileno", "una familia", "tu sueldo"; nunca solo "la economía".
+
+## 4c. Los dos Shorts del canal desde el 2026-11-26 (manda sobre §4 y §4b donde choque)
+
+> Por qué: Santiago (2026-11-25) "en números no tiene shorts, por eso paró el crecimiento de suscriptores". Los Shorts viejos
+> retenían 31–39 % porque abrían con un gráfico y una cifra técnica; Línea Punteada retiene 71 % con la fórmula "directa":
+> **la paradoja completa en los primeros ~6 s, sin introducción, un dato nuevo cada pocos segundos, cierre con pregunta**.
+
+**A. Short TRÁILER (días de largo, lun y jue 13:00).** `enlaceLargo` = id del largo (se genera con `--derivar-de <id>`).
+1. Frase 1 (≤ 14 palabras) = la paradoja del largo tal cual la siente la gente, con los dos países: "Los dos viven de lo que da
+   la tierra. Por cada diez dólares de un neozelandés, un chileno produce seis." (cifras del largo, ya verificadas) Nada de "hoy te cuento", ni fuente, ni jerga.
+2. 2–3 escenas: cada 4–6 s un dato NUEVO del mismo dataset del largo (no el remate del largo: el tráiler abre la pregunta, no
+   la cierra). Exactamente 1 `giro`.
+3. Cierre = pregunta + remisión al largo en una frase hablada corta: "¿Qué hizo distinto? Lo explico en el video largo de hoy."
+   `remate` puede ser esa frase. La descripción empieza con "Video completo: hoy a las 19:00 en el canal." El "related video"
+   del Short apunta al largo (se pone en Studio al subir).
+4. ≤ 60 s (apunta a 35–45 s), texto 100 % nuevo respecto del largo (mismos hechos, otras frases: si no, es reutilizado).
+
+**B. Short de DATO (los otros 5 días).** Una comparación entre países (LatAm vs LatAm o LatAm vs el mundo; nunca solo Chile:
+eso es de Entender Chile) con el gancho §4b y el cold open de la plantilla (gráfico terminado en el frame 0).
+1. Frase 1 = la paradoja completa (los dos lados) en ≤ 14 palabras. Rótulo ≤ 4 palabras.
+2. Un dato nuevo cada 4–6 s; 2–3 escenas; 1 giro; 30–45 s.
+3. Cierre con una pregunta al espectador que se pueda contestar en comentarios ("¿Tu país está arriba o abajo de la línea?").
+4. Orden de temas: bolsillo (precios, sueldo, cuánto vive la gente) entre países → rivalidad de vecinos con Chile/Argentina
+   dentro → el país del próximo largo. No repetir un par de países ya publicado como Short sin un dato nuevo.
 
 ## 5. Las 4 estructuras (rotan: ninguna > 40 % de los largos)
 
