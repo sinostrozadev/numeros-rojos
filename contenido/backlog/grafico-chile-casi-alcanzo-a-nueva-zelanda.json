@@ -67,7 +67,7 @@
     "escenas": [
       {
         "tipo": "dato",
-        "texto": "Partieron lejos: en 1882, un neozelandés producía más del doble que un chileno. Pero la base Maddison muestra que con el salitre, en 1928, la brecha bajó a menos de una vez y media.",
+        "texto": "En 1882, un neozelandés producía más del doble que un chileno. Pero la base Maddison muestra que con el salitre, en 1928, la brecha bajó a menos de una vez y media.",
         "grafico": {
           "tipo": "lineas",
           "titulo": "Con el salitre, Chile se acerca",
