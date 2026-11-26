@@ -1,0 +1,290 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-argentina-producia-mas-que-uruguay-desde",
+  "titulo": "Argentina producía más que Uruguay. Desde 2014, al revés",
+  "descripcion": "¿Cuándo pasó Uruguay a Argentina en lo que produce cada persona?\n\nEn 1990 un argentino producía un 21 % más que un uruguayo, con los precios de cada país corregidos. En 2014 las líneas se cruzan y no se vuelven a dar vuelta.\nEn 2025, el uruguayo promedio produce casi un 18 % más que el argentino.\n\nFuente: Banco Mundial, World Development Indicators, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=UY-AR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#uruguay",
+    "#argentina",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-argentina-producia-mas-que-uruguay-desde",
+    "gancho": {
+      "texto": "Un argentino producía más que un uruguayo. Hoy es al revés. Mira dónde se cruzan.",
+      "rotulo": "SE DIO VUELTA"
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Uruguay y Argentina, 1990–2025",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "URY",
+          "ARG"
+        ],
+        "desde": 1990,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "URY",
+        "anio": 2014,
+        "texto": "2014: se cruzan"
+      },
+      "anotaciones": [
+        {
+          "anio": 2014,
+          "texto": "Uruguay pasa adelante"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "En 1990 un argentino producía un 21 % más que un uruguayo. Son datos del Banco Mundial, corregidos por precios de cada país.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Uruguay y Argentina, 1990–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "URY",
+              "ARG"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "ARG"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "argentino"
+        },
+        "cifras": [
+          {
+            "texto": "un 21 % más",
+            "valor": 1.21,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "ARG",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "ARG",
+              "paisB": "URY",
+              "anio": 1990
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "En 2014 las líneas se cruzan. Argentina creció más de un 60 % desde 1990. Uruguay más que duplicó.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "2014: Uruguay pasa adelante",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "URY",
+              "ARG"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "URY",
+            "anio": 2014,
+            "texto": "2014: se cruzan"
+          },
+          "anotaciones": [
+            {
+              "anio": 2014,
+              "texto": "Uruguay pasa adelante",
+              "dice": "cruzan."
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "2014"
+        },
+        "cifras": [
+          {
+            "texto": "En 2014 las líneas se cruzan",
+            "valor": 1.03,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "ARG",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "URY",
+              "paisB": "ARG",
+              "anio": 2014
+            }
+          },
+          {
+            "texto": "más de un 60 %",
+            "valor": 63.7,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "ARG",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "ARG",
+              "anio": 1990,
+              "anioB": 2025
+            }
+          },
+          {
+            "texto": "más que duplicó",
+            "valor": 133,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "ARG",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "URY",
+              "anio": 1990,
+              "anioB": 2025
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "2014",
+          "dice": "2014"
+        },
+        "sellos": [
+          {
+            "texto": "×2",
+            "pais": "URY",
+            "animo": "feliz",
+            "dice": "duplicó."
+          }
+        ]
+      },
+      {
+        "tipo": "dato",
+        "texto": "En 2025, un uruguayo produce casi un 18 % más que un argentino. Y no se volvió a dar vuelta.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2025: Uruguay contra Argentina",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "URY",
+              "ARG"
+            ],
+            "desde": 2025,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "URY"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "uruguayo"
+        },
+        "cifras": [
+          {
+            "texto": "casi un 18 % más",
+            "valor": 1.176,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "ARG",
+                  "URY"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "URY",
+              "paisB": "ARG",
+              "anio": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "+18 %",
+            "pais": "URY",
+            "animo": "feliz",
+            "dice": "18"
+          }
+        ]
+      }
+    ],
+    "remate": "Argentina partió adelante. Uruguay terminó adelante. ¿Qué crees que hizo la diferencia?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=UY-AR"
+      }
+    ]
+  }
+}
