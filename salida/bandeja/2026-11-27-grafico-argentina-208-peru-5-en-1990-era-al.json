@@ -1,0 +1,22 @@
+{
+  "id": "2026-11-27-grafico-argentina-208-peru-5-en-1990-era-al",
+  "plantilla": "grafico",
+  "titulo": "En 2024, Argentina 208 % y Perú 5 %. En 1990, al revés",
+  "descripcion": "Video completo: hoy a las 19:00 en el canal.\n\n¿Cómo pasó Perú de tener una inflación peor que la de Argentina a tener precios estables?\n\nLa misma vara para los dos países: el deflactor del PIB del Banco Mundial, de la hiperinflación de 1989–1990 a 2025.\nEl video largo de hoy cuenta cómo salió cada uno, año por año, y qué le pasa a un sueldo en Lima y en Buenos Aires.\n\nFuentes: Banco Mundial, WDI, NY.GDP.DEFL.KD.ZG (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=PE-AR\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#peru",
+    "#argentina",
+    "#inflacion"
+  ],
+  "duracionSeg": 41.5,
+  "estado": "subido",
+  "tipo": "short",
+  "artefacto": "`short-2026-11-27` del run https://github.com/sinostrozadev/numeros-rojos/actions/runs/45941743055",
+  "publicarEn": "2026-12-03T13:00:00-03:00",
+  "videoId": "Lhk4vEHPttE",
+  "url": "https://youtube.com/shorts/Lhk4vEHPttE",
+  "programado": "2026-12-03 13:00",
+  "subidoEn": "2026-11-27T05:07:39.355Z"
+}

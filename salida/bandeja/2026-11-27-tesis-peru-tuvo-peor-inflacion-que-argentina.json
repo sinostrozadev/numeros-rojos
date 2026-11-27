@@ -1,0 +1,23 @@
+{
+  "id": "2026-11-27-tesis-peru-tuvo-peor-inflacion-que-argentina",
+  "plantilla": "tesis",
+  "titulo": "Perú tuvo peor inflación que Argentina. ¿Qué pasó?",
+  "descripcion": "¿Por qué Perú, que en 1990 tuvo una inflación peor que la peor de Argentina, vive hoy con precios estables y Argentina no?\n\nCapítulos:\n0:00 Introducción\n0:49 Cómo se llegó a la hiperinflación\n3:18 1991 a 2001: cómo salió cada uno\n5:34 Desde 2002: dos caminos con los precios\n7:45 Qué le pasa a un sueldo en cada país\n10:22 El número que nadie mira\n\nSeguimos cuarenta años de datos del Banco Mundial con la misma vara para los dos países: el deflactor del PIB.\nArgentina frenó los precios primero, con el uno a uno de 1991. Perú tardó más, con una Constitución, la de 1993, que le prohíbe a su banco central financiar al Estado, y metas de inflación desde 2002.\nEl dato que más sorprende: desde 2002, la inflación de Perú fue más baja que la de Argentina todos los años.\n\nFotos (Wikimedia Commons): Plaza de Mayo y Avenida Hipólito Yrigoyen — The Cosmonaut (CC BY-SA 2.5 ca, https://creativecommons.org/licenses/by-sa/2.5/ca/deed.en), https://commons.wikimedia.org/wiki/File:Plaza_de_Mayo_y_Avenida_Hip%C3%B3lito_Yrigoyen.jpg; Canned food — ProjectManhattan (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Canned_food.jpg; Plaza San Martín, Lima Peru — Ministerio de Defensa del Perú (CC BY 2.0, https://creativecommons.org/licenses/by/2.0), https://commons.wikimedia.org/wiki/File:Plaza_San_Mart%C3%ADn,_Lima_Peru.jpg; Casa Rosada, Buenos Aires, Argentina — Diego Delso (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Casa_Rosada,_Buenos_Aires,_Argentina.jpg; CongresodelaNacionArgentina-nov2017 — Ezarate (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0), https://commons.wikimedia.org/wiki/File:CongresodelaNacionArgentina-nov2017.jpg; Central Reserve Bank of Peru, Trujillo — Bernard Gagnon (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Central_Reserve_Bank_of_Peru,_Trujillo.jpg; Buenos Aires-2672f-Banco de la Nación Argentina — Barcex (CC BY-SA 2.5, https://creativecommons.org/licenses/by-sa/2.5), https://commons.wikimedia.org/wiki/File:Buenos_Aires-2672f-Banco_de_la_Naci%C3%B3n_Argentina.jpg; Calle de Mercaderes, Lima — Bernard Gagnon (CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0), https://commons.wikimedia.org/wiki/File:Calle_de_Mercaderes,_Lima.jpg; Třída Avenida 9 de Julio a obelisk - Buenos Aires - panoramio — Pavel Špindler (CC BY 3.0, https://creativecommons.org/licenses/by/3.0), https://commons.wikimedia.org/wiki/File:T%C5%99%C3%ADda_Avenida_9_de_Julio_a_obelisk_-_Buenos_Aires_-_panoramio.jpg\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.DEFL.KD.ZG, FP.CPI.TOTL.ZG, FP.CPI.TOTL, NY.GDP.PCAP.KD (CC BY 4.0) https://data.worldbank.org\n- Constitución Política del Perú de 1993, Banco Central de Reserva del Perú https://www.bcrp.gob.pe\n- Ley 23.928 de Convertibilidad, Argentina (1991) http://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/328/norma.htm\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#peru",
+    "#argentina",
+    "#inflacion",
+    "#datos"
+  ],
+  "duracionSeg": 681.6,
+  "estado": "subido",
+  "tipo": "largo",
+  "miniatura": "salida/caratulas/peru-argentina.png",
+  "artefacto": "`largo-2026-11-27` del run https://github.com/sinostrozadev/numeros-rojos/actions/runs/45941733471",
+  "publicarEn": "2026-12-03T19:00:00-03:00",
+  "videoId": "GPI5h-uw66M",
+  "url": "https://www.youtube.com/watch?v=GPI5h-uw66M",
+  "programado": "2026-12-03 19:00",
+  "subidoEn": "2026-11-27T05:05:29.264Z"
+}

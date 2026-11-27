@@ -26,89 +26,30 @@
 | sáb 28-11 | 13:00 | Short DATO | Argentina le sacaba 55 % a Chile en 1990. Hoy va detrás | programado (publishAt 13:00 verificado por API) | `_BbvmhwQ_9g` |
 | dom 29-11 | 13:00 | Short DATO | Perú tuvo más de 7.000 % de inflación. Hoy, menos que Chile | programado (publishAt 13:00 verificado por API) | `FQp6ZZQJ-M0` |
 
-**Semana siguiente 30-11 → 06-12 (guiones en el ritual del jue 26-11 17:00; títulos tentativos: el título final sale de la cifra que dé
-`verificar-cifras`, no al revés):**
+**Cierre de la semana 23→29 (ritual del jue 26-11, terminado el vie 27-11 madrugada):** Irlanda (lun 23) y Nueva Zelanda
+`n8fV62smf04` (jue 26) publicados; Shorts 27/28/29 programados y verificados. Métricas 26-11: 7 subs · 3.805 vistas (2.959 de Shorts).
+Nueva Zelanda se mide a 7 días (CTR, impresiones, 30 s) en el control del lun 30-11.
 
-| Día | Hora | Formato | Idea | Modelado sobre (outlier, vistas) |
-|---|---|---|---|---|
-| lun 30-11 | 13:00 | Short TRÁILER | paradoja del largo del día en ≤ 14 palabras ("España trajo toneladas de plata de Potosí. ¿Dónde quedó?") + 2 datos + "lo explico hoy a las siete" | tráiler NZ del 26-11 (medir clics al largo) |
-| lun 30-11 | 19:00 | largo | **¿Por qué España no se hizo rica con la plata de Potosí?** (Bolivia/España; Maddison; arranque con escena en Potosí) | Curiosito 153 K https://www.youtube.com/watch?v=ZakfKXrgqJ4 |
-| mar 01-12 | 13:00 | Short DATO | **Uruguay vs Argentina**: "Argentina le ganaba a Uruguay. Mira cuándo se dio vuelta" (NY.GDP.PCAP.PP.KD; comprobar el cruce) | nuestro mejor Short: Chile-Corea "le ganaba 3 a 1… se dio vuelta" 649; España-Argentina 319 |
-| mié 02-12 | 13:00 | Short DATO | **Puerto Rico vs Chile/LatAm**: "Puerto Rico produce más que cualquier país de Latinoamérica" (WDI; verificar el ranking) | Curiosito 135 K "¿Por qué Puerto Rico es más rico que cualquier país de Latinoamérica…?" |
-| jue 03-12 | 13:00 | Short TRÁILER | paradoja del largo del día + 2 datos + "lo explico hoy a las siete" | — |
-| jue 03-12 | 19:00 | largo | **¿Por qué Uruguay es más rico que Paraguay?** (vecinos; arranque con escena en el puerto de Montevideo o Asunción) | Borderline 201 K https://www.youtube.com/watch?v=zio__98MTL0 (rivalidad de vecinos) |
-| vie 04-12 | 13:00 | Short DATO | **Singapur vs Chile**: "Singapur no tiene cobre ni agua. Produce más del doble que Chile" (WDI; verificar la razón) | Fortune 209 K "Singapur no tiene agua… ¿Por qué es más rico que EE. UU.?" |
-| sáb 05-12 | 13:00 | Short DATO | **Bolsillo**: precios de Argentina vs Uruguay o Chile en el último año (FP.CPI.TOTL.ZG) o productividad por hora México vs Chile (Penn) — el que dé la paradoja más clara | Perú-Chile 29-11 (medir) · Los Ecomonos "bolsillo" |
-| dom 06-12 | 13:00 | Short DATO | **Panamá vs Costa Rica**: "Panamá era más pobre que Costa Rica. Hoy produce más" (comprobar el cruce) — anticipa un largo de la cola | Panamá-Chile 414 y el CTR 6,5 % del largo de Panamá |
+**Semana 30-11 → 06-12 — ASEGURADA (guiones con revisor independiente; renders en la nube; Shorts programados y verificados por API):**
 
-Si el jue 26 alguna idea no cuadra en `verificar-cifras`, sale de la cola: Colombia vs Perú (cruce), Brasil vs México (vecinos grandes),
-Chile vs Portugal (Short sobre un país europeo con el que se compara la audiencia). Medición el lun 07-12: criterio (e) de Shorts
-(subs por 1.000 vistas ≥ 2, "se queda" ≥ 50 %) + clics de los tráileres al largo (Studio → largo → Fuentes de tráfico).
+| Día | Hora | Formato | Pieza | Revisor | Render | Estado / video |
+|---|---|---|---|---|---|---|
+| lun 30-11 | 13:00 | Short TRÁILER | Haití (`EPyqg1wKfSc`, privado sin fecha) si Santiago aprueba Haití en NR; si no, tráiler del respaldo | (Haití: filtros del 26-11) | Haití ✓ | **reservado: decide Santiago** |
+| lun 30-11 | 19:00 | largo | **Haití era más rico que República Dominicana. ¿Qué pasó?** (prototipo, carátula GPT `salida/caratulas/haiti-rd-a.png` llegó y está revisada) · respaldo: **¿Por qué Uruguay es más rico que Paraguay?** | Haití 4,14 · respaldo: r2 4,29 NO aprobado (Verdad 4 por una frase; corregida: necesita ronda 3 antes de producirse) | Haití ✓ · respaldo sin render (`contenido/reserva/respaldo-tesis-por-que-uruguay-se-hizo-rico-y-paraguay.json`) | **reservado: decide Santiago** |
+| mar 01-12 | 13:00 | Short DATO | Argentina producía más que Uruguay. Desde 2014, al revés | ✓ 4,14 | ✓ nube | programado `3vTK9EZLDlY` |
+| mié 02-12 | 13:00 | Short DATO | Un puertorriqueño produce más que un panameño. Y son menos | ✓ r2 4,29 | ✓ nube | programado `DzmImUcyySs` |
+| jue 03-12 | 13:00 | Short TRÁILER | En 2024, Argentina 208 % y Perú 5 %. En 1990, al revés | ✓ r2 4,14 | ✓ nube | programado `Lhk4vEHPttE` |
+| jue 03-12 | 19:00 | largo | **Perú tuvo peor inflación que Argentina. ¿Qué pasó?** (carátula GPT `salida/caratulas/peru-argentina.png`, revisada) | ✓ r2 4,43 | ✓ nube | programado `GPI5h-uw66M` (carátula GPT cargada; Studio lo dejó sin fecha → publishAt puesto por API) |
+| vie 04-12 | 13:00 | Short DATO | Singapur y Chile iban casi parejos en 1960. ¿Qué pasó? | ✓ 4,29 | ✓ nube | programado `aLEBv-UO1JE` (Studio lo dejó sin fecha; publishAt puesto por API) |
+| sáb 05-12 | 13:00 | Short DATO | Portugal producía 2,5 veces lo de Chile. Hoy, 1,4 | ✓ r2 4,29 | ✓ nube (re-render: Chile dorado en todo) | programado `zWQmrZk0pCY` |
+| dom 06-12 | 13:00 | Short DATO | Costa Rica le ganaba a Panamá en 1990. ¿Qué pasó? | ✓ r2 4,29 | ✓ nube | programado `cICCR3RUX6c` |
 
-## 🔒 Hito del mié 2026-11-11 → semana asegurada 2026-11-12 (jue) → 2026-11-18 (mié)
-
-> Orden de Santiago (2026-11-08): el cupo del Max se renueva los **miércoles**. El miércoles en la noche quedan todos los guiones de
-> la semana jue → mié escritos y dirigidos, arrancan los renders y el **jueves** todo está `programado` en Studio. Recién entonces el
-> cupo sobrante va a mejoras. Regla completa: skill `plan-semanal` §5b · `operacion-diaria` §0 · `~/.claude/canales/calendario.json`.
-
-| Ranuras jue 11-12 → mié 11-18 | Ya `programado` | Falta (al 2026-11-08 02:40) | Orden de producción el mié 11-11 |
-|---|---|---|---|
-| 7 Shorts (13:00) | 2 (11-12 y 11-15; sus v2 se suben el 11-09 con el lote diferido) | **5**: 11-13 (INDEC, contingente: dato sale el jue 11-12), 11-14 (Uruguay), 11-16, 11-17, 11-18 (sin ranura aún) | 1.º guiones (Opus, `verificar-cifras`) → render (~20 min c/u) → Studio en orden de fecha |
-| 3 largos (vie 11-13, lun 11-16, mié 11-18, 19:00) | 0 | **3**: Uruguay (en revisión), 11-16 y 11-18 sin tema (cola: Panamá; banco de ideas) | guiones primero (son el producto) → render ≈ 2 h c/u, de noche, antes del jueves → Studio |
-
-Tope diario de subidas del canal (sin verificar): si corta, el resto el viernes, en orden de fecha. Al cumplirse: anotar aquí
-"✅ asegurada hasta el mié 11-18 (fecha/hora)" y en `salida/revisiones/<fecha>.md`. El plan debe extenderse hasta el 11-18 (hoy
-termina el 11-15): agregar las ranuras 11-16 → 11-18 en el ritual del miércoles.
-
-Calendario (`contenido/calendario.json`): **largo `tesis` lun/mié/vie 19:00** + **Short `grafico` diario 13:00** (tope 1/día hasta el
-YPP). Lanzamiento: primer Short sáb 11-07, primer largo **dom 11-08 19:00 (excepción fuera de ranura)**, ranura normal desde el lun 11-09.
-Canal creado (id `UC8uOwislkGbnnfoqsJ_FgAw`, COPPA hecho). Los días anteriores al lanzamiento (11-02 → 11-06) no tienen ranuras.
-
-**Estado (2026-11-08 02:20): largo dom 11-08 19:00 = `K5ma4A5VFj8` (Chile-Corea v4 definitivo; `eTq0TBuEWIs` privado). Short mar 11-10 13:00 `BILBHyyu_h8`. Pendientes de subir el 11-09 tras el tope diario: Argentina v3 (reemplaza `b1F1JlfZwIw`), Irlanda v3 (reemplaza `m_Lp1dgEsvA`), Shorts Irlanda/México/Bolivia v2 (los viejos `yJV1sIgJJQ8`, `k8gTTX8R9Ao`, `fHVOchMTSE0` ya privados: ranuras mié 11-11, jue 11-12 y dom 11-15 13:00 VACÍAS hasta esa subida). Estado anterior (2026-11-07 09:20): 9 de 13 ranuras PROGRAMADAS en Studio** (añadidos el 11-07: Short jue 11-12 `k8gTTX8R9Ao`, Short dom 11-15 `fHVOchMTSE0`; largos Chile-Corea, Argentina e Irlanda reemplazados por su v2 visual: `eTq0TBuEWIs`, `b1F1JlfZwIw`, `m_Lp1dgEsvA`). Faltan: Short mar 11-10 (IPC Chile, contingente), Short vie 11-13 (INDEC, contingente), largo vie 11-13 (Uruguay, en revisión), Short sáb 11-14. Estado anterior (Short sáb 11-07 `LLiqQewooNI`, Short dom 11-08 `9SmuQH7bghE`, largo dom 11-08 `eTq0TBuEWIs`, Short lun 11-09 `mx9le_OLFx8`, largo lun 11-09 `b1F1JlfZwIw`, Short mié 11-11 `yJV1sIgJJQ8`, largo mié 11-11 `m_Lp1dgEsvA`); los largos sin miniatura propia hasta la verificación por teléfono (docs/SANTIAGO.md f). Antes: 7 de 13 con guion (7 del backlog validados por el revisor numérico: 3 largos + 4 Shorts, en `contenido/backlog/`). Sin guion: IPC Chile mar 11-10 (se genera el vie 11-06 con el dato del INE), casa jue 11-12, INDEC vie 11-13 (esperar dato del 11-12), largo nuevo vie 11-13 19:00 (Uruguay o Panamá: encargar a `generar-guiones`), Shorts sáb 11-14 y dom 11-15.
-
-**Nota 2026-11-07 · los tres largos pasan a dirección visual v2** (fotos de Commons, mapas, iconos, ilustraciones y mascota; docs/GUION.md §7b): `contenido/backlog/tesis-chile-corea-v2.json`, `tesis-argentina-rica-v2.json` y `tesis-irlanda-pib-v2.json` (mismo texto y cifras verificadas; solo cambia lo visual). Se re-renderizan en ese orden (dom 11-08, lun 11-09, mié 11-11) para las **mismas ranuras** de la tabla (no se cambian ranuras ni ids en este plan; cómo se sustituye en Studio el video ya programado lo resuelve la sesión principal: YouTube no permite cambiar el archivo de un video subido).
-
-## Semana en curso: lun 2026-11-02 → dom 2026-11-08 (parcial, desde el lanzamiento)
-
-| Día | Hora | Plantilla | Tema | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
-|---|---|---|---|---|---|---|---|---|
-| sáb 11-07 | 13:00 | `grafico` 9:16 | Chile le ganaba 3 a 1 a Corea. En 1982 se dio vuelta | serie · _El país que fue rico_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-grafico-chile-corea-cruce.json` | Data Is Beautiful narrado (un gráfico que sorprende) | lanzamiento; teaser del largo Chile-Corea del domingo (H5) |
-| dom 11-08 | 13:00 | `grafico` 9:16 | Panamá estaba bajo Chile en 1990. Hoy le saca un 20 % | evergreen | — | **programado** (Studio) · `contenido/guiones/2026-11-06-grafico-panama-chile.json` | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir (audiencia PA/CO); Short suelto antes del largo |
-| dom 11-08 | 19:00 | **largo** 16:9 `tesis` | Chile era 3 veces más rico que Corea. ¿Qué pasó? | serie · _El país que fue rico_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-tesis-chile-corea.json` | Los Ecomonos (largo 9–12 min, una pregunta) | primer largo (excepción: domingo); H1 comparación + H2 LatAm; contradicción medible con WDI |
-
-## Semana siguiente: lun 2026-11-09 → dom 2026-11-15
-
-| Día | Hora | Plantilla | Tema | Tipo | Contingencia (fuente) | Estado | Referente | Por qué entra |
-|---|---|---|---|---|---|---|---|---|
-| lun 11-09 | 13:00 | `grafico` 9:16 | España tenía la mitad que Argentina. Hoy tiene el doble | serie · _El país que fue rico_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-grafico-argentina-espana.json` | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
-| lun 11-09 | 19:00 | **largo** 16:9 `tesis` | Argentina era más rica que Alemania. ¿Qué pasó después? | serie · _El país que fue rico_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-tesis-argentina-rica.json` | Los Ecomonos (largo 9–12 min, una pregunta) | primera ranura normal (lunes); H2 LatAm; Maddison CC BY |
-| mar 11-10 | 13:00 | `grafico` 9:16 | Lo que valían $1.000 chilenos en 2010 y lo que valen hoy | contingente · _Cuánto rinde tu sueldo_ | INE Chile publica el IPC de octubre de 2026 (08:00) ([2026-11-06](https://www.ine.gob.cl/docs/default-source/prensa-y-comunicacion/calendario/calendario-de-publicaciones.pdf)) | sin guion (idea) · ⚠ sin guion: se genera el vie 11-06 con el dato del INE (URL oficial); verificar la cifra el 2026-11-06 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 4 días (IPC); audiencia CL; abre la serie del sueldo |
-| mié 11-11 | 13:00 | `grafico` 9:16 | Irlanda produce el doble que Alemania. Gasta lo mismo | serie · _El indicador que nadie mira_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-grafico-irlanda-consumo.json` | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo de las 19:00 (H5) |
-| mié 11-11 | 19:00 | **largo** 16:9 `tesis` | Irlanda creció un 25 % en un año. Su gente, un 2 % | evergreen · _El indicador que nadie mira_ | — | **programado** (Studio) · `contenido/guiones/2026-11-06-tesis-irlanda-pib.json` | Los Ecomonos (largo 9–12 min, una pregunta) | H2: primer tema global (contraste con LatAm); PIB vs INB en WDI; reemplaza al de Uruguay |
-| jue 11-12 | 13:00 | `grafico` 9:16 | México gastaba el doble que Chile. En 2025, gasta menos | evergreen · _El indicador que nadie mira_ | — | **programado** (Studio) `k8gTTX8R9Ao` · `contenido/guiones/2026-11-07-grafico-mexico-gastaba-el-doble-que-chile.json` | Data Is Beautiful narrado (un gráfico que sorprende) | abre la serie del indicador (consumo de los hogares por persona, WDI); la idea de la casa pasa a la cola: no hay dataset con licencia |
-| vie 11-13 | 13:00 | `grafico` 9:16 | La inflación de octubre de Argentina en un gráfico de 30 años | contingente · _El país que fue rico_ | INDEC publica el IPC nacional de octubre de 2026 ([2026-11-12](https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf)) | sin guion (idea) · ⚠ sin guion: esperar el dato (INDEC 2026-11-12, 16:00 ART); render la madrugada del 13; si no está a las 06:00 entra el reemplazo 1 | Data Is Beautiful narrado (un gráfico que sorprende) | contingencia de 1 día; audiencia AR ya captada por el largo del lunes; enlaza a ese largo |
-| vie 11-13 | 19:00 | **largo** 16:9 `tesis` | ¿Por qué Uruguay es el país más caro de Sudamérica? | evergreen · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: encargar a generar-guiones (largo nuevo; Uruguay o Panamá) | Los Ecomonos (largo 9–12 min, una pregunta) | H2 LatAm; audiencia UY/AR que llega con Argentina; nivel de precios PPA (WDI); alternativa: Panamá |
-| sáb 11-14 | 13:00 | `grafico` 9:16 | Uruguay cobra más caro que cualquier vecino: el índice de precios en un gráfico | serie · _Cuánto rinde tu sueldo_ | — | sin guion (idea) · ⚠ sin guion: depende del largo de Uruguay | Data Is Beautiful narrado (un gráfico que sorprende) | Short derivado del largo del viernes (H5) |
-| dom 11-15 | 13:00 | `grafico` 9:16 | Bolivia tenía 15.000 millones en reservas. En 2024, 2.000 | evergreen | — | **programado** (Studio) `fHVOchMTSE0` · `contenido/guiones/2026-11-07-grafico-bolivia-tenia-15-000-millones.json` (WDI FI.RES.TOTL.CD) | Data Is Beautiful narrado (un gráfico que sorprende) | H2 LatAm; país sin cubrir; sale de la cola de reemplazos |
-
-Proporción: 2 contingentes de 13 ranuras (15 %); 4 largos (Chile-Corea, Argentina, Irlanda, + 1 nuevo por generar); 4 Shorts derivados de su largo (H5: Chile-Corea, Argentina, Irlanda, Uruguay) + Panamá suelto. Una sola plantilla por formato: la variedad se mide por estructura argumental y tipo de gráfico.
-
-## Contingencias revisadas (2026-11-05, WebSearch + calendarios oficiales)
-
-| Hecho | Fecha | Fuente | Decisión |
-|---|---|---|---|
-| INE Chile publica el IPC de octubre de 2026 (08:00) | 2026-11-06 | [Calendario de publicaciones INE 2026](https://www.ine.gob.cl/docs/default-source/prensa-y-comunicacion/calendario/calendario-de-publicaciones.pdf) (columna NOV = 6, período oct-26; leído en el PDF) | **Entra** mar 11-10 13:00 (Short, serie del sueldo) |
-| INE Chile: índices de remuneraciones y costos laborales de septiembre | 2026-11-05 | mismo PDF (IR-ICL, NOV = 5) | **Candidata** para la serie "Cuánto rinde tu sueldo" (salario real = remuneraciones ÷ IPC) en la semana del 16 |
-| INDEC Argentina publica el IPC nacional de octubre de 2026 | **jue 2026-11-12** | [Calendario INDEC 2.º semestre 2026](https://www.indec.gob.ar/ftp/cuadros/publicaciones/calendario_2sem2026.pdf) (leído en el PDF: "12 JU · Índice de precios al consumidor (IPC). Cobertura nacional. Octubre de 2026") | **Entra** vie 11-13 13:00 (Short con el dato fresco; enlaza al largo de Argentina del lunes) |
-| INDEC: índice de salarios de septiembre | 2026-11-13 | mismo PDF | candidata (serie del sueldo, AR) |
-| INEGI México publica el INPC de octubre de 2026 | 2026-11-09 (según el buscador, anunciada en un boletín del INEGI; **no leída** en el calendario oficial) | [boletines INPC 2026 del INEGI](https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/inpc/inpc_1q2026_10.pdf) (vía buscador) | **No entra** esta semana: ya hay 2 Shorts de inflación; reemplazo 2 si se cae uno. Verificar fecha en el calendario del INEGI |
-| Banxico: decisión de política monetaria de noviembre | 2026-11-05 (según agenda BBVA Research; sin confirmar en Banxico) | [Agenda económica 2026, BBVA Research](https://www.bbvaresearch.com/wp-content/uploads/2026/03/AgendaEconomica_2026.pdf) | **No entra**: noticia del día (roce con lo "contingente diario"); tasas sin tesis estructural |
-| Banco Central de Chile: RPM 15-12 e IPoM 16-12 | 2026-12-15/16 | [Calendario de política monetaria BCCh](https://www.bcentral.cl/web/banco-central/noticias-y-publicaciones/prensa/calendario-de-politica-monetaria-y-financiera) (vía buscador) | Fuera de ventana; además datos del BCCh **no se usan** hasta verificar sus términos |
-| EE. UU.: IPC de octubre | 2026-11-10 | calendario económico (buscador) | **No entra**: no es LatAm; sin ángulo propio |
-
-## Cola de reemplazos (si una ranura se cae)
-1. `grafico` · México: la inflación de octubre en 25 años (INEGI, si se confirma la fecha 11-09) · 0. `grafico` · Cuántos años de sueldo cuesta una casa (idea en espera: falta dataset con licencia; no Numbeo) · 2. `grafico` · Cuántas veces cabe el PIB de Uruguay en el de Brasil (WDI) · 3. `tesis` · ¿Por qué Panamá crece más que toda Latinoamérica? (WDI; reemplazo de cualquier largo sin guion a 48 h). (Bolivia pasó a dom 11-15.)
-
+Por qué cambió el plan tentativo del 25-11: el largo del jueves pasó de Uruguay–Paraguay a **Perú vs Argentina (inflación)**, tema con outlier
+medido (Mapa y Dinero 158 K) y n.º 2 de la tabla de `/home/santiago/projects/yt/_propuestas/2026-11-26-viral-numeros-rojos.md` §2.1
+(sugerencia 2: "el primer largo de cada semana, el tema de mayor demanda medida"); Uruguay–Paraguay quedó de respaldo del lunes. Potosí salió
+(España ≠ LatAm, puntaje 16). Sáb 05-12: Chile vs Portugal (de la cola) en vez del "bolsillo" (no había par con paradoja limpia en el catálogo).
+Ojo: dom 29-11 (Perú inflación) y jue 03-12 (tráiler Perú–Argentina) repiten tema en 5 días; se aceptó porque el del jueves empuja al largo.
+Medición el lun 07-12: criterio (e) de Shorts (subs por 1.000 vistas ≥ 2, "se queda" ≥ 50 %) + clics de los tráileres al largo.
 
 ## 🔒 Hito del jue 2026-11-19 17:00 → semana 2026-11-23 (lun) → 2026-11-29 (dom) · preparado el 18-11 noche
 
@@ -175,7 +116,7 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
   "version": 1,
   "canal": "numeros-rojos",
   "zona": "America/Santiago",
-  "actualizado": "2026-11-26T02:45:00Z",
+  "actualizado": "2026-11-27T05:00:00Z",
   "semanas": [
     {
       "inicio": "2026-11-23",
@@ -702,144 +643,144 @@ Descartado por el reparto: "¿Por qué Santiago se hizo rico y Valparaíso no?" 
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Tráiler del largo del lun 30-11",
+      "tema": "Tráiler de Haití (EPyqg1wKfSc) o del respaldo Uruguay–Paraguay",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "renderizado",
+      "guion": "contenido/guiones/2026-11-26-grafico-haiti-iba-adelante-trailer.json",
       "videoId": null,
       "referente": null,
       "porQue": "tráiler §4c-A",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "bloqueo": "decide Santiago: Haití en NR o en canal nuevo"
     },
     {
       "fecha": "2026-11-30",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "¿Por qué España no se hizo rica con la plata de Potosí? (tentativo)",
+      "tema": "Haití era más rico que República Dominicana. ¿Qué pasó? (respaldo: ¿Por qué Uruguay es más rico que Paraguay?)",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
+      "estado": "renderizado",
+      "guion": "contenido/guiones/2026-11-26-tesis-haiti-republica-dominicana.json",
       "videoId": null,
-      "referente": "Curiosito 153 K",
-      "porQue": "esqueleto; guion en el hito del jue 26-11",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "referente": "Mapas Mudos 1,62 M",
+      "porQue": "tema de mayor demanda medida del nicho",
+      "bloqueo": "decide Santiago (Haití); respaldo Uruguay–Paraguay en contenido/reserva, necesita ronda 3 del revisor"
     },
     {
       "fecha": "2026-12-01",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Uruguay vs Argentina: cuándo se dio vuelta (verificar cruce)",
+      "tema": "Argentina producía más que Uruguay. Desde 2014, al revés",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
-      "referente": "Chile-Corea 649 / España-Argentina 319",
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-26-grafico-argentina-producia-mas-que-uruguay-desde.json",
+      "videoId": "3vTK9EZLDlY",
+      "referente": "Chile-Corea cruce 649",
       "porQue": "rivalidad de vecinos",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "bloqueo": null
     },
     {
       "fecha": "2026-12-02",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Puerto Rico produce más que cualquier país de Latinoamérica (verificar)",
+      "tema": "Un puertorriqueño produce más que un panameño. Y son menos",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-26-grafico-un-puertorriqueno-produce-mas.json",
+      "videoId": "DzmImUcyySs",
       "referente": "Curiosito 135 K",
       "porQue": "outlier de referente",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "bloqueo": null
     },
     {
       "fecha": "2026-12-03",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Tráiler del largo del jue 03-12",
+      "tema": "En 2024, Argentina 208 % y Perú 5 %. En 1990, al revés (tráiler)",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-27-grafico-argentina-208-peru-5-en-1990-era-al.json",
+      "videoId": "Lhk4vEHPttE",
       "referente": null,
       "porQue": "tráiler §4c-A",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "bloqueo": null
     },
     {
       "fecha": "2026-12-03",
       "hora": "19:00",
       "formato": "largo",
       "plantilla": "tesis",
-      "tema": "¿Por qué Uruguay es más rico que Paraguay? (tentativo)",
+      "tema": "Perú tuvo peor inflación que Argentina. ¿Qué pasó?",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
-      "referente": "Borderline Billions 201 K",
-      "porQue": "esqueleto; guion en el hito del jue 26-11",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-27-tesis-peru-tuvo-peor-inflacion-que-argentina.json",
+      "videoId": "GPI5h-uw66M",
+      "referente": "Mapa y Dinero 158 K",
+      "porQue": "demanda medida (viral §2.1 n.º 2)",
+      "bloqueo": null
     },
     {
       "fecha": "2026-12-04",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Singapur no tiene cobre ni agua. Produce más del doble que Chile (verificar)",
+      "tema": "Singapur y Chile iban casi parejos en 1960. ¿Qué pasó?",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
-      "referente": "Fortune of Nations 209 K",
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-26-grafico-singapur-y-chile-iban-casi-parejos.json",
+      "videoId": "aLEBv-UO1JE",
+      "referente": "Fortune ES 313 K",
       "porQue": "outlier de referente",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "bloqueo": null
     },
     {
       "fecha": "2026-12-05",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Bolsillo: precios Argentina vs Uruguay/Chile o productividad por hora México vs Chile",
+      "tema": "Portugal producía 2,5 veces lo de Chile. Hoy, 1,4",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
-      "referente": "Los Ecomonos (bolsillo)",
-      "porQue": "bolsillo",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-26-grafico-portugal-producia-2-5-veces-lo-de-chile.json",
+      "videoId": "zWQmrZk0pCY",
+      "referente": null,
+      "porQue": "cola de reemplazos (Chile vs país europeo)",
+      "bloqueo": null
     },
     {
       "fecha": "2026-12-06",
       "hora": "13:00",
       "formato": "short",
       "plantilla": "grafico",
-      "tema": "Panamá era más pobre que Costa Rica. Hoy produce más (verificar)",
+      "tema": "Costa Rica le ganaba a Panamá en 1990. ¿Qué pasó?",
       "tipo": "evergreen",
       "serie": null,
       "contingencia": null,
-      "estado": "idea",
-      "guion": null,
-      "videoId": null,
-      "referente": "Panamá-Chile 414 · largo Panamá CTR 6,5 %",
+      "estado": "programado",
+      "guion": "contenido/guiones/2026-11-26-grafico-costa-rica-le-ganaba-a-panama-en-1990.json",
+      "videoId": "cICCR3RUX6c",
+      "referente": "largo Panamá CTR 6,5 %",
       "porQue": "rivalidad de vecinos",
-      "bloqueo": "guion el jue 26-11 17:00"
+      "bloqueo": null
     }
   ]
 }
