@@ -1,0 +1,2123 @@
+{
+  "plantilla": "tesis",
+  "id": "pendiente-tesis-peru-tuvo-peor-inflacion-que-argentina",
+  "titulo": "Perú tuvo peor inflación que Argentina. ¿Qué pasó?",
+  "descripcion": "¿Por qué Perú, que en 1990 tuvo una inflación peor que la peor de Argentina, vive hoy con precios estables y Argentina no?\n\nSeguimos cuarenta años de datos del Banco Mundial con la misma vara para los dos países: el deflactor del PIB.\nArgentina frenó los precios primero, con el uno a uno de 1991. Perú tardó más, con una Constitución, la de 1993, que le prohíbe a su banco central financiar al Estado, y metas de inflación desde 2002.\nEl dato que más sorprende: desde 2002, la inflación de Perú fue más baja que la de Argentina todos los años.\n\nFuentes:\n- Banco Mundial, WDI: NY.GDP.DEFL.KD.ZG, FP.CPI.TOTL.ZG, FP.CPI.TOTL, NY.GDP.PCAP.KD (CC BY 4.0) https://data.worldbank.org\n- Constitución Política del Perú de 1993, Banco Central de Reserva del Perú https://www.bcrp.gob.pe\n- Ley 23.928 de Convertibilidad, Argentina (1991) http://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/328/norma.htm\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#economia",
+    "#peru",
+    "#argentina",
+    "#inflacion",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-tesis-peru-tuvo-peor-inflacion-que-argentina",
+    "cabecera": "PERÚ VS ARGENTINA · 1985–2025",
+    "gancho": {
+      "texto": "Buenos Aires, julio de 1989. En un supermercado, un empleado pasa la máquina de etiquetas por las latas y remarca los precios. Al otro día, otra vez. Ese año, los precios de la economía argentina suben unos 3.000 %. En Lima, en 1990, suben más de 6.000 %. Hoy, el que estuvo peor tiene precios estables. ¿Qué hizo distinto Perú?",
+      "rotulo": "PERÚ ESTUVO PEOR",
+      "visuales": [
+        {
+          "tipo": "foto",
+          "busqueda": "Avenida de Mayo Buenos Aires",
+          "alternativas": [
+            "Palacio Barolo Avenida de Mayo",
+            "Buenos Aires Avenida de Mayo Cabildo"
+          ],
+          "pie": "Avenida de Mayo, Buenos Aires (foto reciente)",
+          "encuadre": "ken-burns",
+          "sangrado": true
+        },
+        {
+          "tipo": "foto",
+          "busqueda": "Supermarket shelf canned food",
+          "alternativas": [
+            "Canned food shelves supermarket",
+            "Supermarket aisle canned goods"
+          ],
+          "pie": "Góndola de conservas (foto ilustrativa)",
+          "dice": "latas",
+          "encuadre": "ken-burns",
+          "sangrado": true
+        },
+        {
+          "tipo": "mapa",
+          "destacar": [
+            "PER",
+            "ARG"
+          ],
+          "zoom": 3,
+          "etiquetas": [
+            {
+              "texto": "Lima",
+              "en": [
+                -77.04,
+                -12.05
+              ]
+            },
+            {
+              "texto": "Buenos Aires",
+              "en": [
+                -58.38,
+                -34.6
+              ]
+            }
+          ],
+          "dice": "Lima,"
+        }
+      ],
+      "cifras": [
+        {
+          "texto": "unos 3.000 %",
+          "valor": 3046,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.DEFL.KD.ZG",
+              "paises": [
+                "PER",
+                "ARG"
+              ],
+              "desde": 1961,
+              "hasta": 2025,
+              "etiqueta": "Inflación (deflactor del PIB, % anual)",
+              "unidad": "%"
+            },
+            "operacion": "maximo",
+            "pais": "ARG"
+          }
+        },
+        {
+          "texto": "más de 6.000 %",
+          "valor": 6261,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.DEFL.KD.ZG",
+              "paises": [
+                "PER",
+                "ARG"
+              ],
+              "desde": 1961,
+              "hasta": 2025,
+              "etiqueta": "Inflación (deflactor del PIB, % anual)",
+              "unidad": "%"
+            },
+            "operacion": "valor",
+            "pais": "PER",
+            "anio": 1990
+          }
+        }
+      ]
+    },
+    "promesa": "Los dos ya habían probado monedas nuevas, y no alcanzó. La salida de Perú quedó escrita en su Constitución de 1993. La de Argentina fue una ley de 1991 que ató su moneda al dólar. Aquí van las dos, año por año, hasta el sueldo de hoy en Lima y en Buenos Aires.",
+    "indice": [
+      "Cómo se llegó",
+      "Cómo salió cada uno",
+      "Dos caminos desde 2002",
+      "El sueldo en cada país"
+    ],
+    "estructura": "linea-de-tiempo",
+    "capitulos": [
+      {
+        "titulo": "Cómo se llegó a la hiperinflación",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "En 1985, los dos países estrenan moneda casi al mismo tiempo. En febrero, Perú cambia el sol por el inti. En junio, Argentina cambia el peso por el austral, con un plan para frenar los precios. En Perú, desde agosto, el gobierno nuevo congela precios. Al año siguiente, los precios se frenan en los dos.",
+            "visual": {
+              "tipo": "versus",
+              "titulo": "1985: dos monedas nuevas",
+              "lados": [
+                {
+                  "pais": "PER",
+                  "titulo": "Perú",
+                  "items": [
+                    {
+                      "icono": "💵",
+                      "texto": "Inti, febrero de 1985",
+                      "dice": "inti."
+                    }
+                  ]
+                },
+                {
+                  "pais": "ARG",
+                  "titulo": "Argentina",
+                  "items": [
+                    {
+                      "icono": "💵",
+                      "texto": "Austral, junio de 1985",
+                      "dice": "austral,"
+                    }
+                  ]
+                }
+              ],
+              "dice": "1985,"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "Mira las dos líneas. Son datos del Banco Mundial: el deflactor, que mide cuánto suben los precios de todo lo que produce un país. En esta base, es la única serie larga que tienen los dos, así que es la vara común. En 1985, la de Perú rondaba los 165 % al año. La de Argentina, unos 600 %.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación anual, 1980–1991",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1980,
+                "hasta": 1991,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1985,
+                  "texto": "Inti y austral"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "líneas."
+            },
+            "cifras": [
+              {
+                "texto": "rondaba los 165 %",
+                "valor": 165.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1985
+                }
+              },
+              {
+                "texto": "unos 600 %",
+                "valor": 607.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1985
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "El alivio dura poco. En 1986, la inflación argentina baja a menos de 80 %, y la peruana, a menos de 70 %. Pero en los dos países el banco central sigue emitiendo dinero para cubrir parte del gasto del Estado, y los precios vuelven a subir.",
+            "grafico": {
+              "tipo": "barras",
+              "titulo": "1986: el respiro",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG",
+                  "PER"
+                ],
+                "desde": 1986,
+                "hasta": 1986,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "1986,"
+            },
+            "cifras": [
+              {
+                "texto": "menos de 80 %",
+                "valor": 77.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1986
+                }
+              },
+              {
+                "texto": "menos de 70 %",
+                "valor": 68.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1986
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Lima, 1988: los precios peruanos pasan de 500 %. En 1989, Argentina llega a unos 3.000 %. En 1990, Perú supera los 6.000 %. A ese ritmo, un sueldo cobrado al empezar el mes paga bastante menos antes de que el mes termine.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "1988–1990: la peor etapa",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1985,
+                "hasta": 1991,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER",
+                "anio": 1990,
+                "texto": "1990: más de 6.000 %"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "1988:"
+            },
+            "cifras": [
+              {
+                "texto": "pasan de 500 %",
+                "valor": 586.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1988
+                }
+              },
+              {
+                "texto": "unos 3.000 %",
+                "valor": 3046,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1989
+                }
+              },
+              {
+                "texto": "supera los 6.000 %",
+                "valor": 6261.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1990
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Plaza San Martin Lima",
+              "alternativas": [
+                "Plaza Mayor de Lima",
+                "Lima Cathedral Plaza de Armas"
+              ],
+              "pie": "Plaza San Martín, Lima (foto reciente)",
+              "dice": "Lima,",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido",
+            "sellos": [
+              {
+                "texto": "+6.000 %",
+                "pais": "PER",
+                "animo": "triste",
+                "dice": "6.000"
+              }
+            ]
+          },
+          {
+            "tipo": "relato",
+            "texto": "Casa Rosada, julio de 1989. Después de los saqueos de mayo en Rosario y el Gran Buenos Aires, el presidente entrega el mando antes de lo previsto. En Perú, la inflación sigue subiendo un año más.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Casa Rosada Buenos Aires",
+              "alternativas": [
+                "Casa Rosada Plaza de Mayo",
+                "Casa de Gobierno Argentina"
+              ],
+              "pie": "Casa Rosada, Buenos Aires (foto reciente)",
+              "dice": "Casa",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "ENTREGA ANTICIPADA",
+              "dice": "mando"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Hay otra vara: el índice de precios al consumidor, que sigue la canasta de las familias. Para Perú, en 1990, marca más de 7.000 %. Para Argentina, el Banco Mundial publica ese índice recién desde 2018. Por eso, de aquí en adelante, las comparaciones largas usan el deflactor para los dos.",
+            "grafico": {
+              "tipo": "contador",
+              "titulo": "Perú 1990, con la canasta de las familias",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "PER"
+                ],
+                "desde": 1990,
+                "hasta": 1990,
+                "etiqueta": "Inflación (precios al consumidor, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "índice"
+            },
+            "cifras": [
+              {
+                "texto": "más de 7.000 %",
+                "valor": 7481.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER"
+                    ],
+                    "desde": 1990,
+                    "hasta": 1990,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1990
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "mascota": {
+              "pose": "piensa",
+              "bocadillo": "¿Con qué vara se mide?",
+              "dice": "deflactor"
+            }
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Pero mira el ingreso en esos mismos años. Entre 1987 y 1990, el ingreso por persona de Perú, medido en dólares de 2015 para que la inflación no engañe, cayó casi un 30 %. El de Argentina cayó algo más de un 14 %.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona, 1980–1995",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1980,
+                "hasta": 1995,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PER",
+                "anio": 1990
+              },
+              "anotaciones": [
+                {
+                  "anio": 1990,
+                  "texto": "Perú: casi −30 %"
+                }
+              ],
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "ingreso"
+            },
+            "cifras": [
+              {
+                "texto": "casi un 30 %",
+                "valor": -29.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "PER",
+                  "anio": 1987,
+                  "anioB": 1990
+                }
+              },
+              {
+                "texto": "algo más de un 14 %",
+                "valor": -14.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 1987,
+                  "anioB": 1990
+                }
+              }
+            ],
+            "mascota": {
+              "pose": "tapa-ojos",
+              "bocadillo": "Casi un tercio menos",
+              "dice": "30"
+            }
+          }
+        ]
+      },
+      {
+        "titulo": "1991 a 2001: cómo salió cada uno",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Las monedas de 1985 no alcanzaron. Hacía falta algo más difícil de deshacer que un billete nuevo. Los dos países lo buscan a comienzos de los noventa, cada uno por su camino. Primero, Argentina.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "ARG",
+                "PER"
+              ],
+              "viaje": {
+                "desde": "PER",
+                "hasta": "ARG",
+                "dice": "Argentina."
+              }
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "ALGO DIFÍCIL DE DESHACER",
+              "dice": "difícil"
+            }
+          },
+          {
+            "tipo": "relato",
+            "texto": "Congreso de la Nación, Buenos Aires, marzo de 1991. Se aprueba la ley de convertibilidad: diez mil australes valen un dólar, y el dinero en circulación tiene que estar respaldado por las reservas del banco central. En enero de 1992 llega el peso nuevo: uno a uno.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Palacio del Congreso de la Nacion Argentina",
+              "alternativas": [
+                "Congreso de la Nacion Argentina",
+                "Argentine National Congress Buenos Aires"
+              ],
+              "pie": "Congreso de la Nación, Buenos Aires (foto reciente)",
+              "dice": "Congreso",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "UN PESO, UN DÓLAR",
+              "dice": "dólar,"
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "La línea argentina responde rápido. Según el Banco Mundial, en 1991 la inflación todavía pasa de 140 %. En 1992 baja a unos 16 %. En 1993 ya es negativa: ese año, los precios de la economía bajan un poco.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Argentina con el uno a uno",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 1991,
+                "hasta": 2001,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 1993
+              },
+              "anotaciones": [
+                {
+                  "anio": 1993,
+                  "texto": "Negativa"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "línea"
+            },
+            "cifras": [
+              {
+                "texto": "pasa de 140 %",
+                "valor": 140.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1991
+                }
+              },
+              {
+                "texto": "unos 16 %",
+                "valor": 16.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1992
+                }
+              },
+              {
+                "texto": "ya es negativa",
+                "valor": -3.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 1993
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "En Perú, la curva baja más despacio. En agosto de 1990, el gobierno sube de golpe los precios que fijaba el Estado, como el de la gasolina. En 1991, el año en que circula el nuevo sol, la inflación todavía pasa de 370 %. En 1995 ya está bajo 15 %. En 1996 baja de 10 %, por primera vez desde 1972.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Perú, de la hiperinflación a un dígito",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER"
+                ],
+                "desde": 1990,
+                "hasta": 2001,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER",
+                "anio": 1996,
+                "texto": "1996: bajo 10 %"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1990,
+                  "texto": "Agosto: precios liberados"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "curva"
+            },
+            "cifras": [
+              {
+                "texto": "pasa de 370 %",
+                "valor": 378,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1991
+                }
+              },
+              {
+                "texto": "bajo 15 %",
+                "valor": 13.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1995
+                }
+              },
+              {
+                "texto": "baja de 10 %",
+                "valor": 9.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1996
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "relato",
+            "texto": "Banco Central de Reserva del Perú, Lima. La Constitución de 1993 le confirma la autonomía y le fija una sola finalidad: cuidar el valor de la moneda. También le prohíbe financiar al Estado, salvo bonos del Tesoro en el mercado y dentro de un límite.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Banco Central de Reserva del Peru",
+              "alternativas": [
+                "Banco Central de Reserva del Peru Lima edificio",
+                "BCRP Lima"
+              ],
+              "pie": "Banco Central de Reserva del Perú, Lima (foto reciente)",
+              "dice": "Banco",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "CUIDAR LA MONEDA",
+              "dice": "moneda."
+            }
+          },
+          {
+            "tipo": "giro",
+            "texto": "Juntas, las dos líneas muestran otro orden de llegada. Entre 1993 y 2001, Argentina tiene seis años con precios que bajan. Perú recién deja los dos dígitos en 1996. Al cerrar el siglo, el que había salido más rápido era Argentina.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Quién llegó primero",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG",
+                  "PER"
+                ],
+                "desde": 1992,
+                "hasta": 2001,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "anotaciones": [
+                {
+                  "anio": 1993,
+                  "texto": "Argentina: negativa"
+                },
+                {
+                  "anio": 1996,
+                  "texto": "Perú: bajo 10 %"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "líneas"
+            },
+            "cifras": [
+              {
+                "texto": "seis años",
+                "valor": 6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "cuenta",
+                  "umbral": 0,
+                  "pais": "ARG",
+                  "anio": 1993,
+                  "anioB": 2001
+                }
+              },
+              {
+                "texto": "deja los dos dígitos en 1996",
+                "valor": 9.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 1996
+                }
+              }
+            ],
+            "mascota": {
+              "pose": "sorpresa",
+              "bocadillo": "¿Argentina llegó primero?",
+              "dice": "rápido"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Un peso atado al dólar necesita dólares que lleguen todos los años. A fines de los noventa llegan cada vez más como préstamos. En 2001, dejan de llegar.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que sostenía el uno a uno",
+              "items": [
+                {
+                  "icono": "💵",
+                  "texto": "Dólares cada año",
+                  "marca": "si",
+                  "dice": "dólares"
+                },
+                {
+                  "icono": "🏦",
+                  "texto": "Cada vez más préstamos",
+                  "dice": "préstamos."
+                },
+                {
+                  "icono": "🚫",
+                  "texto": "2001: dejan de llegar",
+                  "marca": "no",
+                  "dice": "llegar."
+                }
+              ],
+              "dice": "peso"
+            },
+            "disposicion": "completo"
+          }
+        ]
+      },
+      {
+        "titulo": "Desde 2002: dos caminos con los precios",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Bancos de Buenos Aires, diciembre de 2001. El gobierno limita cuánto puede sacar cada persona de su cuenta: el corralito. En enero de 2002, una ley de emergencia termina con el uno a uno, y el peso se devalúa.",
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Banco de la Nacion Argentina Casa Central",
+              "alternativas": [
+                "Banco de la Nacion Argentina Buenos Aires",
+                "Banco Nacion Plaza de Mayo"
+              ],
+              "pie": "Banco de la Nación Argentina, Buenos Aires (foto reciente)",
+              "dice": "Bancos",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "CORRALITO",
+              "dice": "corralito."
+            }
+          },
+          {
+            "tipo": "dato",
+            "texto": "Desde ahí, la línea argentina no vuelve a bajar de dos dígitos. Según el Banco Mundial, en 2002 los precios de la economía suben un 30 %. Su año más bajo después de eso es 2005, con algo más de 10 %. En 2014 pasa de 40 %. En 2024 llega a unos 208 %.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Argentina después del uno a uno",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 2001,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 2024
+              },
+              "anotaciones": [
+                {
+                  "anio": 2002,
+                  "texto": "Fin del uno a uno"
+                },
+                {
+                  "anio": 2024,
+                  "texto": "Unos 208 %"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "línea"
+            },
+            "cifras": [
+              {
+                "texto": "un 30 %",
+                "valor": 30.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2002
+                }
+              },
+              {
+                "texto": "algo más de 10 %",
+                "valor": 10.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2003,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "minimo",
+                  "pais": "ARG"
+                }
+              },
+              {
+                "texto": "pasa de 40 %",
+                "valor": 40.3,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2014
+                }
+              },
+              {
+                "texto": "unos 208 %",
+                "valor": 207.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              }
+            ],
+            "fuenteEnVoz": true,
+            "sellos": [
+              {
+                "texto": "208 %",
+                "pais": "ARG",
+                "animo": "triste",
+                "dice": "208"
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Con el otro índice, el de precios al consumidor, el resultado es parecido. Para Argentina, esa serie existe en esta base desde 2018, y en 2024 marca unos 220 %.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "La misma historia con la canasta",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "ARG"
+                ],
+                "desde": 2018,
+                "hasta": 2024,
+                "etiqueta": "Inflación (precios al consumidor, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "índice,"
+            },
+            "cifras": [
+              {
+                "texto": "unos 220 %",
+                "valor": 219.8,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2024,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "dato",
+            "texto": "Lima, enero de 2002. Mira la línea peruana: ese año, el banco central adopta un régimen de metas de inflación: una meta fija, y una explicación pública cada vez que se aparta de ella. Desde 1996, Perú pasó 29 de 30 años bajo 10 %.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Perú desde 1996",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER"
+                ],
+                "desde": 1996,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "anotaciones": [
+                {
+                  "anio": 2002,
+                  "texto": "Meta de inflación"
+                }
+              ],
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "línea"
+            },
+            "cifras": [
+              {
+                "texto": "29 de 30 años",
+                "valor": 29,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "cuenta",
+                  "umbral": 10,
+                  "pais": "PER",
+                  "anio": 1996,
+                  "anioB": 2025
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Jiron de la Union Lima",
+              "alternativas": [
+                "Jiron de la Union",
+                "Lima historic centre street"
+              ],
+              "pie": "Jirón de la Unión, Lima (foto reciente)",
+              "dice": "Lima,",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "dato",
+            "texto": "El golpe de precios de 2022 sirvió de prueba. Aquí la canasta de las familias existe para los dos. En Perú, ese año, los precios al consumidor suben algo más de 8 %, y en 2024 vuelven a un 2 %. En Argentina, en 2022, suben más de 70 %. En 2023 pasan de 130 %.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Precios al consumidor desde 2018",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 2018,
+                "hasta": 2025,
+                "etiqueta": "Inflación (precios al consumidor, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER",
+                "anio": 2022
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "golpe"
+            },
+            "cifras": [
+              {
+                "texto": "algo más de 8 %",
+                "valor": 8.33,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2022
+                }
+              },
+              {
+                "texto": "un 2 %",
+                "valor": 2.01,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2024
+                },
+                "tolerancia": 0.15
+              },
+              {
+                "texto": "más de 70 %",
+                "valor": 72.4,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2022
+                }
+              },
+              {
+                "texto": "pasan de 130 %",
+                "valor": 133.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2023
+                }
+              }
+            ]
+          },
+          {
+            "tipo": "respiro",
+            "texto": "",
+            "respiroSeg": 3.5
+          },
+          {
+            "tipo": "giro",
+            "texto": "Los promedios lo resumen. Entre 2002 y 2025, los precios peruanos subieron menos de un 4 % al año. Los argentinos, más de un 40 % al año. En cada uno de esos años, la inflación de Perú fue más baja que la de Argentina.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Inflación anual, 2002–2025",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 2002,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0,
+                "escala": "log"
+              },
+              "dice": "promedios"
+            },
+            "cifras": [
+              {
+                "texto": "menos de un 4 %",
+                "valor": 3.7,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2002,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "PER"
+                }
+              },
+              {
+                "texto": "más de un 40 %",
+                "valor": 41.6,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2002,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "promedio",
+                  "pais": "ARG"
+                }
+              }
+            ],
+            "sellos": [
+              {
+                "texto": "< 4 %",
+                "pais": "PER",
+                "animo": "feliz",
+                "dice": "4"
+              }
+            ],
+            "mascota": {
+              "pose": "celebra",
+              "bocadillo": "¡La peor de 1990, hoy más baja!",
+              "dice": "baja"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Esos promedios parecen cifras de libro. En el sueldo de una persona se sienten cada mes, y en Lima se sienten distinto que en Buenos Aires."
+          }
+        ]
+      },
+      {
+        "titulo": "Qué le pasa a un sueldo en cada país",
+        "escenas": [
+          {
+            "tipo": "planteamiento",
+            "texto": "Dos personas con el mismo sueldo, que se reajusta una vez al año. Una vive en Lima. La otra, en Buenos Aires. En Lima, entre un reajuste y el siguiente, los precios suben poco. En Buenos Aires, el sueldo de enero llega a diciembre pagando mucho menos.",
+            "visual": {
+              "tipo": "versus",
+              "titulo": "Mismo sueldo, un año",
+              "lados": [
+                {
+                  "pais": "PER",
+                  "titulo": "Lima",
+                  "items": [
+                    {
+                      "icono": "💼",
+                      "texto": "Reajuste anual",
+                      "dice": "Lima."
+                    },
+                    {
+                      "icono": "🛒",
+                      "texto": "Precios suben poco",
+                      "marca": "si",
+                      "dice": "poco."
+                    }
+                  ]
+                },
+                {
+                  "pais": "ARG",
+                  "titulo": "Buenos Aires",
+                  "items": [
+                    {
+                      "icono": "💼",
+                      "texto": "Reajuste anual",
+                      "dice": "Aires."
+                    },
+                    {
+                      "icono": "🛒",
+                      "texto": "Paga mucho menos",
+                      "marca": "no",
+                      "dice": "menos."
+                    }
+                  ]
+                }
+              ],
+              "dice": "Dos"
+            },
+            "disposicion": "completo"
+          },
+          {
+            "tipo": "dato",
+            "texto": "En 2024, la distancia se ve entera en la canasta de las familias. Según el Banco Mundial, los precios al consumidor en Perú subieron un 2 %. En Argentina, unos 220 %. Con lo primero, un reajuste una vez al año alcanza para reponer lo perdido. Con lo segundo, el sueldo pierde valor todas las semanas, y el reajuste anual llega tarde.",
+            "grafico": {
+              "tipo": "comparacion",
+              "titulo": "2024: precios al consumidor",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 2024,
+                "hasta": 2024,
+                "etiqueta": "Inflación (precios al consumidor, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG"
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "2024,"
+            },
+            "cifras": [
+              {
+                "texto": "un 2 %",
+                "valor": 2.01,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2024
+                },
+                "tolerancia": 0.15
+              },
+              {
+                "texto": "unos 220 %",
+                "valor": 219.9,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (precios al consumidor, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2024
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Para Perú hay serie larga: la canasta que costaba 100 soles en 2010 costaba unos 166 en 2025. En quince años, los precios subieron menos de dos tercios. Para Argentina, esta base del Banco Mundial no trae ese índice de largo plazo; por eso la comparación larga se hace con el deflactor.",
+            "grafico": {
+              "tipo": "area",
+              "titulo": "Perú: lo que costaba 100 en 2010",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "FP.CPI.TOTL",
+                "paises": [
+                  "PER"
+                ],
+                "desde": 2010,
+                "hasta": 2025,
+                "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                "unidad": "índice"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "formato": {
+                "decimales": 0
+              },
+              "dice": "canasta"
+            },
+            "cifras": [
+              {
+                "texto": "costaba 100 soles en 2010",
+                "valor": 100,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL",
+                    "paises": [
+                      "PER"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2025,
+                    "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2010
+                }
+              },
+              {
+                "texto": "unos 166",
+                "valor": 165.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL",
+                    "paises": [
+                      "PER"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2025,
+                    "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "valor",
+                  "pais": "PER",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "menos de dos tercios",
+                "valor": 65.5,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "FP.CPI.TOTL",
+                    "paises": [
+                      "PER"
+                    ],
+                    "desde": 2010,
+                    "hasta": 2025,
+                    "etiqueta": "Índice de precios al consumidor (2010 = 100)",
+                    "unidad": "índice"
+                  },
+                  "operacion": "variacion",
+                  "pais": "PER",
+                  "anio": 2010,
+                  "anioB": 2025
+                }
+              }
+            ],
+            "fuenteEnVoz": true
+          },
+          {
+            "tipo": "dato",
+            "texto": "Buenos Aires, 2025: con el deflactor, la inflación argentina baja a unos 39 %, la más baja desde 2017. Aun así, es unas siete veces la peruana de ese mismo año.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "2025: la inflación argentina baja",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "ARG",
+                  "PER"
+                ],
+                "desde": 2015,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "destacar": {
+                "pais": "ARG",
+                "anio": 2025
+              },
+              "formato": {
+                "sufijo": " %",
+                "decimales": 0
+              },
+              "dice": "inflación"
+            },
+            "cifras": [
+              {
+                "texto": "unos 39 %",
+                "valor": 39.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "valor",
+                  "pais": "ARG",
+                  "anio": 2025
+                }
+              },
+              {
+                "texto": "la más baja desde 2017",
+                "valor": 39.1,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 2018,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "minimo",
+                  "pais": "ARG"
+                }
+              },
+              {
+                "texto": "unas siete veces",
+                "valor": 7.2,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.DEFL.KD.ZG",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1961,
+                    "hasta": 2025,
+                    "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                    "unidad": "%"
+                  },
+                  "operacion": "razon",
+                  "pais": "ARG",
+                  "paisB": "PER",
+                  "anio": 2025
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "foto",
+              "busqueda": "Avenida 9 de Julio Buenos Aires",
+              "alternativas": [
+                "Obelisco de Buenos Aires",
+                "Avenida Corrientes Buenos Aires"
+              ],
+              "pie": "Avenida 9 de Julio, Buenos Aires (foto reciente)",
+              "dice": "Buenos",
+              "encuadre": "ken-burns"
+            },
+            "disposicion": "dividido"
+          },
+          {
+            "tipo": "giro",
+            "texto": "Queda el ingreso por persona, en dólares de 2015. Los dos tuvieron a favor precios altos de lo que exportan: Perú, metales; Argentina, soja. Argentina, eso sí, partía de la caída de 2002. Desde ese año, el ingreso peruano más que se duplicó. El argentino creció cerca de la mitad.",
+            "grafico": {
+              "tipo": "lineas",
+              "titulo": "Ingreso por persona desde 2002",
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 2002,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "destacar": {
+                "pais": "PER"
+              },
+              "formato": {
+                "prefijo": "US$ ",
+                "decimales": 0
+              },
+              "dice": "ingreso"
+            },
+            "cifras": [
+              {
+                "texto": "más que se duplicó",
+                "valor": 103,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "PER",
+                  "anio": 2002,
+                  "anioB": 2025
+                }
+              },
+              {
+                "texto": "cerca de la mitad",
+                "valor": 50,
+                "calculo": {
+                  "datos": {
+                    "fuente": "wdi",
+                    "indicador": "NY.GDP.PCAP.KD",
+                    "paises": [
+                      "PER",
+                      "ARG"
+                    ],
+                    "desde": 1960,
+                    "hasta": 2025,
+                    "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                    "unidad": "US$"
+                  },
+                  "operacion": "variacion",
+                  "pais": "ARG",
+                  "anio": 2002,
+                  "anioB": 2025
+                }
+              }
+            ],
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Precios altos de lo exportado",
+              "items": [
+                {
+                  "icono": "⛏️",
+                  "texto": "Perú: metales",
+                  "dice": "metales;"
+                },
+                {
+                  "icono": "🌱",
+                  "texto": "Argentina: soja",
+                  "dice": "soja."
+                }
+              ],
+              "dice": "exportan:"
+            },
+            "disposicion": "dividido",
+            "sellos": [
+              {
+                "texto": "×2",
+                "pais": "PER",
+                "animo": "feliz",
+                "dice": "duplicó."
+              }
+            ]
+          },
+          {
+            "tipo": "significado",
+            "texto": "¿Qué quiere decir esto para alguien que cobra un sueldo en Lima o en Buenos Aires? Que en estos datos, cambiar de moneda no frenó los precios por sí solo: el inti y el austral llegaron en 1985, y cuatro años después vino la peor inflación de los dos.",
+            "visual": {
+              "tipo": "mapa",
+              "destacar": [
+                "PER",
+                "ARG"
+              ],
+              "centro": [
+                -66,
+                -24
+              ],
+              "zoom": 3,
+              "etiquetas": [
+                {
+                  "texto": "Lima",
+                  "en": [
+                    -77.04,
+                    -12.05
+                  ]
+                },
+                {
+                  "texto": "Buenos Aires",
+                  "en": [
+                    -58.38,
+                    -34.6
+                  ]
+                }
+              ]
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "CAMBIAR DE MONEDA",
+              "dice": "moneda"
+            }
+          },
+          {
+            "tipo": "significado",
+            "texto": "Lo que acompaña a los años estables de Perú es una regla: un banco central que no le presta al Estado y que anuncia su meta. El uno a uno argentino también frenó los precios durante casi toda una década, hasta que faltaron dólares. Los datos muestran cosas que ocurren juntas, y no prueban cuál causa cuál: Perú tuvo también años de metales caros. En Perú, la canasta de las familias no sube de un dígito al año desde 1997.",
+            "visual": {
+              "tipo": "iconos",
+              "titulo": "Lo que acompañó a cada salida",
+              "items": [
+                {
+                  "icono": "🏦",
+                  "texto": "No le presta al Estado",
+                  "marca": "si",
+                  "dice": "regla:"
+                },
+                {
+                  "icono": "🎯",
+                  "texto": "Meta anunciada",
+                  "marca": "si",
+                  "dice": "meta."
+                },
+                {
+                  "icono": "💵",
+                  "texto": "Uno a uno",
+                  "dice": "uno"
+                },
+                {
+                  "icono": "🚫",
+                  "texto": "Faltaron dólares",
+                  "marca": "no",
+                  "dice": "dólares."
+                },
+                {
+                  "icono": "⛏️",
+                  "texto": "Metales caros",
+                  "dice": "metales"
+                }
+              ]
+            },
+            "disposicion": "completo",
+            "rotulo": {
+              "texto": "UN DÍGITO DESDE 1997",
+              "dice": "dígito"
+            }
+          },
+          {
+            "tipo": "reenganche",
+            "texto": "Falta un número para cerrar. Es la distancia entre un peruano y un argentino, en 1990 y en 2025."
+          }
+        ]
+      }
+    ],
+    "numeroQueNadieMira": {
+      "texto": "Ese número es la distancia en ingreso por persona. En 1990, el año de su peor inflación, un argentino producía el triple que un peruano. En 2025, menos del doble. Un peruano de 2025 produce dos veces y media lo que producía uno en 1990. En ese tramo, Perú tuvo inflación de un dígito la mayor parte del tiempo. Argentina la tuvo solo durante el uno a uno.",
+      "grafico": {
+        "tipo": "comparacion",
+        "titulo": "2025: un argentino frente a un peruano",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.PCAP.KD",
+          "paises": [
+            "ARG",
+            "PER"
+          ],
+          "desde": 2025,
+          "hasta": 2025,
+          "etiqueta": "PIB por persona (US$ constantes de 2015)",
+          "unidad": "US$"
+        },
+        "destacar": {
+          "pais": "PER"
+        },
+        "formato": {
+          "prefijo": "US$ ",
+          "decimales": 0
+        },
+        "dice": "distancia"
+      },
+      "cifras": [
+        {
+          "texto": "el triple",
+          "valor": 3,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "ARG",
+                "PER"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ARG",
+            "paisB": "PER",
+            "anio": 1990
+          }
+        },
+        {
+          "texto": "menos del doble",
+          "valor": 1.93,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "ARG",
+                "PER"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "ARG",
+            "paisB": "PER",
+            "anio": 2025
+          }
+        },
+        {
+          "texto": "dos veces y media",
+          "valor": 155,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "ARG",
+                "PER"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "variacion",
+            "pais": "PER",
+            "anio": 1990,
+            "anioB": 2025
+          }
+        }
+      ]
+    },
+    "remate": "Argentina frenó los precios primero. Perú los frenó después, y los mantuvo quietos.",
+    "siguiente": "Bolivia tuvo su propia hiperinflación en 1985, antes que Perú y Argentina. ¿Cómo salió y qué le quedó? Eso viene en un próximo video.",
+    "miniatura": {
+      "texto": "LA PEOR FUE PERÚ",
+      "grafico": {
+        "tipo": "lineas",
+        "titulo": "Perú vs Argentina",
+        "datos": {
+          "fuente": "wdi",
+          "indicador": "NY.GDP.DEFL.KD.ZG",
+          "paises": [
+            "PER",
+            "ARG"
+          ],
+          "desde": 1985,
+          "hasta": 2025,
+          "etiqueta": "Inflación (deflactor del PIB, % anual)",
+          "unidad": "%"
+        },
+        "destacar": {
+          "pais": "PER"
+        },
+        "formato": {
+          "sufijo": " %",
+          "decimales": 0,
+          "escala": "log"
+        }
+      }
+    },
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, deflactor del PIB, % anual (NY.GDP.DEFL.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=PE-AR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, precios al consumidor, % anual (FP.CPI.TOTL.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PE-AR"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: Índice de precios al consumidor, 2010 = 100 (FP.CPI.TOTL), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL?locations=PE"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=PE-AR"
+      },
+      {
+        "texto": "Banco Central de Reserva del Perú: Constitución de 1993 y metas de inflación",
+        "url": "https://www.bcrp.gob.pe"
+      },
+      {
+        "texto": "InfoLEG, Ministerio de Justicia de Argentina: Ley 23.928 de Convertibilidad (1991)",
+        "url": "http://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/328/norma.htm"
+      }
+    ]
+  }
+}

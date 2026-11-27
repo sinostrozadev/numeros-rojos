@@ -1,0 +1,318 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-argentina-208-peru-5-en-1990-era-al",
+  "titulo": "En 2024, Argentina 208 % y Perú 5 %. En 1990, al revés",
+  "descripcion": "Video completo: hoy a las 19:00 en el canal.\n\n¿Cómo pasó Perú de tener una inflación peor que la de Argentina a tener precios estables?\n\nLa misma vara para los dos países: el deflactor del PIB del Banco Mundial, de la hiperinflación de 1989–1990 a 2025.\nEl video largo de hoy cuenta cómo salió cada uno, año por año, y qué le pasa a un sueldo en Lima y en Buenos Aires.\n\nFuentes: Banco Mundial, WDI, NY.GDP.DEFL.KD.ZG (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=PE-AR\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#peru",
+    "#argentina",
+    "#inflacion"
+  ],
+  "props": {
+    "id": "pendiente-grafico-argentina-208-peru-5-en-1990-era-al",
+    "gancho": {
+      "texto": "En 1990, los precios peruanos subían el triple que los argentinos. Hoy suben mucho menos.",
+      "rotulo": "PEOR QUE ARGENTINA",
+      "cifras": [
+        {
+          "texto": "el triple",
+          "valor": 3,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.DEFL.KD.ZG",
+              "paises": [
+                "PER",
+                "ARG"
+              ],
+              "desde": 1961,
+              "hasta": 2025,
+              "etiqueta": "Inflación (deflactor del PIB, % anual)",
+              "unidad": "%"
+            },
+            "operacion": "razon",
+            "pais": "PER",
+            "paisB": "ARG",
+            "anio": 1990
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "La peor fue Perú. ¿Y hoy?",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.DEFL.KD.ZG",
+        "paises": [
+          "PER",
+          "ARG"
+        ],
+        "desde": 1985,
+        "hasta": 2025,
+        "etiqueta": "Inflación (deflactor del PIB, % anual)",
+        "unidad": "%"
+      },
+      "destacar": {
+        "pais": "PER"
+      },
+      "anotaciones": [
+        {
+          "anio": 1990,
+          "texto": "Perú: más de 6.000 %"
+        },
+        {
+          "anio": 2024,
+          "texto": "Argentina: unos 208 %"
+        }
+      ],
+      "formato": {
+        "sufijo": " %",
+        "decimales": 0,
+        "escala": "log"
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial. En 1990, los precios peruanos suben más de 6.000 %. Un año antes, los argentinos, unos 3.000 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "1989–1990: la peor etapa",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.DEFL.KD.ZG",
+            "paises": [
+              "PER",
+              "ARG"
+            ],
+            "desde": 1985,
+            "hasta": 1995,
+            "etiqueta": "Inflación (deflactor del PIB, % anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "PER",
+            "anio": 1990
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0,
+            "escala": "log"
+          },
+          "dice": "datos"
+        },
+        "cifras": [
+          {
+            "texto": "unos 3.000 %",
+            "valor": 3046,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 1989
+            }
+          },
+          {
+            "texto": "más de 6.000 %",
+            "valor": 6261.2,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "PER",
+              "anio": 1990
+            }
+          }
+        ],
+        "fuenteEnVoz": true,
+        "sellos": [
+          {
+            "texto": "6.000 %",
+            "pais": "PER",
+            "animo": "triste",
+            "dice": "6.000"
+          }
+        ]
+      },
+      {
+        "tipo": "giro",
+        "texto": "Desde 2002, Perú promedia menos de un 4 % al año. Argentina, más de un 40 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Desde 2002: dos caminos",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.DEFL.KD.ZG",
+            "paises": [
+              "PER",
+              "ARG"
+            ],
+            "desde": 2002,
+            "hasta": 2025,
+            "etiqueta": "Inflación (deflactor del PIB, % anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "PER"
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0,
+            "escala": "log"
+          },
+          "dice": "2002,"
+        },
+        "cifras": [
+          {
+            "texto": "menos de un 4 %",
+            "valor": 3.7,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 2002,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "promedio",
+              "pais": "PER"
+            }
+          },
+          {
+            "texto": "más de un 40 %",
+            "valor": 41.6,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 2002,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "promedio",
+              "pais": "ARG"
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "MENOS DE 4 %",
+          "dice": "4"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "El pico llega en 2024: unos 208 % en Argentina, contra algo más de 5 % en Perú.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2024: Perú contra Argentina",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.DEFL.KD.ZG",
+            "paises": [
+              "PER",
+              "ARG"
+            ],
+            "desde": 2024,
+            "hasta": 2024,
+            "etiqueta": "Inflación (deflactor del PIB, % anual)",
+            "unidad": "%"
+          },
+          "destacar": {
+            "pais": "PER"
+          },
+          "formato": {
+            "sufijo": " %",
+            "decimales": 0
+          },
+          "dice": "pico"
+        },
+        "cifras": [
+          {
+            "texto": "algo más de 5 %",
+            "valor": 5.4,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "PER",
+              "anio": 2024
+            }
+          },
+          {
+            "texto": "unos 208 %",
+            "valor": 207.6,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.DEFL.KD.ZG",
+                "paises": [
+                  "PER",
+                  "ARG"
+                ],
+                "desde": 1961,
+                "hasta": 2025,
+                "etiqueta": "Inflación (deflactor del PIB, % anual)",
+                "unidad": "%"
+              },
+              "operacion": "valor",
+              "pais": "ARG",
+              "anio": 2024
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "¿Qué hizo distinto Perú? Lo explico en el video largo de hoy a las siete.",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: Inflación, deflactor del PIB, % anual (NY.GDP.DEFL.KD.ZG), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG?locations=PE-AR"
+      }
+    ],
+    "enlaceLargo": "pendiente-tesis-peru-tuvo-peor-inflacion-que-argentina"
+  }
+}
