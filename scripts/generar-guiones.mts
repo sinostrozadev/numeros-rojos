@@ -557,7 +557,14 @@ const main = async () => {
         }
       }
       if (!mal.length && plantilla === 'tesis') mal.push(...await verificarFotos(g));
-      if (mal.length) { rechazos.push(`"${g.titulo}": ${mal.join('; ')}`); console.error(`  ✗ "${g.titulo}": ${mal.join('; ')}`); continue; }
+      if (mal.length) {
+        rechazos.push(`"${g.titulo}": ${mal.join('; ')}`); console.error(`  ✗ "${g.titulo}": ${mal.join('; ')}`);
+        // 2026-11-26: el borrador rechazado se guarda para repararlo a mano (antes se perdía un guion de 20 min por un error de ritmo).
+        const borrador = path.join(RAIZ, 'contenido', 'reserva', `rechazado-${nombre}-i${intento}.json`);
+        fs.mkdirSync(path.dirname(borrador), { recursive: true }); escribirJson(borrador, g);
+        console.error(`    borrador guardado en ${rel(borrador)}`);
+        continue;
+      }
 
       const destino = path.join(DIR_BACKLOG, `${nombre}.json`);
       escribirJson(destino, g);

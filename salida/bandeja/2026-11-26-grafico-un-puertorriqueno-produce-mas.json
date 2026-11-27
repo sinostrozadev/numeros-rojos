@@ -1,0 +1,22 @@
+{
+  "id": "2026-11-26-grafico-un-puertorriqueno-produce-mas",
+  "plantilla": "grafico",
+  "titulo": "Un puertorriqueño produce más que un panameño. Y son menos",
+  "descripcion": "¿Cómo puede Puerto Rico producir por persona más que cualquier país hispanohablante de América y tener cada año menos habitantes?\n\nCon los datos del Banco Mundial, ajustados por lo que cuestan las cosas en cada lugar, Puerto Rico (territorio de Estados Unidos) queda por encima de Panamá, Uruguay y Chile en 2025.\nEl giro está en la población: desde 2004 perdió casi uno de cada seis habitantes, y lo que produce cada uno subió apenas un 3 %. En el mismo tiempo, Panamá más que duplicó lo suyo.\n\nFuentes:\n- Banco Mundial, WDI: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PR-PA-UY-CL\n- Banco Mundial, WDI: Población total (SP.POP.TOTL), CC BY 4.0 https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PR\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#puertorico",
+    "#panama",
+    "#datos"
+  ],
+  "duracionSeg": 47.6,
+  "estado": "subido",
+  "tipo": "short",
+  "artefacto": "`short-2026-11-26` del run https://github.com/sinostrozadev/numeros-rojos/actions/runs/45914079429",
+  "publicarEn": "2026-12-02T13:00:00-03:00",
+  "videoId": "DzmImUcyySs",
+  "url": "https://youtube.com/shorts/DzmImUcyySs",
+  "programado": "2026-12-02 13:00",
+  "subidoEn": "2026-11-27T00:35:56.710Z"
+}
