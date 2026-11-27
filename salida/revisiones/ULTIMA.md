@@ -75,3 +75,4 @@
 - Si Santiago no aprueba Haití para el lun 30-11: ronda 3 del revisor al respaldo, render en la nube (~16 min), su tráiler y programar antes del lun 13:00.
 - A mano en Studio (largo 03-12): pausas publicitarias, pantalla final, comentario fijado.
 - Related video del tráiler → largo y comentario fijado, el día de salida.
+- Haití: un único intento de `subir-haiti.sh` (piloto en NR, 27-11 02:09) subió el mp4 y la carátula GPT pero se cortó en "timeout esperando botón Next": quedó **privado sin fecha `l-hAd_pfL_Q`** con el título del archivo ("2026 11 26 tesis haiti republica dominicana 3"). No se insistió. NO volver a subirlo: completar ese borrador (título, descripción, capítulos) con `RETOMAR=1`/`BORRADOR=1` de `subir-studio.mjs` o `scripts/titulo.mts` cuando Santiago decida.
