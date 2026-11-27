@@ -1,0 +1,303 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-singapur-y-chile-iban-casi-parejos",
+  "titulo": "Singapur y Chile iban casi parejos en 1960. ¿Qué pasó?",
+  "descripcion": "¿Cómo un país sin cobre ni grandes ríos llegó a producir por persona casi cinco veces lo que Chile?\n\nEn 1960, según el Banco Mundial, un singapurense producía unos 3.600 dólares al año y un chileno unos 3.200 (dólares de 2015). En 2025, unos 70.700 contra unos 14.900.\nSi se corrige por lo que cuestan las cosas en cada país, la distancia baja a unas cuatro veces y media, pero sigue ahí.\nSingapur se independizó en 1965 y todavía compra parte de su agua a Malasia.\n\nFuentes:\n- Banco Mundial, WDI: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=SG-CL\n- Banco Mundial, WDI: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0 https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=SG-CL\n\nVoz sintetizada. Gráficos generados a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#singapur",
+    "#chile",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-singapur-y-chile-iban-casi-parejos",
+    "gancho": {
+      "texto": "Sin cobre ni grandes ríos, Singapur produce casi cinco veces lo que Chile. Por persona.",
+      "rotulo": "CASI 5 A 1",
+      "cifras": [
+        {
+          "texto": "casi cinco veces",
+          "valor": 4.74,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.KD",
+              "paises": [
+                "SGP",
+                "CHL"
+              ],
+              "desde": 1960,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (US$ constantes de 2015)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "SGP",
+            "paisB": "CHL",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Singapur y Chile, 1960–2025",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.KD",
+        "paises": [
+          "SGP",
+          "CHL"
+        ],
+        "desde": 1960,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (US$ constantes de 2015)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "anotaciones": [
+        {
+          "anio": 1965,
+          "texto": "Singapur se independiza"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial, en dólares de 2015. La línea dorada es Chile: hoy, unos 14.900 dólares. Singapur, unos 70.700.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Singapur y Chile, 1960–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "SGP",
+              "CHL"
+            ],
+            "desde": 1960,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "anotaciones": [
+            {
+              "anio": 1965,
+              "texto": "Singapur se independiza"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "dorada"
+        },
+        "cifras": [
+          {
+            "texto": "unos 14.900 dólares",
+            "valor": 14900,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "SGP",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 2025
+            }
+          },
+          {
+            "texto": "unos 70.700",
+            "valor": 70700,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "SGP",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "SGP",
+              "anio": 2025
+            }
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira el arranque. En 1960 las dos líneas salen casi juntas: unos 3.600 dólares contra unos 3.200. Singapur aún no era independiente.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "1960: casi parejos",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.KD",
+            "paises": [
+              "SGP",
+              "CHL"
+            ],
+            "desde": 1960,
+            "hasta": 1975,
+            "etiqueta": "PIB por persona (US$ constantes de 2015)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL",
+            "anio": 1965,
+            "texto": "1965: independencia"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "arranque."
+        },
+        "cifras": [
+          {
+            "texto": "unos 3.600 dólares",
+            "valor": 3600,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "SGP",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "SGP",
+              "anio": 1960
+            }
+          },
+          {
+            "texto": "unos 3.200",
+            "valor": 3200,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.KD",
+                "paises": [
+                  "SGP",
+                  "CHL"
+                ],
+                "desde": 1960,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (US$ constantes de 2015)",
+                "unidad": "US$"
+              },
+              "operacion": "valor",
+              "pais": "CHL",
+              "anio": 1960
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "1960: CASI PAREJOS",
+          "dice": "juntas:"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Corregido por lo que cuestan las cosas en cada país, la distancia baja a unas cuatro veces y media. Singapur compra parte de su agua a Malasia.",
+        "grafico": {
+          "tipo": "comparacion",
+          "titulo": "2025, ajustado por precios",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "SGP",
+              "CHL"
+            ],
+            "desde": 2025,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "Corregido"
+        },
+        "cifras": [
+          {
+            "texto": "unas cuatro veces y media",
+            "valor": 4.5,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "SGP",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "SGP",
+              "paisB": "CHL",
+              "anio": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "4,5×",
+            "pais": "SGP",
+            "animo": "feliz",
+            "dice": "media."
+          }
+        ]
+      }
+    ],
+    "remate": "Chile tenía la mina. Singapur tenía el puerto. ¿Qué crees que pesó más?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, US$ constantes de 2015 (NY.GDP.PCAP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=SG-CL"
+      },
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=SG-CL"
+      }
+    ]
+  }
+}
