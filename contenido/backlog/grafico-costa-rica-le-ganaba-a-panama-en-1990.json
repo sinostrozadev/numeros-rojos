@@ -1,0 +1,316 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-costa-rica-le-ganaba-a-panama-en-1990",
+  "titulo": "Costa Rica le ganaba a Panamá en 1990. ¿Qué pasó?",
+  "descripcion": "¿Cuándo pasó Panamá a Costa Rica en producción por persona, y qué le hizo la pandemia a cada uno?\n\nEn 1990 el costarricense promedio producía algo más que el panameño, ya corregido por lo que cuestan las cosas en cada país. En 1997 Panamá pasa adelante y a comienzos de los 2000 las líneas casi se tocan y desde 2004 la distancia se abre.\nEn 2020 Panamá cae casi un 19 % y Costa Rica menos de un 5 %. Aun así Panamá siguió arriba, y en 2022 ya producía más que antes de la caída.\n\nFuente: Banco Mundial, World Development Indicators, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CR\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#panama",
+    "#costarica",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-costa-rica-le-ganaba-a-panama-en-1990",
+    "gancho": {
+      "texto": "En 1990, un costarricense producía más que un panameño. Hoy, el panameño le saca casi un tercio.",
+      "rotulo": "SE DIO VUELTA",
+      "cifras": [
+        {
+          "texto": "más que un panameño",
+          "valor": 1.07,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CRI"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "CRI",
+            "paisB": "PAN",
+            "anio": 1990
+          }
+        },
+        {
+          "texto": "casi un tercio",
+          "valor": 1.32,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PAN",
+                "CRI"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "PAN",
+            "paisB": "CRI",
+            "anio": 2025
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Panamá y Costa Rica, 1990–2025",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "PAN",
+          "CRI"
+        ],
+        "desde": 1990,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "PAN",
+        "anio": 1997,
+        "texto": "1997: Panamá pasa"
+      },
+      "anotaciones": [
+        {
+          "anio": 1997,
+          "texto": "Panamá pasa adelante"
+        },
+        {
+          "anio": 2020,
+          "texto": "Pandemia"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Son datos del Banco Mundial, corregidos por lo que cuestan las cosas en cada país. Las dos líneas suben pegadas hasta 1997. Ese año, Panamá pasa adelante.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Panamá y Costa Rica, 1990–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "CRI"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN",
+            "anio": 1997,
+            "texto": "1997: Panamá pasa"
+          },
+          "anotaciones": [
+            {
+              "anio": 1997,
+              "texto": "Panamá pasa adelante",
+              "dice": "adelante."
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "datos"
+        },
+        "cifras": [
+          {
+            "texto": "Panamá pasa adelante",
+            "valor": 1.01,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "CRI",
+              "anio": 1997
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "1997",
+          "dice": "1997."
+        },
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira 2020. Con la pandemia, lo que produce cada panameño cae casi un 19 %. Cada costarricense, menos de un 5 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "2020: la caída de cada uno",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PAN",
+              "CRI"
+            ],
+            "desde": 2015,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PAN",
+            "anio": 2020,
+            "texto": "2020: Panamá cae casi 19 %"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "2020."
+        },
+        "cifras": [
+          {
+            "texto": "casi un 19 %",
+            "valor": -18.9,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "PAN",
+              "anio": 2019,
+              "anioB": 2020
+            }
+          },
+          {
+            "texto": "menos de un 5 %",
+            "valor": -4.8,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CRI",
+              "anio": 2019,
+              "anioB": 2020
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "−19 %",
+            "pais": "PAN",
+            "animo": "triste",
+            "dice": "19"
+          }
+        ]
+      },
+      {
+        "tipo": "dato",
+        "texto": "Aun así, Panamá siguió arriba de Costa Rica. Y en 2022 ya producía más que antes del golpe.",
+        "usaGraficoPrincipal": true,
+        "cifras": [
+          {
+            "texto": "más que antes del golpe",
+            "valor": 2.3,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "PAN",
+              "anio": 2019,
+              "anioB": 2022
+            },
+            "tolerancia": 0.1
+          },
+          {
+            "texto": "siguió arriba de Costa Rica",
+            "valor": 1.2,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PAN",
+                  "CRI"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PAN",
+              "paisB": "CRI",
+              "anio": 2020
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "SIGUE ARRIBA",
+          "dice": "arriba"
+        }
+      }
+    ],
+    "remate": "Costa Rica cae poco y sube parejo. Panamá cae fuerte y sube rápido. ¿Cuál prefieres?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PA-CR"
+      }
+    ]
+  }
+}
