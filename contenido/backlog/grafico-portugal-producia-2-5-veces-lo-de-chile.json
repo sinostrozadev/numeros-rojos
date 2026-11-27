@@ -1,0 +1,316 @@
+{
+  "plantilla": "grafico",
+  "id": "pendiente-grafico-portugal-producia-2-5-veces-lo-de-chile",
+  "titulo": "Portugal producía 2,5 veces lo de Chile. Hoy, 1,4",
+  "descripcion": "¿Cuánto se acortó la distancia entre un chileno y un portugués desde 1990?\n\nEn 1990, un portugués producía unas dos veces y media lo que un chileno, con los precios de cada país corregidos. En 2025, la diferencia es de unas 1,4 veces.\nEl giro está entre 2008 y 2013: en esos años Portugal retrocede un 7 % por persona y Chile avanza un 16 %.\nDesde 1990, Chile casi triplicó lo que produce cada persona. La brecha llegó a su mínimo en 2013 (unas 1,3 veces) y desde ahí volvió a abrirse.\n\nFuente: Banco Mundial, World Development Indicators, NY.GDP.PCAP.PP.KD (CC BY 4.0) https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PT-CL\n\nVoz sintetizada. Gráfico generado a partir de datos abiertos.\nNo es asesoría financiera: el video describe lo que muestran los datos.",
+  "hashtags": [
+    "#shorts",
+    "#economia",
+    "#chile",
+    "#portugal",
+    "#datos"
+  ],
+  "props": {
+    "id": "pendiente-grafico-portugal-producia-2-5-veces-lo-de-chile",
+    "gancho": {
+      "texto": "En 1990, un portugués producía dos veces y media lo que un chileno.",
+      "rotulo": "2,5 CONTRA 1",
+      "cifras": [
+        {
+          "texto": "dos veces y media",
+          "valor": 2.5,
+          "calculo": {
+            "datos": {
+              "fuente": "wdi",
+              "indicador": "NY.GDP.PCAP.PP.KD",
+              "paises": [
+                "PRT",
+                "CHL"
+              ],
+              "desde": 1990,
+              "hasta": 2025,
+              "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+              "unidad": "US$"
+            },
+            "operacion": "razon",
+            "pais": "PRT",
+            "paisB": "CHL",
+            "anio": 1990
+          }
+        }
+      ]
+    },
+    "grafico": {
+      "tipo": "lineas",
+      "titulo": "Portugal y Chile, 1990–2025",
+      "datos": {
+        "fuente": "wdi",
+        "indicador": "NY.GDP.PCAP.PP.KD",
+        "paises": [
+          "PRT",
+          "CHL"
+        ],
+        "desde": 1990,
+        "hasta": 2025,
+        "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+        "unidad": "US$"
+      },
+      "destacar": {
+        "pais": "CHL"
+      },
+      "anotaciones": [
+        {
+          "anio": 2008,
+          "texto": "Portugal frena"
+        }
+      ],
+      "formato": {
+        "prefijo": "US$ ",
+        "decimales": 0
+      }
+    },
+    "escenas": [
+      {
+        "tipo": "dato",
+        "texto": "Mira la línea dorada: es Chile. Son datos del Banco Mundial, corregidos por lo que cuesta vivir en cada país. Hoy la brecha es de 1,4 veces.",
+        "usaGraficoPrincipal": true,
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Portugal y Chile, 1990–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PRT",
+              "CHL"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "dorada:"
+        },
+        "cifras": [
+          {
+            "texto": "1,4 veces",
+            "valor": 1.4,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRT",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PRT",
+              "paisB": "CHL",
+              "anio": 2025
+            }
+          }
+        ],
+        "sellos": [
+          {
+            "texto": "1,4×",
+            "pais": "PRT",
+            "dice": "1,4"
+          }
+        ],
+        "fuenteEnVoz": true
+      },
+      {
+        "tipo": "giro",
+        "texto": "Pero mira Portugal entre 2008 y 2013. Lo que produce cada portugués cae un 7 %. Chile, en esos años, sube un 16 %.",
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "2008–2013: uno frena, el otro sube",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PRT",
+              "CHL"
+            ],
+            "desde": 2005,
+            "hasta": 2016,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "PRT",
+            "anio": 2008
+          },
+          "anotaciones": [
+            {
+              "anio": 2011,
+              "texto": "2011: rescate UE-FMI"
+            }
+          ],
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "Portugal"
+        },
+        "cifras": [
+          {
+            "texto": "cae un 7 %",
+            "valor": -7.1,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRT",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "PRT",
+              "anio": 2008,
+              "anioB": 2013
+            }
+          },
+          {
+            "texto": "sube un 16 %",
+            "valor": 16.1,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRT",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 2008,
+              "anioB": 2013
+            }
+          }
+        ],
+        "rotulo": {
+          "texto": "PORTUGAL RETROCEDE",
+          "dice": "cae"
+        },
+        "sellos": [
+          {
+            "texto": "−7 %",
+            "pais": "PRT",
+            "animo": "triste",
+            "dice": "7"
+          }
+        ],
+        "mascota": {
+          "pose": "sorpresa",
+          "bocadillo": "¿Portugal para atrás?",
+          "dice": "cae"
+        }
+      },
+      {
+        "tipo": "dato",
+        "texto": "Desde 1990, Chile casi triplicó lo que produce cada persona. Pero en 2013 la brecha se queda en 1,3 veces, y desde ahí vuelve a abrirse.",
+        "usaGraficoPrincipal": true,
+        "grafico": {
+          "tipo": "lineas",
+          "titulo": "Portugal y Chile, 1990–2025",
+          "datos": {
+            "fuente": "wdi",
+            "indicador": "NY.GDP.PCAP.PP.KD",
+            "paises": [
+              "PRT",
+              "CHL"
+            ],
+            "desde": 1990,
+            "hasta": 2025,
+            "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+            "unidad": "US$"
+          },
+          "destacar": {
+            "pais": "CHL"
+          },
+          "formato": {
+            "prefijo": "US$ ",
+            "decimales": 0
+          },
+          "dice": "triplicó"
+        },
+        "cifras": [
+          {
+            "texto": "casi triplicó",
+            "valor": 182,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRT",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "variacion",
+              "pais": "CHL",
+              "anio": 1990,
+              "anioB": 2025
+            }
+          },
+          {
+            "texto": "1,3 veces",
+            "valor": 1.27,
+            "calculo": {
+              "datos": {
+                "fuente": "wdi",
+                "indicador": "NY.GDP.PCAP.PP.KD",
+                "paises": [
+                  "PRT",
+                  "CHL"
+                ],
+                "desde": 1990,
+                "hasta": 2025,
+                "etiqueta": "PIB por persona (PPA, US$ internacionales de 2021)",
+                "unidad": "US$"
+              },
+              "operacion": "razon",
+              "pais": "PRT",
+              "anio": 2013,
+              "paisB": "CHL"
+            }
+          }
+        ]
+      }
+    ],
+    "remate": "¿Por qué Chile dejó de acercarse a Portugal?",
+    "fuentes": [
+      {
+        "texto": "Banco Mundial, World Development Indicators: PIB per cápita, PPA, US$ internacionales constantes de 2021 (NY.GDP.PCAP.PP.KD), CC BY 4.0",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD?locations=PT-CL"
+      }
+    ]
+  }
+}
